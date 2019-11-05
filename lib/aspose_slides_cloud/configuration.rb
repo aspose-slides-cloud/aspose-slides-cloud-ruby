@@ -69,11 +69,15 @@ module AsposeSlidesCloud
     # The time limit for HTTP request in seconds.
     # Default to 0 (never times out).
     attr_accessor :timeout
-
+ 
     # Set this to false to skip client side validation in the operation.
     # Default to true.
     # @return [true, false]
     attr_accessor :client_side_validation
+
+    # Custom HTTP headers for all requests.
+    # @return [Hash]
+    attr_accessor :custom_headers
 
     ### TLS/SSL setting
     # Set this to false to skip verifying SSL certificate when calling API from https server.
@@ -126,6 +130,7 @@ module AsposeSlidesCloud
       @auth_base_url = 'https://api.aspose.cloud'
       @version = 'v3.0'
       @timeout = 0
+      @custom_headers = Hash.new
       @client_side_validation = true
       @verify_ssl = false
       @verify_ssl_host = false

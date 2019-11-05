@@ -80,5 +80,23 @@ describe 'SlidesApiExtra' do
       expect(c).to eq(200)
       expect(o).not_to be(nil)
     end
+
+    it 'base shape' do
+      #requestParam = AsposeSlidesCloud::GetSlideShapeRequest.new
+      #requestParam.name = "test.ppt"
+      #requestParam.slide_index = 1
+      #requestParam.shape_index = 1
+      #requestParam.password = "password"
+      #requestParam.folder = "TempSlidesSDK"
+      #AsposeSlidesCloud::SpecUtils.initialize('GetSlideShape', nil, nil)
+      #o = AsposeSlidesCloud::SpecUtils.api.get_slide_shape(requestParam)
+      #expect(o.text).to eq("1")
+    end
+
+    it 'chart' do
+      #chart = Chart.new
+      #expect(chart.type).to eq("Chart")
+      #expect(chart.shape_type).to eq("Chart")
+    end
   end
 end

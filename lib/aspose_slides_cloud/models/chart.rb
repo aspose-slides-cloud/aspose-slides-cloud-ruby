@@ -79,6 +79,9 @@ module AsposeSlidesCloud
     # Gets or sets the type of the chart.
     attr_accessor :chart_type
 
+    # True if data labels over the maximum of the chart shall be shown.
+    attr_accessor :show_data_labels_over_maximum
+
     # Gets or sets the series of chart data values.
     attr_accessor :series
 
@@ -149,6 +152,7 @@ module AsposeSlidesCloud
         :'type' => :'Type',
         :'shape_type' => :'ShapeType',
         :'chart_type' => :'ChartType',
+        :'show_data_labels_over_maximum' => :'ShowDataLabelsOverMaximum',
         :'series' => :'Series',
         :'categories' => :'Categories',
         :'title' => :'Title',
@@ -182,6 +186,7 @@ module AsposeSlidesCloud
         :'type' => :'String',
         :'shape_type' => :'String',
         :'chart_type' => :'String',
+        :'show_data_labels_over_maximum' => :'BOOLEAN',
         :'series' => :'Array<Series>',
         :'categories' => :'Array<String>',
         :'title' => :'ChartTitle',
@@ -278,6 +283,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'ChartType')
         self.chart_type = attributes[:'ChartType']
+      end
+
+      if attributes.has_key?(:'ShowDataLabelsOverMaximum')
+        self.show_data_labels_over_maximum = attributes[:'ShowDataLabelsOverMaximum']
       end
 
       if attributes.has_key?(:'Series')
@@ -413,6 +422,7 @@ module AsposeSlidesCloud
           type == o.type &&
           shape_type == o.shape_type &&
           chart_type == o.chart_type &&
+          show_data_labels_over_maximum == o.show_data_labels_over_maximum &&
           series == o.series &&
           categories == o.categories &&
           title == o.title &&
@@ -433,7 +443,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, chart_type, series, categories, title, back_wall, side_wall, floor, legend, axes, plot_area].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, chart_type, show_data_labels_over_maximum, series, categories, title, back_wall, side_wall, floor, legend, axes, plot_area].hash
     end
 
     # Builds the object from hash

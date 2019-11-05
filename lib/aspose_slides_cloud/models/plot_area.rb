@@ -37,6 +37,9 @@ module AsposeSlidesCloud
     # Height
     attr_accessor :height
 
+    # If layout of the plot area is defined manually specifies whether to layout the plot area by its inside (not including axis and axis labels) or outside.
+    attr_accessor :layout_target_type
+
     # Get or sets the fill format.
     attr_accessor :fill_format
 
@@ -46,6 +49,28 @@ module AsposeSlidesCloud
     # Get or sets the line format.
     attr_accessor :line_format
 
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.any?{ |s| s.casecmp(value) == 0 }
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -53,6 +78,7 @@ module AsposeSlidesCloud
         :'y' => :'Y',
         :'width' => :'Width',
         :'height' => :'Height',
+        :'layout_target_type' => :'LayoutTargetType',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
         :'line_format' => :'LineFormat'
@@ -66,6 +92,7 @@ module AsposeSlidesCloud
         :'y' => :'Float',
         :'width' => :'Float',
         :'height' => :'Float',
+        :'layout_target_type' => :'String',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
         :'line_format' => :'LineFormat'
@@ -94,6 +121,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'Height')
         self.height = attributes[:'Height']
+      end
+
+      if attributes.has_key?(:'LayoutTargetType')
+        self.layout_target_type = attributes[:'LayoutTargetType']
       end
 
       if attributes.has_key?(:'FillFormat')
@@ -129,6 +160,10 @@ module AsposeSlidesCloud
         invalid_properties.push('invalid value for "height", height cannot be nil.')
       end
 
+      if @layout_target_type.nil?
+        invalid_properties.push('invalid value for "layout_target_type", layout_target_type cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -139,7 +174,20 @@ module AsposeSlidesCloud
       return false if @y.nil?
       return false if @width.nil?
       return false if @height.nil?
+      return false if @layout_target_type.nil?
+      layout_target_type_validator = EnumAttributeValidator.new('String', ['Inner', 'Outer'])
+      return false unless layout_target_type_validator.valid?(@layout_target_type)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] layout_target_type Object to be assigned
+    def layout_target_type=(layout_target_type)
+      validator = EnumAttributeValidator.new('String', ['Inner', 'Outer'])
+      unless validator.valid?(layout_target_type)
+        fail ArgumentError, 'invalid value for "layout_target_type", must be one of #{validator.allowable_values}.'
+      end
+      @layout_target_type = layout_target_type
     end
 
     # Checks equality by comparing each attribute.
@@ -151,6 +199,7 @@ module AsposeSlidesCloud
           y == o.y &&
           width == o.width &&
           height == o.height &&
+          layout_target_type == o.layout_target_type &&
           fill_format == o.fill_format &&
           effect_format == o.effect_format &&
           line_format == o.line_format
@@ -165,7 +214,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [x, y, width, height, fill_format, effect_format, line_format].hash
+      [x, y, width, height, layout_target_type, fill_format, effect_format, line_format].hash
     end
 
     # Builds the object from hash

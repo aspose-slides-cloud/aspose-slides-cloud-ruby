@@ -7640,8 +7640,8 @@ module AsposeSlidesCloud
       if @api_client.config.client_side_validation && request.name.nil?
         fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_slides_slide_size"
       end
-      if @api_client.config.client_side_validation && request.size_type && !['OnScreen', 'LetterPaper', 'A4Paper', 'Slide35mm', 'Overhead', 'Banner', 'Custom', 'Ledger', 'A3Paper', 'B4IsoPaper', 'B5IsoPaper', 'B4JisPaper', 'B5JisPaper', 'HagakiCard', 'OnScreen16x9', 'OnScreen16x10'].any?{ |s| s.casecmp(request.size_type)==0 }
-        fail ArgumentError, 'invalid value for "size_type", must be one of OnScreen, LetterPaper, A4Paper, Slide35mm, Overhead, Banner, Custom, Ledger, A3Paper, B4IsoPaper, B5IsoPaper, B4JisPaper, B5JisPaper, HagakiCard, OnScreen16x9, OnScreen16x10'
+      if @api_client.config.client_side_validation && request.size_type && !['OnScreen', 'LetterPaper', 'A4Paper', 'Slide35mm', 'Overhead', 'Banner', 'Custom', 'Ledger', 'A3Paper', 'B4IsoPaper', 'B5IsoPaper', 'B4JisPaper', 'B5JisPaper', 'HagakiCard', 'OnScreen16x9', 'OnScreen16x10', 'Widescreen'].any?{ |s| s.casecmp(request.size_type)==0 }
+        fail ArgumentError, 'invalid value for "size_type", must be one of OnScreen, LetterPaper, A4Paper, Slide35mm, Overhead, Banner, Custom, Ledger, A3Paper, B4IsoPaper, B5IsoPaper, B4JisPaper, B5JisPaper, HagakiCard, OnScreen16x9, OnScreen16x10, Widescreen'
       end
       if @api_client.config.client_side_validation && request.scale_type && !['DoNotScale', 'EnsureFit', 'Maximize'].any?{ |s| s.casecmp(request.scale_type)==0 }
         fail ArgumentError, 'invalid value for "scale_type", must be one of DoNotScale, EnsureFit, Maximize'

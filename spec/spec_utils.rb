@@ -23,6 +23,27 @@ SOFTWARE.
 module AsposeSlidesCloud
   class SpecUtils
     def self.initialize(method, name, value)
+      if !@@is_initialized
+        download_request = AsposeSlidesCloud::DownloadFileRequest.new
+        download_request.path = "TempTests/version.txt"
+        version = SpecUtils.api.download_file(download_request)
+        if version != EXPECTED_TEST_DATA_VERSION
+          Dir.entries(TEST_DATA_PATH).each { |f|
+            if !File.directory? File.join(TEST_DATA_PATH, f)
+              fd = File.binread(File.join(TEST_DATA_PATH, f))
+              upload_request = AsposeSlidesCloud::UploadFileRequest.new
+              upload_request.file = fd
+              upload_request.path = "TempTests/" + f
+              SpecUtils.api.upload_file(upload_request)
+            end
+          }
+          upload_request = AsposeSlidesCloud::UploadFileRequest.new
+          upload_request.file = EXPECTED_TEST_DATA_VERSION
+          upload_request.path = "TempTests/version.txt"
+          SpecUtils.api.upload_file(upload_request)
+        end
+        @@is_initialized = true
+      end
       files = Hash.new
       SpecUtils.test_rules["Files"].each do |rule|
         if SpecUtils.good_rule?(rule, name, method)
@@ -38,11 +59,10 @@ module AsposeSlidesCloud
       end
       files.each do |path, rule|
         if rule["Action"] == "Put"
-          f = File.binread(File.join(TEST_DATA_PATH, rule['ActualName']))
-          upload_request = AsposeSlidesCloud::UploadFileRequest.new
-          upload_request.file = f
-          upload_request.path = path
-          SpecUtils.api.upload_file(upload_request)
+          copy_request = AsposeSlidesCloud::CopyFileRequest.new
+          copy_request.src_path = "TempTests/" + rule['ActualName']
+          copy_request.dest_path = path
+          SpecUtils.api.copy_file(copy_request)
         elsif rule["Action"] == "Delete"
           delete_request = AsposeSlidesCloud::DeleteFileRequest.new
           delete_request.path = path
@@ -148,7 +168,9 @@ module AsposeSlidesCloud
     end
 
     @@api = nil
+    @@is_initialized = false
 
     TEST_DATA_PATH = "TestData"
+    EXPECTED_TEST_DATA_VERSION = "1"
   end
 end

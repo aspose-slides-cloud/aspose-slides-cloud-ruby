@@ -152,10 +152,10 @@ module AsposeSlidesCloud
       req.params = opts[:query_params]
       form_params = opts[:form_params] || {}
       req.body = build_request_body(req.headers, form_params, opts[:body], opts[:files])
+      set_headers(req.headers)
       if @config.debugging
         @config.logger.debug "HTTP request\nMethod: #{req.method}\nPath: #{req.path}\nParams: #{req.params}\nHeaders: #{req.headers}\nBody: #{req.body}\n"
       end
-      set_headers(req.headers)
     end
 
     def set_headers(headers)
@@ -163,6 +163,9 @@ module AsposeSlidesCloud
       headers['x-aspose-version'] = AsposeSlidesCloud::VERSION
       if @config.timeout > 0
         headers['x-aspose-timeout'] = @config.timeout
+      end
+      @config.custom_headers.each do |key, value|
+        headers[key] = value
       end
       set_auth_header(headers)
     end

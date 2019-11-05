@@ -41,6 +41,7 @@ module AsposeSlidesCloud
     HAGAKI_CARD = "HagakiCard".freeze
     ON_SCREEN16X9 = "OnScreen16x9".freeze
     ON_SCREEN16X10 = "OnScreen16x10".freeze
+    WIDESCREEN = "Widescreen".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string
