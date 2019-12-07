@@ -27,7 +27,7 @@ gem install aspose_slides_cloud
 
 ### Sample usage
 
-The example code below converts a PowerPoint document to PDF format using asposeslidescloud library:
+The example code below converts a PowerPoint document to PDF format using aspose_slides_cloud library:
 ```ruby
 	require 'aspose_slides_cloud'
 
