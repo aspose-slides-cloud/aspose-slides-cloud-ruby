@@ -162,7 +162,7 @@ module AsposeSlidesCloud
         configuration.app_sid = config["AppSid"]
         configuration.app_key = config["AppKey"]
         configuration.debugging = config["Debug"]
-        @@api = AsposeSlidesCloud::SlidesApi.new(AsposeSlidesCloud::ApiClient.new(configuration))
+        @@api = AsposeSlidesCloud::SlidesApi.new(configuration)
       end
       @@api
     end

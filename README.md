@@ -34,7 +34,7 @@ The example code below converts a PowerPoint document to PDF format using aspose
 	configuration = AsposeSlidesCloud::Configuration.new
 	configuration.app_sid = "MyAppSid"
 	configuration.app_key = "MyAppKey"
-	api = AsposeSlidesCloud::SlidesApi.new(AsposeSlidesCloud::ApiClient.new(configuration))
+	api = AsposeSlidesCloud::SlidesApi.new(configuration)
 	requestParam = AsposeSlidesCloud::PostSlidesConvertRequest.new
 	requestParam.format = "pdf"
 	requestParam.document = File.binread("MyPresentation.pptx")

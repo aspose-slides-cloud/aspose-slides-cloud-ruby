@@ -56,7 +56,7 @@ describe 'SlidesApiExtra' do
       configuration.app_sid = "invalid"
       configuration.app_key = "invalid"
       configuration.debugging = config["Debug"]
-      api = AsposeSlidesCloud::SlidesApi.new(AsposeSlidesCloud::ApiClient.new(configuration))
+      api = AsposeSlidesCloud::SlidesApi.new(configuration)
       begin
         o, c, _h = api.get_slides_api_info_with_http_info
         fail "An exception expected"
@@ -75,7 +75,7 @@ describe 'SlidesApiExtra' do
       configuration.app_key = config["AppKey"]
       configuration.access_token = "expired.token"
       configuration.debugging = config["Debug"]
-      api = AsposeSlidesCloud::SlidesApi.new(AsposeSlidesCloud::ApiClient.new(configuration))
+      api = AsposeSlidesCloud::SlidesApi.new(configuration)
       o, c, _h = api.get_slides_api_info_with_http_info
       expect(c).to eq(200)
       expect(o).not_to be(nil)
@@ -94,9 +94,9 @@ describe 'SlidesApiExtra' do
     end
 
     it 'chart' do
-      #chart = Chart.new
-      #expect(chart.type).to eq("Chart")
-      #expect(chart.shape_type).to eq("Chart")
+      chart = AsposeSlidesCloud::Chart.new
+      expect(chart.type).to eq("Chart")
+      expect(chart.shape_type).to eq("Chart")
     end
   end
 end

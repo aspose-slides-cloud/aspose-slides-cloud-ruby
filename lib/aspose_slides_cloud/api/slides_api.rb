@@ -26,9 +26,10 @@ module AsposeSlidesCloud
   class SlidesApi
     attr_accessor :api_client
 
-    def initialize(api_client = ApiClient.default)
-      @api_client = api_client
+    def initialize(configuration = Configuration.default)
+      @api_client = AsposeSlidesCloud::ApiClient.new(configuration)
     end
+
     # Copy file
     # @param request operation request
     def copy_file(request)
