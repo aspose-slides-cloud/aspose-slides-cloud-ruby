@@ -117,22 +117,12 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @size.nil?
-        invalid_properties.push('invalid value for "size", size cannot be nil.')
-      end
-
-      if @symbol.nil?
-        invalid_properties.push('invalid value for "symbol", symbol cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @size.nil?
-      return false if @symbol.nil?
       symbol_validator = EnumAttributeValidator.new('String', ['Circle', 'Dash', 'Diamond', 'Dot', 'None', 'Picture', 'Plus', 'Square', 'Star', 'Triangle', 'X', 'NotDefined'])
       return false unless symbol_validator.valid?(@symbol)
       true

@@ -337,38 +337,6 @@ module AsposeSlidesCloud
         invalid_properties.push('invalid value for "shape_type", shape_type cannot be nil.')
       end
 
-      if @style.nil?
-        invalid_properties.push('invalid value for "style", style cannot be nil.')
-      end
-
-      if @first_col.nil?
-        invalid_properties.push('invalid value for "first_col", first_col cannot be nil.')
-      end
-
-      if @first_row.nil?
-        invalid_properties.push('invalid value for "first_row", first_row cannot be nil.')
-      end
-
-      if @horizontal_banding.nil?
-        invalid_properties.push('invalid value for "horizontal_banding", horizontal_banding cannot be nil.')
-      end
-
-      if @last_col.nil?
-        invalid_properties.push('invalid value for "last_col", last_col cannot be nil.')
-      end
-
-      if @last_row.nil?
-        invalid_properties.push('invalid value for "last_row", last_row cannot be nil.')
-      end
-
-      if @right_to_left.nil?
-        invalid_properties.push('invalid value for "right_to_left", right_to_left cannot be nil.')
-      end
-
-      if @vertical_banding.nil?
-        invalid_properties.push('invalid value for "vertical_banding", vertical_banding cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -382,16 +350,8 @@ module AsposeSlidesCloud
       return false if @shape_type.nil?
       shape_type_validator = EnumAttributeValidator.new('String', ['Custom', 'Line', 'LineInverse', 'Triangle', 'RightTriangle', 'Rectangle', 'Diamond', 'Parallelogram', 'Trapezoid', 'NonIsoscelesTrapezoid', 'Pentagon', 'Hexagon', 'Heptagon', 'Octagon', 'Decagon', 'Dodecagon', 'FourPointedStar', 'FivePointedStar', 'SixPointedStar', 'SevenPointedStar', 'EightPointedStar', 'TenPointedStar', 'TwelvePointedStar', 'SixteenPointedStar', 'TwentyFourPointedStar', 'ThirtyTwoPointedStar', 'RoundCornerRectangle', 'OneRoundCornerRectangle', 'TwoSamesideRoundCornerRectangle', 'TwoDiagonalRoundCornerRectangle', 'OneSnipOneRoundCornerRectangle', 'OneSnipCornerRectangle', 'TwoSamesideSnipCornerRectangle', 'TwoDiagonalSnipCornerRectangle', 'Plaque', 'Ellipse', 'Teardrop', 'HomePlate', 'Chevron', 'PieWedge', 'Pie', 'BlockArc', 'Donut', 'NoSmoking', 'RightArrow', 'LeftArrow', 'UpArrow', 'DownArrow', 'StripedRightArrow', 'NotchedRightArrow', 'BentUpArrow', 'LeftRightArrow', 'UpDownArrow', 'LeftUpArrow', 'LeftRightUpArrow', 'QuadArrow', 'CalloutLeftArrow', 'CalloutRightArrow', 'CalloutUpArrow', 'CalloutDownArrow', 'CalloutLeftRightArrow', 'CalloutUpDownArrow', 'CalloutQuadArrow', 'BentArrow', 'UTurnArrow', 'CircularArrow', 'LeftCircularArrow', 'LeftRightCircularArrow', 'CurvedRightArrow', 'CurvedLeftArrow', 'CurvedUpArrow', 'CurvedDownArrow', 'SwooshArrow', 'Cube', 'Can', 'LightningBolt', 'Heart', 'Sun', 'Moon', 'SmileyFace', 'IrregularSeal1', 'IrregularSeal2', 'FoldedCorner', 'Bevel', 'Frame', 'HalfFrame', 'Corner', 'DiagonalStripe', 'Chord', 'CurvedArc', 'LeftBracket', 'RightBracket', 'LeftBrace', 'RightBrace', 'BracketPair', 'BracePair', 'StraightConnector1', 'BentConnector2', 'BentConnector3', 'BentConnector4', 'BentConnector5', 'CurvedConnector2', 'CurvedConnector3', 'CurvedConnector4', 'CurvedConnector5', 'Callout1', 'Callout2', 'Callout3', 'Callout1WithAccent', 'Callout2WithAccent', 'Callout3WithAccent', 'Callout1WithBorder', 'Callout2WithBorder', 'Callout3WithBorder', 'Callout1WithBorderAndAccent', 'Callout2WithBorderAndAccent', 'Callout3WithBorderAndAccent', 'CalloutWedgeRectangle', 'CalloutWedgeRoundRectangle', 'CalloutWedgeEllipse', 'CalloutCloud', 'Cloud', 'Ribbon', 'Ribbon2', 'EllipseRibbon', 'EllipseRibbon2', 'LeftRightRibbon', 'VerticalScroll', 'HorizontalScroll', 'Wave', 'DoubleWave', 'Plus', 'ProcessFlow', 'DecisionFlow', 'InputOutputFlow', 'PredefinedProcessFlow', 'InternalStorageFlow', 'DocumentFlow', 'MultiDocumentFlow', 'TerminatorFlow', 'PreparationFlow', 'ManualInputFlow', 'ManualOperationFlow', 'ConnectorFlow', 'PunchedCardFlow', 'PunchedTapeFlow', 'SummingJunctionFlow', 'OrFlow', 'CollateFlow', 'SortFlow', 'ExtractFlow', 'MergeFlow', 'OfflineStorageFlow', 'OnlineStorageFlow', 'MagneticTapeFlow', 'MagneticDiskFlow', 'MagneticDrumFlow', 'DisplayFlow', 'DelayFlow', 'AlternateProcessFlow', 'OffPageConnectorFlow', 'BlankButton', 'HomeButton', 'HelpButton', 'InformationButton', 'ForwardOrNextButton', 'BackOrPreviousButton', 'EndButton', 'BeginningButton', 'ReturnButton', 'DocumentButton', 'SoundButton', 'MovieButton', 'Gear6', 'Gear9', 'Funnel', 'PlusMath', 'MinusMath', 'MultiplyMath', 'DivideMath', 'EqualMath', 'NotEqualMath', 'CornerTabs', 'SquareTabs', 'PlaqueTabs', 'ChartX', 'ChartStar', 'ChartPlus', 'Chart', 'Table', 'PictureFrame', 'VideoFrame', 'AudioFrame', 'Diagram', 'OleObjectFrame', 'GroupShape', 'GraphicalObject', 'NotDefined'])
       return false unless shape_type_validator.valid?(@shape_type)
-      return false if @style.nil?
       style_validator = EnumAttributeValidator.new('String', ['None', 'MediumStyle2Accent1', 'MediumStyle2', 'NoStyleNoGrid', 'ThemedStyle1Accent1', 'ThemedStyle1Accent2', 'ThemedStyle1Accent3', 'ThemedStyle1Accent4', 'ThemedStyle1Accent5', 'ThemedStyle1Accent6', 'NoStyleTableGrid', 'ThemedStyle2Accent1', 'ThemedStyle2Accent2', 'ThemedStyle2Accent3', 'ThemedStyle2Accent4', 'ThemedStyle2Accent5', 'ThemedStyle2Accent6', 'LightStyle1', 'LightStyle1Accent1', 'LightStyle1Accent2', 'LightStyle1Accent3', 'LightStyle1Accent4', 'LightStyle2Accent5', 'LightStyle1Accent6', 'LightStyle2', 'LightStyle2Accent1', 'LightStyle2Accent2', 'LightStyle2Accent3', 'MediumStyle2Accent3', 'MediumStyle2Accent4', 'MediumStyle2Accent5', 'LightStyle2Accent6', 'LightStyle2Accent4', 'LightStyle3', 'LightStyle3Accent1', 'MediumStyle2Accent2', 'LightStyle3Accent2', 'LightStyle3Accent3', 'LightStyle3Accent4', 'LightStyle3Accent5', 'LightStyle3Accent6', 'MediumStyle1', 'MediumStyle1Accent1', 'MediumStyle1Accent2', 'MediumStyle1Accent3', 'MediumStyle1Accent4', 'MediumStyle1Accent5', 'MediumStyle1Accent6', 'MediumStyle2Accent6', 'MediumStyle3', 'MediumStyle3Accent1', 'MediumStyle3Accent2', 'MediumStyle3Accent3', 'MediumStyle3Accent4', 'MediumStyle3Accent5', 'MediumStyle3Accent6', 'MediumStyle4', 'MediumStyle4Accent1', 'MediumStyle4Accent2', 'MediumStyle4Accent3', 'MediumStyle4Accent4', 'MediumStyle4Accent5', 'MediumStyle4Accent6', 'DarkStyle1', 'DarkStyle1Accent1', 'DarkStyle1Accent2', 'DarkStyle1Accent3', 'DarkStyle1Accent4', 'DarkStyle1Accent5', 'DarkStyle1Accent6', 'DarkStyle2', 'DarkStyle2Accent1Accent2', 'DarkStyle2Accent3Accent4', 'DarkStyle2Accent5Accent6', 'LightStyle1Accent5', 'Custom'])
       return false unless style_validator.valid?(@style)
-      return false if @first_col.nil?
-      return false if @first_row.nil?
-      return false if @horizontal_banding.nil?
-      return false if @last_col.nil?
-      return false if @last_row.nil?
-      return false if @right_to_left.nil?
-      return false if @vertical_banding.nil?
       true
     end
 

@@ -144,37 +144,12 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @x.nil?
-        invalid_properties.push('invalid value for "x", x cannot be nil.')
-      end
-
-      if @y.nil?
-        invalid_properties.push('invalid value for "y", y cannot be nil.')
-      end
-
-      if @width.nil?
-        invalid_properties.push('invalid value for "width", width cannot be nil.')
-      end
-
-      if @height.nil?
-        invalid_properties.push('invalid value for "height", height cannot be nil.')
-      end
-
-      if @layout_target_type.nil?
-        invalid_properties.push('invalid value for "layout_target_type", layout_target_type cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @x.nil?
-      return false if @y.nil?
-      return false if @width.nil?
-      return false if @height.nil?
-      return false if @layout_target_type.nil?
       layout_target_type_validator = EnumAttributeValidator.new('String', ['Inner', 'Outer'])
       return false unless layout_target_type_validator.valid?(@layout_target_type)
       true

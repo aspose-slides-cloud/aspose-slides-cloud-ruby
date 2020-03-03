@@ -171,57 +171,22 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @alignment.nil?
-        invalid_properties.push('invalid value for "alignment", alignment cannot be nil.')
-      end
-
-      if @cap_style.nil?
-        invalid_properties.push('invalid value for "cap_style", cap_style cannot be nil.')
-      end
-
-      if @dash_style.nil?
-        invalid_properties.push('invalid value for "dash_style", dash_style cannot be nil.')
-      end
-
-      if @join_style.nil?
-        invalid_properties.push('invalid value for "join_style", join_style cannot be nil.')
-      end
-
-      if @style.nil?
-        invalid_properties.push('invalid value for "style", style cannot be nil.')
-      end
-
-      if @miter_limit.nil?
-        invalid_properties.push('invalid value for "miter_limit", miter_limit cannot be nil.')
-      end
-
-      if @width.nil?
-        invalid_properties.push('invalid value for "width", width cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @alignment.nil?
       alignment_validator = EnumAttributeValidator.new('String', ['Center', 'Inset', 'NotDefined'])
       return false unless alignment_validator.valid?(@alignment)
-      return false if @cap_style.nil?
       cap_style_validator = EnumAttributeValidator.new('String', ['Round', 'Square', 'Flat', 'NotDefined'])
       return false unless cap_style_validator.valid?(@cap_style)
-      return false if @dash_style.nil?
       dash_style_validator = EnumAttributeValidator.new('String', ['Solid', 'Dot', 'Dash', 'LargeDash', 'DashDot', 'LargeDashDot', 'LargeDashDotDot', 'SystemDash', 'SystemDot', 'SystemDashDot', 'SystemDashDotDot', 'Custom', 'NotDefined'])
       return false unless dash_style_validator.valid?(@dash_style)
-      return false if @join_style.nil?
       join_style_validator = EnumAttributeValidator.new('String', ['Round', 'Bevel', 'Miter', 'NotDefined'])
       return false unless join_style_validator.valid?(@join_style)
-      return false if @style.nil?
       style_validator = EnumAttributeValidator.new('String', ['Single', 'ThinThin', 'ThinThick', 'ThickThin', 'ThickBetweenThin', 'NotDefined'])
       return false unless style_validator.valid?(@style)
-      return false if @miter_limit.nil?
-      return false if @width.nil?
       true
     end
 

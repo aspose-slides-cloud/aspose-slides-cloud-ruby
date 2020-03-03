@@ -216,54 +216,14 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @row_span.nil?
-        invalid_properties.push('invalid value for "row_span", row_span cannot be nil.')
-      end
-
-      if @col_span.nil?
-        invalid_properties.push('invalid value for "col_span", col_span cannot be nil.')
-      end
-
-      if @margin_top.nil?
-        invalid_properties.push('invalid value for "margin_top", margin_top cannot be nil.')
-      end
-
-      if @margin_right.nil?
-        invalid_properties.push('invalid value for "margin_right", margin_right cannot be nil.')
-      end
-
-      if @margin_left.nil?
-        invalid_properties.push('invalid value for "margin_left", margin_left cannot be nil.')
-      end
-
-      if @margin_bottom.nil?
-        invalid_properties.push('invalid value for "margin_bottom", margin_bottom cannot be nil.')
-      end
-
-      if @text_anchor_type.nil?
-        invalid_properties.push('invalid value for "text_anchor_type", text_anchor_type cannot be nil.')
-      end
-
-      if @text_vertical_type.nil?
-        invalid_properties.push('invalid value for "text_vertical_type", text_vertical_type cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @row_span.nil?
-      return false if @col_span.nil?
-      return false if @margin_top.nil?
-      return false if @margin_right.nil?
-      return false if @margin_left.nil?
-      return false if @margin_bottom.nil?
-      return false if @text_anchor_type.nil?
       text_anchor_type_validator = EnumAttributeValidator.new('String', ['Top', 'Center', 'Bottom', 'Justified', 'Distributed', 'NotDefined'])
       return false unless text_anchor_type_validator.valid?(@text_anchor_type)
-      return false if @text_vertical_type.nil?
       text_vertical_type_validator = EnumAttributeValidator.new('String', ['Horizontal', 'Vertical', 'Vertical270', 'WordArtVertical', 'EastAsianVertical', 'MongolianVertical', 'WordArtVerticalRightToLeft', 'NotDefined'])
       return false unless text_vertical_type_validator.valid?(@text_vertical_type)
       true

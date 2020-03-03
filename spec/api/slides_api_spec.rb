@@ -270,8 +270,8 @@ describe 'SlidesApi' do
 
   # unit tests for create_folder
   # Create the folder
-  # @param path Folder path to create e.g. &#39;folder_1/folder_2/&#39;
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Folder path to create e.g. &#39;folder_1/folder_2/&#39;
   # @option opts [String] :storage_name Storage name
   # @return [nil]
   describe 'create_folder test' do
@@ -326,8 +326,8 @@ describe 'SlidesApi' do
 
   # unit tests for delete_file
   # Delete file
-  # @param path File path e.g. &#39;/folder/file.ext&#39;
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path File path e.g. &#39;/folder/file.ext&#39;
   # @option opts [String] :storage_name Storage name
   # @option opts [String] :version_id File version ID to delete
   # @return [nil]
@@ -406,8 +406,8 @@ describe 'SlidesApi' do
 
   # unit tests for delete_folder
   # Delete folder
-  # @param path Folder path e.g. &#39;/folder&#39;
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Folder path e.g. &#39;/folder&#39;
   # @option opts [String] :storage_name Storage name
   # @option opts [BOOLEAN] :recursive Enable to delete folders, subfolders and files
   # @return [nil]
@@ -623,10 +623,10 @@ describe 'SlidesApi' do
   # Remove a paragraph.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -636,9 +636,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlideParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideParagraph', 'String')
@@ -653,9 +653,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlideParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideParagraph', 'String')
@@ -678,9 +678,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlideParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideParagraph', 'String')
@@ -699,38 +699,13 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraph', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraph', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraph', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlideParagraph', 'Integer')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraph', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraph', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideParagraph', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeleteNotesSlideParagraph', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteNotesSlideParagraph', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.delete_notes_slide_paragraph_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteNotesSlideParagraph', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraph', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlideParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideParagraph', 'String')
@@ -753,9 +728,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlideParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideParagraph', 'String')
@@ -774,13 +749,38 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraph', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraph', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraph', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlideParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraph', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraph', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraph', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideParagraph', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeleteNotesSlideParagraph', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteNotesSlideParagraph', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_notes_slide_paragraph_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteNotesSlideParagraph', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraph', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlideParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideParagraph', 'String')
@@ -803,9 +803,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlideParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideParagraph', 'String')
@@ -828,9 +828,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlideParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideParagraph', 'String')
@@ -854,9 +854,9 @@ describe 'SlidesApi' do
   # Remove a range of paragraphs.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :paragraphs The indices of the shapes to be deleted; delete all by default.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -867,8 +867,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraphs', 'String')
@@ -884,8 +884,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraphs', 'String')
@@ -909,8 +909,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraphs', 'String')
@@ -930,37 +930,12 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphsRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraphs', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraphs', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraphs', 'Integer')
-      requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteNotesSlideParagraphs', 'String')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraphs', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraphs', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideParagraphs', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeleteNotesSlideParagraphs', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteNotesSlideParagraphs', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.delete_notes_slide_paragraphs_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteNotesSlideParagraphs', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraphs', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraphs', 'String')
@@ -980,12 +955,37 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraphs', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraphs', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraphs', 'String')
+      requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteNotesSlideParagraphs', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraphs', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraphs', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideParagraphs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeleteNotesSlideParagraphs', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteNotesSlideParagraphs', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_notes_slide_paragraphs_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteNotesSlideParagraphs', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraphs', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid paragraphs' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraphs', 'String')
@@ -1009,8 +1009,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraphs', 'String')
@@ -1034,8 +1034,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraphs', 'String')
@@ -1059,8 +1059,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideParagraphs', 'String')
@@ -1085,11 +1085,11 @@ describe 'SlidesApi' do
   # Remove a portion.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param portion_index Portion index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -1099,10 +1099,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteNotesSlidePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlidePortion', 'String')
@@ -1117,10 +1117,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteNotesSlidePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlidePortion', 'String')
@@ -1143,10 +1143,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteNotesSlidePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlidePortion', 'String')
@@ -1165,40 +1165,14 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortion', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortion', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortion', 'Integer')
-      requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteNotesSlidePortion', 'Integer')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortion', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortion', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlidePortion', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeleteNotesSlidePortion', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteNotesSlidePortion', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.delete_notes_slide_portion_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteNotesSlidePortion', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortion', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteNotesSlidePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlidePortion', 'String')
@@ -1221,10 +1195,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteNotesSlidePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlidePortion', 'String')
@@ -1247,10 +1221,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteNotesSlidePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlidePortion', 'String')
@@ -1269,14 +1243,40 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortion', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortion', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortion', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortion', 'Integer')
+      requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteNotesSlidePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortion', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortion', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlidePortion', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeleteNotesSlidePortion', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteNotesSlidePortion', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_notes_slide_portion_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteNotesSlidePortion', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortion', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteNotesSlidePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlidePortion', 'String')
@@ -1299,10 +1299,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteNotesSlidePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlidePortion', 'String')
@@ -1325,10 +1325,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteNotesSlidePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlidePortion', 'String')
@@ -1352,10 +1352,10 @@ describe 'SlidesApi' do
   # Remove a range of portions.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :portions The indices of the shapes to be deleted; delete all by default.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -1366,9 +1366,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
       requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeleteNotesSlidePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortions', 'String')
@@ -1384,9 +1384,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
       requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeleteNotesSlidePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortions', 'String')
@@ -1410,9 +1410,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
       requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeleteNotesSlidePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortions', 'String')
@@ -1432,39 +1432,13 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionsRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortions', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortions', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortions', 'Integer')
-      requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeleteNotesSlidePortions', 'String')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortions', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortions', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlidePortions', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeleteNotesSlidePortions', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteNotesSlidePortions', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.delete_notes_slide_portions_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteNotesSlidePortions', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortions', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
       requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeleteNotesSlidePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortions', 'String')
@@ -1488,9 +1462,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
       requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeleteNotesSlidePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortions', 'String')
@@ -1510,13 +1484,39 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortions', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortions', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortions', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
+      requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeleteNotesSlidePortions', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortions', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortions', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlidePortions', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeleteNotesSlidePortions', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteNotesSlidePortions', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_notes_slide_portions_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteNotesSlidePortions', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortions', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid portions' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
       requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeleteNotesSlidePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortions', 'String')
@@ -1540,9 +1540,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
       requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeleteNotesSlidePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortions', 'String')
@@ -1566,9 +1566,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
       requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeleteNotesSlidePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortions', 'String')
@@ -1592,9 +1592,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlidePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlidePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlidePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlidePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteNotesSlidePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlidePortions', 'String')
       requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeleteNotesSlidePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlidePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlidePortions', 'String')
@@ -1619,9 +1619,9 @@ describe 'SlidesApi' do
   # Remove a shape.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -1631,8 +1631,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideShape', 'String')
@@ -1647,8 +1647,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideShape', 'String')
@@ -1671,8 +1671,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideShape', 'String')
@@ -1691,36 +1691,12 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::DeleteNotesSlideShapeRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideShape', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideShape', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideShape', 'Integer')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideShape', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideShape', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideShape', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeleteNotesSlideShape', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteNotesSlideShape', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.delete_notes_slide_shape_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteNotesSlideShape', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShape', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideShape', 'String')
@@ -1739,12 +1715,36 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::DeleteNotesSlideShapeRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideShape', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideShape', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideShape', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideShape', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideShape', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideShape', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeleteNotesSlideShape', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteNotesSlideShape', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_notes_slide_shape_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteNotesSlideShape', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShape', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideShape', 'String')
@@ -1767,8 +1767,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideShape', 'String')
@@ -1791,8 +1791,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteNotesSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteNotesSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteNotesSlideShape', 'String')
@@ -1816,8 +1816,8 @@ describe 'SlidesApi' do
   # Remove a range of shapes.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :shapes The indices of the shapes to be deleted; delete all by default.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -2013,10 +2013,10 @@ describe 'SlidesApi' do
   # Remove a paragraph.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -2026,9 +2026,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteParagraph', 'String')
@@ -2043,9 +2043,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteParagraph', 'String')
@@ -2068,9 +2068,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteParagraph', 'String')
@@ -2089,38 +2089,13 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::DeleteParagraphRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraph', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraph', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraph', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteParagraph', 'Integer')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraph', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraph', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteParagraph', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeleteParagraph', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteParagraph', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.delete_paragraph_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteParagraph', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraph', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::DeleteParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteParagraph', 'String')
@@ -2143,9 +2118,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteParagraph', 'String')
@@ -2164,13 +2139,38 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::DeleteParagraphRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraph', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraph', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraph', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraph', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraph', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraph', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteParagraph', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeleteParagraph', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteParagraph', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_paragraph_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteParagraph', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraph', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::DeleteParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteParagraph', 'String')
@@ -2193,9 +2193,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteParagraph', 'String')
@@ -2218,9 +2218,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteParagraph', 'String')
@@ -2244,9 +2244,9 @@ describe 'SlidesApi' do
   # Remove a range of paragraphs.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :paragraphs The indices of the shapes to be deleted; delete all by default.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -2257,8 +2257,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraphs', 'String')
       requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraphs', 'String')
@@ -2274,8 +2274,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraphs', 'String')
       requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraphs', 'String')
@@ -2299,8 +2299,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraphs', 'String')
       requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraphs', 'String')
@@ -2320,37 +2320,12 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::DeleteParagraphsRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraphs', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraphs', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraphs', 'Integer')
-      requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteParagraphs', 'String')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraphs', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraphs', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteParagraphs', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeleteParagraphs', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteParagraphs', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.delete_paragraphs_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteParagraphs', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraphs', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::DeleteParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraphs', 'String')
       requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraphs', 'String')
@@ -2370,12 +2345,37 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::DeleteParagraphsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraphs', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraphs', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraphs', 'String')
+      requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteParagraphs', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraphs', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraphs', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteParagraphs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeleteParagraphs', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteParagraphs', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_paragraphs_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteParagraphs', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraphs', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid paragraphs' do
       requestParam = AsposeSlidesCloud::DeleteParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraphs', 'String')
       requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraphs', 'String')
@@ -2399,8 +2399,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraphs', 'String')
       requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraphs', 'String')
@@ -2424,8 +2424,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraphs', 'String')
       requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraphs', 'String')
@@ -2449,8 +2449,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteParagraphs', 'String')
       requestParam.paragraphs = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphs', 'DeleteParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteParagraphs', 'String')
@@ -2475,11 +2475,11 @@ describe 'SlidesApi' do
   # Remove a portion.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param portion_index Portion index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -2489,10 +2489,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeletePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeletePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePortion', 'String')
@@ -2507,10 +2507,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeletePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeletePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePortion', 'String')
@@ -2533,10 +2533,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeletePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeletePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePortion', 'String')
@@ -2555,40 +2555,14 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::DeletePortionRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortion', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortion', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortion', 'Integer')
-      requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeletePortion', 'Integer')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortion', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortion', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePortion', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeletePortion', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeletePortion', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.delete_portion_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeletePortion', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortion', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::DeletePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeletePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePortion', 'String')
@@ -2611,10 +2585,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeletePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeletePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePortion', 'String')
@@ -2637,10 +2611,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeletePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeletePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePortion', 'String')
@@ -2659,14 +2633,40 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::DeletePortionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortion', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortion', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortion', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortion', 'Integer')
+      requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeletePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortion', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortion', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePortion', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeletePortion', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeletePortion', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_portion_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeletePortion', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortion', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::DeletePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeletePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePortion', 'String')
@@ -2689,10 +2689,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeletePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeletePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePortion', 'String')
@@ -2715,10 +2715,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeletePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeletePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePortion', 'String')
@@ -2742,10 +2742,10 @@ describe 'SlidesApi' do
   # Remove a range of portions.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :portions The indices of the shapes to be deleted; delete all by default.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -2756,9 +2756,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeletePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
       requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeletePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortions', 'String')
@@ -2774,9 +2774,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeletePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
       requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeletePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortions', 'String')
@@ -2800,9 +2800,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeletePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
       requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeletePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortions', 'String')
@@ -2822,39 +2822,13 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::DeletePortionsRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortions', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortions', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortions', 'Integer')
-      requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeletePortions', 'String')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortions', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortions', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePortions', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeletePortions', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeletePortions', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.delete_portions_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeletePortions', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortions', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::DeletePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
       requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeletePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortions', 'String')
@@ -2878,9 +2852,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeletePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
       requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeletePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortions', 'String')
@@ -2900,13 +2874,39 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::DeletePortionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortions', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortions', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortions', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
+      requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeletePortions', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortions', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortions', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePortions', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeletePortions', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeletePortions', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_portions_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeletePortions', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortions', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid portions' do
       requestParam = AsposeSlidesCloud::DeletePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
       requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeletePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortions', 'String')
@@ -2930,9 +2930,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeletePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
       requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeletePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortions', 'String')
@@ -2956,9 +2956,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeletePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
       requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeletePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortions', 'String')
@@ -2982,9 +2982,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeletePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeletePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeletePortions', 'String')
       requestParam.portions = AsposeSlidesCloud::SpecUtils.get_param_value('portions', 'DeletePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePortions', 'String')
@@ -4076,9 +4076,9 @@ describe 'SlidesApi' do
   # Remove a shape.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -4088,8 +4088,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSlideShape', 'String')
@@ -4104,8 +4104,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSlideShape', 'String')
@@ -4128,8 +4128,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSlideShape', 'String')
@@ -4148,36 +4148,12 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::DeleteSlideShapeRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSlideShape', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteSlideShape', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteSlideShape', 'Integer')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSlideShape', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSlideShape', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSlideShape', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeleteSlideShape', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteSlideShape', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.delete_slide_shape_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteSlideShape', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShape', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::DeleteSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSlideShape', 'String')
@@ -4196,12 +4172,36 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::DeleteSlideShapeRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSlideShape', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteSlideShape', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteSlideShape', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSlideShape', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSlideShape', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSlideShape', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'DeleteSlideShape', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteSlideShape', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_slide_shape_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteSlideShape', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShape', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::DeleteSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSlideShape', 'String')
@@ -4224,8 +4224,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSlideShape', 'String')
@@ -4248,8 +4248,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::DeleteSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'DeleteSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSlideShape', 'String')
@@ -4273,8 +4273,8 @@ describe 'SlidesApi' do
   # Remove a range of shapes.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :shapes The indices of the shapes to be deleted; delete all by default.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -4980,8 +4980,8 @@ describe 'SlidesApi' do
 
   # unit tests for download_file
   # Download file
-  # @param path File path e.g. &#39;/folder/file.ext&#39;
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path File path e.g. &#39;/folder/file.ext&#39;
   # @option opts [String] :storage_name Storage name
   # @option opts [String] :version_id File version ID to download
   # @return [File]
@@ -5096,8 +5096,8 @@ describe 'SlidesApi' do
 
   # unit tests for get_file_versions
   # Get file versions
-  # @param path File path e.g. &#39;/file.ext&#39;
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path File path e.g. &#39;/file.ext&#39;
   # @option opts [String] :storage_name Storage name
   # @return [FileVersions]
   describe 'get_file_versions test' do
@@ -5153,8 +5153,8 @@ describe 'SlidesApi' do
 
   # unit tests for get_files_list
   # Get all files and folders within a folder
-  # @param path Folder path e.g. &#39;/folder&#39;
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Folder path e.g. &#39;/folder&#39;
   # @option opts [String] :storage_name Storage name
   # @return [FilesList]
   describe 'get_files_list test' do
@@ -5831,9 +5831,9 @@ describe 'SlidesApi' do
   # Read slide shape info.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -5843,8 +5843,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShape', 'String')
@@ -5859,8 +5859,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShape', 'String')
@@ -5883,8 +5883,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShape', 'String')
@@ -5903,36 +5903,12 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::GetNotesSlideShapeRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShape', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShape', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShape', 'Integer')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShape', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShape', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShape', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetNotesSlideShape', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('GetNotesSlideShape', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.get_notes_slide_shape_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetNotesSlideShape', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShape', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShape', 'String')
@@ -5951,12 +5927,36 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::GetNotesSlideShapeRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShape', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShape', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShape', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShape', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShape', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShape', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetNotesSlideShape', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetNotesSlideShape', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_notes_slide_shape_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetNotesSlideShape', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShape', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShape', 'String')
@@ -5979,8 +5979,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShape', 'String')
@@ -6003,8 +6003,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShape', 'String')
@@ -6028,10 +6028,10 @@ describe 'SlidesApi' do
   # Read shape paragraph info.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -6041,9 +6041,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapeParagraph', 'String')
@@ -6058,9 +6058,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapeParagraph', 'String')
@@ -6083,9 +6083,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapeParagraph', 'String')
@@ -6104,38 +6104,13 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::GetNotesSlideShapeParagraphRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapeParagraph', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraph', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapeParagraph', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapeParagraph', 'Integer')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapeParagraph', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapeParagraph', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapeParagraph', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetNotesSlideShapeParagraph', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('GetNotesSlideShapeParagraph', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.get_notes_slide_shape_paragraph_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetNotesSlideShapeParagraph', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraph', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapeParagraph', 'String')
@@ -6158,9 +6133,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapeParagraph', 'String')
@@ -6179,13 +6154,38 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::GetNotesSlideShapeParagraphRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapeParagraph', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapeParagraph', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapeParagraph', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraph', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapeParagraph', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapeParagraph', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapeParagraph', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetNotesSlideShapeParagraph', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetNotesSlideShapeParagraph', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_notes_slide_shape_paragraph_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetNotesSlideShapeParagraph', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraph', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapeParagraph', 'String')
@@ -6208,9 +6208,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapeParagraph', 'String')
@@ -6233,9 +6233,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapeParagraph', 'String')
@@ -6259,9 +6259,9 @@ describe 'SlidesApi' do
   # Read shape paragraphs info.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -6271,8 +6271,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapeParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapeParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapeParagraphs', 'String')
@@ -6287,8 +6287,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapeParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapeParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapeParagraphs', 'String')
@@ -6311,8 +6311,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapeParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapeParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapeParagraphs', 'String')
@@ -6331,36 +6331,12 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::GetNotesSlideShapeParagraphsRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapeParagraphs', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapeParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraphs', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapeParagraphs', 'Integer')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapeParagraphs', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapeParagraphs', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapeParagraphs', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetNotesSlideShapeParagraphs', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('GetNotesSlideShapeParagraphs', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.get_notes_slide_shape_paragraphs_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetNotesSlideShapeParagraphs', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraphs', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapeParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapeParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapeParagraphs', 'String')
@@ -6379,12 +6355,36 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::GetNotesSlideShapeParagraphsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapeParagraphs', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapeParagraphs', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapeParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraphs', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapeParagraphs', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapeParagraphs', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapeParagraphs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetNotesSlideShapeParagraphs', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetNotesSlideShapeParagraphs', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_notes_slide_shape_paragraphs_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetNotesSlideShapeParagraphs', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraphs', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapeParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapeParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapeParagraphs', 'String')
@@ -6407,8 +6407,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapeParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapeParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapeParagraphs', 'String')
@@ -6431,8 +6431,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapeParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapeParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapeParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapeParagraphs', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapeParagraphs', 'String')
@@ -6456,11 +6456,11 @@ describe 'SlidesApi' do
   # Read paragraph portion info.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param portion_index Portion index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -6470,10 +6470,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortion', 'String')
@@ -6488,10 +6488,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortion', 'String')
@@ -6514,10 +6514,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortion', 'String')
@@ -6536,40 +6536,14 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortion', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortion', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortion', 'Integer')
-      requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetNotesSlideShapePortion', 'Integer')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortion', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortion', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortion', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetNotesSlideShapePortion', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('GetNotesSlideShapePortion', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.get_notes_slide_shape_portion_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetNotesSlideShapePortion', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortion', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortion', 'String')
@@ -6592,10 +6566,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortion', 'String')
@@ -6618,10 +6592,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortion', 'String')
@@ -6640,14 +6614,40 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortion', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortion', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortion', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortion', 'Integer')
+      requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortion', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortion', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortion', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetNotesSlideShapePortion', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetNotesSlideShapePortion', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_notes_slide_shape_portion_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetNotesSlideShapePortion', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortion', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortion', 'String')
@@ -6670,10 +6670,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortion', 'String')
@@ -6696,10 +6696,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortion', 'String')
@@ -6723,10 +6723,10 @@ describe 'SlidesApi' do
   # Read paragraph portions info.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -6736,9 +6736,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortions', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortions', 'String')
@@ -6753,9 +6753,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortions', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortions', 'String')
@@ -6778,9 +6778,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortions', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortions', 'String')
@@ -6799,38 +6799,13 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionsRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortions', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortions', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortions', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortions', 'Integer')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortions', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortions', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortions', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetNotesSlideShapePortions', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('GetNotesSlideShapePortions', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.get_notes_slide_shape_portions_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetNotesSlideShapePortions', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortions', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortions', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortions', 'String')
@@ -6853,9 +6828,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortions', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortions', 'String')
@@ -6874,13 +6849,38 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortions', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortions', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortions', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortions', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortions', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortions', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortions', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetNotesSlideShapePortions', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetNotesSlideShapePortions', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_notes_slide_shape_portions_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetNotesSlideShapePortions', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortions', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortions', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortions', 'String')
@@ -6903,9 +6903,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortions', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortions', 'String')
@@ -6928,9 +6928,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetNotesSlideShapePortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideShapePortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideShapePortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetNotesSlideShapePortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetNotesSlideShapePortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetNotesSlideShapePortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideShapePortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideShapePortions', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideShapePortions', 'String')
@@ -6954,8 +6954,8 @@ describe 'SlidesApi' do
   # Read slide shapes info.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -7386,11 +7386,11 @@ describe 'SlidesApi' do
   # Read paragraph portion info.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param portion_index Portion index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -7400,10 +7400,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetParagraphPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetParagraphPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortion', 'String')
@@ -7418,10 +7418,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetParagraphPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetParagraphPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortion', 'String')
@@ -7444,10 +7444,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetParagraphPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetParagraphPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortion', 'String')
@@ -7466,40 +7466,14 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::GetParagraphPortionRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortion', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortion', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortion', 'Integer')
-      requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetParagraphPortion', 'Integer')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortion', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortion', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortion', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetParagraphPortion', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('GetParagraphPortion', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.get_paragraph_portion_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetParagraphPortion', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortion', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::GetParagraphPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetParagraphPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortion', 'String')
@@ -7522,10 +7496,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetParagraphPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetParagraphPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortion', 'String')
@@ -7548,10 +7522,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetParagraphPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetParagraphPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortion', 'String')
@@ -7570,14 +7544,40 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::GetParagraphPortionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortion', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortion', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortion', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortion', 'Integer')
+      requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetParagraphPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortion', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortion', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortion', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetParagraphPortion', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetParagraphPortion', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_paragraph_portion_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetParagraphPortion', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortion', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::GetParagraphPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetParagraphPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortion', 'String')
@@ -7600,10 +7600,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetParagraphPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetParagraphPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortion', 'String')
@@ -7626,10 +7626,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetParagraphPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetParagraphPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortion', 'String')
@@ -7653,10 +7653,10 @@ describe 'SlidesApi' do
   # Read paragraph portions info.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -7666,9 +7666,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetParagraphPortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortions', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortions', 'String')
@@ -7683,9 +7683,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetParagraphPortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortions', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortions', 'String')
@@ -7708,9 +7708,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetParagraphPortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortions', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortions', 'String')
@@ -7729,38 +7729,13 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::GetParagraphPortionsRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortions', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortions', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortions', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortions', 'Integer')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortions', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortions', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortions', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetParagraphPortions', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('GetParagraphPortions', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.get_paragraph_portions_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetParagraphPortions', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortions', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::GetParagraphPortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortions', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortions', 'String')
@@ -7783,9 +7758,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetParagraphPortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortions', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortions', 'String')
@@ -7804,13 +7779,38 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::GetParagraphPortionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortions', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortions', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortions', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortions', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortions', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortions', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortions', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetParagraphPortions', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetParagraphPortions', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_paragraph_portions_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetParagraphPortions', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortions', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::GetParagraphPortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortions', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortions', 'String')
@@ -7833,9 +7833,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetParagraphPortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortions', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortions', 'String')
@@ -7858,9 +7858,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetParagraphPortionsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphPortions', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphPortions', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortions', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphPortions', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphPortions', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetParagraphPortions', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphPortions', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphPortions', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphPortions', 'String')
@@ -8049,9 +8049,9 @@ describe 'SlidesApi' do
   # Read slide shape info.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -8061,8 +8061,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShape', 'String')
@@ -8077,8 +8077,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShape', 'String')
@@ -8101,8 +8101,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShape', 'String')
@@ -8121,36 +8121,12 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::GetSlideShapeRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShape', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShape', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShape', 'Integer')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShape', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShape', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShape', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetSlideShape', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('GetSlideShape', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.get_slide_shape_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlideShape', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShape', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::GetSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShape', 'String')
@@ -8169,12 +8145,36 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::GetSlideShapeRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShape', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShape', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShape', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShape', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShape', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShape', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetSlideShape', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlideShape', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_slide_shape_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlideShape', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShape', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::GetSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShape', 'String')
@@ -8197,8 +8197,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShape', 'String')
@@ -8221,8 +8221,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShape', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShape', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShape', 'String')
@@ -8246,10 +8246,10 @@ describe 'SlidesApi' do
   # Read shape paragraph info.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -8259,9 +8259,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShapeParagraph', 'String')
@@ -8276,9 +8276,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShapeParagraph', 'String')
@@ -8301,9 +8301,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShapeParagraph', 'String')
@@ -8322,38 +8322,13 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::GetSlideShapeParagraphRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShapeParagraph', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraph', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShapeParagraph', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetSlideShapeParagraph', 'Integer')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShapeParagraph', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShapeParagraph', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShapeParagraph', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetSlideShapeParagraph', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('GetSlideShapeParagraph', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.get_slide_shape_paragraph_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlideShapeParagraph', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraph', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::GetSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShapeParagraph', 'String')
@@ -8376,9 +8351,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShapeParagraph', 'String')
@@ -8397,13 +8372,38 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::GetSlideShapeParagraphRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShapeParagraph', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShapeParagraph', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShapeParagraph', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraph', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShapeParagraph', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShapeParagraph', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShapeParagraph', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetSlideShapeParagraph', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlideShapeParagraph', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_slide_shape_paragraph_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlideShapeParagraph', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraph', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::GetSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShapeParagraph', 'String')
@@ -8426,9 +8426,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShapeParagraph', 'String')
@@ -8451,9 +8451,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShapeParagraph', 'String')
@@ -8477,9 +8477,9 @@ describe 'SlidesApi' do
   # Read shape paragraphs info.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -8489,8 +8489,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetSlideShapeParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShapeParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShapeParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShapeParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShapeParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShapeParagraphs', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShapeParagraphs', 'String')
@@ -8505,8 +8505,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetSlideShapeParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShapeParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShapeParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShapeParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShapeParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShapeParagraphs', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShapeParagraphs', 'String')
@@ -8529,8 +8529,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetSlideShapeParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShapeParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShapeParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShapeParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShapeParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShapeParagraphs', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShapeParagraphs', 'String')
@@ -8549,36 +8549,12 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::GetSlideShapeParagraphsRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShapeParagraphs', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShapeParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraphs', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShapeParagraphs', 'Integer')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShapeParagraphs', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShapeParagraphs', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShapeParagraphs', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetSlideShapeParagraphs', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('GetSlideShapeParagraphs', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.get_slide_shape_paragraphs_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlideShapeParagraphs', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraphs', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::GetSlideShapeParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShapeParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShapeParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShapeParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShapeParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShapeParagraphs', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShapeParagraphs', 'String')
@@ -8597,12 +8573,36 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::GetSlideShapeParagraphsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShapeParagraphs', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShapeParagraphs', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShapeParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraphs', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShapeParagraphs', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShapeParagraphs', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShapeParagraphs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'GetSlideShapeParagraphs', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlideShapeParagraphs', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_slide_shape_paragraphs_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlideShapeParagraphs', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraphs', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::GetSlideShapeParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShapeParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShapeParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShapeParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShapeParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShapeParagraphs', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShapeParagraphs', 'String')
@@ -8625,8 +8625,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetSlideShapeParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShapeParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShapeParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShapeParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShapeParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShapeParagraphs', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShapeParagraphs', 'String')
@@ -8649,8 +8649,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::GetSlideShapeParagraphsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideShapeParagraphs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideShapeParagraphs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraphs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideShapeParagraphs', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'GetSlideShapeParagraphs', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideShapeParagraphs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideShapeParagraphs', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideShapeParagraphs', 'String')
@@ -8674,8 +8674,8 @@ describe 'SlidesApi' do
   # Read slide shapes info.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -11634,8 +11634,8 @@ describe 'SlidesApi' do
 
   # unit tests for object_exists
   # Check if file or folder exists
-  # @param path File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39;
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path File or folder path e.g. &#39;/file.ext&#39; or &#39;/folder&#39;
   # @option opts [String] :storage_name Storage name
   # @option opts [String] :version_id File version ID
   # @return [ObjectExist]
@@ -11717,9 +11717,9 @@ describe 'SlidesApi' do
   # Creates new paragraph.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [Paragraph] :dto Paragraph DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -11731,8 +11731,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostAddNewParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewParagraph', 'String')
@@ -11749,8 +11749,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostAddNewParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewParagraph', 'String')
@@ -11775,8 +11775,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostAddNewParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewParagraph', 'String')
@@ -11797,38 +11797,12 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::PostAddNewParagraphRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewParagraph', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewParagraph', 'Integer')
-      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewParagraph', 'Paragraph')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewParagraph', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewParagraph', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewParagraph', 'String')
-      requestParam.position = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'PostAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PostAddNewParagraph', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PostAddNewParagraph', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.post_add_new_paragraph_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostAddNewParagraph', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewParagraph', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::PostAddNewParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewParagraph', 'String')
@@ -11849,12 +11823,38 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::PostAddNewParagraphRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewParagraph', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewParagraph', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewParagraph', 'Paragraph')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewParagraph', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewParagraph', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewParagraph', 'String')
+      requestParam.position = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'PostAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PostAddNewParagraph', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostAddNewParagraph', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_add_new_paragraph_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostAddNewParagraph', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewParagraph', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid dto' do
       requestParam = AsposeSlidesCloud::PostAddNewParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewParagraph', 'String')
@@ -11879,8 +11879,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostAddNewParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewParagraph', 'String')
@@ -11905,8 +11905,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostAddNewParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewParagraph', 'String')
@@ -11931,8 +11931,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostAddNewParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewParagraph', 'String')
@@ -11957,8 +11957,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostAddNewParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewParagraph', 'String')
@@ -11984,10 +11984,10 @@ describe 'SlidesApi' do
   # Creates new portion.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [Portion] :dto Portion DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -11999,9 +11999,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewPortion', 'String')
@@ -12018,9 +12018,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewPortion', 'String')
@@ -12045,9 +12045,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewPortion', 'String')
@@ -12068,40 +12068,13 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::PostAddNewPortionRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewPortion', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewPortion', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewPortion', 'Integer')
-      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewPortion', 'Portion')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewPortion', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewPortion', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewPortion', 'String')
-      requestParam.position = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'PostAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PostAddNewPortion', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PostAddNewPortion', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.post_add_new_portion_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostAddNewPortion', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::PostAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewPortion', 'String')
@@ -12126,9 +12099,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewPortion', 'String')
@@ -12149,13 +12122,40 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::PostAddNewPortionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewPortion', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewPortion', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewPortion', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewPortion', 'Portion')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewPortion', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewPortion', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewPortion', 'String')
+      requestParam.position = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'PostAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PostAddNewPortion', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostAddNewPortion', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_add_new_portion_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostAddNewPortion', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid dto' do
       requestParam = AsposeSlidesCloud::PostAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewPortion', 'String')
@@ -12180,9 +12180,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewPortion', 'String')
@@ -12207,9 +12207,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewPortion', 'String')
@@ -12234,9 +12234,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewPortion', 'String')
@@ -12261,9 +12261,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewPortion', 'String')
@@ -12289,8 +12289,8 @@ describe 'SlidesApi' do
   # Create new shape.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [ShapeBase] :dto Shape DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -13219,9 +13219,9 @@ describe 'SlidesApi' do
   # Creates new paragraph.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [Paragraph] :dto Paragraph DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -13233,8 +13233,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideAddNewParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewParagraph', 'String')
@@ -13251,8 +13251,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideAddNewParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewParagraph', 'String')
@@ -13277,8 +13277,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideAddNewParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewParagraph', 'String')
@@ -13299,38 +13299,12 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::PostNotesSlideAddNewParagraphRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewParagraph', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
-      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewParagraph', 'Paragraph')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewParagraph', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewParagraph', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostNotesSlideAddNewParagraph', 'String')
-      requestParam.position = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'PostNotesSlideAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PostNotesSlideAddNewParagraph', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PostNotesSlideAddNewParagraph', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.post_notes_slide_add_new_paragraph_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostNotesSlideAddNewParagraph', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewParagraph', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::PostNotesSlideAddNewParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewParagraph', 'String')
@@ -13351,12 +13325,38 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::PostNotesSlideAddNewParagraphRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewParagraph', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewParagraph', 'Paragraph')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewParagraph', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewParagraph', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostNotesSlideAddNewParagraph', 'String')
+      requestParam.position = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'PostNotesSlideAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PostNotesSlideAddNewParagraph', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostNotesSlideAddNewParagraph', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_notes_slide_add_new_paragraph_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostNotesSlideAddNewParagraph', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewParagraph', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid dto' do
       requestParam = AsposeSlidesCloud::PostNotesSlideAddNewParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewParagraph', 'String')
@@ -13381,8 +13381,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideAddNewParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewParagraph', 'String')
@@ -13407,8 +13407,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideAddNewParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewParagraph', 'String')
@@ -13433,8 +13433,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideAddNewParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewParagraph', 'String')
@@ -13459,8 +13459,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideAddNewParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewParagraph', 'String')
@@ -13486,10 +13486,10 @@ describe 'SlidesApi' do
   # Creates new portion.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [Portion] :dto Portion DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -13501,9 +13501,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostNotesSlideAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewPortion', 'String')
@@ -13520,9 +13520,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostNotesSlideAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewPortion', 'String')
@@ -13547,9 +13547,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostNotesSlideAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewPortion', 'String')
@@ -13570,40 +13570,13 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::PostNotesSlideAddNewPortionRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewPortion', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewPortion', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostNotesSlideAddNewPortion', 'Integer')
-      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewPortion', 'Portion')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewPortion', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewPortion', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostNotesSlideAddNewPortion', 'String')
-      requestParam.position = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'PostNotesSlideAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PostNotesSlideAddNewPortion', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PostNotesSlideAddNewPortion', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.post_notes_slide_add_new_portion_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostNotesSlideAddNewPortion', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::PostNotesSlideAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostNotesSlideAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewPortion', 'String')
@@ -13628,9 +13601,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostNotesSlideAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewPortion', 'String')
@@ -13651,13 +13624,40 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::PostNotesSlideAddNewPortionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewPortion', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewPortion', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewPortion', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostNotesSlideAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewPortion', 'Portion')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewPortion', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewPortion', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostNotesSlideAddNewPortion', 'String')
+      requestParam.position = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'PostNotesSlideAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PostNotesSlideAddNewPortion', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostNotesSlideAddNewPortion', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_notes_slide_add_new_portion_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostNotesSlideAddNewPortion', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid dto' do
       requestParam = AsposeSlidesCloud::PostNotesSlideAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostNotesSlideAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewPortion', 'String')
@@ -13682,9 +13682,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostNotesSlideAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewPortion', 'String')
@@ -13709,9 +13709,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostNotesSlideAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewPortion', 'String')
@@ -13736,9 +13736,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostNotesSlideAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewPortion', 'String')
@@ -13763,9 +13763,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideAddNewPortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideAddNewPortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideAddNewPortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostNotesSlideAddNewPortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostNotesSlideAddNewPortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideAddNewPortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideAddNewPortion', 'String')
@@ -13791,8 +13791,8 @@ describe 'SlidesApi' do
   # Create new shape.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [ShapeBase] :dto Shape DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -14058,10 +14058,10 @@ describe 'SlidesApi' do
   # Render shape to specified picture format.
   # @param name Presentation name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Index of shape starting from 1
   # @param format Export picture format.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [IShapeExportOptions] :options export options
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Presentation folder.
@@ -14076,9 +14076,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideShapeSaveAs', 'String')
@@ -14098,9 +14098,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideShapeSaveAs', 'String')
@@ -14128,9 +14128,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideShapeSaveAs', 'String')
@@ -14154,43 +14154,13 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::PostNotesSlideShapeSaveAsRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideShapeSaveAs', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
-      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostNotesSlideShapeSaveAs', 'String')
-      requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostNotesSlideShapeSaveAs', 'IShapeExportOptions')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideShapeSaveAs', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideShapeSaveAs', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostNotesSlideShapeSaveAs', 'String')
-      requestParam.scale_x = AsposeSlidesCloud::SpecUtils.get_param_value('scaleX', 'PostNotesSlideShapeSaveAs', 'Float')
-      requestParam.scale_y = AsposeSlidesCloud::SpecUtils.get_param_value('scaleY', 'PostNotesSlideShapeSaveAs', 'Float')
-      requestParam.bounds = AsposeSlidesCloud::SpecUtils.get_param_value('bounds', 'PostNotesSlideShapeSaveAs', 'String')
-      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostNotesSlideShapeSaveAs', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PostNotesSlideShapeSaveAs', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PostNotesSlideShapeSaveAs', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.post_notes_slide_shape_save_as_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostNotesSlideShapeSaveAs', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::PostNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideShapeSaveAs', 'String')
@@ -14218,9 +14188,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideShapeSaveAs', 'String')
@@ -14244,13 +14214,43 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::PostNotesSlideShapeSaveAsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostNotesSlideShapeSaveAs', 'IShapeExportOptions')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.scale_x = AsposeSlidesCloud::SpecUtils.get_param_value('scaleX', 'PostNotesSlideShapeSaveAs', 'Float')
+      requestParam.scale_y = AsposeSlidesCloud::SpecUtils.get_param_value('scaleY', 'PostNotesSlideShapeSaveAs', 'Float')
+      requestParam.bounds = AsposeSlidesCloud::SpecUtils.get_param_value('bounds', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PostNotesSlideShapeSaveAs', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostNotesSlideShapeSaveAs', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_notes_slide_shape_save_as_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostNotesSlideShapeSaveAs', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid options' do
       requestParam = AsposeSlidesCloud::PostNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideShapeSaveAs', 'String')
@@ -14278,9 +14278,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideShapeSaveAs', 'String')
@@ -14308,9 +14308,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideShapeSaveAs', 'String')
@@ -14338,9 +14338,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideShapeSaveAs', 'String')
@@ -14368,9 +14368,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideShapeSaveAs', 'String')
@@ -14398,9 +14398,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideShapeSaveAs', 'String')
@@ -14428,9 +14428,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideShapeSaveAs', 'String')
@@ -14458,9 +14458,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostNotesSlideShapeSaveAs', 'String')
@@ -14624,10 +14624,10 @@ describe 'SlidesApi' do
   # Render shape to specified picture format.
   # @param name Presentation name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Index of shape starting from 1
   # @param format Export picture format.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [IShapeExportOptions] :options export options
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Presentation folder.
@@ -14642,9 +14642,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostShapeSaveAs', 'String')
@@ -14664,9 +14664,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostShapeSaveAs', 'String')
@@ -14694,9 +14694,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostShapeSaveAs', 'String')
@@ -14720,43 +14720,13 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::PostShapeSaveAsRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostShapeSaveAs', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostShapeSaveAs', 'Integer')
-      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostShapeSaveAs', 'String')
-      requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostShapeSaveAs', 'IShapeExportOptions')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostShapeSaveAs', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostShapeSaveAs', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostShapeSaveAs', 'String')
-      requestParam.scale_x = AsposeSlidesCloud::SpecUtils.get_param_value('scaleX', 'PostShapeSaveAs', 'Float')
-      requestParam.scale_y = AsposeSlidesCloud::SpecUtils.get_param_value('scaleY', 'PostShapeSaveAs', 'Float')
-      requestParam.bounds = AsposeSlidesCloud::SpecUtils.get_param_value('bounds', 'PostShapeSaveAs', 'String')
-      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostShapeSaveAs', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PostShapeSaveAs', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PostShapeSaveAs', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.post_shape_save_as_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostShapeSaveAs', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::PostShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostShapeSaveAs', 'String')
@@ -14784,9 +14754,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostShapeSaveAs', 'String')
@@ -14810,13 +14780,43 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::PostShapeSaveAsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostShapeSaveAs', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostShapeSaveAs', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostShapeSaveAs', 'Integer')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
+      requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostShapeSaveAs', 'IShapeExportOptions')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostShapeSaveAs', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostShapeSaveAs', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostShapeSaveAs', 'String')
+      requestParam.scale_x = AsposeSlidesCloud::SpecUtils.get_param_value('scaleX', 'PostShapeSaveAs', 'Float')
+      requestParam.scale_y = AsposeSlidesCloud::SpecUtils.get_param_value('scaleY', 'PostShapeSaveAs', 'Float')
+      requestParam.bounds = AsposeSlidesCloud::SpecUtils.get_param_value('bounds', 'PostShapeSaveAs', 'String')
+      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PostShapeSaveAs', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostShapeSaveAs', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_shape_save_as_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostShapeSaveAs', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid options' do
       requestParam = AsposeSlidesCloud::PostShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostShapeSaveAs', 'String')
@@ -14844,9 +14844,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostShapeSaveAs', 'String')
@@ -14874,9 +14874,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostShapeSaveAs', 'String')
@@ -14904,9 +14904,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostShapeSaveAs', 'String')
@@ -14934,9 +14934,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostShapeSaveAs', 'String')
@@ -14964,9 +14964,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostShapeSaveAs', 'String')
@@ -14994,9 +14994,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostShapeSaveAs', 'String')
@@ -15024,9 +15024,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PostShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PostShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostShapeSaveAs', 'String')
@@ -18888,11 +18888,11 @@ describe 'SlidesApi' do
   # Render shape to specified picture format.
   # @param name Presentation name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Index of shape starting from 1
   # @param format Export picture format.
   # @param out_path Output path.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [IShapeExportOptions] :options export options
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Presentation folder.
@@ -18907,10 +18907,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideShapeSaveAs', 'String')
@@ -18929,10 +18929,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideShapeSaveAs', 'String')
@@ -18960,10 +18960,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideShapeSaveAs', 'String')
@@ -18987,45 +18987,14 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::PutNotesSlideShapeSaveAsRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideShapeSaveAs', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
-      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutNotesSlideShapeSaveAs', 'String')
-      requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutNotesSlideShapeSaveAs', 'String')
-      requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutNotesSlideShapeSaveAs', 'IShapeExportOptions')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideShapeSaveAs', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideShapeSaveAs', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutNotesSlideShapeSaveAs', 'String')
-      requestParam.scale_x = AsposeSlidesCloud::SpecUtils.get_param_value('scaleX', 'PutNotesSlideShapeSaveAs', 'Float')
-      requestParam.scale_y = AsposeSlidesCloud::SpecUtils.get_param_value('scaleY', 'PutNotesSlideShapeSaveAs', 'Float')
-      requestParam.bounds = AsposeSlidesCloud::SpecUtils.get_param_value('bounds', 'PutNotesSlideShapeSaveAs', 'String')
-      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PutNotesSlideShapeSaveAs', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutNotesSlideShapeSaveAs', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PutNotesSlideShapeSaveAs', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.put_notes_slide_shape_save_as_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutNotesSlideShapeSaveAs', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::PutNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideShapeSaveAs', 'String')
@@ -19053,10 +19022,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideShapeSaveAs', 'String')
@@ -19084,10 +19053,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideShapeSaveAs', 'String')
@@ -19111,14 +19080,45 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::PutNotesSlideShapeSaveAsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutNotesSlideShapeSaveAs', 'IShapeExportOptions')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.scale_x = AsposeSlidesCloud::SpecUtils.get_param_value('scaleX', 'PutNotesSlideShapeSaveAs', 'Float')
+      requestParam.scale_y = AsposeSlidesCloud::SpecUtils.get_param_value('scaleY', 'PutNotesSlideShapeSaveAs', 'Float')
+      requestParam.bounds = AsposeSlidesCloud::SpecUtils.get_param_value('bounds', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutNotesSlideShapeSaveAs', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutNotesSlideShapeSaveAs', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_notes_slide_shape_save_as_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutNotesSlideShapeSaveAs', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid options' do
       requestParam = AsposeSlidesCloud::PutNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideShapeSaveAs', 'String')
@@ -19146,10 +19146,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideShapeSaveAs', 'String')
@@ -19177,10 +19177,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideShapeSaveAs', 'String')
@@ -19208,10 +19208,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideShapeSaveAs', 'String')
@@ -19239,10 +19239,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideShapeSaveAs', 'String')
@@ -19270,10 +19270,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideShapeSaveAs', 'String')
@@ -19301,10 +19301,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideShapeSaveAs', 'String')
@@ -19332,10 +19332,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutNotesSlideShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutNotesSlideShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutNotesSlideShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutNotesSlideShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideShapeSaveAs', 'String')
@@ -19499,11 +19499,11 @@ describe 'SlidesApi' do
   # Update portion properties.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param portion_index Portion index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [Portion] :dto Portion DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -19514,10 +19514,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSetParagraphPortionPropertiesRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphPortionProperties', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetParagraphPortionProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphPortionProperties', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphPortionProperties', 'String')
@@ -19533,10 +19533,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSetParagraphPortionPropertiesRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphPortionProperties', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetParagraphPortionProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphPortionProperties', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphPortionProperties', 'String')
@@ -19560,10 +19560,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSetParagraphPortionPropertiesRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphPortionProperties', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetParagraphPortionProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphPortionProperties', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphPortionProperties', 'String')
@@ -19583,41 +19583,14 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::PutSetParagraphPortionPropertiesRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphPortionProperties', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphPortionProperties', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphPortionProperties', 'Integer')
-      requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetParagraphPortionProperties', 'Integer')
-      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphPortionProperties', 'Portion')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphPortionProperties', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphPortionProperties', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetParagraphPortionProperties', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutSetParagraphPortionProperties', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PutSetParagraphPortionProperties', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.put_set_paragraph_portion_properties_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSetParagraphPortionProperties', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::PutSetParagraphPortionPropertiesRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphPortionProperties', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetParagraphPortionProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphPortionProperties', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphPortionProperties', 'String')
@@ -19641,10 +19614,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSetParagraphPortionPropertiesRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphPortionProperties', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetParagraphPortionProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphPortionProperties', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphPortionProperties', 'String')
@@ -19668,10 +19641,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSetParagraphPortionPropertiesRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphPortionProperties', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetParagraphPortionProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphPortionProperties', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphPortionProperties', 'String')
@@ -19691,14 +19664,41 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::PutSetParagraphPortionPropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphPortionProperties', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphPortionProperties', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphPortionProperties', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphPortionProperties', 'Integer')
+      requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetParagraphPortionProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphPortionProperties', 'Portion')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphPortionProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphPortionProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetParagraphPortionProperties', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutSetParagraphPortionProperties', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSetParagraphPortionProperties', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_set_paragraph_portion_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSetParagraphPortionProperties', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid dto' do
       requestParam = AsposeSlidesCloud::PutSetParagraphPortionPropertiesRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphPortionProperties', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetParagraphPortionProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphPortionProperties', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphPortionProperties', 'String')
@@ -19722,10 +19722,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSetParagraphPortionPropertiesRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphPortionProperties', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetParagraphPortionProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphPortionProperties', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphPortionProperties', 'String')
@@ -19749,10 +19749,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSetParagraphPortionPropertiesRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphPortionProperties', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetParagraphPortionProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphPortionProperties', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphPortionProperties', 'String')
@@ -19776,10 +19776,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSetParagraphPortionPropertiesRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphPortionProperties', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetParagraphPortionProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphPortionProperties', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphPortionProperties', 'String')
@@ -19804,10 +19804,10 @@ describe 'SlidesApi' do
   # Update paragraph properties.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [Paragraph] :dto Paragraph DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -19818,9 +19818,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSetParagraphPropertiesRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphProperties', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphProperties', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphProperties', 'String')
@@ -19836,9 +19836,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSetParagraphPropertiesRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphProperties', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphProperties', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphProperties', 'String')
@@ -19862,9 +19862,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSetParagraphPropertiesRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphProperties', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphProperties', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphProperties', 'String')
@@ -19884,39 +19884,13 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::PutSetParagraphPropertiesRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphProperties', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphProperties', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphProperties', 'Integer')
-      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphProperties', 'Paragraph')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphProperties', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphProperties', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetParagraphProperties', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutSetParagraphProperties', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PutSetParagraphProperties', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.put_set_paragraph_properties_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSetParagraphProperties', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphProperties', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::PutSetParagraphPropertiesRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphProperties', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphProperties', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphProperties', 'String')
@@ -19940,9 +19914,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSetParagraphPropertiesRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphProperties', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphProperties', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphProperties', 'String')
@@ -19962,13 +19936,39 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::PutSetParagraphPropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphProperties', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphProperties', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphProperties', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphProperties', 'Paragraph')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetParagraphProperties', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutSetParagraphProperties', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSetParagraphProperties', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_set_paragraph_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSetParagraphProperties', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphProperties', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid dto' do
       requestParam = AsposeSlidesCloud::PutSetParagraphPropertiesRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphProperties', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphProperties', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphProperties', 'String')
@@ -19992,9 +19992,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSetParagraphPropertiesRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphProperties', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphProperties', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphProperties', 'String')
@@ -20018,9 +20018,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSetParagraphPropertiesRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphProperties', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphProperties', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphProperties', 'String')
@@ -20044,9 +20044,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSetParagraphPropertiesRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetParagraphProperties', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetParagraphProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetParagraphProperties', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetParagraphProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetParagraphProperties', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetParagraphProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetParagraphProperties', 'String')
@@ -20071,11 +20071,11 @@ describe 'SlidesApi' do
   # Render shape to specified picture format.
   # @param name Presentation name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Index of shape starting from 1
   # @param format Export picture format.
   # @param out_path Output path.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [IShapeExportOptions] :options export options
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Presentation folder.
@@ -20090,10 +20090,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutShapeSaveAs', 'String')
@@ -20112,10 +20112,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutShapeSaveAs', 'String')
@@ -20143,10 +20143,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutShapeSaveAs', 'String')
@@ -20170,45 +20170,14 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::PutShapeSaveAsRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutShapeSaveAs', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutShapeSaveAs', 'Integer')
-      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutShapeSaveAs', 'String')
-      requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutShapeSaveAs', 'String')
-      requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutShapeSaveAs', 'IShapeExportOptions')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutShapeSaveAs', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutShapeSaveAs', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutShapeSaveAs', 'String')
-      requestParam.scale_x = AsposeSlidesCloud::SpecUtils.get_param_value('scaleX', 'PutShapeSaveAs', 'Float')
-      requestParam.scale_y = AsposeSlidesCloud::SpecUtils.get_param_value('scaleY', 'PutShapeSaveAs', 'Float')
-      requestParam.bounds = AsposeSlidesCloud::SpecUtils.get_param_value('bounds', 'PutShapeSaveAs', 'String')
-      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PutShapeSaveAs', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutShapeSaveAs', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PutShapeSaveAs', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.put_shape_save_as_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutShapeSaveAs', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::PutShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutShapeSaveAs', 'String')
@@ -20236,10 +20205,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutShapeSaveAs', 'String')
@@ -20267,10 +20236,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutShapeSaveAs', 'String')
@@ -20294,14 +20263,45 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::PutShapeSaveAsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutShapeSaveAs', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutShapeSaveAs', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutShapeSaveAs', 'Integer')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutShapeSaveAs', 'String')
+      requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
+      requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutShapeSaveAs', 'IShapeExportOptions')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutShapeSaveAs', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutShapeSaveAs', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutShapeSaveAs', 'String')
+      requestParam.scale_x = AsposeSlidesCloud::SpecUtils.get_param_value('scaleX', 'PutShapeSaveAs', 'Float')
+      requestParam.scale_y = AsposeSlidesCloud::SpecUtils.get_param_value('scaleY', 'PutShapeSaveAs', 'Float')
+      requestParam.bounds = AsposeSlidesCloud::SpecUtils.get_param_value('bounds', 'PutShapeSaveAs', 'String')
+      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PutShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutShapeSaveAs', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutShapeSaveAs', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_shape_save_as_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutShapeSaveAs', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid options' do
       requestParam = AsposeSlidesCloud::PutShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutShapeSaveAs', 'String')
@@ -20329,10 +20329,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutShapeSaveAs', 'String')
@@ -20360,10 +20360,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutShapeSaveAs', 'String')
@@ -20391,10 +20391,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutShapeSaveAs', 'String')
@@ -20422,10 +20422,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutShapeSaveAs', 'String')
@@ -20453,10 +20453,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutShapeSaveAs', 'String')
@@ -20484,10 +20484,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutShapeSaveAs', 'String')
@@ -20515,10 +20515,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutShapeSaveAsRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutShapeSaveAs', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutShapeSaveAs', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutShapeSaveAs', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutShapeSaveAs', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutShapeSaveAs', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutShapeSaveAs', 'String')
       requestParam.options = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'PutShapeSaveAs', 'IShapeExportOptions')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutShapeSaveAs', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutShapeSaveAs', 'String')
@@ -21484,9 +21484,9 @@ describe 'SlidesApi' do
   # Update shape properties.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [ShapeBase] :dto Shape DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -21497,8 +21497,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSlideShapeInfoRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideShapeInfo', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideShapeInfo', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideShapeInfo', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideShapeInfo', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideShapeInfo', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideShapeInfo', 'ShapeBase')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideShapeInfo', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideShapeInfo', 'String')
@@ -21514,8 +21514,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSlideShapeInfoRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideShapeInfo', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideShapeInfo', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideShapeInfo', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideShapeInfo', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideShapeInfo', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideShapeInfo', 'ShapeBase')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideShapeInfo', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideShapeInfo', 'String')
@@ -21539,8 +21539,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSlideShapeInfoRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideShapeInfo', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideShapeInfo', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideShapeInfo', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideShapeInfo', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideShapeInfo', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideShapeInfo', 'ShapeBase')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideShapeInfo', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideShapeInfo', 'String')
@@ -21560,37 +21560,12 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::PutSlideShapeInfoRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideShapeInfo', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideShapeInfo', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideShapeInfo', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideShapeInfo', 'Integer')
-      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideShapeInfo', 'ShapeBase')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideShapeInfo', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideShapeInfo', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlideShapeInfo', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutSlideShapeInfo', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PutSlideShapeInfo', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.put_slide_shape_info_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlideShapeInfo', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideShapeInfo', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::PutSlideShapeInfoRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideShapeInfo', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideShapeInfo', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideShapeInfo', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideShapeInfo', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideShapeInfo', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideShapeInfo', 'ShapeBase')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideShapeInfo', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideShapeInfo', 'String')
@@ -21610,12 +21585,37 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::PutSlideShapeInfoRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideShapeInfo', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideShapeInfo', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideShapeInfo', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideShapeInfo', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideShapeInfo', 'ShapeBase')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideShapeInfo', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideShapeInfo', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlideShapeInfo', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutSlideShapeInfo', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlideShapeInfo', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slide_shape_info_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlideShapeInfo', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideShapeInfo', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid dto' do
       requestParam = AsposeSlidesCloud::PutSlideShapeInfoRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideShapeInfo', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideShapeInfo', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideShapeInfo', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideShapeInfo', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideShapeInfo', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideShapeInfo', 'ShapeBase')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideShapeInfo', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideShapeInfo', 'String')
@@ -21639,8 +21639,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSlideShapeInfoRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideShapeInfo', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideShapeInfo', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideShapeInfo', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideShapeInfo', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideShapeInfo', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideShapeInfo', 'ShapeBase')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideShapeInfo', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideShapeInfo', 'String')
@@ -21664,8 +21664,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSlideShapeInfoRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideShapeInfo', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideShapeInfo', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideShapeInfo', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideShapeInfo', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideShapeInfo', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideShapeInfo', 'ShapeBase')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideShapeInfo', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideShapeInfo', 'String')
@@ -21689,8 +21689,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutSlideShapeInfoRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideShapeInfo', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideShapeInfo', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideShapeInfo', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideShapeInfo', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideShapeInfo', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideShapeInfo', 'ShapeBase')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideShapeInfo', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideShapeInfo', 'String')
@@ -23270,9 +23270,9 @@ describe 'SlidesApi' do
   # Update shape properties.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [ShapeBase] :dto Shape DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -23283,8 +23283,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShape', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShape', 'ShapeBase')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShape', 'String')
@@ -23300,8 +23300,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShape', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShape', 'ShapeBase')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShape', 'String')
@@ -23325,8 +23325,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShape', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShape', 'ShapeBase')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShape', 'String')
@@ -23346,37 +23346,12 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShape', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShape', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShape', 'Integer')
-      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShape', 'ShapeBase')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShape', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShape', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutUpdateNotesSlideShape', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutUpdateNotesSlideShape', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PutUpdateNotesSlideShape', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.put_update_notes_slide_shape_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutUpdateNotesSlideShape', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShape', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShape', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShape', 'ShapeBase')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShape', 'String')
@@ -23396,12 +23371,37 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShape', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShape', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShape', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShape', 'ShapeBase')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShape', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShape', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutUpdateNotesSlideShape', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutUpdateNotesSlideShape', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutUpdateNotesSlideShape', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_update_notes_slide_shape_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutUpdateNotesSlideShape', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShape', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid dto' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShape', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShape', 'ShapeBase')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShape', 'String')
@@ -23425,8 +23425,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShape', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShape', 'ShapeBase')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShape', 'String')
@@ -23450,8 +23450,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShape', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShape', 'ShapeBase')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShape', 'String')
@@ -23475,8 +23475,8 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShape', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShape', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShape', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShape', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShape', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShape', 'ShapeBase')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShape', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShape', 'String')
@@ -23501,10 +23501,10 @@ describe 'SlidesApi' do
   # Update paragraph properties.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [Paragraph] :dto Paragraph DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -23515,9 +23515,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapeParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapeParagraph', 'String')
@@ -23533,9 +23533,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapeParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapeParagraph', 'String')
@@ -23559,9 +23559,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapeParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapeParagraph', 'String')
@@ -23581,39 +23581,13 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeParagraphRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapeParagraph', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
-      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapeParagraph', 'Paragraph')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapeParagraph', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapeParagraph', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutUpdateNotesSlideShapeParagraph', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutUpdateNotesSlideShapeParagraph', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PutUpdateNotesSlideShapeParagraph', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.put_update_notes_slide_shape_paragraph_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutUpdateNotesSlideShapeParagraph', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapeParagraph', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapeParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapeParagraph', 'String')
@@ -23637,9 +23611,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapeParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapeParagraph', 'String')
@@ -23659,13 +23633,39 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeParagraphRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapeParagraph', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapeParagraph', 'Paragraph')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapeParagraph', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapeParagraph', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutUpdateNotesSlideShapeParagraph', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutUpdateNotesSlideShapeParagraph', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutUpdateNotesSlideShapeParagraph', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_update_notes_slide_shape_paragraph_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutUpdateNotesSlideShapeParagraph', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapeParagraph', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid dto' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapeParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapeParagraph', 'String')
@@ -23689,9 +23689,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapeParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapeParagraph', 'String')
@@ -23715,9 +23715,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapeParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapeParagraph', 'String')
@@ -23741,9 +23741,9 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapeParagraphRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapeParagraph', 'Paragraph')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapeParagraph', 'String')
@@ -23768,11 +23768,11 @@ describe 'SlidesApi' do
   # Update portion properties.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param path Shape path (for smart art and group shapes).
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param portion_index Portion index.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Shape path (for smart art and group shapes).
   # @option opts [Portion] :dto Portion DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -23783,10 +23783,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapePortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapePortion', 'String')
@@ -23802,10 +23802,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapePortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapePortion', 'String')
@@ -23829,10 +23829,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapePortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapePortion', 'String')
@@ -23852,41 +23852,14 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapePortionRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapePortion', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
-      requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
-      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapePortion', 'Portion')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapePortion', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapePortion', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutUpdateNotesSlideShapePortion', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutUpdateNotesSlideShapePortion', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PutUpdateNotesSlideShapePortion', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.put_update_notes_slide_shape_portion_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutUpdateNotesSlideShapePortion', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid shape_index' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapePortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapePortion', 'String')
@@ -23910,10 +23883,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapePortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapePortion', 'String')
@@ -23937,10 +23910,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapePortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapePortion', 'String')
@@ -23960,14 +23933,41 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapePortionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapePortion', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
+      requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapePortion', 'Portion')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapePortion', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapePortion', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutUpdateNotesSlideShapePortion', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutUpdateNotesSlideShapePortion', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutUpdateNotesSlideShapePortion', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_update_notes_slide_shape_portion_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutUpdateNotesSlideShapePortion', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid dto' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapePortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapePortion', 'String')
@@ -23991,10 +23991,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapePortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapePortion', 'String')
@@ -24018,10 +24018,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapePortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapePortion', 'String')
@@ -24045,10 +24045,10 @@ describe 'SlidesApi' do
       requestParam = AsposeSlidesCloud::PutUpdateNotesSlideShapePortionRequest.new
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutUpdateNotesSlideShapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutUpdateNotesSlideShapePortion', 'Portion')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutUpdateNotesSlideShapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutUpdateNotesSlideShapePortion', 'String')
@@ -24106,16 +24106,16 @@ describe 'SlidesApi' do
 
   # unit tests for upload_file
   # Upload file
-  # @param path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             
   # @param file File to upload
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             
   # @option opts [String] :storage_name Storage name
   # @return [FilesUploadResult]
   describe 'upload_file test' do
     it 'should work' do
       requestParam = AsposeSlidesCloud::UploadFileRequest.new
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'UploadFile', 'String')
       requestParam.file = AsposeSlidesCloud::SpecUtils.get_param_value('file', 'UploadFile', 'File')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'UploadFile', 'String')
       requestParam.storage_name = AsposeSlidesCloud::SpecUtils.get_param_value('storageName', 'UploadFile', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('UploadFile', nil, nil)
       o, c, _h = AsposeSlidesCloud::SpecUtils.api.upload_file_with_http_info(requestParam)
@@ -24124,30 +24124,10 @@ describe 'SlidesApi' do
       expect(o).not_to be_nil
     end
 
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::UploadFileRequest.new
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'UploadFile', 'String')
-      requestParam.file = AsposeSlidesCloud::SpecUtils.get_param_value('file', 'UploadFile', 'File')
-      requestParam.storage_name = AsposeSlidesCloud::SpecUtils.get_param_value('storageName', 'UploadFile', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'UploadFile', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('UploadFile', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.upload_file_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('UploadFile', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UploadFile', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid file' do
       requestParam = AsposeSlidesCloud::UploadFileRequest.new
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'UploadFile', 'String')
       requestParam.file = AsposeSlidesCloud::SpecUtils.get_param_value('file', 'UploadFile', 'File')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'UploadFile', 'String')
       requestParam.storage_name = AsposeSlidesCloud::SpecUtils.get_param_value('storageName', 'UploadFile', 'String')
       requestParam.file = AsposeSlidesCloud::SpecUtils.invalidize_param_value('file', 'UploadFile', requestParam.file, 'File')
       AsposeSlidesCloud::SpecUtils.initialize('UploadFile', 'file', requestParam.file)
@@ -24164,10 +24144,30 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::UploadFileRequest.new
+      requestParam.file = AsposeSlidesCloud::SpecUtils.get_param_value('file', 'UploadFile', 'File')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'UploadFile', 'String')
+      requestParam.storage_name = AsposeSlidesCloud::SpecUtils.get_param_value('storageName', 'UploadFile', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'UploadFile', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UploadFile', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.upload_file_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UploadFile', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UploadFile', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid storage_name' do
       requestParam = AsposeSlidesCloud::UploadFileRequest.new
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'UploadFile', 'String')
       requestParam.file = AsposeSlidesCloud::SpecUtils.get_param_value('file', 'UploadFile', 'File')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'UploadFile', 'String')
       requestParam.storage_name = AsposeSlidesCloud::SpecUtils.get_param_value('storageName', 'UploadFile', 'String')
       requestParam.storage_name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storageName', 'UploadFile', requestParam.storage_name, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('UploadFile', 'storageName', requestParam.storage_name)

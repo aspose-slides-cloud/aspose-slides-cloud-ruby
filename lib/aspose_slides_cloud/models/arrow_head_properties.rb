@@ -99,31 +99,16 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @length.nil?
-        invalid_properties.push('invalid value for "length", length cannot be nil.')
-      end
-
-      if @style.nil?
-        invalid_properties.push('invalid value for "style", style cannot be nil.')
-      end
-
-      if @width.nil?
-        invalid_properties.push('invalid value for "width", width cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @length.nil?
       length_validator = EnumAttributeValidator.new('String', ['Short', 'Medium', 'Long', 'NotDefined'])
       return false unless length_validator.valid?(@length)
-      return false if @style.nil?
       style_validator = EnumAttributeValidator.new('String', ['None', 'Triangle', 'Stealth', 'Diamond', 'Oval', 'Open', 'NotDefined'])
       return false unless style_validator.valid?(@style)
-      return false if @width.nil?
       width_validator = EnumAttributeValidator.new('String', ['Narrow', 'Medium', 'Wide', 'NotDefined'])
       return false unless width_validator.valid?(@width)
       true

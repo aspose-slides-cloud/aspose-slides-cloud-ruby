@@ -121,14 +121,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
     # @param paragraph_index Paragraph index.
     attr_accessor :paragraph_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -149,11 +149,11 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param paragraphs The indices of the shapes to be deleted; delete all by default.
     attr_accessor :paragraphs
@@ -177,9 +177,6 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
@@ -188,6 +185,9 @@ module AsposeSlidesCloud
 
     # @param portion_index Portion index.
     attr_accessor :portion_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -208,14 +208,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
     # @param paragraph_index Paragraph index.
     attr_accessor :paragraph_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param portions The indices of the shapes to be deleted; delete all by default.
     attr_accessor :portions
@@ -239,11 +239,11 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -289,14 +289,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
     # @param paragraph_index Paragraph index.
     attr_accessor :paragraph_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -317,11 +317,11 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param paragraphs The indices of the shapes to be deleted; delete all by default.
     attr_accessor :paragraphs
@@ -345,9 +345,6 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
@@ -356,6 +353,9 @@ module AsposeSlidesCloud
 
     # @param portion_index Portion index.
     attr_accessor :portion_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -376,14 +376,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
     # @param paragraph_index Paragraph index.
     attr_accessor :paragraph_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param portions The indices of the shapes to be deleted; delete all by default.
     attr_accessor :portions
@@ -552,11 +552,11 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -804,11 +804,11 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -829,14 +829,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
     # @param paragraph_index Paragraph index.
     attr_accessor :paragraph_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -857,11 +857,11 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -882,9 +882,6 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
@@ -893,6 +890,9 @@ module AsposeSlidesCloud
 
     # @param portion_index Portion index.
     attr_accessor :portion_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -913,14 +913,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
     # @param paragraph_index Paragraph index.
     attr_accessor :paragraph_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -994,9 +994,6 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
@@ -1005,6 +1002,9 @@ module AsposeSlidesCloud
 
     # @param portion_index Portion index.
     attr_accessor :portion_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -1025,14 +1025,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
     # @param paragraph_index Paragraph index.
     attr_accessor :paragraph_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -1075,11 +1075,11 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -1100,14 +1100,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
     # @param paragraph_index Paragraph index.
     attr_accessor :paragraph_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -1128,11 +1128,11 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -1581,11 +1581,11 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param dto Paragraph DTO.
     attr_accessor :dto
@@ -1612,14 +1612,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
     # @param paragraph_index Paragraph index.
     attr_accessor :paragraph_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param dto Portion DTO.
     attr_accessor :dto
@@ -1758,11 +1758,11 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param dto Paragraph DTO.
     attr_accessor :dto
@@ -1789,14 +1789,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
     # @param paragraph_index Paragraph index.
     attr_accessor :paragraph_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param dto Portion DTO.
     attr_accessor :dto
@@ -1854,14 +1854,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Index of shape starting from 1
     attr_accessor :shape_index
 
     # @param format Export picture format.
     attr_accessor :format
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param options export options
     attr_accessor :options
@@ -1916,14 +1916,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Index of shape starting from 1
     attr_accessor :shape_index
 
     # @param format Export picture format.
     attr_accessor :format
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param options export options
     attr_accessor :options
@@ -2441,9 +2441,6 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Index of shape starting from 1
     attr_accessor :shape_index
 
@@ -2452,6 +2449,9 @@ module AsposeSlidesCloud
 
     # @param out_path Output path.
     attr_accessor :out_path
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param options export options
     attr_accessor :options
@@ -2506,9 +2506,6 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
@@ -2517,6 +2514,9 @@ module AsposeSlidesCloud
 
     # @param portion_index Portion index.
     attr_accessor :portion_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param dto Portion DTO.
     attr_accessor :dto
@@ -2540,14 +2540,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
     # @param paragraph_index Paragraph index.
     attr_accessor :paragraph_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param dto Paragraph DTO.
     attr_accessor :dto
@@ -2571,9 +2571,6 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Index of shape starting from 1
     attr_accessor :shape_index
 
@@ -2582,6 +2579,9 @@ module AsposeSlidesCloud
 
     # @param out_path Output path.
     attr_accessor :out_path
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param options export options
     attr_accessor :options
@@ -2729,11 +2729,11 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param dto Shape DTO.
     attr_accessor :dto
@@ -2961,11 +2961,11 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param dto Shape DTO.
     attr_accessor :dto
@@ -2989,14 +2989,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
     # @param paragraph_index Paragraph index.
     attr_accessor :paragraph_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param dto Paragraph DTO.
     attr_accessor :dto
@@ -3020,9 +3020,6 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
-
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
@@ -3031,6 +3028,9 @@ module AsposeSlidesCloud
 
     # @param portion_index Portion index.
     attr_accessor :portion_index
+
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
 
     # @param dto Portion DTO.
     attr_accessor :dto
@@ -3055,11 +3055,11 @@ module AsposeSlidesCloud
   # request model for upload_file
   class UploadFileRequest
 
-    # @param path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             
-    attr_accessor :path
-
     # @param file File to upload
     attr_accessor :file
+
+    # @param path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             
+    attr_accessor :path
 
     # @param storage_name Storage name
     attr_accessor :storage_name

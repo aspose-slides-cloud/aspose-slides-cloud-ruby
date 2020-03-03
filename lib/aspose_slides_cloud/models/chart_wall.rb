@@ -117,22 +117,12 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @thickness.nil?
-        invalid_properties.push('invalid value for "thickness", thickness cannot be nil.')
-      end
-
-      if @picture_type.nil?
-        invalid_properties.push('invalid value for "picture_type", picture_type cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @thickness.nil?
-      return false if @picture_type.nil?
       picture_type_validator = EnumAttributeValidator.new('String', ['Stack', 'StackScale', 'Stretch', 'NotDefined'])
       return false unless picture_type_validator.valid?(@picture_type)
       true

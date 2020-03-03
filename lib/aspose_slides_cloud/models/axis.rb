@@ -396,192 +396,32 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @is_visible.nil?
-        invalid_properties.push('invalid value for "is_visible", is_visible cannot be nil.')
-      end
-
-      if @has_title.nil?
-        invalid_properties.push('invalid value for "has_title", has_title cannot be nil.')
-      end
-
-      if @position.nil?
-        invalid_properties.push('invalid value for "position", position cannot be nil.')
-      end
-
-      if @display_unit.nil?
-        invalid_properties.push('invalid value for "display_unit", display_unit cannot be nil.')
-      end
-
-      if @base_unit_scale.nil?
-        invalid_properties.push('invalid value for "base_unit_scale", base_unit_scale cannot be nil.')
-      end
-
-      if @is_automatic_major_unit.nil?
-        invalid_properties.push('invalid value for "is_automatic_major_unit", is_automatic_major_unit cannot be nil.')
-      end
-
-      if @major_unit.nil?
-        invalid_properties.push('invalid value for "major_unit", major_unit cannot be nil.')
-      end
-
-      if @major_unit_scale.nil?
-        invalid_properties.push('invalid value for "major_unit_scale", major_unit_scale cannot be nil.')
-      end
-
-      if @major_tick_mark.nil?
-        invalid_properties.push('invalid value for "major_tick_mark", major_tick_mark cannot be nil.')
-      end
-
-      if @is_automatic_minor_unit.nil?
-        invalid_properties.push('invalid value for "is_automatic_minor_unit", is_automatic_minor_unit cannot be nil.')
-      end
-
-      if @minor_unit.nil?
-        invalid_properties.push('invalid value for "minor_unit", minor_unit cannot be nil.')
-      end
-
-      if @minor_unit_scale.nil?
-        invalid_properties.push('invalid value for "minor_unit_scale", minor_unit_scale cannot be nil.')
-      end
-
-      if @minor_tick_mark.nil?
-        invalid_properties.push('invalid value for "minor_tick_mark", minor_tick_mark cannot be nil.')
-      end
-
-      if @is_automatic_max_value.nil?
-        invalid_properties.push('invalid value for "is_automatic_max_value", is_automatic_max_value cannot be nil.')
-      end
-
-      if @max_value.nil?
-        invalid_properties.push('invalid value for "max_value", max_value cannot be nil.')
-      end
-
-      if @is_automatic_min_value.nil?
-        invalid_properties.push('invalid value for "is_automatic_min_value", is_automatic_min_value cannot be nil.')
-      end
-
-      if @min_value.nil?
-        invalid_properties.push('invalid value for "min_value", min_value cannot be nil.')
-      end
-
-      if @is_logarithmic.nil?
-        invalid_properties.push('invalid value for "is_logarithmic", is_logarithmic cannot be nil.')
-      end
-
-      if @log_base.nil?
-        invalid_properties.push('invalid value for "log_base", log_base cannot be nil.')
-      end
-
-      if @category_axis_type.nil?
-        invalid_properties.push('invalid value for "category_axis_type", category_axis_type cannot be nil.')
-      end
-
-      if @axis_between_categories.nil?
-        invalid_properties.push('invalid value for "axis_between_categories", axis_between_categories cannot be nil.')
-      end
-
-      if @label_offset.nil?
-        invalid_properties.push('invalid value for "label_offset", label_offset cannot be nil.')
-      end
-
-      if @is_plot_order_reversed.nil?
-        invalid_properties.push('invalid value for "is_plot_order_reversed", is_plot_order_reversed cannot be nil.')
-      end
-
-      if @is_number_format_linked_to_source.nil?
-        invalid_properties.push('invalid value for "is_number_format_linked_to_source", is_number_format_linked_to_source cannot be nil.')
-      end
-
-      if @cross_type.nil?
-        invalid_properties.push('invalid value for "cross_type", cross_type cannot be nil.')
-      end
-
-      if @cross_at.nil?
-        invalid_properties.push('invalid value for "cross_at", cross_at cannot be nil.')
-      end
-
-      if @is_automatic_tick_marks_spacing.nil?
-        invalid_properties.push('invalid value for "is_automatic_tick_marks_spacing", is_automatic_tick_marks_spacing cannot be nil.')
-      end
-
-      if @tick_marks_spacing.nil?
-        invalid_properties.push('invalid value for "tick_marks_spacing", tick_marks_spacing cannot be nil.')
-      end
-
-      if @is_automatic_tick_label_spacing.nil?
-        invalid_properties.push('invalid value for "is_automatic_tick_label_spacing", is_automatic_tick_label_spacing cannot be nil.')
-      end
-
-      if @tick_label_spacing.nil?
-        invalid_properties.push('invalid value for "tick_label_spacing", tick_label_spacing cannot be nil.')
-      end
-
-      if @tick_label_position.nil?
-        invalid_properties.push('invalid value for "tick_label_position", tick_label_position cannot be nil.')
-      end
-
-      if @tick_label_rotation_angle.nil?
-        invalid_properties.push('invalid value for "tick_label_rotation_angle", tick_label_rotation_angle cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @is_visible.nil?
-      return false if @has_title.nil?
-      return false if @position.nil?
       position_validator = EnumAttributeValidator.new('String', ['Bottom', 'Left', 'Right', 'Top'])
       return false unless position_validator.valid?(@position)
-      return false if @display_unit.nil?
       display_unit_validator = EnumAttributeValidator.new('String', ['None', 'Hundreds', 'Thousands', 'TenThousands', 'HundredThousands', 'Millions', 'TenMillions', 'HundredMillions', 'Billions', 'Trillions', 'CustomValue'])
       return false unless display_unit_validator.valid?(@display_unit)
-      return false if @base_unit_scale.nil?
       base_unit_scale_validator = EnumAttributeValidator.new('String', ['Days', 'Months', 'Years'])
       return false unless base_unit_scale_validator.valid?(@base_unit_scale)
-      return false if @is_automatic_major_unit.nil?
-      return false if @major_unit.nil?
-      return false if @major_unit_scale.nil?
       major_unit_scale_validator = EnumAttributeValidator.new('String', ['Days', 'Months', 'Years'])
       return false unless major_unit_scale_validator.valid?(@major_unit_scale)
-      return false if @major_tick_mark.nil?
       major_tick_mark_validator = EnumAttributeValidator.new('String', ['Cross', 'Inside', 'None', 'Outside'])
       return false unless major_tick_mark_validator.valid?(@major_tick_mark)
-      return false if @is_automatic_minor_unit.nil?
-      return false if @minor_unit.nil?
-      return false if @minor_unit_scale.nil?
       minor_unit_scale_validator = EnumAttributeValidator.new('String', ['Days', 'Months', 'Years'])
       return false unless minor_unit_scale_validator.valid?(@minor_unit_scale)
-      return false if @minor_tick_mark.nil?
       minor_tick_mark_validator = EnumAttributeValidator.new('String', ['Cross', 'Inside', 'None', 'Outside'])
       return false unless minor_tick_mark_validator.valid?(@minor_tick_mark)
-      return false if @is_automatic_max_value.nil?
-      return false if @max_value.nil?
-      return false if @is_automatic_min_value.nil?
-      return false if @min_value.nil?
-      return false if @is_logarithmic.nil?
-      return false if @log_base.nil?
-      return false if @category_axis_type.nil?
       category_axis_type_validator = EnumAttributeValidator.new('String', ['Text', 'Date'])
       return false unless category_axis_type_validator.valid?(@category_axis_type)
-      return false if @axis_between_categories.nil?
-      return false if @label_offset.nil?
-      return false if @is_plot_order_reversed.nil?
-      return false if @is_number_format_linked_to_source.nil?
-      return false if @cross_type.nil?
       cross_type_validator = EnumAttributeValidator.new('String', ['AxisCrossesAtZero', 'Maximum', 'Custom'])
       return false unless cross_type_validator.valid?(@cross_type)
-      return false if @cross_at.nil?
-      return false if @is_automatic_tick_marks_spacing.nil?
-      return false if @tick_marks_spacing.nil?
-      return false if @is_automatic_tick_label_spacing.nil?
-      return false if @tick_label_spacing.nil?
-      return false if @tick_label_position.nil?
       tick_label_position_validator = EnumAttributeValidator.new('String', ['High', 'Low', 'NextTo', 'None'])
       return false unless tick_label_position_validator.valid?(@tick_label_position)
-      return false if @tick_label_rotation_angle.nil?
       true
     end
 

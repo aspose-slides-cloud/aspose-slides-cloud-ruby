@@ -245,34 +245,6 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
-      end
-
-      if @is_color_varied.nil?
-        invalid_properties.push('invalid value for "is_color_varied", is_color_varied cannot be nil.')
-      end
-
-      if @smooth.nil?
-        invalid_properties.push('invalid value for "smooth", smooth cannot be nil.')
-      end
-
-      if @plot_on_second_axis.nil?
-        invalid_properties.push('invalid value for "plot_on_second_axis", plot_on_second_axis cannot be nil.')
-      end
-
-      if @order.nil?
-        invalid_properties.push('invalid value for "order", order cannot be nil.')
-      end
-
-      if @invert_if_negative.nil?
-        invalid_properties.push('invalid value for "invert_if_negative", invert_if_negative cannot be nil.')
-      end
-
-      if @explosion.nil?
-        invalid_properties.push('invalid value for "explosion", explosion cannot be nil.')
-      end
-
       if @data_point_type.nil?
         invalid_properties.push('invalid value for "data_point_type", data_point_type cannot be nil.')
       end
@@ -283,15 +255,8 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @type.nil?
       type_validator = EnumAttributeValidator.new('String', ['ClusteredColumn', 'StackedColumn', 'PercentsStackedColumn', 'ClusteredColumn3D', 'StackedColumn3D', 'PercentsStackedColumn3D', 'Column3D', 'ClusteredCylinder', 'StackedCylinder', 'PercentsStackedCylinder', 'Cylinder3D', 'ClusteredCone', 'StackedCone', 'PercentsStackedCone', 'Cone3D', 'ClusteredPyramid', 'StackedPyramid', 'PercentsStackedPyramid', 'Pyramid3D', 'Line', 'StackedLine', 'PercentsStackedLine', 'LineWithMarkers', 'StackedLineWithMarkers', 'PercentsStackedLineWithMarkers', 'Line3D', 'Pie', 'Pie3D', 'PieOfPie', 'ExplodedPie', 'ExplodedPie3D', 'BarOfPie', 'PercentsStackedBar', 'ClusteredBar3D', 'ClusteredBar', 'StackedBar', 'StackedBar3D', 'PercentsStackedBar3D', 'ClusteredHorizontalCylinder', 'StackedHorizontalCylinder', 'PercentsStackedHorizontalCylinder', 'ClusteredHorizontalCone', 'StackedHorizontalCone', 'PercentsStackedHorizontalCone', 'ClusteredHorizontalPyramid', 'StackedHorizontalPyramid', 'PercentsStackedHorizontalPyramid', 'Area', 'StackedArea', 'PercentsStackedArea', 'Area3D', 'StackedArea3D', 'PercentsStackedArea3D', 'ScatterWithMarkers', 'ScatterWithSmoothLinesAndMarkers', 'ScatterWithSmoothLines', 'ScatterWithStraightLinesAndMarkers', 'ScatterWithStraightLines', 'HighLowClose', 'OpenHighLowClose', 'VolumeHighLowClose', 'VolumeOpenHighLowClose', 'Surface3D', 'WireframeSurface3D', 'Contour', 'WireframeContour', 'Doughnut', 'ExplodedDoughnut', 'Bubble', 'BubbleWith3D', 'Radar', 'RadarWithMarkers', 'FilledRadar', 'SeriesOfMixedTypes'])
       return false unless type_validator.valid?(@type)
-      return false if @is_color_varied.nil?
-      return false if @smooth.nil?
-      return false if @plot_on_second_axis.nil?
-      return false if @order.nil?
-      return false if @invert_if_negative.nil?
-      return false if @explosion.nil?
       return false if @data_point_type.nil?
       data_point_type_validator = EnumAttributeValidator.new('String', ['OneValue', 'Scatter', 'Bubble'])
       return false unless data_point_type_validator.valid?(@data_point_type)
