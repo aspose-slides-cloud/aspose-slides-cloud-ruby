@@ -23,57 +23,27 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Represents document DTO.
-  class Document
-    # Gets or sets the link to this resource.
-    attr_accessor :self_uri
+  # The sizing of the slide region.
+  class NormalViewRestoredProperties
+    # True if the size of the side content region should compensate for the new size when resizing the window containing the view within the application.
+    attr_accessor :auto_adjust
 
-    # List of alternate links.
-    attr_accessor :alternate_links
-
-    # Link to Document properties.
-    attr_accessor :document_properties
-
-    # Link to Document properties.
-    attr_accessor :view_properties
-
-    # Link to slides collection.
-    attr_accessor :slides
-
-    # Link to images collection.
-    attr_accessor :images
-
-    # Link to layout slides collection.
-    attr_accessor :layout_slides
-
-    # Link to master slides collection.
-    attr_accessor :master_slides
+    # The size of the slide region.
+    attr_accessor :dimension_size
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'self_uri' => :'SelfUri',
-        :'alternate_links' => :'AlternateLinks',
-        :'document_properties' => :'DocumentProperties',
-        :'view_properties' => :'ViewProperties',
-        :'slides' => :'Slides',
-        :'images' => :'Images',
-        :'layout_slides' => :'LayoutSlides',
-        :'master_slides' => :'MasterSlides'
+        :'auto_adjust' => :'AutoAdjust',
+        :'dimension_size' => :'DimensionSize'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'self_uri' => :'ResourceUri',
-        :'alternate_links' => :'Array<ResourceUri>',
-        :'document_properties' => :'ResourceUriElement',
-        :'view_properties' => :'ResourceUriElement',
-        :'slides' => :'ResourceUriElement',
-        :'images' => :'ResourceUriElement',
-        :'layout_slides' => :'ResourceUriElement',
-        :'master_slides' => :'ResourceUriElement'
+        :'auto_adjust' => :'BOOLEAN',
+        :'dimension_size' => :'Float'
       }
     end
 
@@ -85,38 +55,12 @@ module AsposeSlidesCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'SelfUri')
-        self.self_uri = attributes[:'SelfUri']
+      if attributes.has_key?(:'AutoAdjust')
+        self.auto_adjust = attributes[:'AutoAdjust']
       end
 
-      if attributes.has_key?(:'AlternateLinks')
-        if (value = attributes[:'AlternateLinks']).is_a?(Array)
-          self.alternate_links = value
-        end
-      end
-
-      if attributes.has_key?(:'DocumentProperties')
-        self.document_properties = attributes[:'DocumentProperties']
-      end
-
-      if attributes.has_key?(:'ViewProperties')
-        self.view_properties = attributes[:'ViewProperties']
-      end
-
-      if attributes.has_key?(:'Slides')
-        self.slides = attributes[:'Slides']
-      end
-
-      if attributes.has_key?(:'Images')
-        self.images = attributes[:'Images']
-      end
-
-      if attributes.has_key?(:'LayoutSlides')
-        self.layout_slides = attributes[:'LayoutSlides']
-      end
-
-      if attributes.has_key?(:'MasterSlides')
-        self.master_slides = attributes[:'MasterSlides']
+      if attributes.has_key?(:'DimensionSize')
+        self.dimension_size = attributes[:'DimensionSize']
       end
     end
 
@@ -138,14 +82,8 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          self_uri == o.self_uri &&
-          alternate_links == o.alternate_links &&
-          document_properties == o.document_properties &&
-          view_properties == o.view_properties &&
-          slides == o.slides &&
-          images == o.images &&
-          layout_slides == o.layout_slides &&
-          master_slides == o.master_slides
+          auto_adjust == o.auto_adjust &&
+          dimension_size == o.dimension_size
     end
 
     # @see the `==` method
@@ -157,7 +95,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, document_properties, view_properties, slides, images, layout_slides, master_slides].hash
+      [auto_adjust, dimension_size].hash
     end
 
     # Builds the object from hash

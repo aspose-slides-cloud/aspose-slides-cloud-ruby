@@ -23,8 +23,8 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # A chart series.
-  class Series
+  # One value series.
+  class BoxAndWhiskerSeries
     # Series type.
     attr_accessor :type
 
@@ -76,6 +76,27 @@ module AsposeSlidesCloud
     # Line properties set for the series.
     attr_accessor :line_format
 
+    # Data point type.
+    attr_accessor :data_point_type
+
+    # Gets or sets the values.
+    attr_accessor :data_points
+
+    # Quartile method.
+    attr_accessor :quartile_method
+
+    # True if inner points are shown.
+    attr_accessor :show_inner_points
+
+    # True if mean line is shown.
+    attr_accessor :show_mean_line
+
+    # True if mean markers are shown.
+    attr_accessor :show_mean_markers
+
+    # True if outlier points are shown.
+    attr_accessor :show_outlier_points
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -117,7 +138,14 @@ module AsposeSlidesCloud
         :'marker' => :'Marker',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
-        :'line_format' => :'LineFormat'
+        :'line_format' => :'LineFormat',
+        :'data_point_type' => :'DataPointType',
+        :'data_points' => :'DataPoints',
+        :'quartile_method' => :'QuartileMethod',
+        :'show_inner_points' => :'ShowInnerPoints',
+        :'show_mean_line' => :'ShowMeanLine',
+        :'show_mean_markers' => :'ShowMeanMarkers',
+        :'show_outlier_points' => :'ShowOutlierPoints'
       }
     end
 
@@ -140,7 +168,14 @@ module AsposeSlidesCloud
         :'marker' => :'SeriesMarker',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
-        :'line_format' => :'LineFormat'
+        :'line_format' => :'LineFormat',
+        :'data_point_type' => :'String',
+        :'data_points' => :'Array<OneValueChartDataPoint>',
+        :'quartile_method' => :'String',
+        :'show_inner_points' => :'BOOLEAN',
+        :'show_mean_line' => :'BOOLEAN',
+        :'show_mean_markers' => :'BOOLEAN',
+        :'show_outlier_points' => :'BOOLEAN'
       }
     end
 
@@ -219,12 +254,46 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'LineFormat')
         self.line_format = attributes[:'LineFormat']
       end
+
+      if attributes.has_key?(:'DataPointType')
+        self.data_point_type = attributes[:'DataPointType']
+      end
+
+      if attributes.has_key?(:'DataPoints')
+        if (value = attributes[:'DataPoints']).is_a?(Array)
+          self.data_points = value
+        end
+      end
+
+      if attributes.has_key?(:'QuartileMethod')
+        self.quartile_method = attributes[:'QuartileMethod']
+      end
+
+      if attributes.has_key?(:'ShowInnerPoints')
+        self.show_inner_points = attributes[:'ShowInnerPoints']
+      end
+
+      if attributes.has_key?(:'ShowMeanLine')
+        self.show_mean_line = attributes[:'ShowMeanLine']
+      end
+
+      if attributes.has_key?(:'ShowMeanMarkers')
+        self.show_mean_markers = attributes[:'ShowMeanMarkers']
+      end
+
+      if attributes.has_key?(:'ShowOutlierPoints')
+        self.show_outlier_points = attributes[:'ShowOutlierPoints']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @data_point_type.nil?
+        invalid_properties.push('invalid value for "data_point_type", data_point_type cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -233,6 +302,11 @@ module AsposeSlidesCloud
     def valid?
       type_validator = EnumAttributeValidator.new('String', ['ClusteredColumn', 'StackedColumn', 'PercentsStackedColumn', 'ClusteredColumn3D', 'StackedColumn3D', 'PercentsStackedColumn3D', 'Column3D', 'ClusteredCylinder', 'StackedCylinder', 'PercentsStackedCylinder', 'Cylinder3D', 'ClusteredCone', 'StackedCone', 'PercentsStackedCone', 'Cone3D', 'ClusteredPyramid', 'StackedPyramid', 'PercentsStackedPyramid', 'Pyramid3D', 'Line', 'StackedLine', 'PercentsStackedLine', 'LineWithMarkers', 'StackedLineWithMarkers', 'PercentsStackedLineWithMarkers', 'Line3D', 'Pie', 'Pie3D', 'PieOfPie', 'ExplodedPie', 'ExplodedPie3D', 'BarOfPie', 'PercentsStackedBar', 'ClusteredBar3D', 'ClusteredBar', 'StackedBar', 'StackedBar3D', 'PercentsStackedBar3D', 'ClusteredHorizontalCylinder', 'StackedHorizontalCylinder', 'PercentsStackedHorizontalCylinder', 'ClusteredHorizontalCone', 'StackedHorizontalCone', 'PercentsStackedHorizontalCone', 'ClusteredHorizontalPyramid', 'StackedHorizontalPyramid', 'PercentsStackedHorizontalPyramid', 'Area', 'StackedArea', 'PercentsStackedArea', 'Area3D', 'StackedArea3D', 'PercentsStackedArea3D', 'ScatterWithMarkers', 'ScatterWithSmoothLinesAndMarkers', 'ScatterWithSmoothLines', 'ScatterWithStraightLinesAndMarkers', 'ScatterWithStraightLines', 'HighLowClose', 'OpenHighLowClose', 'VolumeHighLowClose', 'VolumeOpenHighLowClose', 'Surface3D', 'WireframeSurface3D', 'Contour', 'WireframeContour', 'Doughnut', 'ExplodedDoughnut', 'Bubble', 'BubbleWith3D', 'Radar', 'RadarWithMarkers', 'FilledRadar', 'SeriesOfMixedTypes', 'Treemap', 'Sunburst', 'Histogram', 'ParetoLine', 'BoxAndWhisker', 'Waterfall', 'Funnel'])
       return false unless type_validator.valid?(@type)
+      return false if @data_point_type.nil?
+      data_point_type_validator = EnumAttributeValidator.new('String', ['OneValue', 'Scatter', 'Bubble'])
+      return false unless data_point_type_validator.valid?(@data_point_type)
+      quartile_method_validator = EnumAttributeValidator.new('String', ['Exclusive', 'Inclusive'])
+      return false unless quartile_method_validator.valid?(@quartile_method)
       true
     end
 
@@ -244,6 +318,26 @@ module AsposeSlidesCloud
         fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
       end
       @type = type
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] data_point_type Object to be assigned
+    def data_point_type=(data_point_type)
+      validator = EnumAttributeValidator.new('String', ['OneValue', 'Scatter', 'Bubble'])
+      unless validator.valid?(data_point_type)
+        fail ArgumentError, 'invalid value for "data_point_type", must be one of #{validator.allowable_values}.'
+      end
+      @data_point_type = data_point_type
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] quartile_method Object to be assigned
+    def quartile_method=(quartile_method)
+      validator = EnumAttributeValidator.new('String', ['Exclusive', 'Inclusive'])
+      unless validator.valid?(quartile_method)
+        fail ArgumentError, 'invalid value for "quartile_method", must be one of #{validator.allowable_values}.'
+      end
+      @quartile_method = quartile_method
     end
 
     # Checks equality by comparing each attribute.
@@ -267,7 +361,14 @@ module AsposeSlidesCloud
           marker == o.marker &&
           fill_format == o.fill_format &&
           effect_format == o.effect_format &&
-          line_format == o.line_format
+          line_format == o.line_format &&
+          data_point_type == o.data_point_type &&
+          data_points == o.data_points &&
+          quartile_method == o.quartile_method &&
+          show_inner_points == o.show_inner_points &&
+          show_mean_line == o.show_mean_line &&
+          show_mean_markers == o.show_mean_markers &&
+          show_outlier_points == o.show_outlier_points
     end
 
     # @see the `==` method
@@ -279,7 +380,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, number_format_of_y_values, number_format_of_x_values, number_format_of_values, number_format_of_bubble_sizes, invert_if_negative, explosion, marker, fill_format, effect_format, line_format].hash
+      [type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, number_format_of_y_values, number_format_of_x_values, number_format_of_values, number_format_of_bubble_sizes, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type, data_points, quartile_method, show_inner_points, show_mean_line, show_mean_markers, show_outlier_points].hash
     end
 
     # Builds the object from hash

@@ -1790,7 +1790,7 @@ module AsposeSlidesCloud
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -4255,6 +4255,58 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'FormatScheme')
+      return data, status_code, headers
+    end
+    # Read presentation document properties.
+    # @param request operation request
+    def get_slides_view_properties(request)
+      data, _status_code, _headers = get_slides_view_properties_with_http_info(request)
+      data
+    end
+
+    # Read presentation document properties.
+    # @param request operation request
+    def get_slides_view_properties_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_slides_view_properties ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_view_properties"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/viewProperties'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'ViewProperties')
       return data, status_code, headers
     end
     # Move file
@@ -7510,6 +7562,58 @@ module AsposeSlidesCloud
         :return_type => 'Document')
       return data, status_code, headers
     end
+    # Update presentation document properties.
+    # @param request operation request
+    def put_slides_view_properties(request)
+      data, _status_code, _headers = put_slides_view_properties_with_http_info(request)
+      data
+    end
+
+    # Update presentation document properties.
+    # @param request operation request
+    def put_slides_view_properties_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.put_slides_view_properties ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_slides_view_properties"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/viewProperties'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.dto)
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'DocumentProperty')
+      return data, status_code, headers
+    end
     # Update notes slide properties.
     # @param request operation request
     def put_update_notes_slide(request)
@@ -7833,10 +7937,6 @@ module AsposeSlidesCloud
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.upload_file ...'
       end
-      # verify the required parameter 'file' is set
-      if @api_client.config.client_side_validation && request.file.nil?
-        fail ArgumentError, "Missing the required parameter 'file' when calling SlidesApi.upload_file"
-      end
       # resource path
       local_var_path = '/slides/storage/file/{path}'
       local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', request.path)
@@ -7850,13 +7950,12 @@ module AsposeSlidesCloud
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
       # http body (model)
       post_body = nil
 
       # form parameters
-      post_body = request.file
 
       post_files = nil
 

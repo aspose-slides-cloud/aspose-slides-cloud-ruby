@@ -34,6 +34,9 @@ module AsposeSlidesCloud
     # Link to Document properties.
     attr_accessor :document_properties
 
+    # Link to Document properties.
+    attr_accessor :view_properties
+
     # Link to slides collection.
     attr_accessor :slides
 
@@ -55,6 +58,7 @@ module AsposeSlidesCloud
         :'self_uri' => :'SelfUri',
         :'alternate_links' => :'AlternateLinks',
         :'document_properties' => :'DocumentProperties',
+        :'view_properties' => :'ViewProperties',
         :'slides' => :'Slides',
         :'images' => :'Images',
         :'layout_slides' => :'LayoutSlides',
@@ -69,6 +73,7 @@ module AsposeSlidesCloud
         :'self_uri' => :'ResourceUri',
         :'alternate_links' => :'Array<ResourceUri>',
         :'document_properties' => :'ResourceUriElement',
+        :'view_properties' => :'ResourceUriElement',
         :'slides' => :'ResourceUriElement',
         :'images' => :'ResourceUriElement',
         :'layout_slides' => :'ResourceUriElement',
@@ -97,6 +102,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'DocumentProperties')
         self.document_properties = attributes[:'DocumentProperties']
+      end
+
+      if attributes.has_key?(:'ViewProperties')
+        self.view_properties = attributes[:'ViewProperties']
       end
 
       if attributes.has_key?(:'Slides')
@@ -146,6 +155,7 @@ module AsposeSlidesCloud
           self_uri == o.self_uri &&
           alternate_links == o.alternate_links &&
           document_properties == o.document_properties &&
+          view_properties == o.view_properties &&
           slides == o.slides &&
           images == o.images &&
           layout_slides == o.layout_slides &&
@@ -162,7 +172,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, document_properties, slides, images, layout_slides, master_slides, matches].hash
+      [self_uri, alternate_links, document_properties, view_properties, slides, images, layout_slides, master_slides, matches].hash
     end
 
     # Builds the object from hash

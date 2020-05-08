@@ -23,57 +23,27 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Represents document DTO.
-  class Document
-    # Gets or sets the link to this resource.
-    attr_accessor :self_uri
+  # Slide view properties.
+  class CommonSlideViewProperties
+    # The view scaling ratio (percentage).
+    attr_accessor :scale
 
-    # List of alternate links.
-    attr_accessor :alternate_links
-
-    # Link to Document properties.
-    attr_accessor :document_properties
-
-    # Link to Document properties.
-    attr_accessor :view_properties
-
-    # Link to slides collection.
-    attr_accessor :slides
-
-    # Link to images collection.
-    attr_accessor :images
-
-    # Link to layout slides collection.
-    attr_accessor :layout_slides
-
-    # Link to master slides collection.
-    attr_accessor :master_slides
+    # True if the view content should automatically scale to best fit the current window size.
+    attr_accessor :variable_scale
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'self_uri' => :'SelfUri',
-        :'alternate_links' => :'AlternateLinks',
-        :'document_properties' => :'DocumentProperties',
-        :'view_properties' => :'ViewProperties',
-        :'slides' => :'Slides',
-        :'images' => :'Images',
-        :'layout_slides' => :'LayoutSlides',
-        :'master_slides' => :'MasterSlides'
+        :'scale' => :'Scale',
+        :'variable_scale' => :'VariableScale'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'self_uri' => :'ResourceUri',
-        :'alternate_links' => :'Array<ResourceUri>',
-        :'document_properties' => :'ResourceUriElement',
-        :'view_properties' => :'ResourceUriElement',
-        :'slides' => :'ResourceUriElement',
-        :'images' => :'ResourceUriElement',
-        :'layout_slides' => :'ResourceUriElement',
-        :'master_slides' => :'ResourceUriElement'
+        :'scale' => :'Integer',
+        :'variable_scale' => :'BOOLEAN'
       }
     end
 
@@ -85,38 +55,12 @@ module AsposeSlidesCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'SelfUri')
-        self.self_uri = attributes[:'SelfUri']
+      if attributes.has_key?(:'Scale')
+        self.scale = attributes[:'Scale']
       end
 
-      if attributes.has_key?(:'AlternateLinks')
-        if (value = attributes[:'AlternateLinks']).is_a?(Array)
-          self.alternate_links = value
-        end
-      end
-
-      if attributes.has_key?(:'DocumentProperties')
-        self.document_properties = attributes[:'DocumentProperties']
-      end
-
-      if attributes.has_key?(:'ViewProperties')
-        self.view_properties = attributes[:'ViewProperties']
-      end
-
-      if attributes.has_key?(:'Slides')
-        self.slides = attributes[:'Slides']
-      end
-
-      if attributes.has_key?(:'Images')
-        self.images = attributes[:'Images']
-      end
-
-      if attributes.has_key?(:'LayoutSlides')
-        self.layout_slides = attributes[:'LayoutSlides']
-      end
-
-      if attributes.has_key?(:'MasterSlides')
-        self.master_slides = attributes[:'MasterSlides']
+      if attributes.has_key?(:'VariableScale')
+        self.variable_scale = attributes[:'VariableScale']
       end
     end
 
@@ -138,14 +82,8 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          self_uri == o.self_uri &&
-          alternate_links == o.alternate_links &&
-          document_properties == o.document_properties &&
-          view_properties == o.view_properties &&
-          slides == o.slides &&
-          images == o.images &&
-          layout_slides == o.layout_slides &&
-          master_slides == o.master_slides
+          scale == o.scale &&
+          variable_scale == o.variable_scale
     end
 
     # @see the `==` method
@@ -157,7 +95,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, document_properties, view_properties, slides, images, layout_slides, master_slides].hash
+      [scale, variable_scale].hash
     end
 
     # Builds the object from hash

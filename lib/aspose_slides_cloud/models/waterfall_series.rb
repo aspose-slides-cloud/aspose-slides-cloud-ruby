@@ -23,8 +23,8 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # A chart series.
-  class Series
+  # One value series.
+  class WaterfallSeries
     # Series type.
     attr_accessor :type
 
@@ -76,6 +76,15 @@ module AsposeSlidesCloud
     # Line properties set for the series.
     attr_accessor :line_format
 
+    # Data point type.
+    attr_accessor :data_point_type
+
+    # Gets or sets the values.
+    attr_accessor :data_points
+
+    # True if inner points are shown.
+    attr_accessor :show_connector_lines
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -117,7 +126,10 @@ module AsposeSlidesCloud
         :'marker' => :'Marker',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
-        :'line_format' => :'LineFormat'
+        :'line_format' => :'LineFormat',
+        :'data_point_type' => :'DataPointType',
+        :'data_points' => :'DataPoints',
+        :'show_connector_lines' => :'ShowConnectorLines'
       }
     end
 
@@ -140,7 +152,10 @@ module AsposeSlidesCloud
         :'marker' => :'SeriesMarker',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
-        :'line_format' => :'LineFormat'
+        :'line_format' => :'LineFormat',
+        :'data_point_type' => :'String',
+        :'data_points' => :'Array<OneValueChartDataPoint>',
+        :'show_connector_lines' => :'BOOLEAN'
       }
     end
 
@@ -219,12 +234,30 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'LineFormat')
         self.line_format = attributes[:'LineFormat']
       end
+
+      if attributes.has_key?(:'DataPointType')
+        self.data_point_type = attributes[:'DataPointType']
+      end
+
+      if attributes.has_key?(:'DataPoints')
+        if (value = attributes[:'DataPoints']).is_a?(Array)
+          self.data_points = value
+        end
+      end
+
+      if attributes.has_key?(:'ShowConnectorLines')
+        self.show_connector_lines = attributes[:'ShowConnectorLines']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @data_point_type.nil?
+        invalid_properties.push('invalid value for "data_point_type", data_point_type cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -233,6 +266,9 @@ module AsposeSlidesCloud
     def valid?
       type_validator = EnumAttributeValidator.new('String', ['ClusteredColumn', 'StackedColumn', 'PercentsStackedColumn', 'ClusteredColumn3D', 'StackedColumn3D', 'PercentsStackedColumn3D', 'Column3D', 'ClusteredCylinder', 'StackedCylinder', 'PercentsStackedCylinder', 'Cylinder3D', 'ClusteredCone', 'StackedCone', 'PercentsStackedCone', 'Cone3D', 'ClusteredPyramid', 'StackedPyramid', 'PercentsStackedPyramid', 'Pyramid3D', 'Line', 'StackedLine', 'PercentsStackedLine', 'LineWithMarkers', 'StackedLineWithMarkers', 'PercentsStackedLineWithMarkers', 'Line3D', 'Pie', 'Pie3D', 'PieOfPie', 'ExplodedPie', 'ExplodedPie3D', 'BarOfPie', 'PercentsStackedBar', 'ClusteredBar3D', 'ClusteredBar', 'StackedBar', 'StackedBar3D', 'PercentsStackedBar3D', 'ClusteredHorizontalCylinder', 'StackedHorizontalCylinder', 'PercentsStackedHorizontalCylinder', 'ClusteredHorizontalCone', 'StackedHorizontalCone', 'PercentsStackedHorizontalCone', 'ClusteredHorizontalPyramid', 'StackedHorizontalPyramid', 'PercentsStackedHorizontalPyramid', 'Area', 'StackedArea', 'PercentsStackedArea', 'Area3D', 'StackedArea3D', 'PercentsStackedArea3D', 'ScatterWithMarkers', 'ScatterWithSmoothLinesAndMarkers', 'ScatterWithSmoothLines', 'ScatterWithStraightLinesAndMarkers', 'ScatterWithStraightLines', 'HighLowClose', 'OpenHighLowClose', 'VolumeHighLowClose', 'VolumeOpenHighLowClose', 'Surface3D', 'WireframeSurface3D', 'Contour', 'WireframeContour', 'Doughnut', 'ExplodedDoughnut', 'Bubble', 'BubbleWith3D', 'Radar', 'RadarWithMarkers', 'FilledRadar', 'SeriesOfMixedTypes', 'Treemap', 'Sunburst', 'Histogram', 'ParetoLine', 'BoxAndWhisker', 'Waterfall', 'Funnel'])
       return false unless type_validator.valid?(@type)
+      return false if @data_point_type.nil?
+      data_point_type_validator = EnumAttributeValidator.new('String', ['OneValue', 'Scatter', 'Bubble'])
+      return false unless data_point_type_validator.valid?(@data_point_type)
       true
     end
 
@@ -244,6 +280,16 @@ module AsposeSlidesCloud
         fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
       end
       @type = type
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] data_point_type Object to be assigned
+    def data_point_type=(data_point_type)
+      validator = EnumAttributeValidator.new('String', ['OneValue', 'Scatter', 'Bubble'])
+      unless validator.valid?(data_point_type)
+        fail ArgumentError, 'invalid value for "data_point_type", must be one of #{validator.allowable_values}.'
+      end
+      @data_point_type = data_point_type
     end
 
     # Checks equality by comparing each attribute.
@@ -267,7 +313,10 @@ module AsposeSlidesCloud
           marker == o.marker &&
           fill_format == o.fill_format &&
           effect_format == o.effect_format &&
-          line_format == o.line_format
+          line_format == o.line_format &&
+          data_point_type == o.data_point_type &&
+          data_points == o.data_points &&
+          show_connector_lines == o.show_connector_lines
     end
 
     # @see the `==` method
@@ -279,7 +328,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, number_format_of_y_values, number_format_of_x_values, number_format_of_values, number_format_of_bubble_sizes, invert_if_negative, explosion, marker, fill_format, effect_format, line_format].hash
+      [type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, number_format_of_y_values, number_format_of_x_values, number_format_of_values, number_format_of_bubble_sizes, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type, data_points, show_connector_lines].hash
     end
 
     # Builds the object from hash

@@ -23,57 +23,42 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Represents document DTO.
-  class Document
-    # Gets or sets the link to this resource.
-    attr_accessor :self_uri
+  # Represents chart category resource
+  class ChartCategory
+    # Gets or sets the categories for chart data
+    attr_accessor :categories
 
-    # List of alternate links.
-    attr_accessor :alternate_links
+    # Category value
+    attr_accessor :value
 
-    # Link to Document properties.
-    attr_accessor :document_properties
+    # Get or sets the fill format.
+    attr_accessor :fill_format
 
-    # Link to Document properties.
-    attr_accessor :view_properties
+    # Get or sets the effect format.
+    attr_accessor :effect_format
 
-    # Link to slides collection.
-    attr_accessor :slides
-
-    # Link to images collection.
-    attr_accessor :images
-
-    # Link to layout slides collection.
-    attr_accessor :layout_slides
-
-    # Link to master slides collection.
-    attr_accessor :master_slides
+    # Get or sets the line format.
+    attr_accessor :line_format
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'self_uri' => :'SelfUri',
-        :'alternate_links' => :'AlternateLinks',
-        :'document_properties' => :'DocumentProperties',
-        :'view_properties' => :'ViewProperties',
-        :'slides' => :'Slides',
-        :'images' => :'Images',
-        :'layout_slides' => :'LayoutSlides',
-        :'master_slides' => :'MasterSlides'
+        :'categories' => :'Categories',
+        :'value' => :'Value',
+        :'fill_format' => :'FillFormat',
+        :'effect_format' => :'EffectFormat',
+        :'line_format' => :'LineFormat'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'self_uri' => :'ResourceUri',
-        :'alternate_links' => :'Array<ResourceUri>',
-        :'document_properties' => :'ResourceUriElement',
-        :'view_properties' => :'ResourceUriElement',
-        :'slides' => :'ResourceUriElement',
-        :'images' => :'ResourceUriElement',
-        :'layout_slides' => :'ResourceUriElement',
-        :'master_slides' => :'ResourceUriElement'
+        :'categories' => :'Array<ChartCategory>',
+        :'value' => :'String',
+        :'fill_format' => :'FillFormat',
+        :'effect_format' => :'EffectFormat',
+        :'line_format' => :'LineFormat'
       }
     end
 
@@ -85,38 +70,26 @@ module AsposeSlidesCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'SelfUri')
-        self.self_uri = attributes[:'SelfUri']
-      end
-
-      if attributes.has_key?(:'AlternateLinks')
-        if (value = attributes[:'AlternateLinks']).is_a?(Array)
-          self.alternate_links = value
+      if attributes.has_key?(:'Categories')
+        if (value = attributes[:'Categories']).is_a?(Array)
+          self.categories = value
         end
       end
 
-      if attributes.has_key?(:'DocumentProperties')
-        self.document_properties = attributes[:'DocumentProperties']
+      if attributes.has_key?(:'Value')
+        self.value = attributes[:'Value']
       end
 
-      if attributes.has_key?(:'ViewProperties')
-        self.view_properties = attributes[:'ViewProperties']
+      if attributes.has_key?(:'FillFormat')
+        self.fill_format = attributes[:'FillFormat']
       end
 
-      if attributes.has_key?(:'Slides')
-        self.slides = attributes[:'Slides']
+      if attributes.has_key?(:'EffectFormat')
+        self.effect_format = attributes[:'EffectFormat']
       end
 
-      if attributes.has_key?(:'Images')
-        self.images = attributes[:'Images']
-      end
-
-      if attributes.has_key?(:'LayoutSlides')
-        self.layout_slides = attributes[:'LayoutSlides']
-      end
-
-      if attributes.has_key?(:'MasterSlides')
-        self.master_slides = attributes[:'MasterSlides']
+      if attributes.has_key?(:'LineFormat')
+        self.line_format = attributes[:'LineFormat']
       end
     end
 
@@ -138,14 +111,11 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          self_uri == o.self_uri &&
-          alternate_links == o.alternate_links &&
-          document_properties == o.document_properties &&
-          view_properties == o.view_properties &&
-          slides == o.slides &&
-          images == o.images &&
-          layout_slides == o.layout_slides &&
-          master_slides == o.master_slides
+          categories == o.categories &&
+          value == o.value &&
+          fill_format == o.fill_format &&
+          effect_format == o.effect_format &&
+          line_format == o.line_format
     end
 
     # @see the `==` method
@@ -157,7 +127,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, document_properties, view_properties, slides, images, layout_slides, master_slides].hash
+      [categories, value, fill_format, effect_format, line_format].hash
     end
 
     # Builds the object from hash

@@ -1524,6 +1524,22 @@ module AsposeSlidesCloud
     attr_accessor :storage
   end
 
+  # request model for get_slides_view_properties
+  class GetSlidesViewPropertiesRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
   # request model for move_file
   class MoveFileRequest
 
@@ -2930,6 +2946,25 @@ module AsposeSlidesCloud
     attr_accessor :scale_type
   end
 
+  # request model for put_slides_view_properties
+  class PutSlidesViewPropertiesRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param dto The view properties data.
+    attr_accessor :dto
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
   # request model for put_update_notes_slide
   class PutUpdateNotesSlideRequest
 
@@ -3054,9 +3089,6 @@ module AsposeSlidesCloud
 
   # request model for upload_file
   class UploadFileRequest
-
-    # @param file File to upload
-    attr_accessor :file
 
     # @param path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             
     attr_accessor :path
