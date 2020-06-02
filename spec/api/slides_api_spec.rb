@@ -13322,6 +13322,284 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for post_get_notes_slide
+  # Read notes slide info.
+  # @param slide_index Slide index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [File] :document Document data.
+  # @option opts [String] :password Document password.
+  # @return [NotesSlide]
+  describe 'post_get_notes_slide test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::PostGetNotesSlideRequest.new
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlide', 'Integer')
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlide', 'File')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlide', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlide', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlide', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid slide_index' do
+      requestParam = AsposeSlidesCloud::PostGetNotesSlideRequest.new
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlide', 'Integer')
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlide', 'File')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlide', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'PostGetNotesSlide', requestParam.slide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlide', 'slideIndex', requestParam.slide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostGetNotesSlide', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlide', 'slideIndex', requestParam.slide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid document' do
+      requestParam = AsposeSlidesCloud::PostGetNotesSlideRequest.new
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlide', 'Integer')
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlide', 'File')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlide', 'String')
+      requestParam.document = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'PostGetNotesSlide', requestParam.document, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlide', 'document', requestParam.document)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostGetNotesSlide', 'document')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlide', 'document', requestParam.document)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::PostGetNotesSlideRequest.new
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlide', 'Integer')
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlide', 'File')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlide', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'PostGetNotesSlide', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlide', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostGetNotesSlide', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlide', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+  end
+
+  # unit tests for post_get_notes_slide_with_format
+  # Convert notes slide to the specified image format.
+  # @param slide_index Slide index.
+  # @param format Output file format.
+  # @param [Hash] opts the optional parameters
+  # @option opts [File] :document Document data.
+  # @option opts [Integer] :width Output file width.
+  # @option opts [Integer] :height Output file height.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :fonts_folder Storage folder containing custom fonts to be used with the document.
+  # @return [File]
+  describe 'post_get_notes_slide_with_format test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::PostGetNotesSlideWithFormatRequest.new
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
+      requestParam.width = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.height = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostGetNotesSlideWithFormat', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlideWithFormat', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_with_format_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid slide_index' do
+      requestParam = AsposeSlidesCloud::PostGetNotesSlideWithFormatRequest.new
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
+      requestParam.width = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.height = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'PostGetNotesSlideWithFormat', requestParam.slide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlideWithFormat', 'slideIndex', requestParam.slide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_with_format_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostGetNotesSlideWithFormat', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'slideIndex', requestParam.slide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid format' do
+      requestParam = AsposeSlidesCloud::PostGetNotesSlideWithFormatRequest.new
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
+      requestParam.width = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.height = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.invalidize_param_value('format', 'PostGetNotesSlideWithFormat', requestParam.format, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlideWithFormat', 'format', requestParam.format)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_with_format_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostGetNotesSlideWithFormat', 'format')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'format', requestParam.format)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid document' do
+      requestParam = AsposeSlidesCloud::PostGetNotesSlideWithFormatRequest.new
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
+      requestParam.width = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.height = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.document = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'PostGetNotesSlideWithFormat', requestParam.document, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlideWithFormat', 'document', requestParam.document)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_with_format_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostGetNotesSlideWithFormat', 'document')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'document', requestParam.document)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid width' do
+      requestParam = AsposeSlidesCloud::PostGetNotesSlideWithFormatRequest.new
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
+      requestParam.width = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.height = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.width = AsposeSlidesCloud::SpecUtils.invalidize_param_value('width', 'PostGetNotesSlideWithFormat', requestParam.width, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlideWithFormat', 'width', requestParam.width)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_with_format_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostGetNotesSlideWithFormat', 'width')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'width', requestParam.width)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid height' do
+      requestParam = AsposeSlidesCloud::PostGetNotesSlideWithFormatRequest.new
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
+      requestParam.width = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.height = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.height = AsposeSlidesCloud::SpecUtils.invalidize_param_value('height', 'PostGetNotesSlideWithFormat', requestParam.height, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlideWithFormat', 'height', requestParam.height)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_with_format_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostGetNotesSlideWithFormat', 'height')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'height', requestParam.height)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::PostGetNotesSlideWithFormatRequest.new
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
+      requestParam.width = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.height = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'PostGetNotesSlideWithFormat', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlideWithFormat', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_with_format_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostGetNotesSlideWithFormat', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid fonts_folder' do
+      requestParam = AsposeSlidesCloud::PostGetNotesSlideWithFormatRequest.new
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
+      requestParam.width = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.height = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontsFolder', 'PostGetNotesSlideWithFormat', requestParam.fonts_folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlideWithFormat', 'fontsFolder', requestParam.fonts_folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_with_format_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostGetNotesSlideWithFormat', 'fontsFolder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'fontsFolder', requestParam.fonts_folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+  end
+
   # unit tests for post_notes_slide_add_new_paragraph
   # Creates new paragraph.
   # @param name Document name.
@@ -23216,7 +23494,7 @@ describe 'SlidesApi' do
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
-  # @return [DocumentProperty]
+  # @return [ViewProperties]
   describe 'put_slides_view_properties test' do
     it 'should work' do
       requestParam = AsposeSlidesCloud::PutSlidesViewPropertiesRequest.new
@@ -24348,6 +24626,7 @@ describe 'SlidesApi' do
 
   # unit tests for upload_file
   # Upload file
+  # @param file File to upload
   # @param [Hash] opts the optional parameters
   # @option opts [String] :path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             
   # @option opts [String] :storage_name Storage name
@@ -24355,6 +24634,7 @@ describe 'SlidesApi' do
   describe 'upload_file test' do
     it 'should work' do
       requestParam = AsposeSlidesCloud::UploadFileRequest.new
+      requestParam.file = AsposeSlidesCloud::SpecUtils.get_param_value('file', 'UploadFile', 'File')
       requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'UploadFile', 'String')
       requestParam.storage_name = AsposeSlidesCloud::SpecUtils.get_param_value('storageName', 'UploadFile', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('UploadFile', nil, nil)
@@ -24364,8 +24644,29 @@ describe 'SlidesApi' do
       expect(o).not_to be_nil
     end
 
+    it 'invalid file' do
+      requestParam = AsposeSlidesCloud::UploadFileRequest.new
+      requestParam.file = AsposeSlidesCloud::SpecUtils.get_param_value('file', 'UploadFile', 'File')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'UploadFile', 'String')
+      requestParam.storage_name = AsposeSlidesCloud::SpecUtils.get_param_value('storageName', 'UploadFile', 'String')
+      requestParam.file = AsposeSlidesCloud::SpecUtils.invalidize_param_value('file', 'UploadFile', requestParam.file, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('UploadFile', 'file', requestParam.file)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.upload_file_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UploadFile', 'file')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UploadFile', 'file', requestParam.file)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
     it 'invalid path' do
       requestParam = AsposeSlidesCloud::UploadFileRequest.new
+      requestParam.file = AsposeSlidesCloud::SpecUtils.get_param_value('file', 'UploadFile', 'File')
       requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'UploadFile', 'String')
       requestParam.storage_name = AsposeSlidesCloud::SpecUtils.get_param_value('storageName', 'UploadFile', 'String')
       requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'UploadFile', requestParam.path, 'String')
@@ -24385,6 +24686,7 @@ describe 'SlidesApi' do
 
     it 'invalid storage_name' do
       requestParam = AsposeSlidesCloud::UploadFileRequest.new
+      requestParam.file = AsposeSlidesCloud::SpecUtils.get_param_value('file', 'UploadFile', 'File')
       requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'UploadFile', 'String')
       requestParam.storage_name = AsposeSlidesCloud::SpecUtils.get_param_value('storageName', 'UploadFile', 'String')
       requestParam.storage_name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storageName', 'UploadFile', requestParam.storage_name, 'String')

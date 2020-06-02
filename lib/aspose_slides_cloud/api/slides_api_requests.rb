@@ -1765,6 +1765,44 @@ module AsposeSlidesCloud
     attr_accessor :storage
   end
 
+  # request model for post_get_notes_slide
+  class PostGetNotesSlideRequest
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
+
+    # @param document Document data.
+    attr_accessor :document
+
+    # @param password Document password.
+    attr_accessor :password
+  end
+
+  # request model for post_get_notes_slide_with_format
+  class PostGetNotesSlideWithFormatRequest
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
+
+    # @param format Output file format.
+    attr_accessor :format
+
+    # @param document Document data.
+    attr_accessor :document
+
+    # @param width Output file width.
+    attr_accessor :width
+
+    # @param height Output file height.
+    attr_accessor :height
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param fonts_folder Storage folder containing custom fonts to be used with the document.
+    attr_accessor :fonts_folder
+  end
+
   # request model for post_notes_slide_add_new_paragraph
   class PostNotesSlideAddNewParagraphRequest
 
@@ -3089,6 +3127,9 @@ module AsposeSlidesCloud
 
   # request model for upload_file
   class UploadFileRequest
+
+    # @param file File to upload
+    attr_accessor :file
 
     # @param path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             
     attr_accessor :path

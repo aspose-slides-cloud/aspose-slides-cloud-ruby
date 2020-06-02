@@ -1790,7 +1790,7 @@ module AsposeSlidesCloud
       # header parameters
       header_params = {}
       # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
 
@@ -4846,6 +4846,118 @@ module AsposeSlidesCloud
         :return_type => 'MasterSlide')
       return data, status_code, headers
     end
+    # Read notes slide info.
+    # @param request operation request
+    def post_get_notes_slide(request)
+      data, _status_code, _headers = post_get_notes_slide_with_http_info(request)
+      data
+    end
+
+    # Read notes slide info.
+    # @param request operation request
+    def post_get_notes_slide_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.post_get_notes_slide ...'
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && request.slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_get_notes_slide"
+      end
+      # resource path
+      local_var_path = '/slides/slides/{slideIndex}/notesSlide'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', request.slide_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'password'] = request.password unless request.password.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/octet-stream', 'multipart/form-data'])
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.document)
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'NotesSlide')
+      return data, status_code, headers
+    end
+    # Convert notes slide to the specified image format.
+    # @param request operation request
+    def post_get_notes_slide_with_format(request)
+      data, _status_code, _headers = post_get_notes_slide_with_format_with_http_info(request)
+      data
+    end
+
+    # Convert notes slide to the specified image format.
+    # @param request operation request
+    def post_get_notes_slide_with_format_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.post_get_notes_slide_with_format ...'
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && request.slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_get_notes_slide_with_format"
+      end
+      # verify the required parameter 'format' is set
+      if @api_client.config.client_side_validation && request.format.nil?
+        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.post_get_notes_slide_with_format"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff'].any?{ |s| s.casecmp(request.format)==0 }
+        fail ArgumentError, "invalid value for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff"
+      end
+      # resource path
+      local_var_path = '/slides/slides/{slideIndex}/notesSlide/{format}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', request.slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'format', request.format)
+
+      # query parameters
+      query_params = {}
+      query_params[:'width'] = request.width unless request.width.nil?
+      query_params[:'height'] = request.height unless request.height.nil?
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'fontsFolder'] = request.fonts_folder unless request.fonts_folder.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/octet-stream', 'multipart/form-data'])
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.document)
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      return data, status_code, headers
+    end
     # Creates new paragraph.
     # @param request operation request
     def post_notes_slide_add_new_paragraph(request)
@@ -7611,7 +7723,7 @@ module AsposeSlidesCloud
         :body => post_body,
         :files => post_files,
         :auth_names => auth_names,
-        :return_type => 'DocumentProperty')
+        :return_type => 'ViewProperties')
       return data, status_code, headers
     end
     # Update notes slide properties.
@@ -7937,6 +8049,10 @@ module AsposeSlidesCloud
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.upload_file ...'
       end
+      # verify the required parameter 'file' is set
+      if @api_client.config.client_side_validation && request.file.nil?
+        fail ArgumentError, "Missing the required parameter 'file' when calling SlidesApi.upload_file"
+      end
       # resource path
       local_var_path = '/slides/storage/file/{path}'
       local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', request.path)
@@ -7950,12 +8066,13 @@ module AsposeSlidesCloud
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
 
       # http body (model)
       post_body = nil
 
       # form parameters
+      post_body = request.file
 
       post_files = nil
 
