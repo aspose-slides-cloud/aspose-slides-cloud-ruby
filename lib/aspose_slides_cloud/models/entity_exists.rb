@@ -23,74 +23,22 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Save slide task.
-  class SaveSlide
-    # Task type.
-    attr_accessor :type
-
-    # Output to save the slide to.
-    attr_accessor :output
-
-    # Save format.
-    attr_accessor :format
-
-    # Save options.
-    attr_accessor :options
-
-    # Result width for saving to an image format.
-    attr_accessor :width
-
-    # Result height for saving to an image format.
-    attr_accessor :height
-
-    # Slide index.
-    attr_accessor :position
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.any?{ |s| s.casecmp(value) == 0 }
-      end
-    end
+  # Information about object existence.
+  class EntityExists
+    # True if the object exists.
+    attr_accessor :exists
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'type' => :'Type',
-        :'output' => :'Output',
-        :'format' => :'Format',
-        :'options' => :'Options',
-        :'width' => :'Width',
-        :'height' => :'Height',
-        :'position' => :'Position'
+        :'exists' => :'Exists'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'type' => :'String',
-        :'output' => :'OutputFile',
-        :'format' => :'String',
-        :'options' => :'ExportOptions',
-        :'width' => :'Integer',
-        :'height' => :'Integer',
-        :'position' => :'Integer'
+        :'exists' => :'BOOLEAN'
       }
     end
 
@@ -102,34 +50,8 @@ module AsposeSlidesCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'Type')
-        self.type = attributes[:'Type']
-      else
-        self.type = "SaveSlide"
-      end
-
-      if attributes.has_key?(:'Output')
-        self.output = attributes[:'Output']
-      end
-
-      if attributes.has_key?(:'Format')
-        self.format = attributes[:'Format']
-      end
-
-      if attributes.has_key?(:'Options')
-        self.options = attributes[:'Options']
-      end
-
-      if attributes.has_key?(:'Width')
-        self.width = attributes[:'Width']
-      end
-
-      if attributes.has_key?(:'Height')
-        self.height = attributes[:'Height']
-      end
-
-      if attributes.has_key?(:'Position')
-        self.position = attributes[:'Position']
+      if attributes.has_key?(:'Exists')
+        self.exists = attributes[:'Exists']
       end
     end
 
@@ -137,16 +59,8 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
-      end
-
-      if @format.nil?
-        invalid_properties.push('invalid value for "format", format cannot be nil.')
-      end
-
-      if @position.nil?
-        invalid_properties.push('invalid value for "position", position cannot be nil.')
+      if @exists.nil?
+        invalid_properties.push('invalid value for "exists", exists cannot be nil.')
       end
 
       invalid_properties
@@ -155,34 +69,8 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @type.nil?
-      type_validator = EnumAttributeValidator.new('String', ['Save', 'SaveSlide', 'SaveShape', 'AddSlide', 'AddMasterSlide', 'AddLayoutSlide', 'RemoveSlide', 'ReoderSlide', 'Merge', 'UpdateBackground', 'ResetSlide', 'AddShape', 'RemoveShape', 'UpdateShape', 'ReplaceText'])
-      return false unless type_validator.valid?(@type)
-      return false if @format.nil?
-      format_validator = EnumAttributeValidator.new('String', ['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp'])
-      return false unless format_validator.valid?(@format)
-      return false if @position.nil?
+      return false if @exists.nil?
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] type Object to be assigned
-    def type=(type)
-      validator = EnumAttributeValidator.new('String', ['Save', 'SaveSlide', 'SaveShape', 'AddSlide', 'AddMasterSlide', 'AddLayoutSlide', 'RemoveSlide', 'ReoderSlide', 'Merge', 'UpdateBackground', 'ResetSlide', 'AddShape', 'RemoveShape', 'UpdateShape', 'ReplaceText'])
-      unless validator.valid?(type)
-        fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
-      end
-      @type = type
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] format Object to be assigned
-    def format=(format)
-      validator = EnumAttributeValidator.new('String', ['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp'])
-      unless validator.valid?(format)
-        fail ArgumentError, 'invalid value for "format", must be one of #{validator.allowable_values}.'
-      end
-      @format = format
     end
 
     # Checks equality by comparing each attribute.
@@ -190,13 +78,7 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          output == o.output &&
-          format == o.format &&
-          options == o.options &&
-          width == o.width &&
-          height == o.height &&
-          position == o.position
+          exists == o.exists
     end
 
     # @see the `==` method
@@ -208,7 +90,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, output, format, options, width, height, position].hash
+      [exists].hash
     end
 
     # Builds the object from hash

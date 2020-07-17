@@ -82,6 +82,9 @@ module AsposeSlidesCloud
     # True to apply specified ImageTransparentColor  to an image.
     attr_accessor :apply_image_transparent
 
+    # Access permissions that should be granted when the document is opened with user access.  Default is AccessPermissions.None.             
+    attr_accessor :access_permissions
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -125,7 +128,8 @@ module AsposeSlidesCloud
         :'comments_area_color' => :'CommentsAreaColor',
         :'show_comments_by_no_author' => :'ShowCommentsByNoAuthor',
         :'image_transparent_color' => :'ImageTransparentColor',
-        :'apply_image_transparent' => :'ApplyImageTransparent'
+        :'apply_image_transparent' => :'ApplyImageTransparent',
+        :'access_permissions' => :'AccessPermissions'
       }
     end
 
@@ -150,7 +154,8 @@ module AsposeSlidesCloud
         :'comments_area_color' => :'String',
         :'show_comments_by_no_author' => :'BOOLEAN',
         :'image_transparent_color' => :'String',
-        :'apply_image_transparent' => :'BOOLEAN'
+        :'apply_image_transparent' => :'BOOLEAN',
+        :'access_permissions' => :'String'
       }
     end
 
@@ -241,6 +246,10 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'ApplyImageTransparent')
         self.apply_image_transparent = attributes[:'ApplyImageTransparent']
       end
+
+      if attributes.has_key?(:'AccessPermissions')
+        self.access_permissions = attributes[:'AccessPermissions']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -303,6 +312,10 @@ module AsposeSlidesCloud
         invalid_properties.push('invalid value for "apply_image_transparent", apply_image_transparent cannot be nil.')
       end
 
+      if @access_permissions.nil?
+        invalid_properties.push('invalid value for "access_permissions", access_permissions cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -314,7 +327,7 @@ module AsposeSlidesCloud
       return false unless text_compression_validator.valid?(@text_compression)
       return false if @embed_full_fonts.nil?
       return false if @compliance.nil?
-      compliance_validator = EnumAttributeValidator.new('String', ['Pdf15', 'PdfA1b'])
+      compliance_validator = EnumAttributeValidator.new('String', ['Pdf15', 'PdfA1b', 'PdfA1a', 'PdfUa'])
       return false unless compliance_validator.valid?(@compliance)
       return false if @sufficient_resolution.nil?
       return false if @jpeg_quality.nil?
@@ -331,6 +344,9 @@ module AsposeSlidesCloud
       return false if @comments_area_width.nil?
       return false if @show_comments_by_no_author.nil?
       return false if @apply_image_transparent.nil?
+      return false if @access_permissions.nil?
+      access_permissions_validator = EnumAttributeValidator.new('String', ['None', 'PrintDocument', 'ModifyContent', 'CopyTextAndGraphics', 'AddOrModifyFields', 'FillExistingFields', 'ExtractTextAndGraphics', 'AssembleDocument', 'HighQualityPrint'])
+      return false unless access_permissions_validator.valid?(@access_permissions)
       true
     end
 
@@ -347,7 +363,7 @@ module AsposeSlidesCloud
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] compliance Object to be assigned
     def compliance=(compliance)
-      validator = EnumAttributeValidator.new('String', ['Pdf15', 'PdfA1b'])
+      validator = EnumAttributeValidator.new('String', ['Pdf15', 'PdfA1b', 'PdfA1a', 'PdfUa'])
       unless validator.valid?(compliance)
         fail ArgumentError, 'invalid value for "compliance", must be one of #{validator.allowable_values}.'
       end
@@ -374,6 +390,16 @@ module AsposeSlidesCloud
       @comments_position = comments_position
     end
 
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] access_permissions Object to be assigned
+    def access_permissions=(access_permissions)
+      validator = EnumAttributeValidator.new('String', ['None', 'PrintDocument', 'ModifyContent', 'CopyTextAndGraphics', 'AddOrModifyFields', 'FillExistingFields', 'ExtractTextAndGraphics', 'AssembleDocument', 'HighQualityPrint'])
+      unless validator.valid?(access_permissions)
+        fail ArgumentError, 'invalid value for "access_permissions", must be one of #{validator.allowable_values}.'
+      end
+      @access_permissions = access_permissions
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -397,7 +423,8 @@ module AsposeSlidesCloud
           comments_area_color == o.comments_area_color &&
           show_comments_by_no_author == o.show_comments_by_no_author &&
           image_transparent_color == o.image_transparent_color &&
-          apply_image_transparent == o.apply_image_transparent
+          apply_image_transparent == o.apply_image_transparent &&
+          access_permissions == o.access_permissions
     end
 
     # @see the `==` method
@@ -409,7 +436,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [format, text_compression, embed_full_fonts, compliance, sufficient_resolution, jpeg_quality, draw_slides_frame, show_hidden_slides, save_metafiles_as_png, password, embed_true_type_fonts_for_ascii, additional_common_font_families, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author, image_transparent_color, apply_image_transparent].hash
+      [format, text_compression, embed_full_fonts, compliance, sufficient_resolution, jpeg_quality, draw_slides_frame, show_hidden_slides, save_metafiles_as_png, password, embed_true_type_fonts_for_ascii, additional_common_font_families, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author, image_transparent_color, apply_image_transparent, access_permissions].hash
     end
 
     # Builds the object from hash

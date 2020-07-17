@@ -147,6 +147,7 @@ module AsposeSlidesCloud
           opts[:query_params][key] = opts[:query_params][key].join[","]
         end
       end
+      req.options.timeout = 200
       req.url path.sub(/^\/+/, '')
       req.headers = opts[:header_params]
       req.params = opts[:query_params]
