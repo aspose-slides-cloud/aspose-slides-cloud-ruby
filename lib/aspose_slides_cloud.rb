@@ -21,6 +21,7 @@ SOFTWARE.
 =end
 
 # Common files
+require 'aspose_slides_cloud/type_registry'
 require 'aspose_slides_cloud/api_client'
 require 'aspose_slides_cloud/api_error'
 require 'aspose_slides_cloud/version'

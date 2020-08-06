@@ -324,6 +324,203 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for delete_chart_series
+  # Delete a series from a chart.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index (must be a chart).
+  # @param series_index Series index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Chart]
+  describe 'delete_chart_series test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::DeleteChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.series_index = AsposeSlidesCloud::SpecUtils.get_param_value('seriesIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteChartSeries', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteChartSeries', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.delete_chart_series_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::DeleteChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.series_index = AsposeSlidesCloud::SpecUtils.get_param_value('seriesIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteChartSeries', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'DeleteChartSeries', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteChartSeries', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteChartSeries', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid slide_index' do
+      requestParam = AsposeSlidesCloud::DeleteChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.series_index = AsposeSlidesCloud::SpecUtils.get_param_value('seriesIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'DeleteChartSeries', requestParam.slide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteChartSeries', 'slideIndex', requestParam.slide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteChartSeries', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'slideIndex', requestParam.slide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid shape_index' do
+      requestParam = AsposeSlidesCloud::DeleteChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.series_index = AsposeSlidesCloud::SpecUtils.get_param_value('seriesIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteChartSeries', 'String')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'DeleteChartSeries', requestParam.shape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteChartSeries', 'shapeIndex', requestParam.shape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteChartSeries', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'shapeIndex', requestParam.shape_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid series_index' do
+      requestParam = AsposeSlidesCloud::DeleteChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.series_index = AsposeSlidesCloud::SpecUtils.get_param_value('seriesIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteChartSeries', 'String')
+      requestParam.series_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('seriesIndex', 'DeleteChartSeries', requestParam.series_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteChartSeries', 'seriesIndex', requestParam.series_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteChartSeries', 'seriesIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'seriesIndex', requestParam.series_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::DeleteChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.series_index = AsposeSlidesCloud::SpecUtils.get_param_value('seriesIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteChartSeries', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'DeleteChartSeries', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteChartSeries', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteChartSeries', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::DeleteChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.series_index = AsposeSlidesCloud::SpecUtils.get_param_value('seriesIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'DeleteChartSeries', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteChartSeries', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteChartSeries', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::DeleteChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.series_index = AsposeSlidesCloud::SpecUtils.get_param_value('seriesIndex', 'DeleteChartSeries', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'DeleteChartSeries', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteChartSeries', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteChartSeries', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'storage', requestParam.storage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+  end
+
   # unit tests for delete_file
   # Delete file
   # @param [Hash] opts the optional parameters
@@ -8733,8 +8930,8 @@ describe 'SlidesApi' do
   # Read slide animation effects.
   # @param name Document name.
   # @param slide_index Slide index.
-  # @param shape_index Shape index. If specified, only effects related to that shape are returned.
   # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :shape_index Shape index. If specified, only effects related to that shape are returned.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -15562,6 +15759,203 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for post_chart_series
+  # Add a new series to a chart.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index (must be a chart).
+  # @param [Hash] opts the optional parameters
+  # @option opts [Series] :series Series DTO.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Chart]
+  describe 'post_chart_series test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::PostChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostChartSeries', 'Integer')
+      requestParam.series = AsposeSlidesCloud::SpecUtils.get_param_value('series', 'PostChartSeries', 'Series')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostChartSeries', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostChartSeries', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.post_chart_series_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::PostChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostChartSeries', 'Integer')
+      requestParam.series = AsposeSlidesCloud::SpecUtils.get_param_value('series', 'PostChartSeries', 'Series')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostChartSeries', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'PostChartSeries', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostChartSeries', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostChartSeries', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid slide_index' do
+      requestParam = AsposeSlidesCloud::PostChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostChartSeries', 'Integer')
+      requestParam.series = AsposeSlidesCloud::SpecUtils.get_param_value('series', 'PostChartSeries', 'Series')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'PostChartSeries', requestParam.slide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('PostChartSeries', 'slideIndex', requestParam.slide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostChartSeries', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'slideIndex', requestParam.slide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid shape_index' do
+      requestParam = AsposeSlidesCloud::PostChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostChartSeries', 'Integer')
+      requestParam.series = AsposeSlidesCloud::SpecUtils.get_param_value('series', 'PostChartSeries', 'Series')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostChartSeries', 'String')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'PostChartSeries', requestParam.shape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('PostChartSeries', 'shapeIndex', requestParam.shape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostChartSeries', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'shapeIndex', requestParam.shape_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid series' do
+      requestParam = AsposeSlidesCloud::PostChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostChartSeries', 'Integer')
+      requestParam.series = AsposeSlidesCloud::SpecUtils.get_param_value('series', 'PostChartSeries', 'Series')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostChartSeries', 'String')
+      requestParam.series = AsposeSlidesCloud::SpecUtils.invalidize_param_value('series', 'PostChartSeries', requestParam.series, 'Series')
+      AsposeSlidesCloud::SpecUtils.initialize('PostChartSeries', 'series', requestParam.series)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostChartSeries', 'series')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'series', requestParam.series)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::PostChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostChartSeries', 'Integer')
+      requestParam.series = AsposeSlidesCloud::SpecUtils.get_param_value('series', 'PostChartSeries', 'Series')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostChartSeries', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'PostChartSeries', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostChartSeries', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostChartSeries', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::PostChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostChartSeries', 'Integer')
+      requestParam.series = AsposeSlidesCloud::SpecUtils.get_param_value('series', 'PostChartSeries', 'Series')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'PostChartSeries', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostChartSeries', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostChartSeries', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::PostChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostChartSeries', 'Integer')
+      requestParam.series = AsposeSlidesCloud::SpecUtils.get_param_value('series', 'PostChartSeries', 'Series')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'PostChartSeries', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostChartSeries', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostChartSeries', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'storage', requestParam.storage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+  end
+
   # unit tests for post_copy_layout_slide_from_source_presentation
   # Copy layoutSlide from source presentation.
   # @param name Document name.
@@ -22149,6 +22543,237 @@ describe 'SlidesApi' do
         end
       rescue AsposeSlidesCloud::ApiError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'fontsFolder', requestParam.fonts_folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+  end
+
+  # unit tests for put_chart_series
+  # Update a series in a chart.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index (must be a chart).
+  # @param series_index Series index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [Series] :series Series DTO.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Chart]
+  describe 'put_chart_series test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::PutChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutChartSeries', 'Integer')
+      requestParam.series_index = AsposeSlidesCloud::SpecUtils.get_param_value('seriesIndex', 'PutChartSeries', 'Integer')
+      requestParam.series = AsposeSlidesCloud::SpecUtils.get_param_value('series', 'PutChartSeries', 'Series')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutChartSeries', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutChartSeries', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.put_chart_series_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::PutChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutChartSeries', 'Integer')
+      requestParam.series_index = AsposeSlidesCloud::SpecUtils.get_param_value('seriesIndex', 'PutChartSeries', 'Integer')
+      requestParam.series = AsposeSlidesCloud::SpecUtils.get_param_value('series', 'PutChartSeries', 'Series')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutChartSeries', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'PutChartSeries', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutChartSeries', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutChartSeries', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid slide_index' do
+      requestParam = AsposeSlidesCloud::PutChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutChartSeries', 'Integer')
+      requestParam.series_index = AsposeSlidesCloud::SpecUtils.get_param_value('seriesIndex', 'PutChartSeries', 'Integer')
+      requestParam.series = AsposeSlidesCloud::SpecUtils.get_param_value('series', 'PutChartSeries', 'Series')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'PutChartSeries', requestParam.slide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('PutChartSeries', 'slideIndex', requestParam.slide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutChartSeries', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'slideIndex', requestParam.slide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid shape_index' do
+      requestParam = AsposeSlidesCloud::PutChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutChartSeries', 'Integer')
+      requestParam.series_index = AsposeSlidesCloud::SpecUtils.get_param_value('seriesIndex', 'PutChartSeries', 'Integer')
+      requestParam.series = AsposeSlidesCloud::SpecUtils.get_param_value('series', 'PutChartSeries', 'Series')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutChartSeries', 'String')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'PutChartSeries', requestParam.shape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('PutChartSeries', 'shapeIndex', requestParam.shape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutChartSeries', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'shapeIndex', requestParam.shape_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid series_index' do
+      requestParam = AsposeSlidesCloud::PutChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutChartSeries', 'Integer')
+      requestParam.series_index = AsposeSlidesCloud::SpecUtils.get_param_value('seriesIndex', 'PutChartSeries', 'Integer')
+      requestParam.series = AsposeSlidesCloud::SpecUtils.get_param_value('series', 'PutChartSeries', 'Series')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutChartSeries', 'String')
+      requestParam.series_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('seriesIndex', 'PutChartSeries', requestParam.series_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('PutChartSeries', 'seriesIndex', requestParam.series_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutChartSeries', 'seriesIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'seriesIndex', requestParam.series_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid series' do
+      requestParam = AsposeSlidesCloud::PutChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutChartSeries', 'Integer')
+      requestParam.series_index = AsposeSlidesCloud::SpecUtils.get_param_value('seriesIndex', 'PutChartSeries', 'Integer')
+      requestParam.series = AsposeSlidesCloud::SpecUtils.get_param_value('series', 'PutChartSeries', 'Series')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutChartSeries', 'String')
+      requestParam.series = AsposeSlidesCloud::SpecUtils.invalidize_param_value('series', 'PutChartSeries', requestParam.series, 'Series')
+      AsposeSlidesCloud::SpecUtils.initialize('PutChartSeries', 'series', requestParam.series)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutChartSeries', 'series')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'series', requestParam.series)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::PutChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutChartSeries', 'Integer')
+      requestParam.series_index = AsposeSlidesCloud::SpecUtils.get_param_value('seriesIndex', 'PutChartSeries', 'Integer')
+      requestParam.series = AsposeSlidesCloud::SpecUtils.get_param_value('series', 'PutChartSeries', 'Series')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutChartSeries', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'PutChartSeries', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutChartSeries', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutChartSeries', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::PutChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutChartSeries', 'Integer')
+      requestParam.series_index = AsposeSlidesCloud::SpecUtils.get_param_value('seriesIndex', 'PutChartSeries', 'Integer')
+      requestParam.series = AsposeSlidesCloud::SpecUtils.get_param_value('series', 'PutChartSeries', 'Series')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'PutChartSeries', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutChartSeries', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutChartSeries', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::PutChartSeriesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutChartSeries', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutChartSeries', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutChartSeries', 'Integer')
+      requestParam.series_index = AsposeSlidesCloud::SpecUtils.get_param_value('seriesIndex', 'PutChartSeries', 'Integer')
+      requestParam.series = AsposeSlidesCloud::SpecUtils.get_param_value('series', 'PutChartSeries', 'Series')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutChartSeries', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutChartSeries', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'PutChartSeries', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutChartSeries', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_chart_series_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutChartSeries', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
       rescue

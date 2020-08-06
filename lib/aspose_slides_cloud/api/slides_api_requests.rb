@@ -67,6 +67,31 @@ module AsposeSlidesCloud
     attr_accessor :storage_name
   end
 
+  # request model for delete_chart_series
+  class DeleteChartSeriesRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
+
+    # @param shape_index Shape index (must be a chart).
+    attr_accessor :shape_index
+
+    # @param series_index Series index.
+    attr_accessor :series_index
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
   # request model for delete_file
   class DeleteFileRequest
 
@@ -2067,6 +2092,31 @@ module AsposeSlidesCloud
     attr_accessor :storage
   end
 
+  # request model for post_chart_series
+  class PostChartSeriesRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
+
+    # @param shape_index Shape index (must be a chart).
+    attr_accessor :shape_index
+
+    # @param series Series DTO.
+    attr_accessor :series
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
   # request model for post_copy_layout_slide_from_source_presentation
   class PostCopyLayoutSlideFromSourcePresentationRequest
 
@@ -2864,6 +2914,34 @@ module AsposeSlidesCloud
 
     # @param fonts_folder Fonts folder.
     attr_accessor :fonts_folder
+  end
+
+  # request model for put_chart_series
+  class PutChartSeriesRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
+
+    # @param shape_index Shape index (must be a chart).
+    attr_accessor :shape_index
+
+    # @param series_index Series index.
+    attr_accessor :series_index
+
+    # @param series Series DTO.
+    attr_accessor :series
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
   end
 
   # request model for put_layout_slide

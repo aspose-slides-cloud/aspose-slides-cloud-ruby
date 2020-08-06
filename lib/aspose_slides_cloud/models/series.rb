@@ -76,6 +76,8 @@ module AsposeSlidesCloud
     # Line properties set for the series.
     attr_accessor :line_format
 
+    attr_accessor :data_point_type
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -117,7 +119,8 @@ module AsposeSlidesCloud
         :'marker' => :'Marker',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
-        :'line_format' => :'LineFormat'
+        :'line_format' => :'LineFormat',
+        :'data_point_type' => :'DataPointType'
       }
     end
 
@@ -140,7 +143,8 @@ module AsposeSlidesCloud
         :'marker' => :'SeriesMarker',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
-        :'line_format' => :'LineFormat'
+        :'line_format' => :'LineFormat',
+        :'data_point_type' => :'String'
       }
     end
 
@@ -219,6 +223,10 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'LineFormat')
         self.line_format = attributes[:'LineFormat']
       end
+
+      if attributes.has_key?(:'DataPointType')
+        self.data_point_type = attributes[:'DataPointType']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -233,6 +241,8 @@ module AsposeSlidesCloud
     def valid?
       type_validator = EnumAttributeValidator.new('String', ['ClusteredColumn', 'StackedColumn', 'PercentsStackedColumn', 'ClusteredColumn3D', 'StackedColumn3D', 'PercentsStackedColumn3D', 'Column3D', 'ClusteredCylinder', 'StackedCylinder', 'PercentsStackedCylinder', 'Cylinder3D', 'ClusteredCone', 'StackedCone', 'PercentsStackedCone', 'Cone3D', 'ClusteredPyramid', 'StackedPyramid', 'PercentsStackedPyramid', 'Pyramid3D', 'Line', 'StackedLine', 'PercentsStackedLine', 'LineWithMarkers', 'StackedLineWithMarkers', 'PercentsStackedLineWithMarkers', 'Line3D', 'Pie', 'Pie3D', 'PieOfPie', 'ExplodedPie', 'ExplodedPie3D', 'BarOfPie', 'PercentsStackedBar', 'ClusteredBar3D', 'ClusteredBar', 'StackedBar', 'StackedBar3D', 'PercentsStackedBar3D', 'ClusteredHorizontalCylinder', 'StackedHorizontalCylinder', 'PercentsStackedHorizontalCylinder', 'ClusteredHorizontalCone', 'StackedHorizontalCone', 'PercentsStackedHorizontalCone', 'ClusteredHorizontalPyramid', 'StackedHorizontalPyramid', 'PercentsStackedHorizontalPyramid', 'Area', 'StackedArea', 'PercentsStackedArea', 'Area3D', 'StackedArea3D', 'PercentsStackedArea3D', 'ScatterWithMarkers', 'ScatterWithSmoothLinesAndMarkers', 'ScatterWithSmoothLines', 'ScatterWithStraightLinesAndMarkers', 'ScatterWithStraightLines', 'HighLowClose', 'OpenHighLowClose', 'VolumeHighLowClose', 'VolumeOpenHighLowClose', 'Surface3D', 'WireframeSurface3D', 'Contour', 'WireframeContour', 'Doughnut', 'ExplodedDoughnut', 'Bubble', 'BubbleWith3D', 'Radar', 'RadarWithMarkers', 'FilledRadar', 'SeriesOfMixedTypes', 'Treemap', 'Sunburst', 'Histogram', 'ParetoLine', 'BoxAndWhisker', 'Waterfall', 'Funnel'])
       return false unless type_validator.valid?(@type)
+      data_point_type_validator = EnumAttributeValidator.new('String', ['OneValue', 'Scatter', 'Bubble'])
+      return false unless data_point_type_validator.valid?(@data_point_type)
       true
     end
 
@@ -244,6 +254,16 @@ module AsposeSlidesCloud
         fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
       end
       @type = type
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] data_point_type Object to be assigned
+    def data_point_type=(data_point_type)
+      validator = EnumAttributeValidator.new('String', ['OneValue', 'Scatter', 'Bubble'])
+      unless validator.valid?(data_point_type)
+        fail ArgumentError, 'invalid value for "data_point_type", must be one of #{validator.allowable_values}.'
+      end
+      @data_point_type = data_point_type
     end
 
     # Checks equality by comparing each attribute.
@@ -267,7 +287,8 @@ module AsposeSlidesCloud
           marker == o.marker &&
           fill_format == o.fill_format &&
           effect_format == o.effect_format &&
-          line_format == o.line_format
+          line_format == o.line_format &&
+          data_point_type == o.data_point_type
     end
 
     # @see the `==` method
@@ -279,7 +300,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, number_format_of_y_values, number_format_of_x_values, number_format_of_values, number_format_of_bubble_sizes, invert_if_negative, explosion, marker, fill_format, effect_format, line_format].hash
+      [type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, number_format_of_y_values, number_format_of_x_values, number_format_of_values, number_format_of_bubble_sizes, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type].hash
     end
 
     # Builds the object from hash
@@ -288,15 +309,27 @@ module AsposeSlidesCloud
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
       self.class.swagger_types.each_pair do |key, type|
-        if type =~ /\AArray<(.*)>/i
-          # check to ensure the input is an array given that the the attribute
-          # is documented as an array but the input is not
-          if attributes[self.class.attribute_map[key]].is_a?(Array)
-            self.send("#{key}=", attributes[self.class.attribute_map[key]].map { |v| _deserialize($1, v) })
+        mapKey = self.class.attribute_map[key]
+        if !mapKey.nil?
+          val = attributes[mapKey]
+          if val.nil?
+            mapKeyString = mapKey.to_s
+            mapKeyString[0] = mapKeyString[0].downcase
+            mapKey = mapKeyString.to_sym
+            val = attributes[mapKey]
           end
-        elsif !attributes[self.class.attribute_map[key]].nil?
-          self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
-        end # or else data not found in attributes(hash), not an issue as the data can be optional
+          if !val.nil?
+            if type =~ /\AArray<(.*)>/i
+              # check to ensure the input is an array given that the the attribute
+              # is documented as an array but the input is not
+              if val.is_a?(Array)
+                self.send("#{key}=", val.map { |v| _deserialize($1, v) })
+              end
+            else
+              self.send("#{key}=", _deserialize(type, val))
+            end
+          end
+        end
       end
 
       self

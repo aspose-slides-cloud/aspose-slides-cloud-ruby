@@ -26,7 +26,14 @@ module AsposeSlidesCloud
       if !@@is_initialized
         download_request = AsposeSlidesCloud::DownloadFileRequest.new
         download_request.path = "TempTests/version.txt"
-        version = SpecUtils.api.download_file(download_request)
+        version = ""
+        begin
+          version = SpecUtils.api.download_file(download_request)
+        rescue AsposeSlidesCloud::ApiError => e
+          if e.code != 404
+            fail "Could not read from storage"
+          end
+        end
         if version != EXPECTED_TEST_DATA_VERSION
           Dir.entries(TEST_DATA_PATH).each { |f|
             if !File.directory? File.join(TEST_DATA_PATH, f)

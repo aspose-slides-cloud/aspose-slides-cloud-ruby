@@ -163,7 +163,7 @@ module AsposeSlidesCloud
       headers['x-aspose-client'] = 'ruby sdk'
       headers['x-aspose-version'] = AsposeSlidesCloud::VERSION
       if @config.timeout > 0
-        headers['x-aspose-timeout'] = @config.timeout
+        headers['x-aspose-timeout'] = @config.timeout.to_s
       end
       @config.custom_headers.each do |key, value|
         headers[key] = value
@@ -274,8 +274,11 @@ module AsposeSlidesCloud
           data.each { |k, v| hash[k] = convert_to_type(v, sub_type) }
         end
       else
-        # models, e.g. Pet
-        AsposeSlidesCloud.const_get(return_type).new.tap do |model|
+        type = AsposeSlidesCloud::TypeRegistry.get_type(return_type, data)
+        if !type
+          type = return_type
+        end
+        AsposeSlidesCloud.const_get(type).new.tap do |model|
           model.build_from_hash data
         end
       end

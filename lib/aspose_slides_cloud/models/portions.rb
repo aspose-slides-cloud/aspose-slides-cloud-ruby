@@ -32,14 +32,14 @@ module AsposeSlidesCloud
     attr_accessor :alternate_links
 
     # List of portion links.
-    attr_accessor :portion_links
+    attr_accessor :items
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'self_uri' => :'SelfUri',
         :'alternate_links' => :'AlternateLinks',
-        :'portion_links' => :'PortionLinks'
+        :'items' => :'Items'
       }
     end
 
@@ -48,7 +48,7 @@ module AsposeSlidesCloud
       {
         :'self_uri' => :'ResourceUri',
         :'alternate_links' => :'Array<ResourceUri>',
-        :'portion_links' => :'Array<ResourceUriElement>'
+        :'items' => :'Array<Portion>'
       }
     end
 
@@ -70,9 +70,9 @@ module AsposeSlidesCloud
         end
       end
 
-      if attributes.has_key?(:'PortionLinks')
-        if (value = attributes[:'PortionLinks']).is_a?(Array)
-          self.portion_links = value
+      if attributes.has_key?(:'Items')
+        if (value = attributes[:'Items']).is_a?(Array)
+          self.items = value
         end
       end
     end
@@ -97,7 +97,7 @@ module AsposeSlidesCloud
       self.class == o.class &&
           self_uri == o.self_uri &&
           alternate_links == o.alternate_links &&
-          portion_links == o.portion_links
+          items == o.items
     end
 
     # @see the `==` method
@@ -109,7 +109,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, portion_links].hash
+      [self_uri, alternate_links, items].hash
     end
 
     # Builds the object from hash
@@ -118,15 +118,27 @@ module AsposeSlidesCloud
     def build_from_hash(attributes)
       return nil unless attributes.is_a?(Hash)
       self.class.swagger_types.each_pair do |key, type|
-        if type =~ /\AArray<(.*)>/i
-          # check to ensure the input is an array given that the the attribute
-          # is documented as an array but the input is not
-          if attributes[self.class.attribute_map[key]].is_a?(Array)
-            self.send("#{key}=", attributes[self.class.attribute_map[key]].map { |v| _deserialize($1, v) })
+        mapKey = self.class.attribute_map[key]
+        if !mapKey.nil?
+          val = attributes[mapKey]
+          if val.nil?
+            mapKeyString = mapKey.to_s
+            mapKeyString[0] = mapKeyString[0].downcase
+            mapKey = mapKeyString.to_sym
+            val = attributes[mapKey]
           end
-        elsif !attributes[self.class.attribute_map[key]].nil?
-          self.send("#{key}=", _deserialize(type, attributes[self.class.attribute_map[key]]))
-        end # or else data not found in attributes(hash), not an issue as the data can be optional
+          if !val.nil?
+            if type =~ /\AArray<(.*)>/i
+              # check to ensure the input is an array given that the the attribute
+              # is documented as an array but the input is not
+              if val.is_a?(Array)
+                self.send("#{key}=", val.map { |v| _deserialize($1, v) })
+              end
+            else
+              self.send("#{key}=", _deserialize(type, val))
+            end
+          end
+        end
       end
 
       self
