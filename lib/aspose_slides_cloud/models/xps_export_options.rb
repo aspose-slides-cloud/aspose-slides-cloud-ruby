@@ -24,10 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Provides options that control how a presentation is saved in XPS format.
-  class XpsExportOptions
-    # Export format.
-    attr_accessor :format
-
+  class XpsExportOptions < ExportOptions
     # Specifies whether the generated document should include hidden slides or not. Default is false. 
     attr_accessor :show_hidden_slides
 
@@ -39,37 +36,26 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'format' => :'Format',
+      super.merge({
         :'show_hidden_slides' => :'ShowHiddenSlides',
         :'save_metafiles_as_png' => :'SaveMetafilesAsPng',
-        :'draw_slides_frame' => :'DrawSlidesFrame'
-      }
+        :'draw_slides_frame' => :'DrawSlidesFrame',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'format' => :'String',
+      super.merge({
         :'show_hidden_slides' => :'BOOLEAN',
         :'save_metafiles_as_png' => :'BOOLEAN',
-        :'draw_slides_frame' => :'BOOLEAN'
-      }
+        :'draw_slides_frame' => :'BOOLEAN',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'Format')
-        self.format = attributes[:'Format']
-      else
-        self.format = "xps"
-      end
+      super
 
       if attributes.has_key?(:'ShowHiddenSlides')
         self.show_hidden_slides = attributes[:'ShowHiddenSlides']
@@ -82,12 +68,13 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'DrawSlidesFrame')
         self.draw_slides_frame = attributes[:'DrawSlidesFrame']
       end
+      self.format = "xps"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = super
       if @show_hidden_slides.nil?
         invalid_properties.push('invalid value for "show_hidden_slides", show_hidden_slides cannot be nil.')
       end
@@ -106,6 +93,7 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !super
       return false if @show_hidden_slides.nil?
       return false if @save_metafiles_as_png.nil?
       return false if @draw_slides_frame.nil?
@@ -117,6 +105,7 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          default_regular_font == o.default_regular_font &&
           format == o.format &&
           show_hidden_slides == o.show_hidden_slides &&
           save_metafiles_as_png == o.save_metafiles_as_png &&
@@ -132,7 +121,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [format, show_hidden_slides, save_metafiles_as_png, draw_slides_frame].hash
+      [default_regular_font, format, show_hidden_slides, save_metafiles_as_png, draw_slides_frame].hash
     end
 
     # Builds the object from hash

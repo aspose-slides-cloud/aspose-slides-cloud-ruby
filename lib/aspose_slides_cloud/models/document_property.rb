@@ -24,13 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Document property.
-  class DocumentProperty
-    # Gets or sets the link to this resource.
-    attr_accessor :self_uri
-
-    # List of alternate links.
-    attr_accessor :alternate_links
-
+  class DocumentProperty < ResourceBase
     # Name.
     attr_accessor :name
 
@@ -42,43 +36,26 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'self_uri' => :'SelfUri',
-        :'alternate_links' => :'AlternateLinks',
+      super.merge({
         :'name' => :'Name',
         :'value' => :'Value',
-        :'built_in' => :'BuiltIn'
-      }
+        :'built_in' => :'BuiltIn',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'self_uri' => :'ResourceUri',
-        :'alternate_links' => :'Array<ResourceUri>',
+      super.merge({
         :'name' => :'String',
         :'value' => :'String',
-        :'built_in' => :'BOOLEAN'
-      }
+        :'built_in' => :'BOOLEAN',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'SelfUri')
-        self.self_uri = attributes[:'SelfUri']
-      end
-
-      if attributes.has_key?(:'AlternateLinks')
-        if (value = attributes[:'AlternateLinks']).is_a?(Array)
-          self.alternate_links = value
-        end
-      end
+      super
 
       if attributes.has_key?(:'Name')
         self.name = attributes[:'Name']
@@ -96,7 +73,7 @@ module AsposeSlidesCloud
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = super
       if @built_in.nil?
         invalid_properties.push('invalid value for "built_in", built_in cannot be nil.')
       end
@@ -107,6 +84,7 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !super
       return false if @built_in.nil?
       true
     end

@@ -24,10 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Add master slide task.
-  class AddMasterSlide
-    # Task type.
-    attr_accessor :type
-
+  class AddMasterSlide < Task
     # Source presentation clone from.
     attr_accessor :clone_from_file
 
@@ -61,37 +58,26 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'type' => :'Type',
+      super.merge({
         :'clone_from_file' => :'CloneFromFile',
         :'clone_from_position' => :'CloneFromPosition',
-        :'apply_to_all' => :'ApplyToAll'
-      }
+        :'apply_to_all' => :'ApplyToAll',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'type' => :'String',
+      super.merge({
         :'clone_from_file' => :'InputFile',
         :'clone_from_position' => :'Integer',
-        :'apply_to_all' => :'BOOLEAN'
-      }
+        :'apply_to_all' => :'BOOLEAN',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'Type')
-        self.type = attributes[:'Type']
-      else
-        self.type = "AddMasterSlide"
-      end
+      super
 
       if attributes.has_key?(:'CloneFromFile')
         self.clone_from_file = attributes[:'CloneFromFile']
@@ -104,16 +90,13 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'ApplyToAll')
         self.apply_to_all = attributes[:'ApplyToAll']
       end
+      self.type = "AddMasterSlide"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
-      end
-
+      invalid_properties = super
       if @clone_from_position.nil?
         invalid_properties.push('invalid value for "clone_from_position", clone_from_position cannot be nil.')
       end
@@ -128,22 +111,10 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @type.nil?
-      type_validator = EnumAttributeValidator.new('String', ['Save', 'SaveSlide', 'SaveShape', 'AddSlide', 'AddMasterSlide', 'AddLayoutSlide', 'RemoveSlide', 'ReoderSlide', 'Merge', 'UpdateBackground', 'ResetSlide', 'AddShape', 'RemoveShape', 'UpdateShape', 'ReplaceText'])
-      return false unless type_validator.valid?(@type)
+      return false if !super
       return false if @clone_from_position.nil?
       return false if @apply_to_all.nil?
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] type Object to be assigned
-    def type=(type)
-      validator = EnumAttributeValidator.new('String', ['Save', 'SaveSlide', 'SaveShape', 'AddSlide', 'AddMasterSlide', 'AddLayoutSlide', 'RemoveSlide', 'ReoderSlide', 'Merge', 'UpdateBackground', 'ResetSlide', 'AddShape', 'RemoveShape', 'UpdateShape', 'ReplaceText'])
-      unless validator.valid?(type)
-        fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
-      end
-      @type = type
     end
 
     # Checks equality by comparing each attribute.

@@ -24,10 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Represents gradient fill format
-  class GradientFill
-    # Type of fill.
-    attr_accessor :type
-
+  class GradientFill < FillFormat
     # Gradient style.
     attr_accessor :direction
 
@@ -70,43 +67,32 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'type' => :'Type',
+      super.merge({
         :'direction' => :'Direction',
         :'shape' => :'Shape',
         :'stops' => :'Stops',
         :'linear_angle' => :'LinearAngle',
         :'is_scaled' => :'IsScaled',
-        :'tile_flip' => :'TileFlip'
-      }
+        :'tile_flip' => :'TileFlip',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'type' => :'String',
+      super.merge({
         :'direction' => :'String',
         :'shape' => :'String',
         :'stops' => :'Array<GradientFillStop>',
         :'linear_angle' => :'Float',
         :'is_scaled' => :'BOOLEAN',
-        :'tile_flip' => :'String'
-      }
+        :'tile_flip' => :'String',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'Type')
-        self.type = attributes[:'Type']
-      else
-        self.type = "Gradient"
-      end
+      super
 
       if attributes.has_key?(:'Direction')
         self.direction = attributes[:'Direction']
@@ -133,16 +119,13 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'TileFlip')
         self.tile_flip = attributes[:'TileFlip']
       end
+      self.type = "Gradient"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
-      end
-
+      invalid_properties = super
       if @direction.nil?
         invalid_properties.push('invalid value for "direction", direction cannot be nil.')
       end
@@ -169,9 +152,7 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @type.nil?
-      type_validator = EnumAttributeValidator.new('String', ['NoFill', 'Solid', 'Gradient', 'Pattern', 'Picture', 'NotDefined'])
-      return false unless type_validator.valid?(@type)
+      return false if !super
       return false if @direction.nil?
       direction_validator = EnumAttributeValidator.new('String', ['FromCorner1', 'FromCorner2', 'FromCorner3', 'FromCorner4', 'FromCenter', 'NotDefined'])
       return false unless direction_validator.valid?(@direction)
@@ -184,16 +165,6 @@ module AsposeSlidesCloud
       tile_flip_validator = EnumAttributeValidator.new('String', ['NoFlip', 'FlipX', 'FlipY', 'FlipBoth', 'NotDefined'])
       return false unless tile_flip_validator.valid?(@tile_flip)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] type Object to be assigned
-    def type=(type)
-      validator = EnumAttributeValidator.new('String', ['NoFill', 'Solid', 'Gradient', 'Pattern', 'Picture', 'NotDefined'])
-      unless validator.valid?(type)
-        fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
-      end
-      @type = type
     end
 
     # Custom attribute writer method checking allowed values (enum).

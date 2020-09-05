@@ -39,7 +39,7 @@ module AsposeSlidesCloud
       {
         :'complex_script' => :'ComplexScript',
         :'east_asian' => :'EastAsian',
-        :'latin' => :'Latin'
+        :'latin' => :'Latin',
       }
     end
 
@@ -48,7 +48,7 @@ module AsposeSlidesCloud
       {
         :'complex_script' => :'String',
         :'east_asian' => :'String',
-        :'latin' => :'String'
+        :'latin' => :'String',
       }
     end
 

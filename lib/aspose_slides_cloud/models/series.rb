@@ -120,7 +120,7 @@ module AsposeSlidesCloud
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
         :'line_format' => :'LineFormat',
-        :'data_point_type' => :'DataPointType'
+        :'data_point_type' => :'DataPointType',
       }
     end
 
@@ -144,7 +144,7 @@ module AsposeSlidesCloud
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
         :'line_format' => :'LineFormat',
-        :'data_point_type' => :'String'
+        :'data_point_type' => :'String',
       }
     end
 

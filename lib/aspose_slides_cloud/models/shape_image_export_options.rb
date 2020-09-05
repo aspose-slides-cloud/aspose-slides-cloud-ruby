@@ -65,7 +65,7 @@ module AsposeSlidesCloud
         :'scale_x' => :'ScaleX',
         :'scale_y' => :'ScaleY',
         :'thumbnail_bounds' => :'ThumbnailBounds',
-        :'format' => :'Format'
+        :'format' => :'Format',
       }
     end
 
@@ -75,7 +75,7 @@ module AsposeSlidesCloud
         :'scale_x' => :'Float',
         :'scale_y' => :'Float',
         :'thumbnail_bounds' => :'String',
-        :'format' => :'String'
+        :'format' => :'String',
       }
     end
 

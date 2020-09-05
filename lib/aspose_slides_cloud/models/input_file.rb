@@ -56,7 +56,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       {
         :'password' => :'Password',
-        :'type' => :'Type'
+        :'type' => :'Type',
       }
     end
 
@@ -64,7 +64,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'password' => :'String',
-        :'type' => :'String'
+        :'type' => :'String',
       }
     end
 

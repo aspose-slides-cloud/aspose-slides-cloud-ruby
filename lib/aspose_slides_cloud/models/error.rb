@@ -43,7 +43,7 @@ module AsposeSlidesCloud
         :'code' => :'Code',
         :'message' => :'Message',
         :'description' => :'Description',
-        :'inner_error' => :'InnerError'
+        :'inner_error' => :'InnerError',
       }
     end
 
@@ -53,7 +53,7 @@ module AsposeSlidesCloud
         :'code' => :'String',
         :'message' => :'String',
         :'description' => :'String',
-        :'inner_error' => :'ErrorDetails'
+        :'inner_error' => :'ErrorDetails',
       }
     end
 

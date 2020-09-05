@@ -85,7 +85,7 @@ module AsposeSlidesCloud
         :'overlay' => :'Overlay',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
-        :'line_format' => :'LineFormat'
+        :'line_format' => :'LineFormat',
       }
     end
 
@@ -100,7 +100,7 @@ module AsposeSlidesCloud
         :'overlay' => :'BOOLEAN',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
-        :'line_format' => :'LineFormat'
+        :'line_format' => :'LineFormat',
       }
     end
 

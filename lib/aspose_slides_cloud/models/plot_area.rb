@@ -81,7 +81,7 @@ module AsposeSlidesCloud
         :'layout_target_type' => :'LayoutTargetType',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
-        :'line_format' => :'LineFormat'
+        :'line_format' => :'LineFormat',
       }
     end
 
@@ -95,7 +95,7 @@ module AsposeSlidesCloud
         :'layout_target_type' => :'String',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
-        :'line_format' => :'LineFormat'
+        :'line_format' => :'LineFormat',
       }
     end
 

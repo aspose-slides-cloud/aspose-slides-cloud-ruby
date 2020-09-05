@@ -24,10 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Provides options that control how a presentation is saved in TIFF format.
-  class TiffExportOptions
-    # Export format.
-    attr_accessor :format
-
+  class TiffExportOptions < ExportOptions
     # Compression type.
     attr_accessor :compression
 
@@ -88,8 +85,7 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'format' => :'Format',
+      super.merge({
         :'compression' => :'Compression',
         :'width' => :'Width',
         :'height' => :'Height',
@@ -101,14 +97,13 @@ module AsposeSlidesCloud
         :'comments_position' => :'CommentsPosition',
         :'comments_area_width' => :'CommentsAreaWidth',
         :'comments_area_color' => :'CommentsAreaColor',
-        :'show_comments_by_no_author' => :'ShowCommentsByNoAuthor'
-      }
+        :'show_comments_by_no_author' => :'ShowCommentsByNoAuthor',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'format' => :'String',
+      super.merge({
         :'compression' => :'String',
         :'width' => :'Integer',
         :'height' => :'Integer',
@@ -120,23 +115,14 @@ module AsposeSlidesCloud
         :'comments_position' => :'String',
         :'comments_area_width' => :'Integer',
         :'comments_area_color' => :'String',
-        :'show_comments_by_no_author' => :'BOOLEAN'
-      }
+        :'show_comments_by_no_author' => :'BOOLEAN',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'Format')
-        self.format = attributes[:'Format']
-      else
-        self.format = "tiff"
-      end
+      super
 
       if attributes.has_key?(:'Compression')
         self.compression = attributes[:'Compression']
@@ -185,12 +171,13 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'ShowCommentsByNoAuthor')
         self.show_comments_by_no_author = attributes[:'ShowCommentsByNoAuthor']
       end
+      self.format = "tiff"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = super
       if @compression.nil?
         invalid_properties.push('invalid value for "compression", compression cannot be nil.')
       end
@@ -225,6 +212,7 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !super
       return false if @compression.nil?
       compression_validator = EnumAttributeValidator.new('String', ['Default', 'None', 'CCITT3', 'CCITT4', 'LZW', 'RLE'])
       return false unless compression_validator.valid?(@compression)
@@ -288,6 +276,7 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          default_regular_font == o.default_regular_font &&
           format == o.format &&
           compression == o.compression &&
           width == o.width &&
@@ -312,7 +301,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [format, compression, width, height, dpi_x, dpi_y, show_hidden_slides, pixel_format, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author].hash
+      [default_regular_font, format, compression, width, height, dpi_x, dpi_y, show_hidden_slides, pixel_format, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author].hash
     end
 
     # Builds the object from hash

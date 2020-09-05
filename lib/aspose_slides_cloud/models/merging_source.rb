@@ -35,7 +35,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       {
         :'input' => :'Input',
-        :'slides' => :'Slides'
+        :'slides' => :'Slides',
       }
     end
 
@@ -43,7 +43,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'input' => :'InputFile',
-        :'slides' => :'Array<Integer>'
+        :'slides' => :'Array<Integer>',
       }
     end
 

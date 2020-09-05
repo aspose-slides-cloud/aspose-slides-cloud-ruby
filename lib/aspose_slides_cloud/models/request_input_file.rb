@@ -24,13 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Represents input file from multipart request.
-  class RequestInputFile
-    # Get or sets password to open document.
-    attr_accessor :password
-
-    # File type.
-    attr_accessor :type
-
+  class RequestInputFile < InputFile
     # Get or sets index of file from request.
     attr_accessor :index
 
@@ -58,53 +52,33 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'password' => :'Password',
-        :'type' => :'Type',
-        :'index' => :'Index'
-      }
+      super.merge({
+        :'index' => :'Index',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'password' => :'String',
-        :'type' => :'String',
-        :'index' => :'Integer'
-      }
+      super.merge({
+        :'index' => :'Integer',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'Password')
-        self.password = attributes[:'Password']
-      end
-
-      if attributes.has_key?(:'Type')
-        self.type = attributes[:'Type']
-      else
-        self.type = "Request"
-      end
+      super
 
       if attributes.has_key?(:'Index')
         self.index = attributes[:'Index']
       end
+      self.type = "Request"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
-      end
-
+      invalid_properties = super
       if @index.nil?
         invalid_properties.push('invalid value for "index", index cannot be nil.')
       end
@@ -115,21 +89,9 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @type.nil?
-      type_validator = EnumAttributeValidator.new('String', ['Path', 'Request', 'Base64'])
-      return false unless type_validator.valid?(@type)
+      return false if !super
       return false if @index.nil?
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] type Object to be assigned
-    def type=(type)
-      validator = EnumAttributeValidator.new('String', ['Path', 'Request', 'Base64'])
-      unless validator.valid?(type)
-        fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
-      end
-      @type = type
     end
 
     # Checks equality by comparing each attribute.

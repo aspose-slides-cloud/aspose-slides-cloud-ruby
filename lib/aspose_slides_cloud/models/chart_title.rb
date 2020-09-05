@@ -35,7 +35,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       {
         :'text' => :'Text',
-        :'has_title' => :'HasTitle'
+        :'has_title' => :'HasTitle',
       }
     end
 
@@ -43,7 +43,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'text' => :'String',
-        :'has_title' => :'BOOLEAN'
+        :'has_title' => :'BOOLEAN',
       }
     end
 

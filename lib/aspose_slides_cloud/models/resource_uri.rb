@@ -43,7 +43,7 @@ module AsposeSlidesCloud
         :'href' => :'Href',
         :'relation' => :'Relation',
         :'link_type' => :'LinkType',
-        :'title' => :'Title'
+        :'title' => :'Title',
       }
     end
 
@@ -53,7 +53,7 @@ module AsposeSlidesCloud
         :'href' => :'String',
         :'relation' => :'String',
         :'link_type' => :'String',
-        :'title' => :'String'
+        :'title' => :'String',
       }
     end
 

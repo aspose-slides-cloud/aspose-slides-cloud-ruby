@@ -69,7 +69,7 @@ module AsposeSlidesCloud
         :'symbol' => :'Symbol',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
-        :'line_format' => :'LineFormat'
+        :'line_format' => :'LineFormat',
       }
     end
 
@@ -80,7 +80,7 @@ module AsposeSlidesCloud
         :'symbol' => :'String',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
-        :'line_format' => :'LineFormat'
+        :'line_format' => :'LineFormat',
       }
     end
 

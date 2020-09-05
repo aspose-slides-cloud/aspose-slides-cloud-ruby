@@ -24,13 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Represents image DTO.
-  class Image
-    # Gets or sets the link to this resource.
-    attr_accessor :self_uri
-
-    # List of alternate links.
-    attr_accessor :alternate_links
-
+  class Image < ResourceBase
     # Get or sets the width of an image.
     attr_accessor :width
 
@@ -42,43 +36,26 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'self_uri' => :'SelfUri',
-        :'alternate_links' => :'AlternateLinks',
+      super.merge({
         :'width' => :'Width',
         :'height' => :'Height',
-        :'content_type' => :'ContentType'
-      }
+        :'content_type' => :'ContentType',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'self_uri' => :'ResourceUri',
-        :'alternate_links' => :'Array<ResourceUri>',
+      super.merge({
         :'width' => :'Integer',
         :'height' => :'Integer',
-        :'content_type' => :'String'
-      }
+        :'content_type' => :'String',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'SelfUri')
-        self.self_uri = attributes[:'SelfUri']
-      end
-
-      if attributes.has_key?(:'AlternateLinks')
-        if (value = attributes[:'AlternateLinks']).is_a?(Array)
-          self.alternate_links = value
-        end
-      end
+      super
 
       if attributes.has_key?(:'Width')
         self.width = attributes[:'Width']
@@ -96,7 +73,7 @@ module AsposeSlidesCloud
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = super
       if @width.nil?
         invalid_properties.push('invalid value for "width", width cannot be nil.')
       end
@@ -111,6 +88,7 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !super
       return false if @width.nil?
       return false if @height.nil?
       true

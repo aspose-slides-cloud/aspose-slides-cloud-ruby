@@ -35,7 +35,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       {
         :'name' => :'Name',
-        :'version' => :'Version'
+        :'version' => :'Version',
       }
     end
 
@@ -43,7 +43,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'name' => :'String',
-        :'version' => :'String'
+        :'version' => :'String',
       }
     end
 

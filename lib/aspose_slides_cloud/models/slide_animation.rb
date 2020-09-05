@@ -24,13 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Represents comments collection of slide
-  class SlideAnimation
-    # Gets or sets the link to this resource.
-    attr_accessor :self_uri
-
-    # List of alternate links.
-    attr_accessor :alternate_links
-
+  class SlideAnimation < ResourceBase
     # Main sequence.
     attr_accessor :main_sequence
 
@@ -39,41 +33,24 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'self_uri' => :'SelfUri',
-        :'alternate_links' => :'AlternateLinks',
+      super.merge({
         :'main_sequence' => :'MainSequence',
-        :'interactive_sequences' => :'InteractiveSequences'
-      }
+        :'interactive_sequences' => :'InteractiveSequences',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'self_uri' => :'ResourceUri',
-        :'alternate_links' => :'Array<ResourceUri>',
+      super.merge({
         :'main_sequence' => :'Array<Effect>',
-        :'interactive_sequences' => :'Array<InteractiveSequence>'
-      }
+        :'interactive_sequences' => :'Array<InteractiveSequence>',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'SelfUri')
-        self.self_uri = attributes[:'SelfUri']
-      end
-
-      if attributes.has_key?(:'AlternateLinks')
-        if (value = attributes[:'AlternateLinks']).is_a?(Array)
-          self.alternate_links = value
-        end
-      end
+      super
 
       if attributes.has_key?(:'MainSequence')
         if (value = attributes[:'MainSequence']).is_a?(Array)
@@ -91,13 +68,14 @@ module AsposeSlidesCloud
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = super
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !super
       true
     end
 

@@ -24,51 +24,28 @@ require 'date'
 
 module AsposeSlidesCloud
   # Represents list of Links to Shapes resources
-  class Shapes
-    # Gets or sets the link to this resource.
-    attr_accessor :self_uri
-
-    # List of alternate links.
-    attr_accessor :alternate_links
-
+  class Shapes < ResourceBase
     # List of shape links.
     attr_accessor :shapes_links
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'self_uri' => :'SelfUri',
-        :'alternate_links' => :'AlternateLinks',
-        :'shapes_links' => :'ShapesLinks'
-      }
+      super.merge({
+        :'shapes_links' => :'ShapesLinks',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'self_uri' => :'ResourceUri',
-        :'alternate_links' => :'Array<ResourceUri>',
-        :'shapes_links' => :'Array<ResourceUriElement>'
-      }
+      super.merge({
+        :'shapes_links' => :'Array<ResourceUriElement>',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'SelfUri')
-        self.self_uri = attributes[:'SelfUri']
-      end
-
-      if attributes.has_key?(:'AlternateLinks')
-        if (value = attributes[:'AlternateLinks']).is_a?(Array)
-          self.alternate_links = value
-        end
-      end
+      super
 
       if attributes.has_key?(:'ShapesLinks')
         if (value = attributes[:'ShapesLinks']).is_a?(Array)
@@ -80,13 +57,14 @@ module AsposeSlidesCloud
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = super
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !super
       true
     end
 

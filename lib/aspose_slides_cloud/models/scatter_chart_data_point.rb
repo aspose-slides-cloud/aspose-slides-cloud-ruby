@@ -24,7 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Scatter chart (two-dimensional) data point
-  class ScatterChartDataPoint
+  class ScatterChartDataPoint < DataPoint
     # X-value
     attr_accessor :x_value
 
@@ -33,27 +33,24 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
+      super.merge({
         :'x_value' => :'XValue',
-        :'y_value' => :'YValue'
-      }
+        :'y_value' => :'YValue',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
+      super.merge({
         :'x_value' => :'Float',
-        :'y_value' => :'Float'
-      }
+        :'y_value' => :'Float',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+      super
 
       if attributes.has_key?(:'XValue')
         self.x_value = attributes[:'XValue']
@@ -67,7 +64,7 @@ module AsposeSlidesCloud
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = super
       if @x_value.nil?
         invalid_properties.push('invalid value for "x_value", x_value cannot be nil.')
       end
@@ -82,6 +79,7 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !super
       return false if @x_value.nil?
       return false if @y_value.nil?
       true

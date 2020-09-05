@@ -69,7 +69,7 @@ module AsposeSlidesCloud
         :'effect_format' => :'EffectFormat',
         :'line_format' => :'LineFormat',
         :'thickness' => :'Thickness',
-        :'picture_type' => :'PictureType'
+        :'picture_type' => :'PictureType',
       }
     end
 
@@ -80,7 +80,7 @@ module AsposeSlidesCloud
         :'effect_format' => :'EffectFormat',
         :'line_format' => :'LineFormat',
         :'thickness' => :'Integer',
-        :'picture_type' => :'String'
+        :'picture_type' => :'String',
       }
     end
 

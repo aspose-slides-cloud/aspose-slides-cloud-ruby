@@ -24,49 +24,28 @@ require 'date'
 
 module AsposeSlidesCloud
   # Bubble chart data point.
-  class BubbleChartDataPoint
-    # X-value
-    attr_accessor :x_value
-
-    # Y-value
-    attr_accessor :y_value
-
+  class BubbleChartDataPoint < ScatterChartDataPoint
     # Bubble size.
     attr_accessor :bubble_size
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'x_value' => :'XValue',
-        :'y_value' => :'YValue',
-        :'bubble_size' => :'BubbleSize'
-      }
+      super.merge({
+        :'bubble_size' => :'BubbleSize',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'x_value' => :'Float',
-        :'y_value' => :'Float',
-        :'bubble_size' => :'Float'
-      }
+      super.merge({
+        :'bubble_size' => :'Float',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'XValue')
-        self.x_value = attributes[:'XValue']
-      end
-
-      if attributes.has_key?(:'YValue')
-        self.y_value = attributes[:'YValue']
-      end
+      super
 
       if attributes.has_key?(:'BubbleSize')
         self.bubble_size = attributes[:'BubbleSize']
@@ -76,15 +55,7 @@ module AsposeSlidesCloud
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      if @x_value.nil?
-        invalid_properties.push('invalid value for "x_value", x_value cannot be nil.')
-      end
-
-      if @y_value.nil?
-        invalid_properties.push('invalid value for "y_value", y_value cannot be nil.')
-      end
-
+      invalid_properties = super
       if @bubble_size.nil?
         invalid_properties.push('invalid value for "bubble_size", bubble_size cannot be nil.')
       end
@@ -95,8 +66,7 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @x_value.nil?
-      return false if @y_value.nil?
+      return false if !super
       return false if @bubble_size.nil?
       true
     end

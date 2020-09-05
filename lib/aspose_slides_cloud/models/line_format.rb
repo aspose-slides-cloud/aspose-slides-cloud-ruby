@@ -93,7 +93,7 @@ module AsposeSlidesCloud
         :'custom_dash_pattern' => :'CustomDashPattern',
         :'fill_format' => :'FillFormat',
         :'miter_limit' => :'MiterLimit',
-        :'width' => :'Width'
+        :'width' => :'Width',
       }
     end
 
@@ -110,7 +110,7 @@ module AsposeSlidesCloud
         :'custom_dash_pattern' => :'CustomDashPattern',
         :'fill_format' => :'FillFormat',
         :'miter_limit' => :'Float',
-        :'width' => :'Float'
+        :'width' => :'Float',
       }
     end
 

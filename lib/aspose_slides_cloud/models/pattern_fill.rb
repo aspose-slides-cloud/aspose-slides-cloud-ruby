@@ -24,10 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Represents Pattern Fill
-  class PatternFill
-    # Type of fill.
-    attr_accessor :type
-
+  class PatternFill < FillFormat
     # Gets or sets the back color of the pattern fill.
     attr_accessor :back_color
 
@@ -61,37 +58,26 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'type' => :'Type',
+      super.merge({
         :'back_color' => :'BackColor',
         :'fore_color' => :'ForeColor',
-        :'style' => :'Style'
-      }
+        :'style' => :'Style',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'type' => :'String',
+      super.merge({
         :'back_color' => :'String',
         :'fore_color' => :'String',
-        :'style' => :'String'
-      }
+        :'style' => :'String',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'Type')
-        self.type = attributes[:'Type']
-      else
-        self.type = "Pattern"
-      end
+      super
 
       if attributes.has_key?(:'BackColor')
         self.back_color = attributes[:'BackColor']
@@ -104,16 +90,13 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Style')
         self.style = attributes[:'Style']
       end
+      self.type = "Pattern"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
-      end
-
+      invalid_properties = super
       if @style.nil?
         invalid_properties.push('invalid value for "style", style cannot be nil.')
       end
@@ -124,23 +107,11 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @type.nil?
-      type_validator = EnumAttributeValidator.new('String', ['NoFill', 'Solid', 'Gradient', 'Pattern', 'Picture', 'NotDefined'])
-      return false unless type_validator.valid?(@type)
+      return false if !super
       return false if @style.nil?
       style_validator = EnumAttributeValidator.new('String', ['Unknown', 'Percent05', 'Percent10', 'Percent20', 'Percent25', 'Percent30', 'Percent40', 'Percent50', 'Percent60', 'Percent70', 'Percent75', 'Percent80', 'Percent90', 'DarkHorizontal', 'DarkVertical', 'DarkDownwardDiagonal', 'DarkUpwardDiagonal', 'SmallCheckerBoard', 'Trellis', 'LightHorizontal', 'LightVertical', 'LightDownwardDiagonal', 'LightUpwardDiagonal', 'SmallGrid', 'DottedDiamond', 'WideDownwardDiagonal', 'WideUpwardDiagonal', 'DashedUpwardDiagonal', 'DashedDownwardDiagonal', 'NarrowVertical', 'NarrowHorizontal', 'DashedVertical', 'DashedHorizontal', 'LargeConfetti', 'LargeGrid', 'HorizontalBrick', 'LargeCheckerBoard', 'SmallConfetti', 'Zigzag', 'SolidDiamond', 'DiagonalBrick', 'OutlinedDiamond', 'Plaid', 'Sphere', 'Weave', 'DottedGrid', 'Divot', 'Shingle', 'Wave', 'Horizontal', 'Vertical', 'Cross', 'DownwardDiagonal', 'UpwardDiagonal', 'DiagonalCross', 'NotDefined'])
       return false unless style_validator.valid?(@style)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] type Object to be assigned
-    def type=(type)
-      validator = EnumAttributeValidator.new('String', ['NoFill', 'Solid', 'Gradient', 'Pattern', 'Picture', 'NotDefined'])
-      unless validator.valid?(type)
-        fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
-      end
-      @type = type
     end
 
     # Custom attribute writer method checking allowed values (enum).

@@ -69,7 +69,7 @@ module AsposeSlidesCloud
         :'shapes' => :'Shapes',
         :'is_assistant' => :'IsAssistant',
         :'text' => :'Text',
-        :'org_chart_layout' => :'OrgChartLayout'
+        :'org_chart_layout' => :'OrgChartLayout',
       }
     end
 
@@ -80,7 +80,7 @@ module AsposeSlidesCloud
         :'shapes' => :'ResourceUriElement',
         :'is_assistant' => :'BOOLEAN',
         :'text' => :'String',
-        :'org_chart_layout' => :'String'
+        :'org_chart_layout' => :'String',
       }
     end
 

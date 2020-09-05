@@ -35,7 +35,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       {
         :'auto_adjust' => :'AutoAdjust',
-        :'dimension_size' => :'DimensionSize'
+        :'dimension_size' => :'DimensionSize',
       }
     end
 
@@ -43,7 +43,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'auto_adjust' => :'BOOLEAN',
-        :'dimension_size' => :'Float'
+        :'dimension_size' => :'Float',
       }
     end
 

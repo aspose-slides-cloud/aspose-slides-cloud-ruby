@@ -35,7 +35,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       {
         :'used_size' => :'UsedSize',
-        :'total_size' => :'TotalSize'
+        :'total_size' => :'TotalSize',
       }
     end
 
@@ -43,7 +43,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'used_size' => :'Integer',
-        :'total_size' => :'Integer'
+        :'total_size' => :'Integer',
       }
     end
 

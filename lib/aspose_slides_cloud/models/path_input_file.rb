@@ -24,13 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Represents input file from filesystem.
-  class PathInputFile
-    # Get or sets password to open document.
-    attr_accessor :password
-
-    # File type.
-    attr_accessor :type
-
+  class PathInputFile < InputFile
     # Get or sets path to file.
     attr_accessor :path
 
@@ -61,41 +55,24 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'password' => :'Password',
-        :'type' => :'Type',
+      super.merge({
         :'path' => :'Path',
-        :'storage' => :'Storage'
-      }
+        :'storage' => :'Storage',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'password' => :'String',
-        :'type' => :'String',
+      super.merge({
         :'path' => :'String',
-        :'storage' => :'String'
-      }
+        :'storage' => :'String',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'Password')
-        self.password = attributes[:'Password']
-      end
-
-      if attributes.has_key?(:'Type')
-        self.type = attributes[:'Type']
-      else
-        self.type = "Path"
-      end
+      super
 
       if attributes.has_key?(:'Path')
         self.path = attributes[:'Path']
@@ -104,36 +81,21 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Storage')
         self.storage = attributes[:'Storage']
       end
+      self.type = "Path"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
-      end
-
+      invalid_properties = super
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @type.nil?
-      type_validator = EnumAttributeValidator.new('String', ['Path', 'Request', 'Base64'])
-      return false unless type_validator.valid?(@type)
+      return false if !super
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] type Object to be assigned
-    def type=(type)
-      validator = EnumAttributeValidator.new('String', ['Path', 'Request', 'Base64'])
-      unless validator.valid?(type)
-        fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
-      end
-      @type = type
     end
 
     # Checks equality by comparing each attribute.

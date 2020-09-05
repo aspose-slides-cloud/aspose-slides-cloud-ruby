@@ -24,10 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Provides options that control how a presentation is saved in Html format.
-  class HtmlExportOptions
-    # Export format.
-    attr_accessor :format
-
+  class HtmlExportOptions < ExportOptions
     # Get or sets flag for save presentation as zip file
     attr_accessor :save_as_zip
 
@@ -88,8 +85,7 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'format' => :'Format',
+      super.merge({
         :'save_as_zip' => :'SaveAsZip',
         :'sub_directory_name' => :'SubDirectoryName',
         :'show_hidden_slides' => :'ShowHiddenSlides',
@@ -101,14 +97,13 @@ module AsposeSlidesCloud
         :'comments_position' => :'CommentsPosition',
         :'comments_area_width' => :'CommentsAreaWidth',
         :'comments_area_color' => :'CommentsAreaColor',
-        :'show_comments_by_no_author' => :'ShowCommentsByNoAuthor'
-      }
+        :'show_comments_by_no_author' => :'ShowCommentsByNoAuthor',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'format' => :'String',
+      super.merge({
         :'save_as_zip' => :'BOOLEAN',
         :'sub_directory_name' => :'String',
         :'show_hidden_slides' => :'BOOLEAN',
@@ -120,23 +115,14 @@ module AsposeSlidesCloud
         :'comments_position' => :'String',
         :'comments_area_width' => :'Integer',
         :'comments_area_color' => :'String',
-        :'show_comments_by_no_author' => :'BOOLEAN'
-      }
+        :'show_comments_by_no_author' => :'BOOLEAN',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'Format')
-        self.format = attributes[:'Format']
-      else
-        self.format = "html"
-      end
+      super
 
       if attributes.has_key?(:'SaveAsZip')
         self.save_as_zip = attributes[:'SaveAsZip']
@@ -185,12 +171,13 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'ShowCommentsByNoAuthor')
         self.show_comments_by_no_author = attributes[:'ShowCommentsByNoAuthor']
       end
+      self.format = "html"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = super
       if @save_as_zip.nil?
         invalid_properties.push('invalid value for "save_as_zip", save_as_zip cannot be nil.')
       end
@@ -233,6 +220,7 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !super
       return false if @save_as_zip.nil?
       return false if @show_hidden_slides.nil?
       return false if @svg_responsive_layout.nil?
@@ -286,6 +274,7 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          default_regular_font == o.default_regular_font &&
           format == o.format &&
           save_as_zip == o.save_as_zip &&
           sub_directory_name == o.sub_directory_name &&
@@ -310,7 +299,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [format, save_as_zip, sub_directory_name, show_hidden_slides, svg_responsive_layout, jpeg_quality, pictures_compression, delete_pictures_cropped_areas, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author].hash
+      [default_regular_font, format, save_as_zip, sub_directory_name, show_hidden_slides, svg_responsive_layout, jpeg_quality, pictures_compression, delete_pictures_cropped_areas, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author].hash
     end
 
     # Builds the object from hash

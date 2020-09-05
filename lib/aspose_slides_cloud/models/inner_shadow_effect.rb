@@ -43,7 +43,7 @@ module AsposeSlidesCloud
         :'direction' => :'Direction',
         :'distance' => :'Distance',
         :'blur_radius' => :'BlurRadius',
-        :'shadow_color' => :'ShadowColor'
+        :'shadow_color' => :'ShadowColor',
       }
     end
 
@@ -53,7 +53,7 @@ module AsposeSlidesCloud
         :'direction' => :'Float',
         :'distance' => :'Float',
         :'blur_radius' => :'Float',
-        :'shadow_color' => :'String'
+        :'shadow_color' => :'String',
       }
     end
 

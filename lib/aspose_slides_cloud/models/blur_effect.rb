@@ -35,7 +35,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       {
         :'radius' => :'Radius',
-        :'grow' => :'Grow'
+        :'grow' => :'Grow',
       }
     end
 
@@ -43,7 +43,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'radius' => :'Float',
-        :'grow' => :'BOOLEAN'
+        :'grow' => :'BOOLEAN',
       }
     end
 

@@ -35,7 +35,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       {
         :'effects' => :'Effects',
-        :'trigger_shape_index' => :'TriggerShapeIndex'
+        :'trigger_shape_index' => :'TriggerShapeIndex',
       }
     end
 
@@ -43,7 +43,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'effects' => :'Array<Effect>',
-        :'trigger_shape_index' => :'Integer'
+        :'trigger_shape_index' => :'Integer',
       }
     end
 

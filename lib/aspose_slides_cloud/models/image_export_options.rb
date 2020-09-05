@@ -24,10 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Provides options that control how a presentation is saved in an image format.
-  class ImageExportOptions
-    # Export format.
-    attr_accessor :format
-
+  class ImageExportOptions < ExportOptions
     # Gets or sets the position of the notes on the page.
     attr_accessor :notes_position
 
@@ -64,39 +61,28 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'format' => :'Format',
+      super.merge({
         :'notes_position' => :'NotesPosition',
         :'comments_position' => :'CommentsPosition',
         :'comments_area_width' => :'CommentsAreaWidth',
-        :'comments_area_color' => :'CommentsAreaColor'
-      }
+        :'comments_area_color' => :'CommentsAreaColor',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'format' => :'String',
+      super.merge({
         :'notes_position' => :'String',
         :'comments_position' => :'String',
         :'comments_area_width' => :'Integer',
-        :'comments_area_color' => :'String'
-      }
+        :'comments_area_color' => :'String',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'Format')
-        self.format = attributes[:'Format']
-      else
-        self.format = "image"
-      end
+      super
 
       if attributes.has_key?(:'NotesPosition')
         self.notes_position = attributes[:'NotesPosition']
@@ -113,12 +99,13 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'CommentsAreaColor')
         self.comments_area_color = attributes[:'CommentsAreaColor']
       end
+      self.format = "image"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = super
       if @notes_position.nil?
         invalid_properties.push('invalid value for "notes_position", notes_position cannot be nil.')
       end
@@ -137,6 +124,7 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !super
       return false if @notes_position.nil?
       notes_position_validator = EnumAttributeValidator.new('String', ['None', 'BottomFull', 'BottomTruncated'])
       return false unless notes_position_validator.valid?(@notes_position)
@@ -172,6 +160,7 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          default_regular_font == o.default_regular_font &&
           format == o.format &&
           notes_position == o.notes_position &&
           comments_position == o.comments_position &&
@@ -188,7 +177,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [format, notes_position, comments_position, comments_area_width, comments_area_color].hash
+      [default_regular_font, format, notes_position, comments_position, comments_area_width, comments_area_color].hash
     end
 
     # Builds the object from hash

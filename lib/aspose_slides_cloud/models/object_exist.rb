@@ -35,7 +35,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       {
         :'exists' => :'Exists',
-        :'is_folder' => :'IsFolder'
+        :'is_folder' => :'IsFolder',
       }
     end
 
@@ -43,7 +43,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'exists' => :'BOOLEAN',
-        :'is_folder' => :'BOOLEAN'
+        :'is_folder' => :'BOOLEAN',
       }
     end
 

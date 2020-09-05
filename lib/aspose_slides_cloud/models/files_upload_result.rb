@@ -35,7 +35,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       {
         :'uploaded' => :'Uploaded',
-        :'errors' => :'Errors'
+        :'errors' => :'Errors',
       }
     end
 
@@ -43,7 +43,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'uploaded' => :'Array<String>',
-        :'errors' => :'Array<Error>'
+        :'errors' => :'Array<Error>',
       }
     end
 

@@ -35,7 +35,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       {
         :'color' => :'Color',
-        :'position' => :'Position'
+        :'position' => :'Position',
       }
     end
 
@@ -43,7 +43,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'color' => :'String',
-        :'position' => :'Float'
+        :'position' => :'Float',
       }
     end
 

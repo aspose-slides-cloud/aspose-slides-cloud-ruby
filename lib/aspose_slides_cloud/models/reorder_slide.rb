@@ -24,10 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Reorder slide task.
-  class ReorderSlide
-    # Task type.
-    attr_accessor :type
-
+  class ReorderSlide < Task
     # Old position.
     attr_accessor :old_position
 
@@ -58,35 +55,24 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'type' => :'Type',
+      super.merge({
         :'old_position' => :'OldPosition',
-        :'new_position' => :'NewPosition'
-      }
+        :'new_position' => :'NewPosition',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'type' => :'String',
+      super.merge({
         :'old_position' => :'Integer',
-        :'new_position' => :'Integer'
-      }
+        :'new_position' => :'Integer',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'Type')
-        self.type = attributes[:'Type']
-      else
-        self.type = "ReoderSlide"
-      end
+      super
 
       if attributes.has_key?(:'OldPosition')
         self.old_position = attributes[:'OldPosition']
@@ -95,16 +81,13 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'NewPosition')
         self.new_position = attributes[:'NewPosition']
       end
+      self.type = "ReoderSlide"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
-      end
-
+      invalid_properties = super
       if @old_position.nil?
         invalid_properties.push('invalid value for "old_position", old_position cannot be nil.')
       end
@@ -119,22 +102,10 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @type.nil?
-      type_validator = EnumAttributeValidator.new('String', ['Save', 'SaveSlide', 'SaveShape', 'AddSlide', 'AddMasterSlide', 'AddLayoutSlide', 'RemoveSlide', 'ReoderSlide', 'Merge', 'UpdateBackground', 'ResetSlide', 'AddShape', 'RemoveShape', 'UpdateShape', 'ReplaceText'])
-      return false unless type_validator.valid?(@type)
+      return false if !super
       return false if @old_position.nil?
       return false if @new_position.nil?
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] type Object to be assigned
-    def type=(type)
-      validator = EnumAttributeValidator.new('String', ['Save', 'SaveSlide', 'SaveShape', 'AddSlide', 'AddMasterSlide', 'AddLayoutSlide', 'RemoveSlide', 'ReoderSlide', 'Merge', 'UpdateBackground', 'ResetSlide', 'AddShape', 'RemoveShape', 'UpdateShape', 'ReplaceText'])
-      unless validator.valid?(type)
-        fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
-      end
-      @type = type
     end
 
     # Checks equality by comparing each attribute.

@@ -43,7 +43,7 @@ module AsposeSlidesCloud
         :'author' => :'Author',
         :'text' => :'Text',
         :'created_time' => :'CreatedTime',
-        :'child_comments' => :'ChildComments'
+        :'child_comments' => :'ChildComments',
       }
     end
 
@@ -53,7 +53,7 @@ module AsposeSlidesCloud
         :'author' => :'String',
         :'text' => :'String',
         :'created_time' => :'String',
-        :'child_comments' => :'Array<SlideComment>'
+        :'child_comments' => :'Array<SlideComment>',
       }
     end
 

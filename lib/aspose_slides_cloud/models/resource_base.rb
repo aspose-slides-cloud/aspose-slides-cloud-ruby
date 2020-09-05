@@ -35,7 +35,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       {
         :'self_uri' => :'SelfUri',
-        :'alternate_links' => :'AlternateLinks'
+        :'alternate_links' => :'AlternateLinks',
       }
     end
 
@@ -43,7 +43,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'self_uri' => :'ResourceUri',
-        :'alternate_links' => :'Array<ResourceUri>'
+        :'alternate_links' => :'Array<ResourceUri>',
       }
     end
 

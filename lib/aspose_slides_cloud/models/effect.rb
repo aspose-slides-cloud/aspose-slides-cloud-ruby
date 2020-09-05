@@ -105,7 +105,7 @@ module AsposeSlidesCloud
         :'repeat_duration' => :'RepeatDuration',
         :'restart' => :'Restart',
         :'speed' => :'Speed',
-        :'trigger_delay_time' => :'TriggerDelayTime'
+        :'trigger_delay_time' => :'TriggerDelayTime',
       }
     end
 
@@ -125,7 +125,7 @@ module AsposeSlidesCloud
         :'repeat_duration' => :'Float',
         :'restart' => :'String',
         :'speed' => :'Float',
-        :'trigger_delay_time' => :'Float'
+        :'trigger_delay_time' => :'Float',
       }
     end
 

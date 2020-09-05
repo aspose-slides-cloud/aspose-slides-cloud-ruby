@@ -39,7 +39,7 @@ module AsposeSlidesCloud
       {
         :'template' => :'Template',
         :'html_data' => :'HtmlData',
-        :'template_data' => :'TemplateData'
+        :'template_data' => :'TemplateData',
       }
     end
 
@@ -48,7 +48,7 @@ module AsposeSlidesCloud
       {
         :'template' => :'InputFile',
         :'html_data' => :'InputFile',
-        :'template_data' => :'InputFile'
+        :'template_data' => :'InputFile',
       }
     end
 

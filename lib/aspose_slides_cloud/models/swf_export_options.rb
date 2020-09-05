@@ -24,10 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Provides options that control how a presentation is saved in SWF format.
-  class SwfExportOptions
-    # Export format.
-    attr_accessor :format
-
+  class SwfExportOptions < ExportOptions
     # Specifies whether the generated document should include hidden slides or not. Default is false. 
     attr_accessor :show_hidden_slides
 
@@ -112,8 +109,7 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'format' => :'Format',
+      super.merge({
         :'show_hidden_slides' => :'ShowHiddenSlides',
         :'compressed' => :'Compressed',
         :'viewer_included' => :'ViewerIncluded',
@@ -133,14 +129,13 @@ module AsposeSlidesCloud
         :'comments_position' => :'CommentsPosition',
         :'comments_area_width' => :'CommentsAreaWidth',
         :'comments_area_color' => :'CommentsAreaColor',
-        :'show_comments_by_no_author' => :'ShowCommentsByNoAuthor'
-      }
+        :'show_comments_by_no_author' => :'ShowCommentsByNoAuthor',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'format' => :'String',
+      super.merge({
         :'show_hidden_slides' => :'BOOLEAN',
         :'compressed' => :'BOOLEAN',
         :'viewer_included' => :'BOOLEAN',
@@ -160,23 +155,14 @@ module AsposeSlidesCloud
         :'comments_position' => :'String',
         :'comments_area_width' => :'Integer',
         :'comments_area_color' => :'String',
-        :'show_comments_by_no_author' => :'BOOLEAN'
-      }
+        :'show_comments_by_no_author' => :'BOOLEAN',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'Format')
-        self.format = attributes[:'Format']
-      else
-        self.format = "swf"
-      end
+      super
 
       if attributes.has_key?(:'ShowHiddenSlides')
         self.show_hidden_slides = attributes[:'ShowHiddenSlides']
@@ -257,12 +243,13 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'ShowCommentsByNoAuthor')
         self.show_comments_by_no_author = attributes[:'ShowCommentsByNoAuthor']
       end
+      self.format = "swf"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = super
       if @show_hidden_slides.nil?
         invalid_properties.push('invalid value for "show_hidden_slides", show_hidden_slides cannot be nil.')
       end
@@ -337,6 +324,7 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !super
       return false if @show_hidden_slides.nil?
       return false if @compressed.nil?
       return false if @viewer_included.nil?
@@ -386,6 +374,7 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          default_regular_font == o.default_regular_font &&
           format == o.format &&
           show_hidden_slides == o.show_hidden_slides &&
           compressed == o.compressed &&
@@ -418,7 +407,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [format, show_hidden_slides, compressed, viewer_included, show_page_border, show_full_screen, show_page_stepper, show_search, show_top_pane, show_bottom_pane, show_left_pane, start_open_left_pane, enable_context_menu, logo_image, logo_link, jpeg_quality, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author].hash
+      [default_regular_font, format, show_hidden_slides, compressed, viewer_included, show_page_border, show_full_screen, show_page_stepper, show_search, show_top_pane, show_bottom_pane, show_left_pane, start_open_left_pane, enable_context_menu, logo_image, logo_link, jpeg_quality, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author].hash
     end
 
     # Builds the object from hash

@@ -25,19 +25,24 @@ require 'date'
 module AsposeSlidesCloud
   # Represents export options for whole presentation.
   class ExportOptions
+    # Setting user password to protect the PDF document. 
+    attr_accessor :default_regular_font
+
     attr_accessor :format
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'format' => :'Format'
+        :'default_regular_font' => :'DefaultRegularFont',
+        :'format' => :'Format',
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'format' => :'String'
+        :'default_regular_font' => :'String',
+        :'format' => :'String',
       }
     end
 
@@ -48,6 +53,10 @@ module AsposeSlidesCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'DefaultRegularFont')
+        self.default_regular_font = attributes[:'DefaultRegularFont']
+      end
 
       if attributes.has_key?(:'Format')
         self.format = attributes[:'Format']
@@ -72,6 +81,7 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          default_regular_font == o.default_regular_font &&
           format == o.format
     end
 
@@ -84,7 +94,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [format].hash
+      [default_regular_font, format].hash
     end
 
     # Builds the object from hash

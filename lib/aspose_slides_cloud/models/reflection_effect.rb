@@ -105,7 +105,7 @@ module AsposeSlidesCloud
         :'start_reflection_opacity' => :'StartReflectionOpacity',
         :'end_reflection_opacity' => :'EndReflectionOpacity',
         :'rectangle_align' => :'RectangleAlign',
-        :'rotate_shadow_with_shape' => :'RotateShadowWithShape'
+        :'rotate_shadow_with_shape' => :'RotateShadowWithShape',
       }
     end
 
@@ -125,7 +125,7 @@ module AsposeSlidesCloud
         :'start_reflection_opacity' => :'Float',
         :'end_reflection_opacity' => :'Float',
         :'rectangle_align' => :'String',
-        :'rotate_shadow_with_shape' => :'BOOLEAN'
+        :'rotate_shadow_with_shape' => :'BOOLEAN',
       }
     end
 

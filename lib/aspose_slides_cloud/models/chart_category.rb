@@ -40,6 +40,9 @@ module AsposeSlidesCloud
     # Get or sets the line format.
     attr_accessor :line_format
 
+    # Gets or sets the data points for chart data
+    attr_accessor :data_points
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -47,7 +50,8 @@ module AsposeSlidesCloud
         :'value' => :'Value',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
-        :'line_format' => :'LineFormat'
+        :'line_format' => :'LineFormat',
+        :'data_points' => :'DataPoints',
       }
     end
 
@@ -58,7 +62,8 @@ module AsposeSlidesCloud
         :'value' => :'String',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
-        :'line_format' => :'LineFormat'
+        :'line_format' => :'LineFormat',
+        :'data_points' => :'Array<OneValueChartDataPoint>',
       }
     end
 
@@ -91,6 +96,12 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'LineFormat')
         self.line_format = attributes[:'LineFormat']
       end
+
+      if attributes.has_key?(:'DataPoints')
+        if (value = attributes[:'DataPoints']).is_a?(Array)
+          self.data_points = value
+        end
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -115,7 +126,8 @@ module AsposeSlidesCloud
           value == o.value &&
           fill_format == o.fill_format &&
           effect_format == o.effect_format &&
-          line_format == o.line_format
+          line_format == o.line_format &&
+          data_points == o.data_points
     end
 
     # @see the `==` method
@@ -127,7 +139,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [categories, value, fill_format, effect_format, line_format].hash
+      [categories, value, fill_format, effect_format, line_format, data_points].hash
     end
 
     # Builds the object from hash

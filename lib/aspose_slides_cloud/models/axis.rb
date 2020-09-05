@@ -193,7 +193,7 @@ module AsposeSlidesCloud
         :'tick_label_rotation_angle' => :'TickLabelRotationAngle',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
-        :'line_format' => :'LineFormat'
+        :'line_format' => :'LineFormat',
       }
     end
 
@@ -235,7 +235,7 @@ module AsposeSlidesCloud
         :'tick_label_rotation_angle' => :'Float',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
-        :'line_format' => :'LineFormat'
+        :'line_format' => :'LineFormat',
       }
     end
 

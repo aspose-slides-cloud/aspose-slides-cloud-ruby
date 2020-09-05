@@ -31,14 +31,14 @@ module AsposeSlidesCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'uri' => :'Uri'
+        :'uri' => :'Uri',
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'uri' => :'ResourceUri'
+        :'uri' => :'ResourceUri',
       }
     end
 

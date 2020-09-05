@@ -43,7 +43,7 @@ module AsposeSlidesCloud
         :'horizontal_axis' => :'HorizontalAxis',
         :'vertical_axis' => :'VerticalAxis',
         :'secondary_horizontal_axis' => :'SecondaryHorizontalAxis',
-        :'secondary_vertical_axis' => :'SecondaryVerticalAxis'
+        :'secondary_vertical_axis' => :'SecondaryVerticalAxis',
       }
     end
 
@@ -53,7 +53,7 @@ module AsposeSlidesCloud
         :'horizontal_axis' => :'Axis',
         :'vertical_axis' => :'Axis',
         :'secondary_horizontal_axis' => :'Axis',
-        :'secondary_vertical_axis' => :'Axis'
+        :'secondary_vertical_axis' => :'Axis',
       }
     end
 

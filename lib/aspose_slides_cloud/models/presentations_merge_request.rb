@@ -35,7 +35,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       {
         :'presentation_paths' => :'PresentationPaths',
-        :'presentation_passwords' => :'PresentationPasswords'
+        :'presentation_passwords' => :'PresentationPasswords',
       }
     end
 
@@ -43,7 +43,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'presentation_paths' => :'Array<String>',
-        :'presentation_passwords' => :'Array<String>'
+        :'presentation_passwords' => :'Array<String>',
       }
     end
 

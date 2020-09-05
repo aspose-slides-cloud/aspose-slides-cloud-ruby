@@ -113,7 +113,7 @@ module AsposeSlidesCloud
         :'border_left' => :'BorderLeft',
         :'border_bottom' => :'BorderBottom',
         :'border_diagonal_up' => :'BorderDiagonalUp',
-        :'border_diagonal_down' => :'BorderDiagonalDown'
+        :'border_diagonal_down' => :'BorderDiagonalDown',
       }
     end
 
@@ -135,7 +135,7 @@ module AsposeSlidesCloud
         :'border_left' => :'LineFormat',
         :'border_bottom' => :'LineFormat',
         :'border_diagonal_up' => :'LineFormat',
-        :'border_diagonal_down' => :'LineFormat'
+        :'border_diagonal_down' => :'LineFormat',
       }
     end
 

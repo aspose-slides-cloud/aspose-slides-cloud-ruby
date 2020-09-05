@@ -61,7 +61,7 @@ module AsposeSlidesCloud
       {
         :'length' => :'Length',
         :'style' => :'Style',
-        :'width' => :'Width'
+        :'width' => :'Width',
       }
     end
 
@@ -70,7 +70,7 @@ module AsposeSlidesCloud
       {
         :'length' => :'String',
         :'style' => :'String',
-        :'width' => :'String'
+        :'width' => :'String',
       }
     end
 

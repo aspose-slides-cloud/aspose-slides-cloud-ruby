@@ -24,10 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Picture fill.
-  class PictureFill
-    # Fill type.
-    attr_accessor :type
-
+  class PictureFill < FillFormat
     # Percentage of image height that is cropped from the bottom.
     attr_accessor :crop_bottom
 
@@ -79,8 +76,7 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'type' => :'Type',
+      super.merge({
         :'crop_bottom' => :'CropBottom',
         :'crop_left' => :'CropLeft',
         :'crop_right' => :'CropRight',
@@ -89,14 +85,13 @@ module AsposeSlidesCloud
         :'image' => :'Image',
         :'base64_data' => :'Base64Data',
         :'svg_data' => :'SvgData',
-        :'picture_fill_mode' => :'PictureFillMode'
-      }
+        :'picture_fill_mode' => :'PictureFillMode',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'type' => :'String',
+      super.merge({
         :'crop_bottom' => :'Float',
         :'crop_left' => :'Float',
         :'crop_right' => :'Float',
@@ -105,23 +100,14 @@ module AsposeSlidesCloud
         :'image' => :'ResourceUriElement',
         :'base64_data' => :'String',
         :'svg_data' => :'String',
-        :'picture_fill_mode' => :'String'
-      }
+        :'picture_fill_mode' => :'String',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'Type')
-        self.type = attributes[:'Type']
-      else
-        self.type = "Picture"
-      end
+      super
 
       if attributes.has_key?(:'CropBottom')
         self.crop_bottom = attributes[:'CropBottom']
@@ -158,16 +144,13 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'PictureFillMode')
         self.picture_fill_mode = attributes[:'PictureFillMode']
       end
+      self.type = "Picture"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
-      end
-
+      invalid_properties = super
       if @crop_bottom.nil?
         invalid_properties.push('invalid value for "crop_bottom", crop_bottom cannot be nil.')
       end
@@ -198,9 +181,7 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @type.nil?
-      type_validator = EnumAttributeValidator.new('String', ['NoFill', 'Solid', 'Gradient', 'Pattern', 'Picture', 'NotDefined'])
-      return false unless type_validator.valid?(@type)
+      return false if !super
       return false if @crop_bottom.nil?
       return false if @crop_left.nil?
       return false if @crop_right.nil?
@@ -210,16 +191,6 @@ module AsposeSlidesCloud
       picture_fill_mode_validator = EnumAttributeValidator.new('String', ['Tile', 'Stretch'])
       return false unless picture_fill_mode_validator.valid?(@picture_fill_mode)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] type Object to be assigned
-    def type=(type)
-      validator = EnumAttributeValidator.new('String', ['NoFill', 'Solid', 'Gradient', 'Pattern', 'Picture', 'NotDefined'])
-      unless validator.valid?(type)
-        fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
-      end
-      @type = type
     end
 
     # Custom attribute writer method checking allowed values (enum).

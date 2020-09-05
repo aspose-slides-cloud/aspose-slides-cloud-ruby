@@ -24,13 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Slides document properties.
-  class ViewProperties
-    # Gets or sets the link to this resource.
-    attr_accessor :self_uri
-
-    # List of alternate links.
-    attr_accessor :alternate_links
-
+  class ViewProperties < ResourceBase
     # Last used view mode.
     attr_accessor :last_view
 
@@ -82,9 +76,7 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'self_uri' => :'SelfUri',
-        :'alternate_links' => :'AlternateLinks',
+      super.merge({
         :'last_view' => :'LastView',
         :'horizontal_bar_state' => :'HorizontalBarState',
         :'vertical_bar_state' => :'VerticalBarState',
@@ -93,15 +85,13 @@ module AsposeSlidesCloud
         :'restored_top' => :'RestoredTop',
         :'slide_view_properties' => :'SlideViewProperties',
         :'notes_view_properties' => :'NotesViewProperties',
-        :'show_comments' => :'ShowComments'
-      }
+        :'show_comments' => :'ShowComments',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'self_uri' => :'ResourceUri',
-        :'alternate_links' => :'Array<ResourceUri>',
+      super.merge({
         :'last_view' => :'String',
         :'horizontal_bar_state' => :'String',
         :'vertical_bar_state' => :'String',
@@ -110,27 +100,14 @@ module AsposeSlidesCloud
         :'restored_top' => :'NormalViewRestoredProperties',
         :'slide_view_properties' => :'CommonSlideViewProperties',
         :'notes_view_properties' => :'CommonSlideViewProperties',
-        :'show_comments' => :'String'
-      }
+        :'show_comments' => :'String',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'SelfUri')
-        self.self_uri = attributes[:'SelfUri']
-      end
-
-      if attributes.has_key?(:'AlternateLinks')
-        if (value = attributes[:'AlternateLinks']).is_a?(Array)
-          self.alternate_links = value
-        end
-      end
+      super
 
       if attributes.has_key?(:'LastView')
         self.last_view = attributes[:'LastView']
@@ -172,13 +149,14 @@ module AsposeSlidesCloud
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = super
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !super
       last_view_validator = EnumAttributeValidator.new('String', ['NotDefined', 'SlideView', 'SlideMasterView', 'NotesView', 'HandoutView', 'NotesMasterView', 'OutlineView', 'SlideSorterView', 'SlideThumbnailView'])
       return false unless last_view_validator.valid?(@last_view)
       horizontal_bar_state_validator = EnumAttributeValidator.new('String', ['Minimized', 'Restored', 'Maximized'])

@@ -39,7 +39,7 @@ module AsposeSlidesCloud
       {
         :'path' => :'Path',
         :'password' => :'Password',
-        :'slides' => :'Slides'
+        :'slides' => :'Slides',
       }
     end
 
@@ -48,7 +48,7 @@ module AsposeSlidesCloud
       {
         :'path' => :'String',
         :'password' => :'String',
-        :'slides' => :'Array<Integer>'
+        :'slides' => :'Array<Integer>',
       }
     end
 

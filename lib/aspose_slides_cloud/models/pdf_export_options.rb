@@ -24,10 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Provides options that control how a presentation is saved in Pdf format.
-  class PdfExportOptions
-    # Export format.
-    attr_accessor :format
-
+  class PdfExportOptions < ExportOptions
     # Specifies compression type to be used for all textual content in the document.
     attr_accessor :text_compression
 
@@ -109,8 +106,7 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'format' => :'Format',
+      super.merge({
         :'text_compression' => :'TextCompression',
         :'embed_full_fonts' => :'EmbedFullFonts',
         :'compliance' => :'Compliance',
@@ -129,14 +125,13 @@ module AsposeSlidesCloud
         :'show_comments_by_no_author' => :'ShowCommentsByNoAuthor',
         :'image_transparent_color' => :'ImageTransparentColor',
         :'apply_image_transparent' => :'ApplyImageTransparent',
-        :'access_permissions' => :'AccessPermissions'
-      }
+        :'access_permissions' => :'AccessPermissions',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'format' => :'String',
+      super.merge({
         :'text_compression' => :'String',
         :'embed_full_fonts' => :'BOOLEAN',
         :'compliance' => :'String',
@@ -155,23 +150,14 @@ module AsposeSlidesCloud
         :'show_comments_by_no_author' => :'BOOLEAN',
         :'image_transparent_color' => :'String',
         :'apply_image_transparent' => :'BOOLEAN',
-        :'access_permissions' => :'String'
-      }
+        :'access_permissions' => :'String',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'Format')
-        self.format = attributes[:'Format']
-      else
-        self.format = "pdf"
-      end
+      super
 
       if attributes.has_key?(:'TextCompression')
         self.text_compression = attributes[:'TextCompression']
@@ -250,12 +236,13 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'AccessPermissions')
         self.access_permissions = attributes[:'AccessPermissions']
       end
+      self.format = "pdf"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = super
       if @text_compression.nil?
         invalid_properties.push('invalid value for "text_compression", text_compression cannot be nil.')
       end
@@ -322,6 +309,7 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !super
       return false if @text_compression.nil?
       text_compression_validator = EnumAttributeValidator.new('String', ['None', 'Flate'])
       return false unless text_compression_validator.valid?(@text_compression)
@@ -405,6 +393,7 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          default_regular_font == o.default_regular_font &&
           format == o.format &&
           text_compression == o.text_compression &&
           embed_full_fonts == o.embed_full_fonts &&
@@ -436,7 +425,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [format, text_compression, embed_full_fonts, compliance, sufficient_resolution, jpeg_quality, draw_slides_frame, show_hidden_slides, save_metafiles_as_png, password, embed_true_type_fonts_for_ascii, additional_common_font_families, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author, image_transparent_color, apply_image_transparent, access_permissions].hash
+      [default_regular_font, format, text_compression, embed_full_fonts, compliance, sufficient_resolution, jpeg_quality, draw_slides_frame, show_hidden_slides, save_metafiles_as_png, password, embed_true_type_fonts_for_ascii, additional_common_font_families, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author, image_transparent_color, apply_image_transparent, access_permissions].hash
     end
 
     # Builds the object from hash

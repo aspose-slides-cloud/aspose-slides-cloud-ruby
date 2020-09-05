@@ -186,6 +186,145 @@ module AsposeSlidesCloud
         :auth_names => auth_names)
       return data, status_code, headers
     end
+    # Delete a category from a chart.
+    # @param request operation request
+    def delete_chart_category(request)
+      data, _status_code, _headers = delete_chart_category_with_http_info(request)
+      data
+    end
+
+    # Delete a category from a chart.
+    # @param request operation request
+    def delete_chart_category_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_chart_category ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_chart_category"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && request.slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_chart_category"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && request.shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_chart_category"
+      end
+      # verify the required parameter 'category_index' is set
+      if @api_client.config.client_side_validation && request.category_index.nil?
+        fail ArgumentError, "Missing the required parameter 'category_index' when calling SlidesApi.delete_chart_category"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/categories/{categoryIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', request.slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', request.shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'categoryIndex', request.category_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Chart')
+      return data, status_code, headers
+    end
+    # Delete a data point from a chart series.
+    # @param request operation request
+    def delete_chart_data_point(request)
+      data, _status_code, _headers = delete_chart_data_point_with_http_info(request)
+      data
+    end
+
+    # Delete a data point from a chart series.
+    # @param request operation request
+    def delete_chart_data_point_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_chart_data_point ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_chart_data_point"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && request.slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_chart_data_point"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && request.shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_chart_data_point"
+      end
+      # verify the required parameter 'series_index' is set
+      if @api_client.config.client_side_validation && request.series_index.nil?
+        fail ArgumentError, "Missing the required parameter 'series_index' when calling SlidesApi.delete_chart_data_point"
+      end
+      # verify the required parameter 'point_index' is set
+      if @api_client.config.client_side_validation && request.point_index.nil?
+        fail ArgumentError, "Missing the required parameter 'point_index' when calling SlidesApi.delete_chart_data_point"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/series/{seriesIndex}/dataPoints/{pointIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', request.slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', request.shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'seriesIndex', request.series_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'pointIndex', request.point_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Chart')
+      return data, status_code, headers
+    end
     # Delete a series from a chart.
     # @param request operation request
     def delete_chart_series(request)
@@ -5792,6 +5931,135 @@ module AsposeSlidesCloud
         :return_type => 'NotesSlide')
       return data, status_code, headers
     end
+    # Add a new category to a chart.
+    # @param request operation request
+    def post_chart_category(request)
+      data, _status_code, _headers = post_chart_category_with_http_info(request)
+      data
+    end
+
+    # Add a new category to a chart.
+    # @param request operation request
+    def post_chart_category_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.post_chart_category ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_chart_category"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && request.slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_chart_category"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && request.shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.post_chart_category"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/categories'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', request.slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', request.shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.category)
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Chart')
+      return data, status_code, headers
+    end
+    # Add a new data point to a chart series.
+    # @param request operation request
+    def post_chart_data_point(request)
+      data, _status_code, _headers = post_chart_data_point_with_http_info(request)
+      data
+    end
+
+    # Add a new data point to a chart series.
+    # @param request operation request
+    def post_chart_data_point_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.post_chart_data_point ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_chart_data_point"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && request.slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_chart_data_point"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && request.shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.post_chart_data_point"
+      end
+      # verify the required parameter 'series_index' is set
+      if @api_client.config.client_side_validation && request.series_index.nil?
+        fail ArgumentError, "Missing the required parameter 'series_index' when calling SlidesApi.post_chart_data_point"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/series/{seriesIndex}/dataPoints'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', request.slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', request.shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'seriesIndex', request.series_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.data_point)
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Chart')
+      return data, status_code, headers
+    end
     # Add a new series to a chart.
     # @param request operation request
     def post_chart_series(request)
@@ -7723,6 +7991,145 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'File')
+      return data, status_code, headers
+    end
+    # Update a chart category.
+    # @param request operation request
+    def put_chart_category(request)
+      data, _status_code, _headers = put_chart_category_with_http_info(request)
+      data
+    end
+
+    # Update a chart category.
+    # @param request operation request
+    def put_chart_category_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.put_chart_category ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_chart_category"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && request.slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_chart_category"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && request.shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.put_chart_category"
+      end
+      # verify the required parameter 'category_index' is set
+      if @api_client.config.client_side_validation && request.category_index.nil?
+        fail ArgumentError, "Missing the required parameter 'category_index' when calling SlidesApi.put_chart_category"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/categories/{categoryIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', request.slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', request.shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'categoryIndex', request.category_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.category)
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Chart')
+      return data, status_code, headers
+    end
+    # Update a data point in a chart series.
+    # @param request operation request
+    def put_chart_data_point(request)
+      data, _status_code, _headers = put_chart_data_point_with_http_info(request)
+      data
+    end
+
+    # Update a data point in a chart series.
+    # @param request operation request
+    def put_chart_data_point_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.put_chart_data_point ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_chart_data_point"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && request.slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_chart_data_point"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && request.shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.put_chart_data_point"
+      end
+      # verify the required parameter 'series_index' is set
+      if @api_client.config.client_side_validation && request.series_index.nil?
+        fail ArgumentError, "Missing the required parameter 'series_index' when calling SlidesApi.put_chart_data_point"
+      end
+      # verify the required parameter 'point_index' is set
+      if @api_client.config.client_side_validation && request.point_index.nil?
+        fail ArgumentError, "Missing the required parameter 'point_index' when calling SlidesApi.put_chart_data_point"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/series/{seriesIndex}/dataPoints/{pointIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', request.slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', request.shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'seriesIndex', request.series_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'pointIndex', request.point_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.data_point)
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Chart')
       return data, status_code, headers
     end
     # Update a series in a chart.

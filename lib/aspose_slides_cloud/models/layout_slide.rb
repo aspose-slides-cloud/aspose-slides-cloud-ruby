@@ -24,13 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Layout slide.
-  class LayoutSlide
-    # Gets or sets the link to this resource.
-    attr_accessor :self_uri
-
-    # List of alternate links.
-    attr_accessor :alternate_links
-
+  class LayoutSlide < ResourceBase
     # Name.
     attr_accessor :name
 
@@ -67,45 +61,28 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'self_uri' => :'SelfUri',
-        :'alternate_links' => :'AlternateLinks',
+      super.merge({
         :'name' => :'Name',
         :'type' => :'Type',
         :'master_slide' => :'MasterSlide',
-        :'depending_slides' => :'DependingSlides'
-      }
+        :'depending_slides' => :'DependingSlides',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'self_uri' => :'ResourceUri',
-        :'alternate_links' => :'Array<ResourceUri>',
+      super.merge({
         :'name' => :'String',
         :'type' => :'String',
         :'master_slide' => :'ResourceUriElement',
-        :'depending_slides' => :'Array<ResourceUriElement>'
-      }
+        :'depending_slides' => :'Array<ResourceUriElement>',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'SelfUri')
-        self.self_uri = attributes[:'SelfUri']
-      end
-
-      if attributes.has_key?(:'AlternateLinks')
-        if (value = attributes[:'AlternateLinks']).is_a?(Array)
-          self.alternate_links = value
-        end
-      end
+      super
 
       if attributes.has_key?(:'Name')
         self.name = attributes[:'Name']
@@ -129,7 +106,7 @@ module AsposeSlidesCloud
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = super
       if @type.nil?
         invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
@@ -140,6 +117,7 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !super
       return false if @type.nil?
       type_validator = EnumAttributeValidator.new('String', ['Title', 'Text', 'TwoColumnText', 'Table', 'TextAndChart', 'ChartAndText', 'Diagram', 'Chart', 'TextAndClipArt', 'ClipArtAndText', 'TitleOnly', 'Blank', 'TextAndObject', 'ObjectAndText', 'Object', 'TitleAndObject', 'TextAndMedia', 'MediaAndText', 'ObjectOverText', 'TextOverObject', 'TextAndTwoObjects', 'TwoObjectsAndText', 'TwoObjectsOverText', 'FourObjects', 'VerticalText', 'ClipArtAndVerticalText', 'VerticalTitleAndText', 'VerticalTitleAndTextOverChart', 'TwoObjects', 'ObjectAndTwoObject', 'TwoObjectsAndObject', 'SectionHeader', 'TwoTextAndTwoObjects', 'TitleObjectAndCaption', 'PictureAndCaption', 'Custom'])
       return false unless type_validator.valid?(@type)

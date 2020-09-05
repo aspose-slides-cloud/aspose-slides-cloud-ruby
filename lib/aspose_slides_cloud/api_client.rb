@@ -160,8 +160,7 @@ module AsposeSlidesCloud
     end
 
     def set_headers(headers)
-      headers['x-aspose-client'] = 'ruby sdk'
-      headers['x-aspose-version'] = AsposeSlidesCloud::VERSION
+      headers['x-aspose-client'] = "ruby sdk v#{AsposeSlidesCloud::VERSION}"
       if @config.timeout > 0
         headers['x-aspose-timeout'] = @config.timeout.to_s
       end

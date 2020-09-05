@@ -24,10 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Provides options that control how a presentation is saved in SVG format.
-  class SvgExportOptions
-    # Export format.
-    attr_accessor :format
-
+  class SvgExportOptions < ExportOptions
     # Determines whether the text on a slide will be saved as graphics.
     attr_accessor :vectorize_text
 
@@ -79,8 +76,7 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'format' => :'Format',
+      super.merge({
         :'vectorize_text' => :'VectorizeText',
         :'metafile_rasterization_dpi' => :'MetafileRasterizationDpi',
         :'disable3_d_text' => :'Disable3DText',
@@ -89,14 +85,13 @@ module AsposeSlidesCloud
         :'jpeg_quality' => :'JpegQuality',
         :'pictures_compression' => :'PicturesCompression',
         :'delete_pictures_cropped_areas' => :'DeletePicturesCroppedAreas',
-        :'external_fonts_handling' => :'ExternalFontsHandling'
-      }
+        :'external_fonts_handling' => :'ExternalFontsHandling',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'format' => :'String',
+      super.merge({
         :'vectorize_text' => :'BOOLEAN',
         :'metafile_rasterization_dpi' => :'Integer',
         :'disable3_d_text' => :'BOOLEAN',
@@ -105,23 +100,14 @@ module AsposeSlidesCloud
         :'jpeg_quality' => :'Integer',
         :'pictures_compression' => :'String',
         :'delete_pictures_cropped_areas' => :'BOOLEAN',
-        :'external_fonts_handling' => :'String'
-      }
+        :'external_fonts_handling' => :'String',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'Format')
-        self.format = attributes[:'Format']
-      else
-        self.format = "svg"
-      end
+      super
 
       if attributes.has_key?(:'VectorizeText')
         self.vectorize_text = attributes[:'VectorizeText']
@@ -158,12 +144,13 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'ExternalFontsHandling')
         self.external_fonts_handling = attributes[:'ExternalFontsHandling']
       end
+      self.format = "svg"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = super
       if @vectorize_text.nil?
         invalid_properties.push('invalid value for "vectorize_text", vectorize_text cannot be nil.')
       end
@@ -206,6 +193,7 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !super
       return false if @vectorize_text.nil?
       return false if @metafile_rasterization_dpi.nil?
       return false if @disable3_d_text.nil?
@@ -247,6 +235,7 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          default_regular_font == o.default_regular_font &&
           format == o.format &&
           vectorize_text == o.vectorize_text &&
           metafile_rasterization_dpi == o.metafile_rasterization_dpi &&
@@ -268,7 +257,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [format, vectorize_text, metafile_rasterization_dpi, disable3_d_text, disable_gradient_split, disable_line_end_cropping, jpeg_quality, pictures_compression, delete_pictures_cropped_areas, external_fonts_handling].hash
+      [default_regular_font, format, vectorize_text, metafile_rasterization_dpi, disable3_d_text, disable_gradient_split, disable_line_end_cropping, jpeg_quality, pictures_compression, delete_pictures_cropped_areas, external_fonts_handling].hash
     end
 
     # Builds the object from hash

@@ -48,39 +48,6 @@ describe 'SlidesApiExtra' do
       expect(o).not_to be(nil)
     end
 
-    it 'unauthorized' do
-      config = JSON.parse(File.read('testConfig.json'))
-      configuration = AsposeSlidesCloud::Configuration.new
-      configuration.base_url = config["BaseUrl"]
-      configuration.auth_base_url = config["AuthBaseUrl"] ? config["AuthBaseUrl"] : config["BaseUrl"]
-      configuration.app_sid = "invalid"
-      configuration.app_key = "invalid"
-      configuration.debugging = config["Debug"]
-      api = AsposeSlidesCloud::SlidesApi.new(configuration)
-      begin
-        o, c, _h = api.get_slides_api_info_with_http_info
-        fail "An exception expected"
-      rescue AsposeSlidesCloud::ApiError => e
-        expect(e.code).to eq(401)
-        expect(e.response_body).to include("invalid_client")
-      end
-    end
-
-    it 'expired token' do
-      config = JSON.parse(File.read('testConfig.json'))
-      configuration = AsposeSlidesCloud::Configuration.new
-      configuration.base_url = config["BaseUrl"]
-      configuration.auth_base_url = config["AuthBaseUrl"] ? config["AuthBaseUrl"] : config["BaseUrl"]
-      configuration.app_sid = config["AppSid"]
-      configuration.app_key = config["AppKey"]
-      configuration.access_token = "expired.token"
-      configuration.debugging = config["Debug"]
-      api = AsposeSlidesCloud::SlidesApi.new(configuration)
-      o, c, _h = api.get_slides_api_info_with_http_info
-      expect(c).to eq(200)
-      expect(o).not_to be(nil)
-    end
-
     it 'base shape' do
       AsposeSlidesCloud::SpecUtils.initialize('GetSlideShape', nil, nil)
       requestParam = AsposeSlidesCloud::GetSlideShapeRequest.new
@@ -199,6 +166,72 @@ describe 'SlidesApiExtra' do
       result = AsposeSlidesCloud::SpecUtils.api.get_slide_shape(getRequest)
       expect(result.axes.horizontal_axis.min_value).to eq(min2)
       expect(result.axes.horizontal_axis.max_value).to eq(max2)
+    end
+  end
+
+  describe 'authentication' do
+    it 'good auth' do
+      config = JSON.parse(File.read('testConfig.json'))
+      configuration = AsposeSlidesCloud::Configuration.new
+      configuration.base_url = config["BaseUrl"]
+      configuration.auth_base_url = config["AuthBaseUrl"] ? config["AuthBaseUrl"] : config["BaseUrl"]
+      configuration.app_sid = config["AppSid"]
+      configuration.app_key = config["AppKey"]
+      configuration.debugging = config["Debug"]
+      api = AsposeSlidesCloud::SlidesApi.new(configuration)
+      o, c, _h = api.get_slides_api_info_with_http_info
+      expect(c).to eq(200)
+      expect(o).not_to be(nil)
+    end
+
+    it 'bad auth' do
+      config = JSON.parse(File.read('testConfig.json'))
+      configuration = AsposeSlidesCloud::Configuration.new
+      configuration.base_url = config["BaseUrl"]
+      configuration.auth_base_url = config["AuthBaseUrl"] ? config["AuthBaseUrl"] : config["BaseUrl"]
+      configuration.app_sid = "invalid"
+      configuration.app_key = config["AppKey"]
+      configuration.debugging = config["Debug"]
+      api = AsposeSlidesCloud::SlidesApi.new(configuration)
+      begin
+        o, c, _h = api.get_slides_api_info_with_http_info
+        fail "An exception expected"
+      rescue AsposeSlidesCloud::ApiError => e
+        expect(e.code).to eq(401)
+        expect(e.response_body).to include("invalid_client")
+      end
+    end
+
+    it 'good token' do
+      config = JSON.parse(File.read('testConfig.json'))
+      configuration = AsposeSlidesCloud::Configuration.new
+      configuration.base_url = config["BaseUrl"]
+      configuration.auth_base_url = config["AuthBaseUrl"] ? config["AuthBaseUrl"] : config["BaseUrl"]
+      configuration.app_sid = config["AppSid"]
+      configuration.app_key = config["AppKey"]
+      configuration.debugging = config["Debug"]
+      api = AsposeSlidesCloud::SlidesApi.new(configuration)
+      api.get_slides_api_info_with_http_info
+      configuration.app_sid = "invalid"
+      api = AsposeSlidesCloud::SlidesApi.new(configuration)
+      o, c, _h = api.get_slides_api_info_with_http_info
+      expect(c).to eq(200)
+      expect(o).not_to be(nil)
+    end
+
+    it 'bad token' do
+      config = JSON.parse(File.read('testConfig.json'))
+      configuration = AsposeSlidesCloud::Configuration.new
+      configuration.base_url = config["BaseUrl"]
+      configuration.auth_base_url = config["AuthBaseUrl"] ? config["AuthBaseUrl"] : config["BaseUrl"]
+      configuration.app_sid = config["AppSid"]
+      configuration.app_key = config["AppKey"]
+      configuration.access_token = "expired.token"
+      configuration.debugging = config["Debug"]
+      api = AsposeSlidesCloud::SlidesApi.new(configuration)
+      o, c, _h = api.get_slides_api_info_with_http_info
+      expect(c).to eq(200)
+      expect(o).not_to be(nil)
     end
   end
 end

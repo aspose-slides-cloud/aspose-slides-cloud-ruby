@@ -35,7 +35,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       {
         :'scale' => :'Scale',
-        :'variable_scale' => :'VariableScale'
+        :'variable_scale' => :'VariableScale',
       }
     end
 
@@ -43,7 +43,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'scale' => :'Integer',
-        :'variable_scale' => :'BOOLEAN'
+        :'variable_scale' => :'BOOLEAN',
       }
     end
 

@@ -35,7 +35,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       {
         :'request_id' => :'RequestId',
-        :'date' => :'Date'
+        :'date' => :'Date',
       }
     end
 
@@ -43,7 +43,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'request_id' => :'String',
-        :'date' => :'DateTime'
+        :'date' => :'DateTime',
       }
     end
 

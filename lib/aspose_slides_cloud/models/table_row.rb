@@ -39,7 +39,7 @@ module AsposeSlidesCloud
       {
         :'cells' => :'Cells',
         :'minimal_height' => :'MinimalHeight',
-        :'height' => :'Height'
+        :'height' => :'Height',
       }
     end
 
@@ -48,7 +48,7 @@ module AsposeSlidesCloud
       {
         :'cells' => :'Array<TableCell>',
         :'minimal_height' => :'Float',
-        :'height' => :'Float'
+        :'height' => :'Float',
       }
     end
 

@@ -24,150 +24,28 @@ require 'date'
 
 module AsposeSlidesCloud
   # Represents slide replace result DTO.
-  class SlideReplaceResult
-    # Gets or sets the link to this resource.
-    attr_accessor :self_uri
-
-    # List of alternate links.
-    attr_accessor :alternate_links
-
-    # Gets or sets the width.
-    attr_accessor :width
-
-    # Gets or sets the height.
-    attr_accessor :height
-
-    # Specifies if shapes of the master slide should be shown on the slide. True by default.
-    attr_accessor :show_master_shapes
-
-    # Gets or sets the  link to the layout slide.
-    attr_accessor :layout_slide
-
-    # Gets or sets the  link to list of top-level shapes.
-    attr_accessor :shapes
-
-    # Gets or sets the link to theme.
-    attr_accessor :theme
-
-    # Gets or sets the  link to placeholders.
-    attr_accessor :placeholders
-
-    # Gets or sets the link to images.
-    attr_accessor :images
-
-    # Gets or sets the link to comments.
-    attr_accessor :comments
-
-    # Get or sets the link to slide's background
-    attr_accessor :background
-
-    # Get or sets the link to notes slide.
-    attr_accessor :notes_slide
-
+  class SlideReplaceResult < Slide
     # Gets or sets the number of matches 
     attr_accessor :matches
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'self_uri' => :'SelfUri',
-        :'alternate_links' => :'AlternateLinks',
-        :'width' => :'Width',
-        :'height' => :'Height',
-        :'show_master_shapes' => :'ShowMasterShapes',
-        :'layout_slide' => :'LayoutSlide',
-        :'shapes' => :'Shapes',
-        :'theme' => :'Theme',
-        :'placeholders' => :'Placeholders',
-        :'images' => :'Images',
-        :'comments' => :'Comments',
-        :'background' => :'Background',
-        :'notes_slide' => :'NotesSlide',
-        :'matches' => :'Matches'
-      }
+      super.merge({
+        :'matches' => :'Matches',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'self_uri' => :'ResourceUri',
-        :'alternate_links' => :'Array<ResourceUri>',
-        :'width' => :'Float',
-        :'height' => :'Float',
-        :'show_master_shapes' => :'BOOLEAN',
-        :'layout_slide' => :'ResourceUriElement',
-        :'shapes' => :'ResourceUriElement',
-        :'theme' => :'ResourceUriElement',
-        :'placeholders' => :'ResourceUriElement',
-        :'images' => :'ResourceUriElement',
-        :'comments' => :'ResourceUriElement',
-        :'background' => :'ResourceUriElement',
-        :'notes_slide' => :'ResourceUriElement',
-        :'matches' => :'Integer'
-      }
+      super.merge({
+        :'matches' => :'Integer',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'SelfUri')
-        self.self_uri = attributes[:'SelfUri']
-      end
-
-      if attributes.has_key?(:'AlternateLinks')
-        if (value = attributes[:'AlternateLinks']).is_a?(Array)
-          self.alternate_links = value
-        end
-      end
-
-      if attributes.has_key?(:'Width')
-        self.width = attributes[:'Width']
-      end
-
-      if attributes.has_key?(:'Height')
-        self.height = attributes[:'Height']
-      end
-
-      if attributes.has_key?(:'ShowMasterShapes')
-        self.show_master_shapes = attributes[:'ShowMasterShapes']
-      end
-
-      if attributes.has_key?(:'LayoutSlide')
-        self.layout_slide = attributes[:'LayoutSlide']
-      end
-
-      if attributes.has_key?(:'Shapes')
-        self.shapes = attributes[:'Shapes']
-      end
-
-      if attributes.has_key?(:'Theme')
-        self.theme = attributes[:'Theme']
-      end
-
-      if attributes.has_key?(:'Placeholders')
-        self.placeholders = attributes[:'Placeholders']
-      end
-
-      if attributes.has_key?(:'Images')
-        self.images = attributes[:'Images']
-      end
-
-      if attributes.has_key?(:'Comments')
-        self.comments = attributes[:'Comments']
-      end
-
-      if attributes.has_key?(:'Background')
-        self.background = attributes[:'Background']
-      end
-
-      if attributes.has_key?(:'NotesSlide')
-        self.notes_slide = attributes[:'NotesSlide']
-      end
+      super
 
       if attributes.has_key?(:'Matches')
         self.matches = attributes[:'Matches']
@@ -177,19 +55,7 @@ module AsposeSlidesCloud
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      if @width.nil?
-        invalid_properties.push('invalid value for "width", width cannot be nil.')
-      end
-
-      if @height.nil?
-        invalid_properties.push('invalid value for "height", height cannot be nil.')
-      end
-
-      if @show_master_shapes.nil?
-        invalid_properties.push('invalid value for "show_master_shapes", show_master_shapes cannot be nil.')
-      end
-
+      invalid_properties = super
       if @matches.nil?
         invalid_properties.push('invalid value for "matches", matches cannot be nil.')
       end
@@ -200,9 +66,7 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @width.nil?
-      return false if @height.nil?
-      return false if @show_master_shapes.nil?
+      return false if !super
       return false if @matches.nil?
       true
     end

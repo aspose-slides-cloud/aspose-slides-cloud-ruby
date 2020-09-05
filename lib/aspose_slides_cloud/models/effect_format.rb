@@ -59,7 +59,7 @@ module AsposeSlidesCloud
         :'preset_shadow' => :'PresetShadow',
         :'soft_edge' => :'SoftEdge',
         :'reflection' => :'Reflection',
-        :'fill_overlay' => :'FillOverlay'
+        :'fill_overlay' => :'FillOverlay',
       }
     end
 
@@ -73,7 +73,7 @@ module AsposeSlidesCloud
         :'preset_shadow' => :'PresetShadowEffect',
         :'soft_edge' => :'SoftEdgeEffect',
         :'reflection' => :'ReflectionEffect',
-        :'fill_overlay' => :'FillOverlayEffect'
+        :'fill_overlay' => :'FillOverlayEffect',
       }
     end
 

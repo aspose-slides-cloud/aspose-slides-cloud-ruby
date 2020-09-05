@@ -24,10 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Remove slide task.
-  class RemoveSlide
-    # Task type.
-    attr_accessor :type
-
+  class RemoveSlide < Task
     # Position of slide to be removed.
     attr_accessor :position
 
@@ -55,47 +52,33 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'type' => :'Type',
-        :'position' => :'Position'
-      }
+      super.merge({
+        :'position' => :'Position',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'type' => :'String',
-        :'position' => :'Integer'
-      }
+      super.merge({
+        :'position' => :'Integer',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'Type')
-        self.type = attributes[:'Type']
-      else
-        self.type = "RemoveSlide"
-      end
+      super
 
       if attributes.has_key?(:'Position')
         self.position = attributes[:'Position']
       end
+      self.type = "RemoveSlide"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
-      if @type.nil?
-        invalid_properties.push('invalid value for "type", type cannot be nil.')
-      end
-
+      invalid_properties = super
       if @position.nil?
         invalid_properties.push('invalid value for "position", position cannot be nil.')
       end
@@ -106,21 +89,9 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @type.nil?
-      type_validator = EnumAttributeValidator.new('String', ['Save', 'SaveSlide', 'SaveShape', 'AddSlide', 'AddMasterSlide', 'AddLayoutSlide', 'RemoveSlide', 'ReoderSlide', 'Merge', 'UpdateBackground', 'ResetSlide', 'AddShape', 'RemoveShape', 'UpdateShape', 'ReplaceText'])
-      return false unless type_validator.valid?(@type)
+      return false if !super
       return false if @position.nil?
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] type Object to be assigned
-    def type=(type)
-      validator = EnumAttributeValidator.new('String', ['Save', 'SaveSlide', 'SaveShape', 'AddSlide', 'AddMasterSlide', 'AddLayoutSlide', 'RemoveSlide', 'ReoderSlide', 'Merge', 'UpdateBackground', 'ResetSlide', 'AddShape', 'RemoveShape', 'UpdateShape', 'ReplaceText'])
-      unless validator.valid?(type)
-        fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
-      end
-      @type = type
     end
 
     # Checks equality by comparing each attribute.

@@ -67,6 +67,59 @@ module AsposeSlidesCloud
     attr_accessor :storage_name
   end
 
+  # request model for delete_chart_category
+  class DeleteChartCategoryRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
+
+    # @param shape_index Shape index.
+    attr_accessor :shape_index
+
+    # @param category_index Category index.
+    attr_accessor :category_index
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for delete_chart_data_point
+  class DeleteChartDataPointRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
+
+    # @param shape_index Shape index.
+    attr_accessor :shape_index
+
+    # @param series_index Series index.
+    attr_accessor :series_index
+
+    # @param point_index Data point index.
+    attr_accessor :point_index
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
   # request model for delete_chart_series
   class DeleteChartSeriesRequest
 
@@ -2092,6 +2145,59 @@ module AsposeSlidesCloud
     attr_accessor :storage
   end
 
+  # request model for post_chart_category
+  class PostChartCategoryRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
+
+    # @param shape_index Shape index.
+    attr_accessor :shape_index
+
+    # @param category Category DTO.
+    attr_accessor :category
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for post_chart_data_point
+  class PostChartDataPointRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
+
+    # @param shape_index Shape index.
+    attr_accessor :shape_index
+
+    # @param series_index Series index.
+    attr_accessor :series_index
+
+    # @param data_point Data point DTO.
+    attr_accessor :data_point
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
   # request model for post_chart_series
   class PostChartSeriesRequest
 
@@ -2914,6 +3020,65 @@ module AsposeSlidesCloud
 
     # @param fonts_folder Fonts folder.
     attr_accessor :fonts_folder
+  end
+
+  # request model for put_chart_category
+  class PutChartCategoryRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
+
+    # @param shape_index Shape index.
+    attr_accessor :shape_index
+
+    # @param category_index Category index.
+    attr_accessor :category_index
+
+    # @param category Category DTO.
+    attr_accessor :category
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for put_chart_data_point
+  class PutChartDataPointRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
+
+    # @param shape_index Shape index.
+    attr_accessor :shape_index
+
+    # @param series_index Series index.
+    attr_accessor :series_index
+
+    # @param point_index Data point index.
+    attr_accessor :point_index
+
+    # @param data_point Data point DTO.
+    attr_accessor :data_point
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
   end
 
   # request model for put_chart_series

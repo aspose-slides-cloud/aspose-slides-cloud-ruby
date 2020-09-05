@@ -24,105 +24,28 @@ require 'date'
 
 module AsposeSlidesCloud
   # Represents document replace result DTO.
-  class DocumentReplaceResult
-    # Gets or sets the link to this resource.
-    attr_accessor :self_uri
-
-    # List of alternate links.
-    attr_accessor :alternate_links
-
-    # Link to Document properties.
-    attr_accessor :document_properties
-
-    # Link to Document properties.
-    attr_accessor :view_properties
-
-    # Link to slides collection.
-    attr_accessor :slides
-
-    # Link to images collection.
-    attr_accessor :images
-
-    # Link to layout slides collection.
-    attr_accessor :layout_slides
-
-    # Link to master slides collection.
-    attr_accessor :master_slides
-
+  class DocumentReplaceResult < Document
     # Gets or sets the number of matches 
     attr_accessor :matches
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'self_uri' => :'SelfUri',
-        :'alternate_links' => :'AlternateLinks',
-        :'document_properties' => :'DocumentProperties',
-        :'view_properties' => :'ViewProperties',
-        :'slides' => :'Slides',
-        :'images' => :'Images',
-        :'layout_slides' => :'LayoutSlides',
-        :'master_slides' => :'MasterSlides',
-        :'matches' => :'Matches'
-      }
+      super.merge({
+        :'matches' => :'Matches',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'self_uri' => :'ResourceUri',
-        :'alternate_links' => :'Array<ResourceUri>',
-        :'document_properties' => :'ResourceUriElement',
-        :'view_properties' => :'ResourceUriElement',
-        :'slides' => :'ResourceUriElement',
-        :'images' => :'ResourceUriElement',
-        :'layout_slides' => :'ResourceUriElement',
-        :'master_slides' => :'ResourceUriElement',
-        :'matches' => :'Integer'
-      }
+      super.merge({
+        :'matches' => :'Integer',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'SelfUri')
-        self.self_uri = attributes[:'SelfUri']
-      end
-
-      if attributes.has_key?(:'AlternateLinks')
-        if (value = attributes[:'AlternateLinks']).is_a?(Array)
-          self.alternate_links = value
-        end
-      end
-
-      if attributes.has_key?(:'DocumentProperties')
-        self.document_properties = attributes[:'DocumentProperties']
-      end
-
-      if attributes.has_key?(:'ViewProperties')
-        self.view_properties = attributes[:'ViewProperties']
-      end
-
-      if attributes.has_key?(:'Slides')
-        self.slides = attributes[:'Slides']
-      end
-
-      if attributes.has_key?(:'Images')
-        self.images = attributes[:'Images']
-      end
-
-      if attributes.has_key?(:'LayoutSlides')
-        self.layout_slides = attributes[:'LayoutSlides']
-      end
-
-      if attributes.has_key?(:'MasterSlides')
-        self.master_slides = attributes[:'MasterSlides']
-      end
+      super
 
       if attributes.has_key?(:'Matches')
         self.matches = attributes[:'Matches']
@@ -132,7 +55,7 @@ module AsposeSlidesCloud
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = super
       if @matches.nil?
         invalid_properties.push('invalid value for "matches", matches cannot be nil.')
       end
@@ -143,6 +66,7 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !super
       return false if @matches.nil?
       true
     end

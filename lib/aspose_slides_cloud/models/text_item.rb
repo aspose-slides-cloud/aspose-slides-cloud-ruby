@@ -35,7 +35,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       {
         :'uri' => :'Uri',
-        :'text' => :'Text'
+        :'text' => :'Text',
       }
     end
 
@@ -43,7 +43,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'uri' => :'ResourceUri',
-        :'text' => :'String'
+        :'text' => :'String',
       }
     end
 
