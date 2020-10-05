@@ -69,7 +69,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CopyFile', 'srcPath', requestParam.src_path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CopyFile', 'srcPath', requestParam.src_path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -91,7 +94,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CopyFile', 'destPath', requestParam.dest_path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CopyFile', 'destPath', requestParam.dest_path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -113,7 +119,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CopyFile', 'srcStorageName', requestParam.src_storage_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CopyFile', 'srcStorageName', requestParam.src_storage_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -135,7 +144,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CopyFile', 'destStorageName', requestParam.dest_storage_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CopyFile', 'destStorageName', requestParam.dest_storage_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -157,7 +169,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CopyFile', 'versionId', requestParam.version_id)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CopyFile', 'versionId', requestParam.version_id)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -200,7 +215,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CopyFolder', 'srcPath', requestParam.src_path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CopyFolder', 'srcPath', requestParam.src_path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -221,7 +239,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CopyFolder', 'destPath', requestParam.dest_path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CopyFolder', 'destPath', requestParam.dest_path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -242,7 +263,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CopyFolder', 'srcStorageName', requestParam.src_storage_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CopyFolder', 'srcStorageName', requestParam.src_storage_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -263,7 +287,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CopyFolder', 'destStorageName', requestParam.dest_storage_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CopyFolder', 'destStorageName', requestParam.dest_storage_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -300,7 +327,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateFolder', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateFolder', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -319,7 +349,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateFolder', 'storageName', requestParam.storage_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateFolder', 'storageName', requestParam.storage_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -372,7 +405,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartCategory', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartCategory', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -396,7 +432,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartCategory', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartCategory', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -420,7 +459,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartCategory', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartCategory', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -444,7 +486,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartCategory', 'categoryIndex', requestParam.category_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartCategory', 'categoryIndex', requestParam.category_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -468,7 +513,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartCategory', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartCategory', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -492,7 +540,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartCategory', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartCategory', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -516,7 +567,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartCategory', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartCategory', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -572,7 +626,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartDataPoint', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartDataPoint', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -597,7 +654,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartDataPoint', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartDataPoint', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -622,7 +682,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartDataPoint', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartDataPoint', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -647,7 +710,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartDataPoint', 'seriesIndex', requestParam.series_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartDataPoint', 'seriesIndex', requestParam.series_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -672,7 +738,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartDataPoint', 'pointIndex', requestParam.point_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartDataPoint', 'pointIndex', requestParam.point_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -697,7 +766,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartDataPoint', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartDataPoint', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -722,7 +794,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartDataPoint', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartDataPoint', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -747,7 +822,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartDataPoint', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartDataPoint', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -800,7 +878,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -824,7 +905,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -848,7 +932,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -872,7 +959,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'seriesIndex', requestParam.series_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'seriesIndex', requestParam.series_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -896,7 +986,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -920,7 +1013,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -944,7 +1040,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteChartSeries', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -984,7 +1083,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteFile', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteFile', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1004,7 +1106,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteFile', 'storageName', requestParam.storage_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteFile', 'storageName', requestParam.storage_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1024,7 +1129,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteFile', 'versionId', requestParam.version_id)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteFile', 'versionId', requestParam.version_id)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -1064,7 +1172,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteFolder', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteFolder', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1084,7 +1195,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteFolder', 'storageName', requestParam.storage_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteFolder', 'storageName', requestParam.storage_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1104,7 +1218,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteFolder', 'recursive', requestParam.recursive)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteFolder', 'recursive', requestParam.recursive)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -1151,7 +1268,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlide', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlide', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1173,7 +1293,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlide', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlide', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1195,7 +1318,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlide', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlide', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1217,7 +1343,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlide', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlide', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1239,7 +1368,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlide', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlide', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -1292,7 +1424,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraph', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraph', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1316,7 +1451,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraph', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraph', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1340,7 +1478,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraph', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraph', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1364,7 +1505,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraph', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraph', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1388,7 +1532,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraph', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraph', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1412,7 +1559,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraph', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraph', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1436,7 +1586,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraph', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraph', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -1489,7 +1642,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraphs', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraphs', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1513,7 +1669,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraphs', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraphs', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1537,7 +1696,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraphs', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraphs', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1561,7 +1723,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraphs', 'paragraphs', requestParam.paragraphs)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraphs', 'paragraphs', requestParam.paragraphs)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1585,7 +1750,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraphs', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraphs', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1609,7 +1777,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraphs', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraphs', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1633,7 +1804,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraphs', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideParagraphs', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -1689,7 +1863,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortion', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortion', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1714,7 +1891,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortion', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortion', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1739,7 +1919,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortion', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortion', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1764,7 +1947,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortion', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortion', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1789,7 +1975,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortion', 'portionIndex', requestParam.portion_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortion', 'portionIndex', requestParam.portion_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1814,7 +2003,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortion', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortion', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1839,7 +2031,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortion', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortion', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1864,7 +2059,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortion', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortion', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -1920,7 +2118,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortions', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortions', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1945,7 +2146,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortions', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortions', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1970,7 +2174,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortions', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortions', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -1995,7 +2202,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortions', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortions', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2020,7 +2230,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortions', 'portions', requestParam.portions)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortions', 'portions', requestParam.portions)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2045,7 +2258,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortions', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortions', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2070,7 +2286,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortions', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortions', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2095,7 +2314,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortions', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlidePortions', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -2145,7 +2367,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShape', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShape', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2168,7 +2393,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShape', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShape', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2191,7 +2419,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShape', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShape', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2214,7 +2445,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShape', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShape', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2237,7 +2471,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShape', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShape', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2260,7 +2497,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShape', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShape', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -2310,7 +2550,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShapes', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShapes', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2333,7 +2576,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShapes', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShapes', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2356,7 +2602,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShapes', 'shapes', requestParam.shapes)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShapes', 'shapes', requestParam.shapes)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2379,7 +2628,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShapes', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShapes', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2402,7 +2654,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShapes', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShapes', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2425,7 +2680,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShapes', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteNotesSlideShapes', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -2478,7 +2736,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraph', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraph', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2502,7 +2763,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraph', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraph', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2526,7 +2790,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraph', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraph', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2550,7 +2817,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraph', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraph', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2574,7 +2844,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraph', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraph', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2598,7 +2871,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraph', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraph', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2622,7 +2898,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraph', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraph', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -2675,7 +2954,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraphs', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraphs', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2699,7 +2981,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraphs', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraphs', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2723,7 +3008,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraphs', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraphs', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2747,7 +3035,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraphs', 'paragraphs', requestParam.paragraphs)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraphs', 'paragraphs', requestParam.paragraphs)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2771,7 +3062,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraphs', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraphs', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2795,7 +3089,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraphs', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraphs', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2819,7 +3116,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraphs', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteParagraphs', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -2875,7 +3175,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortion', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortion', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2900,7 +3203,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortion', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortion', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2925,7 +3231,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortion', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortion', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2950,7 +3259,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortion', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortion', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -2975,7 +3287,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortion', 'portionIndex', requestParam.portion_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortion', 'portionIndex', requestParam.portion_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3000,7 +3315,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortion', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortion', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3025,7 +3343,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortion', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortion', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3050,7 +3371,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortion', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortion', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -3106,7 +3430,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortions', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortions', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3131,7 +3458,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortions', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortions', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3156,7 +3486,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortions', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortions', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3181,7 +3514,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortions', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortions', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3206,7 +3542,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortions', 'portions', requestParam.portions)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortions', 'portions', requestParam.portions)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3231,7 +3570,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortions', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortions', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3256,7 +3598,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortions', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortions', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3281,7 +3626,376 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortions', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePortions', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for delete_section
+  # Delete a presentation section.
+  # @param name Document name.
+  # @param section_index Section index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :with_slides True to delete the slides related to the deleted section; move them to the remaining sections otherwise.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Sections]
+  describe 'delete_section test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::DeleteSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSection', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'DeleteSection', 'Integer')
+      requestParam.with_slides = AsposeSlidesCloud::SpecUtils.get_param_value('withSlides', 'DeleteSection', 'BOOLEAN')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSection', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteSection', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.delete_section_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSection', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::DeleteSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSection', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'DeleteSection', 'Integer')
+      requestParam.with_slides = AsposeSlidesCloud::SpecUtils.get_param_value('withSlides', 'DeleteSection', 'BOOLEAN')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSection', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'DeleteSection', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteSection', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_section_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteSection', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSection', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSection', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid section_index' do
+      requestParam = AsposeSlidesCloud::DeleteSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSection', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'DeleteSection', 'Integer')
+      requestParam.with_slides = AsposeSlidesCloud::SpecUtils.get_param_value('withSlides', 'DeleteSection', 'BOOLEAN')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSection', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('sectionIndex', 'DeleteSection', requestParam.section_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteSection', 'sectionIndex', requestParam.section_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_section_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteSection', 'sectionIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSection', 'sectionIndex', requestParam.section_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSection', 'sectionIndex', requestParam.section_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid with_slides' do
+      requestParam = AsposeSlidesCloud::DeleteSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSection', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'DeleteSection', 'Integer')
+      requestParam.with_slides = AsposeSlidesCloud::SpecUtils.get_param_value('withSlides', 'DeleteSection', 'BOOLEAN')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSection', 'String')
+      requestParam.with_slides = AsposeSlidesCloud::SpecUtils.invalidize_param_value('withSlides', 'DeleteSection', requestParam.with_slides, 'BOOLEAN')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteSection', 'withSlides', requestParam.with_slides)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_section_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteSection', 'withSlides')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSection', 'withSlides', requestParam.with_slides)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSection', 'withSlides', requestParam.with_slides)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::DeleteSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSection', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'DeleteSection', 'Integer')
+      requestParam.with_slides = AsposeSlidesCloud::SpecUtils.get_param_value('withSlides', 'DeleteSection', 'BOOLEAN')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSection', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'DeleteSection', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteSection', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_section_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteSection', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSection', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSection', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::DeleteSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSection', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'DeleteSection', 'Integer')
+      requestParam.with_slides = AsposeSlidesCloud::SpecUtils.get_param_value('withSlides', 'DeleteSection', 'BOOLEAN')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'DeleteSection', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteSection', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_section_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteSection', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSection', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSection', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::DeleteSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSection', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'DeleteSection', 'Integer')
+      requestParam.with_slides = AsposeSlidesCloud::SpecUtils.get_param_value('withSlides', 'DeleteSection', 'BOOLEAN')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'DeleteSection', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteSection', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_section_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteSection', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSection', 'storage', requestParam.storage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSection', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for delete_sections
+  # Delete presentation sections.
+  # @param name Document name.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :sections The indices of the sections to be deleted; delete all by default.
+  # @option opts [BOOLEAN] :with_slides True to delete the slides related to the deleted sections; move them to the remaining sections otherwise.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Sections]
+  describe 'delete_sections test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::DeleteSectionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSections', 'String')
+      requestParam.sections = AsposeSlidesCloud::SpecUtils.get_param_value('sections', 'DeleteSections', 'String')
+      requestParam.with_slides = AsposeSlidesCloud::SpecUtils.get_param_value('withSlides', 'DeleteSections', 'BOOLEAN')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSections', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteSections', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.delete_sections_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSections', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::DeleteSectionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSections', 'String')
+      requestParam.sections = AsposeSlidesCloud::SpecUtils.get_param_value('sections', 'DeleteSections', 'String')
+      requestParam.with_slides = AsposeSlidesCloud::SpecUtils.get_param_value('withSlides', 'DeleteSections', 'BOOLEAN')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSections', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'DeleteSections', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteSections', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_sections_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteSections', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSections', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSections', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid sections' do
+      requestParam = AsposeSlidesCloud::DeleteSectionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSections', 'String')
+      requestParam.sections = AsposeSlidesCloud::SpecUtils.get_param_value('sections', 'DeleteSections', 'String')
+      requestParam.with_slides = AsposeSlidesCloud::SpecUtils.get_param_value('withSlides', 'DeleteSections', 'BOOLEAN')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSections', 'String')
+      requestParam.sections = AsposeSlidesCloud::SpecUtils.invalidize_param_value('sections', 'DeleteSections', requestParam.sections, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteSections', 'sections', requestParam.sections)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_sections_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteSections', 'sections')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSections', 'sections', requestParam.sections)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSections', 'sections', requestParam.sections)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid with_slides' do
+      requestParam = AsposeSlidesCloud::DeleteSectionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSections', 'String')
+      requestParam.sections = AsposeSlidesCloud::SpecUtils.get_param_value('sections', 'DeleteSections', 'String')
+      requestParam.with_slides = AsposeSlidesCloud::SpecUtils.get_param_value('withSlides', 'DeleteSections', 'BOOLEAN')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSections', 'String')
+      requestParam.with_slides = AsposeSlidesCloud::SpecUtils.invalidize_param_value('withSlides', 'DeleteSections', requestParam.with_slides, 'BOOLEAN')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteSections', 'withSlides', requestParam.with_slides)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_sections_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteSections', 'withSlides')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSections', 'withSlides', requestParam.with_slides)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSections', 'withSlides', requestParam.with_slides)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::DeleteSectionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSections', 'String')
+      requestParam.sections = AsposeSlidesCloud::SpecUtils.get_param_value('sections', 'DeleteSections', 'String')
+      requestParam.with_slides = AsposeSlidesCloud::SpecUtils.get_param_value('withSlides', 'DeleteSections', 'BOOLEAN')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSections', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'DeleteSections', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteSections', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_sections_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteSections', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSections', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSections', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::DeleteSectionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSections', 'String')
+      requestParam.sections = AsposeSlidesCloud::SpecUtils.get_param_value('sections', 'DeleteSections', 'String')
+      requestParam.with_slides = AsposeSlidesCloud::SpecUtils.get_param_value('withSlides', 'DeleteSections', 'BOOLEAN')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'DeleteSections', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteSections', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_sections_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteSections', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSections', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSections', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::DeleteSectionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteSections', 'String')
+      requestParam.sections = AsposeSlidesCloud::SpecUtils.get_param_value('sections', 'DeleteSections', 'String')
+      requestParam.with_slides = AsposeSlidesCloud::SpecUtils.get_param_value('withSlides', 'DeleteSections', 'BOOLEAN')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'DeleteSections', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteSections', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_sections_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteSections', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSections', 'storage', requestParam.storage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSections', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -3328,7 +4042,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimation', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimation', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3350,7 +4067,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimation', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimation', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3372,7 +4092,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimation', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimation', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3394,7 +4117,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimation', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimation', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3416,7 +4142,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimation', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimation', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -3466,7 +4195,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationEffect', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationEffect', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3489,7 +4221,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationEffect', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationEffect', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3512,7 +4247,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationEffect', 'effectIndex', requestParam.effect_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationEffect', 'effectIndex', requestParam.effect_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3535,7 +4273,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationEffect', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationEffect', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3558,7 +4299,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationEffect', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationEffect', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3581,7 +4325,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationEffect', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationEffect', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -3631,7 +4378,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequence', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequence', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3654,7 +4404,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequence', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequence', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3677,7 +4430,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequence', 'sequenceIndex', requestParam.sequence_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequence', 'sequenceIndex', requestParam.sequence_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3700,7 +4456,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequence', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequence', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3723,7 +4482,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequence', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequence', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3746,7 +4508,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequence', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequence', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -3799,7 +4564,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequenceEffect', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequenceEffect', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3823,7 +4591,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequenceEffect', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequenceEffect', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3847,7 +4618,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequenceEffect', 'sequenceIndex', requestParam.sequence_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequenceEffect', 'sequenceIndex', requestParam.sequence_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3871,7 +4645,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequenceEffect', 'effectIndex', requestParam.effect_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequenceEffect', 'effectIndex', requestParam.effect_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3895,7 +4672,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequenceEffect', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequenceEffect', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3919,7 +4699,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequenceEffect', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequenceEffect', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -3943,7 +4726,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequenceEffect', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequenceEffect', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -3990,7 +4776,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequences', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequences', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4012,7 +4801,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequences', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequences', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4034,7 +4826,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequences', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequences', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4056,7 +4851,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequences', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequences', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4078,7 +4876,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequences', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationInteractiveSequences', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -4125,7 +4926,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationMainSequence', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationMainSequence', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4147,7 +4951,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationMainSequence', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationMainSequence', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4169,7 +4976,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationMainSequence', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationMainSequence', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4191,7 +5001,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationMainSequence', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationMainSequence', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4213,7 +5026,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationMainSequence', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideAnimationMainSequence', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -4260,7 +5076,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideByIndex', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideByIndex', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4282,7 +5101,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideByIndex', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideByIndex', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4304,7 +5126,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideByIndex', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideByIndex', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4326,7 +5151,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideByIndex', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideByIndex', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4348,7 +5176,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideByIndex', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideByIndex', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -4398,7 +5229,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShape', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShape', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4421,7 +5255,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShape', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShape', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4444,7 +5281,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShape', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShape', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4467,7 +5307,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShape', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShape', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4490,7 +5333,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShape', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShape', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4513,7 +5359,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShape', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShape', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -4563,7 +5412,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShapes', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShapes', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4586,7 +5438,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShapes', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShapes', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4609,7 +5464,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShapes', 'shapes', requestParam.shapes)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShapes', 'shapes', requestParam.shapes)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4632,7 +5490,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShapes', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShapes', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4655,7 +5516,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShapes', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShapes', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4678,7 +5542,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShapes', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideShapes', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -4731,7 +5598,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshape', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshape', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4755,7 +5625,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshape', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshape', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4779,7 +5652,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshape', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshape', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4803,7 +5679,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshape', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshape', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4827,7 +5706,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshape', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshape', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4851,7 +5733,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshape', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshape', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4875,7 +5760,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshape', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshape', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -4928,7 +5816,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshapes', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshapes', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4952,7 +5843,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshapes', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshapes', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -4976,7 +5870,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshapes', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshapes', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5000,7 +5897,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshapes', 'shapes', requestParam.shapes)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshapes', 'shapes', requestParam.shapes)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5024,7 +5924,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshapes', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshapes', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5048,7 +5951,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshapes', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshapes', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5072,7 +5978,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshapes', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlideSubshapes', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -5119,7 +6028,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesCleanSlidesList', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesCleanSlidesList', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5141,7 +6053,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesCleanSlidesList', 'slides', requestParam.slides)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesCleanSlidesList', 'slides', requestParam.slides)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5163,7 +6078,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesCleanSlidesList', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesCleanSlidesList', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5185,7 +6103,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesCleanSlidesList', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesCleanSlidesList', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5207,7 +6128,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesCleanSlidesList', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesCleanSlidesList', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -5251,7 +6175,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesDocumentProperties', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesDocumentProperties', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5272,7 +6199,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesDocumentProperties', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesDocumentProperties', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5293,7 +6223,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesDocumentProperties', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesDocumentProperties', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5314,7 +6247,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesDocumentProperties', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesDocumentProperties', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -5361,7 +6297,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesDocumentProperty', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesDocumentProperty', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5383,7 +6322,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesDocumentProperty', 'propertyName', requestParam.property_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesDocumentProperty', 'propertyName', requestParam.property_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5405,7 +6347,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesDocumentProperty', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesDocumentProperty', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5427,7 +6372,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesDocumentProperty', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesDocumentProperty', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5449,7 +6397,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesDocumentProperty', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesDocumentProperty', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -5496,7 +6447,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesSlideBackground', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesSlideBackground', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5518,7 +6472,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesSlideBackground', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesSlideBackground', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5540,7 +6497,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesSlideBackground', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesSlideBackground', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5562,7 +6522,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesSlideBackground', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesSlideBackground', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5584,7 +6547,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesSlideBackground', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSlidesSlideBackground', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -5640,7 +6606,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraph', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraph', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5665,7 +6634,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraph', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraph', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5690,7 +6662,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraph', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraph', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5715,7 +6690,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraph', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraph', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5740,7 +6718,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraph', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraph', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5765,7 +6746,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraph', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraph', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5790,7 +6774,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraph', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraph', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5815,7 +6802,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraph', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraph', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -5871,7 +6861,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraphs', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraphs', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5896,7 +6889,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraphs', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraphs', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5921,7 +6917,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraphs', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraphs', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5946,7 +6945,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraphs', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraphs', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5971,7 +6973,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraphs', 'paragraphs', requestParam.paragraphs)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraphs', 'paragraphs', requestParam.paragraphs)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -5996,7 +7001,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraphs', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraphs', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6021,7 +7029,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraphs', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraphs', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6046,7 +7057,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraphs', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapeParagraphs', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -6105,7 +7119,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortion', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortion', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6131,7 +7148,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortion', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortion', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6157,7 +7177,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortion', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortion', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6183,7 +7206,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortion', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortion', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6209,7 +7235,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortion', 'portionIndex', requestParam.portion_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortion', 'portionIndex', requestParam.portion_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6235,7 +7264,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortion', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortion', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6261,7 +7293,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortion', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortion', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6287,7 +7322,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortion', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortion', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6313,7 +7351,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortion', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortion', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -6372,7 +7413,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortions', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortions', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6398,7 +7442,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortions', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortions', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6424,7 +7471,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortions', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortions', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6450,7 +7500,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortions', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortions', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6476,7 +7529,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortions', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortions', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6502,7 +7558,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortions', 'portions', requestParam.portions)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortions', 'portions', requestParam.portions)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6528,7 +7587,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortions', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortions', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6554,7 +7616,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortions', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortions', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6580,7 +7645,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortions', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSubshapePortions', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -6621,7 +7689,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadFile', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadFile', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6641,7 +7712,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadFile', 'storageName', requestParam.storage_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadFile', 'storageName', requestParam.storage_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6661,7 +7735,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadFile', 'versionId', requestParam.version_id)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadFile', 'versionId', requestParam.version_id)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -6696,7 +7773,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetDiscUsage', 'storageName', requestParam.storage_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetDiscUsage', 'storageName', requestParam.storage_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -6734,7 +7814,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFileVersions', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFileVersions', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6753,7 +7836,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFileVersions', 'storageName', requestParam.storage_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFileVersions', 'storageName', requestParam.storage_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -6791,7 +7877,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFilesList', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFilesList', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6810,7 +7899,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFilesList', 'storageName', requestParam.storage_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFilesList', 'storageName', requestParam.storage_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -6857,7 +7949,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetLayoutSlide', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetLayoutSlide', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6879,7 +7974,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetLayoutSlide', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetLayoutSlide', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6901,7 +7999,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetLayoutSlide', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetLayoutSlide', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6923,7 +8024,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetLayoutSlide', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetLayoutSlide', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -6945,7 +8049,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetLayoutSlide', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetLayoutSlide', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -6989,7 +8096,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetLayoutSlidesList', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetLayoutSlidesList', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7010,7 +8120,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetLayoutSlidesList', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetLayoutSlidesList', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7031,7 +8144,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetLayoutSlidesList', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetLayoutSlidesList', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7052,7 +8168,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetLayoutSlidesList', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetLayoutSlidesList', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -7099,7 +8218,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetMasterSlide', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetMasterSlide', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7121,7 +8243,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetMasterSlide', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetMasterSlide', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7143,7 +8268,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetMasterSlide', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetMasterSlide', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7165,7 +8293,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetMasterSlide', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetMasterSlide', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7187,7 +8318,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetMasterSlide', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetMasterSlide', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -7231,7 +8365,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetMasterSlidesList', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetMasterSlidesList', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7252,7 +8389,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetMasterSlidesList', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetMasterSlidesList', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7273,7 +8413,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetMasterSlidesList', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetMasterSlidesList', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7294,7 +8437,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetMasterSlidesList', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetMasterSlidesList', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -7341,7 +8487,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlide', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlide', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7363,7 +8512,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlide', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlide', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7385,7 +8537,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlide', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlide', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7407,7 +8562,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlide', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlide', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7429,7 +8587,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlide', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlide', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -7476,7 +8637,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideExists', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideExists', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7498,7 +8662,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideExists', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideExists', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7520,7 +8687,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideExists', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideExists', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7542,7 +8712,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideExists', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideExists', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7564,7 +8737,160 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideExists', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideExists', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for get_notes_slide_header_footer
+  # Get header/footer info for the notes slide.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :storage Document storage.
+  # @option opts [String] :folder Document folder.
+  # @return [NotesSlideHeaderFooter]
+  describe 'get_notes_slide_header_footer test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::GetNotesSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideHeaderFooter', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideHeaderFooter', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetNotesSlideHeaderFooter', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_notes_slide_header_footer_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideHeaderFooter', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::GetNotesSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideHeaderFooter', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetNotesSlideHeaderFooter', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetNotesSlideHeaderFooter', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_notes_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetNotesSlideHeaderFooter', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideHeaderFooter', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideHeaderFooter', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      requestParam = AsposeSlidesCloud::GetNotesSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideHeaderFooter', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'GetNotesSlideHeaderFooter', requestParam.slide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetNotesSlideHeaderFooter', 'slideIndex', requestParam.slide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_notes_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetNotesSlideHeaderFooter', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideHeaderFooter', 'slideIndex', requestParam.slide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideHeaderFooter', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::GetNotesSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideHeaderFooter', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetNotesSlideHeaderFooter', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetNotesSlideHeaderFooter', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_notes_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetNotesSlideHeaderFooter', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideHeaderFooter', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideHeaderFooter', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::GetNotesSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideHeaderFooter', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetNotesSlideHeaderFooter', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetNotesSlideHeaderFooter', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_notes_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetNotesSlideHeaderFooter', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideHeaderFooter', 'storage', requestParam.storage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideHeaderFooter', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::GetNotesSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetNotesSlideHeaderFooter', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetNotesSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetNotesSlideHeaderFooter', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetNotesSlideHeaderFooter', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_notes_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetNotesSlideHeaderFooter', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideHeaderFooter', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideHeaderFooter', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -7614,7 +8940,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShape', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShape', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7637,7 +8966,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShape', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShape', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7660,7 +8992,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShape', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShape', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7683,7 +9018,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShape', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShape', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7706,7 +9044,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShape', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShape', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7729,7 +9070,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShape', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShape', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -7782,7 +9126,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraph', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraph', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7806,7 +9153,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraph', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraph', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7830,7 +9180,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraph', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraph', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7854,7 +9207,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraph', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraph', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7878,7 +9234,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraph', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraph', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7902,7 +9261,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraph', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraph', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7926,7 +9288,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraph', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraph', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -7976,7 +9341,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraphs', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraphs', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -7999,7 +9367,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraphs', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraphs', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8022,7 +9393,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraphs', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraphs', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8045,7 +9419,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraphs', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraphs', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8068,7 +9445,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraphs', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraphs', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8091,7 +9471,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraphs', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapeParagraphs', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -8147,7 +9530,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortion', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortion', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8172,7 +9558,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortion', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortion', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8197,7 +9586,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortion', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortion', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8222,7 +9614,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortion', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortion', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8247,7 +9642,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortion', 'portionIndex', requestParam.portion_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortion', 'portionIndex', requestParam.portion_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8272,7 +9670,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortion', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortion', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8297,7 +9698,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortion', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortion', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8322,7 +9726,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortion', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortion', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -8375,7 +9782,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortions', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortions', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8399,7 +9809,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortions', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortions', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8423,7 +9836,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortions', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortions', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8447,7 +9863,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortions', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortions', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8471,7 +9890,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortions', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortions', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8495,7 +9917,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortions', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortions', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8519,7 +9944,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortions', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapePortions', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -8566,7 +9994,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapes', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapes', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8588,7 +10019,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapes', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapes', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8610,7 +10044,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapes', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapes', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8632,7 +10069,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapes', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapes', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8654,7 +10094,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapes', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideShapes', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -8713,7 +10156,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideWithFormat', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideWithFormat', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8739,7 +10185,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideWithFormat', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideWithFormat', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8765,7 +10214,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideWithFormat', 'format', requestParam.format)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideWithFormat', 'format', requestParam.format)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8791,7 +10243,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideWithFormat', 'width', requestParam.width)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideWithFormat', 'width', requestParam.width)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8817,7 +10272,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideWithFormat', 'height', requestParam.height)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideWithFormat', 'height', requestParam.height)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8843,7 +10301,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideWithFormat', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideWithFormat', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8869,7 +10330,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideWithFormat', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideWithFormat', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8895,7 +10359,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideWithFormat', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideWithFormat', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -8921,7 +10388,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideWithFormat', 'fontsFolder', requestParam.fonts_folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetNotesSlideWithFormat', 'fontsFolder', requestParam.fonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -8977,7 +10447,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortion', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortion', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9002,7 +10475,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortion', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortion', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9027,7 +10503,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortion', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortion', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9052,7 +10531,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortion', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortion', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9077,7 +10559,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortion', 'portionIndex', requestParam.portion_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortion', 'portionIndex', requestParam.portion_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9102,7 +10587,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortion', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortion', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9127,7 +10615,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortion', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortion', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9152,7 +10643,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortion', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortion', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -9205,7 +10699,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortions', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortions', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9229,7 +10726,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortions', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortions', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9253,7 +10753,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortions', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortions', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9277,7 +10780,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortions', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortions', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9301,7 +10807,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortions', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortions', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9325,7 +10834,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortions', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortions', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9349,7 +10861,129 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortions', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphPortions', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for get_sections
+  # Read presentation sections info.
+  # @param name Document name.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Sections]
+  describe 'get_sections test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::GetSectionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSections', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSections', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSections', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_sections_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSections', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::GetSectionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSections', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSections', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetSections', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSections', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_sections_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSections', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSections', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSections', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::GetSectionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSections', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSections', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetSections', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSections', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_sections_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSections', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSections', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSections', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::GetSectionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSections', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetSections', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSections', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_sections_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSections', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSections', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSections', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::GetSectionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSections', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetSections', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSections', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_sections_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSections', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSections', 'storage', requestParam.storage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSections', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -9399,7 +11033,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideAnimation', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideAnimation', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9422,7 +11059,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideAnimation', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideAnimation', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9445,7 +11085,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideAnimation', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideAnimation', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9468,7 +11111,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideAnimation', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideAnimation', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9491,7 +11137,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideAnimation', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideAnimation', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9514,7 +11163,160 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideAnimation', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideAnimation', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for get_slide_header_footer
+  # Get footer info for the slide.
+  # @param name Document name.
+  # @param slide_index The position of the slide to be reordered.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [HeaderFooter]
+  describe 'get_slide_header_footer test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::GetSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideHeaderFooter', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideHeaderFooter', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlideHeaderFooter', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_slide_header_footer_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideHeaderFooter', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::GetSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideHeaderFooter', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideHeaderFooter', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetSlideHeaderFooter', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlideHeaderFooter', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlideHeaderFooter', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideHeaderFooter', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideHeaderFooter', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      requestParam = AsposeSlidesCloud::GetSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideHeaderFooter', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'GetSlideHeaderFooter', requestParam.slide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlideHeaderFooter', 'slideIndex', requestParam.slide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlideHeaderFooter', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideHeaderFooter', 'slideIndex', requestParam.slide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideHeaderFooter', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::GetSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideHeaderFooter', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideHeaderFooter', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetSlideHeaderFooter', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlideHeaderFooter', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlideHeaderFooter', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideHeaderFooter', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideHeaderFooter', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::GetSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideHeaderFooter', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetSlideHeaderFooter', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlideHeaderFooter', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlideHeaderFooter', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideHeaderFooter', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideHeaderFooter', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::GetSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideHeaderFooter', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetSlideHeaderFooter', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlideHeaderFooter', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlideHeaderFooter', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideHeaderFooter', 'storage', requestParam.storage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideHeaderFooter', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -9564,7 +11366,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShape', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShape', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9587,7 +11392,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShape', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShape', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9610,7 +11418,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShape', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShape', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9633,7 +11444,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShape', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShape', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9656,7 +11470,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShape', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShape', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9679,7 +11496,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShape', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShape', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -9732,7 +11552,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraph', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraph', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9756,7 +11579,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraph', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraph', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9780,7 +11606,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraph', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraph', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9804,7 +11633,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraph', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraph', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9828,7 +11660,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraph', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraph', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9852,7 +11687,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraph', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraph', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9876,7 +11714,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraph', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraph', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -9926,7 +11767,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraphs', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraphs', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9949,7 +11793,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraphs', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraphs', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9972,7 +11819,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraphs', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraphs', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -9995,7 +11845,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraphs', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraphs', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10018,7 +11871,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraphs', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraphs', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10041,7 +11897,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraphs', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapeParagraphs', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -10088,7 +11947,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapes', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapes', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10110,7 +11972,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapes', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapes', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10132,7 +11997,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapes', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapes', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10154,7 +12022,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapes', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapes', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10176,7 +12047,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapes', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideShapes', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -10229,7 +12103,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshape', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshape', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10253,7 +12130,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshape', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshape', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10277,7 +12157,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshape', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshape', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10301,7 +12184,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshape', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshape', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10325,7 +12211,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshape', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshape', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10349,7 +12238,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshape', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshape', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10373,7 +12265,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshape', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshape', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -10429,7 +12324,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraph', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraph', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10454,7 +12352,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraph', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraph', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10479,7 +12380,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraph', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraph', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10504,7 +12408,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraph', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraph', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10529,7 +12436,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraph', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraph', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10554,7 +12464,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraph', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraph', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10579,7 +12492,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraph', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraph', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10604,7 +12520,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraph', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraph', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -10657,7 +12576,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraphs', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraphs', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10681,7 +12603,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraphs', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraphs', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10705,7 +12630,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraphs', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraphs', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10729,7 +12657,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraphs', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraphs', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10753,7 +12684,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraphs', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraphs', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10777,7 +12711,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraphs', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraphs', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10801,7 +12738,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraphs', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapeParagraphs', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -10851,7 +12791,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapes', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapes', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10874,7 +12817,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapes', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapes', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10897,7 +12843,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapes', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapes', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10920,7 +12869,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapes', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapes', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10943,7 +12895,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapes', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapes', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -10966,7 +12921,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapes', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideSubshapes', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -11024,7 +12982,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocument', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocument', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11045,7 +13006,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocument', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocument', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11066,7 +13030,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocument', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocument', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11087,7 +13054,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocument', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocument', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -11131,7 +13101,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocumentProperties', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocumentProperties', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11152,7 +13125,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocumentProperties', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocumentProperties', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11173,7 +13149,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocumentProperties', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocumentProperties', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11194,7 +13173,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocumentProperties', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocumentProperties', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -11241,7 +13223,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocumentProperty', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocumentProperty', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11263,7 +13248,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocumentProperty', 'propertyName', requestParam.property_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocumentProperty', 'propertyName', requestParam.property_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11285,7 +13273,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocumentProperty', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocumentProperty', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11307,7 +13298,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocumentProperty', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocumentProperty', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11329,7 +13323,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocumentProperty', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesDocumentProperty', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -11376,7 +13373,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithDefaultFormat', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithDefaultFormat', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11398,7 +13398,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithDefaultFormat', 'index', requestParam.index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithDefaultFormat', 'index', requestParam.index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11420,7 +13423,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithDefaultFormat', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithDefaultFormat', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11442,7 +13448,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithDefaultFormat', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithDefaultFormat', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11464,7 +13473,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithDefaultFormat', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithDefaultFormat', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -11514,7 +13526,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithFormat', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithFormat', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11537,7 +13552,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithFormat', 'index', requestParam.index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithFormat', 'index', requestParam.index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11560,7 +13578,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithFormat', 'format', requestParam.format)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithFormat', 'format', requestParam.format)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11583,7 +13604,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithFormat', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithFormat', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11606,7 +13630,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithFormat', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithFormat', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11629,7 +13656,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithFormat', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImageWithFormat', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -11673,7 +13703,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImages', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImages', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11694,7 +13727,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImages', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImages', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11715,7 +13751,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImages', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImages', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11736,7 +13775,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImages', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesImages', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -11786,7 +13828,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholder', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholder', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11809,7 +13854,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholder', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholder', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11832,7 +13880,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholder', 'placeholderIndex', requestParam.placeholder_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholder', 'placeholderIndex', requestParam.placeholder_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11855,7 +13906,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholder', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholder', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11878,7 +13932,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholder', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholder', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11901,7 +13958,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholder', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholder', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -11948,7 +14008,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholders', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholders', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11970,7 +14033,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholders', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholders', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -11992,7 +14058,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholders', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholders', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12014,7 +14083,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholders', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholders', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12036,7 +14108,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholders', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPlaceholders', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -12083,7 +14158,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPresentationTextItems', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPresentationTextItems', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12105,7 +14183,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPresentationTextItems', 'withEmpty', requestParam.with_empty)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPresentationTextItems', 'withEmpty', requestParam.with_empty)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12127,7 +14208,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPresentationTextItems', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPresentationTextItems', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12149,7 +14233,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPresentationTextItems', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPresentationTextItems', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12171,7 +14258,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPresentationTextItems', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesPresentationTextItems', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -12218,7 +14308,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlide', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlide', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12240,7 +14333,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlide', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlide', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12262,7 +14358,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlide', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlide', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12284,7 +14383,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlide', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlide', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12306,7 +14408,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlide', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlide', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -12353,7 +14458,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideBackground', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideBackground', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12375,7 +14483,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideBackground', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideBackground', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12397,7 +14508,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideBackground', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideBackground', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12419,7 +14533,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideBackground', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideBackground', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12441,7 +14558,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideBackground', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideBackground', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -12488,7 +14608,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideComments', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideComments', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12510,7 +14633,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideComments', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideComments', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12532,7 +14658,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideComments', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideComments', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12554,7 +14683,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideComments', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideComments', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12576,7 +14708,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideComments', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideComments', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -12623,7 +14758,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideImages', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideImages', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12645,7 +14783,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideImages', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideImages', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12667,7 +14808,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideImages', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideImages', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12689,7 +14833,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideImages', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideImages', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12711,7 +14858,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideImages', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideImages', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -12761,7 +14911,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideTextItems', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideTextItems', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12784,7 +14937,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideTextItems', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideTextItems', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12807,7 +14963,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideTextItems', 'withEmpty', requestParam.with_empty)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideTextItems', 'withEmpty', requestParam.with_empty)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12830,7 +14989,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideTextItems', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideTextItems', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12853,7 +15015,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideTextItems', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideTextItems', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12876,7 +15041,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideTextItems', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideTextItems', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -12920,7 +15088,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlidesList', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlidesList', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12941,7 +15112,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlidesList', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlidesList', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12962,7 +15136,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlidesList', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlidesList', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -12983,7 +15160,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlidesList', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlidesList', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -13030,7 +15210,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesTheme', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesTheme', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13052,7 +15235,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesTheme', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesTheme', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13074,7 +15260,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesTheme', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesTheme', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13096,7 +15285,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesTheme', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesTheme', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13118,7 +15310,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesTheme', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesTheme', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -13165,7 +15360,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeColorScheme', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeColorScheme', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13187,7 +15385,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeColorScheme', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeColorScheme', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13209,7 +15410,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeColorScheme', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeColorScheme', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13231,7 +15435,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeColorScheme', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeColorScheme', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13253,7 +15460,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeColorScheme', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeColorScheme', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -13300,7 +15510,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFontScheme', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFontScheme', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13322,7 +15535,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFontScheme', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFontScheme', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13344,7 +15560,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFontScheme', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFontScheme', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13366,7 +15585,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFontScheme', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFontScheme', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13388,7 +15610,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFontScheme', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFontScheme', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -13435,7 +15660,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFormatScheme', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFormatScheme', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13457,7 +15685,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFormatScheme', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFormatScheme', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13479,7 +15710,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFormatScheme', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFormatScheme', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13501,7 +15735,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFormatScheme', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFormatScheme', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13523,7 +15760,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFormatScheme', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesThemeFormatScheme', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -13567,7 +15807,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesViewProperties', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesViewProperties', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13588,7 +15831,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesViewProperties', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesViewProperties', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13609,7 +15855,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesViewProperties', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesViewProperties', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13630,7 +15879,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesViewProperties', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesViewProperties', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -13689,7 +15941,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortion', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortion', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13715,7 +15970,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortion', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortion', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13741,7 +15999,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortion', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortion', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13767,7 +16028,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortion', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortion', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13793,7 +16057,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortion', 'portionIndex', requestParam.portion_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortion', 'portionIndex', requestParam.portion_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13819,7 +16086,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortion', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortion', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13845,7 +16115,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortion', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortion', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13871,7 +16144,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortion', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortion', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13897,7 +16173,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortion', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortion', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -13953,7 +16232,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortions', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortions', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -13978,7 +16260,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortions', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortions', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14003,7 +16288,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortions', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortions', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14028,7 +16316,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortions', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortions', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14053,7 +16344,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortions', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortions', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14078,7 +16372,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortions', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortions', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14103,7 +16400,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortions', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortions', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14128,7 +16428,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortions', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSubshapeParagraphPortions', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -14174,7 +16477,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MoveFile', 'srcPath', requestParam.src_path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MoveFile', 'srcPath', requestParam.src_path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14196,7 +16502,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MoveFile', 'destPath', requestParam.dest_path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MoveFile', 'destPath', requestParam.dest_path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14218,7 +16527,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MoveFile', 'srcStorageName', requestParam.src_storage_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MoveFile', 'srcStorageName', requestParam.src_storage_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14240,7 +16552,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MoveFile', 'destStorageName', requestParam.dest_storage_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MoveFile', 'destStorageName', requestParam.dest_storage_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14262,7 +16577,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MoveFile', 'versionId', requestParam.version_id)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MoveFile', 'versionId', requestParam.version_id)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -14305,7 +16623,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MoveFolder', 'srcPath', requestParam.src_path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MoveFolder', 'srcPath', requestParam.src_path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14326,7 +16647,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MoveFolder', 'destPath', requestParam.dest_path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MoveFolder', 'destPath', requestParam.dest_path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14347,7 +16671,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MoveFolder', 'srcStorageName', requestParam.src_storage_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MoveFolder', 'srcStorageName', requestParam.src_storage_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14368,7 +16695,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MoveFolder', 'destStorageName', requestParam.dest_storage_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MoveFolder', 'destStorageName', requestParam.dest_storage_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -14409,7 +16739,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ObjectExists', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ObjectExists', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14429,7 +16762,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ObjectExists', 'storageName', requestParam.storage_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ObjectExists', 'storageName', requestParam.storage_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14449,7 +16785,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ObjectExists', 'versionId', requestParam.version_id)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ObjectExists', 'versionId', requestParam.version_id)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -14459,8 +16798,8 @@ describe 'SlidesApi' do
   # @param name Document name.
   # @param slide_index Slide index.
   # @param shape_index Shape index.
+  # @param dto Paragraph DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [Paragraph] :dto Paragraph DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -14505,7 +16844,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewParagraph', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewParagraph', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14530,7 +16872,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewParagraph', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewParagraph', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14555,7 +16900,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewParagraph', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewParagraph', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14580,7 +16928,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewParagraph', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewParagraph', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14605,7 +16956,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewParagraph', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewParagraph', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14630,7 +16984,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewParagraph', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewParagraph', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14655,7 +17012,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewParagraph', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewParagraph', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14680,7 +17040,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewParagraph', 'position', requestParam.position)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewParagraph', 'position', requestParam.position)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -14691,8 +17054,8 @@ describe 'SlidesApi' do
   # @param slide_index Slide index.
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
+  # @param dto Portion DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [Portion] :dto Portion DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -14739,7 +17102,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14765,7 +17131,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14791,7 +17160,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14817,7 +17189,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14843,7 +17218,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14869,7 +17247,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14895,7 +17276,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14921,7 +17305,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -14947,7 +17334,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'position', requestParam.position)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewPortion', 'position', requestParam.position)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -15003,7 +17393,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewShape', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewShape', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15028,7 +17421,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewShape', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewShape', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15053,7 +17449,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewShape', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewShape', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15078,7 +17477,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewShape', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewShape', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15103,7 +17505,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewShape', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewShape', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15128,7 +17533,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewShape', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewShape', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15153,7 +17561,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewShape', 'shapeToClone', requestParam.shape_to_clone)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewShape', 'shapeToClone', requestParam.shape_to_clone)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15178,7 +17589,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewShape', 'position', requestParam.position)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewShape', 'position', requestParam.position)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -15237,7 +17651,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshape', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshape', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15263,7 +17680,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshape', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshape', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15289,7 +17709,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshape', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshape', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15315,7 +17738,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshape', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshape', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15341,7 +17767,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshape', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshape', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15367,7 +17796,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshape', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshape', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15393,7 +17825,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshape', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshape', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15419,7 +17854,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshape', 'shapeToClone', requestParam.shape_to_clone)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshape', 'shapeToClone', requestParam.shape_to_clone)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15445,7 +17883,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshape', 'position', requestParam.position)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshape', 'position', requestParam.position)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -15455,9 +17896,9 @@ describe 'SlidesApi' do
   # @param name Document name.
   # @param slide_index Slide index.
   # @param shape_index Shape index.
+  # @param dto Paragraph DTO.
   # @param [Hash] opts the optional parameters
   # @option opts [String] :path Shape path.
-  # @option opts [Paragraph] :dto Paragraph DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -15469,8 +17910,8 @@ describe 'SlidesApi' do
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapeParagraph', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapeParagraph', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapeParagraph', 'String')
@@ -15487,8 +17928,8 @@ describe 'SlidesApi' do
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapeParagraph', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapeParagraph', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapeParagraph', 'String')
@@ -15504,7 +17945,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapeParagraph', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapeParagraph', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15513,8 +17957,8 @@ describe 'SlidesApi' do
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapeParagraph', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapeParagraph', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapeParagraph', 'String')
@@ -15530,7 +17974,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapeParagraph', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapeParagraph', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15539,8 +17986,8 @@ describe 'SlidesApi' do
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapeParagraph', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapeParagraph', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapeParagraph', 'String')
@@ -15556,33 +18003,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapeParagraph', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::PostAddNewSubshapeParagraphRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewSubshapeParagraph', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapeParagraph', 'Integer')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
-      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapeParagraph', 'Paragraph')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapeParagraph', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapeParagraph', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapeParagraph', 'String')
-      requestParam.position = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'PostAddNewSubshapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PostAddNewSubshapeParagraph', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PostAddNewSubshapeParagraph', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.post_add_new_subshape_paragraph_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostAddNewSubshapeParagraph', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapeParagraph', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapeParagraph', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15591,8 +18015,8 @@ describe 'SlidesApi' do
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapeParagraph', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapeParagraph', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapeParagraph', 'String')
@@ -15608,7 +18032,39 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapeParagraph', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapeParagraph', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::PostAddNewSubshapeParagraphRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewSubshapeParagraph', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapeParagraph', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapeParagraph', 'Integer')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapeParagraph', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapeParagraph', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapeParagraph', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapeParagraph', 'String')
+      requestParam.position = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'PostAddNewSubshapeParagraph', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PostAddNewSubshapeParagraph', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostAddNewSubshapeParagraph', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_add_new_subshape_paragraph_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostAddNewSubshapeParagraph', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapeParagraph', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapeParagraph', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15617,8 +18073,8 @@ describe 'SlidesApi' do
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapeParagraph', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapeParagraph', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapeParagraph', 'String')
@@ -15634,7 +18090,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapeParagraph', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapeParagraph', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15643,8 +18102,8 @@ describe 'SlidesApi' do
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapeParagraph', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapeParagraph', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapeParagraph', 'String')
@@ -15660,7 +18119,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapeParagraph', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapeParagraph', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15669,8 +18131,8 @@ describe 'SlidesApi' do
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapeParagraph', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapeParagraph', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapeParagraph', 'String')
@@ -15686,7 +18148,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapeParagraph', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapeParagraph', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15695,8 +18160,8 @@ describe 'SlidesApi' do
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapeParagraph', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapeParagraph', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapeParagraph', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapeParagraph', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapeParagraph', 'String')
@@ -15712,7 +18177,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapeParagraph', 'position', requestParam.position)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapeParagraph', 'position', requestParam.position)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -15723,9 +18191,9 @@ describe 'SlidesApi' do
   # @param slide_index Slide index.
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
+  # @param dto Portion DTO.
   # @param [Hash] opts the optional parameters
   # @option opts [String] :path Shape path.
-  # @option opts [Portion] :dto Portion DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -15738,8 +18206,8 @@ describe 'SlidesApi' do
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewSubshapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapePortion', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapePortion', 'String')
@@ -15757,8 +18225,8 @@ describe 'SlidesApi' do
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewSubshapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapePortion', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapePortion', 'String')
@@ -15774,7 +18242,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15784,8 +18255,8 @@ describe 'SlidesApi' do
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewSubshapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapePortion', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapePortion', 'String')
@@ -15801,7 +18272,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15811,8 +18285,8 @@ describe 'SlidesApi' do
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewSubshapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapePortion', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapePortion', 'String')
@@ -15828,7 +18302,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15838,8 +18315,8 @@ describe 'SlidesApi' do
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewSubshapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapePortion', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapePortion', 'String')
@@ -15855,34 +18332,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::PostAddNewSubshapePortionRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewSubshapePortion', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapePortion', 'Integer')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapePortion', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewSubshapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
-      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapePortion', 'Portion')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapePortion', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapePortion', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapePortion', 'String')
-      requestParam.position = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'PostAddNewSubshapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PostAddNewSubshapePortion', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PostAddNewSubshapePortion', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.post_add_new_subshape_portion_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostAddNewSubshapePortion', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15892,8 +18345,8 @@ describe 'SlidesApi' do
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewSubshapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapePortion', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapePortion', 'String')
@@ -15909,7 +18362,40 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::PostAddNewSubshapePortionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostAddNewSubshapePortion', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapePortion', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapePortion', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewSubshapePortion', 'Integer')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapePortion', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapePortion', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapePortion', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapePortion', 'String')
+      requestParam.position = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'PostAddNewSubshapePortion', 'Integer')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PostAddNewSubshapePortion', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostAddNewSubshapePortion', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_add_new_subshape_portion_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostAddNewSubshapePortion', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15919,8 +18405,8 @@ describe 'SlidesApi' do
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewSubshapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapePortion', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapePortion', 'String')
@@ -15936,7 +18422,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15946,8 +18435,8 @@ describe 'SlidesApi' do
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewSubshapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapePortion', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapePortion', 'String')
@@ -15963,7 +18452,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -15973,8 +18465,8 @@ describe 'SlidesApi' do
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewSubshapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapePortion', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapePortion', 'String')
@@ -15990,7 +18482,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16000,8 +18495,8 @@ describe 'SlidesApi' do
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PostAddNewSubshapePortion', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PostAddNewSubshapePortion', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PostAddNewSubshapePortion', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PostAddNewSubshapePortion', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostAddNewSubshapePortion', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostAddNewSubshapePortion', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostAddNewSubshapePortion', 'String')
@@ -16017,7 +18512,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'position', requestParam.position)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNewSubshapePortion', 'position', requestParam.position)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -16026,8 +18524,8 @@ describe 'SlidesApi' do
   # Add new notes slide.
   # @param name Document name.
   # @param slide_index Slide index.
+  # @param dto A NotesSlide object with notes slide data.
   # @param [Hash] opts the optional parameters
-  # @option opts [NotesSlide] :dto A NotesSlide object with notes slide data.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -16067,7 +18565,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNotesSlide', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNotesSlide', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16090,7 +18591,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNotesSlide', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNotesSlide', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16113,7 +18617,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNotesSlide', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNotesSlide', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16136,7 +18643,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNotesSlide', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNotesSlide', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16159,7 +18669,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNotesSlide', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNotesSlide', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16182,7 +18695,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNotesSlide', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostAddNotesSlide', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -16192,8 +18708,8 @@ describe 'SlidesApi' do
   # @param name Document name.
   # @param slide_index Slide index.
   # @param shape_index Shape index.
+  # @param category Category DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [ChartCategory] :category Category DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -16235,7 +18751,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartCategory', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartCategory', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16259,7 +18778,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartCategory', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartCategory', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16283,7 +18805,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartCategory', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartCategory', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16307,7 +18832,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartCategory', 'category', requestParam.category)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartCategory', 'category', requestParam.category)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16331,7 +18859,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartCategory', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartCategory', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16355,7 +18886,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartCategory', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartCategory', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16379,7 +18913,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartCategory', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartCategory', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -16390,8 +18927,8 @@ describe 'SlidesApi' do
   # @param slide_index Slide index.
   # @param shape_index Shape index.
   # @param series_index Series index.
+  # @param data_point Data point DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [DataPoint] :data_point Data point DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -16435,7 +18972,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartDataPoint', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartDataPoint', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16460,7 +19000,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartDataPoint', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartDataPoint', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16485,7 +19028,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartDataPoint', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartDataPoint', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16510,7 +19056,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartDataPoint', 'seriesIndex', requestParam.series_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartDataPoint', 'seriesIndex', requestParam.series_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16535,7 +19084,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartDataPoint', 'dataPoint', requestParam.data_point)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartDataPoint', 'dataPoint', requestParam.data_point)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16560,7 +19112,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartDataPoint', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartDataPoint', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16585,7 +19140,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartDataPoint', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartDataPoint', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16610,7 +19168,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartDataPoint', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartDataPoint', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -16620,8 +19181,8 @@ describe 'SlidesApi' do
   # @param name Document name.
   # @param slide_index Slide index.
   # @param shape_index Shape index (must be a chart).
+  # @param series Series DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [Series] :series Series DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -16663,7 +19224,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16687,7 +19251,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16711,7 +19278,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16735,7 +19305,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'series', requestParam.series)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'series', requestParam.series)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16759,7 +19332,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16783,7 +19359,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16807,7 +19386,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostChartSeries', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -16863,7 +19445,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyLayoutSlideFromSourcePresentation', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyLayoutSlideFromSourcePresentation', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16888,7 +19473,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyLayoutSlideFromSourcePresentation', 'cloneFrom', requestParam.clone_from)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyLayoutSlideFromSourcePresentation', 'cloneFrom', requestParam.clone_from)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16913,7 +19501,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyLayoutSlideFromSourcePresentation', 'cloneFromPosition', requestParam.clone_from_position)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyLayoutSlideFromSourcePresentation', 'cloneFromPosition', requestParam.clone_from_position)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16938,7 +19529,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyLayoutSlideFromSourcePresentation', 'cloneFromPassword', requestParam.clone_from_password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyLayoutSlideFromSourcePresentation', 'cloneFromPassword', requestParam.clone_from_password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16963,7 +19557,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyLayoutSlideFromSourcePresentation', 'cloneFromStorage', requestParam.clone_from_storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyLayoutSlideFromSourcePresentation', 'cloneFromStorage', requestParam.clone_from_storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -16988,7 +19585,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyLayoutSlideFromSourcePresentation', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyLayoutSlideFromSourcePresentation', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -17013,7 +19613,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyLayoutSlideFromSourcePresentation', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyLayoutSlideFromSourcePresentation', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -17038,7 +19641,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyLayoutSlideFromSourcePresentation', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyLayoutSlideFromSourcePresentation', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -17097,7 +19703,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyMasterSlideFromSourcePresentation', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyMasterSlideFromSourcePresentation', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -17123,7 +19732,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyMasterSlideFromSourcePresentation', 'cloneFrom', requestParam.clone_from)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyMasterSlideFromSourcePresentation', 'cloneFrom', requestParam.clone_from)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -17149,7 +19761,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyMasterSlideFromSourcePresentation', 'cloneFromPosition', requestParam.clone_from_position)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyMasterSlideFromSourcePresentation', 'cloneFromPosition', requestParam.clone_from_position)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -17175,7 +19790,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyMasterSlideFromSourcePresentation', 'cloneFromPassword', requestParam.clone_from_password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyMasterSlideFromSourcePresentation', 'cloneFromPassword', requestParam.clone_from_password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -17201,7 +19819,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyMasterSlideFromSourcePresentation', 'cloneFromStorage', requestParam.clone_from_storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyMasterSlideFromSourcePresentation', 'cloneFromStorage', requestParam.clone_from_storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -17227,7 +19848,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyMasterSlideFromSourcePresentation', 'applyToAll', requestParam.apply_to_all)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyMasterSlideFromSourcePresentation', 'applyToAll', requestParam.apply_to_all)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -17253,7 +19877,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyMasterSlideFromSourcePresentation', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyMasterSlideFromSourcePresentation', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -17279,7 +19906,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyMasterSlideFromSourcePresentation', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyMasterSlideFromSourcePresentation', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -17305,23 +19935,26 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyMasterSlideFromSourcePresentation', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostCopyMasterSlideFromSourcePresentation', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
 
   # unit tests for post_get_notes_slide
   # Read notes slide info.
+  # @param document Document data.
   # @param slide_index Slide index.
   # @param [Hash] opts the optional parameters
-  # @option opts [File] :document Document data.
   # @option opts [String] :password Document password.
   # @return [NotesSlide]
   describe 'post_get_notes_slide test' do
     it 'should work' do
       requestParam = AsposeSlidesCloud::PostGetNotesSlideRequest.new
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlide', 'Integer')
       requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlide', 'File')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlide', 'Integer')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlide', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlide', nil, nil)
       o, c, _h = AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_with_http_info(requestParam)
@@ -17330,30 +19963,10 @@ describe 'SlidesApi' do
       expect(o).not_to be_nil
     end
 
-    it 'invalid slide_index' do
-      requestParam = AsposeSlidesCloud::PostGetNotesSlideRequest.new
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlide', 'Integer')
-      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlide', 'File')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlide', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'PostGetNotesSlide', requestParam.slide_index, 'Integer')
-      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlide', 'slideIndex', requestParam.slide_index)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostGetNotesSlide', 'slideIndex')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlide', 'slideIndex', requestParam.slide_index)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid document' do
       requestParam = AsposeSlidesCloud::PostGetNotesSlideRequest.new
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlide', 'Integer')
       requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlide', 'File')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlide', 'Integer')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlide', 'String')
       requestParam.document = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'PostGetNotesSlide', requestParam.document, 'File')
       AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlide', 'document', requestParam.document)
@@ -17366,14 +19979,40 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlide', 'document', requestParam.document)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlide', 'document', requestParam.document)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      requestParam = AsposeSlidesCloud::PostGetNotesSlideRequest.new
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlide', 'File')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlide', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlide', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'PostGetNotesSlide', requestParam.slide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlide', 'slideIndex', requestParam.slide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostGetNotesSlide', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlide', 'slideIndex', requestParam.slide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlide', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::PostGetNotesSlideRequest.new
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlide', 'Integer')
       requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlide', 'File')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlide', 'Integer')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlide', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'PostGetNotesSlide', requestParam.password, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlide', 'password', requestParam.password)
@@ -17386,23 +20025,26 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlide', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlide', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
 
   # unit tests for post_get_notes_slide_exists
   # Get info whether a notes slide exists.
+  # @param document Document data.
   # @param slide_index Slide index.
   # @param [Hash] opts the optional parameters
-  # @option opts [File] :document Document data.
   # @option opts [String] :password Document password.
   # @return [EntityExists]
   describe 'post_get_notes_slide_exists test' do
     it 'should work' do
       requestParam = AsposeSlidesCloud::PostGetNotesSlideExistsRequest.new
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideExists', 'Integer')
       requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideExists', 'File')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideExists', 'Integer')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideExists', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlideExists', nil, nil)
       o, c, _h = AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_exists_with_http_info(requestParam)
@@ -17411,30 +20053,10 @@ describe 'SlidesApi' do
       expect(o).not_to be_nil
     end
 
-    it 'invalid slide_index' do
-      requestParam = AsposeSlidesCloud::PostGetNotesSlideExistsRequest.new
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideExists', 'Integer')
-      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideExists', 'File')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideExists', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'PostGetNotesSlideExists', requestParam.slide_index, 'Integer')
-      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlideExists', 'slideIndex', requestParam.slide_index)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_exists_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostGetNotesSlideExists', 'slideIndex')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideExists', 'slideIndex', requestParam.slide_index)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid document' do
       requestParam = AsposeSlidesCloud::PostGetNotesSlideExistsRequest.new
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideExists', 'Integer')
       requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideExists', 'File')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideExists', 'Integer')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideExists', 'String')
       requestParam.document = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'PostGetNotesSlideExists', requestParam.document, 'File')
       AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlideExists', 'document', requestParam.document)
@@ -17447,14 +20069,40 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideExists', 'document', requestParam.document)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideExists', 'document', requestParam.document)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      requestParam = AsposeSlidesCloud::PostGetNotesSlideExistsRequest.new
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideExists', 'File')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideExists', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideExists', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'PostGetNotesSlideExists', requestParam.slide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlideExists', 'slideIndex', requestParam.slide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_exists_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostGetNotesSlideExists', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideExists', 'slideIndex', requestParam.slide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideExists', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::PostGetNotesSlideExistsRequest.new
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideExists', 'Integer')
       requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideExists', 'File')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideExists', 'Integer')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideExists', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'PostGetNotesSlideExists', requestParam.password, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlideExists', 'password', requestParam.password)
@@ -17467,17 +20115,20 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideExists', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideExists', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
 
   # unit tests for post_get_notes_slide_with_format
   # Convert notes slide to the specified image format.
+  # @param document Document data.
   # @param slide_index Slide index.
   # @param format Output file format.
   # @param [Hash] opts the optional parameters
-  # @option opts [File] :document Document data.
   # @option opts [Integer] :width Output file width.
   # @option opts [Integer] :height Output file height.
   # @option opts [String] :password Document password.
@@ -17486,9 +20137,9 @@ describe 'SlidesApi' do
   describe 'post_get_notes_slide_with_format test' do
     it 'should work' do
       requestParam = AsposeSlidesCloud::PostGetNotesSlideWithFormatRequest.new
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideWithFormat', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostGetNotesSlideWithFormat', 'String')
-      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
       requestParam.width = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'PostGetNotesSlideWithFormat', 'Integer')
       requestParam.height = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'PostGetNotesSlideWithFormat', 'Integer')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideWithFormat', 'String')
@@ -17500,59 +20151,11 @@ describe 'SlidesApi' do
       expect(o).not_to be_nil
     end
 
-    it 'invalid slide_index' do
-      requestParam = AsposeSlidesCloud::PostGetNotesSlideWithFormatRequest.new
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideWithFormat', 'Integer')
-      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostGetNotesSlideWithFormat', 'String')
-      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
-      requestParam.width = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'PostGetNotesSlideWithFormat', 'Integer')
-      requestParam.height = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'PostGetNotesSlideWithFormat', 'Integer')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideWithFormat', 'String')
-      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostGetNotesSlideWithFormat', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'PostGetNotesSlideWithFormat', requestParam.slide_index, 'Integer')
-      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlideWithFormat', 'slideIndex', requestParam.slide_index)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_with_format_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostGetNotesSlideWithFormat', 'slideIndex')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'slideIndex', requestParam.slide_index)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
-    it 'invalid format' do
-      requestParam = AsposeSlidesCloud::PostGetNotesSlideWithFormatRequest.new
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideWithFormat', 'Integer')
-      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostGetNotesSlideWithFormat', 'String')
-      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
-      requestParam.width = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'PostGetNotesSlideWithFormat', 'Integer')
-      requestParam.height = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'PostGetNotesSlideWithFormat', 'Integer')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideWithFormat', 'String')
-      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostGetNotesSlideWithFormat', 'String')
-      requestParam.format = AsposeSlidesCloud::SpecUtils.invalidize_param_value('format', 'PostGetNotesSlideWithFormat', requestParam.format, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlideWithFormat', 'format', requestParam.format)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_with_format_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostGetNotesSlideWithFormat', 'format')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'format', requestParam.format)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid document' do
       requestParam = AsposeSlidesCloud::PostGetNotesSlideWithFormatRequest.new
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideWithFormat', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostGetNotesSlideWithFormat', 'String')
-      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
       requestParam.width = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'PostGetNotesSlideWithFormat', 'Integer')
       requestParam.height = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'PostGetNotesSlideWithFormat', 'Integer')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideWithFormat', 'String')
@@ -17568,15 +20171,72 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'document', requestParam.document)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'document', requestParam.document)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      requestParam = AsposeSlidesCloud::PostGetNotesSlideWithFormatRequest.new
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.width = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.height = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'PostGetNotesSlideWithFormat', requestParam.slide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlideWithFormat', 'slideIndex', requestParam.slide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_with_format_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostGetNotesSlideWithFormat', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'slideIndex', requestParam.slide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid format' do
+      requestParam = AsposeSlidesCloud::PostGetNotesSlideWithFormatRequest.new
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.width = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.height = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'PostGetNotesSlideWithFormat', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostGetNotesSlideWithFormat', 'String')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.invalidize_param_value('format', 'PostGetNotesSlideWithFormat', requestParam.format, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostGetNotesSlideWithFormat', 'format', requestParam.format)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_get_notes_slide_with_format_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostGetNotesSlideWithFormat', 'format')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'format', requestParam.format)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'format', requestParam.format)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
     it 'invalid width' do
       requestParam = AsposeSlidesCloud::PostGetNotesSlideWithFormatRequest.new
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideWithFormat', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostGetNotesSlideWithFormat', 'String')
-      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
       requestParam.width = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'PostGetNotesSlideWithFormat', 'Integer')
       requestParam.height = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'PostGetNotesSlideWithFormat', 'Integer')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideWithFormat', 'String')
@@ -17592,15 +20252,18 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'width', requestParam.width)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'width', requestParam.width)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
     it 'invalid height' do
       requestParam = AsposeSlidesCloud::PostGetNotesSlideWithFormatRequest.new
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideWithFormat', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostGetNotesSlideWithFormat', 'String')
-      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
       requestParam.width = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'PostGetNotesSlideWithFormat', 'Integer')
       requestParam.height = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'PostGetNotesSlideWithFormat', 'Integer')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideWithFormat', 'String')
@@ -17616,15 +20279,18 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'height', requestParam.height)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'height', requestParam.height)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::PostGetNotesSlideWithFormatRequest.new
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideWithFormat', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostGetNotesSlideWithFormat', 'String')
-      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
       requestParam.width = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'PostGetNotesSlideWithFormat', 'Integer')
       requestParam.height = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'PostGetNotesSlideWithFormat', 'Integer')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideWithFormat', 'String')
@@ -17640,15 +20306,18 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
     it 'invalid fonts_folder' do
       requestParam = AsposeSlidesCloud::PostGetNotesSlideWithFormatRequest.new
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostGetNotesSlideWithFormat', 'Integer')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostGetNotesSlideWithFormat', 'String')
-      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostGetNotesSlideWithFormat', 'File')
       requestParam.width = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'PostGetNotesSlideWithFormat', 'Integer')
       requestParam.height = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'PostGetNotesSlideWithFormat', 'Integer')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostGetNotesSlideWithFormat', 'String')
@@ -17664,7 +20333,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'fontsFolder', requestParam.fonts_folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostGetNotesSlideWithFormat', 'fontsFolder', requestParam.fonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -17674,8 +20346,8 @@ describe 'SlidesApi' do
   # @param name Document name.
   # @param slide_index Slide index.
   # @param shape_index Shape index.
+  # @param dto Paragraph DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [Paragraph] :dto Paragraph DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -17720,7 +20392,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewParagraph', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewParagraph', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -17745,7 +20420,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewParagraph', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewParagraph', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -17770,7 +20448,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewParagraph', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewParagraph', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -17795,7 +20476,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewParagraph', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewParagraph', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -17820,7 +20504,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewParagraph', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewParagraph', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -17845,7 +20532,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewParagraph', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewParagraph', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -17870,7 +20560,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewParagraph', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewParagraph', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -17895,7 +20588,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewParagraph', 'position', requestParam.position)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewParagraph', 'position', requestParam.position)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -17906,8 +20602,8 @@ describe 'SlidesApi' do
   # @param slide_index Slide index.
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
+  # @param dto Portion DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [Portion] :dto Portion DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -17954,7 +20650,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -17980,7 +20679,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18006,7 +20708,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18032,7 +20737,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18058,7 +20766,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18084,7 +20795,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18110,7 +20824,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18136,7 +20853,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18162,7 +20882,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'position', requestParam.position)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewPortion', 'position', requestParam.position)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -18171,8 +20894,8 @@ describe 'SlidesApi' do
   # Create new shape.
   # @param name Document name.
   # @param slide_index Slide index.
+  # @param dto Shape DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [ShapeBase] :dto Shape DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -18218,7 +20941,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewShape', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewShape', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18243,7 +20969,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewShape', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewShape', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18268,7 +20997,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewShape', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewShape', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18293,7 +21025,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewShape', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewShape', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18318,7 +21053,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewShape', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewShape', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18343,7 +21081,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewShape', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewShape', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18368,7 +21109,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewShape', 'shapeToClone', requestParam.shape_to_clone)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewShape', 'shapeToClone', requestParam.shape_to_clone)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18393,7 +21137,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewShape', 'position', requestParam.position)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideAddNewShape', 'position', requestParam.position)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -18461,7 +21208,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18490,7 +21240,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18519,7 +21272,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18548,7 +21304,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'format', requestParam.format)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'format', requestParam.format)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18577,7 +21336,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'options', requestParam.options)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'options', requestParam.options)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18606,7 +21368,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18635,7 +21400,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18664,7 +21432,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18693,7 +21464,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'scaleX', requestParam.scale_x)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'scaleX', requestParam.scale_x)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18722,7 +21496,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'scaleY', requestParam.scale_y)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'scaleY', requestParam.scale_y)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18751,7 +21528,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'bounds', requestParam.bounds)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'bounds', requestParam.bounds)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18780,7 +21560,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'fontsFolder', requestParam.fonts_folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostNotesSlideShapeSaveAs', 'fontsFolder', requestParam.fonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -18788,8 +21571,8 @@ describe 'SlidesApi' do
   # unit tests for post_presentation_merge
   # Merge the presentation with other presentations specified in the request parameter.
   # @param name Document name.
+  # @param request PresentationsMergeRequest with a list of presentations to merge.
   # @param [Hash] opts the optional parameters
-  # @option opts [PresentationsMergeRequest] :request PresentationsMergeRequest with a list of presentations to merge.
   # @option opts [String] :password Document password.
   # @option opts [String] :storage Document storage.
   # @option opts [String] :folder Document folder.
@@ -18827,7 +21610,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostPresentationMerge', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostPresentationMerge', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18849,7 +21635,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostPresentationMerge', 'request', requestParam.request)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostPresentationMerge', 'request', requestParam.request)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18871,7 +21660,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostPresentationMerge', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostPresentationMerge', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18893,7 +21685,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostPresentationMerge', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostPresentationMerge', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -18915,7 +21710,376 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostPresentationMerge', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostPresentationMerge', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for post_section
+  # Create a section starting at a specified slide index.
+  # @param name Document name.
+  # @param section_name Section name.
+  # @param slide_index Slide index (one-based).
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Sections]
+  describe 'post_section test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::PostSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSection', 'String')
+      requestParam.section_name = AsposeSlidesCloud::SpecUtils.get_param_value('sectionName', 'PostSection', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostSection', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSection', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSection', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.post_section_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSection', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::PostSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSection', 'String')
+      requestParam.section_name = AsposeSlidesCloud::SpecUtils.get_param_value('sectionName', 'PostSection', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostSection', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSection', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'PostSection', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSection', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_section_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostSection', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSection', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSection', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid section_name' do
+      requestParam = AsposeSlidesCloud::PostSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSection', 'String')
+      requestParam.section_name = AsposeSlidesCloud::SpecUtils.get_param_value('sectionName', 'PostSection', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostSection', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSection', 'String')
+      requestParam.section_name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('sectionName', 'PostSection', requestParam.section_name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSection', 'sectionName', requestParam.section_name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_section_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostSection', 'sectionName')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSection', 'sectionName', requestParam.section_name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSection', 'sectionName', requestParam.section_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      requestParam = AsposeSlidesCloud::PostSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSection', 'String')
+      requestParam.section_name = AsposeSlidesCloud::SpecUtils.get_param_value('sectionName', 'PostSection', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostSection', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSection', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'PostSection', requestParam.slide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSection', 'slideIndex', requestParam.slide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_section_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostSection', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSection', 'slideIndex', requestParam.slide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSection', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::PostSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSection', 'String')
+      requestParam.section_name = AsposeSlidesCloud::SpecUtils.get_param_value('sectionName', 'PostSection', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostSection', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSection', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'PostSection', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSection', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_section_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostSection', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSection', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSection', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::PostSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSection', 'String')
+      requestParam.section_name = AsposeSlidesCloud::SpecUtils.get_param_value('sectionName', 'PostSection', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostSection', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'PostSection', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSection', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_section_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostSection', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSection', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSection', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::PostSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSection', 'String')
+      requestParam.section_name = AsposeSlidesCloud::SpecUtils.get_param_value('sectionName', 'PostSection', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PostSection', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'PostSection', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSection', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_section_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostSection', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSection', 'storage', requestParam.storage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSection', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for post_section_move
+  # Move presentation section to a specified position.
+  # @param name Document name.
+  # @param section_index The position of the section to be reordered.
+  # @param new_position The new position of the reordered section.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Sections]
+  describe 'post_section_move test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::PostSectionMoveRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSectionMove', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'PostSectionMove', 'Integer')
+      requestParam.new_position = AsposeSlidesCloud::SpecUtils.get_param_value('newPosition', 'PostSectionMove', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSectionMove', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSectionMove', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSectionMove', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSectionMove', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.post_section_move_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSectionMove', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::PostSectionMoveRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSectionMove', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'PostSectionMove', 'Integer')
+      requestParam.new_position = AsposeSlidesCloud::SpecUtils.get_param_value('newPosition', 'PostSectionMove', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSectionMove', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSectionMove', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSectionMove', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'PostSectionMove', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSectionMove', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_section_move_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostSectionMove', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSectionMove', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSectionMove', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid section_index' do
+      requestParam = AsposeSlidesCloud::PostSectionMoveRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSectionMove', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'PostSectionMove', 'Integer')
+      requestParam.new_position = AsposeSlidesCloud::SpecUtils.get_param_value('newPosition', 'PostSectionMove', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSectionMove', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSectionMove', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSectionMove', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('sectionIndex', 'PostSectionMove', requestParam.section_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSectionMove', 'sectionIndex', requestParam.section_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_section_move_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostSectionMove', 'sectionIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSectionMove', 'sectionIndex', requestParam.section_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSectionMove', 'sectionIndex', requestParam.section_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid new_position' do
+      requestParam = AsposeSlidesCloud::PostSectionMoveRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSectionMove', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'PostSectionMove', 'Integer')
+      requestParam.new_position = AsposeSlidesCloud::SpecUtils.get_param_value('newPosition', 'PostSectionMove', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSectionMove', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSectionMove', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSectionMove', 'String')
+      requestParam.new_position = AsposeSlidesCloud::SpecUtils.invalidize_param_value('newPosition', 'PostSectionMove', requestParam.new_position, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSectionMove', 'newPosition', requestParam.new_position)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_section_move_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostSectionMove', 'newPosition')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSectionMove', 'newPosition', requestParam.new_position)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSectionMove', 'newPosition', requestParam.new_position)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::PostSectionMoveRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSectionMove', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'PostSectionMove', 'Integer')
+      requestParam.new_position = AsposeSlidesCloud::SpecUtils.get_param_value('newPosition', 'PostSectionMove', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSectionMove', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSectionMove', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSectionMove', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'PostSectionMove', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSectionMove', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_section_move_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostSectionMove', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSectionMove', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSectionMove', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::PostSectionMoveRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSectionMove', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'PostSectionMove', 'Integer')
+      requestParam.new_position = AsposeSlidesCloud::SpecUtils.get_param_value('newPosition', 'PostSectionMove', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSectionMove', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSectionMove', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSectionMove', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'PostSectionMove', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSectionMove', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_section_move_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostSectionMove', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSectionMove', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSectionMove', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::PostSectionMoveRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSectionMove', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'PostSectionMove', 'Integer')
+      requestParam.new_position = AsposeSlidesCloud::SpecUtils.get_param_value('newPosition', 'PostSectionMove', 'Integer')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSectionMove', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSectionMove', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSectionMove', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'PostSectionMove', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSectionMove', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_section_move_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostSectionMove', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSectionMove', 'storage', requestParam.storage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSectionMove', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -18983,7 +22147,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19012,7 +22179,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19041,7 +22211,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19070,7 +22243,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'format', requestParam.format)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'format', requestParam.format)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19099,7 +22275,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'options', requestParam.options)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'options', requestParam.options)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19128,7 +22307,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19157,7 +22339,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19186,7 +22371,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19215,7 +22403,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'scaleX', requestParam.scale_x)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'scaleX', requestParam.scale_x)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19244,7 +22435,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'scaleY', requestParam.scale_y)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'scaleY', requestParam.scale_y)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19273,7 +22467,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'bounds', requestParam.bounds)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'bounds', requestParam.bounds)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19302,7 +22499,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'fontsFolder', requestParam.fonts_folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostShapeSaveAs', 'fontsFolder', requestParam.fonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -19311,8 +22511,8 @@ describe 'SlidesApi' do
   # Add an effect to slide animation.
   # @param name Document name.
   # @param slide_index Slide index.
+  # @param effect Animation effect DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [Effect] :effect Animation effect DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -19352,7 +22552,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationEffect', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationEffect', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19375,7 +22578,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationEffect', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationEffect', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19398,7 +22604,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationEffect', 'effect', requestParam.effect)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationEffect', 'effect', requestParam.effect)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19421,7 +22630,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationEffect', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationEffect', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19444,7 +22656,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationEffect', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationEffect', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19467,7 +22682,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationEffect', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationEffect', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -19476,8 +22694,8 @@ describe 'SlidesApi' do
   # Set slide animation.
   # @param name Document name.
   # @param slide_index Slide index.
+  # @param sequence Animation sequence DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [InteractiveSequence] :sequence Animation sequence DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -19517,7 +22735,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequence', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequence', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19540,7 +22761,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequence', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequence', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19563,7 +22787,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequence', 'sequence', requestParam.sequence)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequence', 'sequence', requestParam.sequence)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19586,7 +22813,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequence', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequence', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19609,7 +22839,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequence', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequence', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19632,7 +22865,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequence', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequence', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -19642,8 +22878,8 @@ describe 'SlidesApi' do
   # @param name Document name.
   # @param slide_index Slide index.
   # @param sequence_index The position of the interactive sequence.
+  # @param effect Animation effect DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [Effect] :effect Animation effect DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -19685,7 +22921,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequenceEffect', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequenceEffect', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19709,7 +22948,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequenceEffect', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequenceEffect', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19733,7 +22975,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequenceEffect', 'sequenceIndex', requestParam.sequence_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequenceEffect', 'sequenceIndex', requestParam.sequence_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19757,7 +23002,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequenceEffect', 'effect', requestParam.effect)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequenceEffect', 'effect', requestParam.effect)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19781,7 +23029,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequenceEffect', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequenceEffect', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19805,7 +23056,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequenceEffect', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequenceEffect', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19829,7 +23083,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequenceEffect', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideAnimationInteractiveSequenceEffect', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -19891,7 +23148,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19918,7 +23178,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19945,7 +23208,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'format', requestParam.format)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'format', requestParam.format)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19972,7 +23238,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'options', requestParam.options)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'options', requestParam.options)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -19999,7 +23268,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'width', requestParam.width)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'width', requestParam.width)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20026,7 +23298,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'height', requestParam.height)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'height', requestParam.height)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20053,7 +23328,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20080,7 +23358,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20107,7 +23388,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20134,7 +23418,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'fontsFolder', requestParam.fonts_folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlideSaveAs', 'fontsFolder', requestParam.fonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -20184,7 +23471,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesAdd', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesAdd', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20207,7 +23497,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesAdd', 'position', requestParam.position)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesAdd', 'position', requestParam.position)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20230,7 +23523,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesAdd', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesAdd', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20253,7 +23549,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesAdd', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesAdd', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20276,7 +23575,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesAdd', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesAdd', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20299,24 +23601,27 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesAdd', 'layoutAlias', requestParam.layout_alias)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesAdd', 'layoutAlias', requestParam.layout_alias)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
 
   # unit tests for post_slides_convert
   # Convert presentation from request content to format specified.
+  # @param document Document data.
   # @param format Export format.
   # @param [Hash] opts the optional parameters
-  # @option opts [File] :document Document data.
   # @option opts [String] :password Document password.
   # @option opts [String] :fonts_folder Custom fonts folder.
   # @return [File]
   describe 'post_slides_convert test' do
     it 'should work' do
       requestParam = AsposeSlidesCloud::PostSlidesConvertRequest.new
-      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostSlidesConvert', 'String')
       requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostSlidesConvert', 'File')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostSlidesConvert', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSlidesConvert', 'String')
       requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostSlidesConvert', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('PostSlidesConvert', nil, nil)
@@ -20326,31 +23631,10 @@ describe 'SlidesApi' do
       expect(o).not_to be_nil
     end
 
-    it 'invalid format' do
-      requestParam = AsposeSlidesCloud::PostSlidesConvertRequest.new
-      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostSlidesConvert', 'String')
-      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostSlidesConvert', 'File')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSlidesConvert', 'String')
-      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostSlidesConvert', 'String')
-      requestParam.format = AsposeSlidesCloud::SpecUtils.invalidize_param_value('format', 'PostSlidesConvert', requestParam.format, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PostSlidesConvert', 'format', requestParam.format)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.post_slides_convert_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostSlidesConvert', 'format')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesConvert', 'format', requestParam.format)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid document' do
       requestParam = AsposeSlidesCloud::PostSlidesConvertRequest.new
-      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostSlidesConvert', 'String')
       requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostSlidesConvert', 'File')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostSlidesConvert', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSlidesConvert', 'String')
       requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostSlidesConvert', 'String')
       requestParam.document = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'PostSlidesConvert', requestParam.document, 'File')
@@ -20364,14 +23648,41 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesConvert', 'document', requestParam.document)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesConvert', 'document', requestParam.document)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid format' do
+      requestParam = AsposeSlidesCloud::PostSlidesConvertRequest.new
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostSlidesConvert', 'File')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostSlidesConvert', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSlidesConvert', 'String')
+      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostSlidesConvert', 'String')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.invalidize_param_value('format', 'PostSlidesConvert', requestParam.format, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSlidesConvert', 'format', requestParam.format)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_slides_convert_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostSlidesConvert', 'format')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesConvert', 'format', requestParam.format)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesConvert', 'format', requestParam.format)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::PostSlidesConvertRequest.new
-      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostSlidesConvert', 'String')
       requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostSlidesConvert', 'File')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostSlidesConvert', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSlidesConvert', 'String')
       requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostSlidesConvert', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'PostSlidesConvert', requestParam.password, 'String')
@@ -20385,14 +23696,17 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesConvert', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesConvert', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
     it 'invalid fonts_folder' do
       requestParam = AsposeSlidesCloud::PostSlidesConvertRequest.new
-      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostSlidesConvert', 'String')
       requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PostSlidesConvert', 'File')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PostSlidesConvert', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSlidesConvert', 'String')
       requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PostSlidesConvert', 'String')
       requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontsFolder', 'PostSlidesConvert', requestParam.fonts_folder, 'String')
@@ -20406,7 +23720,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesConvert', 'fontsFolder', requestParam.fonts_folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesConvert', 'fontsFolder', requestParam.fonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -20465,7 +23782,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesCopy', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesCopy', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20491,7 +23811,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesCopy', 'slideToCopy', requestParam.slide_to_copy)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesCopy', 'slideToCopy', requestParam.slide_to_copy)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20517,7 +23840,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesCopy', 'position', requestParam.position)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesCopy', 'position', requestParam.position)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20543,7 +23869,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesCopy', 'source', requestParam.source)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesCopy', 'source', requestParam.source)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20569,7 +23898,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesCopy', 'sourcePassword', requestParam.source_password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesCopy', 'sourcePassword', requestParam.source_password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20595,7 +23927,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesCopy', 'sourceStorage', requestParam.source_storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesCopy', 'sourceStorage', requestParam.source_storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20621,7 +23956,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesCopy', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesCopy', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20647,7 +23985,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesCopy', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesCopy', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20673,7 +24014,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesCopy', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesCopy', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -20723,7 +24067,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocument', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocument', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20746,7 +24093,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocument', 'data', requestParam.data)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocument', 'data', requestParam.data)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20769,7 +24119,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocument', 'inputPassword', requestParam.input_password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocument', 'inputPassword', requestParam.input_password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20792,7 +24145,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocument', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocument', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20815,7 +24171,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocument', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocument', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20838,7 +24197,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocument', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocument', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -20885,7 +24247,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromHtml', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromHtml', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20907,7 +24272,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromHtml', 'html', requestParam.html)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromHtml', 'html', requestParam.html)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20929,7 +24297,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromHtml', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromHtml', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20951,7 +24322,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromHtml', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromHtml', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -20973,7 +24347,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromHtml', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromHtml', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -21026,7 +24403,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromSource', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromSource', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21050,7 +24430,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromSource', 'sourcePath', requestParam.source_path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromSource', 'sourcePath', requestParam.source_path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21074,7 +24457,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromSource', 'sourcePassword', requestParam.source_password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromSource', 'sourcePassword', requestParam.source_password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21098,7 +24484,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromSource', 'sourceStorage', requestParam.source_storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromSource', 'sourceStorage', requestParam.source_storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21122,7 +24511,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromSource', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromSource', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21146,7 +24538,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromSource', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromSource', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21170,7 +24565,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromSource', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromSource', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -21229,7 +24627,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromTemplate', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromTemplate', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21255,7 +24656,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromTemplate', 'templatePath', requestParam.template_path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromTemplate', 'templatePath', requestParam.template_path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21281,7 +24685,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromTemplate', 'data', requestParam.data)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromTemplate', 'data', requestParam.data)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21307,7 +24714,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromTemplate', 'templatePassword', requestParam.template_password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromTemplate', 'templatePassword', requestParam.template_password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21333,7 +24743,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromTemplate', 'templateStorage', requestParam.template_storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromTemplate', 'templateStorage', requestParam.template_storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21359,7 +24772,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromTemplate', 'isImageDataEmbedded', requestParam.is_image_data_embedded)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromTemplate', 'isImageDataEmbedded', requestParam.is_image_data_embedded)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21385,7 +24801,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromTemplate', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromTemplate', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21411,7 +24830,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromTemplate', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromTemplate', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21437,15 +24859,18 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromTemplate', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromTemplate', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
 
   # unit tests for post_slides_pipeline
   # Performs slides pipeline.
+  # @param pipeline A Pipeline object.
   # @param [Hash] opts the optional parameters
-  # @option opts [Pipeline] :pipeline A Pipeline object.
   # @option opts [File[]] :files files to upload with the pipeline
   # @return [File]
   describe 'post_slides_pipeline test' do
@@ -21474,7 +24899,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesPipeline', 'pipeline', requestParam.pipeline)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesPipeline', 'pipeline', requestParam.pipeline)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21493,7 +24921,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesPipeline', 'files', requestParam.files)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesPipeline', 'files', requestParam.files)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -21546,7 +24977,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesPresentationReplaceText', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesPresentationReplaceText', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21570,7 +25004,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesPresentationReplaceText', 'oldValue', requestParam.old_value)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesPresentationReplaceText', 'oldValue', requestParam.old_value)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21594,7 +25031,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesPresentationReplaceText', 'newValue', requestParam.new_value)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesPresentationReplaceText', 'newValue', requestParam.new_value)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21618,7 +25058,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesPresentationReplaceText', 'ignoreCase', requestParam.ignore_case)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesPresentationReplaceText', 'ignoreCase', requestParam.ignore_case)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21642,7 +25085,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesPresentationReplaceText', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesPresentationReplaceText', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21666,7 +25112,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesPresentationReplaceText', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesPresentationReplaceText', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21690,7 +25139,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesPresentationReplaceText', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesPresentationReplaceText', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -21740,7 +25192,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorder', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorder', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21763,7 +25218,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorder', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorder', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21786,7 +25244,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorder', 'newPosition', requestParam.new_position)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorder', 'newPosition', requestParam.new_position)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21809,7 +25270,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorder', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorder', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21832,7 +25296,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorder', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorder', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21855,7 +25322,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorder', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorder', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -21905,7 +25375,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorderMany', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorderMany', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21928,7 +25401,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorderMany', 'oldPositions', requestParam.old_positions)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorderMany', 'oldPositions', requestParam.old_positions)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21951,7 +25427,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorderMany', 'newPositions', requestParam.new_positions)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorderMany', 'newPositions', requestParam.new_positions)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21974,7 +25453,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorderMany', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorderMany', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -21997,7 +25479,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorderMany', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorderMany', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22020,7 +25505,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorderMany', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesReorderMany', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -22073,7 +25561,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSaveAs', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSaveAs', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22097,7 +25588,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSaveAs', 'format', requestParam.format)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSaveAs', 'format', requestParam.format)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22121,7 +25615,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSaveAs', 'options', requestParam.options)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSaveAs', 'options', requestParam.options)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22145,7 +25642,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSaveAs', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSaveAs', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22169,7 +25669,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSaveAs', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSaveAs', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22193,7 +25696,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSaveAs', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSaveAs', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22217,7 +25723,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSaveAs', 'fontsFolder', requestParam.fonts_folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSaveAs', 'fontsFolder', requestParam.fonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -22225,8 +25734,8 @@ describe 'SlidesApi' do
   # unit tests for post_slides_set_document_properties
   # Set document properties.
   # @param name Document name.
+  # @param properties New properties.
   # @param [Hash] opts the optional parameters
-  # @option opts [DocumentProperties] :properties New properties.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -22264,7 +25773,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSetDocumentProperties', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSetDocumentProperties', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22286,7 +25798,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSetDocumentProperties', 'properties', requestParam.properties)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSetDocumentProperties', 'properties', requestParam.properties)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22308,7 +25823,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSetDocumentProperties', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSetDocumentProperties', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22330,7 +25848,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSetDocumentProperties', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSetDocumentProperties', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22352,7 +25873,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSetDocumentProperties', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSetDocumentProperties', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -22408,7 +25932,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSlideReplaceText', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSlideReplaceText', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22433,7 +25960,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSlideReplaceText', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSlideReplaceText', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22458,7 +25988,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSlideReplaceText', 'oldValue', requestParam.old_value)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSlideReplaceText', 'oldValue', requestParam.old_value)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22483,7 +26016,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSlideReplaceText', 'newValue', requestParam.new_value)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSlideReplaceText', 'newValue', requestParam.new_value)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22508,7 +26044,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSlideReplaceText', 'ignoreCase', requestParam.ignore_case)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSlideReplaceText', 'ignoreCase', requestParam.ignore_case)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22533,7 +26072,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSlideReplaceText', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSlideReplaceText', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22558,7 +26100,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSlideReplaceText', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSlideReplaceText', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22583,7 +26128,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSlideReplaceText', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSlideReplaceText', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -22651,7 +26199,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22680,7 +26231,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'options', requestParam.options)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'options', requestParam.options)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22709,7 +26263,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'format', requestParam.format)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'format', requestParam.format)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22738,7 +26295,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'width', requestParam.width)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'width', requestParam.width)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22767,7 +26327,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'height', requestParam.height)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'height', requestParam.height)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22796,7 +26359,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'to', requestParam.to)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'to', requestParam.to)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22825,7 +26391,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'from', requestParam.from)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'from', requestParam.from)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22854,7 +26423,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'destFolder', requestParam.dest_folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'destFolder', requestParam.dest_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22883,7 +26455,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22912,7 +26487,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22941,7 +26519,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -22970,7 +26551,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'fontsFolder', requestParam.fonts_folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesSplit', 'fontsFolder', requestParam.fonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -23041,7 +26625,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23071,7 +26658,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23101,7 +26691,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23131,7 +26724,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'format', requestParam.format)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'format', requestParam.format)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23161,7 +26757,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23191,7 +26790,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'options', requestParam.options)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'options', requestParam.options)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23221,7 +26823,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23251,7 +26856,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23281,7 +26889,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23311,7 +26922,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'scaleX', requestParam.scale_x)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'scaleX', requestParam.scale_x)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23341,7 +26955,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'scaleY', requestParam.scale_y)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'scaleY', requestParam.scale_y)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23371,7 +26988,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'bounds', requestParam.bounds)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'bounds', requestParam.bounds)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23401,7 +27021,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'fontsFolder', requestParam.fonts_folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSubshapeSaveAs', 'fontsFolder', requestParam.fonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -23412,8 +27035,8 @@ describe 'SlidesApi' do
   # @param slide_index Slide index.
   # @param shape_index Shape index.
   # @param category_index Category index.
+  # @param category Category DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [ChartCategory] :category Category DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -23457,7 +27080,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartCategory', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartCategory', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23482,7 +27108,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartCategory', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartCategory', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23507,7 +27136,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartCategory', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartCategory', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23532,7 +27164,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartCategory', 'categoryIndex', requestParam.category_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartCategory', 'categoryIndex', requestParam.category_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23557,7 +27192,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartCategory', 'category', requestParam.category)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartCategory', 'category', requestParam.category)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23582,7 +27220,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartCategory', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartCategory', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23607,7 +27248,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartCategory', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartCategory', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23632,7 +27276,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartCategory', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartCategory', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -23644,8 +27291,8 @@ describe 'SlidesApi' do
   # @param shape_index Shape index.
   # @param series_index Series index.
   # @param point_index Data point index.
+  # @param data_point Data point DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [DataPoint] :data_point Data point DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -23691,7 +27338,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartDataPoint', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartDataPoint', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23717,7 +27367,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartDataPoint', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartDataPoint', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23743,7 +27396,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartDataPoint', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartDataPoint', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23769,7 +27425,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartDataPoint', 'seriesIndex', requestParam.series_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartDataPoint', 'seriesIndex', requestParam.series_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23795,7 +27454,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartDataPoint', 'pointIndex', requestParam.point_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartDataPoint', 'pointIndex', requestParam.point_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23821,7 +27483,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartDataPoint', 'dataPoint', requestParam.data_point)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartDataPoint', 'dataPoint', requestParam.data_point)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23847,7 +27512,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartDataPoint', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartDataPoint', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23873,7 +27541,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartDataPoint', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartDataPoint', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23899,7 +27570,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartDataPoint', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartDataPoint', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -23910,8 +27584,8 @@ describe 'SlidesApi' do
   # @param slide_index Slide index.
   # @param shape_index Shape index (must be a chart).
   # @param series_index Series index.
+  # @param series Series DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [Series] :series Series DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -23955,7 +27629,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -23980,7 +27657,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24005,7 +27685,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24030,7 +27713,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'seriesIndex', requestParam.series_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'seriesIndex', requestParam.series_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24055,7 +27741,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'series', requestParam.series)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'series', requestParam.series)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24080,7 +27769,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24105,7 +27797,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24130,7 +27825,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutChartSeries', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -24139,8 +27837,8 @@ describe 'SlidesApi' do
   # Update a layoutSlide.
   # @param name Document name.
   # @param slide_index Slide index.
+  # @param slide_dto Slide update data.
   # @param [Hash] opts the optional parameters
-  # @option opts [LayoutSlide] :slide_dto Slide update data.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -24180,7 +27878,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutLayoutSlide', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutLayoutSlide', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24203,7 +27904,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutLayoutSlide', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutLayoutSlide', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24226,7 +27930,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutLayoutSlide', 'slideDto', requestParam.slide_dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutLayoutSlide', 'slideDto', requestParam.slide_dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24249,7 +27956,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutLayoutSlide', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutLayoutSlide', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24272,7 +27982,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutLayoutSlide', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutLayoutSlide', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24295,7 +28008,193 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutLayoutSlide', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutLayoutSlide', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for put_notes_slide_header_footer
+  # Set header/footer the notes slide.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param dto Header/footer to set.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :storage Document storage.
+  # @option opts [String] :folder Document folder.
+  # @return [NotesSlideHeaderFooter]
+  describe 'put_notes_slide_header_footer test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::PutNotesSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideHeaderFooter', 'Integer')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutNotesSlideHeaderFooter', 'NotesSlideHeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideHeaderFooter', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutNotesSlideHeaderFooter', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.put_notes_slide_header_footer_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideHeaderFooter', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::PutNotesSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideHeaderFooter', 'Integer')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutNotesSlideHeaderFooter', 'NotesSlideHeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'PutNotesSlideHeaderFooter', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutNotesSlideHeaderFooter', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_notes_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutNotesSlideHeaderFooter', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideHeaderFooter', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideHeaderFooter', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      requestParam = AsposeSlidesCloud::PutNotesSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideHeaderFooter', 'Integer')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutNotesSlideHeaderFooter', 'NotesSlideHeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'PutNotesSlideHeaderFooter', requestParam.slide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('PutNotesSlideHeaderFooter', 'slideIndex', requestParam.slide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_notes_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutNotesSlideHeaderFooter', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideHeaderFooter', 'slideIndex', requestParam.slide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideHeaderFooter', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid dto' do
+      requestParam = AsposeSlidesCloud::PutNotesSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideHeaderFooter', 'Integer')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutNotesSlideHeaderFooter', 'NotesSlideHeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'PutNotesSlideHeaderFooter', requestParam.dto, 'NotesSlideHeaderFooter')
+      AsposeSlidesCloud::SpecUtils.initialize('PutNotesSlideHeaderFooter', 'dto', requestParam.dto)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_notes_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutNotesSlideHeaderFooter', 'dto')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideHeaderFooter', 'dto', requestParam.dto)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideHeaderFooter', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::PutNotesSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideHeaderFooter', 'Integer')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutNotesSlideHeaderFooter', 'NotesSlideHeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'PutNotesSlideHeaderFooter', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutNotesSlideHeaderFooter', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_notes_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutNotesSlideHeaderFooter', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideHeaderFooter', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideHeaderFooter', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::PutNotesSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideHeaderFooter', 'Integer')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutNotesSlideHeaderFooter', 'NotesSlideHeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'PutNotesSlideHeaderFooter', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutNotesSlideHeaderFooter', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_notes_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutNotesSlideHeaderFooter', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideHeaderFooter', 'storage', requestParam.storage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideHeaderFooter', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::PutNotesSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutNotesSlideHeaderFooter', 'Integer')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutNotesSlideHeaderFooter', 'NotesSlideHeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutNotesSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'PutNotesSlideHeaderFooter', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutNotesSlideHeaderFooter', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_notes_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutNotesSlideHeaderFooter', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideHeaderFooter', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideHeaderFooter', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -24365,7 +28264,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24395,7 +28297,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24425,7 +28330,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24455,7 +28363,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'format', requestParam.format)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'format', requestParam.format)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24485,7 +28396,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'outPath', requestParam.out_path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'outPath', requestParam.out_path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24515,7 +28429,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'options', requestParam.options)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'options', requestParam.options)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24545,7 +28462,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24575,7 +28495,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24605,7 +28528,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24635,7 +28561,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'scaleX', requestParam.scale_x)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'scaleX', requestParam.scale_x)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24665,7 +28594,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'scaleY', requestParam.scale_y)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'scaleY', requestParam.scale_y)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24695,7 +28627,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'bounds', requestParam.bounds)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'bounds', requestParam.bounds)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24725,7 +28660,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'fontsFolder', requestParam.fonts_folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutNotesSlideShapeSaveAs', 'fontsFolder', requestParam.fonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -24733,8 +28671,8 @@ describe 'SlidesApi' do
   # unit tests for put_presentation_merge
   # Merge the presentation with other presentations or some of their slides specified in the request parameter.
   # @param name Document name.
+  # @param request OrderedMergeRequest with a list of presentations and slide indices to merge.
   # @param [Hash] opts the optional parameters
-  # @option opts [OrderedMergeRequest] :request OrderedMergeRequest with a list of presentations and slide indices to merge.
   # @option opts [String] :password Document password.
   # @option opts [String] :storage Document storage.
   # @option opts [String] :folder Document folder.
@@ -24772,7 +28710,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutPresentationMerge', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutPresentationMerge', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24794,7 +28735,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutPresentationMerge', 'request', requestParam.request)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutPresentationMerge', 'request', requestParam.request)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24816,7 +28760,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutPresentationMerge', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutPresentationMerge', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24838,7 +28785,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutPresentationMerge', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutPresentationMerge', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24860,7 +28810,343 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutPresentationMerge', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutPresentationMerge', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for put_section
+  # Update section name.
+  # @param name Document name.
+  # @param section_index The position of the section to be updated.
+  # @param section_name Section name.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Sections]
+  describe 'put_section test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::PutSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSection', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'PutSection', 'Integer')
+      requestParam.section_name = AsposeSlidesCloud::SpecUtils.get_param_value('sectionName', 'PutSection', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSection', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSection', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.put_section_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSection', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::PutSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSection', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'PutSection', 'Integer')
+      requestParam.section_name = AsposeSlidesCloud::SpecUtils.get_param_value('sectionName', 'PutSection', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSection', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'PutSection', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSection', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_section_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSection', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSection', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSection', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid section_index' do
+      requestParam = AsposeSlidesCloud::PutSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSection', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'PutSection', 'Integer')
+      requestParam.section_name = AsposeSlidesCloud::SpecUtils.get_param_value('sectionName', 'PutSection', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSection', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('sectionIndex', 'PutSection', requestParam.section_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSection', 'sectionIndex', requestParam.section_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_section_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSection', 'sectionIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSection', 'sectionIndex', requestParam.section_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSection', 'sectionIndex', requestParam.section_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid section_name' do
+      requestParam = AsposeSlidesCloud::PutSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSection', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'PutSection', 'Integer')
+      requestParam.section_name = AsposeSlidesCloud::SpecUtils.get_param_value('sectionName', 'PutSection', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSection', 'String')
+      requestParam.section_name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('sectionName', 'PutSection', requestParam.section_name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSection', 'sectionName', requestParam.section_name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_section_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSection', 'sectionName')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSection', 'sectionName', requestParam.section_name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSection', 'sectionName', requestParam.section_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::PutSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSection', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'PutSection', 'Integer')
+      requestParam.section_name = AsposeSlidesCloud::SpecUtils.get_param_value('sectionName', 'PutSection', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSection', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'PutSection', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSection', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_section_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSection', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSection', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSection', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::PutSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSection', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'PutSection', 'Integer')
+      requestParam.section_name = AsposeSlidesCloud::SpecUtils.get_param_value('sectionName', 'PutSection', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'PutSection', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSection', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_section_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSection', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSection', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSection', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::PutSectionRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSection', 'String')
+      requestParam.section_index = AsposeSlidesCloud::SpecUtils.get_param_value('sectionIndex', 'PutSection', 'Integer')
+      requestParam.section_name = AsposeSlidesCloud::SpecUtils.get_param_value('sectionName', 'PutSection', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSection', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSection', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'PutSection', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSection', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_section_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSection', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSection', 'storage', requestParam.storage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSection', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for put_sections
+  # Replace existing presentation sections with the ones provided in the sections DTO.
+  # @param name Document name.
+  # @param sections Sections DTO.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Sections]
+  describe 'put_sections test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::PutSectionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSections', 'String')
+      requestParam.sections = AsposeSlidesCloud::SpecUtils.get_param_value('sections', 'PutSections', 'Sections')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSections', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSections', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.put_sections_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSections', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::PutSectionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSections', 'String')
+      requestParam.sections = AsposeSlidesCloud::SpecUtils.get_param_value('sections', 'PutSections', 'Sections')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSections', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'PutSections', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSections', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_sections_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSections', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSections', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSections', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid sections' do
+      requestParam = AsposeSlidesCloud::PutSectionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSections', 'String')
+      requestParam.sections = AsposeSlidesCloud::SpecUtils.get_param_value('sections', 'PutSections', 'Sections')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSections', 'String')
+      requestParam.sections = AsposeSlidesCloud::SpecUtils.invalidize_param_value('sections', 'PutSections', requestParam.sections, 'Sections')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSections', 'sections', requestParam.sections)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_sections_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSections', 'sections')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSections', 'sections', requestParam.sections)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSections', 'sections', requestParam.sections)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::PutSectionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSections', 'String')
+      requestParam.sections = AsposeSlidesCloud::SpecUtils.get_param_value('sections', 'PutSections', 'Sections')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSections', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'PutSections', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSections', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_sections_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSections', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSections', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSections', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::PutSectionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSections', 'String')
+      requestParam.sections = AsposeSlidesCloud::SpecUtils.get_param_value('sections', 'PutSections', 'Sections')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'PutSections', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSections', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_sections_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSections', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSections', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSections', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::PutSectionsRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSections', 'String')
+      requestParam.sections = AsposeSlidesCloud::SpecUtils.get_param_value('sections', 'PutSections', 'Sections')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSections', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSections', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'PutSections', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSections', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_sections_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSections', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSections', 'storage', requestParam.storage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSections', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -24872,8 +29158,8 @@ describe 'SlidesApi' do
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param portion_index Portion index.
+  # @param dto Portion DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [Portion] :dto Portion DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -24919,7 +29205,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24945,7 +29234,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24971,7 +29263,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -24997,7 +29292,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25023,7 +29321,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'portionIndex', requestParam.portion_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'portionIndex', requestParam.portion_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25049,7 +29350,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25075,7 +29379,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25101,7 +29408,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25127,7 +29437,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphPortionProperties', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -25138,8 +29451,8 @@ describe 'SlidesApi' do
   # @param slide_index Slide index.
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
+  # @param dto Paragraph DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [Paragraph] :dto Paragraph DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -25183,7 +29496,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphProperties', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphProperties', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25208,7 +29524,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphProperties', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphProperties', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25233,7 +29552,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphProperties', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphProperties', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25258,7 +29580,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphProperties', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphProperties', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25283,7 +29608,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphProperties', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphProperties', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25308,7 +29636,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphProperties', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphProperties', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25333,7 +29664,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphProperties', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphProperties', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25358,7 +29692,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphProperties', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetParagraphProperties', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -25370,9 +29707,9 @@ describe 'SlidesApi' do
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param portion_index Portion index.
+  # @param dto Portion DTO.
   # @param [Hash] opts the optional parameters
   # @option opts [String] :path Shape path.
-  # @option opts [Portion] :dto Portion DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -25385,8 +29722,8 @@ describe 'SlidesApi' do
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphPortionProperties', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphPortionProperties', 'String')
@@ -25404,8 +29741,8 @@ describe 'SlidesApi' do
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphPortionProperties', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphPortionProperties', 'String')
@@ -25420,7 +29757,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25431,8 +29771,8 @@ describe 'SlidesApi' do
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphPortionProperties', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphPortionProperties', 'String')
@@ -25447,7 +29787,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25458,8 +29801,8 @@ describe 'SlidesApi' do
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphPortionProperties', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphPortionProperties', 'String')
@@ -25474,7 +29817,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25485,8 +29831,8 @@ describe 'SlidesApi' do
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphPortionProperties', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphPortionProperties', 'String')
@@ -25501,7 +29847,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25512,8 +29861,8 @@ describe 'SlidesApi' do
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphPortionProperties', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphPortionProperties', 'String')
@@ -25528,34 +29877,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'portionIndex', requestParam.portion_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::PutSetSubshapeParagraphPortionPropertiesRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetSubshapeParagraphPortionProperties', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
-      requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
-      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphPortionProperties', 'Portion')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphPortionProperties', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphPortionProperties', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphPortionProperties', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutSetSubshapeParagraphPortionProperties', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PutSetSubshapeParagraphPortionProperties', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.put_set_subshape_paragraph_portion_properties_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSetSubshapeParagraphPortionProperties', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'portionIndex', requestParam.portion_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25566,8 +29891,8 @@ describe 'SlidesApi' do
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphPortionProperties', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphPortionProperties', 'String')
@@ -25582,7 +29907,40 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::PutSetSubshapeParagraphPortionPropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetSubshapeParagraphPortionProperties', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
+      requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphPortionProperties', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphPortionProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphPortionProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphPortionProperties', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutSetSubshapeParagraphPortionProperties', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSetSubshapeParagraphPortionProperties', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_set_subshape_paragraph_portion_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSetSubshapeParagraphPortionProperties', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25593,8 +29951,8 @@ describe 'SlidesApi' do
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphPortionProperties', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphPortionProperties', 'String')
@@ -25609,7 +29967,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25620,8 +29981,8 @@ describe 'SlidesApi' do
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphPortionProperties', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphPortionProperties', 'String')
@@ -25636,7 +29997,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25647,8 +30011,8 @@ describe 'SlidesApi' do
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
       requestParam.portion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'PutSetSubshapeParagraphPortionProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphPortionProperties', 'Portion')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphPortionProperties', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphPortionProperties', 'String')
@@ -25663,7 +30027,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphPortionProperties', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -25674,9 +30041,9 @@ describe 'SlidesApi' do
   # @param slide_index Slide index.
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
+  # @param dto Paragraph DTO.
   # @param [Hash] opts the optional parameters
   # @option opts [String] :path Shape path.
-  # @option opts [Paragraph] :dto Paragraph DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -25688,8 +30055,8 @@ describe 'SlidesApi' do
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphProperties', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphProperties', 'String')
@@ -25706,8 +30073,8 @@ describe 'SlidesApi' do
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphProperties', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphProperties', 'String')
@@ -25722,7 +30089,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphProperties', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphProperties', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25732,8 +30102,8 @@ describe 'SlidesApi' do
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphProperties', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphProperties', 'String')
@@ -25748,7 +30118,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphProperties', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphProperties', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25758,8 +30131,8 @@ describe 'SlidesApi' do
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphProperties', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphProperties', 'String')
@@ -25774,7 +30147,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphProperties', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphProperties', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25784,8 +30160,8 @@ describe 'SlidesApi' do
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphProperties', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphProperties', 'String')
@@ -25800,33 +30176,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphProperties', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::PutSetSubshapeParagraphPropertiesRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetSubshapeParagraphProperties', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
-      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
-      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphProperties', 'Paragraph')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphProperties', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphProperties', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphProperties', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutSetSubshapeParagraphProperties', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PutSetSubshapeParagraphProperties', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.put_set_subshape_paragraph_properties_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSetSubshapeParagraphProperties', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphProperties', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphProperties', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25836,8 +30189,8 @@ describe 'SlidesApi' do
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphProperties', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphProperties', 'String')
@@ -25852,7 +30205,39 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphProperties', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphProperties', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::PutSetSubshapeParagraphPropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSetSubshapeParagraphProperties', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
+      requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphProperties', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphProperties', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutSetSubshapeParagraphProperties', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSetSubshapeParagraphProperties', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_set_subshape_paragraph_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSetSubshapeParagraphProperties', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphProperties', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphProperties', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25862,8 +30247,8 @@ describe 'SlidesApi' do
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphProperties', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphProperties', 'String')
@@ -25878,7 +30263,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphProperties', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphProperties', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25888,8 +30276,8 @@ describe 'SlidesApi' do
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphProperties', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphProperties', 'String')
@@ -25904,7 +30292,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphProperties', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphProperties', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -25914,8 +30305,8 @@ describe 'SlidesApi' do
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
       requestParam.paragraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'PutSetSubshapeParagraphProperties', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSetSubshapeParagraphProperties', 'Paragraph')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSetSubshapeParagraphProperties', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSetSubshapeParagraphProperties', 'String')
@@ -25930,7 +30321,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphProperties', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSetSubshapeParagraphProperties', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -26000,7 +30394,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26030,7 +30427,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26060,7 +30460,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26090,7 +30493,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'format', requestParam.format)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'format', requestParam.format)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26120,7 +30526,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'outPath', requestParam.out_path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'outPath', requestParam.out_path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26150,7 +30559,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'options', requestParam.options)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'options', requestParam.options)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26180,7 +30592,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26210,7 +30625,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26240,7 +30658,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26270,7 +30691,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'scaleX', requestParam.scale_x)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'scaleX', requestParam.scale_x)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26300,7 +30724,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'scaleY', requestParam.scale_y)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'scaleY', requestParam.scale_y)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26330,7 +30757,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'bounds', requestParam.bounds)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'bounds', requestParam.bounds)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26360,7 +30790,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'fontsFolder', requestParam.fonts_folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutShapeSaveAs', 'fontsFolder', requestParam.fonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -26369,8 +30802,8 @@ describe 'SlidesApi' do
   # Set slide animation.
   # @param name Document name.
   # @param slide_index Slide index.
+  # @param animation Animation DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [SlideAnimation] :animation Animation DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -26410,7 +30843,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimation', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimation', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26433,7 +30869,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimation', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimation', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26456,7 +30895,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimation', 'animation', requestParam.animation)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimation', 'animation', requestParam.animation)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26479,7 +30921,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimation', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimation', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26502,7 +30947,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimation', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimation', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26525,7 +30973,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimation', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimation', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -26535,8 +30986,8 @@ describe 'SlidesApi' do
   # @param name Document name.
   # @param slide_index Slide index.
   # @param effect_index The position of the effect to be modified.
+  # @param effect Animation effect DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [Effect] :effect Animation effect DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -26578,7 +31029,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationEffect', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationEffect', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26602,7 +31056,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationEffect', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationEffect', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26626,7 +31083,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationEffect', 'effectIndex', requestParam.effect_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationEffect', 'effectIndex', requestParam.effect_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26650,7 +31110,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationEffect', 'effect', requestParam.effect)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationEffect', 'effect', requestParam.effect)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26674,7 +31137,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationEffect', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationEffect', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26698,7 +31164,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationEffect', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationEffect', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26722,7 +31191,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationEffect', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationEffect', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -26733,8 +31205,8 @@ describe 'SlidesApi' do
   # @param slide_index Slide index.
   # @param sequence_index The position of the interactive sequence.
   # @param effect_index The position of the effect to be modified.
+  # @param effect Animation effect DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [Effect] :effect Animation effect DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -26778,7 +31250,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationInteractiveSequenceEffect', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationInteractiveSequenceEffect', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26803,7 +31278,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationInteractiveSequenceEffect', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationInteractiveSequenceEffect', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26828,7 +31306,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationInteractiveSequenceEffect', 'sequenceIndex', requestParam.sequence_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationInteractiveSequenceEffect', 'sequenceIndex', requestParam.sequence_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26853,7 +31334,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationInteractiveSequenceEffect', 'effectIndex', requestParam.effect_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationInteractiveSequenceEffect', 'effectIndex', requestParam.effect_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26878,7 +31362,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationInteractiveSequenceEffect', 'effect', requestParam.effect)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationInteractiveSequenceEffect', 'effect', requestParam.effect)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26903,7 +31390,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationInteractiveSequenceEffect', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationInteractiveSequenceEffect', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26928,7 +31418,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationInteractiveSequenceEffect', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationInteractiveSequenceEffect', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -26953,7 +31446,193 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationInteractiveSequenceEffect', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideAnimationInteractiveSequenceEffect', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for put_slide_header_footer
+  # Set footer the slide.
+  # @param name Document name.
+  # @param slide_index The position of the slide to be reordered.
+  # @param dto Footer to set.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [HeaderFooter]
+  describe 'put_slide_header_footer test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::PutSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideHeaderFooter', 'Integer')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideHeaderFooter', 'HeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlideHeaderFooter', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlideHeaderFooter', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.put_slide_header_footer_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideHeaderFooter', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::PutSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideHeaderFooter', 'Integer')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideHeaderFooter', 'HeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlideHeaderFooter', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'PutSlideHeaderFooter', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlideHeaderFooter', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlideHeaderFooter', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideHeaderFooter', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideHeaderFooter', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      requestParam = AsposeSlidesCloud::PutSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideHeaderFooter', 'Integer')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideHeaderFooter', 'HeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'PutSlideHeaderFooter', requestParam.slide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlideHeaderFooter', 'slideIndex', requestParam.slide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlideHeaderFooter', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideHeaderFooter', 'slideIndex', requestParam.slide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideHeaderFooter', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid dto' do
+      requestParam = AsposeSlidesCloud::PutSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideHeaderFooter', 'Integer')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideHeaderFooter', 'HeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlideHeaderFooter', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'PutSlideHeaderFooter', requestParam.dto, 'HeaderFooter')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlideHeaderFooter', 'dto', requestParam.dto)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlideHeaderFooter', 'dto')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideHeaderFooter', 'dto', requestParam.dto)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideHeaderFooter', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::PutSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideHeaderFooter', 'Integer')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideHeaderFooter', 'HeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlideHeaderFooter', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'PutSlideHeaderFooter', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlideHeaderFooter', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlideHeaderFooter', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideHeaderFooter', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideHeaderFooter', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::PutSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideHeaderFooter', 'Integer')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideHeaderFooter', 'HeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'PutSlideHeaderFooter', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlideHeaderFooter', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlideHeaderFooter', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideHeaderFooter', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideHeaderFooter', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::PutSlideHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideHeaderFooter', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideHeaderFooter', 'Integer')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideHeaderFooter', 'HeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlideHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'PutSlideHeaderFooter', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlideHeaderFooter', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slide_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlideHeaderFooter', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideHeaderFooter', 'storage', requestParam.storage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideHeaderFooter', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -27017,7 +31696,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27045,7 +31727,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27073,7 +31758,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'format', requestParam.format)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'format', requestParam.format)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27101,7 +31789,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'outPath', requestParam.out_path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'outPath', requestParam.out_path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27129,7 +31820,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'options', requestParam.options)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'options', requestParam.options)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27157,7 +31851,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'width', requestParam.width)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'width', requestParam.width)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27185,7 +31882,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'height', requestParam.height)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'height', requestParam.height)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27213,7 +31913,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27241,7 +31944,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27269,7 +31975,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27297,7 +32006,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'fontsFolder', requestParam.fonts_folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSaveAs', 'fontsFolder', requestParam.fonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -27307,8 +32019,8 @@ describe 'SlidesApi' do
   # @param name Document name.
   # @param slide_index Slide index.
   # @param shape_index Shape index.
+  # @param dto Shape DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [ShapeBase] :dto Shape DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -27350,7 +32062,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideShapeInfo', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideShapeInfo', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27374,7 +32089,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideShapeInfo', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideShapeInfo', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27398,7 +32116,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideShapeInfo', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideShapeInfo', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27422,7 +32143,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideShapeInfo', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideShapeInfo', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27446,7 +32170,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideShapeInfo', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideShapeInfo', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27470,7 +32197,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideShapeInfo', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideShapeInfo', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27494,7 +32224,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideShapeInfo', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideShapeInfo', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -27504,9 +32237,9 @@ describe 'SlidesApi' do
   # @param name Document name.
   # @param slide_index Slide index.
   # @param shape_index Shape index.
+  # @param dto Shape DTO.
   # @param [Hash] opts the optional parameters
   # @option opts [String] :path Shape path.
-  # @option opts [ShapeBase] :dto Shape DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -27517,8 +32250,8 @@ describe 'SlidesApi' do
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideSubshapeInfo', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideSubshapeInfo', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideSubshapeInfo', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideSubshapeInfo', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideSubshapeInfo', 'ShapeBase')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideSubshapeInfo', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideSubshapeInfo', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideSubshapeInfo', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlideSubshapeInfo', 'String')
@@ -27534,8 +32267,8 @@ describe 'SlidesApi' do
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideSubshapeInfo', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideSubshapeInfo', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideSubshapeInfo', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideSubshapeInfo', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideSubshapeInfo', 'ShapeBase')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideSubshapeInfo', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideSubshapeInfo', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideSubshapeInfo', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlideSubshapeInfo', 'String')
@@ -27550,7 +32283,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSubshapeInfo', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSubshapeInfo', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27559,8 +32295,8 @@ describe 'SlidesApi' do
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideSubshapeInfo', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideSubshapeInfo', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideSubshapeInfo', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideSubshapeInfo', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideSubshapeInfo', 'ShapeBase')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideSubshapeInfo', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideSubshapeInfo', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideSubshapeInfo', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlideSubshapeInfo', 'String')
@@ -27575,7 +32311,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSubshapeInfo', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSubshapeInfo', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27584,8 +32323,8 @@ describe 'SlidesApi' do
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideSubshapeInfo', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideSubshapeInfo', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideSubshapeInfo', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideSubshapeInfo', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideSubshapeInfo', 'ShapeBase')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideSubshapeInfo', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideSubshapeInfo', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideSubshapeInfo', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlideSubshapeInfo', 'String')
@@ -27600,32 +32339,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSubshapeInfo', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
-    it 'invalid path' do
-      requestParam = AsposeSlidesCloud::PutSlideSubshapeInfoRequest.new
-      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideSubshapeInfo', 'String')
-      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideSubshapeInfo', 'Integer')
-      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideSubshapeInfo', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideSubshapeInfo', 'String')
-      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideSubshapeInfo', 'ShapeBase')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideSubshapeInfo', 'String')
-      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideSubshapeInfo', 'String')
-      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlideSubshapeInfo', 'String')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutSlideSubshapeInfo', requestParam.path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PutSlideSubshapeInfo', 'path', requestParam.path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.put_slide_subshape_info_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlideSubshapeInfo', 'path')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSubshapeInfo', 'path', requestParam.path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSubshapeInfo', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27634,8 +32351,8 @@ describe 'SlidesApi' do
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideSubshapeInfo', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideSubshapeInfo', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideSubshapeInfo', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideSubshapeInfo', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideSubshapeInfo', 'ShapeBase')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideSubshapeInfo', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideSubshapeInfo', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideSubshapeInfo', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlideSubshapeInfo', 'String')
@@ -27650,7 +32367,38 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSubshapeInfo', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSubshapeInfo', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid path' do
+      requestParam = AsposeSlidesCloud::PutSlideSubshapeInfoRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideSubshapeInfo', 'String')
+      requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideSubshapeInfo', 'Integer')
+      requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideSubshapeInfo', 'Integer')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideSubshapeInfo', 'ShapeBase')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideSubshapeInfo', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideSubshapeInfo', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideSubshapeInfo', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlideSubshapeInfo', 'String')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'PutSlideSubshapeInfo', requestParam.path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlideSubshapeInfo', 'path', requestParam.path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slide_subshape_info_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlideSubshapeInfo', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSubshapeInfo', 'path', requestParam.path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSubshapeInfo', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27659,8 +32407,8 @@ describe 'SlidesApi' do
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideSubshapeInfo', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideSubshapeInfo', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideSubshapeInfo', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideSubshapeInfo', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideSubshapeInfo', 'ShapeBase')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideSubshapeInfo', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideSubshapeInfo', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideSubshapeInfo', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlideSubshapeInfo', 'String')
@@ -27675,7 +32423,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSubshapeInfo', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSubshapeInfo', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27684,8 +32435,8 @@ describe 'SlidesApi' do
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideSubshapeInfo', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideSubshapeInfo', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideSubshapeInfo', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideSubshapeInfo', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideSubshapeInfo', 'ShapeBase')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideSubshapeInfo', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideSubshapeInfo', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideSubshapeInfo', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlideSubshapeInfo', 'String')
@@ -27700,7 +32451,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSubshapeInfo', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSubshapeInfo', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27709,8 +32463,8 @@ describe 'SlidesApi' do
       requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlideSubshapeInfo', 'String')
       requestParam.slide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'PutSlideSubshapeInfo', 'Integer')
       requestParam.shape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'PutSlideSubshapeInfo', 'Integer')
-      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideSubshapeInfo', 'String')
       requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlideSubshapeInfo', 'ShapeBase')
+      requestParam.path = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'PutSlideSubshapeInfo', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlideSubshapeInfo', 'String')
       requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlideSubshapeInfo', 'String')
       requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlideSubshapeInfo', 'String')
@@ -27725,26 +32479,29 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSubshapeInfo', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlideSubshapeInfo', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
 
   # unit tests for put_slides_convert
   # Convert presentation from request content to format specified.
+  # @param document Document data.
   # @param format Export format.
   # @param out_path Path to save result.
   # @param [Hash] opts the optional parameters
-  # @option opts [File] :document Document data.
   # @option opts [String] :password Document password.
   # @option opts [String] :fonts_folder Custom fonts folder.
   # @return [nil]
   describe 'put_slides_convert test' do
     it 'should work' do
       requestParam = AsposeSlidesCloud::PutSlidesConvertRequest.new
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PutSlidesConvert', 'File')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutSlidesConvert', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutSlidesConvert', 'String')
-      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PutSlidesConvert', 'File')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesConvert', 'String')
       requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PutSlidesConvert', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('PutSlidesConvert', nil, nil)
@@ -27753,55 +32510,11 @@ describe 'SlidesApi' do
       expect(c).to eq(code)
     end
 
-    it 'invalid format' do
-      requestParam = AsposeSlidesCloud::PutSlidesConvertRequest.new
-      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutSlidesConvert', 'String')
-      requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutSlidesConvert', 'String')
-      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PutSlidesConvert', 'File')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesConvert', 'String')
-      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PutSlidesConvert', 'String')
-      requestParam.format = AsposeSlidesCloud::SpecUtils.invalidize_param_value('format', 'PutSlidesConvert', requestParam.format, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesConvert', 'format', requestParam.format)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.put_slides_convert_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlidesConvert', 'format')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesConvert', 'format', requestParam.format)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
-    it 'invalid out_path' do
-      requestParam = AsposeSlidesCloud::PutSlidesConvertRequest.new
-      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutSlidesConvert', 'String')
-      requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutSlidesConvert', 'String')
-      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PutSlidesConvert', 'File')
-      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesConvert', 'String')
-      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PutSlidesConvert', 'String')
-      requestParam.out_path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('outPath', 'PutSlidesConvert', requestParam.out_path, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesConvert', 'outPath', requestParam.out_path)
-      begin
-        AsposeSlidesCloud::SpecUtils.api.put_slides_convert_with_http_info(requestParam)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlidesConvert', 'outPath')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesConvert', 'outPath', requestParam.out_path)
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue
-      end
-    end
-
     it 'invalid document' do
       requestParam = AsposeSlidesCloud::PutSlidesConvertRequest.new
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PutSlidesConvert', 'File')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutSlidesConvert', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutSlidesConvert', 'String')
-      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PutSlidesConvert', 'File')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesConvert', 'String')
       requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PutSlidesConvert', 'String')
       requestParam.document = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'PutSlidesConvert', requestParam.document, 'File')
@@ -27815,15 +32528,68 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesConvert', 'document', requestParam.document)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesConvert', 'document', requestParam.document)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid format' do
+      requestParam = AsposeSlidesCloud::PutSlidesConvertRequest.new
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PutSlidesConvert', 'File')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutSlidesConvert', 'String')
+      requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutSlidesConvert', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesConvert', 'String')
+      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PutSlidesConvert', 'String')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.invalidize_param_value('format', 'PutSlidesConvert', requestParam.format, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesConvert', 'format', requestParam.format)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slides_convert_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlidesConvert', 'format')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesConvert', 'format', requestParam.format)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesConvert', 'format', requestParam.format)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid out_path' do
+      requestParam = AsposeSlidesCloud::PutSlidesConvertRequest.new
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PutSlidesConvert', 'File')
+      requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutSlidesConvert', 'String')
+      requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutSlidesConvert', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesConvert', 'String')
+      requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PutSlidesConvert', 'String')
+      requestParam.out_path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('outPath', 'PutSlidesConvert', requestParam.out_path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesConvert', 'outPath', requestParam.out_path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slides_convert_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlidesConvert', 'outPath')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesConvert', 'outPath', requestParam.out_path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesConvert', 'outPath', requestParam.out_path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
     it 'invalid password' do
       requestParam = AsposeSlidesCloud::PutSlidesConvertRequest.new
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PutSlidesConvert', 'File')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutSlidesConvert', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutSlidesConvert', 'String')
-      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PutSlidesConvert', 'File')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesConvert', 'String')
       requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PutSlidesConvert', 'String')
       requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'PutSlidesConvert', requestParam.password, 'String')
@@ -27837,15 +32603,18 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesConvert', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesConvert', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
     it 'invalid fonts_folder' do
       requestParam = AsposeSlidesCloud::PutSlidesConvertRequest.new
+      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PutSlidesConvert', 'File')
       requestParam.format = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'PutSlidesConvert', 'String')
       requestParam.out_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'PutSlidesConvert', 'String')
-      requestParam.document = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'PutSlidesConvert', 'File')
       requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesConvert', 'String')
       requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'PutSlidesConvert', 'String')
       requestParam.fonts_folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontsFolder', 'PutSlidesConvert', requestParam.fonts_folder, 'String')
@@ -27859,7 +32628,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesConvert', 'fontsFolder', requestParam.fonts_folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesConvert', 'fontsFolder', requestParam.fonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -27906,7 +32678,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesDocumentFromHtml', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesDocumentFromHtml', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27928,7 +32703,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesDocumentFromHtml', 'html', requestParam.html)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesDocumentFromHtml', 'html', requestParam.html)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27950,7 +32728,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesDocumentFromHtml', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesDocumentFromHtml', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27972,7 +32753,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesDocumentFromHtml', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesDocumentFromHtml', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -27994,7 +32778,160 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesDocumentFromHtml', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesDocumentFromHtml', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for put_slides_header_footer
+  # Set footers for all slides in a presentation.
+  # @param name Document name.
+  # @param dto HeaderFooter instance.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :storage Document storage.
+  # @option opts [String] :folder Document folder.
+  # @return [Document]
+  describe 'put_slides_header_footer test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::PutSlidesHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlidesHeaderFooter', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlidesHeaderFooter', 'HeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlidesHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlidesHeaderFooter', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesHeaderFooter', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.put_slides_header_footer_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesHeaderFooter', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::PutSlidesHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlidesHeaderFooter', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlidesHeaderFooter', 'HeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlidesHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlidesHeaderFooter', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'PutSlidesHeaderFooter', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesHeaderFooter', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slides_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlidesHeaderFooter', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesHeaderFooter', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesHeaderFooter', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid dto' do
+      requestParam = AsposeSlidesCloud::PutSlidesHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlidesHeaderFooter', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlidesHeaderFooter', 'HeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlidesHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlidesHeaderFooter', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'PutSlidesHeaderFooter', requestParam.dto, 'HeaderFooter')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesHeaderFooter', 'dto', requestParam.dto)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slides_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlidesHeaderFooter', 'dto')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesHeaderFooter', 'dto', requestParam.dto)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesHeaderFooter', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::PutSlidesHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlidesHeaderFooter', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlidesHeaderFooter', 'HeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlidesHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlidesHeaderFooter', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'PutSlidesHeaderFooter', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesHeaderFooter', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slides_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlidesHeaderFooter', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesHeaderFooter', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesHeaderFooter', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::PutSlidesHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlidesHeaderFooter', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlidesHeaderFooter', 'HeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlidesHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlidesHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'PutSlidesHeaderFooter', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesHeaderFooter', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slides_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlidesHeaderFooter', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesHeaderFooter', 'storage', requestParam.storage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesHeaderFooter', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::PutSlidesHeaderFooterRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlidesHeaderFooter', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlidesHeaderFooter', 'HeaderFooter')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesHeaderFooter', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlidesHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlidesHeaderFooter', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'PutSlidesHeaderFooter', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesHeaderFooter', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slides_header_footer_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlidesHeaderFooter', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesHeaderFooter', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesHeaderFooter', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -28049,7 +32986,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSaveAs', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSaveAs', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28074,7 +33014,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSaveAs', 'outPath', requestParam.out_path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSaveAs', 'outPath', requestParam.out_path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28099,7 +33042,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSaveAs', 'format', requestParam.format)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSaveAs', 'format', requestParam.format)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28124,7 +33070,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSaveAs', 'options', requestParam.options)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSaveAs', 'options', requestParam.options)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28149,7 +33098,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSaveAs', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSaveAs', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28174,7 +33126,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSaveAs', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSaveAs', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28199,7 +33154,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSaveAs', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSaveAs', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28224,7 +33182,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSaveAs', 'fontsFolder', requestParam.fonts_folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSaveAs', 'fontsFolder', requestParam.fonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -28233,8 +33194,8 @@ describe 'SlidesApi' do
   # Set document property.
   # @param name Document name.
   # @param property_name The property name.
+  # @param property Property with the value.
   # @param [Hash] opts the optional parameters
-  # @option opts [DocumentProperty] :property Property with the value.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -28274,7 +33235,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSetDocumentProperty', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSetDocumentProperty', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28297,7 +33261,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSetDocumentProperty', 'propertyName', requestParam.property_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSetDocumentProperty', 'propertyName', requestParam.property_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28320,7 +33287,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSetDocumentProperty', 'property', requestParam.property)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSetDocumentProperty', 'property', requestParam.property)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28343,7 +33313,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSetDocumentProperty', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSetDocumentProperty', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28366,7 +33339,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSetDocumentProperty', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSetDocumentProperty', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28389,7 +33365,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSetDocumentProperty', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSetDocumentProperty', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -28398,8 +33377,8 @@ describe 'SlidesApi' do
   # Update a slide.
   # @param name Document name.
   # @param slide_index Slide index.
+  # @param slide_dto Slide update data.
   # @param [Hash] opts the optional parameters
-  # @option opts [Slide] :slide_dto Slide update data.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -28439,7 +33418,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlide', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlide', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28462,7 +33444,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlide', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlide', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28485,7 +33470,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlide', 'slideDto', requestParam.slide_dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlide', 'slideDto', requestParam.slide_dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28508,7 +33496,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlide', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlide', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28531,7 +33522,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlide', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlide', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28554,7 +33548,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlide', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlide', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -28563,8 +33560,8 @@ describe 'SlidesApi' do
   # Set background for a slide.
   # @param name Document name.
   # @param slide_index Slide index.
+  # @param background Slide background update data.
   # @param [Hash] opts the optional parameters
-  # @option opts [SlideBackground] :background Slide background update data.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :password Document password.
   # @option opts [String] :storage Document storage.
@@ -28604,7 +33601,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackground', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackground', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28627,7 +33627,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackground', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackground', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28650,7 +33653,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackground', 'background', requestParam.background)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackground', 'background', requestParam.background)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28673,7 +33679,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackground', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackground', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28696,7 +33705,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackground', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackground', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28719,7 +33731,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackground', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackground', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -28769,7 +33784,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackgroundColor', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackgroundColor', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28792,7 +33810,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackgroundColor', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackgroundColor', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28815,7 +33836,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackgroundColor', 'color', requestParam.color)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackgroundColor', 'color', requestParam.color)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28838,7 +33862,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackgroundColor', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackgroundColor', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28861,7 +33888,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackgroundColor', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackgroundColor', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28884,7 +33914,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackgroundColor', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackgroundColor', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -28940,7 +33973,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideSize', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideSize', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28965,7 +34001,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideSize', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideSize', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -28990,7 +34029,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideSize', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideSize', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29015,7 +34057,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideSize', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideSize', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29040,7 +34085,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideSize', 'width', requestParam.width)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideSize', 'width', requestParam.width)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29065,7 +34113,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideSize', 'height', requestParam.height)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideSize', 'height', requestParam.height)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29090,7 +34141,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideSize', 'sizeType', requestParam.size_type)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideSize', 'sizeType', requestParam.size_type)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29115,7 +34169,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideSize', 'scaleType', requestParam.scale_type)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideSize', 'scaleType', requestParam.scale_type)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -29123,8 +34180,8 @@ describe 'SlidesApi' do
   # unit tests for put_slides_view_properties
   # Update presentation document properties.
   # @param name Document name.
+  # @param dto The view properties data.
   # @param [Hash] opts the optional parameters
-  # @option opts [ViewProperties] :dto The view properties data.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -29162,7 +34219,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesViewProperties', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesViewProperties', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29184,7 +34244,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesViewProperties', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesViewProperties', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29206,7 +34269,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesViewProperties', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesViewProperties', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29228,7 +34294,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesViewProperties', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesViewProperties', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29250,7 +34319,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesViewProperties', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesViewProperties', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -29323,7 +34395,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29354,7 +34429,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29385,7 +34463,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29416,7 +34497,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'format', requestParam.format)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'format', requestParam.format)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29447,7 +34531,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'outPath', requestParam.out_path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'outPath', requestParam.out_path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29478,7 +34565,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29509,7 +34599,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'options', requestParam.options)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'options', requestParam.options)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29540,7 +34633,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29571,7 +34667,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29602,7 +34701,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29633,7 +34735,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'scaleX', requestParam.scale_x)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'scaleX', requestParam.scale_x)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29664,7 +34769,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'scaleY', requestParam.scale_y)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'scaleY', requestParam.scale_y)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29695,7 +34803,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'bounds', requestParam.bounds)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'bounds', requestParam.bounds)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29726,7 +34837,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'fontsFolder', requestParam.fonts_folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSubshapeSaveAs', 'fontsFolder', requestParam.fonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -29735,8 +34849,8 @@ describe 'SlidesApi' do
   # Update notes slide properties.
   # @param name Document name.
   # @param slide_index Slide index.
+  # @param dto A NotesSlide object with notes slide data.
   # @param [Hash] opts the optional parameters
-  # @option opts [NotesSlide] :dto A NotesSlide object with notes slide data.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -29776,7 +34890,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlide', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlide', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29799,7 +34916,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlide', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlide', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29822,7 +34942,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlide', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlide', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29845,7 +34968,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlide', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlide', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29868,7 +34994,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlide', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlide', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29891,7 +35020,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlide', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlide', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -29901,8 +35033,8 @@ describe 'SlidesApi' do
   # @param name Document name.
   # @param slide_index Slide index.
   # @param shape_index Shape index.
+  # @param dto Shape DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [ShapeBase] :dto Shape DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -29944,7 +35076,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShape', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShape', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29968,7 +35103,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShape', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShape', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -29992,7 +35130,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShape', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShape', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30016,7 +35157,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShape', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShape', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30040,7 +35184,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShape', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShape', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30064,7 +35211,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShape', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShape', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30088,7 +35238,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShape', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShape', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -30099,8 +35252,8 @@ describe 'SlidesApi' do
   # @param slide_index Slide index.
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
+  # @param dto Paragraph DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [Paragraph] :dto Paragraph DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -30144,7 +35297,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapeParagraph', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapeParagraph', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30169,7 +35325,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapeParagraph', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapeParagraph', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30194,7 +35353,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapeParagraph', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapeParagraph', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30219,7 +35381,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapeParagraph', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapeParagraph', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30244,7 +35409,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapeParagraph', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapeParagraph', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30269,7 +35437,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapeParagraph', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapeParagraph', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30294,7 +35465,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapeParagraph', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapeParagraph', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30319,7 +35493,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapeParagraph', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapeParagraph', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -30331,8 +35508,8 @@ describe 'SlidesApi' do
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param portion_index Portion index.
+  # @param dto Portion DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [Portion] :dto Portion DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -30378,7 +35555,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'name', requestParam.name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30404,7 +35584,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'slideIndex', requestParam.slide_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'slideIndex', requestParam.slide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30430,7 +35613,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'shapeIndex', requestParam.shape_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'shapeIndex', requestParam.shape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30456,7 +35642,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'paragraphIndex', requestParam.paragraph_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'paragraphIndex', requestParam.paragraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30482,7 +35671,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'portionIndex', requestParam.portion_index)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'portionIndex', requestParam.portion_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30508,7 +35700,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'dto', requestParam.dto)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30534,7 +35729,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'password', requestParam.password)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30560,7 +35758,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'folder', requestParam.folder)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30586,7 +35787,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'storage', requestParam.storage)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutUpdateNotesSlideShapePortion', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -30621,7 +35825,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StorageExists', 'storageName', requestParam.storage_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StorageExists', 'storageName', requestParam.storage_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end
@@ -30662,7 +35869,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UploadFile', 'file', requestParam.file)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UploadFile', 'file', requestParam.file)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30682,7 +35892,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UploadFile', 'path', requestParam.path)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UploadFile', 'path', requestParam.path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
 
@@ -30702,7 +35915,10 @@ describe 'SlidesApi' do
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UploadFile', 'storageName', requestParam.storage_name)
         expect(e.code).to eq(code)
         expect(e.response_body).to include(message)
-      rescue
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UploadFile', 'storageName', requestParam.storage_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
       end
     end
   end

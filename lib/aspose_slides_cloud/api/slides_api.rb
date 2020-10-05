@@ -45,11 +45,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'src_path' is set
       if @api_client.config.client_side_validation && request.src_path.nil?
-        fail ArgumentError, "Missing the required parameter 'src_path' when calling SlidesApi.copy_file"
+        fail ArgumentError, "Missing the required parameter 'request.src_path' when calling SlidesApi.copy_file"
       end
       # verify the required parameter 'dest_path' is set
       if @api_client.config.client_side_validation && request.dest_path.nil?
-        fail ArgumentError, "Missing the required parameter 'dest_path' when calling SlidesApi.copy_file"
+        fail ArgumentError, "Missing the required parameter 'request.dest_path' when calling SlidesApi.copy_file"
       end
       # resource path
       local_var_path = '/slides/storage/file/copy/{srcPath}'
@@ -101,11 +101,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'src_path' is set
       if @api_client.config.client_side_validation && request.src_path.nil?
-        fail ArgumentError, "Missing the required parameter 'src_path' when calling SlidesApi.copy_folder"
+        fail ArgumentError, "Missing the required parameter 'request.src_path' when calling SlidesApi.copy_folder"
       end
       # verify the required parameter 'dest_path' is set
       if @api_client.config.client_side_validation && request.dest_path.nil?
-        fail ArgumentError, "Missing the required parameter 'dest_path' when calling SlidesApi.copy_folder"
+        fail ArgumentError, "Missing the required parameter 'request.dest_path' when calling SlidesApi.copy_folder"
       end
       # resource path
       local_var_path = '/slides/storage/folder/copy/{srcPath}'
@@ -201,19 +201,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_chart_category"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_chart_category"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_chart_category"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_chart_category"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_chart_category"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.delete_chart_category"
       end
       # verify the required parameter 'category_index' is set
       if @api_client.config.client_side_validation && request.category_index.nil?
-        fail ArgumentError, "Missing the required parameter 'category_index' when calling SlidesApi.delete_chart_category"
+        fail ArgumentError, "Missing the required parameter 'request.category_index' when calling SlidesApi.delete_chart_category"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/categories/{categoryIndex}'
@@ -268,23 +268,23 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_chart_data_point"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_chart_data_point"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_chart_data_point"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_chart_data_point"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_chart_data_point"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.delete_chart_data_point"
       end
       # verify the required parameter 'series_index' is set
       if @api_client.config.client_side_validation && request.series_index.nil?
-        fail ArgumentError, "Missing the required parameter 'series_index' when calling SlidesApi.delete_chart_data_point"
+        fail ArgumentError, "Missing the required parameter 'request.series_index' when calling SlidesApi.delete_chart_data_point"
       end
       # verify the required parameter 'point_index' is set
       if @api_client.config.client_side_validation && request.point_index.nil?
-        fail ArgumentError, "Missing the required parameter 'point_index' when calling SlidesApi.delete_chart_data_point"
+        fail ArgumentError, "Missing the required parameter 'request.point_index' when calling SlidesApi.delete_chart_data_point"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/series/{seriesIndex}/dataPoints/{pointIndex}'
@@ -340,19 +340,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_chart_series"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_chart_series"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_chart_series"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_chart_series"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_chart_series"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.delete_chart_series"
       end
       # verify the required parameter 'series_index' is set
       if @api_client.config.client_side_validation && request.series_index.nil?
-        fail ArgumentError, "Missing the required parameter 'series_index' when calling SlidesApi.delete_chart_series"
+        fail ArgumentError, "Missing the required parameter 'request.series_index' when calling SlidesApi.delete_chart_series"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/series/{seriesIndex}'
@@ -499,11 +499,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_notes_slide"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_notes_slide"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_notes_slide"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_notes_slide"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide'
@@ -556,19 +556,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_notes_slide_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_notes_slide_paragraph"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_notes_slide_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_notes_slide_paragraph"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_notes_slide_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.delete_notes_slide_paragraph"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_notes_slide_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.delete_notes_slide_paragraph"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}'
@@ -623,15 +623,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_notes_slide_paragraphs"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_notes_slide_paragraphs"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_notes_slide_paragraphs"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_notes_slide_paragraphs"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_notes_slide_paragraphs"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.delete_notes_slide_paragraphs"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs'
@@ -686,23 +686,23 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_notes_slide_portion"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_notes_slide_portion"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_notes_slide_portion"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_notes_slide_portion"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_notes_slide_portion"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.delete_notes_slide_portion"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_notes_slide_portion"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.delete_notes_slide_portion"
       end
       # verify the required parameter 'portion_index' is set
       if @api_client.config.client_side_validation && request.portion_index.nil?
-        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.delete_notes_slide_portion"
+        fail ArgumentError, "Missing the required parameter 'request.portion_index' when calling SlidesApi.delete_notes_slide_portion"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
@@ -758,19 +758,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_notes_slide_portions"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_notes_slide_portions"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_notes_slide_portions"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_notes_slide_portions"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_notes_slide_portions"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.delete_notes_slide_portions"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_notes_slide_portions"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.delete_notes_slide_portions"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions'
@@ -826,15 +826,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_notes_slide_shape"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_notes_slide_shape"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_notes_slide_shape"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_notes_slide_shape"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_notes_slide_shape"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.delete_notes_slide_shape"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}'
@@ -888,11 +888,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_notes_slide_shapes"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_notes_slide_shapes"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_notes_slide_shapes"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_notes_slide_shapes"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes'
@@ -946,19 +946,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_paragraph"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_paragraph"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.delete_paragraph"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.delete_paragraph"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}'
@@ -1013,15 +1013,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_paragraphs"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_paragraphs"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_paragraphs"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_paragraphs"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_paragraphs"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.delete_paragraphs"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs'
@@ -1076,23 +1076,23 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_portion"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_portion"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_portion"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_portion"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_portion"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.delete_portion"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_portion"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.delete_portion"
       end
       # verify the required parameter 'portion_index' is set
       if @api_client.config.client_side_validation && request.portion_index.nil?
-        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.delete_portion"
+        fail ArgumentError, "Missing the required parameter 'request.portion_index' when calling SlidesApi.delete_portion"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
@@ -1148,19 +1148,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_portions"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_portions"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_portions"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_portions"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_portions"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.delete_portions"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_portions"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.delete_portions"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions'
@@ -1201,6 +1201,118 @@ module AsposeSlidesCloud
         :return_type => 'Portions')
       return data, status_code, headers
     end
+    # Delete a presentation section.
+    # @param request operation request
+    def delete_section(request)
+      data, _status_code, _headers = delete_section_with_http_info(request)
+      data
+    end
+
+    # Delete a presentation section.
+    # @param request operation request
+    def delete_section_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_section ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_section"
+      end
+      # verify the required parameter 'section_index' is set
+      if @api_client.config.client_side_validation && request.section_index.nil?
+        fail ArgumentError, "Missing the required parameter 'request.section_index' when calling SlidesApi.delete_section"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/sections/{sectionIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'sectionIndex', request.section_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'withSlides'] = request.with_slides unless request.with_slides.nil?
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Sections')
+      return data, status_code, headers
+    end
+    # Delete presentation sections.
+    # @param request operation request
+    def delete_sections(request)
+      data, _status_code, _headers = delete_sections_with_http_info(request)
+      data
+    end
+
+    # Delete presentation sections.
+    # @param request operation request
+    def delete_sections_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_sections ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_sections"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/sections'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'sections'] = request.sections unless request.sections.nil?
+      query_params[:'withSlides'] = request.with_slides unless request.with_slides.nil?
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Sections')
+      return data, status_code, headers
+    end
     # Remove animation from a slide.
     # @param request operation request
     def delete_slide_animation(request)
@@ -1216,11 +1328,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_slide_animation"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_slide_animation"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_slide_animation"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_slide_animation"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/animation'
@@ -1273,15 +1385,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_slide_animation_effect"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_slide_animation_effect"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_slide_animation_effect"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_slide_animation_effect"
       end
       # verify the required parameter 'effect_index' is set
       if @api_client.config.client_side_validation && request.effect_index.nil?
-        fail ArgumentError, "Missing the required parameter 'effect_index' when calling SlidesApi.delete_slide_animation_effect"
+        fail ArgumentError, "Missing the required parameter 'request.effect_index' when calling SlidesApi.delete_slide_animation_effect"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/animation/mainSequence/{effectIndex}'
@@ -1335,15 +1447,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_slide_animation_interactive_sequence"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_slide_animation_interactive_sequence"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_slide_animation_interactive_sequence"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_slide_animation_interactive_sequence"
       end
       # verify the required parameter 'sequence_index' is set
       if @api_client.config.client_side_validation && request.sequence_index.nil?
-        fail ArgumentError, "Missing the required parameter 'sequence_index' when calling SlidesApi.delete_slide_animation_interactive_sequence"
+        fail ArgumentError, "Missing the required parameter 'request.sequence_index' when calling SlidesApi.delete_slide_animation_interactive_sequence"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/animation/interactiveSequences/{sequenceIndex}'
@@ -1397,19 +1509,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_slide_animation_interactive_sequence_effect"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_slide_animation_interactive_sequence_effect"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_slide_animation_interactive_sequence_effect"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_slide_animation_interactive_sequence_effect"
       end
       # verify the required parameter 'sequence_index' is set
       if @api_client.config.client_side_validation && request.sequence_index.nil?
-        fail ArgumentError, "Missing the required parameter 'sequence_index' when calling SlidesApi.delete_slide_animation_interactive_sequence_effect"
+        fail ArgumentError, "Missing the required parameter 'request.sequence_index' when calling SlidesApi.delete_slide_animation_interactive_sequence_effect"
       end
       # verify the required parameter 'effect_index' is set
       if @api_client.config.client_side_validation && request.effect_index.nil?
-        fail ArgumentError, "Missing the required parameter 'effect_index' when calling SlidesApi.delete_slide_animation_interactive_sequence_effect"
+        fail ArgumentError, "Missing the required parameter 'request.effect_index' when calling SlidesApi.delete_slide_animation_interactive_sequence_effect"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/animation/interactiveSequences/{sequenceIndex}/{effectIndex}'
@@ -1464,11 +1576,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_slide_animation_interactive_sequences"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_slide_animation_interactive_sequences"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_slide_animation_interactive_sequences"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_slide_animation_interactive_sequences"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/animation/interactiveSequences'
@@ -1521,11 +1633,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_slide_animation_main_sequence"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_slide_animation_main_sequence"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_slide_animation_main_sequence"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_slide_animation_main_sequence"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/animation/mainSequence'
@@ -1578,11 +1690,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_slide_by_index"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_slide_by_index"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_slide_by_index"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_slide_by_index"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}'
@@ -1635,15 +1747,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_slide_shape"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_slide_shape"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_slide_shape"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_slide_shape"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_slide_shape"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.delete_slide_shape"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}'
@@ -1697,11 +1809,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_slide_shapes"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_slide_shapes"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_slide_shapes"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_slide_shapes"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes'
@@ -1755,15 +1867,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_slide_subshape"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_slide_subshape"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_slide_subshape"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_slide_subshape"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_slide_subshape"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.delete_slide_subshape"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}'
@@ -1818,11 +1930,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_slide_subshapes"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_slide_subshapes"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_slide_subshapes"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_slide_subshapes"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}'
@@ -1877,7 +1989,7 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_slides_clean_slides_list"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_slides_clean_slides_list"
       end
       # resource path
       local_var_path = '/slides/{name}/slides'
@@ -1930,7 +2042,7 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_slides_document_properties"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_slides_document_properties"
       end
       # resource path
       local_var_path = '/slides/{name}/documentproperties'
@@ -1982,11 +2094,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_slides_document_property"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_slides_document_property"
       end
       # verify the required parameter 'property_name' is set
       if @api_client.config.client_side_validation && request.property_name.nil?
-        fail ArgumentError, "Missing the required parameter 'property_name' when calling SlidesApi.delete_slides_document_property"
+        fail ArgumentError, "Missing the required parameter 'request.property_name' when calling SlidesApi.delete_slides_document_property"
       end
       # resource path
       local_var_path = '/slides/{name}/documentproperties/{propertyName}'
@@ -2039,11 +2151,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_slides_slide_background"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_slides_slide_background"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_slides_slide_background"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_slides_slide_background"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/background'
@@ -2096,19 +2208,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_subshape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_subshape_paragraph"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_subshape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_subshape_paragraph"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_subshape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.delete_subshape_paragraph"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_subshape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.delete_subshape_paragraph"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}'
@@ -2164,15 +2276,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_subshape_paragraphs"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_subshape_paragraphs"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_subshape_paragraphs"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_subshape_paragraphs"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_subshape_paragraphs"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.delete_subshape_paragraphs"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs'
@@ -2228,23 +2340,23 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_subshape_portion"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_subshape_portion"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_subshape_portion"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_subshape_portion"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_subshape_portion"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.delete_subshape_portion"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_subshape_portion"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.delete_subshape_portion"
       end
       # verify the required parameter 'portion_index' is set
       if @api_client.config.client_side_validation && request.portion_index.nil?
-        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.delete_subshape_portion"
+        fail ArgumentError, "Missing the required parameter 'request.portion_index' when calling SlidesApi.delete_subshape_portion"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
@@ -2301,19 +2413,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_subshape_portions"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.delete_subshape_portions"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_subshape_portions"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.delete_subshape_portions"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_subshape_portions"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.delete_subshape_portions"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_subshape_portions"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.delete_subshape_portions"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions'
@@ -2554,11 +2666,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_layout_slide"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_layout_slide"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_layout_slide"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_layout_slide"
       end
       # resource path
       local_var_path = '/slides/{name}/layoutSlides/{slideIndex}'
@@ -2611,7 +2723,7 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_layout_slides_list"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_layout_slides_list"
       end
       # resource path
       local_var_path = '/slides/{name}/layoutSlides'
@@ -2663,11 +2775,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_master_slide"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_master_slide"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_master_slide"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_master_slide"
       end
       # resource path
       local_var_path = '/slides/{name}/masterSlides/{slideIndex}'
@@ -2720,7 +2832,7 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_master_slides_list"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_master_slides_list"
       end
       # resource path
       local_var_path = '/slides/{name}/masterSlides'
@@ -2772,11 +2884,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_notes_slide"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_notes_slide"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_notes_slide"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_notes_slide"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide'
@@ -2829,11 +2941,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_notes_slide_exists"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_notes_slide_exists"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_notes_slide_exists"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_notes_slide_exists"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/exist'
@@ -2871,6 +2983,63 @@ module AsposeSlidesCloud
         :return_type => 'EntityExists')
       return data, status_code, headers
     end
+    # Get header/footer info for the notes slide.
+    # @param request operation request
+    def get_notes_slide_header_footer(request)
+      data, _status_code, _headers = get_notes_slide_header_footer_with_http_info(request)
+      data
+    end
+
+    # Get header/footer info for the notes slide.
+    # @param request operation request
+    def get_notes_slide_header_footer_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_notes_slide_header_footer ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_notes_slide_header_footer"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && request.slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_notes_slide_header_footer"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/headerFooter'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', request.slide_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'NotesSlideHeaderFooter')
+      return data, status_code, headers
+    end
     # Read slide shape info.
     # @param request operation request
     def get_notes_slide_shape(request)
@@ -2886,15 +3055,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_notes_slide_shape"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_notes_slide_shape"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_notes_slide_shape"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_notes_slide_shape"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_notes_slide_shape"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.get_notes_slide_shape"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}'
@@ -2948,19 +3117,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_notes_slide_shape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_notes_slide_shape_paragraph"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_notes_slide_shape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_notes_slide_shape_paragraph"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_notes_slide_shape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.get_notes_slide_shape_paragraph"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_notes_slide_shape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.get_notes_slide_shape_paragraph"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}'
@@ -3015,15 +3184,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_notes_slide_shape_paragraphs"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_notes_slide_shape_paragraphs"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_notes_slide_shape_paragraphs"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_notes_slide_shape_paragraphs"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_notes_slide_shape_paragraphs"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.get_notes_slide_shape_paragraphs"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs'
@@ -3077,23 +3246,23 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_notes_slide_shape_portion"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_notes_slide_shape_portion"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_notes_slide_shape_portion"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_notes_slide_shape_portion"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_notes_slide_shape_portion"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.get_notes_slide_shape_portion"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_notes_slide_shape_portion"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.get_notes_slide_shape_portion"
       end
       # verify the required parameter 'portion_index' is set
       if @api_client.config.client_side_validation && request.portion_index.nil?
-        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.get_notes_slide_shape_portion"
+        fail ArgumentError, "Missing the required parameter 'request.portion_index' when calling SlidesApi.get_notes_slide_shape_portion"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
@@ -3149,19 +3318,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_notes_slide_shape_portions"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_notes_slide_shape_portions"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_notes_slide_shape_portions"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_notes_slide_shape_portions"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_notes_slide_shape_portions"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.get_notes_slide_shape_portions"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_notes_slide_shape_portions"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.get_notes_slide_shape_portions"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions'
@@ -3216,11 +3385,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_notes_slide_shapes"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_notes_slide_shapes"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_notes_slide_shapes"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_notes_slide_shapes"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes'
@@ -3273,19 +3442,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_notes_slide_with_format"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_notes_slide_with_format"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_notes_slide_with_format"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_notes_slide_with_format"
       end
       # verify the required parameter 'format' is set
       if @api_client.config.client_side_validation && request.format.nil?
-        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.get_notes_slide_with_format"
+        fail ArgumentError, "Missing the required parameter 'request.format' when calling SlidesApi.get_notes_slide_with_format"
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff'].any?{ |s| s.casecmp(request.format)==0 }
-        fail ArgumentError, "invalid value for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff"
+        fail ArgumentError, "Value " + request.format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/{format}'
@@ -3342,23 +3511,23 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_paragraph_portion"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_paragraph_portion"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_paragraph_portion"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_paragraph_portion"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_paragraph_portion"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.get_paragraph_portion"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_paragraph_portion"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.get_paragraph_portion"
       end
       # verify the required parameter 'portion_index' is set
       if @api_client.config.client_side_validation && request.portion_index.nil?
-        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.get_paragraph_portion"
+        fail ArgumentError, "Missing the required parameter 'request.portion_index' when calling SlidesApi.get_paragraph_portion"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
@@ -3414,19 +3583,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_paragraph_portions"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_paragraph_portions"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_paragraph_portions"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_paragraph_portions"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_paragraph_portions"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.get_paragraph_portions"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_paragraph_portions"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.get_paragraph_portions"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions'
@@ -3466,6 +3635,58 @@ module AsposeSlidesCloud
         :return_type => 'Portions')
       return data, status_code, headers
     end
+    # Read presentation sections info.
+    # @param request operation request
+    def get_sections(request)
+      data, _status_code, _headers = get_sections_with_http_info(request)
+      data
+    end
+
+    # Read presentation sections info.
+    # @param request operation request
+    def get_sections_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_sections ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_sections"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/sections'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Sections')
+      return data, status_code, headers
+    end
     # Read slide animation effects.
     # @param request operation request
     def get_slide_animation(request)
@@ -3481,11 +3702,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slide_animation"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slide_animation"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slide_animation"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slide_animation"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/animation'
@@ -3524,6 +3745,63 @@ module AsposeSlidesCloud
         :return_type => 'SlideAnimation')
       return data, status_code, headers
     end
+    # Get footer info for the slide.
+    # @param request operation request
+    def get_slide_header_footer(request)
+      data, _status_code, _headers = get_slide_header_footer_with_http_info(request)
+      data
+    end
+
+    # Get footer info for the slide.
+    # @param request operation request
+    def get_slide_header_footer_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_slide_header_footer ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slide_header_footer"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && request.slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slide_header_footer"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/headerFooter'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', request.slide_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'HeaderFooter')
+      return data, status_code, headers
+    end
     # Read slide shape info.
     # @param request operation request
     def get_slide_shape(request)
@@ -3539,15 +3817,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slide_shape"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slide_shape"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slide_shape"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slide_shape"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_slide_shape"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.get_slide_shape"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}'
@@ -3601,19 +3879,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slide_shape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slide_shape_paragraph"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slide_shape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slide_shape_paragraph"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_slide_shape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.get_slide_shape_paragraph"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_slide_shape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.get_slide_shape_paragraph"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}'
@@ -3668,15 +3946,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slide_shape_paragraphs"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slide_shape_paragraphs"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slide_shape_paragraphs"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slide_shape_paragraphs"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_slide_shape_paragraphs"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.get_slide_shape_paragraphs"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs'
@@ -3730,11 +4008,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slide_shapes"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slide_shapes"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slide_shapes"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slide_shapes"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes'
@@ -3787,15 +4065,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slide_subshape"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slide_subshape"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slide_subshape"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slide_subshape"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_slide_subshape"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.get_slide_subshape"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}'
@@ -3850,19 +4128,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slide_subshape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slide_subshape_paragraph"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slide_subshape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slide_subshape_paragraph"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_slide_subshape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.get_slide_subshape_paragraph"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_slide_subshape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.get_slide_subshape_paragraph"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}'
@@ -3918,15 +4196,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slide_subshape_paragraphs"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slide_subshape_paragraphs"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slide_subshape_paragraphs"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slide_subshape_paragraphs"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_slide_subshape_paragraphs"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.get_slide_subshape_paragraphs"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs'
@@ -3981,11 +4259,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slide_subshapes"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slide_subshapes"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slide_subshapes"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slide_subshapes"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}'
@@ -4081,7 +4359,7 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_document"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_document"
       end
       # resource path
       local_var_path = '/slides/{name}'
@@ -4133,7 +4411,7 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_document_properties"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_document_properties"
       end
       # resource path
       local_var_path = '/slides/{name}/documentproperties'
@@ -4185,11 +4463,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_document_property"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_document_property"
       end
       # verify the required parameter 'property_name' is set
       if @api_client.config.client_side_validation && request.property_name.nil?
-        fail ArgumentError, "Missing the required parameter 'property_name' when calling SlidesApi.get_slides_document_property"
+        fail ArgumentError, "Missing the required parameter 'request.property_name' when calling SlidesApi.get_slides_document_property"
       end
       # resource path
       local_var_path = '/slides/{name}/documentproperties/{propertyName}'
@@ -4242,11 +4520,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_image_with_default_format"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_image_with_default_format"
       end
       # verify the required parameter 'index' is set
       if @api_client.config.client_side_validation && request.index.nil?
-        fail ArgumentError, "Missing the required parameter 'index' when calling SlidesApi.get_slides_image_with_default_format"
+        fail ArgumentError, "Missing the required parameter 'request.index' when calling SlidesApi.get_slides_image_with_default_format"
       end
       # resource path
       local_var_path = '/slides/{name}/images/{index}'
@@ -4299,19 +4577,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_image_with_format"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_image_with_format"
       end
       # verify the required parameter 'index' is set
       if @api_client.config.client_side_validation && request.index.nil?
-        fail ArgumentError, "Missing the required parameter 'index' when calling SlidesApi.get_slides_image_with_format"
+        fail ArgumentError, "Missing the required parameter 'request.index' when calling SlidesApi.get_slides_image_with_format"
       end
       # verify the required parameter 'format' is set
       if @api_client.config.client_side_validation && request.format.nil?
-        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.get_slides_image_with_format"
+        fail ArgumentError, "Missing the required parameter 'request.format' when calling SlidesApi.get_slides_image_with_format"
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff'].any?{ |s| s.casecmp(request.format)==0 }
-        fail ArgumentError, "invalid value for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff"
+        fail ArgumentError, "Value " + request.format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff"
       end
       # resource path
       local_var_path = '/slides/{name}/images/{index}/{format}'
@@ -4365,7 +4643,7 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_images"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_images"
       end
       # resource path
       local_var_path = '/slides/{name}/images'
@@ -4417,15 +4695,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_placeholder"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_placeholder"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slides_placeholder"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slides_placeholder"
       end
       # verify the required parameter 'placeholder_index' is set
       if @api_client.config.client_side_validation && request.placeholder_index.nil?
-        fail ArgumentError, "Missing the required parameter 'placeholder_index' when calling SlidesApi.get_slides_placeholder"
+        fail ArgumentError, "Missing the required parameter 'request.placeholder_index' when calling SlidesApi.get_slides_placeholder"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/placeholders/{placeholderIndex}'
@@ -4479,11 +4757,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_placeholders"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_placeholders"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slides_placeholders"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slides_placeholders"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/placeholders'
@@ -4536,7 +4814,7 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_presentation_text_items"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_presentation_text_items"
       end
       # resource path
       local_var_path = '/slides/{name}/textItems'
@@ -4589,11 +4867,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_slide"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_slide"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slides_slide"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slides_slide"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}'
@@ -4646,11 +4924,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_slide_background"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_slide_background"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slides_slide_background"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slides_slide_background"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/background'
@@ -4703,11 +4981,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_slide_comments"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_slide_comments"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slides_slide_comments"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slides_slide_comments"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/comments'
@@ -4760,11 +5038,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_slide_images"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_slide_images"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slides_slide_images"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slides_slide_images"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/images'
@@ -4817,11 +5095,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_slide_text_items"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_slide_text_items"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slides_slide_text_items"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slides_slide_text_items"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/textItems'
@@ -4875,7 +5153,7 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_slides_list"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_slides_list"
       end
       # resource path
       local_var_path = '/slides/{name}/slides'
@@ -4927,11 +5205,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_theme"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_theme"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slides_theme"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slides_theme"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/theme'
@@ -4984,11 +5262,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_theme_color_scheme"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_theme_color_scheme"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slides_theme_color_scheme"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slides_theme_color_scheme"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/theme/colorScheme'
@@ -5041,11 +5319,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_theme_font_scheme"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_theme_font_scheme"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slides_theme_font_scheme"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slides_theme_font_scheme"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/theme/fontScheme'
@@ -5098,11 +5376,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_theme_format_scheme"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_theme_format_scheme"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slides_theme_format_scheme"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_slides_theme_format_scheme"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/theme/formatScheme'
@@ -5155,7 +5433,7 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_view_properties"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_view_properties"
       end
       # resource path
       local_var_path = '/slides/{name}/viewProperties'
@@ -5207,23 +5485,23 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_subshape_paragraph_portion"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_subshape_paragraph_portion"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_subshape_paragraph_portion"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_subshape_paragraph_portion"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_subshape_paragraph_portion"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.get_subshape_paragraph_portion"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_subshape_paragraph_portion"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.get_subshape_paragraph_portion"
       end
       # verify the required parameter 'portion_index' is set
       if @api_client.config.client_side_validation && request.portion_index.nil?
-        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.get_subshape_paragraph_portion"
+        fail ArgumentError, "Missing the required parameter 'request.portion_index' when calling SlidesApi.get_subshape_paragraph_portion"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
@@ -5280,19 +5558,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_subshape_paragraph_portions"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_subshape_paragraph_portions"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_subshape_paragraph_portions"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.get_subshape_paragraph_portions"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_subshape_paragraph_portions"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.get_subshape_paragraph_portions"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_subshape_paragraph_portions"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.get_subshape_paragraph_portions"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions'
@@ -5348,11 +5626,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'src_path' is set
       if @api_client.config.client_side_validation && request.src_path.nil?
-        fail ArgumentError, "Missing the required parameter 'src_path' when calling SlidesApi.move_file"
+        fail ArgumentError, "Missing the required parameter 'request.src_path' when calling SlidesApi.move_file"
       end
       # verify the required parameter 'dest_path' is set
       if @api_client.config.client_side_validation && request.dest_path.nil?
-        fail ArgumentError, "Missing the required parameter 'dest_path' when calling SlidesApi.move_file"
+        fail ArgumentError, "Missing the required parameter 'request.dest_path' when calling SlidesApi.move_file"
       end
       # resource path
       local_var_path = '/slides/storage/file/move/{srcPath}'
@@ -5404,11 +5682,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'src_path' is set
       if @api_client.config.client_side_validation && request.src_path.nil?
-        fail ArgumentError, "Missing the required parameter 'src_path' when calling SlidesApi.move_folder"
+        fail ArgumentError, "Missing the required parameter 'request.src_path' when calling SlidesApi.move_folder"
       end
       # verify the required parameter 'dest_path' is set
       if @api_client.config.client_side_validation && request.dest_path.nil?
-        fail ArgumentError, "Missing the required parameter 'dest_path' when calling SlidesApi.move_folder"
+        fail ArgumentError, "Missing the required parameter 'request.dest_path' when calling SlidesApi.move_folder"
       end
       # resource path
       local_var_path = '/slides/storage/folder/move/{srcPath}'
@@ -5506,15 +5784,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_add_new_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_add_new_paragraph"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_add_new_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_add_new_paragraph"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.post_add_new_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.post_add_new_paragraph"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.post_add_new_paragraph"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs'
@@ -5569,19 +5851,23 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_add_new_portion"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_add_new_portion"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_add_new_portion"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_add_new_portion"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.post_add_new_portion"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.post_add_new_portion"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.post_add_new_portion"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.post_add_new_portion"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.post_add_new_portion"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions'
@@ -5637,11 +5923,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_add_new_shape"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_add_new_shape"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_add_new_shape"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_add_new_shape"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes'
@@ -5696,11 +5982,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_add_new_subshape"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_add_new_subshape"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_add_new_subshape"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_add_new_subshape"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}'
@@ -5756,15 +6042,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_add_new_subshape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_add_new_subshape_paragraph"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_add_new_subshape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_add_new_subshape_paragraph"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.post_add_new_subshape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.post_add_new_subshape_paragraph"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.post_add_new_subshape_paragraph"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs'
@@ -5820,19 +6110,23 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_add_new_subshape_portion"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_add_new_subshape_portion"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_add_new_subshape_portion"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_add_new_subshape_portion"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.post_add_new_subshape_portion"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.post_add_new_subshape_portion"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.post_add_new_subshape_portion"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.post_add_new_subshape_portion"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.post_add_new_subshape_portion"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions'
@@ -5889,11 +6183,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_add_notes_slide"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_add_notes_slide"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_add_notes_slide"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_add_notes_slide"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.post_add_notes_slide"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide'
@@ -5946,15 +6244,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_chart_category"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_chart_category"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_chart_category"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_chart_category"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.post_chart_category"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.post_chart_category"
+      end
+      # verify the required parameter 'category' is set
+      if @api_client.config.client_side_validation && request.category.nil?
+        fail ArgumentError, "Missing the required parameter 'request.category' when calling SlidesApi.post_chart_category"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/categories'
@@ -6008,19 +6310,23 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_chart_data_point"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_chart_data_point"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_chart_data_point"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_chart_data_point"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.post_chart_data_point"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.post_chart_data_point"
       end
       # verify the required parameter 'series_index' is set
       if @api_client.config.client_side_validation && request.series_index.nil?
-        fail ArgumentError, "Missing the required parameter 'series_index' when calling SlidesApi.post_chart_data_point"
+        fail ArgumentError, "Missing the required parameter 'request.series_index' when calling SlidesApi.post_chart_data_point"
+      end
+      # verify the required parameter 'data_point' is set
+      if @api_client.config.client_side_validation && request.data_point.nil?
+        fail ArgumentError, "Missing the required parameter 'request.data_point' when calling SlidesApi.post_chart_data_point"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/series/{seriesIndex}/dataPoints'
@@ -6075,15 +6381,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_chart_series"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_chart_series"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_chart_series"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_chart_series"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.post_chart_series"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.post_chart_series"
+      end
+      # verify the required parameter 'series' is set
+      if @api_client.config.client_side_validation && request.series.nil?
+        fail ArgumentError, "Missing the required parameter 'request.series' when calling SlidesApi.post_chart_series"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/series'
@@ -6137,15 +6447,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_copy_layout_slide_from_source_presentation"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_copy_layout_slide_from_source_presentation"
       end
       # verify the required parameter 'clone_from' is set
       if @api_client.config.client_side_validation && request.clone_from.nil?
-        fail ArgumentError, "Missing the required parameter 'clone_from' when calling SlidesApi.post_copy_layout_slide_from_source_presentation"
+        fail ArgumentError, "Missing the required parameter 'request.clone_from' when calling SlidesApi.post_copy_layout_slide_from_source_presentation"
       end
       # verify the required parameter 'clone_from_position' is set
       if @api_client.config.client_side_validation && request.clone_from_position.nil?
-        fail ArgumentError, "Missing the required parameter 'clone_from_position' when calling SlidesApi.post_copy_layout_slide_from_source_presentation"
+        fail ArgumentError, "Missing the required parameter 'request.clone_from_position' when calling SlidesApi.post_copy_layout_slide_from_source_presentation"
       end
       # resource path
       local_var_path = '/slides/{name}/layoutSlides'
@@ -6201,15 +6511,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_copy_master_slide_from_source_presentation"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_copy_master_slide_from_source_presentation"
       end
       # verify the required parameter 'clone_from' is set
       if @api_client.config.client_side_validation && request.clone_from.nil?
-        fail ArgumentError, "Missing the required parameter 'clone_from' when calling SlidesApi.post_copy_master_slide_from_source_presentation"
+        fail ArgumentError, "Missing the required parameter 'request.clone_from' when calling SlidesApi.post_copy_master_slide_from_source_presentation"
       end
       # verify the required parameter 'clone_from_position' is set
       if @api_client.config.client_side_validation && request.clone_from_position.nil?
-        fail ArgumentError, "Missing the required parameter 'clone_from_position' when calling SlidesApi.post_copy_master_slide_from_source_presentation"
+        fail ArgumentError, "Missing the required parameter 'request.clone_from_position' when calling SlidesApi.post_copy_master_slide_from_source_presentation"
       end
       # resource path
       local_var_path = '/slides/{name}/masterSlides'
@@ -6264,9 +6574,13 @@ module AsposeSlidesCloud
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.post_get_notes_slide ...'
       end
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && request.document.nil?
+        fail ArgumentError, "Missing the required parameter 'request.document' when calling SlidesApi.post_get_notes_slide"
+      end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_get_notes_slide"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_get_notes_slide"
       end
       # resource path
       local_var_path = '/slides/slides/{slideIndex}/notesSlide'
@@ -6314,9 +6628,13 @@ module AsposeSlidesCloud
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.post_get_notes_slide_exists ...'
       end
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && request.document.nil?
+        fail ArgumentError, "Missing the required parameter 'request.document' when calling SlidesApi.post_get_notes_slide_exists"
+      end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_get_notes_slide_exists"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_get_notes_slide_exists"
       end
       # resource path
       local_var_path = '/slides/slides/{slideIndex}/notesSlide/exist'
@@ -6364,17 +6682,21 @@ module AsposeSlidesCloud
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.post_get_notes_slide_with_format ...'
       end
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && request.document.nil?
+        fail ArgumentError, "Missing the required parameter 'request.document' when calling SlidesApi.post_get_notes_slide_with_format"
+      end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_get_notes_slide_with_format"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_get_notes_slide_with_format"
       end
       # verify the required parameter 'format' is set
       if @api_client.config.client_side_validation && request.format.nil?
-        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.post_get_notes_slide_with_format"
+        fail ArgumentError, "Missing the required parameter 'request.format' when calling SlidesApi.post_get_notes_slide_with_format"
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff'].any?{ |s| s.casecmp(request.format)==0 }
-        fail ArgumentError, "invalid value for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff"
+        fail ArgumentError, "Value " + request.format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff"
       end
       # resource path
       local_var_path = '/slides/slides/{slideIndex}/notesSlide/{format}'
@@ -6428,15 +6750,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_notes_slide_add_new_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_notes_slide_add_new_paragraph"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_notes_slide_add_new_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_notes_slide_add_new_paragraph"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.post_notes_slide_add_new_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.post_notes_slide_add_new_paragraph"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.post_notes_slide_add_new_paragraph"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs'
@@ -6491,19 +6817,23 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_notes_slide_add_new_portion"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_notes_slide_add_new_portion"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_notes_slide_add_new_portion"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_notes_slide_add_new_portion"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.post_notes_slide_add_new_portion"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.post_notes_slide_add_new_portion"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.post_notes_slide_add_new_portion"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.post_notes_slide_add_new_portion"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.post_notes_slide_add_new_portion"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions'
@@ -6559,11 +6889,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_notes_slide_add_new_shape"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_notes_slide_add_new_shape"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_notes_slide_add_new_shape"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_notes_slide_add_new_shape"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.post_notes_slide_add_new_shape"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes'
@@ -6618,26 +6952,26 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_notes_slide_shape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_notes_slide_shape_save_as"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_notes_slide_shape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_notes_slide_shape_save_as"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.post_notes_slide_shape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.post_notes_slide_shape_save_as"
       end
       # verify the required parameter 'format' is set
       if @api_client.config.client_side_validation && request.format.nil?
-        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.post_notes_slide_shape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.format' when calling SlidesApi.post_notes_slide_shape_save_as"
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(request.format)==0 }
-        fail ArgumentError, "invalid value for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+        fail ArgumentError, "Value " + request.format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
       end
       if @api_client.config.client_side_validation && request.bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(request.bounds)==0 }
-        fail ArgumentError, 'invalid value for "bounds", must be one of Slide, Shape, Appearance'
+        fail ArgumentError, "Value " + request.bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/{format}'
@@ -6696,7 +7030,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_presentation_merge"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_presentation_merge"
+      end
+      # verify the required parameter 'request' is set
+      if @api_client.config.client_side_validation && request.request.nil?
+        fail ArgumentError, "Missing the required parameter 'request.request' when calling SlidesApi.post_presentation_merge"
       end
       # resource path
       local_var_path = '/slides/{name}/merge'
@@ -6733,6 +7071,130 @@ module AsposeSlidesCloud
         :return_type => 'Document')
       return data, status_code, headers
     end
+    # Create a section starting at a specified slide index.
+    # @param request operation request
+    def post_section(request)
+      data, _status_code, _headers = post_section_with_http_info(request)
+      data
+    end
+
+    # Create a section starting at a specified slide index.
+    # @param request operation request
+    def post_section_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.post_section ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_section"
+      end
+      # verify the required parameter 'section_name' is set
+      if @api_client.config.client_side_validation && request.section_name.nil?
+        fail ArgumentError, "Missing the required parameter 'request.section_name' when calling SlidesApi.post_section"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && request.slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_section"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/sections'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'sectionName'] = request.section_name unless request.section_name.nil?
+      query_params[:'slideIndex'] = request.slide_index unless request.slide_index.nil?
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Sections')
+      return data, status_code, headers
+    end
+    # Move presentation section to a specified position.
+    # @param request operation request
+    def post_section_move(request)
+      data, _status_code, _headers = post_section_move_with_http_info(request)
+      data
+    end
+
+    # Move presentation section to a specified position.
+    # @param request operation request
+    def post_section_move_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.post_section_move ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_section_move"
+      end
+      # verify the required parameter 'section_index' is set
+      if @api_client.config.client_side_validation && request.section_index.nil?
+        fail ArgumentError, "Missing the required parameter 'request.section_index' when calling SlidesApi.post_section_move"
+      end
+      # verify the required parameter 'new_position' is set
+      if @api_client.config.client_side_validation && request.new_position.nil?
+        fail ArgumentError, "Missing the required parameter 'request.new_position' when calling SlidesApi.post_section_move"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/sections/{sectionIndex}/move'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'sectionIndex', request.section_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'newPosition'] = request.new_position unless request.new_position.nil?
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Sections')
+      return data, status_code, headers
+    end
     # Render shape to specified picture format.
     # @param request operation request
     def post_shape_save_as(request)
@@ -6748,26 +7210,26 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_shape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_shape_save_as"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_shape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_shape_save_as"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.post_shape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.post_shape_save_as"
       end
       # verify the required parameter 'format' is set
       if @api_client.config.client_side_validation && request.format.nil?
-        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.post_shape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.format' when calling SlidesApi.post_shape_save_as"
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(request.format)==0 }
-        fail ArgumentError, "invalid value for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+        fail ArgumentError, "Value " + request.format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
       end
       if @api_client.config.client_side_validation && request.bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(request.bounds)==0 }
-        fail ArgumentError, 'invalid value for "bounds", must be one of Slide, Shape, Appearance'
+        fail ArgumentError, "Value " + request.bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/{format}'
@@ -6826,11 +7288,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_slide_animation_effect"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_slide_animation_effect"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_slide_animation_effect"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_slide_animation_effect"
+      end
+      # verify the required parameter 'effect' is set
+      if @api_client.config.client_side_validation && request.effect.nil?
+        fail ArgumentError, "Missing the required parameter 'request.effect' when calling SlidesApi.post_slide_animation_effect"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/animation/mainSequence'
@@ -6883,11 +7349,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_slide_animation_interactive_sequence"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_slide_animation_interactive_sequence"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_slide_animation_interactive_sequence"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_slide_animation_interactive_sequence"
+      end
+      # verify the required parameter 'sequence' is set
+      if @api_client.config.client_side_validation && request.sequence.nil?
+        fail ArgumentError, "Missing the required parameter 'request.sequence' when calling SlidesApi.post_slide_animation_interactive_sequence"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/animation/interactiveSequences'
@@ -6940,15 +7410,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_slide_animation_interactive_sequence_effect"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_slide_animation_interactive_sequence_effect"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_slide_animation_interactive_sequence_effect"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_slide_animation_interactive_sequence_effect"
       end
       # verify the required parameter 'sequence_index' is set
       if @api_client.config.client_side_validation && request.sequence_index.nil?
-        fail ArgumentError, "Missing the required parameter 'sequence_index' when calling SlidesApi.post_slide_animation_interactive_sequence_effect"
+        fail ArgumentError, "Missing the required parameter 'request.sequence_index' when calling SlidesApi.post_slide_animation_interactive_sequence_effect"
+      end
+      # verify the required parameter 'effect' is set
+      if @api_client.config.client_side_validation && request.effect.nil?
+        fail ArgumentError, "Missing the required parameter 'request.effect' when calling SlidesApi.post_slide_animation_interactive_sequence_effect"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/animation/interactiveSequences/{sequenceIndex}'
@@ -7002,19 +7476,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_slide_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_slide_save_as"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_slide_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_slide_save_as"
       end
       # verify the required parameter 'format' is set
       if @api_client.config.client_side_validation && request.format.nil?
-        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.post_slide_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.format' when calling SlidesApi.post_slide_save_as"
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp'].any?{ |s| s.casecmp(request.format)==0 }
-        fail ArgumentError, "invalid value for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp"
+        fail ArgumentError, "Value " + request.format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/{format}'
@@ -7071,7 +7545,7 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_slides_add"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_slides_add"
       end
       # resource path
       local_var_path = '/slides/{name}/slides'
@@ -7123,13 +7597,17 @@ module AsposeSlidesCloud
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.post_slides_convert ...'
       end
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && request.document.nil?
+        fail ArgumentError, "Missing the required parameter 'request.document' when calling SlidesApi.post_slides_convert"
+      end
       # verify the required parameter 'format' is set
       if @api_client.config.client_side_validation && request.format.nil?
-        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.post_slides_convert"
+        fail ArgumentError, "Missing the required parameter 'request.format' when calling SlidesApi.post_slides_convert"
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp'].any?{ |s| s.casecmp(request.format)==0 }
-        fail ArgumentError, "invalid value for 'format', must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp"
+        fail ArgumentError, "Value " + request.format + " is not supported for 'format', must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp"
       end
       # resource path
       local_var_path = '/slides/convert/{format}'
@@ -7180,11 +7658,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_slides_copy"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_slides_copy"
       end
       # verify the required parameter 'slide_to_copy' is set
       if @api_client.config.client_side_validation && request.slide_to_copy.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_to_copy' when calling SlidesApi.post_slides_copy"
+        fail ArgumentError, "Missing the required parameter 'request.slide_to_copy' when calling SlidesApi.post_slides_copy"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/copy'
@@ -7241,7 +7719,7 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_slides_document"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_slides_document"
       end
       # resource path
       local_var_path = '/slides/{name}'
@@ -7294,7 +7772,7 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_slides_document_from_html"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_slides_document_from_html"
       end
       # resource path
       local_var_path = '/slides/{name}/fromHtml'
@@ -7346,7 +7824,7 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_slides_document_from_source"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_slides_document_from_source"
       end
       # resource path
       local_var_path = '/slides/{name}/fromSource'
@@ -7401,11 +7879,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_slides_document_from_template"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_slides_document_from_template"
       end
       # verify the required parameter 'template_path' is set
       if @api_client.config.client_side_validation && request.template_path.nil?
-        fail ArgumentError, "Missing the required parameter 'template_path' when calling SlidesApi.post_slides_document_from_template"
+        fail ArgumentError, "Missing the required parameter 'request.template_path' when calling SlidesApi.post_slides_document_from_template"
       end
       # resource path
       local_var_path = '/slides/{name}/fromTemplate'
@@ -7459,6 +7937,10 @@ module AsposeSlidesCloud
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.post_slides_pipeline ...'
       end
+      # verify the required parameter 'pipeline' is set
+      if @api_client.config.client_side_validation && request.pipeline.nil?
+        fail ArgumentError, "Missing the required parameter 'request.pipeline' when calling SlidesApi.post_slides_pipeline"
+      end
       # resource path
       local_var_path = '/slides/pipeline'
 
@@ -7506,15 +7988,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_slides_presentation_replace_text"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_slides_presentation_replace_text"
       end
       # verify the required parameter 'old_value' is set
       if @api_client.config.client_side_validation && request.old_value.nil?
-        fail ArgumentError, "Missing the required parameter 'old_value' when calling SlidesApi.post_slides_presentation_replace_text"
+        fail ArgumentError, "Missing the required parameter 'request.old_value' when calling SlidesApi.post_slides_presentation_replace_text"
       end
       # verify the required parameter 'new_value' is set
       if @api_client.config.client_side_validation && request.new_value.nil?
-        fail ArgumentError, "Missing the required parameter 'new_value' when calling SlidesApi.post_slides_presentation_replace_text"
+        fail ArgumentError, "Missing the required parameter 'request.new_value' when calling SlidesApi.post_slides_presentation_replace_text"
       end
       # resource path
       local_var_path = '/slides/{name}/replaceText'
@@ -7569,15 +8051,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_slides_reorder"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_slides_reorder"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_slides_reorder"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_slides_reorder"
       end
       # verify the required parameter 'new_position' is set
       if @api_client.config.client_side_validation && request.new_position.nil?
-        fail ArgumentError, "Missing the required parameter 'new_position' when calling SlidesApi.post_slides_reorder"
+        fail ArgumentError, "Missing the required parameter 'request.new_position' when calling SlidesApi.post_slides_reorder"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/move'
@@ -7631,7 +8113,7 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_slides_reorder_many"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_slides_reorder_many"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/reorder'
@@ -7685,15 +8167,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_slides_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_slides_save_as"
       end
       # verify the required parameter 'format' is set
       if @api_client.config.client_side_validation && request.format.nil?
-        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.post_slides_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.format' when calling SlidesApi.post_slides_save_as"
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp'].any?{ |s| s.casecmp(request.format)==0 }
-        fail ArgumentError, "invalid value for 'format', must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp"
+        fail ArgumentError, "Value " + request.format + " is not supported for 'format', must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp"
       end
       # resource path
       local_var_path = '/slides/{name}/{format}'
@@ -7747,7 +8229,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_slides_set_document_properties"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_slides_set_document_properties"
+      end
+      # verify the required parameter 'properties' is set
+      if @api_client.config.client_side_validation && request.properties.nil?
+        fail ArgumentError, "Missing the required parameter 'request.properties' when calling SlidesApi.post_slides_set_document_properties"
       end
       # resource path
       local_var_path = '/slides/{name}/documentproperties'
@@ -7799,19 +8285,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_slides_slide_replace_text"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_slides_slide_replace_text"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_slides_slide_replace_text"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_slides_slide_replace_text"
       end
       # verify the required parameter 'old_value' is set
       if @api_client.config.client_side_validation && request.old_value.nil?
-        fail ArgumentError, "Missing the required parameter 'old_value' when calling SlidesApi.post_slides_slide_replace_text"
+        fail ArgumentError, "Missing the required parameter 'request.old_value' when calling SlidesApi.post_slides_slide_replace_text"
       end
       # verify the required parameter 'new_value' is set
       if @api_client.config.client_side_validation && request.new_value.nil?
-        fail ArgumentError, "Missing the required parameter 'new_value' when calling SlidesApi.post_slides_slide_replace_text"
+        fail ArgumentError, "Missing the required parameter 'request.new_value' when calling SlidesApi.post_slides_slide_replace_text"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/replaceText'
@@ -7867,10 +8353,10 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_slides_split"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_slides_split"
       end
       if @api_client.config.client_side_validation && request.format && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp'].any?{ |s| s.casecmp(request.format)==0 }
-        fail ArgumentError, 'invalid value for "format", must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp'
+        fail ArgumentError, "Value " + request.format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp"
       end
       # resource path
       local_var_path = '/slides/{name}/split'
@@ -7929,26 +8415,26 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_subshape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_subshape_save_as"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_subshape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.post_subshape_save_as"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.post_subshape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.post_subshape_save_as"
       end
       # verify the required parameter 'format' is set
       if @api_client.config.client_side_validation && request.format.nil?
-        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.post_subshape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.format' when calling SlidesApi.post_subshape_save_as"
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(request.format)==0 }
-        fail ArgumentError, "invalid value for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+        fail ArgumentError, "Value " + request.format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
       end
       if @api_client.config.client_side_validation && request.bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(request.bounds)==0 }
-        fail ArgumentError, 'invalid value for "bounds", must be one of Slide, Shape, Appearance'
+        fail ArgumentError, "Value " + request.bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/{format}'
@@ -8008,19 +8494,23 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_chart_category"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_chart_category"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_chart_category"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_chart_category"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.put_chart_category"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.put_chart_category"
       end
       # verify the required parameter 'category_index' is set
       if @api_client.config.client_side_validation && request.category_index.nil?
-        fail ArgumentError, "Missing the required parameter 'category_index' when calling SlidesApi.put_chart_category"
+        fail ArgumentError, "Missing the required parameter 'request.category_index' when calling SlidesApi.put_chart_category"
+      end
+      # verify the required parameter 'category' is set
+      if @api_client.config.client_side_validation && request.category.nil?
+        fail ArgumentError, "Missing the required parameter 'request.category' when calling SlidesApi.put_chart_category"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/categories/{categoryIndex}'
@@ -8075,23 +8565,27 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_chart_data_point"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_chart_data_point"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_chart_data_point"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_chart_data_point"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.put_chart_data_point"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.put_chart_data_point"
       end
       # verify the required parameter 'series_index' is set
       if @api_client.config.client_side_validation && request.series_index.nil?
-        fail ArgumentError, "Missing the required parameter 'series_index' when calling SlidesApi.put_chart_data_point"
+        fail ArgumentError, "Missing the required parameter 'request.series_index' when calling SlidesApi.put_chart_data_point"
       end
       # verify the required parameter 'point_index' is set
       if @api_client.config.client_side_validation && request.point_index.nil?
-        fail ArgumentError, "Missing the required parameter 'point_index' when calling SlidesApi.put_chart_data_point"
+        fail ArgumentError, "Missing the required parameter 'request.point_index' when calling SlidesApi.put_chart_data_point"
+      end
+      # verify the required parameter 'data_point' is set
+      if @api_client.config.client_side_validation && request.data_point.nil?
+        fail ArgumentError, "Missing the required parameter 'request.data_point' when calling SlidesApi.put_chart_data_point"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/series/{seriesIndex}/dataPoints/{pointIndex}'
@@ -8147,19 +8641,23 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_chart_series"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_chart_series"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_chart_series"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_chart_series"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.put_chart_series"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.put_chart_series"
       end
       # verify the required parameter 'series_index' is set
       if @api_client.config.client_side_validation && request.series_index.nil?
-        fail ArgumentError, "Missing the required parameter 'series_index' when calling SlidesApi.put_chart_series"
+        fail ArgumentError, "Missing the required parameter 'request.series_index' when calling SlidesApi.put_chart_series"
+      end
+      # verify the required parameter 'series' is set
+      if @api_client.config.client_side_validation && request.series.nil?
+        fail ArgumentError, "Missing the required parameter 'request.series' when calling SlidesApi.put_chart_series"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/series/{seriesIndex}'
@@ -8214,11 +8712,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_layout_slide"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_layout_slide"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_layout_slide"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_layout_slide"
+      end
+      # verify the required parameter 'slide_dto' is set
+      if @api_client.config.client_side_validation && request.slide_dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.slide_dto' when calling SlidesApi.put_layout_slide"
       end
       # resource path
       local_var_path = '/slides/{name}/layoutSlides/{slideIndex}'
@@ -8256,6 +8758,67 @@ module AsposeSlidesCloud
         :return_type => 'LayoutSlide')
       return data, status_code, headers
     end
+    # Set header/footer the notes slide.
+    # @param request operation request
+    def put_notes_slide_header_footer(request)
+      data, _status_code, _headers = put_notes_slide_header_footer_with_http_info(request)
+      data
+    end
+
+    # Set header/footer the notes slide.
+    # @param request operation request
+    def put_notes_slide_header_footer_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.put_notes_slide_header_footer ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_notes_slide_header_footer"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && request.slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_notes_slide_header_footer"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.put_notes_slide_header_footer"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/headerFooter'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', request.slide_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.dto)
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'NotesSlideHeaderFooter')
+      return data, status_code, headers
+    end
     # Render shape to specified picture format.
     # @param request operation request
     def put_notes_slide_shape_save_as(request)
@@ -8271,30 +8834,30 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_notes_slide_shape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_notes_slide_shape_save_as"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_notes_slide_shape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_notes_slide_shape_save_as"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.put_notes_slide_shape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.put_notes_slide_shape_save_as"
       end
       # verify the required parameter 'format' is set
       if @api_client.config.client_side_validation && request.format.nil?
-        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.put_notes_slide_shape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.format' when calling SlidesApi.put_notes_slide_shape_save_as"
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(request.format)==0 }
-        fail ArgumentError, "invalid value for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+        fail ArgumentError, "Value " + request.format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && request.out_path.nil?
-        fail ArgumentError, "Missing the required parameter 'out_path' when calling SlidesApi.put_notes_slide_shape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.out_path' when calling SlidesApi.put_notes_slide_shape_save_as"
       end
       if @api_client.config.client_side_validation && request.bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(request.bounds)==0 }
-        fail ArgumentError, 'invalid value for "bounds", must be one of Slide, Shape, Appearance'
+        fail ArgumentError, "Value " + request.bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/{format}'
@@ -8353,7 +8916,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_presentation_merge"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_presentation_merge"
+      end
+      # verify the required parameter 'request' is set
+      if @api_client.config.client_side_validation && request.request.nil?
+        fail ArgumentError, "Missing the required parameter 'request.request' when calling SlidesApi.put_presentation_merge"
       end
       # resource path
       local_var_path = '/slides/{name}/merge'
@@ -8390,6 +8957,124 @@ module AsposeSlidesCloud
         :return_type => 'Document')
       return data, status_code, headers
     end
+    # Update section name.
+    # @param request operation request
+    def put_section(request)
+      data, _status_code, _headers = put_section_with_http_info(request)
+      data
+    end
+
+    # Update section name.
+    # @param request operation request
+    def put_section_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.put_section ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_section"
+      end
+      # verify the required parameter 'section_index' is set
+      if @api_client.config.client_side_validation && request.section_index.nil?
+        fail ArgumentError, "Missing the required parameter 'request.section_index' when calling SlidesApi.put_section"
+      end
+      # verify the required parameter 'section_name' is set
+      if @api_client.config.client_side_validation && request.section_name.nil?
+        fail ArgumentError, "Missing the required parameter 'request.section_name' when calling SlidesApi.put_section"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/sections/{sectionIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'sectionIndex', request.section_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'sectionName'] = request.section_name unless request.section_name.nil?
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Sections')
+      return data, status_code, headers
+    end
+    # Replace existing presentation sections with the ones provided in the sections DTO.
+    # @param request operation request
+    def put_sections(request)
+      data, _status_code, _headers = put_sections_with_http_info(request)
+      data
+    end
+
+    # Replace existing presentation sections with the ones provided in the sections DTO.
+    # @param request operation request
+    def put_sections_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.put_sections ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_sections"
+      end
+      # verify the required parameter 'sections' is set
+      if @api_client.config.client_side_validation && request.sections.nil?
+        fail ArgumentError, "Missing the required parameter 'request.sections' when calling SlidesApi.put_sections"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/sections'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.sections)
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Sections')
+      return data, status_code, headers
+    end
     # Update portion properties.
     # @param request operation request
     def put_set_paragraph_portion_properties(request)
@@ -8405,23 +9090,27 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_set_paragraph_portion_properties"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_set_paragraph_portion_properties"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_set_paragraph_portion_properties"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_set_paragraph_portion_properties"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.put_set_paragraph_portion_properties"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.put_set_paragraph_portion_properties"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.put_set_paragraph_portion_properties"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.put_set_paragraph_portion_properties"
       end
       # verify the required parameter 'portion_index' is set
       if @api_client.config.client_side_validation && request.portion_index.nil?
-        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.put_set_paragraph_portion_properties"
+        fail ArgumentError, "Missing the required parameter 'request.portion_index' when calling SlidesApi.put_set_paragraph_portion_properties"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.put_set_paragraph_portion_properties"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
@@ -8477,19 +9166,23 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_set_paragraph_properties"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_set_paragraph_properties"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_set_paragraph_properties"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_set_paragraph_properties"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.put_set_paragraph_properties"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.put_set_paragraph_properties"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.put_set_paragraph_properties"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.put_set_paragraph_properties"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.put_set_paragraph_properties"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}'
@@ -8544,23 +9237,27 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_set_subshape_paragraph_portion_properties"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_set_subshape_paragraph_portion_properties"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_set_subshape_paragraph_portion_properties"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_set_subshape_paragraph_portion_properties"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.put_set_subshape_paragraph_portion_properties"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.put_set_subshape_paragraph_portion_properties"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.put_set_subshape_paragraph_portion_properties"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.put_set_subshape_paragraph_portion_properties"
       end
       # verify the required parameter 'portion_index' is set
       if @api_client.config.client_side_validation && request.portion_index.nil?
-        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.put_set_subshape_paragraph_portion_properties"
+        fail ArgumentError, "Missing the required parameter 'request.portion_index' when calling SlidesApi.put_set_subshape_paragraph_portion_properties"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.put_set_subshape_paragraph_portion_properties"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
@@ -8617,19 +9314,23 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_set_subshape_paragraph_properties"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_set_subshape_paragraph_properties"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_set_subshape_paragraph_properties"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_set_subshape_paragraph_properties"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.put_set_subshape_paragraph_properties"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.put_set_subshape_paragraph_properties"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.put_set_subshape_paragraph_properties"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.put_set_subshape_paragraph_properties"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.put_set_subshape_paragraph_properties"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}'
@@ -8685,30 +9386,30 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_shape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_shape_save_as"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_shape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_shape_save_as"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.put_shape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.put_shape_save_as"
       end
       # verify the required parameter 'format' is set
       if @api_client.config.client_side_validation && request.format.nil?
-        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.put_shape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.format' when calling SlidesApi.put_shape_save_as"
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(request.format)==0 }
-        fail ArgumentError, "invalid value for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+        fail ArgumentError, "Value " + request.format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && request.out_path.nil?
-        fail ArgumentError, "Missing the required parameter 'out_path' when calling SlidesApi.put_shape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.out_path' when calling SlidesApi.put_shape_save_as"
       end
       if @api_client.config.client_side_validation && request.bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(request.bounds)==0 }
-        fail ArgumentError, 'invalid value for "bounds", must be one of Slide, Shape, Appearance'
+        fail ArgumentError, "Value " + request.bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/{format}'
@@ -8767,11 +9468,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_slide_animation"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_slide_animation"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_slide_animation"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_slide_animation"
+      end
+      # verify the required parameter 'animation' is set
+      if @api_client.config.client_side_validation && request.animation.nil?
+        fail ArgumentError, "Missing the required parameter 'request.animation' when calling SlidesApi.put_slide_animation"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/animation'
@@ -8824,15 +9529,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_slide_animation_effect"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_slide_animation_effect"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_slide_animation_effect"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_slide_animation_effect"
       end
       # verify the required parameter 'effect_index' is set
       if @api_client.config.client_side_validation && request.effect_index.nil?
-        fail ArgumentError, "Missing the required parameter 'effect_index' when calling SlidesApi.put_slide_animation_effect"
+        fail ArgumentError, "Missing the required parameter 'request.effect_index' when calling SlidesApi.put_slide_animation_effect"
+      end
+      # verify the required parameter 'effect' is set
+      if @api_client.config.client_side_validation && request.effect.nil?
+        fail ArgumentError, "Missing the required parameter 'request.effect' when calling SlidesApi.put_slide_animation_effect"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/animation/mainSequence/{effectIndex}'
@@ -8886,19 +9595,23 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_slide_animation_interactive_sequence_effect"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_slide_animation_interactive_sequence_effect"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_slide_animation_interactive_sequence_effect"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_slide_animation_interactive_sequence_effect"
       end
       # verify the required parameter 'sequence_index' is set
       if @api_client.config.client_side_validation && request.sequence_index.nil?
-        fail ArgumentError, "Missing the required parameter 'sequence_index' when calling SlidesApi.put_slide_animation_interactive_sequence_effect"
+        fail ArgumentError, "Missing the required parameter 'request.sequence_index' when calling SlidesApi.put_slide_animation_interactive_sequence_effect"
       end
       # verify the required parameter 'effect_index' is set
       if @api_client.config.client_side_validation && request.effect_index.nil?
-        fail ArgumentError, "Missing the required parameter 'effect_index' when calling SlidesApi.put_slide_animation_interactive_sequence_effect"
+        fail ArgumentError, "Missing the required parameter 'request.effect_index' when calling SlidesApi.put_slide_animation_interactive_sequence_effect"
+      end
+      # verify the required parameter 'effect' is set
+      if @api_client.config.client_side_validation && request.effect.nil?
+        fail ArgumentError, "Missing the required parameter 'request.effect' when calling SlidesApi.put_slide_animation_interactive_sequence_effect"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/animation/interactiveSequences/{sequenceIndex}/{effectIndex}'
@@ -8938,6 +9651,67 @@ module AsposeSlidesCloud
         :return_type => 'SlideAnimation')
       return data, status_code, headers
     end
+    # Set footer the slide.
+    # @param request operation request
+    def put_slide_header_footer(request)
+      data, _status_code, _headers = put_slide_header_footer_with_http_info(request)
+      data
+    end
+
+    # Set footer the slide.
+    # @param request operation request
+    def put_slide_header_footer_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.put_slide_header_footer ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_slide_header_footer"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && request.slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_slide_header_footer"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.put_slide_header_footer"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/headerFooter'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', request.slide_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.dto)
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'HeaderFooter')
+      return data, status_code, headers
+    end
     # Save a slide to a specified format.
     # @param request operation request
     def put_slide_save_as(request)
@@ -8953,23 +9727,23 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_slide_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_slide_save_as"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_slide_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_slide_save_as"
       end
       # verify the required parameter 'format' is set
       if @api_client.config.client_side_validation && request.format.nil?
-        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.put_slide_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.format' when calling SlidesApi.put_slide_save_as"
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp'].any?{ |s| s.casecmp(request.format)==0 }
-        fail ArgumentError, "invalid value for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp"
+        fail ArgumentError, "Value " + request.format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && request.out_path.nil?
-        fail ArgumentError, "Missing the required parameter 'out_path' when calling SlidesApi.put_slide_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.out_path' when calling SlidesApi.put_slide_save_as"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/{format}'
@@ -9026,15 +9800,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_slide_shape_info"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_slide_shape_info"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_slide_shape_info"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_slide_shape_info"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.put_slide_shape_info"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.put_slide_shape_info"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.put_slide_shape_info"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}'
@@ -9088,15 +9866,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_slide_subshape_info"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_slide_subshape_info"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_slide_subshape_info"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_slide_subshape_info"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.put_slide_subshape_info"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.put_slide_subshape_info"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.put_slide_subshape_info"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}'
@@ -9149,17 +9931,21 @@ module AsposeSlidesCloud
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.put_slides_convert ...'
       end
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && request.document.nil?
+        fail ArgumentError, "Missing the required parameter 'request.document' when calling SlidesApi.put_slides_convert"
+      end
       # verify the required parameter 'format' is set
       if @api_client.config.client_side_validation && request.format.nil?
-        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.put_slides_convert"
+        fail ArgumentError, "Missing the required parameter 'request.format' when calling SlidesApi.put_slides_convert"
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp'].any?{ |s| s.casecmp(request.format)==0 }
-        fail ArgumentError, "invalid value for 'format', must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp"
+        fail ArgumentError, "Value " + request.format + " is not supported for 'format', must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && request.out_path.nil?
-        fail ArgumentError, "Missing the required parameter 'out_path' when calling SlidesApi.put_slides_convert"
+        fail ArgumentError, "Missing the required parameter 'request.out_path' when calling SlidesApi.put_slides_convert"
       end
       # resource path
       local_var_path = '/slides/convert/{format}'
@@ -9210,7 +9996,7 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_slides_document_from_html"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_slides_document_from_html"
       end
       # resource path
       local_var_path = '/slides/{name}/fromHtml'
@@ -9247,6 +10033,62 @@ module AsposeSlidesCloud
         :return_type => 'Document')
       return data, status_code, headers
     end
+    # Set footers for all slides in a presentation.
+    # @param request operation request
+    def put_slides_header_footer(request)
+      data, _status_code, _headers = put_slides_header_footer_with_http_info(request)
+      data
+    end
+
+    # Set footers for all slides in a presentation.
+    # @param request operation request
+    def put_slides_header_footer_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.put_slides_header_footer ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_slides_header_footer"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.put_slides_header_footer"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/headerFooter'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'password'] = request.password unless request.password.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.dto)
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Document')
+      return data, status_code, headers
+    end
     # Save a presentation to a specified format.
     # @param request operation request
     def put_slides_save_as(request)
@@ -9262,19 +10104,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_slides_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_slides_save_as"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && request.out_path.nil?
-        fail ArgumentError, "Missing the required parameter 'out_path' when calling SlidesApi.put_slides_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.out_path' when calling SlidesApi.put_slides_save_as"
       end
       # verify the required parameter 'format' is set
       if @api_client.config.client_side_validation && request.format.nil?
-        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.put_slides_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.format' when calling SlidesApi.put_slides_save_as"
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp'].any?{ |s| s.casecmp(request.format)==0 }
-        fail ArgumentError, "invalid value for 'format', must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp"
+        fail ArgumentError, "Value " + request.format + " is not supported for 'format', must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp"
       end
       # resource path
       local_var_path = '/slides/{name}/{format}'
@@ -9328,11 +10170,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_slides_set_document_property"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_slides_set_document_property"
       end
       # verify the required parameter 'property_name' is set
       if @api_client.config.client_side_validation && request.property_name.nil?
-        fail ArgumentError, "Missing the required parameter 'property_name' when calling SlidesApi.put_slides_set_document_property"
+        fail ArgumentError, "Missing the required parameter 'request.property_name' when calling SlidesApi.put_slides_set_document_property"
+      end
+      # verify the required parameter 'property' is set
+      if @api_client.config.client_side_validation && request.property.nil?
+        fail ArgumentError, "Missing the required parameter 'request.property' when calling SlidesApi.put_slides_set_document_property"
       end
       # resource path
       local_var_path = '/slides/{name}/documentproperties/{propertyName}'
@@ -9385,11 +10231,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_slides_slide"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_slides_slide"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_slides_slide"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_slides_slide"
+      end
+      # verify the required parameter 'slide_dto' is set
+      if @api_client.config.client_side_validation && request.slide_dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.slide_dto' when calling SlidesApi.put_slides_slide"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}'
@@ -9442,11 +10292,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_slides_slide_background"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_slides_slide_background"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_slides_slide_background"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_slides_slide_background"
+      end
+      # verify the required parameter 'background' is set
+      if @api_client.config.client_side_validation && request.background.nil?
+        fail ArgumentError, "Missing the required parameter 'request.background' when calling SlidesApi.put_slides_slide_background"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/background'
@@ -9499,15 +10353,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_slides_slide_background_color"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_slides_slide_background_color"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_slides_slide_background_color"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_slides_slide_background_color"
       end
       # verify the required parameter 'color' is set
       if @api_client.config.client_side_validation && request.color.nil?
-        fail ArgumentError, "Missing the required parameter 'color' when calling SlidesApi.put_slides_slide_background_color"
+        fail ArgumentError, "Missing the required parameter 'request.color' when calling SlidesApi.put_slides_slide_background_color"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/backgroundColor'
@@ -9561,13 +10415,13 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_slides_slide_size"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_slides_slide_size"
       end
       if @api_client.config.client_side_validation && request.size_type && !['OnScreen', 'LetterPaper', 'A4Paper', 'Slide35mm', 'Overhead', 'Banner', 'Custom', 'Ledger', 'A3Paper', 'B4IsoPaper', 'B5IsoPaper', 'B4JisPaper', 'B5JisPaper', 'HagakiCard', 'OnScreen16x9', 'OnScreen16x10', 'Widescreen'].any?{ |s| s.casecmp(request.size_type)==0 }
-        fail ArgumentError, 'invalid value for "size_type", must be one of OnScreen, LetterPaper, A4Paper, Slide35mm, Overhead, Banner, Custom, Ledger, A3Paper, B4IsoPaper, B5IsoPaper, B4JisPaper, B5JisPaper, HagakiCard, OnScreen16x9, OnScreen16x10, Widescreen'
+        fail ArgumentError, "Value " + request.size_type + " is not supported for 'size_type', must be one of OnScreen, LetterPaper, A4Paper, Slide35mm, Overhead, Banner, Custom, Ledger, A3Paper, B4IsoPaper, B5IsoPaper, B4JisPaper, B5JisPaper, HagakiCard, OnScreen16x9, OnScreen16x10, Widescreen"
       end
       if @api_client.config.client_side_validation && request.scale_type && !['DoNotScale', 'EnsureFit', 'Maximize'].any?{ |s| s.casecmp(request.scale_type)==0 }
-        fail ArgumentError, 'invalid value for "scale_type", must be one of DoNotScale, EnsureFit, Maximize'
+        fail ArgumentError, "Value " + request.scale_type + " is not supported for 'scale_type', must be one of DoNotScale, EnsureFit, Maximize"
       end
       # resource path
       local_var_path = '/slides/{name}/slideSize'
@@ -9623,7 +10477,11 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_slides_view_properties"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_slides_view_properties"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.put_slides_view_properties"
       end
       # resource path
       local_var_path = '/slides/{name}/viewProperties'
@@ -9675,30 +10533,30 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_subshape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_subshape_save_as"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_subshape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_subshape_save_as"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.put_subshape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.put_subshape_save_as"
       end
       # verify the required parameter 'format' is set
       if @api_client.config.client_side_validation && request.format.nil?
-        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.put_subshape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.format' when calling SlidesApi.put_subshape_save_as"
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(request.format)==0 }
-        fail ArgumentError, "invalid value for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+        fail ArgumentError, "Value " + request.format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && request.out_path.nil?
-        fail ArgumentError, "Missing the required parameter 'out_path' when calling SlidesApi.put_subshape_save_as"
+        fail ArgumentError, "Missing the required parameter 'request.out_path' when calling SlidesApi.put_subshape_save_as"
       end
       if @api_client.config.client_side_validation && request.bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(request.bounds)==0 }
-        fail ArgumentError, 'invalid value for "bounds", must be one of Slide, Shape, Appearance'
+        fail ArgumentError, "Value " + request.bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/{format}'
@@ -9758,11 +10616,15 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_update_notes_slide"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_update_notes_slide"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_update_notes_slide"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_update_notes_slide"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.put_update_notes_slide"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide'
@@ -9815,15 +10677,19 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_update_notes_slide_shape"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_update_notes_slide_shape"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_update_notes_slide_shape"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_update_notes_slide_shape"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.put_update_notes_slide_shape"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.put_update_notes_slide_shape"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.put_update_notes_slide_shape"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}'
@@ -9877,19 +10743,23 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_update_notes_slide_shape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_update_notes_slide_shape_paragraph"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_update_notes_slide_shape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_update_notes_slide_shape_paragraph"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.put_update_notes_slide_shape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.put_update_notes_slide_shape_paragraph"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.put_update_notes_slide_shape_paragraph"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.put_update_notes_slide_shape_paragraph"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.put_update_notes_slide_shape_paragraph"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}'
@@ -9944,23 +10814,27 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'name' is set
       if @api_client.config.client_side_validation && request.name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_update_notes_slide_shape_portion"
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_update_notes_slide_shape_portion"
       end
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && request.slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_update_notes_slide_shape_portion"
+        fail ArgumentError, "Missing the required parameter 'request.slide_index' when calling SlidesApi.put_update_notes_slide_shape_portion"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && request.shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.put_update_notes_slide_shape_portion"
+        fail ArgumentError, "Missing the required parameter 'request.shape_index' when calling SlidesApi.put_update_notes_slide_shape_portion"
       end
       # verify the required parameter 'paragraph_index' is set
       if @api_client.config.client_side_validation && request.paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.put_update_notes_slide_shape_portion"
+        fail ArgumentError, "Missing the required parameter 'request.paragraph_index' when calling SlidesApi.put_update_notes_slide_shape_portion"
       end
       # verify the required parameter 'portion_index' is set
       if @api_client.config.client_side_validation && request.portion_index.nil?
-        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.put_update_notes_slide_shape_portion"
+        fail ArgumentError, "Missing the required parameter 'request.portion_index' when calling SlidesApi.put_update_notes_slide_shape_portion"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.put_update_notes_slide_shape_portion"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
@@ -10016,7 +10890,7 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'storage_name' is set
       if @api_client.config.client_side_validation && request.storage_name.nil?
-        fail ArgumentError, "Missing the required parameter 'storage_name' when calling SlidesApi.storage_exists"
+        fail ArgumentError, "Missing the required parameter 'request.storage_name' when calling SlidesApi.storage_exists"
       end
       # resource path
       local_var_path = '/slides/storage/{storageName}/exist'
@@ -10065,7 +10939,7 @@ module AsposeSlidesCloud
       end
       # verify the required parameter 'file' is set
       if @api_client.config.client_side_validation && request.file.nil?
-        fail ArgumentError, "Missing the required parameter 'file' when calling SlidesApi.upload_file"
+        fail ArgumentError, "Missing the required parameter 'request.file' when calling SlidesApi.upload_file"
       end
       # resource path
       local_var_path = '/slides/storage/file/{path}'

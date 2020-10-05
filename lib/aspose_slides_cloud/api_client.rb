@@ -57,7 +57,7 @@ module AsposeSlidesCloud
         @config.logger.debug "HTTP response\nHeaders: #{response.headers}\nStatus: #{response.status}\nBody: #{response.body}\n"
       end
 
-      if response.status == 401 and @config.access_token
+      if (response.status == 401 || (response.status == 500 && response.body.length == 0)) and @config.access_token
         @config.access_token = nil
         return repeat_call_api(http_method, path, opts)
       end

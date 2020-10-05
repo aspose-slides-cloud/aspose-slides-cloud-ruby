@@ -23,92 +23,33 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Represents chart category resource
-  class ChartCategory
-    # Gets or sets the parent categories. Used with Sunburst &amp; treemap categories; ignored for other chart types.
-    attr_accessor :parent_categories
-
-    # Gets or sets the grouping level for the category. Used with Sunburst &amp; treemap categories; ignored for other chart types.
-    attr_accessor :level
-
-    # Category value
-    attr_accessor :value
-
-    # Get or sets the fill format.
-    attr_accessor :fill_format
-
-    # Get or sets the effect format.
-    attr_accessor :effect_format
-
-    # Get or sets the line format.
-    attr_accessor :line_format
-
-    # Gets or sets the data points for chart data
-    attr_accessor :data_points
+  # Section list.
+  class Sections < ResourceBase
+    # List of slide links.
+    attr_accessor :section_list
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'parent_categories' => :'ParentCategories',
-        :'level' => :'Level',
-        :'value' => :'Value',
-        :'fill_format' => :'FillFormat',
-        :'effect_format' => :'EffectFormat',
-        :'line_format' => :'LineFormat',
-        :'data_points' => :'DataPoints',
-      }
+      super.merge({
+        :'section_list' => :'SectionList',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'parent_categories' => :'Array<String>',
-        :'level' => :'Integer',
-        :'value' => :'String',
-        :'fill_format' => :'FillFormat',
-        :'effect_format' => :'EffectFormat',
-        :'line_format' => :'LineFormat',
-        :'data_points' => :'Array<OneValueChartDataPoint>',
-      }
+      super.merge({
+        :'section_list' => :'Array<Section>',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
+      super
 
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'ParentCategories')
-        if (value = attributes[:'ParentCategories']).is_a?(Array)
-          self.parent_categories = value
-        end
-      end
-
-      if attributes.has_key?(:'Level')
-        self.level = attributes[:'Level']
-      end
-
-      if attributes.has_key?(:'Value')
-        self.value = attributes[:'Value']
-      end
-
-      if attributes.has_key?(:'FillFormat')
-        self.fill_format = attributes[:'FillFormat']
-      end
-
-      if attributes.has_key?(:'EffectFormat')
-        self.effect_format = attributes[:'EffectFormat']
-      end
-
-      if attributes.has_key?(:'LineFormat')
-        self.line_format = attributes[:'LineFormat']
-      end
-
-      if attributes.has_key?(:'DataPoints')
-        if (value = attributes[:'DataPoints']).is_a?(Array)
-          self.data_points = value
+      if attributes.has_key?(:'SectionList')
+        if (value = attributes[:'SectionList']).is_a?(Array)
+          self.section_list = value
         end
       end
     end
@@ -116,13 +57,14 @@ module AsposeSlidesCloud
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = super
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !super
       true
     end
 
@@ -131,13 +73,9 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          parent_categories == o.parent_categories &&
-          level == o.level &&
-          value == o.value &&
-          fill_format == o.fill_format &&
-          effect_format == o.effect_format &&
-          line_format == o.line_format &&
-          data_points == o.data_points
+          self_uri == o.self_uri &&
+          alternate_links == o.alternate_links &&
+          section_list == o.section_list
     end
 
     # @see the `==` method
@@ -149,7 +87,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [parent_categories, level, value, fill_format, effect_format, line_format, data_points].hash
+      [self_uri, alternate_links, section_list].hash
     end
 
     # Builds the object from hash

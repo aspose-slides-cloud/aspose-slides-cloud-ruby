@@ -446,6 +446,50 @@ module AsposeSlidesCloud
     attr_accessor :storage
   end
 
+  # request model for delete_section
+  class DeleteSectionRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param section_index Section index.
+    attr_accessor :section_index
+
+    # @param with_slides True to delete the slides related to the deleted section; move them to the remaining sections otherwise.
+    attr_accessor :with_slides
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for delete_sections
+  class DeleteSectionsRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param sections The indices of the sections to be deleted; delete all by default.
+    attr_accessor :sections
+
+    # @param with_slides True to delete the slides related to the deleted sections; move them to the remaining sections otherwise.
+    attr_accessor :with_slides
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
   # request model for delete_slide_animation
   class DeleteSlideAnimationRequest
 
@@ -1024,6 +1068,25 @@ module AsposeSlidesCloud
     attr_accessor :storage
   end
 
+  # request model for get_notes_slide_header_footer
+  class GetNotesSlideHeaderFooterRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param storage Document storage.
+    attr_accessor :storage
+
+    # @param folder Document folder.
+    attr_accessor :folder
+  end
+
   # request model for get_notes_slide_shape
   class GetNotesSlideShapeRequest
 
@@ -1249,6 +1312,22 @@ module AsposeSlidesCloud
     attr_accessor :storage
   end
 
+  # request model for get_sections
+  class GetSectionsRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
   # request model for get_slide_animation
   class GetSlideAnimationRequest
 
@@ -1260,6 +1339,25 @@ module AsposeSlidesCloud
 
     # @param shape_index Shape index. If specified, only effects related to that shape are returned.
     attr_accessor :shape_index
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for get_slide_header_footer
+  class GetSlideHeaderFooterRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param slide_index The position of the slide to be reordered.
+    attr_accessor :slide_index
 
     # @param password Document password.
     attr_accessor :password
@@ -2070,11 +2168,11 @@ module AsposeSlidesCloud
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
-    # @param path Shape path.
-    attr_accessor :path
-
     # @param dto Paragraph DTO.
     attr_accessor :dto
+
+    # @param path Shape path.
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -2104,11 +2202,11 @@ module AsposeSlidesCloud
     # @param paragraph_index Paragraph index.
     attr_accessor :paragraph_index
 
-    # @param path Shape path.
-    attr_accessor :path
-
     # @param dto Portion DTO.
     attr_accessor :dto
+
+    # @param path Shape path.
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -2285,11 +2383,11 @@ module AsposeSlidesCloud
   # request model for post_get_notes_slide
   class PostGetNotesSlideRequest
 
-    # @param slide_index Slide index.
-    attr_accessor :slide_index
-
     # @param document Document data.
     attr_accessor :document
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
 
     # @param password Document password.
     attr_accessor :password
@@ -2298,11 +2396,11 @@ module AsposeSlidesCloud
   # request model for post_get_notes_slide_exists
   class PostGetNotesSlideExistsRequest
 
-    # @param slide_index Slide index.
-    attr_accessor :slide_index
-
     # @param document Document data.
     attr_accessor :document
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
 
     # @param password Document password.
     attr_accessor :password
@@ -2311,14 +2409,14 @@ module AsposeSlidesCloud
   # request model for post_get_notes_slide_with_format
   class PostGetNotesSlideWithFormatRequest
 
+    # @param document Document data.
+    attr_accessor :document
+
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
     # @param format Output file format.
     attr_accessor :format
-
-    # @param document Document data.
-    attr_accessor :document
 
     # @param width Output file width.
     attr_accessor :width
@@ -2477,6 +2575,50 @@ module AsposeSlidesCloud
 
     # @param folder Document folder.
     attr_accessor :folder
+  end
+
+  # request model for post_section
+  class PostSectionRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param section_name Section name.
+    attr_accessor :section_name
+
+    # @param slide_index Slide index (one-based).
+    attr_accessor :slide_index
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for post_section_move
+  class PostSectionMoveRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param section_index The position of the section to be reordered.
+    attr_accessor :section_index
+
+    # @param new_position The new position of the reordered section.
+    attr_accessor :new_position
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
   end
 
   # request model for post_shape_save_as
@@ -2647,11 +2789,11 @@ module AsposeSlidesCloud
   # request model for post_slides_convert
   class PostSlidesConvertRequest
 
-    # @param format Export format.
-    attr_accessor :format
-
     # @param document Document data.
     attr_accessor :document
+
+    # @param format Export format.
+    attr_accessor :format
 
     # @param password Document password.
     attr_accessor :password
@@ -3131,6 +3273,28 @@ module AsposeSlidesCloud
     attr_accessor :storage
   end
 
+  # request model for put_notes_slide_header_footer
+  class PutNotesSlideHeaderFooterRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
+
+    # @param dto Header/footer to set.
+    attr_accessor :dto
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param storage Document storage.
+    attr_accessor :storage
+
+    # @param folder Document folder.
+    attr_accessor :folder
+  end
+
   # request model for put_notes_slide_shape_save_as
   class PutNotesSlideShapeSaveAsRequest
 
@@ -3191,6 +3355,47 @@ module AsposeSlidesCloud
 
     # @param folder Document folder.
     attr_accessor :folder
+  end
+
+  # request model for put_section
+  class PutSectionRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param section_index The position of the section to be updated.
+    attr_accessor :section_index
+
+    # @param section_name Section name.
+    attr_accessor :section_name
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for put_sections
+  class PutSectionsRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param sections Sections DTO.
+    attr_accessor :sections
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
   end
 
   # request model for put_set_paragraph_portion_properties
@@ -3270,11 +3475,11 @@ module AsposeSlidesCloud
     # @param portion_index Portion index.
     attr_accessor :portion_index
 
-    # @param path Shape path.
-    attr_accessor :path
-
     # @param dto Portion DTO.
     attr_accessor :dto
+
+    # @param path Shape path.
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -3301,11 +3506,11 @@ module AsposeSlidesCloud
     # @param paragraph_index Paragraph index.
     attr_accessor :paragraph_index
 
-    # @param path Shape path.
-    attr_accessor :path
-
     # @param dto Paragraph DTO.
     attr_accessor :dto
+
+    # @param path Shape path.
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -3435,6 +3640,28 @@ module AsposeSlidesCloud
     attr_accessor :storage
   end
 
+  # request model for put_slide_header_footer
+  class PutSlideHeaderFooterRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param slide_index The position of the slide to be reordered.
+    attr_accessor :slide_index
+
+    # @param dto Footer to set.
+    attr_accessor :dto
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
   # request model for put_slide_save_as
   class PutSlideSaveAsRequest
 
@@ -3509,11 +3736,11 @@ module AsposeSlidesCloud
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
-    # @param path Shape path.
-    attr_accessor :path
-
     # @param dto Shape DTO.
     attr_accessor :dto
+
+    # @param path Shape path.
+    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -3528,14 +3755,14 @@ module AsposeSlidesCloud
   # request model for put_slides_convert
   class PutSlidesConvertRequest
 
+    # @param document Document data.
+    attr_accessor :document
+
     # @param format Export format.
     attr_accessor :format
 
     # @param out_path Path to save result.
     attr_accessor :out_path
-
-    # @param document Document data.
-    attr_accessor :document
 
     # @param password Document password.
     attr_accessor :password
@@ -3552,6 +3779,25 @@ module AsposeSlidesCloud
 
     # @param html HTML data.
     attr_accessor :html
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param storage Document storage.
+    attr_accessor :storage
+
+    # @param folder Document folder.
+    attr_accessor :folder
+  end
+
+  # request model for put_slides_header_footer
+  class PutSlidesHeaderFooterRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param dto HeaderFooter instance.
+    attr_accessor :dto
 
     # @param password Document password.
     attr_accessor :password
