@@ -97,7 +97,7 @@ module AsposeSlidesCloud
         :'crop_right' => :'Float',
         :'crop_top' => :'Float',
         :'dpi' => :'Integer',
-        :'image' => :'ResourceUriElement',
+        :'image' => :'ResourceUri',
         :'base64_data' => :'String',
         :'svg_data' => :'String',
         :'picture_fill_mode' => :'String',

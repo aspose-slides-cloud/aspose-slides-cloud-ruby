@@ -77,7 +77,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'nodes' => :'Array<SmartArtNode>',
-        :'shapes' => :'ResourceUriElement',
+        :'shapes' => :'ResourceUri',
         :'is_assistant' => :'BOOLEAN',
         :'text' => :'String',
         :'org_chart_layout' => :'String',

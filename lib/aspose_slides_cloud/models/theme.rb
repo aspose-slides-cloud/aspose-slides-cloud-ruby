@@ -51,9 +51,9 @@ module AsposeSlidesCloud
     def self.swagger_types
       super.merge({
         :'name' => :'String',
-        :'color_scheme' => :'ResourceUriElement',
-        :'font_scheme' => :'ResourceUriElement',
-        :'format_scheme' => :'ResourceUriElement',
+        :'color_scheme' => :'ResourceUri',
+        :'font_scheme' => :'ResourceUri',
+        :'format_scheme' => :'ResourceUri',
       })
     end
 

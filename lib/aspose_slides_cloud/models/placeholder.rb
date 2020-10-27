@@ -80,7 +80,7 @@ module AsposeSlidesCloud
         :'orientation' => :'String',
         :'size' => :'String',
         :'type' => :'String',
-        :'shape' => :'ResourceUriElement',
+        :'shape' => :'ResourceUri',
       })
     end
 

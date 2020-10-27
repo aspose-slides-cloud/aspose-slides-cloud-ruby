@@ -58,12 +58,12 @@ module AsposeSlidesCloud
     # Attribute type mapping.
     def self.swagger_types
       super.merge({
-        :'document_properties' => :'ResourceUriElement',
-        :'view_properties' => :'ResourceUriElement',
-        :'slides' => :'ResourceUriElement',
-        :'images' => :'ResourceUriElement',
-        :'layout_slides' => :'ResourceUriElement',
-        :'master_slides' => :'ResourceUriElement',
+        :'document_properties' => :'ResourceUri',
+        :'view_properties' => :'ResourceUri',
+        :'slides' => :'ResourceUri',
+        :'images' => :'ResourceUri',
+        :'layout_slides' => :'ResourceUri',
+        :'master_slides' => :'ResourceUri',
       })
     end
 

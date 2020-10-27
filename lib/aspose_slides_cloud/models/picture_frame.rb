@@ -73,7 +73,6 @@ module AsposeSlidesCloud
         self.picture_fill_format = attributes[:'PictureFillFormat']
       end
       self.type = "PictureFrame"
-      self.shape_type = "PictureFrame"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -112,7 +111,6 @@ module AsposeSlidesCloud
           line_format == o.line_format &&
           type == o.type &&
           shape_type == o.shape_type &&
-          geometry_shape_type == o.geometry_shape_type &&
           picture_fill_format == o.picture_fill_format
     end
 
@@ -125,7 +123,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, geometry_shape_type, picture_fill_format].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, picture_fill_format].hash
     end
 
     # Builds the object from hash

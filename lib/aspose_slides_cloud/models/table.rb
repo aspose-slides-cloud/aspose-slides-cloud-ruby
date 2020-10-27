@@ -158,7 +158,6 @@ module AsposeSlidesCloud
         self.vertical_banding = attributes[:'VerticalBanding']
       end
       self.type = "Table"
-      self.shape_type = "Table"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -208,7 +207,6 @@ module AsposeSlidesCloud
           effect_format == o.effect_format &&
           line_format == o.line_format &&
           type == o.type &&
-          shape_type == o.shape_type &&
           style == o.style &&
           rows == o.rows &&
           columns == o.columns &&
@@ -230,7 +228,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, style, rows, columns, first_col, first_row, horizontal_banding, last_col, last_row, right_to_left, vertical_banding].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, style, rows, columns, first_col, first_row, horizontal_banding, last_col, last_row, right_to_left, vertical_banding].hash
     end
 
     # Builds the object from hash

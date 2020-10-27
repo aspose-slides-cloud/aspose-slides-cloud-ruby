@@ -111,7 +111,6 @@ module AsposeSlidesCloud
         self.is_reversed = attributes[:'IsReversed']
       end
       self.type = "SmartArt"
-      self.shape_type = "Diagram"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -205,7 +204,6 @@ module AsposeSlidesCloud
           effect_format == o.effect_format &&
           line_format == o.line_format &&
           type == o.type &&
-          shape_type == o.shape_type &&
           layout == o.layout &&
           quick_style == o.quick_style &&
           color_style == o.color_style &&
@@ -222,7 +220,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, layout, quick_style, color_style, nodes, is_reversed].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, layout, quick_style, color_style, nodes, is_reversed].hash
     end
 
     # Builds the object from hash

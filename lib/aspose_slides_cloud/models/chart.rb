@@ -167,7 +167,6 @@ module AsposeSlidesCloud
         self.plot_area = attributes[:'PlotArea']
       end
       self.type = "Chart"
-      self.shape_type = "Chart"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -222,7 +221,6 @@ module AsposeSlidesCloud
           effect_format == o.effect_format &&
           line_format == o.line_format &&
           type == o.type &&
-          shape_type == o.shape_type &&
           chart_type == o.chart_type &&
           show_data_labels_over_maximum == o.show_data_labels_over_maximum &&
           series == o.series &&
@@ -245,7 +243,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, chart_type, show_data_labels_over_maximum, series, categories, title, back_wall, side_wall, floor, legend, axes, plot_area].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, chart_type, show_data_labels_over_maximum, series, categories, title, back_wall, side_wall, floor, legend, axes, plot_area].hash
     end
 
     # Builds the object from hash

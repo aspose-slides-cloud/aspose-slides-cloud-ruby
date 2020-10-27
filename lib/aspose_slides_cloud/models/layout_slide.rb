@@ -74,8 +74,8 @@ module AsposeSlidesCloud
       super.merge({
         :'name' => :'String',
         :'type' => :'String',
-        :'master_slide' => :'ResourceUriElement',
-        :'depending_slides' => :'Array<ResourceUriElement>',
+        :'master_slide' => :'ResourceUri',
+        :'depending_slides' => :'Array<ResourceUri>',
       })
     end
 

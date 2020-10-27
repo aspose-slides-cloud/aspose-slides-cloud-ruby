@@ -38,7 +38,7 @@ module AsposeSlidesCloud
     # Attribute type mapping.
     def self.swagger_types
       super.merge({
-        :'slide_list' => :'Array<ResourceUriElement>',
+        :'slide_list' => :'Array<ResourceUri>',
       })
     end
 

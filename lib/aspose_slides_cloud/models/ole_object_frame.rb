@@ -82,7 +82,6 @@ module AsposeSlidesCloud
         self.substitute_picture_title = attributes[:'SubstitutePictureTitle']
       end
       self.type = "OleObjectFrame"
-      self.shape_type = "OleObjectFrame"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -125,7 +124,6 @@ module AsposeSlidesCloud
           effect_format == o.effect_format &&
           line_format == o.line_format &&
           type == o.type &&
-          shape_type == o.shape_type &&
           is_object_icon == o.is_object_icon &&
           substitute_picture_title == o.substitute_picture_title
     end
@@ -139,7 +137,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, is_object_icon, substitute_picture_title].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, is_object_icon, substitute_picture_title].hash
     end
 
     # Builds the object from hash

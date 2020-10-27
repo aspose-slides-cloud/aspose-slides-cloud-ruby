@@ -81,14 +81,14 @@ module AsposeSlidesCloud
         :'width' => :'Float',
         :'height' => :'Float',
         :'show_master_shapes' => :'BOOLEAN',
-        :'layout_slide' => :'ResourceUriElement',
-        :'shapes' => :'ResourceUriElement',
-        :'theme' => :'ResourceUriElement',
-        :'placeholders' => :'ResourceUriElement',
-        :'images' => :'ResourceUriElement',
-        :'comments' => :'ResourceUriElement',
-        :'background' => :'ResourceUriElement',
-        :'notes_slide' => :'ResourceUriElement',
+        :'layout_slide' => :'ResourceUri',
+        :'shapes' => :'ResourceUri',
+        :'theme' => :'ResourceUri',
+        :'placeholders' => :'ResourceUri',
+        :'images' => :'ResourceUri',
+        :'comments' => :'ResourceUri',
+        :'background' => :'ResourceUri',
+        :'notes_slide' => :'ResourceUri',
       })
     end
 

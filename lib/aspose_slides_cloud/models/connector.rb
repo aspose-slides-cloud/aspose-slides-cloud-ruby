@@ -138,7 +138,6 @@ module AsposeSlidesCloud
           line_format == o.line_format &&
           type == o.type &&
           shape_type == o.shape_type &&
-          geometry_shape_type == o.geometry_shape_type &&
           start_shape_connected_to == o.start_shape_connected_to &&
           start_shape_connected_to_index == o.start_shape_connected_to_index &&
           end_shape_connected_to == o.end_shape_connected_to &&
@@ -154,7 +153,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, geometry_shape_type, start_shape_connected_to, start_shape_connected_to_index, end_shape_connected_to, end_shape_connected_to_index].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, start_shape_connected_to, start_shape_connected_to_index, end_shape_connected_to, end_shape_connected_to_index].hash
     end
 
     # Builds the object from hash

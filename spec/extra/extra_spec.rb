@@ -63,7 +63,6 @@ describe 'SlidesApiExtra' do
     it 'chart' do
       chart = AsposeSlidesCloud::Chart.new
       expect(chart.type).to eq("Chart")
-      expect(chart.shape_type).to eq("Chart")
     end
 
     it 'timeout' do

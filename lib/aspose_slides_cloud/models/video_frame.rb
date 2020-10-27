@@ -127,7 +127,6 @@ module AsposeSlidesCloud
         self.base64_data = attributes[:'Base64Data']
       end
       self.type = "VideoFrame"
-      self.shape_type = "VideoFrame"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -190,7 +189,6 @@ module AsposeSlidesCloud
           line_format == o.line_format &&
           type == o.type &&
           shape_type == o.shape_type &&
-          geometry_shape_type == o.geometry_shape_type &&
           full_screen_mode == o.full_screen_mode &&
           hide_at_showing == o.hide_at_showing &&
           play_loop_mode == o.play_loop_mode &&
@@ -209,7 +207,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, geometry_shape_type, full_screen_mode, hide_at_showing, play_loop_mode, play_mode, rewind_video, volume, base64_data].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type, full_screen_mode, hide_at_showing, play_loop_mode, play_mode, rewind_video, volume, base64_data].hash
     end
 
     # Builds the object from hash

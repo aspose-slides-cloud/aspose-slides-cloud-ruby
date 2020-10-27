@@ -24,7 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Represents SmartArt resource.
-  class SmartArtShape < ShapeBase
+  class SmartArtShape < GeometryShape
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -64,7 +64,6 @@ module AsposeSlidesCloud
     def initialize(attributes = {})
       super
       self.type = "SmartArtShape"
-      self.shape_type = "Custom"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -114,7 +113,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_linksname, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, type, shape_type].hash
+      [self_uri, alternate_linksname, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, line_format, typeshape_type].hash
     end
 
     # Builds the object from hash
