@@ -51,7 +51,7 @@ describe 'SlidesApiExtra' do
     it 'base shape' do
       AsposeSlidesCloud::SpecUtils.initialize('GetSlideShape', nil, nil)
       requestParam = AsposeSlidesCloud::GetSlideShapeRequest.new
-      requestParam.name = "test.ppt"
+      requestParam.name = "test.pptx"
       requestParam.slide_index = 1
       requestParam.shape_index = 1
       requestParam.password = "password"
@@ -73,14 +73,14 @@ describe 'SlidesApiExtra' do
       #configuration = AsposeSlidesCloud::Configuration.new
       #configuration.base_url = config["BaseUrl"]
       #configuration.auth_base_url = config["AuthBaseUrl"] ? config["AuthBaseUrl"] : config["BaseUrl"]
-      #configuration.app_sid = config["AppSid"]
-      #configuration.app_key = config["AppKey"]
+      #configuration.app_sid = config["ClientId"]
+      #configuration.app_key = config["ClientSecret"]
       #configuration.debugging = config["Debug"]
       #configuration.timeout = 1
       #api = AsposeSlidesCloud::SlidesApi.new(configuration)
 
       #requestParam = AsposeSlidesCloud::PostSlideSaveAsRequest.new
-      #requestParam.name = "test.ppt"
+      #requestParam.name = "test.pptx"
       #requestParam.slide_index = 1
       #requestParam.password = "password"
       #requestParam.folder = "TempSlidesSDK"
@@ -174,8 +174,8 @@ describe 'SlidesApiExtra' do
       configuration = AsposeSlidesCloud::Configuration.new
       configuration.base_url = config["BaseUrl"]
       configuration.auth_base_url = config["AuthBaseUrl"] ? config["AuthBaseUrl"] : config["BaseUrl"]
-      configuration.app_sid = config["AppSid"]
-      configuration.app_key = config["AppKey"]
+      configuration.app_sid = config["ClientId"]
+      configuration.app_key = config["ClientSecret"]
       configuration.debugging = config["Debug"]
       api = AsposeSlidesCloud::SlidesApi.new(configuration)
       o, c, _h = api.get_slides_api_info_with_http_info
@@ -189,7 +189,7 @@ describe 'SlidesApiExtra' do
       configuration.base_url = config["BaseUrl"]
       configuration.auth_base_url = config["AuthBaseUrl"] ? config["AuthBaseUrl"] : config["BaseUrl"]
       configuration.app_sid = "invalid"
-      configuration.app_key = config["AppKey"]
+      configuration.app_key = config["ClientSecret"]
       configuration.debugging = config["Debug"]
       api = AsposeSlidesCloud::SlidesApi.new(configuration)
       begin
@@ -206,8 +206,8 @@ describe 'SlidesApiExtra' do
       configuration = AsposeSlidesCloud::Configuration.new
       configuration.base_url = config["BaseUrl"]
       configuration.auth_base_url = config["AuthBaseUrl"] ? config["AuthBaseUrl"] : config["BaseUrl"]
-      configuration.app_sid = config["AppSid"]
-      configuration.app_key = config["AppKey"]
+      configuration.app_sid = config["ClientId"]
+      configuration.app_key = config["ClientSecret"]
       configuration.debugging = config["Debug"]
       api = AsposeSlidesCloud::SlidesApi.new(configuration)
       api.get_slides_api_info_with_http_info
@@ -223,8 +223,8 @@ describe 'SlidesApiExtra' do
       configuration = AsposeSlidesCloud::Configuration.new
       configuration.base_url = config["BaseUrl"]
       configuration.auth_base_url = config["AuthBaseUrl"] ? config["AuthBaseUrl"] : config["BaseUrl"]
-      configuration.app_sid = config["AppSid"]
-      configuration.app_key = config["AppKey"]
+      configuration.app_sid = config["ClientId"]
+      configuration.app_key = config["ClientSecret"]
       configuration.access_token = "expired.token"
       configuration.debugging = config["Debug"]
       api = AsposeSlidesCloud::SlidesApi.new(configuration)

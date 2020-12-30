@@ -80,7 +80,7 @@ module AsposeSlidesCloud
 
     def self.get_param_value(name, method, type)
       if type == 'File'
-        return File.binread(File.join(TEST_DATA_PATH, "test.ppt"))
+        return File.binread(File.join(TEST_DATA_PATH, "test.pptx"))
       end
       value = "test" + name
       SpecUtils.test_rules["Values"].each do |rule|
@@ -166,8 +166,8 @@ module AsposeSlidesCloud
         configuration = AsposeSlidesCloud::Configuration.new
         configuration.base_url = config["BaseUrl"]
         configuration.auth_base_url = config["AuthBaseUrl"] ? config["AuthBaseUrl"] : config["BaseUrl"]
-        configuration.app_sid = config["AppSid"]
-        configuration.app_key = config["AppKey"]
+        configuration.app_sid = config["ClientId"]
+        configuration.app_key = config["ClientSecret"]
         configuration.debugging = config["Debug"]
         @@api = AsposeSlidesCloud::SlidesApi.new(configuration)
       end

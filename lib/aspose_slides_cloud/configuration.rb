@@ -66,9 +66,13 @@ module AsposeSlidesCloud
     # @return [String]
     attr_accessor :temp_folder_path
 
-    # The time limit for HTTP request in seconds.
-    # Default to 0 (never times out).
+    # slides operaion timeout in seconds. The timeout applies to the Slides operation, not to the HTTP request.
+    # Default to 0 (no timeout).
     attr_accessor :timeout
+
+    # The time limit for HTTP request in seconds.
+    # Default to 300.
+    attr_accessor :http_request_timeout
  
     # Set this to false to skip client side validation in the operation.
     # Default to true.
@@ -129,6 +133,7 @@ module AsposeSlidesCloud
       @base_url = 'https://api.aspose.cloud'
       @auth_base_url = 'https://api.aspose.cloud'
       @version = 'v3.0'
+      @http_request_timeout = 300
       @timeout = 0
       @custom_headers = Hash.new
       @client_side_validation = true

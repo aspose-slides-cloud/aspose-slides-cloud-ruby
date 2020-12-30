@@ -147,7 +147,9 @@ module AsposeSlidesCloud
           opts[:query_params][key] = opts[:query_params][key].join[","]
         end
       end
-      req.options.timeout = 200
+      if @config.http_request_timeout > 0
+          req.options.timeout = @config.http_request_timeout
+      end
       req.url path.sub(/^\/+/, '')
       req.headers = opts[:header_params]
       req.params = opts[:query_params]
@@ -171,26 +173,28 @@ module AsposeSlidesCloud
     end
 
     def set_auth_header(headers)
-      unless @config.access_token
-        auth_token_response = Faraday.post(
-          @config.auth_base_url + '/connect/token',
-          { :grant_type => 'client_credentials', 'client_id' => @config.app_sid, 'client_secret' => @config.app_key })
+      if config.app_sid || config.access_token
+        unless @config.access_token
+          auth_token_response = Faraday.post(
+            @config.auth_base_url + '/connect/token',
+            { :grant_type => 'client_credentials', 'client_id' => @config.app_sid, 'client_secret' => @config.app_sid })
 
-        unless auth_token_response.success?
-          if auth_token_response.status == 0
-            # Errors from libcurl will be made visible here
-            fail ApiError.new(:code => 0,
-                            :message => auth_token_response.return_message)
-          else
-            fail ApiError.new(:code => 401,
-                            :response_headers => auth_token_response.headers,
-                            :response_body => auth_token_response.body),
-                 "unauthorized"
+          unless auth_token_response.success?
+            if auth_token_response.status == 0
+              # Errors from libcurl will be made visible here
+              fail ApiError.new(:code => 0,
+                              :message => auth_token_response.return_message)
+            else
+              fail ApiError.new(:code => 401,
+                              :response_headers => auth_token_response.headers,
+                              :response_body => auth_token_response.body),
+                   "unauthorized"
+            end
           end
+          @config.access_token = JSON.parse("[#{auth_token_response.body}]", :symbolize_names => true)[0][:access_token]
         end
-        @config.access_token = JSON.parse("[#{auth_token_response.body}]", :symbolize_names => true)[0][:access_token]
+        headers['Authorization'] = 'Bearer ' + @config.access_token
       end
-      headers['Authorization'] = 'Bearer ' + @config.access_token
     end
 
     # Check if the given MIME is a JSON MIME.
