@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/api-v3.0-lightgrey) ![Gem](https://img.shields.io/gem/v/aspose_words_cloud) ![Gem](https://img.shields.io/gem/dt/aspose_words_cloud) [![GitHub license](https://img.shields.io/github/license/aspose-slides-cloud/aspose-slides-cloud-ruby)](https://github.com/aspose-slides-cloud/aspose-slides-cloud-ruby/blob/master/LICENSE)
+![](https://img.shields.io/badge/api-v3.0-lightgrey) ![Gem](https://img.shields.io/gem/v/aspose_slides_cloud) ![Gem](https://img.shields.io/gem/dt/aspose_slides_cloud) [![GitHub license](https://img.shields.io/github/license/aspose-slides-cloud/aspose-slides-cloud-ruby)](https://github.com/aspose-slides-cloud/aspose-slides-cloud-ruby/blob/master/LICENSE)
 
 # Ruby REST API to Process Presentation in Cloud
 This repository contains Aspose.Slides Cloud SDK for Ruby source code. This SDK allows you to [process & manipulate PPT, PPTX, ODP, OTP](https://products.aspose.cloud/slides/java) using Aspose.slides Cloud REST APIs in your Ruby applications.
