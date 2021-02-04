@@ -1725,6 +1725,22 @@ module AsposeSlidesCloud
     attr_accessor :storage
   end
 
+  # request model for get_slides_protection_properties
+  class GetSlidesProtectionPropertiesRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
   # request model for get_slides_slide
   class GetSlidesSlideRequest
 
@@ -1790,6 +1806,22 @@ module AsposeSlidesCloud
 
     # @param slide_index Slide index.
     attr_accessor :slide_index
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for get_slides_slide_properties
+  class GetSlidesSlidePropertiesRequest
+
+    # @param name Document name.
+    attr_accessor :name
 
     # @param password Document password.
     attr_accessor :password
@@ -2874,6 +2906,25 @@ module AsposeSlidesCloud
     attr_accessor :folder
   end
 
+  # request model for post_slides_document_from_pdf
+  class PostSlidesDocumentFromPdfRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param pdf PDF data.
+    attr_accessor :pdf
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param storage Document storage.
+    attr_accessor :storage
+
+    # @param folder Document folder.
+    attr_accessor :folder
+  end
+
   # request model for post_slides_document_from_source
   class PostSlidesDocumentFromSourceRequest
 
@@ -3809,6 +3860,25 @@ module AsposeSlidesCloud
     attr_accessor :folder
   end
 
+  # request model for put_slides_protection_properties
+  class PutSlidesProtectionPropertiesRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param dto The view properties data.
+    attr_accessor :dto
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
   # request model for put_slides_save_as
   class PutSlidesSaveAsRequest
 
@@ -3920,6 +3990,25 @@ module AsposeSlidesCloud
 
     # @param password Document password.
     attr_accessor :password
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for put_slides_slide_properties
+  class PutSlidesSlidePropertiesRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param dto The view properties data.
+    attr_accessor :dto
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
 
     # @param storage Document storage.
     attr_accessor :storage

@@ -14266,6 +14266,125 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for get_slides_protection_properties
+  # Read presentation protection properties.
+  # @param name Document name.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [ProtectionProperties]
+  describe 'get_slides_protection_properties test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::GetSlidesProtectionPropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlidesProtectionProperties', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlidesProtectionProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlidesProtectionProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlidesProtectionProperties', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlidesProtectionProperties', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_slides_protection_properties_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesProtectionProperties', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::GetSlidesProtectionPropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlidesProtectionProperties', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlidesProtectionProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlidesProtectionProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlidesProtectionProperties', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetSlidesProtectionProperties', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlidesProtectionProperties', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_slides_protection_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlidesProtectionProperties', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesProtectionProperties', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesProtectionProperties', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::GetSlidesProtectionPropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlidesProtectionProperties', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlidesProtectionProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlidesProtectionProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlidesProtectionProperties', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetSlidesProtectionProperties', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlidesProtectionProperties', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_slides_protection_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlidesProtectionProperties', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesProtectionProperties', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesProtectionProperties', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::GetSlidesProtectionPropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlidesProtectionProperties', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlidesProtectionProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlidesProtectionProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlidesProtectionProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetSlidesProtectionProperties', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlidesProtectionProperties', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_slides_protection_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlidesProtectionProperties', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesProtectionProperties', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesProtectionProperties', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::GetSlidesProtectionPropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlidesProtectionProperties', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlidesProtectionProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlidesProtectionProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlidesProtectionProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetSlidesProtectionProperties', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlidesProtectionProperties', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_slides_protection_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlidesProtectionProperties', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesProtectionProperties', 'storage', requestParam.storage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesProtectionProperties', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for get_slides_slide
   # Read presentation slide info.
   # @param name Document name.
@@ -14860,6 +14979,125 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideImages', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for get_slides_slide_properties
+  # Read presentation slide properties.
+  # @param name Document name.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [SlideProperties]
+  describe 'get_slides_slide_properties test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::GetSlidesSlidePropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlidesSlideProperties', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlidesSlideProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlidesSlideProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlidesSlideProperties', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlidesSlideProperties', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_slides_slide_properties_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideProperties', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::GetSlidesSlidePropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlidesSlideProperties', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlidesSlideProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlidesSlideProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlidesSlideProperties', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetSlidesSlideProperties', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlidesSlideProperties', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_slides_slide_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlidesSlideProperties', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideProperties', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideProperties', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::GetSlidesSlidePropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlidesSlideProperties', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlidesSlideProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlidesSlideProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlidesSlideProperties', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetSlidesSlideProperties', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlidesSlideProperties', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_slides_slide_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlidesSlideProperties', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideProperties', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideProperties', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::GetSlidesSlidePropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlidesSlideProperties', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlidesSlideProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlidesSlideProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlidesSlideProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetSlidesSlideProperties', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlidesSlideProperties', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_slides_slide_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlidesSlideProperties', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideProperties', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideProperties', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::GetSlidesSlidePropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlidesSlideProperties', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlidesSlideProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlidesSlideProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlidesSlideProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetSlidesSlideProperties', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlidesSlideProperties', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_slides_slide_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlidesSlideProperties', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideProperties', 'storage', requestParam.storage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlidesSlideProperties', 'storage', requestParam.storage)
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
@@ -24355,6 +24593,156 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for post_slides_document_from_pdf
+  # Create presentation document from pdf or append pdf to an existing presentation.
+  # @param name Document name.
+  # @param [Hash] opts the optional parameters
+  # @option opts [File] :pdf PDF data.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :storage Document storage.
+  # @option opts [String] :folder Document folder.
+  # @return [Document]
+  describe 'post_slides_document_from_pdf test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::PostSlidesDocumentFromPdfRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.pdf = AsposeSlidesCloud::SpecUtils.get_param_value('pdf', 'PostSlidesDocumentFromPdf', 'File')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSlidesDocumentFromPdf', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSlidesDocumentFromPdf', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.post_slides_document_from_pdf_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromPdf', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::PostSlidesDocumentFromPdfRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.pdf = AsposeSlidesCloud::SpecUtils.get_param_value('pdf', 'PostSlidesDocumentFromPdf', 'File')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'PostSlidesDocumentFromPdf', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSlidesDocumentFromPdf', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_slides_document_from_pdf_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostSlidesDocumentFromPdf', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromPdf', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromPdf', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid pdf' do
+      requestParam = AsposeSlidesCloud::PostSlidesDocumentFromPdfRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.pdf = AsposeSlidesCloud::SpecUtils.get_param_value('pdf', 'PostSlidesDocumentFromPdf', 'File')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.pdf = AsposeSlidesCloud::SpecUtils.invalidize_param_value('pdf', 'PostSlidesDocumentFromPdf', requestParam.pdf, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSlidesDocumentFromPdf', 'pdf', requestParam.pdf)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_slides_document_from_pdf_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostSlidesDocumentFromPdf', 'pdf')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromPdf', 'pdf', requestParam.pdf)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromPdf', 'pdf', requestParam.pdf)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::PostSlidesDocumentFromPdfRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.pdf = AsposeSlidesCloud::SpecUtils.get_param_value('pdf', 'PostSlidesDocumentFromPdf', 'File')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'PostSlidesDocumentFromPdf', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSlidesDocumentFromPdf', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_slides_document_from_pdf_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostSlidesDocumentFromPdf', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromPdf', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromPdf', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::PostSlidesDocumentFromPdfRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.pdf = AsposeSlidesCloud::SpecUtils.get_param_value('pdf', 'PostSlidesDocumentFromPdf', 'File')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'PostSlidesDocumentFromPdf', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSlidesDocumentFromPdf', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_slides_document_from_pdf_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostSlidesDocumentFromPdf', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromPdf', 'storage', requestParam.storage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromPdf', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::PostSlidesDocumentFromPdfRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.pdf = AsposeSlidesCloud::SpecUtils.get_param_value('pdf', 'PostSlidesDocumentFromPdf', 'File')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PostSlidesDocumentFromPdf', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'PostSlidesDocumentFromPdf', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PostSlidesDocumentFromPdf', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.post_slides_document_from_pdf_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PostSlidesDocumentFromPdf', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromPdf', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PostSlidesDocumentFromPdf', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for post_slides_document_from_source
   # Create a presentation from an existing source.
   # @param name Document name.
@@ -32936,6 +33324,156 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for put_slides_protection_properties
+  # Update presentation protection properties.
+  # @param name Document name.
+  # @param dto The view properties data.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [ProtectionProperties]
+  describe 'put_slides_protection_properties test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::PutSlidesProtectionPropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlidesProtectionProperties', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlidesProtectionProperties', 'ProtectionProperties')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesProtectionProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlidesProtectionProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlidesProtectionProperties', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesProtectionProperties', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.put_slides_protection_properties_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesProtectionProperties', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::PutSlidesProtectionPropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlidesProtectionProperties', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlidesProtectionProperties', 'ProtectionProperties')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesProtectionProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlidesProtectionProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlidesProtectionProperties', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'PutSlidesProtectionProperties', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesProtectionProperties', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slides_protection_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlidesProtectionProperties', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesProtectionProperties', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesProtectionProperties', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid dto' do
+      requestParam = AsposeSlidesCloud::PutSlidesProtectionPropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlidesProtectionProperties', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlidesProtectionProperties', 'ProtectionProperties')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesProtectionProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlidesProtectionProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlidesProtectionProperties', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'PutSlidesProtectionProperties', requestParam.dto, 'ProtectionProperties')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesProtectionProperties', 'dto', requestParam.dto)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slides_protection_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlidesProtectionProperties', 'dto')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesProtectionProperties', 'dto', requestParam.dto)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesProtectionProperties', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::PutSlidesProtectionPropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlidesProtectionProperties', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlidesProtectionProperties', 'ProtectionProperties')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesProtectionProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlidesProtectionProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlidesProtectionProperties', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'PutSlidesProtectionProperties', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesProtectionProperties', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slides_protection_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlidesProtectionProperties', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesProtectionProperties', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesProtectionProperties', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::PutSlidesProtectionPropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlidesProtectionProperties', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlidesProtectionProperties', 'ProtectionProperties')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesProtectionProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlidesProtectionProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlidesProtectionProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'PutSlidesProtectionProperties', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesProtectionProperties', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slides_protection_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlidesProtectionProperties', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesProtectionProperties', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesProtectionProperties', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::PutSlidesProtectionPropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlidesProtectionProperties', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlidesProtectionProperties', 'ProtectionProperties')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesProtectionProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlidesProtectionProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlidesProtectionProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'PutSlidesProtectionProperties', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesProtectionProperties', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slides_protection_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlidesProtectionProperties', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesProtectionProperties', 'storage', requestParam.storage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesProtectionProperties', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for put_slides_save_as
   # Save a presentation to a specified format.
   # @param name Document name.
@@ -33916,6 +34454,156 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideBackgroundColor', 'storage', requestParam.storage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for put_slides_slide_properties
+  # Update presentation slide properties.
+  # @param name Document name.
+  # @param dto The view properties data.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [SlideProperties]
+  describe 'put_slides_slide_properties test' do
+    it 'should work' do
+      requestParam = AsposeSlidesCloud::PutSlidesSlidePropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlidesSlideProperties', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlidesSlideProperties', 'SlideProperties')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesSlideProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlidesSlideProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlidesSlideProperties', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesSlideProperties', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.put_slides_slide_properties_with_http_info(requestParam)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideProperties', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      requestParam = AsposeSlidesCloud::PutSlidesSlidePropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlidesSlideProperties', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlidesSlideProperties', 'SlideProperties')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesSlideProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlidesSlideProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlidesSlideProperties', 'String')
+      requestParam.name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'PutSlidesSlideProperties', requestParam.name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesSlideProperties', 'name', requestParam.name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slides_slide_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlidesSlideProperties', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideProperties', 'name', requestParam.name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideProperties', 'name', requestParam.name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid dto' do
+      requestParam = AsposeSlidesCloud::PutSlidesSlidePropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlidesSlideProperties', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlidesSlideProperties', 'SlideProperties')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesSlideProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlidesSlideProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlidesSlideProperties', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'PutSlidesSlideProperties', requestParam.dto, 'SlideProperties')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesSlideProperties', 'dto', requestParam.dto)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slides_slide_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlidesSlideProperties', 'dto')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideProperties', 'dto', requestParam.dto)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideProperties', 'dto', requestParam.dto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      requestParam = AsposeSlidesCloud::PutSlidesSlidePropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlidesSlideProperties', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlidesSlideProperties', 'SlideProperties')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesSlideProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlidesSlideProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlidesSlideProperties', 'String')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'PutSlidesSlideProperties', requestParam.password, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesSlideProperties', 'password', requestParam.password)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slides_slide_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlidesSlideProperties', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideProperties', 'password', requestParam.password)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideProperties', 'password', requestParam.password)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      requestParam = AsposeSlidesCloud::PutSlidesSlidePropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlidesSlideProperties', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlidesSlideProperties', 'SlideProperties')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesSlideProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlidesSlideProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlidesSlideProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'PutSlidesSlideProperties', requestParam.folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesSlideProperties', 'folder', requestParam.folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slides_slide_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlidesSlideProperties', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideProperties', 'folder', requestParam.folder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideProperties', 'folder', requestParam.folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      requestParam = AsposeSlidesCloud::PutSlidesSlidePropertiesRequest.new
+      requestParam.name = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'PutSlidesSlideProperties', 'String')
+      requestParam.dto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'PutSlidesSlideProperties', 'SlideProperties')
+      requestParam.password = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'PutSlidesSlideProperties', 'String')
+      requestParam.folder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'PutSlidesSlideProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'PutSlidesSlideProperties', 'String')
+      requestParam.storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'PutSlidesSlideProperties', requestParam.storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('PutSlidesSlideProperties', 'storage', requestParam.storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.put_slides_slide_properties_with_http_info(requestParam)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('PutSlidesSlideProperties', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideProperties', 'storage', requestParam.storage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('PutSlidesSlideProperties', 'storage', requestParam.storage)
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end

@@ -224,7 +224,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -234,6 +233,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -296,7 +296,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -306,6 +305,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -363,7 +363,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -373,6 +372,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -512,7 +512,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -522,6 +521,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -579,7 +579,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -589,6 +588,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -642,7 +642,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'paragraphs'] = request.paragraphs unless request.paragraphs.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -652,6 +651,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -714,7 +714,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -724,6 +723,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -782,7 +782,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'portions'] = request.portions unless request.portions.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -792,6 +791,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -844,7 +844,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -854,6 +853,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -902,7 +902,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'shapes'] = request.shapes unless request.shapes.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -912,6 +911,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -969,7 +969,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -979,6 +978,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -1032,7 +1032,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'paragraphs'] = request.paragraphs unless request.paragraphs.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -1042,6 +1041,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -1104,7 +1104,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -1114,6 +1113,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -1172,7 +1172,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'portions'] = request.portions unless request.portions.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -1182,6 +1181,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -1230,7 +1230,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'withSlides'] = request.with_slides unless request.with_slides.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -1240,6 +1239,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -1284,7 +1284,6 @@ module AsposeSlidesCloud
       query_params = {}
       query_params[:'sections'] = request.sections unless request.sections.nil?
       query_params[:'withSlides'] = request.with_slides unless request.with_slides.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -1294,6 +1293,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -1341,7 +1341,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -1351,6 +1350,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -1403,7 +1403,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -1413,6 +1412,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -1465,7 +1465,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -1475,6 +1474,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -1532,7 +1532,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -1542,6 +1541,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -1589,7 +1589,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -1599,6 +1598,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -1646,7 +1646,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -1656,6 +1655,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -1703,7 +1703,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -1713,6 +1712,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -1765,7 +1765,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -1775,6 +1774,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -1823,7 +1823,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'shapes'] = request.shapes unless request.shapes.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -1833,6 +1832,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -1886,7 +1886,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -1896,6 +1895,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -1945,7 +1945,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'shapes'] = request.shapes unless request.shapes.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -1955,6 +1954,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -1998,7 +1998,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'slides'] = request.slides unless request.slides.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -2008,6 +2007,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -2050,7 +2050,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -2060,6 +2059,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -2107,7 +2107,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -2117,6 +2116,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -2164,7 +2164,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -2174,6 +2173,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -2232,7 +2232,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -2242,6 +2241,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -2296,7 +2296,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'paragraphs'] = request.paragraphs unless request.paragraphs.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -2306,6 +2305,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -2369,7 +2369,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -2379,6 +2378,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -2438,7 +2438,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'portions'] = request.portions unless request.portions.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -2448,6 +2447,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -2679,7 +2679,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -2689,6 +2688,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -2731,7 +2731,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -2741,6 +2740,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -2788,7 +2788,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -2798,6 +2797,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -2840,7 +2840,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -2850,6 +2849,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -2897,7 +2897,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -2907,6 +2906,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -2954,7 +2954,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -2964,6 +2963,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -3011,7 +3011,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
 
@@ -3021,6 +3020,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -3073,7 +3073,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -3083,6 +3082,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -3140,7 +3140,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -3150,6 +3149,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -3202,7 +3202,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -3212,6 +3211,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -3274,7 +3274,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -3284,6 +3283,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -3341,7 +3341,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -3351,6 +3350,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -3398,7 +3398,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -3408,6 +3407,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -3466,7 +3466,6 @@ module AsposeSlidesCloud
       query_params = {}
       query_params[:'width'] = request.width unless request.width.nil?
       query_params[:'height'] = request.height unless request.height.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'fontsFolder'] = request.fonts_folder unless request.fonts_folder.nil?
@@ -3477,6 +3476,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -3539,7 +3539,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -3549,6 +3548,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -3606,7 +3606,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -3616,6 +3615,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -3658,7 +3658,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -3668,6 +3667,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -3716,7 +3716,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'shapeIndex'] = request.shape_index unless request.shape_index.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -3726,6 +3725,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -3773,7 +3773,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -3783,6 +3782,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -3835,7 +3835,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -3845,6 +3844,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -3902,7 +3902,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -3912,6 +3911,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -3964,7 +3964,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -3974,6 +3973,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -4021,7 +4021,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -4031,6 +4030,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -4084,7 +4084,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -4094,6 +4093,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -4152,7 +4152,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -4162,6 +4161,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -4215,7 +4215,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -4225,6 +4224,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -4273,7 +4273,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -4283,6 +4282,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -4367,7 +4367,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
 
@@ -4377,6 +4376,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -4419,7 +4419,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -4429,6 +4428,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -4476,7 +4476,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -4486,6 +4485,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -4533,7 +4533,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -4543,6 +4542,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -4599,7 +4599,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -4609,6 +4608,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -4651,7 +4651,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -4661,6 +4660,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -4713,7 +4713,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -4723,6 +4722,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -4770,7 +4770,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -4780,6 +4779,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -4823,7 +4823,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'withEmpty'] = request.with_empty unless request.with_empty.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -4833,6 +4832,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -4850,6 +4850,58 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'TextItems')
+      return data, status_code, headers
+    end
+    # Read presentation protection properties.
+    # @param request operation request
+    def get_slides_protection_properties(request)
+      data, _status_code, _headers = get_slides_protection_properties_with_http_info(request)
+      data
+    end
+
+    # Read presentation protection properties.
+    # @param request operation request
+    def get_slides_protection_properties_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_slides_protection_properties ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_protection_properties"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/protectionProperties'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'ProtectionProperties')
       return data, status_code, headers
     end
     # Read presentation slide info.
@@ -4880,7 +4932,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -4890,6 +4941,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -4937,7 +4989,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -4947,6 +4998,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -4994,7 +5046,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -5004,6 +5055,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -5051,7 +5103,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -5061,6 +5112,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -5078,6 +5130,58 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'Images')
+      return data, status_code, headers
+    end
+    # Read presentation slide properties.
+    # @param request operation request
+    def get_slides_slide_properties(request)
+      data, _status_code, _headers = get_slides_slide_properties_with_http_info(request)
+      data
+    end
+
+    # Read presentation slide properties.
+    # @param request operation request
+    def get_slides_slide_properties_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_slides_slide_properties ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.get_slides_slide_properties"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slideProperties'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'SlideProperties')
       return data, status_code, headers
     end
     # Extract slide text items.
@@ -5109,7 +5213,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'withEmpty'] = request.with_empty unless request.with_empty.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -5119,6 +5222,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -5161,7 +5265,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -5171,6 +5274,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -5218,7 +5322,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -5228,6 +5331,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -5275,7 +5379,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -5285,6 +5388,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -5332,7 +5436,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -5342,6 +5445,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -5389,7 +5493,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -5399,6 +5502,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -5441,7 +5545,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -5451,6 +5554,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -5514,7 +5618,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -5524,6 +5627,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -5582,7 +5686,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -5592,6 +5695,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -5806,7 +5910,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'position'] = request.position unless request.position.nil?
@@ -5817,6 +5920,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -5878,7 +5982,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'position'] = request.position unless request.position.nil?
@@ -5889,6 +5992,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -5936,7 +6040,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'shapeToClone'] = request.shape_to_clone unless request.shape_to_clone.nil?
@@ -5948,6 +6051,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -5996,7 +6100,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'shapeToClone'] = request.shape_to_clone unless request.shape_to_clone.nil?
@@ -6008,6 +6111,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -6065,7 +6169,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'position'] = request.position unless request.position.nil?
@@ -6076,6 +6179,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -6138,7 +6242,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'position'] = request.position unless request.position.nil?
@@ -6149,6 +6252,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -6200,7 +6304,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -6210,6 +6313,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -6266,7 +6370,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -6276,6 +6379,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.category)
@@ -6337,7 +6441,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -6347,6 +6450,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.data_point)
@@ -6403,7 +6507,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -6413,6 +6516,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.series)
@@ -6465,9 +6569,7 @@ module AsposeSlidesCloud
       query_params = {}
       query_params[:'cloneFrom'] = request.clone_from unless request.clone_from.nil?
       query_params[:'cloneFromPosition'] = request.clone_from_position unless request.clone_from_position.nil?
-      query_params[:'cloneFromPassword'] = request.clone_from_password unless request.clone_from_password.nil?
       query_params[:'cloneFromStorage'] = request.clone_from_storage unless request.clone_from_storage.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -6477,6 +6579,8 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'cloneFromPassword'] = request.clone_from_password unless request.clone_from_password.nil?
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -6529,10 +6633,8 @@ module AsposeSlidesCloud
       query_params = {}
       query_params[:'cloneFrom'] = request.clone_from unless request.clone_from.nil?
       query_params[:'cloneFromPosition'] = request.clone_from_position unless request.clone_from_position.nil?
-      query_params[:'cloneFromPassword'] = request.clone_from_password unless request.clone_from_password.nil?
       query_params[:'cloneFromStorage'] = request.clone_from_storage unless request.clone_from_storage.nil?
       query_params[:'applyToAll'] = request.apply_to_all unless request.apply_to_all.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -6542,6 +6644,8 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'cloneFromPassword'] = request.clone_from_password unless request.clone_from_password.nil?
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -6588,7 +6692,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
 
       # header parameters
       header_params = {}
@@ -6596,6 +6699,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/octet-stream', 'multipart/form-data'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.document)
@@ -6642,7 +6746,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
 
       # header parameters
       header_params = {}
@@ -6650,6 +6753,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/octet-stream'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.document)
@@ -6707,7 +6811,6 @@ module AsposeSlidesCloud
       query_params = {}
       query_params[:'width'] = request.width unless request.width.nil?
       query_params[:'height'] = request.height unless request.height.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'fontsFolder'] = request.fonts_folder unless request.fonts_folder.nil?
 
       # header parameters
@@ -6716,6 +6819,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/octet-stream', 'multipart/form-data'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.document)
@@ -6772,7 +6876,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'position'] = request.position unless request.position.nil?
@@ -6783,6 +6886,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -6844,7 +6948,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'position'] = request.position unless request.position.nil?
@@ -6855,6 +6958,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -6906,7 +7010,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'shapeToClone'] = request.shape_to_clone unless request.shape_to_clone.nil?
@@ -6918,6 +7021,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -6982,7 +7086,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'scaleX'] = request.scale_x unless request.scale_x.nil?
@@ -6996,6 +7099,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.options)
@@ -7042,7 +7146,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
 
@@ -7052,6 +7155,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.request)
@@ -7104,7 +7208,6 @@ module AsposeSlidesCloud
       query_params = {}
       query_params[:'sectionName'] = request.section_name unless request.section_name.nil?
       query_params[:'slideIndex'] = request.slide_index unless request.slide_index.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -7114,6 +7217,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -7166,7 +7270,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'newPosition'] = request.new_position unless request.new_position.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -7176,6 +7279,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -7240,7 +7344,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'scaleX'] = request.scale_x unless request.scale_x.nil?
@@ -7254,6 +7357,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.options)
@@ -7305,7 +7409,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -7315,6 +7418,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.effect)
@@ -7366,7 +7470,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -7376,6 +7479,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.sequence)
@@ -7432,7 +7536,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -7442,6 +7545,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.effect)
@@ -7500,7 +7604,6 @@ module AsposeSlidesCloud
       query_params = {}
       query_params[:'width'] = request.width unless request.width.nil?
       query_params[:'height'] = request.height unless request.height.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'fontsFolder'] = request.fonts_folder unless request.fonts_folder.nil?
@@ -7511,6 +7614,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.options)
@@ -7554,7 +7658,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'position'] = request.position unless request.position.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'layoutAlias'] = request.layout_alias unless request.layout_alias.nil?
@@ -7565,6 +7668,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -7615,7 +7719,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'fontsFolder'] = request.fonts_folder unless request.fonts_folder.nil?
 
       # header parameters
@@ -7624,6 +7727,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/octet-stream', 'multipart/form-data'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.document)
@@ -7673,9 +7777,7 @@ module AsposeSlidesCloud
       query_params[:'slideToCopy'] = request.slide_to_copy unless request.slide_to_copy.nil?
       query_params[:'position'] = request.position unless request.position.nil?
       query_params[:'source'] = request.source unless request.source.nil?
-      query_params[:'sourcePassword'] = request.source_password unless request.source_password.nil?
       query_params[:'sourceStorage'] = request.source_storage unless request.source_storage.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -7685,6 +7787,8 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'sourcePassword'] = request.source_password unless request.source_password.nil?
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -7727,8 +7831,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'inputPassword'] = request.input_password unless request.input_password.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
 
@@ -7738,6 +7840,8 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/octet-stream', 'multipart/form-data'])
+      header_params[:'inputPassword'] = request.input_password unless request.input_password.nil?
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.data)
@@ -7780,7 +7884,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
 
@@ -7790,9 +7893,62 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.html)
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Document')
+      return data, status_code, headers
+    end
+    # Create presentation document from pdf or append pdf to an existing presentation.
+    # @param request operation request
+    def post_slides_document_from_pdf(request)
+      data, _status_code, _headers = post_slides_document_from_pdf_with_http_info(request)
+      data
+    end
+
+    # Create presentation document from pdf or append pdf to an existing presentation.
+    # @param request operation request
+    def post_slides_document_from_pdf_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.post_slides_document_from_pdf ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.post_slides_document_from_pdf"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/fromPdf'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/octet-stream'])
+      header_params[:'password'] = request.password unless request.password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.pdf)
 
       # form parameters
 
@@ -7833,9 +7989,7 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'sourcePath'] = request.source_path unless request.source_path.nil?
-      query_params[:'sourcePassword'] = request.source_password unless request.source_password.nil?
       query_params[:'sourceStorage'] = request.source_storage unless request.source_storage.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
 
@@ -7845,6 +7999,8 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'sourcePassword'] = request.source_password unless request.source_password.nil?
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -7892,10 +8048,8 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'templatePath'] = request.template_path unless request.template_path.nil?
-      query_params[:'templatePassword'] = request.template_password unless request.template_password.nil?
       query_params[:'templateStorage'] = request.template_storage unless request.template_storage.nil?
       query_params[:'isImageDataEmbedded'] = request.is_image_data_embedded unless request.is_image_data_embedded.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
 
@@ -7905,6 +8059,8 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'templatePassword'] = request.template_password unless request.template_password.nil?
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.data)
@@ -8007,7 +8163,6 @@ module AsposeSlidesCloud
       query_params[:'oldValue'] = request.old_value unless request.old_value.nil?
       query_params[:'newValue'] = request.new_value unless request.new_value.nil?
       query_params[:'ignoreCase'] = request.ignore_case unless request.ignore_case.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -8017,6 +8172,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -8069,7 +8225,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'newPosition'] = request.new_position unless request.new_position.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -8079,6 +8234,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -8123,7 +8279,6 @@ module AsposeSlidesCloud
       query_params = {}
       query_params[:'oldPositions'] = request.old_positions unless request.old_positions.nil?
       query_params[:'newPositions'] = request.new_positions unless request.new_positions.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -8133,6 +8288,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -8184,7 +8340,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'fontsFolder'] = request.fonts_folder unless request.fonts_folder.nil?
@@ -8195,6 +8350,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.options)
@@ -8241,7 +8397,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -8251,6 +8406,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.properties)
@@ -8309,7 +8465,6 @@ module AsposeSlidesCloud
       query_params[:'oldValue'] = request.old_value unless request.old_value.nil?
       query_params[:'newValue'] = request.new_value unless request.new_value.nil?
       query_params[:'ignoreCase'] = request.ignore_case unless request.ignore_case.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -8319,6 +8474,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -8370,7 +8526,6 @@ module AsposeSlidesCloud
       query_params[:'to'] = request.to unless request.to.nil?
       query_params[:'from'] = request.from unless request.from.nil?
       query_params[:'destFolder'] = request.dest_folder unless request.dest_folder.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'fontsFolder'] = request.fonts_folder unless request.fonts_folder.nil?
@@ -8381,6 +8536,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.options)
@@ -8446,7 +8602,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'scaleX'] = request.scale_x unless request.scale_x.nil?
@@ -8460,6 +8615,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.options)
@@ -8521,7 +8677,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -8531,6 +8686,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.category)
@@ -8597,7 +8753,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -8607,6 +8762,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.data_point)
@@ -8668,7 +8824,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -8678,6 +8833,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.series)
@@ -8729,7 +8885,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -8739,6 +8894,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.slide_dto)
@@ -8790,7 +8946,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
 
@@ -8800,6 +8955,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -8869,7 +9025,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'outPath'] = request.out_path unless request.out_path.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'scaleX'] = request.scale_x unless request.scale_x.nil?
@@ -8883,6 +9038,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.options)
@@ -8928,7 +9084,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
 
@@ -8938,6 +9093,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.request)
@@ -8990,7 +9146,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'sectionName'] = request.section_name unless request.section_name.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -9000,6 +9155,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -9046,7 +9202,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -9056,6 +9211,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.sections)
@@ -9122,7 +9278,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -9132,6 +9287,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -9193,7 +9349,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -9203,6 +9358,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -9270,7 +9426,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -9280,6 +9435,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -9342,7 +9498,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -9352,6 +9507,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -9421,7 +9577,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'outPath'] = request.out_path unless request.out_path.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'scaleX'] = request.scale_x unless request.scale_x.nil?
@@ -9435,6 +9590,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.options)
@@ -9485,7 +9641,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -9495,6 +9650,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.animation)
@@ -9551,7 +9707,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -9561,6 +9716,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.effect)
@@ -9622,7 +9778,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -9632,6 +9787,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.effect)
@@ -9683,7 +9839,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -9693,6 +9848,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -9756,7 +9912,6 @@ module AsposeSlidesCloud
       query_params[:'outPath'] = request.out_path unless request.out_path.nil?
       query_params[:'width'] = request.width unless request.width.nil?
       query_params[:'height'] = request.height unless request.height.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'fontsFolder'] = request.fonts_folder unless request.fonts_folder.nil?
@@ -9767,6 +9922,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.options)
@@ -9822,7 +9978,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -9832,6 +9987,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -9889,7 +10045,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -9899,6 +10054,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -9954,7 +10110,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'outPath'] = request.out_path unless request.out_path.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'fontsFolder'] = request.fonts_folder unless request.fonts_folder.nil?
 
       # header parameters
@@ -9963,6 +10118,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/octet-stream', 'multipart/form-data'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.document)
@@ -10004,7 +10160,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
 
@@ -10014,6 +10169,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.html)
@@ -10060,7 +10216,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
 
@@ -10070,6 +10225,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -10087,6 +10243,62 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'Document')
+      return data, status_code, headers
+    end
+    # Update presentation protection properties.
+    # @param request operation request
+    def put_slides_protection_properties(request)
+      data, _status_code, _headers = put_slides_protection_properties_with_http_info(request)
+      data
+    end
+
+    # Update presentation protection properties.
+    # @param request operation request
+    def put_slides_protection_properties_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.put_slides_protection_properties ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_slides_protection_properties"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.put_slides_protection_properties"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/protectionProperties'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.dto)
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'ProtectionProperties')
       return data, status_code, headers
     end
     # Save a presentation to a specified format.
@@ -10126,7 +10338,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'outPath'] = request.out_path unless request.out_path.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'fontsFolder'] = request.fonts_folder unless request.fonts_folder.nil?
@@ -10137,6 +10348,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.options)
@@ -10187,7 +10399,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -10197,6 +10408,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.property)
@@ -10248,7 +10460,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -10258,6 +10469,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.slide_dto)
@@ -10310,7 +10522,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'folder'] = request.folder unless request.folder.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
       # header parameters
@@ -10319,6 +10530,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.background)
@@ -10372,7 +10584,6 @@ module AsposeSlidesCloud
       query_params = {}
       query_params[:'color'] = request.color unless request.color.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
       # header parameters
@@ -10381,6 +10592,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -10398,6 +10610,62 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'SlideBackground')
+      return data, status_code, headers
+    end
+    # Update presentation slide properties.
+    # @param request operation request
+    def put_slides_slide_properties(request)
+      data, _status_code, _headers = put_slides_slide_properties_with_http_info(request)
+      data
+    end
+
+    # Update presentation slide properties.
+    # @param request operation request
+    def put_slides_slide_properties_with_http_info(request)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.put_slides_slide_properties ...'
+      end
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && request.name.nil?
+        fail ArgumentError, "Missing the required parameter 'request.name' when calling SlidesApi.put_slides_slide_properties"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && request.dto.nil?
+        fail ArgumentError, "Missing the required parameter 'request.dto' when calling SlidesApi.put_slides_slide_properties"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slideProperties'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', request.name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = request.folder unless request.folder.nil?
+      query_params[:'storage'] = request.storage unless request.storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(request.dto)
+
+      # form parameters
+
+      post_files = nil
+
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'SlideProperties')
       return data, status_code, headers
     end
     # Set slide size for a presentation.
@@ -10429,7 +10697,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'width'] = request.width unless request.width.nil?
@@ -10443,6 +10710,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = nil
@@ -10489,7 +10757,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -10499,6 +10766,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -10569,7 +10837,6 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'outPath'] = request.out_path unless request.out_path.nil?
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
       query_params[:'scaleX'] = request.scale_x unless request.scale_x.nil?
@@ -10583,6 +10850,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.options)
@@ -10633,7 +10901,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -10643,6 +10910,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -10699,7 +10967,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -10709,6 +10976,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -10770,7 +11038,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -10780,6 +11047,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)
@@ -10846,7 +11114,6 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'password'] = request.password unless request.password.nil?
       query_params[:'folder'] = request.folder unless request.folder.nil?
       query_params[:'storage'] = request.storage unless request.storage.nil?
 
@@ -10856,6 +11123,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
       post_body = @api_client.object_to_http_body(request.dto)

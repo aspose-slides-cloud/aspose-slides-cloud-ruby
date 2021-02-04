@@ -80,7 +80,11 @@ module AsposeSlidesCloud
 
     def self.get_param_value(name, method, type)
       if type == 'File'
-        return File.binread(File.join(TEST_DATA_PATH, "test.pptx"))
+        fileName = "test.pptx"
+        if method.casecmp("PostSlidesDocumentFromPdf") == 0
+          fileName = "test.pdf"
+        end
+        return File.binread(File.join(TEST_DATA_PATH, fileName))
       end
       value = "test" + name
       SpecUtils.test_rules["Values"].each do |rule|
