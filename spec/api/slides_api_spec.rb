@@ -25259,7 +25259,7 @@ describe 'SlidesApi' do
   # Performs slides pipeline.
   # @param pipeline A Pipeline object.
   # @param [Hash] opts the optional parameters
-  # @option opts [File[]] :files files to upload with the pipeline
+  # @option opts [File[]] :files Files to upload with the pipeline
   # @return [File]
   describe 'post_slides_pipeline test' do
     it 'should work' do

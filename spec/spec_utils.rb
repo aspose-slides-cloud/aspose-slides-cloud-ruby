@@ -134,8 +134,8 @@ module AsposeSlidesCloud
     def self.good_rule?(rule, name, method)
       (not rule.key?("Language") or rule["Language"].casecmp("Ruby") == 0) \
         and (not rule.key?("Invalid") or ((name != nil) == rule["Invalid"])) \
-        and (not rule.key?("Parameter") or rule["Parameter"].casecmp(name) == 0) \
-        and (not rule.key?("Method") or rule["Method"].casecmp(method) == 0)
+        and (not rule.key?("Parameter") or (name != nil and rule["Parameter"].casecmp(name) == 0)) \
+        and (not rule.key?("Method") or (method != nil and rule["Method"].casecmp(method) == 0))
     end
 
     def self.untemplatize(template, value)
@@ -143,7 +143,7 @@ module AsposeSlidesCloud
         value
       else
         result = template
-        if template.is_a? String and template.match?("%v")
+        if template.is_a? String and template.match("%v")
           result = "" + template
           if value != nil
             result["%v"] = value.to_s

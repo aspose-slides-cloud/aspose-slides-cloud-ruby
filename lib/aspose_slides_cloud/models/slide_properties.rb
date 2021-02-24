@@ -28,7 +28,7 @@ module AsposeSlidesCloud
     # First slide number.
     attr_accessor :first_slide_number
 
-    # Last used view mode.
+    # Slide orientation.
     attr_accessor :orientation
 
     # Scale type.

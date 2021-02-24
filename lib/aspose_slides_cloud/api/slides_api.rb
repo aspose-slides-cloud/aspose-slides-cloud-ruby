@@ -73,9 +73,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -128,9 +126,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -173,9 +169,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -239,9 +233,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -311,9 +303,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -378,9 +368,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -425,9 +413,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -471,9 +457,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -527,9 +511,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -594,9 +576,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -657,9 +637,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -729,9 +707,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -797,9 +773,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -859,9 +833,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -917,9 +889,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -984,9 +954,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1047,9 +1015,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1119,9 +1085,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1187,9 +1151,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1245,9 +1207,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1299,9 +1259,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1356,9 +1314,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1418,9 +1374,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1480,9 +1434,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1547,9 +1499,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1604,9 +1554,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1661,9 +1609,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1718,9 +1664,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1780,9 +1724,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1838,9 +1780,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1901,9 +1841,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1960,9 +1898,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2013,9 +1949,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2065,9 +1999,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2122,9 +2054,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2179,9 +2109,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2247,9 +2175,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2311,9 +2237,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2384,9 +2308,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2453,9 +2375,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2500,9 +2420,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -2545,9 +2463,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -2591,9 +2507,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -2637,9 +2551,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -2694,9 +2606,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -2746,9 +2656,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -2803,9 +2711,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -2855,9 +2761,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -2912,9 +2816,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -2969,9 +2871,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3026,9 +2926,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3088,9 +2986,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3155,9 +3051,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3217,9 +3111,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3289,9 +3181,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3356,9 +3246,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3413,9 +3301,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3482,9 +3368,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3554,9 +3438,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3621,9 +3503,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3673,9 +3553,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3731,9 +3609,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3788,9 +3664,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3850,9 +3724,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3917,9 +3789,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3979,9 +3849,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4036,9 +3904,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4099,9 +3965,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4167,9 +4031,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4230,9 +4092,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4288,9 +4148,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4330,9 +4188,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4382,9 +4238,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4434,9 +4288,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4491,9 +4343,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4548,9 +4398,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4614,9 +4462,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4666,9 +4512,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4728,9 +4572,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4785,9 +4627,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4838,9 +4678,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4890,9 +4728,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4947,9 +4783,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5004,9 +4838,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5061,9 +4893,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5118,9 +4948,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5170,9 +4998,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5228,9 +5054,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5280,9 +5104,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5337,9 +5159,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5394,9 +5214,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5451,9 +5269,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5508,9 +5324,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5560,9 +5374,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5633,9 +5445,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5701,9 +5511,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5758,9 +5566,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -5813,9 +5619,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -5859,9 +5663,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5926,9 +5728,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -5998,9 +5798,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -6057,9 +5855,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -6117,9 +5913,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -6185,9 +5979,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -6258,9 +6050,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -6319,9 +6109,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -6385,9 +6173,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.category)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -6456,9 +6242,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.data_point)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -6522,9 +6306,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.series)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -6586,9 +6368,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -6651,9 +6431,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -6698,16 +6476,15 @@ module AsposeSlidesCloud
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/octet-stream', 'multipart/form-data'])
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
       header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(request.document)
+      post_body = nil
 
       # form parameters
-
       post_files = nil
-
+      post_body = request.document
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -6752,16 +6529,15 @@ module AsposeSlidesCloud
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/octet-stream'])
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(request.document)
+      post_body = nil
 
       # form parameters
-
       post_files = nil
-
+      post_body = request.document
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -6818,16 +6594,15 @@ module AsposeSlidesCloud
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
       # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/octet-stream', 'multipart/form-data'])
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
       header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(request.document)
+      post_body = nil
 
       # form parameters
-
       post_files = nil
-
+      post_body = request.document
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -6892,9 +6667,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -6964,9 +6737,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -7027,9 +6798,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -7105,9 +6874,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.options)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -7161,9 +6928,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.request)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -7223,9 +6988,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -7285,9 +7048,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -7363,9 +7124,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.options)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -7424,9 +7183,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.effect)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -7485,9 +7242,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.sequence)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -7551,9 +7306,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.effect)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -7620,9 +7373,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.options)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -7674,9 +7425,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -7726,16 +7475,15 @@ module AsposeSlidesCloud
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
       # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/octet-stream', 'multipart/form-data'])
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
       header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(request.document)
+      post_body = nil
 
       # form parameters
-
       post_files = nil
-
+      post_body = request.document
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -7794,9 +7542,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -7839,17 +7585,16 @@ module AsposeSlidesCloud
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/octet-stream', 'multipart/form-data'])
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
       header_params[:'inputPassword'] = request.input_password unless request.input_password.nil?
       header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(request.data)
+      post_body = nil
 
       # form parameters
-
       post_files = nil
-
+      post_body = request.data
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -7899,9 +7644,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.html)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -7944,16 +7687,15 @@ module AsposeSlidesCloud
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/octet-stream'])
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(request.pdf)
+      post_body = nil
 
       # form parameters
-
       post_files = nil
-
+      post_body = request.pdf
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8006,9 +7748,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8066,9 +7806,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.data)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8114,10 +7852,8 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.pipeline)
 
       # form parameters
-
       post_files = nil
       post_files = request.files
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8178,9 +7914,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8240,9 +7974,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8294,9 +8026,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8356,9 +8086,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.options)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8412,9 +8140,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.properties)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8480,9 +8206,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8542,9 +8266,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.options)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8621,9 +8343,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.options)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8692,9 +8412,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.category)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -8768,9 +8486,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.data_point)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -8839,9 +8555,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.series)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -8900,9 +8614,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.slide_dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -8961,9 +8673,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -9044,9 +8754,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.options)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -9099,9 +8807,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.request)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -9161,9 +8867,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -9217,9 +8921,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.sections)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -9293,9 +8995,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -9364,9 +9064,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -9441,9 +9139,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -9513,9 +9209,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -9596,9 +9290,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.options)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -9656,9 +9348,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.animation)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -9722,9 +9412,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.effect)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -9793,9 +9481,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.effect)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -9854,9 +9540,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -9928,9 +9612,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.options)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -9993,9 +9675,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -10060,9 +9740,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -10117,16 +9795,15 @@ module AsposeSlidesCloud
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/octet-stream', 'multipart/form-data'])
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
       header_params[:'password'] = request.password unless request.password.nil?
 
       # http body (model)
-      post_body = @api_client.object_to_http_body(request.document)
+      post_body = nil
 
       # form parameters
-
       post_files = nil
-
+      post_body = request.document
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -10175,9 +9852,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.html)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -10231,9 +9906,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -10287,9 +9960,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -10354,9 +10025,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.options)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -10414,9 +10083,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.property)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -10475,9 +10142,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.slide_dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -10536,9 +10201,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.background)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -10598,9 +10261,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -10654,9 +10315,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -10716,9 +10375,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -10772,9 +10429,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -10856,9 +10511,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.options)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -10916,9 +10569,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -10982,9 +10633,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -11053,9 +10702,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -11129,9 +10776,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request.dto)
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -11178,9 +10823,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-
       post_files = nil
-
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -11228,10 +10871,8 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_body = request.file
-
       post_files = nil
-
+      post_body = request.file
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,

@@ -2987,7 +2987,7 @@ module AsposeSlidesCloud
     # @param pipeline A Pipeline object.
     attr_accessor :pipeline
 
-    # @param files files to upload with the pipeline
+    # @param files Files to upload with the pipeline
     attr_accessor :files
   end
 

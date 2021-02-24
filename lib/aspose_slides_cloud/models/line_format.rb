@@ -40,6 +40,9 @@ module AsposeSlidesCloud
     # Style.
     attr_accessor :style
 
+    # Sketch type.
+    attr_accessor :sketch_type
+
     # Begin arrowhead.
     attr_accessor :begin_arrow_head
 
@@ -88,6 +91,7 @@ module AsposeSlidesCloud
         :'dash_style' => :'DashStyle',
         :'join_style' => :'JoinStyle',
         :'style' => :'Style',
+        :'sketch_type' => :'SketchType',
         :'begin_arrow_head' => :'BeginArrowHead',
         :'end_arrow_head' => :'EndArrowHead',
         :'custom_dash_pattern' => :'CustomDashPattern',
@@ -105,6 +109,7 @@ module AsposeSlidesCloud
         :'dash_style' => :'String',
         :'join_style' => :'String',
         :'style' => :'String',
+        :'sketch_type' => :'String',
         :'begin_arrow_head' => :'ArrowHeadProperties',
         :'end_arrow_head' => :'ArrowHeadProperties',
         :'custom_dash_pattern' => :'CustomDashPattern',
@@ -140,6 +145,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'Style')
         self.style = attributes[:'Style']
+      end
+
+      if attributes.has_key?(:'SketchType')
+        self.sketch_type = attributes[:'SketchType']
       end
 
       if attributes.has_key?(:'BeginArrowHead')
@@ -187,6 +196,8 @@ module AsposeSlidesCloud
       return false unless join_style_validator.valid?(@join_style)
       style_validator = EnumAttributeValidator.new('String', ['Single', 'ThinThin', 'ThinThick', 'ThickThin', 'ThickBetweenThin', 'NotDefined'])
       return false unless style_validator.valid?(@style)
+      sketch_type_validator = EnumAttributeValidator.new('String', ['None', 'Curved', 'Freehand', 'Scribble', 'NotDefined'])
+      return false unless sketch_type_validator.valid?(@sketch_type)
       true
     end
 
@@ -240,6 +251,16 @@ module AsposeSlidesCloud
       @style = style
     end
 
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] sketch_type Object to be assigned
+    def sketch_type=(sketch_type)
+      validator = EnumAttributeValidator.new('String', ['None', 'Curved', 'Freehand', 'Scribble', 'NotDefined'])
+      unless validator.valid?(sketch_type)
+        fail ArgumentError, 'invalid value for "sketch_type", must be one of #{validator.allowable_values}.'
+      end
+      @sketch_type = sketch_type
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -250,6 +271,7 @@ module AsposeSlidesCloud
           dash_style == o.dash_style &&
           join_style == o.join_style &&
           style == o.style &&
+          sketch_type == o.sketch_type &&
           begin_arrow_head == o.begin_arrow_head &&
           end_arrow_head == o.end_arrow_head &&
           custom_dash_pattern == o.custom_dash_pattern &&
@@ -267,7 +289,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [alignment, cap_style, dash_style, join_style, style, begin_arrow_head, end_arrow_head, custom_dash_pattern, fill_format, miter_limit, width].hash
+      [alignment, cap_style, dash_style, join_style, style, sketch_type, begin_arrow_head, end_arrow_head, custom_dash_pattern, fill_format, miter_limit, width].hash
     end
 
     # Builds the object from hash
