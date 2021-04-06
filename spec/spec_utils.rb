@@ -24,11 +24,9 @@ module AsposeSlidesCloud
   class SpecUtils
     def self.initialize(method, name, value)
       if !@@is_initialized
-        download_request = AsposeSlidesCloud::DownloadFileRequest.new
-        download_request.path = "TempTests/version.txt"
         version = ""
         begin
-          version = SpecUtils.api.download_file(download_request)
+          version = SpecUtils.api.download_file("TempTests/version.txt")
         rescue AsposeSlidesCloud::ApiError => e
           if e.code != 404
             fail "Could not read from storage"
@@ -38,16 +36,10 @@ module AsposeSlidesCloud
           Dir.entries(TEST_DATA_PATH).each { |f|
             if !File.directory? File.join(TEST_DATA_PATH, f)
               fd = File.binread(File.join(TEST_DATA_PATH, f))
-              upload_request = AsposeSlidesCloud::UploadFileRequest.new
-              upload_request.file = fd
-              upload_request.path = "TempTests/" + f
-              SpecUtils.api.upload_file(upload_request)
+              SpecUtils.api.upload_file("TempTests/" + f, fd)
             end
           }
-          upload_request = AsposeSlidesCloud::UploadFileRequest.new
-          upload_request.file = EXPECTED_TEST_DATA_VERSION
-          upload_request.path = "TempTests/version.txt"
-          SpecUtils.api.upload_file(upload_request)
+          SpecUtils.api.upload_file("TempTests/version.txt", EXPECTED_TEST_DATA_VERSION)
         end
         @@is_initialized = true
       end
@@ -66,14 +58,9 @@ module AsposeSlidesCloud
       end
       files.each do |path, rule|
         if rule["Action"] == "Put"
-          copy_request = AsposeSlidesCloud::CopyFileRequest.new
-          copy_request.src_path = "TempTests/" + rule['ActualName']
-          copy_request.dest_path = path
-          SpecUtils.api.copy_file(copy_request)
+          SpecUtils.api.copy_file("TempTests/" + rule['ActualName'], path)
         elsif rule["Action"] == "Delete"
-          delete_request = AsposeSlidesCloud::DeleteFileRequest.new
-          delete_request.path = path
-          SpecUtils.api.delete_file(delete_request)
+          SpecUtils.api.delete_file(path)
         end
       end
     end
@@ -85,6 +72,12 @@ module AsposeSlidesCloud
           fileName = "test.pdf"
         end
         return File.binread(File.join(TEST_DATA_PATH, fileName))
+      end
+      if type == 'File[]'
+        files = []
+        files.push(File.binread(File.join(AsposeSlidesCloud::SpecUtils::TEST_DATA_PATH, "test.pptx")))
+        files.push(File.binread(File.join(AsposeSlidesCloud::SpecUtils::TEST_DATA_PATH, "test-unprotected.pptx")))
+        return files
       end
       value = "test" + name
       SpecUtils.test_rules["Values"].each do |rule|

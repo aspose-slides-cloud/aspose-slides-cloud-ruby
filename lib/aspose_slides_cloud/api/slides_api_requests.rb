@@ -1080,11 +1080,11 @@ module AsposeSlidesCloud
     # @param password Document password.
     attr_accessor :password
 
-    # @param storage Document storage.
-    attr_accessor :storage
-
     # @param folder Document folder.
     attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
   end
 
   # request model for get_notes_slide_shape
@@ -1566,11 +1566,11 @@ module AsposeSlidesCloud
     # @param password Document password.
     attr_accessor :password
 
-    # @param storage Documentstorage.
-    attr_accessor :storage
-
     # @param folder Document folder.
     attr_accessor :folder
+
+    # @param storage Documentstorage.
+    attr_accessor :storage
   end
 
   # request model for get_slides_document_properties
@@ -1842,7 +1842,7 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param with_empty True to incude empty items.
+    # @param with_empty True to include empty items.
     attr_accessor :with_empty
 
     # @param password Document password.
@@ -2085,6 +2085,9 @@ module AsposeSlidesCloud
     # @param dto Paragraph DTO.
     attr_accessor :dto
 
+    # @param position Position of the new paragraph in the list. Default is at the end of the list.
+    attr_accessor :position
+
     # @param password Document password.
     attr_accessor :password
 
@@ -2093,9 +2096,6 @@ module AsposeSlidesCloud
 
     # @param storage Document storage.
     attr_accessor :storage
-
-    # @param position Position of the new paragraph in the list. Default is at the end of the list.
-    attr_accessor :position
   end
 
   # request model for post_add_new_portion
@@ -2116,6 +2116,9 @@ module AsposeSlidesCloud
     # @param dto Portion DTO.
     attr_accessor :dto
 
+    # @param position Position of the new portion in the list. Default is at the end of the list.
+    attr_accessor :position
+
     # @param password Document password.
     attr_accessor :password
 
@@ -2124,9 +2127,6 @@ module AsposeSlidesCloud
 
     # @param storage Document storage.
     attr_accessor :storage
-
-    # @param position Position of the new portion in the list. Default is at the end of the list.
-    attr_accessor :position
   end
 
   # request model for post_add_new_shape
@@ -2141,6 +2141,12 @@ module AsposeSlidesCloud
     # @param dto Shape DTO.
     attr_accessor :dto
 
+    # @param shape_to_clone Optional index for clone shape instead of adding a new one.
+    attr_accessor :shape_to_clone
+
+    # @param position Position of the new shape in the list. Default is at the end of the list.
+    attr_accessor :position
+
     # @param password Document password.
     attr_accessor :password
 
@@ -2149,12 +2155,6 @@ module AsposeSlidesCloud
 
     # @param storage Document storage.
     attr_accessor :storage
-
-    # @param shape_to_clone Optional index for clone shape instead of adding a new one.
-    attr_accessor :shape_to_clone
-
-    # @param position Position of the new shape in the list. Default is at the end of the list.
-    attr_accessor :position
   end
 
   # request model for post_add_new_subshape
@@ -2172,6 +2172,12 @@ module AsposeSlidesCloud
     # @param dto Shape DTO.
     attr_accessor :dto
 
+    # @param shape_to_clone Optional index for clone shape instead of adding a new one.
+    attr_accessor :shape_to_clone
+
+    # @param position Position of the new shape in the list. Default is at the end of the list.
+    attr_accessor :position
+
     # @param password Document password.
     attr_accessor :password
 
@@ -2180,12 +2186,6 @@ module AsposeSlidesCloud
 
     # @param storage Document storage.
     attr_accessor :storage
-
-    # @param shape_to_clone Optional index for clone shape instead of adding a new one.
-    attr_accessor :shape_to_clone
-
-    # @param position Position of the new shape in the list. Default is at the end of the list.
-    attr_accessor :position
   end
 
   # request model for post_add_new_subshape_paragraph
@@ -2206,6 +2206,9 @@ module AsposeSlidesCloud
     # @param path Shape path.
     attr_accessor :path
 
+    # @param position Position of the new paragraph in the list. Default is at the end of the list.
+    attr_accessor :position
+
     # @param password Document password.
     attr_accessor :password
 
@@ -2214,9 +2217,6 @@ module AsposeSlidesCloud
 
     # @param storage Document storage.
     attr_accessor :storage
-
-    # @param position Position of the new paragraph in the list. Default is at the end of the list.
-    attr_accessor :position
   end
 
   # request model for post_add_new_subshape_portion
@@ -2240,6 +2240,9 @@ module AsposeSlidesCloud
     # @param path Shape path.
     attr_accessor :path
 
+    # @param position Position of the new portion in the list. Default is at the end of the list.
+    attr_accessor :position
+
     # @param password Document password.
     attr_accessor :password
 
@@ -2248,9 +2251,6 @@ module AsposeSlidesCloud
 
     # @param storage Document storage.
     attr_accessor :storage
-
-    # @param position Position of the new portion in the list. Default is at the end of the list.
-    attr_accessor :position
   end
 
   # request model for post_add_notes_slide
@@ -2264,6 +2264,34 @@ module AsposeSlidesCloud
 
     # @param dto A NotesSlide object with notes slide data.
     attr_accessor :dto
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for post_align_shapes
+  class PostAlignShapesRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
+
+    # @param alignment_type Alignment type that will be applied to the shapes.
+    attr_accessor :alignment_type
+
+    # @param align_to_slide If true, shapes will be aligned relative to the slide edges.
+    attr_accessor :align_to_slide
+
+    # @param shapes Shapes indexes.
+    attr_accessor :shapes
 
     # @param password Document password.
     attr_accessor :password
@@ -2412,6 +2440,145 @@ module AsposeSlidesCloud
     attr_accessor :storage
   end
 
+  # request model for post_export_image_with_default_format
+  class PostExportImageWithDefaultFormatRequest
+
+    # @param document Document data.
+    attr_accessor :document
+
+    # @param index Image index.
+    attr_accessor :index
+
+    # @param password Document password.
+    attr_accessor :password
+  end
+
+  # request model for post_export_image_with_format
+  class PostExportImageWithFormatRequest
+
+    # @param document Document data.
+    attr_accessor :document
+
+    # @param index Image index.
+    attr_accessor :index
+
+    # @param format Export format (png, jpg, gif).
+    attr_accessor :format
+
+    # @param password Document password.
+    attr_accessor :password
+  end
+
+  # request model for post_export_images_from_request_with_format
+  class PostExportImagesFromRequestWithFormatRequest
+
+    # @param document Document data.
+    attr_accessor :document
+
+    # @param format Export format (png, jpg, gif).
+    attr_accessor :format
+
+    # @param password Document password.
+    attr_accessor :password
+  end
+
+  # request model for post_export_images_with_default_format
+  class PostExportImagesWithDefaultFormatRequest
+
+    # @param name 
+    attr_accessor :name
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for post_export_images_with_format
+  class PostExportImagesWithFormatRequest
+
+    # @param name 
+    attr_accessor :name
+
+    # @param format Export format (png, jpg, gif).
+    attr_accessor :format
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for post_export_shape
+  class PostExportShapeRequest
+
+    # @param document Document data.
+    attr_accessor :document
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
+
+    # @param shape_index Index of shape starting from 1
+    attr_accessor :shape_index
+
+    # @param format Export picture format.
+    attr_accessor :format
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param storage Document storage.
+    attr_accessor :storage
+
+    # @param scale_x X scale ratio.
+    attr_accessor :scale_x
+
+    # @param scale_y Y scale ratio.
+    attr_accessor :scale_y
+
+    # @param bounds Shape thumbnail bounds type.
+    attr_accessor :bounds
+
+    # @param fonts_folder Fonts folder.
+    attr_accessor :fonts_folder
+  end
+
+  # request model for post_export_slide
+  class PostExportSlideRequest
+
+    # @param document Document data.
+    attr_accessor :document
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
+
+    # @param format Output file format.
+    attr_accessor :format
+
+    # @param width Output file width; 0 to not adjust the size. Default is 0.
+    attr_accessor :width
+
+    # @param height Output file height; 0 to not adjust the size. Default is 0.
+    attr_accessor :height
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param storage Document storage.
+    attr_accessor :storage
+
+    # @param fonts_folder Storage folder containing custom fonts to be used with the document.
+    attr_accessor :fonts_folder
+  end
+
   # request model for post_get_notes_slide
   class PostGetNotesSlideRequest
 
@@ -2463,6 +2630,16 @@ module AsposeSlidesCloud
     attr_accessor :fonts_folder
   end
 
+  # request model for post_images_from_request_with_default_format
+  class PostImagesFromRequestWithDefaultFormatRequest
+
+    # @param document Document data.
+    attr_accessor :document
+
+    # @param password Document password.
+    attr_accessor :password
+  end
+
   # request model for post_notes_slide_add_new_paragraph
   class PostNotesSlideAddNewParagraphRequest
 
@@ -2478,6 +2655,9 @@ module AsposeSlidesCloud
     # @param dto Paragraph DTO.
     attr_accessor :dto
 
+    # @param position Position of the new paragraph in the list. Default is at the end of the list.
+    attr_accessor :position
+
     # @param password Document password.
     attr_accessor :password
 
@@ -2486,9 +2666,6 @@ module AsposeSlidesCloud
 
     # @param storage Document storage.
     attr_accessor :storage
-
-    # @param position Position of the new paragraph in the list. Default is at the end of the list.
-    attr_accessor :position
   end
 
   # request model for post_notes_slide_add_new_portion
@@ -2509,6 +2686,9 @@ module AsposeSlidesCloud
     # @param dto Portion DTO.
     attr_accessor :dto
 
+    # @param position Position of the new portion in the list. Default is at the end of the list.
+    attr_accessor :position
+
     # @param password Document password.
     attr_accessor :password
 
@@ -2517,9 +2697,6 @@ module AsposeSlidesCloud
 
     # @param storage Document storage.
     attr_accessor :storage
-
-    # @param position Position of the new portion in the list. Default is at the end of the list.
-    attr_accessor :position
   end
 
   # request model for post_notes_slide_add_new_shape
@@ -2534,6 +2711,12 @@ module AsposeSlidesCloud
     # @param dto Shape DTO.
     attr_accessor :dto
 
+    # @param shape_to_clone Optional index for clone shape instead of adding a new one.
+    attr_accessor :shape_to_clone
+
+    # @param position Position of the new shape in the list. Default is at the end of the list.
+    attr_accessor :position
+
     # @param password Document password.
     attr_accessor :password
 
@@ -2542,12 +2725,6 @@ module AsposeSlidesCloud
 
     # @param storage Document storage.
     attr_accessor :storage
-
-    # @param shape_to_clone Optional index for clone shape instead of adding a new one.
-    attr_accessor :shape_to_clone
-
-    # @param position Position of the new shape in the list. Default is at the end of the list.
-    attr_accessor :position
   end
 
   # request model for post_notes_slide_shape_save_as
@@ -2568,15 +2745,6 @@ module AsposeSlidesCloud
     # @param options export options
     attr_accessor :options
 
-    # @param password Document password.
-    attr_accessor :password
-
-    # @param folder Presentation folder.
-    attr_accessor :folder
-
-    # @param storage Presentation storage.
-    attr_accessor :storage
-
     # @param scale_x X scale ratio.
     attr_accessor :scale_x
 
@@ -2585,6 +2753,15 @@ module AsposeSlidesCloud
 
     # @param bounds Shape thumbnail bounds type.
     attr_accessor :bounds
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Presentation folder.
+    attr_accessor :folder
+
+    # @param storage Presentation storage.
+    attr_accessor :storage
 
     # @param fonts_folder Fonts folder.
     attr_accessor :fonts_folder
@@ -2602,11 +2779,61 @@ module AsposeSlidesCloud
     # @param password Document password.
     attr_accessor :password
 
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for post_presentation_replace_text
+  class PostPresentationReplaceTextRequest
+
+    # @param document Document data.
+    attr_accessor :document
+
+    # @param old_value Text value to be replaced.
+    attr_accessor :old_value
+
+    # @param new_value Text value to replace with.
+    attr_accessor :new_value
+
+    # @param ignore_case True if character case must be ignored.
+    attr_accessor :ignore_case
+
+    # @param password Document password.
+    attr_accessor :password
+  end
+
+  # request model for post_presentation_split
+  class PostPresentationSplitRequest
+
+    # @param document Document data.
+    attr_accessor :document
+
+    # @param format ExportFormat
+    attr_accessor :format
+
+    # @param width Slide width.
+    attr_accessor :width
+
+    # @param height Slide height.
+    attr_accessor :height
+
+    # @param from The start slide number for splitting, if is not specified splitting starts from the first slide of the presentation.
+    attr_accessor :from
+
+    # @param to The last slide number for splitting, if is not specified splitting ends at the last slide of the document.
+    attr_accessor :to
+
+    # @param password Document password.
+    attr_accessor :password
+
     # @param storage Document storage.
     attr_accessor :storage
 
-    # @param folder Document folder.
-    attr_accessor :folder
+    # @param fonts_folder Custom fonts folder.
+    attr_accessor :fonts_folder
   end
 
   # request model for post_section
@@ -2671,15 +2898,6 @@ module AsposeSlidesCloud
     # @param options export options
     attr_accessor :options
 
-    # @param password Document password.
-    attr_accessor :password
-
-    # @param folder Presentation folder.
-    attr_accessor :folder
-
-    # @param storage Presentation storage.
-    attr_accessor :storage
-
     # @param scale_x X scale ratio.
     attr_accessor :scale_x
 
@@ -2688,6 +2906,15 @@ module AsposeSlidesCloud
 
     # @param bounds Shape thumbnail bounds type.
     attr_accessor :bounds
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Presentation folder.
+    attr_accessor :folder
+
+    # @param storage Presentation storage.
+    attr_accessor :storage
 
     # @param fonts_folder Fonts folder.
     attr_accessor :fonts_folder
@@ -2762,6 +2989,28 @@ module AsposeSlidesCloud
     attr_accessor :storage
   end
 
+  # request model for post_slide_replace_text
+  class PostSlideReplaceTextRequest
+
+    # @param document Document data.
+    attr_accessor :document
+
+    # @param slide_index Index of target slide.
+    attr_accessor :slide_index
+
+    # @param old_value Text value to be replaced.
+    attr_accessor :old_value
+
+    # @param new_value Text value to replace with.
+    attr_accessor :new_value
+
+    # @param ignore_case True if character case must be ignored.
+    attr_accessor :ignore_case
+
+    # @param password Document password.
+    attr_accessor :password
+  end
+
   # request model for post_slide_save_as
   class PostSlideSaveAsRequest
 
@@ -2802,6 +3051,9 @@ module AsposeSlidesCloud
     # @param name Document name.
     attr_accessor :name
 
+    # @param layout_alias Alias of layout slide for new slide. Alias may be the type of layout, name of layout slide or index
+    attr_accessor :layout_alias
+
     # @param position The target position at which to create the slide. Add to the end by default.
     attr_accessor :position
 
@@ -2813,9 +3065,6 @@ module AsposeSlidesCloud
 
     # @param storage Document storage.
     attr_accessor :storage
-
-    # @param layout_alias Alias of layout slide for new slide. Alias may be the type of layout, name of layout slide or index
-    attr_accessor :layout_alias
   end
 
   # request model for post_slides_convert
@@ -2829,6 +3078,9 @@ module AsposeSlidesCloud
 
     # @param password Document password.
     attr_accessor :password
+
+    # @param storage Document storage.
+    attr_accessor :storage
 
     # @param fonts_folder Custom fonts folder.
     attr_accessor :fonts_folder
@@ -2880,11 +3132,11 @@ module AsposeSlidesCloud
     # @param password The document password.
     attr_accessor :password
 
-    # @param storage Document storage.
-    attr_accessor :storage
-
     # @param folder Document folder.
     attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
   end
 
   # request model for post_slides_document_from_html
@@ -2899,11 +3151,11 @@ module AsposeSlidesCloud
     # @param password Document password.
     attr_accessor :password
 
-    # @param storage Document storage.
-    attr_accessor :storage
-
     # @param folder Document folder.
     attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
   end
 
   # request model for post_slides_document_from_pdf
@@ -2918,11 +3170,11 @@ module AsposeSlidesCloud
     # @param password Document password.
     attr_accessor :password
 
-    # @param storage Document storage.
-    attr_accessor :storage
-
     # @param folder Document folder.
     attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
   end
 
   # request model for post_slides_document_from_source
@@ -2943,11 +3195,11 @@ module AsposeSlidesCloud
     # @param password The document password.
     attr_accessor :password
 
-    # @param storage Document storage.
-    attr_accessor :storage
-
     # @param folder Document folder.
     attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
   end
 
   # request model for post_slides_document_from_template
@@ -2974,11 +3226,24 @@ module AsposeSlidesCloud
     # @param password The document password.
     attr_accessor :password
 
-    # @param storage Document storage.
-    attr_accessor :storage
-
     # @param folder Document folder.
     attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for post_slides_merge
+  class PostSlidesMergeRequest
+
+    # @param files Files to merge
+    attr_accessor :files
+
+    # @param request Merge request.
+    attr_accessor :request
+
+    # @param password Document password.
+    attr_accessor :password
   end
 
   # request model for post_slides_pipeline
@@ -3075,11 +3340,11 @@ module AsposeSlidesCloud
     # @param password Document password.
     attr_accessor :password
 
-    # @param storage Document storage.
-    attr_accessor :storage
-
     # @param folder Document folder.
     attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
 
     # @param fonts_folder Custom fonts folder.
     attr_accessor :fonts_folder
@@ -3150,11 +3415,11 @@ module AsposeSlidesCloud
     # @param height The height of created images.
     attr_accessor :height
 
-    # @param to The last slide number for splitting, if is not specified splitting ends at the last slide of the document.
-    attr_accessor :to
-
     # @param from The start slide number for splitting, if is not specified splitting starts from the first slide of the presentation.
     attr_accessor :from
+
+    # @param to The last slide number for splitting, if is not specified splitting ends at the last slide of the document.
+    attr_accessor :to
 
     # @param dest_folder Folder on storage where images are going to be uploaded. If not specified then images are uploaded to same folder as presentation.
     attr_accessor :dest_folder
@@ -3162,11 +3427,11 @@ module AsposeSlidesCloud
     # @param password Document password.
     attr_accessor :password
 
-    # @param storage Document storage.
-    attr_accessor :storage
-
     # @param folder Document folder.
     attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
 
     # @param fonts_folder Custom fonts folder.
     attr_accessor :fonts_folder
@@ -3193,15 +3458,6 @@ module AsposeSlidesCloud
     # @param options export options
     attr_accessor :options
 
-    # @param password Document password.
-    attr_accessor :password
-
-    # @param folder Presentation folder.
-    attr_accessor :folder
-
-    # @param storage Presentation storage.
-    attr_accessor :storage
-
     # @param scale_x X scale ratio.
     attr_accessor :scale_x
 
@@ -3210,6 +3466,15 @@ module AsposeSlidesCloud
 
     # @param bounds Shape thumbnail bounds type.
     attr_accessor :bounds
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Presentation folder.
+    attr_accessor :folder
+
+    # @param storage Presentation storage.
+    attr_accessor :storage
 
     # @param fonts_folder Fonts folder.
     attr_accessor :fonts_folder
@@ -3302,6 +3567,74 @@ module AsposeSlidesCloud
     attr_accessor :storage
   end
 
+  # request model for put_export_shape
+  class PutExportShapeRequest
+
+    # @param document Document data.
+    attr_accessor :document
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
+
+    # @param shape_index Index of shape starting from 1
+    attr_accessor :shape_index
+
+    # @param format Export picture format.
+    attr_accessor :format
+
+    # @param out_path Path to save result.
+    attr_accessor :out_path
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param storage Document storage.
+    attr_accessor :storage
+
+    # @param scale_x X scale ratio.
+    attr_accessor :scale_x
+
+    # @param scale_y Y scale ratio.
+    attr_accessor :scale_y
+
+    # @param bounds Shape thumbnail bounds type.
+    attr_accessor :bounds
+
+    # @param fonts_folder Fonts folder.
+    attr_accessor :fonts_folder
+  end
+
+  # request model for put_export_slide
+  class PutExportSlideRequest
+
+    # @param document Document data.
+    attr_accessor :document
+
+    # @param slide_index Slide index.
+    attr_accessor :slide_index
+
+    # @param format Output file format.
+    attr_accessor :format
+
+    # @param out_path Path to save result.
+    attr_accessor :out_path
+
+    # @param width Output file width; 0 to not adjust the size. Default is 0.
+    attr_accessor :width
+
+    # @param height Output file height; 0 to not adjust the size. Default is 0.
+    attr_accessor :height
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param storage Document storage.
+    attr_accessor :storage
+
+    # @param fonts_folder Storage folder containing custom fonts to be used with the document.
+    attr_accessor :fonts_folder
+  end
+
   # request model for put_layout_slide
   class PutLayoutSlideRequest
 
@@ -3339,11 +3672,11 @@ module AsposeSlidesCloud
     # @param password Document password.
     attr_accessor :password
 
-    # @param storage Document storage.
-    attr_accessor :storage
-
     # @param folder Document folder.
     attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
   end
 
   # request model for put_notes_slide_shape_save_as
@@ -3367,15 +3700,6 @@ module AsposeSlidesCloud
     # @param options export options
     attr_accessor :options
 
-    # @param password Document password.
-    attr_accessor :password
-
-    # @param folder Presentation folder.
-    attr_accessor :folder
-
-    # @param storage Presentation storage.
-    attr_accessor :storage
-
     # @param scale_x X scale ratio.
     attr_accessor :scale_x
 
@@ -3384,6 +3708,15 @@ module AsposeSlidesCloud
 
     # @param bounds Shape thumbnail bounds type.
     attr_accessor :bounds
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Presentation folder.
+    attr_accessor :folder
+
+    # @param storage Presentation storage.
+    attr_accessor :storage
 
     # @param fonts_folder Fonts folder.
     attr_accessor :fonts_folder
@@ -3401,11 +3734,45 @@ module AsposeSlidesCloud
     # @param password Document password.
     attr_accessor :password
 
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for put_presentation_split
+  class PutPresentationSplitRequest
+
+    # @param document Document data.
+    attr_accessor :document
+
+    # @param format ExportFormat
+    attr_accessor :format
+
+    # @param dest_folder Folder on storage where images are going to be uploaded. If not specified then images are uploaded to the root folder.
+    attr_accessor :dest_folder
+
+    # @param width Slide width.
+    attr_accessor :width
+
+    # @param height Slide height.
+    attr_accessor :height
+
+    # @param from The start slide number for splitting, if is not specified splitting starts from the first slide of the presentation.
+    attr_accessor :from
+
+    # @param to The last slide number for splitting, if is not specified splitting ends at the last slide of the document.
+    attr_accessor :to
+
+    # @param password Document password.
+    attr_accessor :password
+
     # @param storage Document storage.
     attr_accessor :storage
 
-    # @param folder Document folder.
-    attr_accessor :folder
+    # @param fonts_folder Custom fonts folder.
+    attr_accessor :fonts_folder
   end
 
   # request model for put_section
@@ -3594,15 +3961,6 @@ module AsposeSlidesCloud
     # @param options export options
     attr_accessor :options
 
-    # @param password Document password.
-    attr_accessor :password
-
-    # @param folder Presentation folder.
-    attr_accessor :folder
-
-    # @param storage Presentation storage.
-    attr_accessor :storage
-
     # @param scale_x X scale ratio.
     attr_accessor :scale_x
 
@@ -3611,6 +3969,15 @@ module AsposeSlidesCloud
 
     # @param bounds Shape thumbnail bounds type.
     attr_accessor :bounds
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Presentation folder.
+    attr_accessor :folder
+
+    # @param storage Presentation storage.
+    attr_accessor :storage
 
     # @param fonts_folder Fonts folder.
     attr_accessor :fonts_folder
@@ -3818,6 +4185,9 @@ module AsposeSlidesCloud
     # @param password Document password.
     attr_accessor :password
 
+    # @param storage Document storage.
+    attr_accessor :storage
+
     # @param fonts_folder Custom fonts folder.
     attr_accessor :fonts_folder
   end
@@ -3834,11 +4204,11 @@ module AsposeSlidesCloud
     # @param password Document password.
     attr_accessor :password
 
-    # @param storage Document storage.
-    attr_accessor :storage
-
     # @param folder Document folder.
     attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
   end
 
   # request model for put_slides_header_footer
@@ -3853,11 +4223,30 @@ module AsposeSlidesCloud
     # @param password Document password.
     attr_accessor :password
 
-    # @param storage Document storage.
-    attr_accessor :storage
-
     # @param folder Document folder.
     attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for put_slides_merge
+  class PutSlidesMergeRequest
+
+    # @param out_path Path to save result.
+    attr_accessor :out_path
+
+    # @param files Files to merge
+    attr_accessor :files
+
+    # @param request Merge request.
+    attr_accessor :request
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param storage Document storage.
+    attr_accessor :storage
   end
 
   # request model for put_slides_protection_properties
@@ -3885,11 +4274,11 @@ module AsposeSlidesCloud
     # @param name Document name.
     attr_accessor :name
 
-    # @param out_path Output path.
-    attr_accessor :out_path
-
     # @param format Export format.
     attr_accessor :format
+
+    # @param out_path Output path.
+    attr_accessor :out_path
 
     # @param options Export options.
     attr_accessor :options
@@ -3897,11 +4286,11 @@ module AsposeSlidesCloud
     # @param password Document password.
     attr_accessor :password
 
-    # @param storage Document storage.
-    attr_accessor :storage
-
     # @param folder Document folder.
     attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
 
     # @param fonts_folder Custom fonts folder.
     attr_accessor :fonts_folder
@@ -3963,11 +4352,11 @@ module AsposeSlidesCloud
     # @param background Slide background update data.
     attr_accessor :background
 
-    # @param folder Document folder.
-    attr_accessor :folder
-
     # @param password Document password.
     attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
 
     # @param storage Document storage.
     attr_accessor :storage
@@ -3985,11 +4374,11 @@ module AsposeSlidesCloud
     # @param color Slide background target color in RRGGBB format.
     attr_accessor :color
 
-    # @param folder Document folder.
-    attr_accessor :folder
-
     # @param password Document password.
     attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
 
     # @param storage Document storage.
     attr_accessor :storage
@@ -4020,15 +4409,6 @@ module AsposeSlidesCloud
     # @param name Document name.
     attr_accessor :name
 
-    # @param password Document password.
-    attr_accessor :password
-
-    # @param storage Document storage.
-    attr_accessor :storage
-
-    # @param folder Document folder.
-    attr_accessor :folder
-
     # @param width Slide width.
     attr_accessor :width
 
@@ -4040,6 +4420,15 @@ module AsposeSlidesCloud
 
     # @param scale_type Standard slide scale type.
     attr_accessor :scale_type
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
   end
 
   # request model for put_slides_view_properties
@@ -4085,15 +4474,6 @@ module AsposeSlidesCloud
     # @param options export options
     attr_accessor :options
 
-    # @param password Document password.
-    attr_accessor :password
-
-    # @param folder Presentation folder.
-    attr_accessor :folder
-
-    # @param storage Presentation storage.
-    attr_accessor :storage
-
     # @param scale_x X scale ratio.
     attr_accessor :scale_x
 
@@ -4102,6 +4482,15 @@ module AsposeSlidesCloud
 
     # @param bounds Shape thumbnail bounds type.
     attr_accessor :bounds
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Presentation folder.
+    attr_accessor :folder
+
+    # @param storage Presentation storage.
+    attr_accessor :storage
 
     # @param fonts_folder Fonts folder.
     attr_accessor :fonts_folder

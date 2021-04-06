@@ -25,38 +25,31 @@ require 'spec_helper'
 describe 'SlidesApiExtra' do
   describe 'specific cases' do
     it 'multipart request' do
-      requestParam = AsposeSlidesCloud::PostSlidesPipelineRequest.new
-      requestParam.pipeline = AsposeSlidesCloud::Pipeline.new
-      requestParam.pipeline.input = AsposeSlidesCloud::Input.new
-      requestParam.pipeline.input.template_data = AsposeSlidesCloud::RequestInputFile.new
-      requestParam.pipeline.input.template_data.type = "Request"
-      requestParam.pipeline.input.template_data.index = 0
-      requestParam.pipeline.input.template = AsposeSlidesCloud::RequestInputFile.new
-      requestParam.pipeline.input.template.type = "Request"
-      requestParam.pipeline.input.template.index = 1
-      requestParam.pipeline.tasks = []
-      requestParam.pipeline.tasks.push(AsposeSlidesCloud::Save.new)
-      requestParam.pipeline.tasks[0].type = "Save"
-      requestParam.pipeline.tasks[0].format = "pptx"
-      requestParam.pipeline.tasks[0].output = AsposeSlidesCloud::OutputFile.new
-      requestParam.pipeline.tasks[0].output.type = "Response"
-      requestParam.files = []
-      requestParam.files.push(File.binread(File.join(AsposeSlidesCloud::SpecUtils::TEST_DATA_PATH, "TemplatingCVDataWithBase64.xml")))
-      requestParam.files.push(File.binread(File.join(AsposeSlidesCloud::SpecUtils::TEST_DATA_PATH, "TemplateCV.pptx")))
-      o, c, _h = AsposeSlidesCloud::SpecUtils.api.post_slides_pipeline_with_http_info(requestParam)
+      pipeline = AsposeSlidesCloud::Pipeline.new
+      pipeline.input = AsposeSlidesCloud::Input.new
+      pipeline.input.template_data = AsposeSlidesCloud::RequestInputFile.new
+      pipeline.input.template_data.type = "Request"
+      pipeline.input.template_data.index = 0
+      pipeline.input.template = AsposeSlidesCloud::RequestInputFile.new
+      pipeline.input.template.type = "Request"
+      pipeline.input.template.index = 1
+      pipeline.tasks = []
+      pipeline.tasks.push(AsposeSlidesCloud::Save.new)
+      pipeline.tasks[0].type = "Save"
+      pipeline.tasks[0].format = "pptx"
+      pipeline.tasks[0].output = AsposeSlidesCloud::OutputFile.new
+      pipeline.tasks[0].output.type = "Response"
+      files = []
+      files.push(File.binread(File.join(AsposeSlidesCloud::SpecUtils::TEST_DATA_PATH, "TemplatingCVDataWithBase64.xml")))
+      files.push(File.binread(File.join(AsposeSlidesCloud::SpecUtils::TEST_DATA_PATH, "TemplateCV.pptx")))
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.pipeline_with_http_info(pipeline, files)
       expect(c).to eq(200)
       expect(o).not_to be(nil)
     end
 
     it 'base shape' do
       AsposeSlidesCloud::SpecUtils.initialize('GetSlideShape', nil, nil)
-      requestParam = AsposeSlidesCloud::GetSlideShapeRequest.new
-      requestParam.name = "test.pptx"
-      requestParam.slide_index = 1
-      requestParam.shape_index = 1
-      requestParam.password = "password"
-      requestParam.folder = "TempSlidesSDK"
-      o = AsposeSlidesCloud::SpecUtils.api.get_slide_shape(requestParam)
+      o = AsposeSlidesCloud::SpecUtils.api.get_shape("test.pptx", 1, 1, "password", "TempSlidesSDK")
       expect(o.text).to eq("1")
     end
 
@@ -79,13 +72,7 @@ describe 'SlidesApiExtra' do
       #configuration.timeout = 1
       #api = AsposeSlidesCloud::SlidesApi.new(configuration)
 
-      #requestParam = AsposeSlidesCloud::PostSlideSaveAsRequest.new
-      #requestParam.name = "test.pptx"
-      #requestParam.slide_index = 1
-      #requestParam.password = "password"
-      #requestParam.folder = "TempSlidesSDK"
-      #requestParam.format = "svg"
-      #api.post_slide_save_as(requestParam)
+      #api.download_slide("test.pptx", 1, "svg", "password", "TempSlidesSDK")
     end
 
     it 'nullable properties' do
@@ -97,72 +84,52 @@ describe 'SlidesApiExtra' do
       max1 = 104.3
       max2 = 87
       AsposeSlidesCloud::SpecUtils.initialize("no_method", "no_property", nil)
-      requestParam = AsposeSlidesCloud::CopyFileRequest.new
-      requestParam.src_path = "TempTests/" + fileName
-      requestParam.dest_path = folderName + "/" + fileName
-      AsposeSlidesCloud::SpecUtils.api.copy_file(requestParam)
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + fileName, folderName + "/" + fileName)
 
-      postRequest = AsposeSlidesCloud::PostAddNewShapeRequest.new
-      postRequest.name = fileName
-      postRequest.folder = folderName
-      postRequest.password = password
-      postRequest.slide_index = 1
-      postRequest.dto = AsposeSlidesCloud::Chart.new
-      postRequest.dto.chart_type = "Line"
-      postRequest.dto.width = 400.0
-      postRequest.dto.height = 300.0
-      postRequest.dto.title = AsposeSlidesCloud::ChartTitle.new
-      postRequest.dto.title.has_title = true
-      postRequest.dto.title.text = "MyTitle"
-      postRequest.dto.series = []
-      postRequest.dto.series.push(AsposeSlidesCloud::OneValueSeries.new)
-      postRequest.dto.series[0].type = "ClusteredColumn"
-      postRequest.dto.series[0].data_point_type = "OneValue"
-      postRequest.dto.series[0].name = "Series1"
-      postRequest.dto.series[0].data_points = []
-      postRequest.dto.series[0].data_points.push(AsposeSlidesCloud::OneValueChartDataPoint.new)
-      postRequest.dto.series[0].data_points[0].value = 40.0
-      postRequest.dto.series[0].data_points.push(AsposeSlidesCloud::OneValueChartDataPoint.new)
-      postRequest.dto.series[0].data_points[1].value = 50.0
-      postRequest.dto.axes = AsposeSlidesCloud::Axes.new
-      postRequest.dto.axes.horizontal_axis = AsposeSlidesCloud::Axis.new
-      postRequest.dto.axes.horizontal_axis.is_automatic_min_value = false
-      postRequest.dto.axes.horizontal_axis.min_value = min1
-      postRequest.dto.axes.horizontal_axis.is_automatic_max_value = false
-      postRequest.dto.axes.horizontal_axis.max_value = max1
-      AsposeSlidesCloud::SpecUtils.api.post_add_new_shape(postRequest)
+      dto = AsposeSlidesCloud::Chart.new
+      dto.chart_type = "Line"
+      dto.width = 400.0
+      dto.height = 300.0
+      dto.title = AsposeSlidesCloud::ChartTitle.new
+      dto.title.has_title = true
+      dto.title.text = "MyTitle"
+      dto.series = []
+      dto.series.push(AsposeSlidesCloud::OneValueSeries.new)
+      dto.series[0].type = "ClusteredColumn"
+      dto.series[0].data_point_type = "OneValue"
+      dto.series[0].name = "Series1"
+      dto.series[0].data_points = []
+      dto.series[0].data_points.push(AsposeSlidesCloud::OneValueChartDataPoint.new)
+      dto.series[0].data_points[0].value = 40.0
+      dto.series[0].data_points.push(AsposeSlidesCloud::OneValueChartDataPoint.new)
+      dto.series[0].data_points[1].value = 50.0
+      dto.axes = AsposeSlidesCloud::Axes.new
+      dto.axes.horizontal_axis = AsposeSlidesCloud::Axis.new
+      dto.axes.horizontal_axis.is_automatic_min_value = false
+      dto.axes.horizontal_axis.min_value = min1
+      dto.axes.horizontal_axis.is_automatic_max_value = false
+      dto.axes.horizontal_axis.max_value = max1
+      AsposeSlidesCloud::SpecUtils.api.create_shape(fileName, 1, dto, nil, nil, password, folderName)
 
-      getRequest = AsposeSlidesCloud::GetSlideShapeRequest.new
-      getRequest.name = fileName
-      getRequest.folder = folderName
-      getRequest.password = password
-      getRequest.slide_index = 1
-      getRequest.shape_index = 4
-      result = AsposeSlidesCloud::SpecUtils.api.get_slide_shape(getRequest)
+      result = AsposeSlidesCloud::SpecUtils.api.get_shape(fileName, 1, 4, password, folderName)
       expect(result.axes.horizontal_axis.min_value).to eq(min1)
       expect(result.axes.horizontal_axis.max_value).to eq(max1)
 
-      putRequest = AsposeSlidesCloud::PutSlideShapeInfoRequest.new
-      putRequest.name = fileName
-      putRequest.folder = folderName
-      putRequest.password = password
-      putRequest.slide_index = 1
-      putRequest.shape_index = 4
-      putRequest.dto = AsposeSlidesCloud::Chart.new
-      putRequest.dto.axes = AsposeSlidesCloud::Axes.new
-      putRequest.dto.axes.horizontal_axis = AsposeSlidesCloud::Axis.new
-      putRequest.dto.axes.horizontal_axis.min_value = min2
-      AsposeSlidesCloud::SpecUtils.api.put_slide_shape_info(putRequest)
+      dto = AsposeSlidesCloud::Chart.new
+      dto.axes = AsposeSlidesCloud::Axes.new
+      dto.axes.horizontal_axis = AsposeSlidesCloud::Axis.new
+      dto.axes.horizontal_axis.min_value = min2
+      AsposeSlidesCloud::SpecUtils.api.update_shape(fileName, 1, 4, dto, password, folderName)
 
-      result = AsposeSlidesCloud::SpecUtils.api.get_slide_shape(getRequest)
+      result = AsposeSlidesCloud::SpecUtils.api.get_shape(fileName, 1, 4, password, folderName)
       expect(result.axes.horizontal_axis.min_value).to eq(min2)
       expect(result.axes.horizontal_axis.max_value).to eq(max1)
 
-      putRequest.dto.axes.horizontal_axis = AsposeSlidesCloud::Axis.new
-      putRequest.dto.axes.horizontal_axis.max_value = max2
-      AsposeSlidesCloud::SpecUtils.api.put_slide_shape_info(putRequest)
+      dto.axes.horizontal_axis = AsposeSlidesCloud::Axis.new
+      dto.axes.horizontal_axis.max_value = max2
+      AsposeSlidesCloud::SpecUtils.api.update_shape(fileName, 1, 4, dto, password, folderName)
 
-      result = AsposeSlidesCloud::SpecUtils.api.get_slide_shape(getRequest)
+      result = AsposeSlidesCloud::SpecUtils.api.get_shape(fileName, 1, 4, password, folderName)
       expect(result.axes.horizontal_axis.min_value).to eq(min2)
       expect(result.axes.horizontal_axis.max_value).to eq(max2)
     end
@@ -178,7 +145,7 @@ describe 'SlidesApiExtra' do
       configuration.app_key = config["ClientSecret"]
       configuration.debugging = config["Debug"]
       api = AsposeSlidesCloud::SlidesApi.new(configuration)
-      o, c, _h = api.get_slides_api_info_with_http_info
+      o, c, _h = api.get_api_info_with_http_info
       expect(c).to eq(200)
       expect(o).not_to be(nil)
     end
@@ -193,7 +160,7 @@ describe 'SlidesApiExtra' do
       configuration.debugging = config["Debug"]
       api = AsposeSlidesCloud::SlidesApi.new(configuration)
       begin
-        o, c, _h = api.get_slides_api_info_with_http_info
+        o, c, _h = api.get_api_info_with_http_info
         fail "An exception expected"
       rescue AsposeSlidesCloud::ApiError => e
         expect(e.code).to eq(401)
@@ -210,10 +177,10 @@ describe 'SlidesApiExtra' do
       configuration.app_key = config["ClientSecret"]
       configuration.debugging = config["Debug"]
       api = AsposeSlidesCloud::SlidesApi.new(configuration)
-      api.get_slides_api_info_with_http_info
+      api.get_api_info_with_http_info
       configuration.app_sid = "invalid"
       api = AsposeSlidesCloud::SlidesApi.new(configuration)
-      o, c, _h = api.get_slides_api_info_with_http_info
+      o, c, _h = api.get_api_info_with_http_info
       expect(c).to eq(200)
       expect(o).not_to be(nil)
     end
@@ -228,7 +195,7 @@ describe 'SlidesApiExtra' do
       configuration.access_token = "expired.token"
       configuration.debugging = config["Debug"]
       api = AsposeSlidesCloud::SlidesApi.new(configuration)
-      o, c, _h = api.get_slides_api_info_with_http_info
+      o, c, _h = api.get_api_info_with_http_info
       expect(c).to eq(200)
       expect(o).not_to be(nil)
     end

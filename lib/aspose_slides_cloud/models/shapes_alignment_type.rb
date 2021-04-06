@@ -20,6 +20,27 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 =end
 
+require 'date'
+
 module AsposeSlidesCloud
-  VERSION = '21.3.0'
+  class ShapesAlignmentType
+    
+    ALIGN_LEFT = "AlignLeft".freeze
+    ALIGN_RIGHT = "AlignRight".freeze
+    ALIGN_CENTER = "AlignCenter".freeze
+    ALIGN_TOP = "AlignTop".freeze
+    ALIGN_MIDDLE = "AlignMiddle".freeze
+    ALIGN_BOTTOM = "AlignBottom".freeze
+    DISTRIBUTE_HORIZONTALLY = "DistributeHorizontally".freeze
+    DISTRIBUTE_VERTICALLY = "DistributeVertically".freeze
+
+    # Builds the enum from string
+    # @param [String] The enum value in the form of the string
+    # @return [String] The enum value
+    def build_from_hash(value)
+      constantValues = ShapesAlignmentType.constants.select { |c| ShapesAlignmentType::const_get(c) == value }
+      raise "Invalid ENUM value #{value} for class #ShapesAlignmentType" if constantValues.empty?
+      value
+    end
+  end
 end

@@ -34,12 +34,38 @@ module AsposeSlidesCloud
     # Get or sets the indexes of slides to merge
     attr_accessor :slides
 
+    # Merge (request or storage). 
+    attr_accessor :source
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.any?{ |s| s.casecmp(value) == 0 }
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'path' => :'Path',
         :'password' => :'Password',
         :'slides' => :'Slides',
+        :'source' => :'Source',
       }
     end
 
@@ -49,6 +75,7 @@ module AsposeSlidesCloud
         :'path' => :'String',
         :'password' => :'String',
         :'slides' => :'Array<Integer>',
+        :'source' => :'String',
       }
     end
 
@@ -73,6 +100,10 @@ module AsposeSlidesCloud
           self.slides = value
         end
       end
+
+      if attributes.has_key?(:'Source')
+        self.source = attributes[:'Source']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -85,7 +116,19 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      source_validator = EnumAttributeValidator.new('String', ['Storage', 'Request'])
+      return false unless source_validator.valid?(@source)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] source Object to be assigned
+    def source=(source)
+      validator = EnumAttributeValidator.new('String', ['Storage', 'Request'])
+      unless validator.valid?(source)
+        fail ArgumentError, 'invalid value for "source", must be one of #{validator.allowable_values}.'
+      end
+      @source = source
     end
 
     # Checks equality by comparing each attribute.
@@ -95,7 +138,8 @@ module AsposeSlidesCloud
       self.class == o.class &&
           path == o.path &&
           password == o.password &&
-          slides == o.slides
+          slides == o.slides &&
+          source == o.source
     end
 
     # @see the `==` method
@@ -107,7 +151,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [path, password, slides].hash
+      [path, password, slides, source].hash
     end
 
     # Builds the object from hash

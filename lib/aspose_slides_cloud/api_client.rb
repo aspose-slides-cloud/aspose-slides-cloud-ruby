@@ -176,8 +176,7 @@ module AsposeSlidesCloud
         unless @config.access_token
           auth_token_response = Faraday.post(
             @config.auth_base_url + '/connect/token',
-            { :grant_type => 'client_credentials', 'client_id' => @config.app_sid, 'client_secret' => @config.app_sid })
-
+            { :grant_type => 'client_credentials', 'client_id' => @config.app_sid, 'client_secret' => @config.app_key })
           unless auth_token_response.success?
             if auth_token_response.status == 0
               # Errors from libcurl will be made visible here
@@ -325,7 +324,7 @@ module AsposeSlidesCloud
     def put_multipart!(data, boundary, part_index, part_data)
       data << "\r\n--#{boundary}\r\n"
       if part_index > 0
-        data << "Content-Disposition: form-data; name=\"file#{part_index}\";filename=\"null\"\r\n"
+        data << "Content-Disposition: form-data; name=\"file#{part_index}\";filename=\"file#{part_index}\"\r\n"
         data << "Content-Type: application/octet-stream\r\n"
       elsif
         data << "Content-Disposition: form-data; name=\"data\"\r\n"

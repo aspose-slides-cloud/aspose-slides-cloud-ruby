@@ -212,6 +212,7 @@ module AsposeSlidesCloud
         :'ShapeExportFormat' => {  },
         :'ShapeImageExportOptions' => {  },
         :'ShapeThumbnailBounds' => {  },
+        :'ShapesAlignmentType' => {  },
         :'SizeType' => {  },
         :'SlideComment' => {  },
         :'SlideExportFormat' => {  },
