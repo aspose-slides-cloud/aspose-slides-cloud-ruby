@@ -91,7 +91,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -159,7 +159,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -192,6 +192,10 @@ module AsposeSlidesCloud
           storage_name = request_object.storage_name
       end
 
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.create_folder"
+      end
       # resource path
       local_var_path = '/slides/storage/folder/{path}'
       local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
@@ -211,7 +215,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -299,7 +303,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -396,7 +400,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -485,7 +489,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -522,6 +526,10 @@ module AsposeSlidesCloud
           version_id = request_object.version_id
       end
 
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.delete_file"
+      end
       # resource path
       local_var_path = '/slides/storage/file/{path}'
       local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
@@ -542,7 +550,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -578,6 +586,10 @@ module AsposeSlidesCloud
           recursive = request_object.recursive
       end
 
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.delete_folder"
+      end
       # resource path
       local_var_path = '/slides/storage/folder/{path}'
       local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
@@ -598,7 +610,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -670,7 +682,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -759,7 +771,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -844,7 +856,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -941,7 +953,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1034,7 +1046,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1115,7 +1127,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1192,7 +1204,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1281,7 +1293,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1366,7 +1378,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1463,7 +1475,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1556,7 +1568,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1633,7 +1645,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1706,7 +1718,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1771,7 +1783,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1857,7 +1869,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -1943,7 +1955,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2036,7 +2048,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2115,7 +2127,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2194,7 +2206,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2273,7 +2285,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2359,7 +2371,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2441,7 +2453,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2470,25 +2482,25 @@ module AsposeSlidesCloud
     # Remove a shape (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
-    # @param shape_index Shape index.
     # @param path Shape path.
+    # @param shape_index Shape index.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def delete_subshape(name, slide_index, shape_index, path = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = delete_subshape_with_http_info(name, slide_index, shape_index, path, password, folder, storage)
+    def delete_subshape(name, slide_index, path, shape_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_subshape_with_http_info(name, slide_index, path, shape_index, password, folder, storage)
       data
     end
 
     # Remove a shape (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
-    # @param shape_index Shape index.
     # @param path Shape path.
+    # @param shape_index Shape index.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def delete_subshape_with_http_info(name, slide_index, shape_index, path = nil, password = nil, folder = nil, storage = nil)
+    def delete_subshape_with_http_info(name, slide_index, path, shape_index, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.delete_slide_subshape ...'
       end
@@ -2501,6 +2513,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_slide_subshape"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.delete_slide_subshape"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -2530,7 +2546,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2553,7 +2569,7 @@ module AsposeSlidesCloud
     # Remove a shape (for smart art and group shapes).
     # @param request operation request
     def delete_slide_subshape_with_http_info(request)
-      data, status_code, headers = delete_subshape_with_http_info(request.name, request.slide_index, request.shape_index, request.path, request.password, request.folder, request.storage)
+      data, status_code, headers = delete_subshape_with_http_info(request.name, request.slide_index, request.path, request.shape_index, request.password, request.folder, request.storage)
       return data, status_code, headers
     end
     # Remove a range of shapes (for smart art and group shapes).
@@ -2564,7 +2580,7 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def delete_subshapes(name, slide_index, path = nil, shapes = nil, password = nil, folder = nil, storage = nil)
+    def delete_subshapes(name, slide_index, path, shapes = nil, password = nil, folder = nil, storage = nil)
       data, _status_code, _headers = delete_subshapes_with_http_info(name, slide_index, path, shapes, password, folder, storage)
       data
     end
@@ -2577,7 +2593,7 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def delete_subshapes_with_http_info(name, slide_index, path = nil, shapes = nil, password = nil, folder = nil, storage = nil)
+    def delete_subshapes_with_http_info(name, slide_index, path, shapes = nil, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.delete_slide_subshapes ...'
       end
@@ -2590,6 +2606,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_slide_subshapes"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.delete_slide_subshapes"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}'
@@ -2615,7 +2635,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2690,7 +2710,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2762,7 +2782,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2841,7 +2861,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2865,6 +2885,150 @@ module AsposeSlidesCloud
     # @param request operation request
     def delete_slides_document_property_with_http_info(request)
       data, status_code, headers = delete_document_property_with_http_info(request.name, request.property_name, request.password, request.folder, request.storage)
+      return data, status_code, headers
+    end
+    # Resets all presentation protection settings. 
+    # @param name Document name.
+    # @param password Presentation password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_protection(name, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_protection_with_http_info(name, password, folder, storage)
+      data
+    end
+
+    # Resets all presentation protection settings. 
+    # @param name Document name.
+    # @param password Presentation password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_protection_with_http_info(name, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_slides_protection_properties ...'
+      end
+
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_slides_protection_properties"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/protection'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'ProtectionProperties')
+      return data, status_code, headers
+    end
+
+    # Resets all presentation protection settings. 
+    # @param request operation request
+    def delete_slides_protection_properties(request)
+      data, _status_code, _headers = delete_slides_protection_properties_with_http_info(request)
+      data
+    end
+
+    # Resets all presentation protection settings. 
+    # @param request operation request
+    def delete_slides_protection_properties_with_http_info(request)
+      data, status_code, headers = delete_protection_with_http_info(request.name, request.password, request.folder, request.storage)
+      return data, status_code, headers
+    end
+    # Resets all presentation protection settings. 
+    # @param document Document data.
+    # @param password Presentation password.
+    def delete_protection_online(document, password)
+      data, _status_code, _headers = delete_protection_online_with_http_info(document, password)
+      data
+    end
+
+    # Resets all presentation protection settings. 
+    # @param document Document data.
+    # @param password Presentation password.
+    def delete_protection_online_with_http_info(document, password)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_slides_protection_properties_online ...'
+      end
+
+
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && document.nil?
+        fail ArgumentError, "Missing the required parameter 'document' when calling SlidesApi.delete_slides_protection_properties_online"
+      end
+      # verify the required parameter 'password' is set
+      if @api_client.config.client_side_validation && password.nil?
+        fail ArgumentError, "Missing the required parameter 'password' when calling SlidesApi.delete_slides_protection_properties_online"
+      end
+      # resource path
+      local_var_path = '/slides/protection/delete'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      return data, status_code, headers
+    end
+
+    # Resets all presentation protection settings. 
+    # @param request operation request
+    def delete_slides_protection_properties_online(request)
+      data, _status_code, _headers = delete_slides_protection_properties_online_with_http_info(request)
+      data
+    end
+
+    # Resets all presentation protection settings. 
+    # @param request operation request
+    def delete_slides_protection_properties_online_with_http_info(request)
+      data, status_code, headers = delete_protection_online_with_http_info(request.document, request.password)
       return data, status_code, headers
     end
     # Remove background from a slide.
@@ -2920,7 +3084,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -2949,27 +3113,27 @@ module AsposeSlidesCloud
     # Remove a paragraph (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param paragraph_index Paragraph index.
-    # @param path Shape path.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def delete_subshape_paragraph(name = nil, slide_index = nil, shape_index = nil, paragraph_index = nil, path = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = delete_subshape_paragraph_with_http_info(name, slide_index, shape_index, paragraph_index, path, password, folder, storage)
+    def delete_subshape_paragraph(name = nil, slide_index = nil, path = nil, shape_index = nil, paragraph_index = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_subshape_paragraph_with_http_info(name, slide_index, path, shape_index, paragraph_index, password, folder, storage)
       data
     end
 
     # Remove a paragraph (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param paragraph_index Paragraph index.
-    # @param path Shape path.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def delete_subshape_paragraph_with_http_info(name = nil, slide_index = nil, shape_index = nil, paragraph_index = nil, path = nil, password = nil, folder = nil, storage = nil)
+    def delete_subshape_paragraph_with_http_info(name = nil, slide_index = nil, path = nil, shape_index = nil, paragraph_index = nil, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.delete_subshape_paragraph ...'
       end
@@ -2978,9 +3142,9 @@ module AsposeSlidesCloud
           request_object = name
           name = request_object.name
           slide_index = request_object.slide_index
+          path = request_object.path
           shape_index = request_object.shape_index
           paragraph_index = request_object.paragraph_index
-          path = request_object.path
           password = request_object.password
           folder = request_object.folder
           storage = request_object.storage
@@ -2993,6 +3157,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_subshape_paragraph"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.delete_subshape_paragraph"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -3027,7 +3195,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -3042,27 +3210,27 @@ module AsposeSlidesCloud
     # Remove a range of paragraphs (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
-    # @param shape_index Shape index.
     # @param path Shape path.
+    # @param shape_index Shape index.
     # @param paragraphs The indices of the shapes to be deleted; delete all by default.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def delete_subshape_paragraphs(name = nil, slide_index = nil, shape_index = nil, path = nil, paragraphs = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = delete_subshape_paragraphs_with_http_info(name, slide_index, shape_index, path, paragraphs, password, folder, storage)
+    def delete_subshape_paragraphs(name = nil, slide_index = nil, path = nil, shape_index = nil, paragraphs = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_subshape_paragraphs_with_http_info(name, slide_index, path, shape_index, paragraphs, password, folder, storage)
       data
     end
 
     # Remove a range of paragraphs (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
-    # @param shape_index Shape index.
     # @param path Shape path.
+    # @param shape_index Shape index.
     # @param paragraphs The indices of the shapes to be deleted; delete all by default.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def delete_subshape_paragraphs_with_http_info(name = nil, slide_index = nil, shape_index = nil, path = nil, paragraphs = nil, password = nil, folder = nil, storage = nil)
+    def delete_subshape_paragraphs_with_http_info(name = nil, slide_index = nil, path = nil, shape_index = nil, paragraphs = nil, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.delete_subshape_paragraphs ...'
       end
@@ -3071,8 +3239,8 @@ module AsposeSlidesCloud
           request_object = name
           name = request_object.name
           slide_index = request_object.slide_index
-          shape_index = request_object.shape_index
           path = request_object.path
+          shape_index = request_object.shape_index
           paragraphs = request_object.paragraphs
           password = request_object.password
           folder = request_object.folder
@@ -3086,6 +3254,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_subshape_paragraphs"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.delete_subshape_paragraphs"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -3116,7 +3288,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -3131,29 +3303,29 @@ module AsposeSlidesCloud
     # Remove a portion (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param paragraph_index Paragraph index.
     # @param portion_index Portion index.
-    # @param path Shape path.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def delete_subshape_portion(name = nil, slide_index = nil, shape_index = nil, paragraph_index = nil, portion_index = nil, path = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = delete_subshape_portion_with_http_info(name, slide_index, shape_index, paragraph_index, portion_index, path, password, folder, storage)
+    def delete_subshape_portion(name = nil, slide_index = nil, path = nil, shape_index = nil, paragraph_index = nil, portion_index = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_subshape_portion_with_http_info(name, slide_index, path, shape_index, paragraph_index, portion_index, password, folder, storage)
       data
     end
 
     # Remove a portion (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param paragraph_index Paragraph index.
     # @param portion_index Portion index.
-    # @param path Shape path.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def delete_subshape_portion_with_http_info(name = nil, slide_index = nil, shape_index = nil, paragraph_index = nil, portion_index = nil, path = nil, password = nil, folder = nil, storage = nil)
+    def delete_subshape_portion_with_http_info(name = nil, slide_index = nil, path = nil, shape_index = nil, paragraph_index = nil, portion_index = nil, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.delete_subshape_portion ...'
       end
@@ -3162,10 +3334,10 @@ module AsposeSlidesCloud
           request_object = name
           name = request_object.name
           slide_index = request_object.slide_index
+          path = request_object.path
           shape_index = request_object.shape_index
           paragraph_index = request_object.paragraph_index
           portion_index = request_object.portion_index
-          path = request_object.path
           password = request_object.password
           folder = request_object.folder
           storage = request_object.storage
@@ -3178,6 +3350,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_subshape_portion"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.delete_subshape_portion"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -3217,7 +3393,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -3232,29 +3408,29 @@ module AsposeSlidesCloud
     # Remove a range of portions (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param paragraph_index Paragraph index.
-    # @param path Shape path.
     # @param portions The indices of the shapes to be deleted; delete all by default.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def delete_subshape_portions(name = nil, slide_index = nil, shape_index = nil, paragraph_index = nil, path = nil, portions = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = delete_subshape_portions_with_http_info(name, slide_index, shape_index, paragraph_index, path, portions, password, folder, storage)
+    def delete_subshape_portions(name = nil, slide_index = nil, path = nil, shape_index = nil, paragraph_index = nil, portions = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_subshape_portions_with_http_info(name, slide_index, path, shape_index, paragraph_index, portions, password, folder, storage)
       data
     end
 
     # Remove a range of portions (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param paragraph_index Paragraph index.
-    # @param path Shape path.
     # @param portions The indices of the shapes to be deleted; delete all by default.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def delete_subshape_portions_with_http_info(name = nil, slide_index = nil, shape_index = nil, paragraph_index = nil, path = nil, portions = nil, password = nil, folder = nil, storage = nil)
+    def delete_subshape_portions_with_http_info(name = nil, slide_index = nil, path = nil, shape_index = nil, paragraph_index = nil, portions = nil, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.delete_subshape_portions ...'
       end
@@ -3263,9 +3439,9 @@ module AsposeSlidesCloud
           request_object = name
           name = request_object.name
           slide_index = request_object.slide_index
+          path = request_object.path
           shape_index = request_object.shape_index
           paragraph_index = request_object.paragraph_index
-          path = request_object.path
           portions = request_object.portions
           password = request_object.password
           folder = request_object.folder
@@ -3279,6 +3455,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_subshape_portions"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.delete_subshape_portions"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -3314,7 +3494,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
@@ -3324,6 +3504,74 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'Portions')
+      return data, status_code, headers
+    end
+    # Removes shapes with name \"watermark\" from the presentation.
+    # @param name Document name.
+    # @param shape_name Name of the watermark shape. If null, default value \"watermark\"is used.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_watermark(name = nil, shape_name = nil, password = nil, folder = nil, storage = nil)
+      delete_watermark_with_http_info(name, shape_name, password, folder, storage)
+      nil
+    end
+
+    # Removes shapes with name \&quot;watermark\&quot; from the presentation.
+    # @param name Document name.
+    # @param shape_name Name of the watermark shape. If null, default value \"watermark\"is used.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_watermark_with_http_info(name = nil, shape_name = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_watermark ...'
+      end
+
+      if name.is_a?(DeleteWatermarkRequest)
+          request_object = name
+          name = request_object.name
+          shape_name = request_object.shape_name
+          password = request_object.password
+          folder = request_object.folder
+          storage = request_object.storage
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_watermark"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/watermark/delete'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'shapeName'] = shape_name unless shape_name.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names)
       return data, status_code, headers
     end
     # Download file
@@ -3351,6 +3599,10 @@ module AsposeSlidesCloud
           version_id = request_object.version_id
       end
 
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.download_file"
+      end
       # resource path
       local_var_path = '/slides/storage/file/{path}'
       local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
@@ -3371,7 +3623,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3420,7 +3672,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3454,6 +3706,10 @@ module AsposeSlidesCloud
           storage_name = request_object.storage_name
       end
 
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.get_file_versions"
+      end
       # resource path
       local_var_path = '/slides/storage/version/{path}'
       local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
@@ -3473,7 +3729,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3507,6 +3763,10 @@ module AsposeSlidesCloud
           storage_name = request_object.storage_name
       end
 
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.get_files_list"
+      end
       # resource path
       local_var_path = '/slides/storage/folder/{path}'
       local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
@@ -3526,7 +3786,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3599,7 +3859,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3657,7 +3917,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3744,7 +4004,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3802,7 +4062,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3889,7 +4149,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -3954,7 +4214,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4041,7 +4301,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4122,7 +4382,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4201,7 +4461,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4287,7 +4547,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4387,7 +4647,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4480,7 +4740,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4567,7 +4827,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4652,7 +4912,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4752,7 +5012,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4845,7 +5105,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4924,7 +5184,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -4992,7 +5252,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5079,7 +5339,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5151,7 +5411,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5244,7 +5504,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5330,7 +5590,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5409,7 +5669,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5438,25 +5698,25 @@ module AsposeSlidesCloud
     # Read slide shape info (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
-    # @param shape_index Shape index.
     # @param path Shape path.
+    # @param shape_index Shape index.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def get_subshape(name, slide_index, shape_index, path = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = get_subshape_with_http_info(name, slide_index, shape_index, path, password, folder, storage)
+    def get_subshape(name, slide_index, path, shape_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_subshape_with_http_info(name, slide_index, path, shape_index, password, folder, storage)
       data
     end
 
     # Read slide shape info (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
-    # @param shape_index Shape index.
     # @param path Shape path.
+    # @param shape_index Shape index.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def get_subshape_with_http_info(name, slide_index, shape_index, path = nil, password = nil, folder = nil, storage = nil)
+    def get_subshape_with_http_info(name, slide_index, path, shape_index, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.get_slide_subshape ...'
       end
@@ -5469,6 +5729,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slide_subshape"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.get_slide_subshape"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -5498,7 +5762,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5521,33 +5785,33 @@ module AsposeSlidesCloud
     # Read slide shape info (for smart art and group shapes).
     # @param request operation request
     def get_slide_subshape_with_http_info(request)
-      data, status_code, headers = get_subshape_with_http_info(request.name, request.slide_index, request.shape_index, request.path, request.password, request.folder, request.storage)
+      data, status_code, headers = get_subshape_with_http_info(request.name, request.slide_index, request.path, request.shape_index, request.password, request.folder, request.storage)
       return data, status_code, headers
     end
     # Read shape paragraph info (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param paragraph_index Paragraph index.
-    # @param path Shape path.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def get_subshape_paragraph(name, slide_index, shape_index, paragraph_index, path = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = get_subshape_paragraph_with_http_info(name, slide_index, shape_index, paragraph_index, path, password, folder, storage)
+    def get_subshape_paragraph(name, slide_index, path, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_subshape_paragraph_with_http_info(name, slide_index, path, shape_index, paragraph_index, password, folder, storage)
       data
     end
 
     # Read shape paragraph info (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param paragraph_index Paragraph index.
-    # @param path Shape path.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def get_subshape_paragraph_with_http_info(name, slide_index, shape_index, paragraph_index, path = nil, password = nil, folder = nil, storage = nil)
+    def get_subshape_paragraph_with_http_info(name, slide_index, path, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.get_slide_subshape_paragraph ...'
       end
@@ -5560,6 +5824,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slide_subshape_paragraph"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.get_slide_subshape_paragraph"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -5594,7 +5862,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5617,31 +5885,31 @@ module AsposeSlidesCloud
     # Read shape paragraph info (for smart art and group shapes).
     # @param request operation request
     def get_slide_subshape_paragraph_with_http_info(request)
-      data, status_code, headers = get_subshape_paragraph_with_http_info(request.name, request.slide_index, request.shape_index, request.paragraph_index, request.path, request.password, request.folder, request.storage)
+      data, status_code, headers = get_subshape_paragraph_with_http_info(request.name, request.slide_index, request.path, request.shape_index, request.paragraph_index, request.password, request.folder, request.storage)
       return data, status_code, headers
     end
     # Read shape paragraphs info (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
-    # @param shape_index Shape index.
     # @param path Shape path.
+    # @param shape_index Shape index.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def get_subshape_paragraphs(name, slide_index, shape_index, path = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = get_subshape_paragraphs_with_http_info(name, slide_index, shape_index, path, password, folder, storage)
+    def get_subshape_paragraphs(name, slide_index, path, shape_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_subshape_paragraphs_with_http_info(name, slide_index, path, shape_index, password, folder, storage)
       data
     end
 
     # Read shape paragraphs info (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
-    # @param shape_index Shape index.
     # @param path Shape path.
+    # @param shape_index Shape index.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def get_subshape_paragraphs_with_http_info(name, slide_index, shape_index, path = nil, password = nil, folder = nil, storage = nil)
+    def get_subshape_paragraphs_with_http_info(name, slide_index, path, shape_index, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.get_slide_subshape_paragraphs ...'
       end
@@ -5654,6 +5922,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slide_subshape_paragraphs"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.get_slide_subshape_paragraphs"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -5683,7 +5955,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5706,7 +5978,7 @@ module AsposeSlidesCloud
     # Read shape paragraphs info (for smart art and group shapes).
     # @param request operation request
     def get_slide_subshape_paragraphs_with_http_info(request)
-      data, status_code, headers = get_subshape_paragraphs_with_http_info(request.name, request.slide_index, request.shape_index, request.path, request.password, request.folder, request.storage)
+      data, status_code, headers = get_subshape_paragraphs_with_http_info(request.name, request.slide_index, request.path, request.shape_index, request.password, request.folder, request.storage)
       return data, status_code, headers
     end
     # Read slide shapes info.
@@ -5716,7 +5988,7 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def get_subshapes(name, slide_index, path = nil, password = nil, folder = nil, storage = nil)
+    def get_subshapes(name, slide_index, path, password = nil, folder = nil, storage = nil)
       data, _status_code, _headers = get_subshapes_with_http_info(name, slide_index, path, password, folder, storage)
       data
     end
@@ -5728,7 +6000,7 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def get_subshapes_with_http_info(name, slide_index, path = nil, password = nil, folder = nil, storage = nil)
+    def get_subshapes_with_http_info(name, slide_index, path, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.get_slide_subshapes ...'
       end
@@ -5741,6 +6013,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_slide_subshapes"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.get_slide_subshapes"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}'
@@ -5765,7 +6041,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5821,7 +6097,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5849,7 +6125,7 @@ module AsposeSlidesCloud
     # @param name Document name.
     # @param password Document password.
     # @param folder Document folder.
-    # @param storage Documentstorage.
+    # @param storage Document storage.
     def get_presentation(name, password = nil, folder = nil, storage = nil)
       data, _status_code, _headers = get_presentation_with_http_info(name, password, folder, storage)
       data
@@ -5859,7 +6135,7 @@ module AsposeSlidesCloud
     # @param name Document name.
     # @param password Document password.
     # @param folder Document folder.
-    # @param storage Documentstorage.
+    # @param storage Document storage.
     def get_presentation_with_http_info(name, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.get_slides_document ...'
@@ -5891,7 +6167,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -5963,7 +6239,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -6042,7 +6318,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -6121,7 +6397,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -6211,7 +6487,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -6283,7 +6559,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -6369,7 +6645,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -6448,7 +6724,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -6523,7 +6799,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -6575,7 +6851,7 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_slides_protection_properties"
       end
       # resource path
-      local_var_path = '/slides/{name}/protectionProperties'
+      local_var_path = '/slides/{name}/protection'
       local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
 
       # query parameters
@@ -6595,7 +6871,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -6674,7 +6950,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -6753,7 +7029,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -6832,7 +7108,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -6911,7 +7187,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -6983,7 +7259,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -7065,7 +7341,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -7137,7 +7413,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -7216,7 +7492,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -7295,7 +7571,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -7374,7 +7650,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -7453,7 +7729,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -7525,7 +7801,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -7554,29 +7830,29 @@ module AsposeSlidesCloud
     # Read paragraph portion info (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param paragraph_index Paragraph index.
     # @param portion_index Portion index.
-    # @param path Shape path.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def get_subshape_portion(name, slide_index, shape_index, paragraph_index, portion_index, path = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = get_subshape_portion_with_http_info(name, slide_index, shape_index, paragraph_index, portion_index, path, password, folder, storage)
+    def get_subshape_portion(name, slide_index, path, shape_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_subshape_portion_with_http_info(name, slide_index, path, shape_index, paragraph_index, portion_index, password, folder, storage)
       data
     end
 
     # Read paragraph portion info (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param paragraph_index Paragraph index.
     # @param portion_index Portion index.
-    # @param path Shape path.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def get_subshape_portion_with_http_info(name, slide_index, shape_index, paragraph_index, portion_index, path = nil, password = nil, folder = nil, storage = nil)
+    def get_subshape_portion_with_http_info(name, slide_index, path, shape_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.get_subshape_paragraph_portion ...'
       end
@@ -7589,6 +7865,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_subshape_paragraph_portion"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.get_subshape_paragraph_portion"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -7628,7 +7908,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -7651,33 +7931,33 @@ module AsposeSlidesCloud
     # Read paragraph portion info (for smart art and group shapes).
     # @param request operation request
     def get_subshape_paragraph_portion_with_http_info(request)
-      data, status_code, headers = get_subshape_portion_with_http_info(request.name, request.slide_index, request.shape_index, request.paragraph_index, request.portion_index, request.path, request.password, request.folder, request.storage)
+      data, status_code, headers = get_subshape_portion_with_http_info(request.name, request.slide_index, request.path, request.shape_index, request.paragraph_index, request.portion_index, request.password, request.folder, request.storage)
       return data, status_code, headers
     end
     # Read paragraph portions info (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param paragraph_index Paragraph index.
-    # @param path Shape path.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def get_subshape_portions(name, slide_index, shape_index, paragraph_index, path = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = get_subshape_portions_with_http_info(name, slide_index, shape_index, paragraph_index, path, password, folder, storage)
+    def get_subshape_portions(name, slide_index, path, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_subshape_portions_with_http_info(name, slide_index, path, shape_index, paragraph_index, password, folder, storage)
       data
     end
 
     # Read paragraph portions info (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param paragraph_index Paragraph index.
-    # @param path Shape path.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def get_subshape_portions_with_http_info(name, slide_index, shape_index, paragraph_index, path = nil, password = nil, folder = nil, storage = nil)
+    def get_subshape_portions_with_http_info(name, slide_index, path, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.get_subshape_paragraph_portions ...'
       end
@@ -7690,6 +7970,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_subshape_paragraph_portions"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.get_subshape_paragraph_portions"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -7724,7 +8008,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -7747,7 +8031,7 @@ module AsposeSlidesCloud
     # Read paragraph portions info (for smart art and group shapes).
     # @param request operation request
     def get_subshape_paragraph_portions_with_http_info(request)
-      data, status_code, headers = get_subshape_portions_with_http_info(request.name, request.slide_index, request.shape_index, request.paragraph_index, request.path, request.password, request.folder, request.storage)
+      data, status_code, headers = get_subshape_portions_with_http_info(request.name, request.slide_index, request.path, request.shape_index, request.paragraph_index, request.password, request.folder, request.storage)
       return data, status_code, headers
     end
     # Move file
@@ -7811,7 +8095,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -7879,7 +8163,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -7915,6 +8199,10 @@ module AsposeSlidesCloud
           version_id = request_object.version_id
       end
 
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.object_exists"
+      end
       # resource path
       local_var_path = '/slides/storage/exist/{path}'
       local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
@@ -7935,7 +8223,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -8016,7 +8304,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8118,7 +8406,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8205,7 +8493,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8241,7 +8529,7 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def create_subshape(name, slide_index, path = nil, dto = nil, shape_to_clone = nil, position = nil, password = nil, folder = nil, storage = nil)
+    def create_subshape(name, slide_index, path, dto = nil, shape_to_clone = nil, position = nil, password = nil, folder = nil, storage = nil)
       data, _status_code, _headers = create_subshape_with_http_info(name, slide_index, path, dto, shape_to_clone, position, password, folder, storage)
       data
     end
@@ -8256,7 +8544,7 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def create_subshape_with_http_info(name, slide_index, path = nil, dto = nil, shape_to_clone = nil, position = nil, password = nil, folder = nil, storage = nil)
+    def create_subshape_with_http_info(name, slide_index, path, dto = nil, shape_to_clone = nil, position = nil, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.post_add_new_subshape ...'
       end
@@ -8269,6 +8557,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_add_new_subshape"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.post_add_new_subshape"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}'
@@ -8295,7 +8587,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8324,29 +8616,29 @@ module AsposeSlidesCloud
     # Creates new paragraph (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param dto Paragraph DTO.
-    # @param path Shape path.
     # @param position Position of the new paragraph in the list. Default is at the end of the list.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def create_subshape_paragraph(name, slide_index, shape_index, dto, path = nil, position = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = create_subshape_paragraph_with_http_info(name, slide_index, shape_index, dto, path, position, password, folder, storage)
+    def create_subshape_paragraph(name, slide_index, path, shape_index, dto, position = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = create_subshape_paragraph_with_http_info(name, slide_index, path, shape_index, dto, position, password, folder, storage)
       data
     end
 
     # Creates new paragraph (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param dto Paragraph DTO.
-    # @param path Shape path.
     # @param position Position of the new paragraph in the list. Default is at the end of the list.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def create_subshape_paragraph_with_http_info(name, slide_index, shape_index, dto, path = nil, position = nil, password = nil, folder = nil, storage = nil)
+    def create_subshape_paragraph_with_http_info(name, slide_index, path, shape_index, dto, position = nil, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.post_add_new_subshape_paragraph ...'
       end
@@ -8359,6 +8651,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_add_new_subshape_paragraph"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.post_add_new_subshape_paragraph"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -8393,7 +8689,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8416,37 +8712,37 @@ module AsposeSlidesCloud
     # Creates new paragraph (for smart art and group shapes).
     # @param request operation request
     def post_add_new_subshape_paragraph_with_http_info(request)
-      data, status_code, headers = create_subshape_paragraph_with_http_info(request.name, request.slide_index, request.shape_index, request.dto, request.path, request.position, request.password, request.folder, request.storage)
+      data, status_code, headers = create_subshape_paragraph_with_http_info(request.name, request.slide_index, request.path, request.shape_index, request.dto, request.position, request.password, request.folder, request.storage)
       return data, status_code, headers
     end
     # Creates new portion (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param paragraph_index Paragraph index.
     # @param dto Portion DTO.
-    # @param path Shape path.
     # @param position Position of the new portion in the list. Default is at the end of the list.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def create_subshape_portion(name, slide_index, shape_index, paragraph_index, dto, path = nil, position = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = create_subshape_portion_with_http_info(name, slide_index, shape_index, paragraph_index, dto, path, position, password, folder, storage)
+    def create_subshape_portion(name, slide_index, path, shape_index, paragraph_index, dto, position = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = create_subshape_portion_with_http_info(name, slide_index, path, shape_index, paragraph_index, dto, position, password, folder, storage)
       data
     end
 
     # Creates new portion (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param paragraph_index Paragraph index.
     # @param dto Portion DTO.
-    # @param path Shape path.
     # @param position Position of the new portion in the list. Default is at the end of the list.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def create_subshape_portion_with_http_info(name, slide_index, shape_index, paragraph_index, dto, path = nil, position = nil, password = nil, folder = nil, storage = nil)
+    def create_subshape_portion_with_http_info(name, slide_index, path, shape_index, paragraph_index, dto, position = nil, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.post_add_new_subshape_portion ...'
       end
@@ -8459,6 +8755,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_add_new_subshape_portion"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.post_add_new_subshape_portion"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -8498,7 +8798,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8521,7 +8821,7 @@ module AsposeSlidesCloud
     # Creates new portion (for smart art and group shapes).
     # @param request operation request
     def post_add_new_subshape_portion_with_http_info(request)
-      data, status_code, headers = create_subshape_portion_with_http_info(request.name, request.slide_index, request.shape_index, request.paragraph_index, request.dto, request.path, request.position, request.password, request.folder, request.storage)
+      data, status_code, headers = create_subshape_portion_with_http_info(request.name, request.slide_index, request.path, request.shape_index, request.paragraph_index, request.dto, request.position, request.password, request.folder, request.storage)
       return data, status_code, headers
     end
     # Add new notes slide.
@@ -8583,7 +8883,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8679,7 +8979,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8771,7 +9071,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(category)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8870,7 +9170,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(data_point)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8962,7 +9262,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(series)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -9054,7 +9354,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -9149,7 +9449,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -9221,8 +9521,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = document
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -9305,8 +9607,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = document
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -9382,8 +9686,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = document
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -9455,7 +9761,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -9538,7 +9844,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -9569,14 +9875,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     # @param shape_index Index of shape starting from 1
     # @param format Export picture format.
-    # @param password Document password.
-    # @param storage Document storage.
     # @param scale_x X scale ratio.
     # @param scale_y Y scale ratio.
     # @param bounds Shape thumbnail bounds type.
+    # @param password Document password.
+    # @param storage Document storage.
     # @param fonts_folder Fonts folder.
-    def download_shape_online(document, slide_index, shape_index, format, password = nil, storage = nil, scale_x = nil, scale_y = nil, bounds = nil, fonts_folder = nil)
-      data, _status_code, _headers = download_shape_online_with_http_info(document, slide_index, shape_index, format, password, storage, scale_x, scale_y, bounds, fonts_folder)
+    def download_shape_online(document, slide_index, shape_index, format, scale_x = nil, scale_y = nil, bounds = nil, password = nil, storage = nil, fonts_folder = nil)
+      data, _status_code, _headers = download_shape_online_with_http_info(document, slide_index, shape_index, format, scale_x, scale_y, bounds, password, storage, fonts_folder)
       data
     end
 
@@ -9585,13 +9891,13 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     # @param shape_index Index of shape starting from 1
     # @param format Export picture format.
-    # @param password Document password.
-    # @param storage Document storage.
     # @param scale_x X scale ratio.
     # @param scale_y Y scale ratio.
     # @param bounds Shape thumbnail bounds type.
+    # @param password Document password.
+    # @param storage Document storage.
     # @param fonts_folder Fonts folder.
-    def download_shape_online_with_http_info(document, slide_index, shape_index, format, password = nil, storage = nil, scale_x = nil, scale_y = nil, bounds = nil, fonts_folder = nil)
+    def download_shape_online_with_http_info(document, slide_index, shape_index, format, scale_x = nil, scale_y = nil, bounds = nil, password = nil, storage = nil, fonts_folder = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.post_export_shape ...'
       end
@@ -9628,10 +9934,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'storage'] = storage unless storage.nil?
       query_params[:'scaleX'] = scale_x unless scale_x.nil?
       query_params[:'scaleY'] = scale_y unless scale_y.nil?
       query_params[:'bounds'] = bounds unless bounds.nil?
+      query_params[:'storage'] = storage unless storage.nil?
       query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
 
       # header parameters
@@ -9646,8 +9952,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = document
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -9670,7 +9978,7 @@ module AsposeSlidesCloud
     # Render shape to specified picture format.
     # @param request operation request
     def post_export_shape_with_http_info(request)
-      data, status_code, headers = download_shape_online_with_http_info(request.document, request.slide_index, request.shape_index, request.format, request.password, request.storage, request.scale_x, request.scale_y, request.bounds, request.fonts_folder)
+      data, status_code, headers = download_shape_online_with_http_info(request.document, request.slide_index, request.shape_index, request.format, request.scale_x, request.scale_y, request.bounds, request.password, request.storage, request.fonts_folder)
       return data, status_code, headers
     end
     # Save a slide to a specified format.
@@ -9742,8 +10050,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = document
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -9815,8 +10125,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = document
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -9888,8 +10200,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = document
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -9981,8 +10295,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = document
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -10006,6 +10322,159 @@ module AsposeSlidesCloud
     # @param request operation request
     def post_get_notes_slide_with_format_with_http_info(request)
       data, status_code, headers = download_notes_slide_online_with_http_info(request.document, request.slide_index, request.format, request.width, request.height, request.password, request.fonts_folder)
+      return data, status_code, headers
+    end
+    # Adds an image watermark to each slide of the presentation.  Image can be provided as a part of the form or withing PictureFrame DTO for detailed customization. Both options are applicable simultaneously. 
+    # @param name Document name.
+    # @param image Image data.
+    # @param picture_frame PictureFrame DTO
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_image_watermark(name, image = nil, picture_frame = nil, password = nil, folder = nil, storage = nil)
+      create_image_watermark_with_http_info(name, image, picture_frame, password, folder, storage)
+      nil
+    end
+
+    # Adds an image watermark to each slide of the presentation.  Image can be provided as a part of the form or withing PictureFrame DTO for detailed customization. Both options are applicable simultaneously. 
+    # @param name Document name.
+    # @param image Image data.
+    # @param picture_frame PictureFrame DTO
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_image_watermark_with_http_info(name, image = nil, picture_frame = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.post_image_watermark ...'
+      end
+
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_image_watermark"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/watermark/image'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(picture_frame)
+
+      # form parameters
+      post_files = []
+      if image
+        post_files = post_files.push(image)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names)
+      return data, status_code, headers
+    end
+
+    # Adds an image watermark to each slide of the presentation.  Image can be provided as a part of the form or withing PictureFrame DTO for detailed customization. Both options are applicable simultaneously. 
+    # @param request operation request
+    def post_image_watermark(request)
+      post_image_watermark_with_http_info(request)
+      nil
+    end
+
+    # Adds an image watermark to each slide of the presentation.  Image can be provided as a part of the form or withing PictureFrame DTO for detailed customization. Both options are applicable simultaneously. 
+    # @param request operation request
+    def post_image_watermark_with_http_info(request)
+      data, status_code, headers = create_image_watermark_with_http_info(request.name, request.image, request.picture_frame, request.password, request.folder, request.storage)
+      return data, status_code, headers
+    end
+    # Adds an image watermark to each slide of the presentation.  Image can be provided as a part of the form or withing PictureFrame DTO for detailed customization. Both options are applicable simultaneously. 
+    # @param document Document data.
+    # @param image Image data.
+    # @param picture_frame PictureFrame DTO.
+    # @param password Document password.
+    def create_image_watermark_online(document, image = nil, picture_frame = nil, password = nil)
+      data, _status_code, _headers = create_image_watermark_online_with_http_info(document, image, picture_frame, password)
+      data
+    end
+
+    # Adds an image watermark to each slide of the presentation.  Image can be provided as a part of the form or withing PictureFrame DTO for detailed customization. Both options are applicable simultaneously. 
+    # @param document Document data.
+    # @param image Image data.
+    # @param picture_frame PictureFrame DTO.
+    # @param password Document password.
+    def create_image_watermark_online_with_http_info(document, image = nil, picture_frame = nil, password = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.post_image_watermark_online ...'
+      end
+
+
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && document.nil?
+        fail ArgumentError, "Missing the required parameter 'document' when calling SlidesApi.post_image_watermark_online"
+      end
+      # resource path
+      local_var_path = '/slides/watermark/image'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(picture_frame)
+
+      # form parameters
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
+      if image
+        post_files = post_files.push(image)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      return data, status_code, headers
+    end
+
+    # Adds an image watermark to each slide of the presentation.  Image can be provided as a part of the form or withing PictureFrame DTO for detailed customization. Both options are applicable simultaneously. 
+    # @param request operation request
+    def post_image_watermark_online(request)
+      data, _status_code, _headers = post_image_watermark_online_with_http_info(request)
+      data
+    end
+
+    # Adds an image watermark to each slide of the presentation.  Image can be provided as a part of the form or withing PictureFrame DTO for detailed customization. Both options are applicable simultaneously. 
+    # @param request operation request
+    def post_image_watermark_online_with_http_info(request)
+      data, status_code, headers = create_image_watermark_online_with_http_info(request.document, request.image, request.picture_frame, request.password)
       return data, status_code, headers
     end
     # Get all presentation images.
@@ -10047,8 +10516,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = document
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -10143,7 +10614,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -10245,7 +10716,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -10336,7 +10807,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -10450,7 +10921,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(options)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -10528,7 +10999,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -10610,8 +11081,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = document
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -10705,8 +11178,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = document
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -10792,7 +11267,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -10878,7 +11353,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -10992,7 +11467,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(options)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -11077,7 +11552,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(effect)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -11162,7 +11637,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(sequence)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -11254,7 +11729,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(effect)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -11343,8 +11818,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = document
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -11445,7 +11922,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(options)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -11523,7 +12000,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -11605,8 +12082,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = document
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -11697,7 +12176,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -11774,8 +12253,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = data
+      post_files = []
+      if data
+        post_files = post_files.push(data)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -11849,7 +12330,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(html)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -11923,8 +12404,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = pdf
+      post_files = []
+      if pdf
+        post_files = post_files.push(pdf)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -12005,7 +12488,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -12095,7 +12578,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(data)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -12158,8 +12641,10 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request)
 
       # form parameters
-      post_files = nil
-      post_files = files
+      post_files = []
+      if files
+        post_files = post_files.concat(files)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -12223,8 +12708,10 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(pipeline)
 
       # form parameters
-      post_files = nil
-      post_files = files
+      post_files = []
+      if files
+        post_files = post_files.concat(files)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -12313,7 +12800,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -12399,7 +12886,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -12477,7 +12964,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -12565,7 +13052,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(options)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -12643,7 +13130,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(properties)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -12739,7 +13226,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -12837,7 +13324,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(options)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -12866,9 +13353,9 @@ module AsposeSlidesCloud
     # Render shape to specified picture format (for smart art and group shapes).
     # @param name Presentation name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Index of shape starting from 1
     # @param format Export picture format.
-    # @param path Shape path.
     # @param options export options
     # @param scale_x X scale ratio.
     # @param scale_y Y scale ratio.
@@ -12877,17 +13364,17 @@ module AsposeSlidesCloud
     # @param folder Presentation folder.
     # @param storage Presentation storage.
     # @param fonts_folder Fonts folder.
-    def download_subshape(name, slide_index, shape_index, format, path = nil, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
-      data, _status_code, _headers = download_subshape_with_http_info(name, slide_index, shape_index, format, path, options, scale_x, scale_y, bounds, password, folder, storage, fonts_folder)
+    def download_subshape(name, slide_index, path, shape_index, format, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
+      data, _status_code, _headers = download_subshape_with_http_info(name, slide_index, path, shape_index, format, options, scale_x, scale_y, bounds, password, folder, storage, fonts_folder)
       data
     end
 
     # Render shape to specified picture format (for smart art and group shapes).
     # @param name Presentation name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Index of shape starting from 1
     # @param format Export picture format.
-    # @param path Shape path.
     # @param options export options
     # @param scale_x X scale ratio.
     # @param scale_y Y scale ratio.
@@ -12896,7 +13383,7 @@ module AsposeSlidesCloud
     # @param folder Presentation folder.
     # @param storage Presentation storage.
     # @param fonts_folder Fonts folder.
-    def download_subshape_with_http_info(name, slide_index, shape_index, format, path = nil, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
+    def download_subshape_with_http_info(name, slide_index, path, shape_index, format, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.post_subshape_save_as ...'
       end
@@ -12909,6 +13396,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.post_subshape_save_as"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.post_subshape_save_as"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -12954,7 +13445,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(options)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -12977,7 +13468,245 @@ module AsposeSlidesCloud
     # Render shape to specified picture format (for smart art and group shapes).
     # @param request operation request
     def post_subshape_save_as_with_http_info(request)
-      data, status_code, headers = download_subshape_with_http_info(request.name, request.slide_index, request.shape_index, request.format, request.path, request.options, request.scale_x, request.scale_y, request.bounds, request.password, request.folder, request.storage, request.fonts_folder)
+      data, status_code, headers = download_subshape_with_http_info(request.name, request.slide_index, request.path, request.shape_index, request.format, request.options, request.scale_x, request.scale_y, request.bounds, request.password, request.folder, request.storage, request.fonts_folder)
+      return data, status_code, headers
+    end
+    # Adds a text watermark to each slide of the presentation. Text watermark can be setup via method arguments or withing Shape DTO for detailed customization. Both options are applicable simultaneously. 
+    # @param name Document name.
+    # @param shape Shape DTO
+    # @param font_height Watermark font height.
+    # @param text Watermark text.
+    # @param font_name Watermark font name.
+    # @param font_color Watermark font color.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_watermark(name, shape = nil, font_height = nil, text = nil, font_name = nil, font_color = nil, password = nil, folder = nil, storage = nil)
+      create_watermark_with_http_info(name, shape, font_height, text, font_name, font_color, password, folder, storage)
+      nil
+    end
+
+    # Adds a text watermark to each slide of the presentation. Text watermark can be setup via method arguments or withing Shape DTO for detailed customization. Both options are applicable simultaneously. 
+    # @param name Document name.
+    # @param shape Shape DTO
+    # @param font_height Watermark font height.
+    # @param text Watermark text.
+    # @param font_name Watermark font name.
+    # @param font_color Watermark font color.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_watermark_with_http_info(name, shape = nil, font_height = nil, text = nil, font_name = nil, font_color = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.post_watermark ...'
+      end
+
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.post_watermark"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/watermark'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'fontHeight'] = font_height unless font_height.nil?
+      query_params[:'text'] = text unless text.nil?
+      query_params[:'fontName'] = font_name unless font_name.nil?
+      query_params[:'fontColor'] = font_color unless font_color.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(shape)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names)
+      return data, status_code, headers
+    end
+
+    # Adds a text watermark to each slide of the presentation. Text watermark can be setup via method arguments or withing Shape DTO for detailed customization. Both options are applicable simultaneously. 
+    # @param request operation request
+    def post_watermark(request)
+      post_watermark_with_http_info(request)
+      nil
+    end
+
+    # Adds a text watermark to each slide of the presentation. Text watermark can be setup via method arguments or withing Shape DTO for detailed customization. Both options are applicable simultaneously. 
+    # @param request operation request
+    def post_watermark_with_http_info(request)
+      data, status_code, headers = create_watermark_with_http_info(request.name, request.shape, request.font_height, request.text, request.font_name, request.font_color, request.password, request.folder, request.storage)
+      return data, status_code, headers
+    end
+    # Removes shapes with name \"watermark\" from the presentation.
+    # @param document Document data.
+    # @param shape_name Name of the watermark shape. If null, default value \"watermark\"is used.
+    # @param password Document password.
+    def delete_watermark_online(document, shape_name = nil, password = nil)
+      data, _status_code, _headers = delete_watermark_online_with_http_info(document, shape_name, password)
+      data
+    end
+
+    # Removes shapes with name \&quot;watermark\&quot; from the presentation.
+    # @param document Document data.
+    # @param shape_name Name of the watermark shape. If null, default value \"watermark\"is used.
+    # @param password Document password.
+    def delete_watermark_online_with_http_info(document, shape_name = nil, password = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.post_watermark_delete_online ...'
+      end
+
+
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && document.nil?
+        fail ArgumentError, "Missing the required parameter 'document' when calling SlidesApi.post_watermark_delete_online"
+      end
+      # resource path
+      local_var_path = '/slides/watermark/delete'
+
+      # query parameters
+      query_params = {}
+      query_params[:'shapeName'] = shape_name unless shape_name.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      return data, status_code, headers
+    end
+
+    # Removes shapes with name \"watermark\" from the presentation.
+    # @param request operation request
+    def post_watermark_delete_online(request)
+      data, _status_code, _headers = post_watermark_delete_online_with_http_info(request)
+      data
+    end
+
+    # Removes shapes with name \&quot;watermark\&quot; from the presentation.
+    # @param request operation request
+    def post_watermark_delete_online_with_http_info(request)
+      data, status_code, headers = delete_watermark_online_with_http_info(request.document, request.shape_name, request.password)
+      return data, status_code, headers
+    end
+    # Adds a text watermark to each slide of the presentation. Text watermark can be setup via method arguments or withing Shape DTO for detailed customization. Both options are applicable simultaneously. 
+    # @param document Document data.
+    # @param shape Shape DTO
+    # @param font_height Watermark font height.
+    # @param text Watermark text.
+    # @param font_name Watermark font name.
+    # @param font_color Watermark font color.
+    # @param password Document password.
+    def create_watermark_online(document, shape = nil, font_height = nil, text = nil, font_name = nil, font_color = nil, password = nil)
+      data, _status_code, _headers = create_watermark_online_with_http_info(document, shape, font_height, text, font_name, font_color, password)
+      data
+    end
+
+    # Adds a text watermark to each slide of the presentation. Text watermark can be setup via method arguments or withing Shape DTO for detailed customization. Both options are applicable simultaneously. 
+    # @param document Document data.
+    # @param shape Shape DTO
+    # @param font_height Watermark font height.
+    # @param text Watermark text.
+    # @param font_name Watermark font name.
+    # @param font_color Watermark font color.
+    # @param password Document password.
+    def create_watermark_online_with_http_info(document, shape = nil, font_height = nil, text = nil, font_name = nil, font_color = nil, password = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.post_watermark_online ...'
+      end
+
+
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && document.nil?
+        fail ArgumentError, "Missing the required parameter 'document' when calling SlidesApi.post_watermark_online"
+      end
+      # resource path
+      local_var_path = '/slides/watermark'
+
+      # query parameters
+      query_params = {}
+      query_params[:'fontHeight'] = font_height unless font_height.nil?
+      query_params[:'text'] = text unless text.nil?
+      query_params[:'fontName'] = font_name unless font_name.nil?
+      query_params[:'fontColor'] = font_color unless font_color.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(shape)
+
+      # form parameters
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      return data, status_code, headers
+    end
+
+    # Adds a text watermark to each slide of the presentation. Text watermark can be setup via method arguments or withing Shape DTO for detailed customization. Both options are applicable simultaneously. 
+    # @param request operation request
+    def post_watermark_online(request)
+      data, _status_code, _headers = post_watermark_online_with_http_info(request)
+      data
+    end
+
+    # Adds a text watermark to each slide of the presentation. Text watermark can be setup via method arguments or withing Shape DTO for detailed customization. Both options are applicable simultaneously. 
+    # @param request operation request
+    def post_watermark_online_with_http_info(request)
+      data, status_code, headers = create_watermark_online_with_http_info(request.document, request.shape, request.font_height, request.text, request.font_name, request.font_color, request.password)
       return data, status_code, headers
     end
     # Update a chart category.
@@ -13053,7 +13782,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(category)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -13159,7 +13888,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(data_point)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -13258,7 +13987,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(series)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -13290,14 +14019,14 @@ module AsposeSlidesCloud
     # @param shape_index Index of shape starting from 1
     # @param format Export picture format.
     # @param out_path Path to save result.
-    # @param password Document password.
-    # @param storage Document storage.
     # @param scale_x X scale ratio.
     # @param scale_y Y scale ratio.
     # @param bounds Shape thumbnail bounds type.
+    # @param password Document password.
+    # @param storage Document storage.
     # @param fonts_folder Fonts folder.
-    def save_shape_online(document, slide_index, shape_index, format, out_path, password = nil, storage = nil, scale_x = nil, scale_y = nil, bounds = nil, fonts_folder = nil)
-      save_shape_online_with_http_info(document, slide_index, shape_index, format, out_path, password, storage, scale_x, scale_y, bounds, fonts_folder)
+    def save_shape_online(document, slide_index, shape_index, format, out_path, scale_x = nil, scale_y = nil, bounds = nil, password = nil, storage = nil, fonts_folder = nil)
+      save_shape_online_with_http_info(document, slide_index, shape_index, format, out_path, scale_x, scale_y, bounds, password, storage, fonts_folder)
       nil
     end
 
@@ -13307,13 +14036,13 @@ module AsposeSlidesCloud
     # @param shape_index Index of shape starting from 1
     # @param format Export picture format.
     # @param out_path Path to save result.
-    # @param password Document password.
-    # @param storage Document storage.
     # @param scale_x X scale ratio.
     # @param scale_y Y scale ratio.
     # @param bounds Shape thumbnail bounds type.
+    # @param password Document password.
+    # @param storage Document storage.
     # @param fonts_folder Fonts folder.
-    def save_shape_online_with_http_info(document, slide_index, shape_index, format, out_path, password = nil, storage = nil, scale_x = nil, scale_y = nil, bounds = nil, fonts_folder = nil)
+    def save_shape_online_with_http_info(document, slide_index, shape_index, format, out_path, scale_x = nil, scale_y = nil, bounds = nil, password = nil, storage = nil, fonts_folder = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.put_export_shape ...'
       end
@@ -13355,10 +14084,10 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'outPath'] = out_path unless out_path.nil?
-      query_params[:'storage'] = storage unless storage.nil?
       query_params[:'scaleX'] = scale_x unless scale_x.nil?
       query_params[:'scaleY'] = scale_y unless scale_y.nil?
       query_params[:'bounds'] = bounds unless bounds.nil?
+      query_params[:'storage'] = storage unless storage.nil?
       query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
 
       # header parameters
@@ -13373,8 +14102,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = document
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -13396,7 +14127,7 @@ module AsposeSlidesCloud
     # Render shape to specified picture format.
     # @param request operation request
     def put_export_shape_with_http_info(request)
-      data, status_code, headers = save_shape_online_with_http_info(request.document, request.slide_index, request.shape_index, request.format, request.out_path, request.password, request.storage, request.scale_x, request.scale_y, request.bounds, request.fonts_folder)
+      data, status_code, headers = save_shape_online_with_http_info(request.document, request.slide_index, request.shape_index, request.format, request.out_path, request.scale_x, request.scale_y, request.bounds, request.password, request.storage, request.fonts_folder)
       return data, status_code, headers
     end
     # Save a slide to a specified format.
@@ -13475,8 +14206,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = document
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -13560,7 +14293,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(slide_dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -13645,7 +14378,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -13766,7 +14499,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(options)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -13843,7 +14576,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -13940,8 +14673,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = document
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -14027,7 +14762,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -14105,7 +14840,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(sections)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -14211,7 +14946,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -14310,7 +15045,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -14339,31 +15074,31 @@ module AsposeSlidesCloud
     # Update portion properties (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param paragraph_index Paragraph index.
     # @param portion_index Portion index.
     # @param dto Portion DTO.
-    # @param path Shape path.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def update_subshape_portion(name, slide_index, shape_index, paragraph_index, portion_index, dto, path = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = update_subshape_portion_with_http_info(name, slide_index, shape_index, paragraph_index, portion_index, dto, path, password, folder, storage)
+    def update_subshape_portion(name, slide_index, path, shape_index, paragraph_index, portion_index, dto, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = update_subshape_portion_with_http_info(name, slide_index, path, shape_index, paragraph_index, portion_index, dto, password, folder, storage)
       data
     end
 
     # Update portion properties (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param paragraph_index Paragraph index.
     # @param portion_index Portion index.
     # @param dto Portion DTO.
-    # @param path Shape path.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def update_subshape_portion_with_http_info(name, slide_index, shape_index, paragraph_index, portion_index, dto, path = nil, password = nil, folder = nil, storage = nil)
+    def update_subshape_portion_with_http_info(name, slide_index, path, shape_index, paragraph_index, portion_index, dto, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.put_set_subshape_paragraph_portion_properties ...'
       end
@@ -14376,6 +15111,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_set_subshape_paragraph_portion_properties"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.put_set_subshape_paragraph_portion_properties"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -14419,7 +15158,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -14442,35 +15181,35 @@ module AsposeSlidesCloud
     # Update portion properties (for smart art and group shapes).
     # @param request operation request
     def put_set_subshape_paragraph_portion_properties_with_http_info(request)
-      data, status_code, headers = update_subshape_portion_with_http_info(request.name, request.slide_index, request.shape_index, request.paragraph_index, request.portion_index, request.dto, request.path, request.password, request.folder, request.storage)
+      data, status_code, headers = update_subshape_portion_with_http_info(request.name, request.slide_index, request.path, request.shape_index, request.paragraph_index, request.portion_index, request.dto, request.password, request.folder, request.storage)
       return data, status_code, headers
     end
     # Update paragraph properties (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param paragraph_index Paragraph index.
     # @param dto Paragraph DTO.
-    # @param path Shape path.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def update_subshape_paragraph(name, slide_index, shape_index, paragraph_index, dto, path = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = update_subshape_paragraph_with_http_info(name, slide_index, shape_index, paragraph_index, dto, path, password, folder, storage)
+    def update_subshape_paragraph(name, slide_index, path, shape_index, paragraph_index, dto, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = update_subshape_paragraph_with_http_info(name, slide_index, path, shape_index, paragraph_index, dto, password, folder, storage)
       data
     end
 
     # Update paragraph properties (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param paragraph_index Paragraph index.
     # @param dto Paragraph DTO.
-    # @param path Shape path.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def update_subshape_paragraph_with_http_info(name, slide_index, shape_index, paragraph_index, dto, path = nil, password = nil, folder = nil, storage = nil)
+    def update_subshape_paragraph_with_http_info(name, slide_index, path, shape_index, paragraph_index, dto, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.put_set_subshape_paragraph_properties ...'
       end
@@ -14483,6 +15222,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_set_subshape_paragraph_properties"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.put_set_subshape_paragraph_properties"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -14521,7 +15264,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -14544,7 +15287,7 @@ module AsposeSlidesCloud
     # Update paragraph properties (for smart art and group shapes).
     # @param request operation request
     def put_set_subshape_paragraph_properties_with_http_info(request)
-      data, status_code, headers = update_subshape_paragraph_with_http_info(request.name, request.slide_index, request.shape_index, request.paragraph_index, request.dto, request.path, request.password, request.folder, request.storage)
+      data, status_code, headers = update_subshape_paragraph_with_http_info(request.name, request.slide_index, request.path, request.shape_index, request.paragraph_index, request.dto, request.password, request.folder, request.storage)
       return data, status_code, headers
     end
     # Render shape to specified picture format.
@@ -14642,7 +15385,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(options)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -14726,7 +15469,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(animation)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -14818,7 +15561,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(effect)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -14917,7 +15660,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(effect)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -15002,7 +15745,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -15110,7 +15853,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(options)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -15201,7 +15944,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -15230,27 +15973,27 @@ module AsposeSlidesCloud
     # Update shape properties (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param dto Shape DTO.
-    # @param path Shape path.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def update_subshape(name, slide_index, shape_index, dto, path = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = update_subshape_with_http_info(name, slide_index, shape_index, dto, path, password, folder, storage)
+    def update_subshape(name, slide_index, path, shape_index, dto, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = update_subshape_with_http_info(name, slide_index, path, shape_index, dto, password, folder, storage)
       data
     end
 
     # Update shape properties (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param path Shape path.
     # @param shape_index Shape index.
     # @param dto Shape DTO.
-    # @param path Shape path.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def update_subshape_with_http_info(name, slide_index, shape_index, dto, path = nil, password = nil, folder = nil, storage = nil)
+    def update_subshape_with_http_info(name, slide_index, path, shape_index, dto, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.put_slide_subshape_info ...'
       end
@@ -15263,6 +16006,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_slide_subshape_info"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.put_slide_subshape_info"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -15296,7 +16043,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -15319,7 +16066,7 @@ module AsposeSlidesCloud
     # Update shape properties (for smart art and group shapes).
     # @param request operation request
     def put_slide_subshape_info_with_http_info(request)
-      data, status_code, headers = update_subshape_with_http_info(request.name, request.slide_index, request.shape_index, request.dto, request.path, request.password, request.folder, request.storage)
+      data, status_code, headers = update_subshape_with_http_info(request.name, request.slide_index, request.path, request.shape_index, request.dto, request.password, request.folder, request.storage)
       return data, status_code, headers
     end
     # Convert presentation from request content to format specified.
@@ -15385,8 +16132,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = document
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -15409,74 +16158,6 @@ module AsposeSlidesCloud
     # @param request operation request
     def put_slides_convert_with_http_info(request)
       data, status_code, headers = convert_and_save_with_http_info(request.document, request.format, request.out_path, request.password, request.storage, request.fonts_folder)
-      return data, status_code, headers
-    end
-    # Update presentation document from html.
-    # @param name Document name.
-    # @param html HTML data.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def put_slides_document_from_html(name = nil, html = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = put_slides_document_from_html_with_http_info(name, html, password, folder, storage)
-      data
-    end
-
-    # Update presentation document from html.
-    # @param name Document name.
-    # @param html HTML data.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def put_slides_document_from_html_with_http_info(name = nil, html = nil, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.put_slides_document_from_html ...'
-      end
-
-      if name.is_a?(PutSlidesDocumentFromHtmlRequest)
-          request_object = name
-          name = request_object.name
-          html = request_object.html
-          password = request_object.password
-          folder = request_object.folder
-          storage = request_object.storage
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_slides_document_from_html"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/fromHtml'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-
-      # query parameters
-      query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(html)
-
-      # form parameters
-      post_files = nil
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'Document')
       return data, status_code, headers
     end
     # Set footers for all slides in a presentation.
@@ -15531,7 +16212,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -15604,8 +16285,10 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(request)
 
       # form parameters
-      post_files = nil
-      post_files = files
+      post_files = []
+      if files
+        post_files = post_files.concat(files)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -15630,24 +16313,24 @@ module AsposeSlidesCloud
       data, status_code, headers = merge_and_save_online_with_http_info(request.out_path, request.files, request.request, request.password, request.storage)
       return data, status_code, headers
     end
-    # Update presentation protection properties.
+    # Updates presentation protection properties.
     # @param name Document name.
-    # @param dto The view properties data.
+    # @param dto Protection properties.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def set_protection_properties(name, dto, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = set_protection_properties_with_http_info(name, dto, password, folder, storage)
+    def set_protection(name, dto, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = set_protection_with_http_info(name, dto, password, folder, storage)
       data
     end
 
-    # Update presentation protection properties.
+    # Updates presentation protection properties.
     # @param name Document name.
-    # @param dto The view properties data.
+    # @param dto Protection properties.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def set_protection_properties_with_http_info(name, dto, password = nil, folder = nil, storage = nil)
+    def set_protection_with_http_info(name, dto, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.put_slides_protection_properties ...'
       end
@@ -15662,7 +16345,7 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.put_slides_protection_properties"
       end
       # resource path
-      local_var_path = '/slides/{name}/protectionProperties'
+      local_var_path = '/slides/{name}/protection'
       local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
 
       # query parameters
@@ -15682,7 +16365,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -15695,17 +16378,91 @@ module AsposeSlidesCloud
       return data, status_code, headers
     end
 
-    # Update presentation protection properties.
+    # Updates presentation protection properties.
     # @param request operation request
     def put_slides_protection_properties(request)
       data, _status_code, _headers = put_slides_protection_properties_with_http_info(request)
       data
     end
 
-    # Update presentation protection properties.
+    # Updates presentation protection properties.
     # @param request operation request
     def put_slides_protection_properties_with_http_info(request)
-      data, status_code, headers = set_protection_properties_with_http_info(request.name, request.dto, request.password, request.folder, request.storage)
+      data, status_code, headers = set_protection_with_http_info(request.name, request.dto, request.password, request.folder, request.storage)
+      return data, status_code, headers
+    end
+    # Sets presentation protection options. 
+    # @param document Document data.
+    # @param dto Protection properties.
+    # @param password Document password.
+    def set_protection_online(document, dto, password = nil)
+      data, _status_code, _headers = set_protection_online_with_http_info(document, dto, password)
+      data
+    end
+
+    # Sets presentation protection options. 
+    # @param document Document data.
+    # @param dto Protection properties.
+    # @param password Document password.
+    def set_protection_online_with_http_info(document, dto, password = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.put_slides_protection_properties_online ...'
+      end
+
+
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && document.nil?
+        fail ArgumentError, "Missing the required parameter 'document' when calling SlidesApi.put_slides_protection_properties_online"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.put_slides_protection_properties_online"
+      end
+      # resource path
+      local_var_path = '/slides/protection'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      return data, status_code, headers
+    end
+
+    # Sets presentation protection options. 
+    # @param request operation request
+    def put_slides_protection_properties_online(request)
+      data, _status_code, _headers = put_slides_protection_properties_online_with_http_info(request)
+      data
+    end
+
+    # Sets presentation protection options. 
+    # @param request operation request
+    def put_slides_protection_properties_online_with_http_info(request)
+      data, status_code, headers = set_protection_online_with_http_info(request.document, request.dto, request.password)
       return data, status_code, headers
     end
     # Save a presentation to a specified format.
@@ -15777,7 +16534,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(options)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -15861,7 +16618,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(property)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -15946,7 +16703,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(slide_dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -16031,7 +16788,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(background)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -16117,7 +16874,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -16195,7 +16952,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -16219,93 +16976,6 @@ module AsposeSlidesCloud
     # @param request operation request
     def put_slides_slide_properties_with_http_info(request)
       data, status_code, headers = set_slide_properties_with_http_info(request.name, request.dto, request.password, request.folder, request.storage)
-      return data, status_code, headers
-    end
-    # Set slide size for a presentation.
-    # @param name Document name.
-    # @param width Slide width.
-    # @param height Slide height.
-    # @param size_type Standard slide size type.
-    # @param scale_type Standard slide scale type.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def put_slides_slide_size(name = nil, width = nil, height = nil, size_type = nil, scale_type = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = put_slides_slide_size_with_http_info(name, width, height, size_type, scale_type, password, folder, storage)
-      data
-    end
-
-    # Set slide size for a presentation.
-    # @param name Document name.
-    # @param width Slide width.
-    # @param height Slide height.
-    # @param size_type Standard slide size type.
-    # @param scale_type Standard slide scale type.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def put_slides_slide_size_with_http_info(name = nil, width = nil, height = nil, size_type = nil, scale_type = nil, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.put_slides_slide_size ...'
-      end
-
-      if name.is_a?(PutSlidesSlideSizeRequest)
-          request_object = name
-          name = request_object.name
-          width = request_object.width
-          height = request_object.height
-          size_type = request_object.size_type
-          scale_type = request_object.scale_type
-          password = request_object.password
-          folder = request_object.folder
-          storage = request_object.storage
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.put_slides_slide_size"
-      end
-      if @api_client.config.client_side_validation && size_type && !['OnScreen', 'LetterPaper', 'A4Paper', 'Slide35mm', 'Overhead', 'Banner', 'Custom', 'Ledger', 'A3Paper', 'B4IsoPaper', 'B5IsoPaper', 'B4JisPaper', 'B5JisPaper', 'HagakiCard', 'OnScreen16x9', 'OnScreen16x10', 'Widescreen'].any?{ |s| s.casecmp(size_type)==0 }
-        fail ArgumentError, "Value " + size_type + " is not supported for 'size_type', must be one of OnScreen, LetterPaper, A4Paper, Slide35mm, Overhead, Banner, Custom, Ledger, A3Paper, B4IsoPaper, B5IsoPaper, B4JisPaper, B5JisPaper, HagakiCard, OnScreen16x9, OnScreen16x10, Widescreen"
-      end
-      if @api_client.config.client_side_validation && scale_type && !['DoNotScale', 'EnsureFit', 'Maximize'].any?{ |s| s.casecmp(scale_type)==0 }
-        fail ArgumentError, "Value " + scale_type + " is not supported for 'scale_type', must be one of DoNotScale, EnsureFit, Maximize"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slideSize'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-
-      # query parameters
-      query_params = {}
-      query_params[:'width'] = width unless width.nil?
-      query_params[:'height'] = height unless height.nil?
-      query_params[:'sizeType'] = size_type unless size_type.nil?
-      query_params[:'scaleType'] = scale_type unless scale_type.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = nil
-
-      # form parameters
-      post_files = nil
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'Document')
       return data, status_code, headers
     end
     # Update presentation document properties.
@@ -16360,7 +17030,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -16389,10 +17059,10 @@ module AsposeSlidesCloud
     # Render shape to specified picture format.
     # @param name Presentation name.
     # @param slide_index Slide index.
+    # @param path Shape path (for smart art and group shapes).
     # @param shape_index Index of shape starting from 1
     # @param format Export picture format.
     # @param out_path Output path.
-    # @param path Shape path (for smart art and group shapes).
     # @param options export options
     # @param scale_x X scale ratio.
     # @param scale_y Y scale ratio.
@@ -16401,18 +17071,18 @@ module AsposeSlidesCloud
     # @param folder Presentation folder.
     # @param storage Presentation storage.
     # @param fonts_folder Fonts folder.
-    def save_subshape(name, slide_index, shape_index, format, out_path, path = nil, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
-      save_subshape_with_http_info(name, slide_index, shape_index, format, out_path, path, options, scale_x, scale_y, bounds, password, folder, storage, fonts_folder)
+    def save_subshape(name, slide_index, path, shape_index, format, out_path, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
+      save_subshape_with_http_info(name, slide_index, path, shape_index, format, out_path, options, scale_x, scale_y, bounds, password, folder, storage, fonts_folder)
       nil
     end
 
     # Render shape to specified picture format.
     # @param name Presentation name.
     # @param slide_index Slide index.
+    # @param path Shape path (for smart art and group shapes).
     # @param shape_index Index of shape starting from 1
     # @param format Export picture format.
     # @param out_path Output path.
-    # @param path Shape path (for smart art and group shapes).
     # @param options export options
     # @param scale_x X scale ratio.
     # @param scale_y Y scale ratio.
@@ -16421,7 +17091,7 @@ module AsposeSlidesCloud
     # @param folder Presentation folder.
     # @param storage Presentation storage.
     # @param fonts_folder Fonts folder.
-    def save_subshape_with_http_info(name, slide_index, shape_index, format, out_path, path = nil, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
+    def save_subshape_with_http_info(name, slide_index, path, shape_index, format, out_path, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.put_subshape_save_as ...'
       end
@@ -16434,6 +17104,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'slide_index' is set
       if @api_client.config.client_side_validation && slide_index.nil?
         fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.put_subshape_save_as"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.put_subshape_save_as"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -16484,7 +17158,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(options)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -16506,7 +17180,7 @@ module AsposeSlidesCloud
     # Render shape to specified picture format.
     # @param request operation request
     def put_subshape_save_as_with_http_info(request)
-      data, status_code, headers = save_subshape_with_http_info(request.name, request.slide_index, request.shape_index, request.format, request.out_path, request.path, request.options, request.scale_x, request.scale_y, request.bounds, request.password, request.folder, request.storage, request.fonts_folder)
+      data, status_code, headers = save_subshape_with_http_info(request.name, request.slide_index, request.path, request.shape_index, request.format, request.out_path, request.options, request.scale_x, request.scale_y, request.bounds, request.password, request.folder, request.storage, request.fonts_folder)
       return data, status_code, headers
     end
     # Update notes slide properties.
@@ -16568,7 +17242,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -16660,7 +17334,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -16759,7 +17433,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -16865,7 +17539,7 @@ module AsposeSlidesCloud
       post_body = @api_client.object_to_http_body(dto)
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -16932,7 +17606,7 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:GET, local_var_path,
@@ -16945,30 +17619,34 @@ module AsposeSlidesCloud
       return data, status_code, headers
     end
     # Upload file
-    # @param file File to upload
     # @param path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             
+    # @param file File to upload
     # @param storage_name Storage name
-    def upload_file(file = nil, path = nil, storage_name = nil)
-      data, _status_code, _headers = upload_file_with_http_info(file, path, storage_name)
+    def upload_file(path = nil, file = nil, storage_name = nil)
+      data, _status_code, _headers = upload_file_with_http_info(path, file, storage_name)
       data
     end
 
     # Upload file
-    # @param file File to upload
     # @param path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             
+    # @param file File to upload
     # @param storage_name Storage name
-    def upload_file_with_http_info(file = nil, path = nil, storage_name = nil)
+    def upload_file_with_http_info(path = nil, file = nil, storage_name = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.upload_file ...'
       end
 
-      if file.is_a?(UploadFileRequest)
-          request_object = file
-          file = request_object.file
+      if path.is_a?(UploadFileRequest)
+          request_object = path
           path = request_object.path
+          file = request_object.file
           storage_name = request_object.storage_name
       end
 
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.upload_file"
+      end
       # verify the required parameter 'file' is set
       if @api_client.config.client_side_validation && file.nil?
         fail ArgumentError, "Missing the required parameter 'file' when calling SlidesApi.upload_file"
@@ -16992,8 +17670,10 @@ module AsposeSlidesCloud
       post_body = nil
 
       # form parameters
-      post_files = nil
-      post_body = file
+      post_files = []
+      if file
+        post_files = post_files.push(file)
+      end
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,

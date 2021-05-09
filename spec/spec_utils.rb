@@ -70,6 +70,8 @@ module AsposeSlidesCloud
         fileName = "test.pptx"
         if method.casecmp("PostSlidesDocumentFromPdf") == 0
           fileName = "test.pdf"
+        elsif name.casecmp("Image") == 0
+          fileName = "watermark.png"
         end
         return File.binread(File.join(TEST_DATA_PATH, fileName))
       end

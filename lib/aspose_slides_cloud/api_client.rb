@@ -137,7 +137,6 @@ module AsposeSlidesCloud
     # @param [String] path URL path (e.g. /account/new)
     # @option opts [Hash] :header_params Header parameters
     # @option opts [Hash] :query_params Query parameters
-    # @option opts [Hash] :form_params Query parameters
     # @option opts [Object] :body HTTP body (JSON/XML)
     # @return [Typhoeus::Request] A Typhoeus Request
     def build_request(req, http_method, path, opts = {})
@@ -152,8 +151,7 @@ module AsposeSlidesCloud
       req.url path.sub(/^\/+/, '')
       req.headers = opts[:header_params]
       req.params = opts[:query_params]
-      form_params = opts[:form_params] || {}
-      req.body = build_request_body(req.headers, form_params, opts[:body], opts[:files])
+      req.body = build_request_body(req.headers, opts[:body], opts[:files])
       set_headers(req.headers)
       if @config.debugging
         @config.logger.debug "HTTP request\nMethod: #{req.method}\nPath: #{req.path}\nParams: #{req.params}\nHeaders: #{req.headers}\nBody: #{req.body}\n"
@@ -288,11 +286,17 @@ module AsposeSlidesCloud
     # Builds the HTTP request body
     #
     # @param [Hash] header_params Header parameters
-    # @param [Hash] form_params Query parameters
     # @param [Object] body HTTP body (JSON/XML)
     # @return [String] HTTP body data in the form of string
-    def build_request_body(header_params, form_params, body, files)
-      if files and files.length > 0
+    def build_request_body(header_params, body, files)
+      partCount = 0
+      if files
+        partCount += files.length
+      end
+      if body
+        partCount += 1
+      end
+      if partCount > 1
         boundary = "7d70fb31-0eb9-4846-9ea8-933dfb69d8f1"
         header_params['Content-Type'] = "multipart/form-data; boundary=#{boundary}"
         data = ""
@@ -303,14 +307,16 @@ module AsposeSlidesCloud
           put_multipart!(data, boundary, index + 1, val)
         end
         data << "\r\n--#{boundary}--\r\n"
-        data
-      else
-        header_params['Content-Type'] = 'text/json'
+      elsif partCount == 1
         if body
+          header_params['Content-Type'] = "text/json"
           data = body.is_a?(String) ? body : body.to_json
         else
-          data = nil
+          header_params['Content-Type'] = "application/octet-stream"
+          data = files[0]
         end
+      else
+        data = nil
       end
       data
     end
@@ -318,7 +324,6 @@ module AsposeSlidesCloud
     # Builds the HTTP request body
     #
     # @param [Hash] header_params Header parameters
-    # @param [Hash] form_params Query parameters
     # @param [Object] body HTTP body (JSON/XML)
     # @return [String] HTTP body data in the form of string
     def put_multipart!(data, boundary, part_index, part_data)

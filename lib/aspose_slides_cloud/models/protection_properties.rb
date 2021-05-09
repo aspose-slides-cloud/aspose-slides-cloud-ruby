@@ -31,11 +31,27 @@ module AsposeSlidesCloud
     # True if the document should be opened as read-only.
     attr_accessor :read_only_recommended
 
+    # Password for read protection.
+    attr_accessor :read_password
+
+    # Password for write protection.
+    attr_accessor :write_password
+
+    # Returns true if the presentation protected for editing. 
+    attr_accessor :is_write_protected
+
+    # Returns true if the presentation protected for reading. 
+    attr_accessor :is_encrypted
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
         :'encrypt_document_properties' => :'EncryptDocumentProperties',
         :'read_only_recommended' => :'ReadOnlyRecommended',
+        :'read_password' => :'ReadPassword',
+        :'write_password' => :'WritePassword',
+        :'is_write_protected' => :'IsWriteProtected',
+        :'is_encrypted' => :'IsEncrypted',
       })
     end
 
@@ -44,6 +60,10 @@ module AsposeSlidesCloud
       super.merge({
         :'encrypt_document_properties' => :'BOOLEAN',
         :'read_only_recommended' => :'BOOLEAN',
+        :'read_password' => :'String',
+        :'write_password' => :'String',
+        :'is_write_protected' => :'BOOLEAN',
+        :'is_encrypted' => :'BOOLEAN',
       })
     end
 
@@ -59,12 +79,36 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'ReadOnlyRecommended')
         self.read_only_recommended = attributes[:'ReadOnlyRecommended']
       end
+
+      if attributes.has_key?(:'ReadPassword')
+        self.read_password = attributes[:'ReadPassword']
+      end
+
+      if attributes.has_key?(:'WritePassword')
+        self.write_password = attributes[:'WritePassword']
+      end
+
+      if attributes.has_key?(:'IsWriteProtected')
+        self.is_write_protected = attributes[:'IsWriteProtected']
+      end
+
+      if attributes.has_key?(:'IsEncrypted')
+        self.is_encrypted = attributes[:'IsEncrypted']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
+      if @is_write_protected.nil?
+        invalid_properties.push('invalid value for "is_write_protected", is_write_protected cannot be nil.')
+      end
+
+      if @is_encrypted.nil?
+        invalid_properties.push('invalid value for "is_encrypted", is_encrypted cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -72,6 +116,8 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
+      return false if @is_write_protected.nil?
+      return false if @is_encrypted.nil?
       true
     end
 
@@ -83,7 +129,11 @@ module AsposeSlidesCloud
           self_uri == o.self_uri &&
           alternate_links == o.alternate_links &&
           encrypt_document_properties == o.encrypt_document_properties &&
-          read_only_recommended == o.read_only_recommended
+          read_only_recommended == o.read_only_recommended &&
+          read_password == o.read_password &&
+          write_password == o.write_password &&
+          is_write_protected == o.is_write_protected &&
+          is_encrypted == o.is_encrypted
     end
 
     # @see the `==` method
@@ -95,7 +145,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, encrypt_document_properties, read_only_recommended].hash
+      [self_uri, alternate_links, encrypt_document_properties, read_only_recommended, read_password, write_password, is_write_protected, is_encrypted].hash
     end
 
     # Builds the object from hash

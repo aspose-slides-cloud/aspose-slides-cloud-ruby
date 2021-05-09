@@ -688,11 +688,11 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param shape_index Shape index.
-    attr_accessor :shape_index
-
     # @param path Shape path.
     attr_accessor :path
+
+    # @param shape_index Shape index.
+    attr_accessor :shape_index
 
     # @param password Document password.
     attr_accessor :password
@@ -783,6 +783,32 @@ module AsposeSlidesCloud
     attr_accessor :storage
   end
 
+  # request model for delete_slides_protection_properties
+  class DeleteSlidesProtectionPropertiesRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param password Presentation password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for delete_slides_protection_properties_online
+  class DeleteSlidesProtectionPropertiesOnlineRequest
+
+    # @param document Document data.
+    attr_accessor :document
+
+    # @param password Presentation password.
+    attr_accessor :password
+  end
+
   # request model for delete_slides_slide_background
   class DeleteSlidesSlideBackgroundRequest
 
@@ -811,14 +837,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
+    # @param path Shape path.
+    attr_accessor :path
+
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
     # @param paragraph_index Paragraph index.
     attr_accessor :paragraph_index
-
-    # @param path Shape path.
-    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -839,11 +865,11 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param shape_index Shape index.
-    attr_accessor :shape_index
-
     # @param path Shape path.
     attr_accessor :path
+
+    # @param shape_index Shape index.
+    attr_accessor :shape_index
 
     # @param paragraphs The indices of the shapes to be deleted; delete all by default.
     attr_accessor :paragraphs
@@ -867,6 +893,9 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
+    # @param path Shape path.
+    attr_accessor :path
+
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
@@ -875,9 +904,6 @@ module AsposeSlidesCloud
 
     # @param portion_index Portion index.
     attr_accessor :portion_index
-
-    # @param path Shape path.
-    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -898,17 +924,36 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
+    # @param path Shape path.
+    attr_accessor :path
+
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
     # @param paragraph_index Paragraph index.
     attr_accessor :paragraph_index
 
-    # @param path Shape path.
-    attr_accessor :path
-
     # @param portions The indices of the shapes to be deleted; delete all by default.
     attr_accessor :portions
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for delete_watermark
+  class DeleteWatermarkRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param shape_name Name of the watermark shape. If null, default value \&quot;watermark\&quot;is used.
+    attr_accessor :shape_name
 
     # @param password Document password.
     attr_accessor :password
@@ -1466,11 +1511,11 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param shape_index Shape index.
-    attr_accessor :shape_index
-
     # @param path Shape path.
     attr_accessor :path
+
+    # @param shape_index Shape index.
+    attr_accessor :shape_index
 
     # @param password Document password.
     attr_accessor :password
@@ -1491,14 +1536,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
+    # @param path Shape path.
+    attr_accessor :path
+
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
     # @param paragraph_index Paragraph index.
     attr_accessor :paragraph_index
-
-    # @param path Shape path.
-    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -1519,11 +1564,11 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
-    # @param shape_index Shape index.
-    attr_accessor :shape_index
-
     # @param path Shape path.
     attr_accessor :path
+
+    # @param shape_index Shape index.
+    attr_accessor :shape_index
 
     # @param password Document password.
     attr_accessor :password
@@ -1569,7 +1614,7 @@ module AsposeSlidesCloud
     # @param folder Document folder.
     attr_accessor :folder
 
-    # @param storage Documentstorage.
+    # @param storage Document storage.
     attr_accessor :storage
   end
 
@@ -1972,6 +2017,9 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
+    # @param path Shape path.
+    attr_accessor :path
+
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
@@ -1980,9 +2028,6 @@ module AsposeSlidesCloud
 
     # @param portion_index Portion index.
     attr_accessor :portion_index
-
-    # @param path Shape path.
-    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -2003,14 +2048,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
+    # @param path Shape path.
+    attr_accessor :path
+
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
     # @param paragraph_index Paragraph index.
     attr_accessor :paragraph_index
-
-    # @param path Shape path.
-    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -2197,14 +2242,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
+    # @param path Shape path.
+    attr_accessor :path
+
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
     # @param dto Paragraph DTO.
     attr_accessor :dto
-
-    # @param path Shape path.
-    attr_accessor :path
 
     # @param position Position of the new paragraph in the list. Default is at the end of the list.
     attr_accessor :position
@@ -2228,6 +2273,9 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
+    # @param path Shape path.
+    attr_accessor :path
+
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
@@ -2236,9 +2284,6 @@ module AsposeSlidesCloud
 
     # @param dto Portion DTO.
     attr_accessor :dto
-
-    # @param path Shape path.
-    attr_accessor :path
 
     # @param position Position of the new portion in the list. Default is at the end of the list.
     attr_accessor :position
@@ -2532,12 +2577,6 @@ module AsposeSlidesCloud
     # @param format Export picture format.
     attr_accessor :format
 
-    # @param password Document password.
-    attr_accessor :password
-
-    # @param storage Document storage.
-    attr_accessor :storage
-
     # @param scale_x X scale ratio.
     attr_accessor :scale_x
 
@@ -2546,6 +2585,12 @@ module AsposeSlidesCloud
 
     # @param bounds Shape thumbnail bounds type.
     attr_accessor :bounds
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param storage Document storage.
+    attr_accessor :storage
 
     # @param fonts_folder Fonts folder.
     attr_accessor :fonts_folder
@@ -2628,6 +2673,44 @@ module AsposeSlidesCloud
 
     # @param fonts_folder Storage folder containing custom fonts to be used with the document.
     attr_accessor :fonts_folder
+  end
+
+  # request model for post_image_watermark
+  class PostImageWatermarkRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param image Image data.
+    attr_accessor :image
+
+    # @param picture_frame PictureFrame DTO
+    attr_accessor :picture_frame
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for post_image_watermark_online
+  class PostImageWatermarkOnlineRequest
+
+    # @param document Document data.
+    attr_accessor :document
+
+    # @param image Image data.
+    attr_accessor :image
+
+    # @param picture_frame PictureFrame DTO.
+    attr_accessor :picture_frame
+
+    # @param password Document password.
+    attr_accessor :password
   end
 
   # request model for post_images_from_request_with_default_format
@@ -3446,14 +3529,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
+    # @param path Shape path.
+    attr_accessor :path
+
     # @param shape_index Index of shape starting from 1
     attr_accessor :shape_index
 
     # @param format Export picture format.
     attr_accessor :format
-
-    # @param path Shape path.
-    attr_accessor :path
 
     # @param options export options
     attr_accessor :options
@@ -3478,6 +3561,75 @@ module AsposeSlidesCloud
 
     # @param fonts_folder Fonts folder.
     attr_accessor :fonts_folder
+  end
+
+  # request model for post_watermark
+  class PostWatermarkRequest
+
+    # @param name Document name.
+    attr_accessor :name
+
+    # @param shape Shape DTO
+    attr_accessor :shape
+
+    # @param font_height Watermark font height.
+    attr_accessor :font_height
+
+    # @param text Watermark text.
+    attr_accessor :text
+
+    # @param font_name Watermark font name.
+    attr_accessor :font_name
+
+    # @param font_color Watermark font color.
+    attr_accessor :font_color
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param folder Document folder.
+    attr_accessor :folder
+
+    # @param storage Document storage.
+    attr_accessor :storage
+  end
+
+  # request model for post_watermark_delete_online
+  class PostWatermarkDeleteOnlineRequest
+
+    # @param document Document data.
+    attr_accessor :document
+
+    # @param shape_name Name of the watermark shape. If null, default value \&quot;watermark\&quot;is used.
+    attr_accessor :shape_name
+
+    # @param password Document password.
+    attr_accessor :password
+  end
+
+  # request model for post_watermark_online
+  class PostWatermarkOnlineRequest
+
+    # @param document Document data.
+    attr_accessor :document
+
+    # @param shape Shape DTO
+    attr_accessor :shape
+
+    # @param font_height Watermark font height.
+    attr_accessor :font_height
+
+    # @param text Watermark text.
+    attr_accessor :text
+
+    # @param font_name Watermark font name.
+    attr_accessor :font_name
+
+    # @param font_color Watermark font color.
+    attr_accessor :font_color
+
+    # @param password Document password.
+    attr_accessor :password
   end
 
   # request model for put_chart_category
@@ -3585,12 +3737,6 @@ module AsposeSlidesCloud
     # @param out_path Path to save result.
     attr_accessor :out_path
 
-    # @param password Document password.
-    attr_accessor :password
-
-    # @param storage Document storage.
-    attr_accessor :storage
-
     # @param scale_x X scale ratio.
     attr_accessor :scale_x
 
@@ -3599,6 +3745,12 @@ module AsposeSlidesCloud
 
     # @param bounds Shape thumbnail bounds type.
     attr_accessor :bounds
+
+    # @param password Document password.
+    attr_accessor :password
+
+    # @param storage Document storage.
+    attr_accessor :storage
 
     # @param fonts_folder Fonts folder.
     attr_accessor :fonts_folder
@@ -3884,6 +4036,9 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
+    # @param path Shape path.
+    attr_accessor :path
+
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
@@ -3895,9 +4050,6 @@ module AsposeSlidesCloud
 
     # @param dto Portion DTO.
     attr_accessor :dto
-
-    # @param path Shape path.
-    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -3918,6 +4070,9 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
+    # @param path Shape path.
+    attr_accessor :path
+
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
@@ -3926,9 +4081,6 @@ module AsposeSlidesCloud
 
     # @param dto Paragraph DTO.
     attr_accessor :dto
-
-    # @param path Shape path.
-    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -4151,14 +4303,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
+    # @param path Shape path.
+    attr_accessor :path
+
     # @param shape_index Shape index.
     attr_accessor :shape_index
 
     # @param dto Shape DTO.
     attr_accessor :dto
-
-    # @param path Shape path.
-    attr_accessor :path
 
     # @param password Document password.
     attr_accessor :password
@@ -4190,25 +4342,6 @@ module AsposeSlidesCloud
 
     # @param fonts_folder Custom fonts folder.
     attr_accessor :fonts_folder
-  end
-
-  # request model for put_slides_document_from_html
-  class PutSlidesDocumentFromHtmlRequest
-
-    # @param name Document name.
-    attr_accessor :name
-
-    # @param html HTML data.
-    attr_accessor :html
-
-    # @param password Document password.
-    attr_accessor :password
-
-    # @param folder Document folder.
-    attr_accessor :folder
-
-    # @param storage Document storage.
-    attr_accessor :storage
   end
 
   # request model for put_slides_header_footer
@@ -4255,7 +4388,7 @@ module AsposeSlidesCloud
     # @param name Document name.
     attr_accessor :name
 
-    # @param dto The view properties data.
+    # @param dto Protection properties.
     attr_accessor :dto
 
     # @param password Document password.
@@ -4266,6 +4399,19 @@ module AsposeSlidesCloud
 
     # @param storage Document storage.
     attr_accessor :storage
+  end
+
+  # request model for put_slides_protection_properties_online
+  class PutSlidesProtectionPropertiesOnlineRequest
+
+    # @param document Document data.
+    attr_accessor :document
+
+    # @param dto Protection properties.
+    attr_accessor :dto
+
+    # @param password Document password.
+    attr_accessor :password
   end
 
   # request model for put_slides_save_as
@@ -4403,34 +4549,6 @@ module AsposeSlidesCloud
     attr_accessor :storage
   end
 
-  # request model for put_slides_slide_size
-  class PutSlidesSlideSizeRequest
-
-    # @param name Document name.
-    attr_accessor :name
-
-    # @param width Slide width.
-    attr_accessor :width
-
-    # @param height Slide height.
-    attr_accessor :height
-
-    # @param size_type Standard slide size type.
-    attr_accessor :size_type
-
-    # @param scale_type Standard slide scale type.
-    attr_accessor :scale_type
-
-    # @param password Document password.
-    attr_accessor :password
-
-    # @param folder Document folder.
-    attr_accessor :folder
-
-    # @param storage Document storage.
-    attr_accessor :storage
-  end
-
   # request model for put_slides_view_properties
   class PutSlidesViewPropertiesRequest
 
@@ -4459,6 +4577,9 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     attr_accessor :slide_index
 
+    # @param path Shape path (for smart art and group shapes).
+    attr_accessor :path
+
     # @param shape_index Index of shape starting from 1
     attr_accessor :shape_index
 
@@ -4467,9 +4588,6 @@ module AsposeSlidesCloud
 
     # @param out_path Output path.
     attr_accessor :out_path
-
-    # @param path Shape path (for smart art and group shapes).
-    attr_accessor :path
 
     # @param options export options
     attr_accessor :options
@@ -4612,11 +4730,11 @@ module AsposeSlidesCloud
   # request model for upload_file
   class UploadFileRequest
 
-    # @param file File to upload
-    attr_accessor :file
-
     # @param path Path where to upload including filename and extension e.g. /file.ext or /Folder 1/file.ext             If the content is multipart and path does not contains the file name it tries to get them from filename parameter             from Content-Disposition header.             
     attr_accessor :path
+
+    # @param file File to upload
+    attr_accessor :file
 
     # @param storage_name Storage name
     attr_accessor :storage_name
