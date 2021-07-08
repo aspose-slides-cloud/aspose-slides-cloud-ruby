@@ -192,7 +192,6 @@ require 'aspose_slides_cloud/models/video_frame'
 
 # APIs
 require 'aspose_slides_cloud/api/slides_api'
-require 'aspose_slides_cloud/api/slides_api_requests'
 
 module AsposeSlidesCloud
   class << self

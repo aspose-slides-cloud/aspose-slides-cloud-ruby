@@ -68,7 +68,7 @@ module AsposeSlidesCloud
     def self.get_param_value(name, method, type)
       if type == 'File'
         fileName = "test.pptx"
-        if method.casecmp("PostSlidesDocumentFromPdf") == 0
+        if method.casecmp("ImportFromPdf") == 0
           fileName = "test.pdf"
         elsif name.casecmp("Image") == 0
           fileName = "watermark.png"
