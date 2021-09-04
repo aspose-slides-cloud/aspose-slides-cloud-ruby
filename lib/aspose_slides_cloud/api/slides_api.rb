@@ -117,8 +117,9 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Custom fonts folder.
-    def convert(document, format, password = nil, storage = nil, fonts_folder = nil)
-      data, _status_code, _headers = convert_with_http_info(document, format, password, storage, fonts_folder)
+    # @param slides The indices of the slides to be converted. If not specified, all slides are converted by default.
+    def convert(document, format, password = nil, storage = nil, fonts_folder = nil, slides = nil)
+      data, _status_code, _headers = convert_with_http_info(document, format, password, storage, fonts_folder, slides)
       data
     end
 
@@ -128,7 +129,8 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Custom fonts folder.
-    def convert_with_http_info(document, format, password = nil, storage = nil, fonts_folder = nil)
+    # @param slides The indices of the slides to be converted. If not specified, all slides are converted by default.
+    def convert_with_http_info(document, format, password = nil, storage = nil, fonts_folder = nil, slides = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.convert ...'
       end
@@ -153,6 +155,7 @@ module AsposeSlidesCloud
       query_params = {}
       query_params[:'storage'] = storage unless storage.nil?
       query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'slides'] = slides unless slides.nil?
 
       # header parameters
       header_params = {}
@@ -188,8 +191,9 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Custom fonts folder.
-    def convert_and_save(document, format, out_path, password = nil, storage = nil, fonts_folder = nil)
-      convert_and_save_with_http_info(document, format, out_path, password, storage, fonts_folder)
+    # @param slides The indices of the slides to be converted. If not specified, all slides are converted by default.
+    def convert_and_save(document, format, out_path, password = nil, storage = nil, fonts_folder = nil, slides = nil)
+      convert_and_save_with_http_info(document, format, out_path, password, storage, fonts_folder, slides)
       nil
     end
 
@@ -200,7 +204,8 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Custom fonts folder.
-    def convert_and_save_with_http_info(document, format, out_path, password = nil, storage = nil, fonts_folder = nil)
+    # @param slides The indices of the slides to be converted. If not specified, all slides are converted by default.
+    def convert_and_save_with_http_info(document, format, out_path, password = nil, storage = nil, fonts_folder = nil, slides = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.convert_and_save ...'
       end
@@ -230,6 +235,7 @@ module AsposeSlidesCloud
       query_params[:'outPath'] = out_path unless out_path.nil?
       query_params[:'storage'] = storage unless storage.nil?
       query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'slides'] = slides unless slides.nil?
 
       # header parameters
       header_params = {}
@@ -5738,7 +5744,7 @@ module AsposeSlidesCloud
       # HTTP header 'Accept' (if needed)
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
       header_params[:'password'] = password unless password.nil?
 
       # http body (model)
@@ -6649,8 +6655,9 @@ module AsposeSlidesCloud
     # @param folder Document folder.
     # @param storage Document storage.
     # @param fonts_folder Custom fonts folder.
-    def download_presentation(name, format, options = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
-      data, _status_code, _headers = download_presentation_with_http_info(name, format, options, password, folder, storage, fonts_folder)
+    # @param slides The indices of the slides to be saved. If not specified, all slides are saved by default.
+    def download_presentation(name, format, options = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil, slides = nil)
+      data, _status_code, _headers = download_presentation_with_http_info(name, format, options, password, folder, storage, fonts_folder, slides)
       data
     end
 
@@ -6662,7 +6669,8 @@ module AsposeSlidesCloud
     # @param folder Document folder.
     # @param storage Document storage.
     # @param fonts_folder Custom fonts folder.
-    def download_presentation_with_http_info(name, format, options = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
+    # @param slides The indices of the slides to be saved. If not specified, all slides are saved by default.
+    def download_presentation_with_http_info(name, format, options = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil, slides = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.download_presentation ...'
       end
@@ -6689,6 +6697,7 @@ module AsposeSlidesCloud
       query_params[:'folder'] = folder unless folder.nil?
       query_params[:'storage'] = storage unless storage.nil?
       query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'slides'] = slides unless slides.nil?
 
       # header parameters
       header_params = {}
@@ -11938,8 +11947,9 @@ module AsposeSlidesCloud
     # @param folder Document folder.
     # @param storage Document storage.
     # @param fonts_folder Custom fonts folder.
-    def save_presentation(name, format, out_path, options = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
-      save_presentation_with_http_info(name, format, out_path, options, password, folder, storage, fonts_folder)
+    # @param slides The indices of the slides to be saved. If not specified, all slides are saved by default.
+    def save_presentation(name, format, out_path, options = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil, slides = nil)
+      save_presentation_with_http_info(name, format, out_path, options, password, folder, storage, fonts_folder, slides)
       nil
     end
 
@@ -11952,7 +11962,8 @@ module AsposeSlidesCloud
     # @param folder Document folder.
     # @param storage Document storage.
     # @param fonts_folder Custom fonts folder.
-    def save_presentation_with_http_info(name, format, out_path, options = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
+    # @param slides The indices of the slides to be saved. If not specified, all slides are saved by default.
+    def save_presentation_with_http_info(name, format, out_path, options = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil, slides = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.save_presentation ...'
       end
@@ -11984,6 +11995,7 @@ module AsposeSlidesCloud
       query_params[:'folder'] = folder unless folder.nil?
       query_params[:'storage'] = storage unless storage.nil?
       query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'slides'] = slides unless slides.nil?
 
       # header parameters
       header_params = {}

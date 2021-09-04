@@ -91,7 +91,7 @@ module AsposeSlidesCloud
         else
           fail ApiError.new(:code => response.status,
                             :response_headers => response.headers,
-                            :response_body => response.body)
+                            :response_body => response.body && !response.body.empty? ? response.body : response.reason_phrase)
         end
       end
 

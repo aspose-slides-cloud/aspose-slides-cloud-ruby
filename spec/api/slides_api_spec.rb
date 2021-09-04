@@ -282,6 +282,7 @@ describe 'SlidesApi' do
   # @option opts [String] :password Document password.
   # @option opts [String] :storage Document storage.
   # @option opts [String] :fonts_folder Custom fonts folder.
+  # @option opts [String] :slides The indices of the slides to be converted. If not specified, all slides are converted by default.
   # @return [File]
   describe 'convert test' do
     it 'should work' do
@@ -290,8 +291,9 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'Convert', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'Convert', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'Convert', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'Convert', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('Convert', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.api.convert_with_http_info(paramdocument, paramformat, parampassword, paramstorage, paramfonts_folder)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.convert_with_http_info(paramdocument, paramformat, parampassword, paramstorage, paramfonts_folder, paramslides)
       code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('Convert', nil, nil)
       expect(c).to eq(code)
       expect(o).not_to be_nil
@@ -303,10 +305,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'Convert', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'Convert', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'Convert', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'Convert', 'String')
       paramdocument = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'Convert', paramdocument, 'File')
       AsposeSlidesCloud::SpecUtils.initialize('Convert', 'document', paramdocument)
       begin
-        AsposeSlidesCloud::SpecUtils.api.convert_with_http_info(paramdocument, paramformat, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.convert_with_http_info(paramdocument, paramformat, parampassword, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('Convert', 'document')
           fail "An exception expected"
         end
@@ -327,10 +330,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'Convert', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'Convert', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'Convert', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'Convert', 'String')
       paramformat = AsposeSlidesCloud::SpecUtils.invalidize_param_value('format', 'Convert', paramformat, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('Convert', 'format', paramformat)
       begin
-        AsposeSlidesCloud::SpecUtils.api.convert_with_http_info(paramdocument, paramformat, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.convert_with_http_info(paramdocument, paramformat, parampassword, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('Convert', 'format')
           fail "An exception expected"
         end
@@ -351,10 +355,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'Convert', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'Convert', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'Convert', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'Convert', 'String')
       parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'Convert', parampassword, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('Convert', 'password', parampassword)
       begin
-        AsposeSlidesCloud::SpecUtils.api.convert_with_http_info(paramdocument, paramformat, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.convert_with_http_info(paramdocument, paramformat, parampassword, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('Convert', 'password')
           fail "An exception expected"
         end
@@ -375,10 +380,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'Convert', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'Convert', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'Convert', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'Convert', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'Convert', paramstorage, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('Convert', 'storage', paramstorage)
       begin
-        AsposeSlidesCloud::SpecUtils.api.convert_with_http_info(paramdocument, paramformat, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.convert_with_http_info(paramdocument, paramformat, parampassword, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('Convert', 'storage')
           fail "An exception expected"
         end
@@ -399,10 +405,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'Convert', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'Convert', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'Convert', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'Convert', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontsFolder', 'Convert', paramfonts_folder, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('Convert', 'fontsFolder', paramfonts_folder)
       begin
-        AsposeSlidesCloud::SpecUtils.api.convert_with_http_info(paramdocument, paramformat, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.convert_with_http_info(paramdocument, paramformat, parampassword, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('Convert', 'fontsFolder')
           fail "An exception expected"
         end
@@ -412,6 +419,31 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('Convert', 'fontsFolder', paramfonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slides' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'Convert', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'Convert', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'Convert', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'Convert', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'Convert', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'Convert', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slides', 'Convert', paramslides, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('Convert', 'slides', paramslides)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.convert_with_http_info(paramdocument, paramformat, parampassword, paramstorage, paramfonts_folder, paramslides)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('Convert', 'slides')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('Convert', 'slides', paramslides)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('Convert', 'slides', paramslides)
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
@@ -427,6 +459,7 @@ describe 'SlidesApi' do
   # @option opts [String] :password Document password.
   # @option opts [String] :storage Document storage.
   # @option opts [String] :fonts_folder Custom fonts folder.
+  # @option opts [String] :slides The indices of the slides to be converted. If not specified, all slides are converted by default.
   # @return [nil]
   describe 'convert_and_save test' do
     it 'should work' do
@@ -436,8 +469,9 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ConvertAndSave', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ConvertAndSave', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'ConvertAndSave', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'ConvertAndSave', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('ConvertAndSave', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.api.convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder, paramslides)
       code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ConvertAndSave', nil, nil)
       expect(c).to eq(code)
     end
@@ -449,10 +483,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ConvertAndSave', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ConvertAndSave', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'ConvertAndSave', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'ConvertAndSave', 'String')
       paramdocument = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'ConvertAndSave', paramdocument, 'File')
       AsposeSlidesCloud::SpecUtils.initialize('ConvertAndSave', 'document', paramdocument)
       begin
-        AsposeSlidesCloud::SpecUtils.api.convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('ConvertAndSave', 'document')
           fail "An exception expected"
         end
@@ -474,10 +509,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ConvertAndSave', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ConvertAndSave', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'ConvertAndSave', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'ConvertAndSave', 'String')
       paramformat = AsposeSlidesCloud::SpecUtils.invalidize_param_value('format', 'ConvertAndSave', paramformat, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('ConvertAndSave', 'format', paramformat)
       begin
-        AsposeSlidesCloud::SpecUtils.api.convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('ConvertAndSave', 'format')
           fail "An exception expected"
         end
@@ -499,10 +535,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ConvertAndSave', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ConvertAndSave', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'ConvertAndSave', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'ConvertAndSave', 'String')
       paramout_path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('outPath', 'ConvertAndSave', paramout_path, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('ConvertAndSave', 'outPath', paramout_path)
       begin
-        AsposeSlidesCloud::SpecUtils.api.convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('ConvertAndSave', 'outPath')
           fail "An exception expected"
         end
@@ -524,10 +561,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ConvertAndSave', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ConvertAndSave', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'ConvertAndSave', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'ConvertAndSave', 'String')
       parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'ConvertAndSave', parampassword, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('ConvertAndSave', 'password', parampassword)
       begin
-        AsposeSlidesCloud::SpecUtils.api.convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('ConvertAndSave', 'password')
           fail "An exception expected"
         end
@@ -549,10 +587,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ConvertAndSave', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ConvertAndSave', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'ConvertAndSave', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'ConvertAndSave', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'ConvertAndSave', paramstorage, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('ConvertAndSave', 'storage', paramstorage)
       begin
-        AsposeSlidesCloud::SpecUtils.api.convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('ConvertAndSave', 'storage')
           fail "An exception expected"
         end
@@ -574,10 +613,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ConvertAndSave', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ConvertAndSave', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'ConvertAndSave', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'ConvertAndSave', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontsFolder', 'ConvertAndSave', paramfonts_folder, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('ConvertAndSave', 'fontsFolder', paramfonts_folder)
       begin
-        AsposeSlidesCloud::SpecUtils.api.convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('ConvertAndSave', 'fontsFolder')
           fail "An exception expected"
         end
@@ -587,6 +627,32 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ConvertAndSave', 'fontsFolder', paramfonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slides' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ConvertAndSave', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'ConvertAndSave', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'ConvertAndSave', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ConvertAndSave', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ConvertAndSave', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'ConvertAndSave', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'ConvertAndSave', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slides', 'ConvertAndSave', paramslides, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ConvertAndSave', 'slides', paramslides)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder, paramslides)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ConvertAndSave', 'slides')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ConvertAndSave', 'slides', paramslides)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ConvertAndSave', 'slides', paramslides)
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
@@ -17531,6 +17597,7 @@ describe 'SlidesApi' do
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
   # @option opts [String] :fonts_folder Custom fonts folder.
+  # @option opts [String] :slides The indices of the slides to be saved. If not specified, all slides are saved by default.
   # @return [File]
   describe 'download_presentation test' do
     it 'should work' do
@@ -17541,8 +17608,9 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DownloadPresentation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DownloadPresentation', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'DownloadPresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'DownloadPresentation', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('DownloadPresentation', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.api.download_presentation_with_http_info(paramname, paramformat, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.download_presentation_with_http_info(paramname, paramformat, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
       code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPresentation', nil, nil)
       expect(c).to eq(code)
       expect(o).not_to be_nil
@@ -17556,10 +17624,11 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DownloadPresentation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DownloadPresentation', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'DownloadPresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'DownloadPresentation', 'String')
       paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'DownloadPresentation', paramname, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('DownloadPresentation', 'name', paramname)
       begin
-        AsposeSlidesCloud::SpecUtils.api.download_presentation_with_http_info(paramname, paramformat, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.download_presentation_with_http_info(paramname, paramformat, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('DownloadPresentation', 'name')
           fail "An exception expected"
         end
@@ -17582,10 +17651,11 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DownloadPresentation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DownloadPresentation', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'DownloadPresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'DownloadPresentation', 'String')
       paramformat = AsposeSlidesCloud::SpecUtils.invalidize_param_value('format', 'DownloadPresentation', paramformat, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('DownloadPresentation', 'format', paramformat)
       begin
-        AsposeSlidesCloud::SpecUtils.api.download_presentation_with_http_info(paramname, paramformat, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.download_presentation_with_http_info(paramname, paramformat, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('DownloadPresentation', 'format')
           fail "An exception expected"
         end
@@ -17608,10 +17678,11 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DownloadPresentation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DownloadPresentation', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'DownloadPresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'DownloadPresentation', 'String')
       paramoptions = AsposeSlidesCloud::SpecUtils.invalidize_param_value('options', 'DownloadPresentation', paramoptions, 'ExportOptions')
       AsposeSlidesCloud::SpecUtils.initialize('DownloadPresentation', 'options', paramoptions)
       begin
-        AsposeSlidesCloud::SpecUtils.api.download_presentation_with_http_info(paramname, paramformat, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.download_presentation_with_http_info(paramname, paramformat, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('DownloadPresentation', 'options')
           fail "An exception expected"
         end
@@ -17634,10 +17705,11 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DownloadPresentation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DownloadPresentation', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'DownloadPresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'DownloadPresentation', 'String')
       parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'DownloadPresentation', parampassword, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('DownloadPresentation', 'password', parampassword)
       begin
-        AsposeSlidesCloud::SpecUtils.api.download_presentation_with_http_info(paramname, paramformat, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.download_presentation_with_http_info(paramname, paramformat, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('DownloadPresentation', 'password')
           fail "An exception expected"
         end
@@ -17660,10 +17732,11 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DownloadPresentation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DownloadPresentation', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'DownloadPresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'DownloadPresentation', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'DownloadPresentation', paramfolder, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('DownloadPresentation', 'folder', paramfolder)
       begin
-        AsposeSlidesCloud::SpecUtils.api.download_presentation_with_http_info(paramname, paramformat, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.download_presentation_with_http_info(paramname, paramformat, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('DownloadPresentation', 'folder')
           fail "An exception expected"
         end
@@ -17686,10 +17759,11 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DownloadPresentation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DownloadPresentation', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'DownloadPresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'DownloadPresentation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'DownloadPresentation', paramstorage, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('DownloadPresentation', 'storage', paramstorage)
       begin
-        AsposeSlidesCloud::SpecUtils.api.download_presentation_with_http_info(paramname, paramformat, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.download_presentation_with_http_info(paramname, paramformat, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('DownloadPresentation', 'storage')
           fail "An exception expected"
         end
@@ -17712,10 +17786,11 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DownloadPresentation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DownloadPresentation', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'DownloadPresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'DownloadPresentation', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontsFolder', 'DownloadPresentation', paramfonts_folder, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('DownloadPresentation', 'fontsFolder', paramfonts_folder)
       begin
-        AsposeSlidesCloud::SpecUtils.api.download_presentation_with_http_info(paramname, paramformat, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.download_presentation_with_http_info(paramname, paramformat, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('DownloadPresentation', 'fontsFolder')
           fail "An exception expected"
         end
@@ -17725,6 +17800,33 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPresentation', 'fontsFolder', paramfonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slides' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DownloadPresentation', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'DownloadPresentation', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'DownloadPresentation', 'ExportOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DownloadPresentation', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DownloadPresentation', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DownloadPresentation', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'DownloadPresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'DownloadPresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slides', 'DownloadPresentation', paramslides, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DownloadPresentation', 'slides', paramslides)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.download_presentation_with_http_info(paramname, paramformat, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DownloadPresentation', 'slides')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPresentation', 'slides', paramslides)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPresentation', 'slides', paramslides)
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
@@ -30590,6 +30692,7 @@ describe 'SlidesApi' do
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
   # @option opts [String] :fonts_folder Custom fonts folder.
+  # @option opts [String] :slides The indices of the slides to be saved. If not specified, all slides are saved by default.
   # @return [nil]
   describe 'save_presentation test' do
     it 'should work' do
@@ -30601,8 +30704,9 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePresentation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePresentation', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'SavePresentation', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('SavePresentation', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.api.save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
       code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePresentation', nil, nil)
       expect(c).to eq(code)
     end
@@ -30616,10 +30720,11 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePresentation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePresentation', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'SavePresentation', 'String')
       paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'SavePresentation', paramname, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('SavePresentation', 'name', paramname)
       begin
-        AsposeSlidesCloud::SpecUtils.api.save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SavePresentation', 'name')
           fail "An exception expected"
         end
@@ -30643,10 +30748,11 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePresentation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePresentation', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'SavePresentation', 'String')
       paramformat = AsposeSlidesCloud::SpecUtils.invalidize_param_value('format', 'SavePresentation', paramformat, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('SavePresentation', 'format', paramformat)
       begin
-        AsposeSlidesCloud::SpecUtils.api.save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SavePresentation', 'format')
           fail "An exception expected"
         end
@@ -30670,10 +30776,11 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePresentation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePresentation', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'SavePresentation', 'String')
       paramout_path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('outPath', 'SavePresentation', paramout_path, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('SavePresentation', 'outPath', paramout_path)
       begin
-        AsposeSlidesCloud::SpecUtils.api.save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SavePresentation', 'outPath')
           fail "An exception expected"
         end
@@ -30697,10 +30804,11 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePresentation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePresentation', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'SavePresentation', 'String')
       paramoptions = AsposeSlidesCloud::SpecUtils.invalidize_param_value('options', 'SavePresentation', paramoptions, 'ExportOptions')
       AsposeSlidesCloud::SpecUtils.initialize('SavePresentation', 'options', paramoptions)
       begin
-        AsposeSlidesCloud::SpecUtils.api.save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SavePresentation', 'options')
           fail "An exception expected"
         end
@@ -30724,10 +30832,11 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePresentation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePresentation', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'SavePresentation', 'String')
       parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'SavePresentation', parampassword, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('SavePresentation', 'password', parampassword)
       begin
-        AsposeSlidesCloud::SpecUtils.api.save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SavePresentation', 'password')
           fail "An exception expected"
         end
@@ -30751,10 +30860,11 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePresentation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePresentation', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'SavePresentation', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'SavePresentation', paramfolder, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('SavePresentation', 'folder', paramfolder)
       begin
-        AsposeSlidesCloud::SpecUtils.api.save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SavePresentation', 'folder')
           fail "An exception expected"
         end
@@ -30778,10 +30888,11 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePresentation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePresentation', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'SavePresentation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'SavePresentation', paramstorage, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('SavePresentation', 'storage', paramstorage)
       begin
-        AsposeSlidesCloud::SpecUtils.api.save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SavePresentation', 'storage')
           fail "An exception expected"
         end
@@ -30805,10 +30916,11 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePresentation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePresentation', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'SavePresentation', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontsFolder', 'SavePresentation', paramfonts_folder, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('SavePresentation', 'fontsFolder', paramfonts_folder)
       begin
-        AsposeSlidesCloud::SpecUtils.api.save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SavePresentation', 'fontsFolder')
           fail "An exception expected"
         end
@@ -30818,6 +30930,34 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePresentation', 'fontsFolder', paramfonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slides' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SavePresentation', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'SavePresentation', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'SavePresentation', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SavePresentation', 'ExportOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SavePresentation', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePresentation', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePresentation', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'SavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slides', 'SavePresentation', paramslides, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SavePresentation', 'slides', paramslides)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SavePresentation', 'slides')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePresentation', 'slides', paramslides)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePresentation', 'slides', paramslides)
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
