@@ -25,7 +25,7 @@ require 'date'
 module AsposeSlidesCloud
   # Represents export options for whole presentation.
   class ExportOptions
-    # Setting user password to protect the PDF document. 
+    # Default regular font for rendering the presentation. 
     attr_accessor :default_regular_font
 
     attr_accessor :format

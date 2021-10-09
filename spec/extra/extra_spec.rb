@@ -77,7 +77,7 @@ describe 'SlidesApiExtra' do
 
     it 'nullable properties' do
       folderName = "TempSlidesSDK"
-      fileName = "placeholders.pptx"
+      fileName = "test.pptx"
       password = "password"
       min1  = 44.3
       min2 = 12
@@ -111,7 +111,7 @@ describe 'SlidesApiExtra' do
       dto.axes.horizontal_axis.max_value = max1
       AsposeSlidesCloud::SpecUtils.api.create_shape(fileName, 1, dto, nil, nil, password, folderName)
 
-      result = AsposeSlidesCloud::SpecUtils.api.get_shape(fileName, 1, 4, password, folderName)
+      result = AsposeSlidesCloud::SpecUtils.api.get_shape(fileName, 1, 5, password, folderName)
       expect(result.axes.horizontal_axis.min_value).to eq(min1)
       expect(result.axes.horizontal_axis.max_value).to eq(max1)
 
@@ -119,17 +119,17 @@ describe 'SlidesApiExtra' do
       dto.axes = AsposeSlidesCloud::Axes.new
       dto.axes.horizontal_axis = AsposeSlidesCloud::Axis.new
       dto.axes.horizontal_axis.min_value = min2
-      AsposeSlidesCloud::SpecUtils.api.update_shape(fileName, 1, 4, dto, password, folderName)
+      AsposeSlidesCloud::SpecUtils.api.update_shape(fileName, 1, 5, dto, password, folderName)
 
-      result = AsposeSlidesCloud::SpecUtils.api.get_shape(fileName, 1, 4, password, folderName)
+      result = AsposeSlidesCloud::SpecUtils.api.get_shape(fileName, 1, 5, password, folderName)
       expect(result.axes.horizontal_axis.min_value).to eq(min2)
       expect(result.axes.horizontal_axis.max_value).to eq(max1)
 
       dto.axes.horizontal_axis = AsposeSlidesCloud::Axis.new
       dto.axes.horizontal_axis.max_value = max2
-      AsposeSlidesCloud::SpecUtils.api.update_shape(fileName, 1, 4, dto, password, folderName)
+      AsposeSlidesCloud::SpecUtils.api.update_shape(fileName, 1, 5, dto, password, folderName)
 
-      result = AsposeSlidesCloud::SpecUtils.api.get_shape(fileName, 1, 4, password, folderName)
+      result = AsposeSlidesCloud::SpecUtils.api.get_shape(fileName, 1, 5, password, folderName)
       expect(result.axes.horizontal_axis.min_value).to eq(min2)
       expect(result.axes.horizontal_axis.max_value).to eq(max2)
     end

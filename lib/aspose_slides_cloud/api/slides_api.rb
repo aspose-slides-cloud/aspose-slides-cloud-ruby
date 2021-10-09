@@ -111,6 +111,98 @@ module AsposeSlidesCloud
         :return_type => 'Shapes')
       return data, status_code, headers
     end
+    # Changes the placement of selected shapes on the master slide. Aligns shapes to the margins or the edge of the slide or aligns them relative to each other.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param alignment_type Alignment type that will be applied to the shapes.
+    # @param align_to_slide If true, shapes will be aligned relative to the slide edges.
+    # @param shapes Shapes indexes.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def align_special_slide_shapes(name, slide_index, slide_type, alignment_type, align_to_slide = nil, shapes = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = align_special_slide_shapes_with_http_info(name, slide_index, slide_type, alignment_type, align_to_slide, shapes, password, folder, storage)
+      data
+    end
+
+    # Changes the placement of selected shapes on the master slide. Aligns shapes to the margins or the edge of the slide or aligns them relative to each other.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param alignment_type Alignment type that will be applied to the shapes.
+    # @param align_to_slide If true, shapes will be aligned relative to the slide edges.
+    # @param shapes Shapes indexes.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def align_special_slide_shapes_with_http_info(name, slide_index, slide_type, alignment_type, align_to_slide = nil, shapes = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.align_special_slide_shapes ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.align_special_slide_shapes"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.align_special_slide_shapes"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.align_special_slide_shapes"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'alignment_type' is set
+      if @api_client.config.client_side_validation && alignment_type.nil?
+        fail ArgumentError, "Missing the required parameter 'alignment_type' when calling SlidesApi.align_special_slide_shapes"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['AlignLeft', 'AlignRight', 'AlignCenter', 'AlignTop', 'AlignMiddle', 'AlignBottom', 'DistributeHorizontally', 'DistributeVertically'].any?{ |s| s.casecmp(alignment_type)==0 }
+        fail ArgumentError, "Value " + alignment_type + " is not supported for 'alignment_type', must be one of AlignLeft, AlignRight, AlignCenter, AlignTop, AlignMiddle, AlignBottom, DistributeHorizontally, DistributeVertically"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/align/{alignmentType}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'alignmentType', alignment_type)
+
+      # query parameters
+      query_params = {}
+      query_params[:'alignToSlide'] = align_to_slide unless align_to_slide.nil?
+      query_params[:'shapes'] = shapes unless shapes.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Shapes')
+      return data, status_code, headers
+    end
     # Convert presentation from request content to format specified.
     # @param document Document data.
     # @param format Export format.
@@ -118,8 +210,9 @@ module AsposeSlidesCloud
     # @param storage Document storage.
     # @param fonts_folder Custom fonts folder.
     # @param slides The indices of the slides to be converted. If not specified, all slides are converted by default.
-    def convert(document, format, password = nil, storage = nil, fonts_folder = nil, slides = nil)
-      data, _status_code, _headers = convert_with_http_info(document, format, password, storage, fonts_folder, slides)
+    # @param options Export options.
+    def convert(document, format, password = nil, storage = nil, fonts_folder = nil, slides = nil, options = nil)
+      data, _status_code, _headers = convert_with_http_info(document, format, password, storage, fonts_folder, slides, options)
       data
     end
 
@@ -130,7 +223,8 @@ module AsposeSlidesCloud
     # @param storage Document storage.
     # @param fonts_folder Custom fonts folder.
     # @param slides The indices of the slides to be converted. If not specified, all slides are converted by default.
-    def convert_with_http_info(document, format, password = nil, storage = nil, fonts_folder = nil, slides = nil)
+    # @param options Export options.
+    def convert_with_http_info(document, format, password = nil, storage = nil, fonts_folder = nil, slides = nil, options = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.convert ...'
       end
@@ -166,7 +260,7 @@ module AsposeSlidesCloud
       header_params[:'password'] = password unless password.nil?
 
       # http body (model)
-      post_body = nil
+      post_body = @api_client.object_to_http_body(options)
 
       # form parameters
       post_files = []
@@ -192,8 +286,9 @@ module AsposeSlidesCloud
     # @param storage Document storage.
     # @param fonts_folder Custom fonts folder.
     # @param slides The indices of the slides to be converted. If not specified, all slides are converted by default.
-    def convert_and_save(document, format, out_path, password = nil, storage = nil, fonts_folder = nil, slides = nil)
-      convert_and_save_with_http_info(document, format, out_path, password, storage, fonts_folder, slides)
+    # @param options Export options.
+    def convert_and_save(document, format, out_path, password = nil, storage = nil, fonts_folder = nil, slides = nil, options = nil)
+      convert_and_save_with_http_info(document, format, out_path, password, storage, fonts_folder, slides, options)
       nil
     end
 
@@ -205,7 +300,8 @@ module AsposeSlidesCloud
     # @param storage Document storage.
     # @param fonts_folder Custom fonts folder.
     # @param slides The indices of the slides to be converted. If not specified, all slides are converted by default.
-    def convert_and_save_with_http_info(document, format, out_path, password = nil, storage = nil, fonts_folder = nil, slides = nil)
+    # @param options Export options.
+    def convert_and_save_with_http_info(document, format, out_path, password = nil, storage = nil, fonts_folder = nil, slides = nil, options = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.convert_and_save ...'
       end
@@ -246,7 +342,7 @@ module AsposeSlidesCloud
       header_params[:'password'] = password unless password.nil?
 
       # http body (model)
-      post_body = nil
+      post_body = @api_client.object_to_http_body(options)
 
       # form parameters
       post_files = []
@@ -1462,249 +1558,6 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def create_notes_slide_paragraph(name, slide_index, shape_index, dto, position = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = create_notes_slide_paragraph_with_http_info(name, slide_index, shape_index, dto, position, password, folder, storage)
-      data
-    end
-
-    # Creates new paragraph.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param dto Paragraph DTO.
-    # @param position Position of the new paragraph in the list. Default is at the end of the list.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def create_notes_slide_paragraph_with_http_info(name, slide_index, shape_index, dto, position = nil, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.create_notes_slide_paragraph ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.create_notes_slide_paragraph"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.create_notes_slide_paragraph"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.create_notes_slide_paragraph"
-      end
-      # verify the required parameter 'dto' is set
-      if @api_client.config.client_side_validation && dto.nil?
-        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.create_notes_slide_paragraph"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'position'] = position unless position.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(dto)
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'Paragraph')
-      return data, status_code, headers
-    end
-    # Creates new portion.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraph_index Paragraph index.
-    # @param dto Portion DTO.
-    # @param position Position of the new portion in the list. Default is at the end of the list.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def create_notes_slide_portion(name, slide_index, shape_index, paragraph_index, dto, position = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = create_notes_slide_portion_with_http_info(name, slide_index, shape_index, paragraph_index, dto, position, password, folder, storage)
-      data
-    end
-
-    # Creates new portion.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraph_index Paragraph index.
-    # @param dto Portion DTO.
-    # @param position Position of the new portion in the list. Default is at the end of the list.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def create_notes_slide_portion_with_http_info(name, slide_index, shape_index, paragraph_index, dto, position = nil, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.create_notes_slide_portion ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.create_notes_slide_portion"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.create_notes_slide_portion"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.create_notes_slide_portion"
-      end
-      # verify the required parameter 'paragraph_index' is set
-      if @api_client.config.client_side_validation && paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.create_notes_slide_portion"
-      end
-      # verify the required parameter 'dto' is set
-      if @api_client.config.client_side_validation && dto.nil?
-        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.create_notes_slide_portion"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'position'] = position unless position.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(dto)
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'Portion')
-      return data, status_code, headers
-    end
-    # Create new shape.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param dto Shape DTO.
-    # @param shape_to_clone Optional index for clone shape instead of adding a new one.
-    # @param position Position of the new shape in the list. Default is at the end of the list.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def create_notes_slide_shape(name, slide_index, dto, shape_to_clone = nil, position = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = create_notes_slide_shape_with_http_info(name, slide_index, dto, shape_to_clone, position, password, folder, storage)
-      data
-    end
-
-    # Create new shape.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param dto Shape DTO.
-    # @param shape_to_clone Optional index for clone shape instead of adding a new one.
-    # @param position Position of the new shape in the list. Default is at the end of the list.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def create_notes_slide_shape_with_http_info(name, slide_index, dto, shape_to_clone = nil, position = nil, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.create_notes_slide_shape ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.create_notes_slide_shape"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.create_notes_slide_shape"
-      end
-      # verify the required parameter 'dto' is set
-      if @api_client.config.client_side_validation && dto.nil?
-        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.create_notes_slide_shape"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'shapeToClone'] = shape_to_clone unless shape_to_clone.nil?
-      query_params[:'position'] = position unless position.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(dto)
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'ShapeBase')
-      return data, status_code, headers
-    end
-    # Creates new paragraph.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param dto Paragraph DTO.
-    # @param position Position of the new paragraph in the list. Default is at the end of the list.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
     def create_paragraph(name, slide_index, shape_index, dto, position = nil, password = nil, folder = nil, storage = nil)
       data, _status_code, _headers = create_paragraph_with_http_info(name, slide_index, shape_index, dto, position, password, folder, storage)
       data
@@ -2273,6 +2126,821 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'Slides')
+      return data, status_code, headers
+    end
+    # Add an effect to special slide (master, layout, notes) animation.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param effect Animation effect DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_special_slide_animation_effect(name, slide_index, slide_type, effect, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = create_special_slide_animation_effect_with_http_info(name, slide_index, slide_type, effect, password, folder, storage)
+      data
+    end
+
+    # Add an effect to special slide (master, layout, notes) animation.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param effect Animation effect DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_special_slide_animation_effect_with_http_info(name, slide_index, slide_type, effect, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.create_special_slide_animation_effect ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.create_special_slide_animation_effect"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.create_special_slide_animation_effect"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.create_special_slide_animation_effect"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'effect' is set
+      if @api_client.config.client_side_validation && effect.nil?
+        fail ArgumentError, "Missing the required parameter 'effect' when calling SlidesApi.create_special_slide_animation_effect"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/animation/mainSequence'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(effect)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'SlideAnimation')
+      return data, status_code, headers
+    end
+    # Set special slide (master, layout, notes) animation.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param sequence Animation sequence DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_special_slide_animation_interactive_sequence(name, slide_index, slide_type, sequence, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = create_special_slide_animation_interactive_sequence_with_http_info(name, slide_index, slide_type, sequence, password, folder, storage)
+      data
+    end
+
+    # Set special slide (master, layout, notes) animation.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param sequence Animation sequence DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_special_slide_animation_interactive_sequence_with_http_info(name, slide_index, slide_type, sequence, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.create_special_slide_animation_interactive_sequence ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.create_special_slide_animation_interactive_sequence"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.create_special_slide_animation_interactive_sequence"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.create_special_slide_animation_interactive_sequence"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'sequence' is set
+      if @api_client.config.client_side_validation && sequence.nil?
+        fail ArgumentError, "Missing the required parameter 'sequence' when calling SlidesApi.create_special_slide_animation_interactive_sequence"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/animation/interactiveSequences'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(sequence)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'SlideAnimation')
+      return data, status_code, headers
+    end
+    # Add an animation effect to a special slide (master, layout, notes) interactive sequence.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param sequence_index The position of the interactive sequence.
+    # @param effect Animation effect DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_special_slide_animation_interactive_sequence_effect(name, slide_index, slide_type, sequence_index, effect, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = create_special_slide_animation_interactive_sequence_effect_with_http_info(name, slide_index, slide_type, sequence_index, effect, password, folder, storage)
+      data
+    end
+
+    # Add an animation effect to a special slide (master, layout, notes) interactive sequence.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param sequence_index The position of the interactive sequence.
+    # @param effect Animation effect DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_special_slide_animation_interactive_sequence_effect_with_http_info(name, slide_index, slide_type, sequence_index, effect, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.create_special_slide_animation_interactive_sequence_effect ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.create_special_slide_animation_interactive_sequence_effect"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.create_special_slide_animation_interactive_sequence_effect"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.create_special_slide_animation_interactive_sequence_effect"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'sequence_index' is set
+      if @api_client.config.client_side_validation && sequence_index.nil?
+        fail ArgumentError, "Missing the required parameter 'sequence_index' when calling SlidesApi.create_special_slide_animation_interactive_sequence_effect"
+      end
+      # verify the required parameter 'effect' is set
+      if @api_client.config.client_side_validation && effect.nil?
+        fail ArgumentError, "Missing the required parameter 'effect' when calling SlidesApi.create_special_slide_animation_interactive_sequence_effect"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/animation/interactiveSequences/{sequenceIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'sequenceIndex', sequence_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(effect)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'SlideAnimation')
+      return data, status_code, headers
+    end
+    # Creates new paragraph.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param dto Paragraph DTO.
+    # @param position Position of the new paragraph in the list. Default is at the end of the list.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_special_slide_paragraph(name, slide_index, slide_type, shape_index, dto, position = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = create_special_slide_paragraph_with_http_info(name, slide_index, slide_type, shape_index, dto, position, password, folder, storage)
+      data
+    end
+
+    # Creates new paragraph.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param dto Paragraph DTO.
+    # @param position Position of the new paragraph in the list. Default is at the end of the list.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_special_slide_paragraph_with_http_info(name, slide_index, slide_type, shape_index, dto, position = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.create_special_slide_paragraph ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.create_special_slide_paragraph"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.create_special_slide_paragraph"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.create_special_slide_paragraph"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.create_special_slide_paragraph"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.create_special_slide_paragraph"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}/paragraphs'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'position'] = position unless position.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Paragraph')
+      return data, status_code, headers
+    end
+    # Creates new portion.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param dto Portion DTO.
+    # @param position Position of the new portion in the list. Default is at the end of the list.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_special_slide_portion(name, slide_index, slide_type, shape_index, paragraph_index, dto, position = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = create_special_slide_portion_with_http_info(name, slide_index, slide_type, shape_index, paragraph_index, dto, position, password, folder, storage)
+      data
+    end
+
+    # Creates new portion.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param dto Portion DTO.
+    # @param position Position of the new portion in the list. Default is at the end of the list.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_special_slide_portion_with_http_info(name, slide_index, slide_type, shape_index, paragraph_index, dto, position = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.create_special_slide_portion ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.create_special_slide_portion"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.create_special_slide_portion"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.create_special_slide_portion"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.create_special_slide_portion"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.create_special_slide_portion"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.create_special_slide_portion"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'position'] = position unless position.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Portion')
+      return data, status_code, headers
+    end
+    # Create new shape.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param dto Shape DTO.
+    # @param shape_to_clone Optional index for clone shape instead of adding a new one.
+    # @param position Position of the new shape in the list. Default is at the end of the list.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_special_slide_shape(name, slide_index, slide_type, dto = nil, shape_to_clone = nil, position = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = create_special_slide_shape_with_http_info(name, slide_index, slide_type, dto, shape_to_clone, position, password, folder, storage)
+      data
+    end
+
+    # Create new shape.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param dto Shape DTO.
+    # @param shape_to_clone Optional index for clone shape instead of adding a new one.
+    # @param position Position of the new shape in the list. Default is at the end of the list.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_special_slide_shape_with_http_info(name, slide_index, slide_type, dto = nil, shape_to_clone = nil, position = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.create_special_slide_shape ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.create_special_slide_shape"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.create_special_slide_shape"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.create_special_slide_shape"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+
+      # query parameters
+      query_params = {}
+      query_params[:'shapeToClone'] = shape_to_clone unless shape_to_clone.nil?
+      query_params[:'position'] = position unless position.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'ShapeBase')
+      return data, status_code, headers
+    end
+    # Create new shape (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param dto Shape DTO.
+    # @param shape_to_clone Optional index for clone shape instead of adding a new one.
+    # @param position Position of the new shape in the list. Default is at the end of the list.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_special_slide_subshape(name, slide_index, slide_type, path, dto = nil, shape_to_clone = nil, position = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = create_special_slide_subshape_with_http_info(name, slide_index, slide_type, path, dto, shape_to_clone, position, password, folder, storage)
+      data
+    end
+
+    # Create new shape (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param dto Shape DTO.
+    # @param shape_to_clone Optional index for clone shape instead of adding a new one.
+    # @param position Position of the new shape in the list. Default is at the end of the list.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_special_slide_subshape_with_http_info(name, slide_index, slide_type, path, dto = nil, shape_to_clone = nil, position = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.create_special_slide_subshape ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.create_special_slide_subshape"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.create_special_slide_subshape"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.create_special_slide_subshape"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.create_special_slide_subshape"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+
+      # query parameters
+      query_params = {}
+      query_params[:'shapeToClone'] = shape_to_clone unless shape_to_clone.nil?
+      query_params[:'position'] = position unless position.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'ShapeBase')
+      return data, status_code, headers
+    end
+    # Creates new paragraph (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param dto Paragraph DTO.
+    # @param position Position of the new paragraph in the list. Default is at the end of the list.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_special_slide_subshape_paragraph(name, slide_index, slide_type, path, shape_index, dto, position = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = create_special_slide_subshape_paragraph_with_http_info(name, slide_index, slide_type, path, shape_index, dto, position, password, folder, storage)
+      data
+    end
+
+    # Creates new paragraph (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param dto Paragraph DTO.
+    # @param position Position of the new paragraph in the list. Default is at the end of the list.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_special_slide_subshape_paragraph_with_http_info(name, slide_index, slide_type, path, shape_index, dto, position = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.create_special_slide_subshape_paragraph ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.create_special_slide_subshape_paragraph"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.create_special_slide_subshape_paragraph"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.create_special_slide_subshape_paragraph"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.create_special_slide_subshape_paragraph"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.create_special_slide_subshape_paragraph"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.create_special_slide_subshape_paragraph"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}/{shapeIndex}/paragraphs'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'position'] = position unless position.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Paragraph')
+      return data, status_code, headers
+    end
+    # Creates new portion (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param dto Portion DTO.
+    # @param position Position of the new portion in the list. Default is at the end of the list.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_special_slide_subshape_portion(name, slide_index, slide_type, path, shape_index, paragraph_index, dto, position = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = create_special_slide_subshape_portion_with_http_info(name, slide_index, slide_type, path, shape_index, paragraph_index, dto, position, password, folder, storage)
+      data
+    end
+
+    # Creates new portion (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param dto Portion DTO.
+    # @param position Position of the new portion in the list. Default is at the end of the list.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_special_slide_subshape_portion_with_http_info(name, slide_index, slide_type, path, shape_index, paragraph_index, dto, position = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.create_special_slide_subshape_portion ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.create_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.create_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.create_special_slide_subshape_portion"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.create_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.create_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.create_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.create_special_slide_subshape_portion"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'position'] = position unless position.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Portion')
       return data, status_code, headers
     end
     # Create new shape (for smart art and group shapes).
@@ -3803,462 +4471,6 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def delete_notes_slide_paragraph(name, slide_index, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = delete_notes_slide_paragraph_with_http_info(name, slide_index, shape_index, paragraph_index, password, folder, storage)
-      data
-    end
-
-    # Remove a paragraph.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraph_index Paragraph index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def delete_notes_slide_paragraph_with_http_info(name, slide_index, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_notes_slide_paragraph ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_notes_slide_paragraph"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_notes_slide_paragraph"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_notes_slide_paragraph"
-      end
-      # verify the required parameter 'paragraph_index' is set
-      if @api_client.config.client_side_validation && paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_notes_slide_paragraph"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = nil
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'Paragraphs')
-      return data, status_code, headers
-    end
-    # Remove a range of paragraphs.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraphs The indices of the shapes to be deleted; delete all by default.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def delete_notes_slide_paragraphs(name, slide_index, shape_index, paragraphs = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = delete_notes_slide_paragraphs_with_http_info(name, slide_index, shape_index, paragraphs, password, folder, storage)
-      data
-    end
-
-    # Remove a range of paragraphs.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraphs The indices of the shapes to be deleted; delete all by default.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def delete_notes_slide_paragraphs_with_http_info(name, slide_index, shape_index, paragraphs = nil, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_notes_slide_paragraphs ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_notes_slide_paragraphs"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_notes_slide_paragraphs"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_notes_slide_paragraphs"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'paragraphs'] = paragraphs unless paragraphs.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = nil
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'Paragraphs')
-      return data, status_code, headers
-    end
-    # Remove a portion.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraph_index Paragraph index.
-    # @param portion_index Portion index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def delete_notes_slide_portion(name, slide_index, shape_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = delete_notes_slide_portion_with_http_info(name, slide_index, shape_index, paragraph_index, portion_index, password, folder, storage)
-      data
-    end
-
-    # Remove a portion.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraph_index Paragraph index.
-    # @param portion_index Portion index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def delete_notes_slide_portion_with_http_info(name, slide_index, shape_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_notes_slide_portion ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_notes_slide_portion"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_notes_slide_portion"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_notes_slide_portion"
-      end
-      # verify the required parameter 'paragraph_index' is set
-      if @api_client.config.client_side_validation && paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_notes_slide_portion"
-      end
-      # verify the required parameter 'portion_index' is set
-      if @api_client.config.client_side_validation && portion_index.nil?
-        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.delete_notes_slide_portion"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'portionIndex', portion_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = nil
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'Portions')
-      return data, status_code, headers
-    end
-    # Remove a range of portions.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraph_index Paragraph index.
-    # @param portions The indices of the shapes to be deleted; delete all by default.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def delete_notes_slide_portions(name, slide_index, shape_index, paragraph_index, portions = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = delete_notes_slide_portions_with_http_info(name, slide_index, shape_index, paragraph_index, portions, password, folder, storage)
-      data
-    end
-
-    # Remove a range of portions.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraph_index Paragraph index.
-    # @param portions The indices of the shapes to be deleted; delete all by default.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def delete_notes_slide_portions_with_http_info(name, slide_index, shape_index, paragraph_index, portions = nil, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_notes_slide_portions ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_notes_slide_portions"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_notes_slide_portions"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_notes_slide_portions"
-      end
-      # verify the required parameter 'paragraph_index' is set
-      if @api_client.config.client_side_validation && paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_notes_slide_portions"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'portions'] = portions unless portions.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = nil
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'Portions')
-      return data, status_code, headers
-    end
-    # Remove a shape.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def delete_notes_slide_shape(name, slide_index, shape_index, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = delete_notes_slide_shape_with_http_info(name, slide_index, shape_index, password, folder, storage)
-      data
-    end
-
-    # Remove a shape.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def delete_notes_slide_shape_with_http_info(name, slide_index, shape_index, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_notes_slide_shape ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_notes_slide_shape"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_notes_slide_shape"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_notes_slide_shape"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = nil
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'Shapes')
-      return data, status_code, headers
-    end
-    # Remove a range of shapes.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shapes The indices of the shapes to be deleted; delete all by default.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def delete_notes_slide_shapes(name, slide_index, shapes = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = delete_notes_slide_shapes_with_http_info(name, slide_index, shapes, password, folder, storage)
-      data
-    end
-
-    # Remove a range of shapes.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shapes The indices of the shapes to be deleted; delete all by default.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def delete_notes_slide_shapes_with_http_info(name, slide_index, shapes = nil, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_notes_slide_shapes ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_notes_slide_shapes"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_notes_slide_shapes"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'shapes'] = shapes unless shapes.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = nil
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'Shapes')
-      return data, status_code, headers
-    end
-    # Remove a paragraph.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraph_index Paragraph index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
     def delete_paragraph(name, slide_index, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
       data, _status_code, _headers = delete_paragraph_with_http_info(name, slide_index, shape_index, paragraph_index, password, folder, storage)
       data
@@ -5203,6 +5415,1570 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'Slides')
+      return data, status_code, headers
+    end
+    # Remove animation from a special slide (master, layout, notes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_animation(name, slide_index, slide_type, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_special_slide_animation_with_http_info(name, slide_index, slide_type, password, folder, storage)
+      data
+    end
+
+    # Remove animation from a special slide (master, layout, notes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_animation_with_http_info(name, slide_index, slide_type, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_special_slide_animation ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_special_slide_animation"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_special_slide_animation"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.delete_special_slide_animation"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/animation'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'SlideAnimation')
+      return data, status_code, headers
+    end
+    # Remove an effect from special slide (master, layout, notes) animation.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param effect_index Index of the effect to be removed.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_animation_effect(name, slide_index, slide_type, effect_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_special_slide_animation_effect_with_http_info(name, slide_index, slide_type, effect_index, password, folder, storage)
+      data
+    end
+
+    # Remove an effect from special slide (master, layout, notes) animation.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param effect_index Index of the effect to be removed.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_animation_effect_with_http_info(name, slide_index, slide_type, effect_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_special_slide_animation_effect ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_special_slide_animation_effect"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_special_slide_animation_effect"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.delete_special_slide_animation_effect"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'effect_index' is set
+      if @api_client.config.client_side_validation && effect_index.nil?
+        fail ArgumentError, "Missing the required parameter 'effect_index' when calling SlidesApi.delete_special_slide_animation_effect"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/animation/mainSequence/{effectIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'effectIndex', effect_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'SlideAnimation')
+      return data, status_code, headers
+    end
+    # Remove an interactive sequence from special slide (master, layout, notes) animation.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param sequence_index The index of an interactive sequence to be deleted.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_animation_interactive_sequence(name, slide_index, slide_type, sequence_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_special_slide_animation_interactive_sequence_with_http_info(name, slide_index, slide_type, sequence_index, password, folder, storage)
+      data
+    end
+
+    # Remove an interactive sequence from special slide (master, layout, notes) animation.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param sequence_index The index of an interactive sequence to be deleted.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_animation_interactive_sequence_with_http_info(name, slide_index, slide_type, sequence_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_special_slide_animation_interactive_sequence ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_special_slide_animation_interactive_sequence"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_special_slide_animation_interactive_sequence"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.delete_special_slide_animation_interactive_sequence"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'sequence_index' is set
+      if @api_client.config.client_side_validation && sequence_index.nil?
+        fail ArgumentError, "Missing the required parameter 'sequence_index' when calling SlidesApi.delete_special_slide_animation_interactive_sequence"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/animation/interactiveSequences/{sequenceIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'sequenceIndex', sequence_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'SlideAnimation')
+      return data, status_code, headers
+    end
+    # Remove an effect from special slide (master, layout, notes) animation interactive sequence.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param sequence_index Interactive sequence index.
+    # @param effect_index Index of the effect to be removed.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_animation_interactive_sequence_effect(name, slide_index, slide_type, sequence_index, effect_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_special_slide_animation_interactive_sequence_effect_with_http_info(name, slide_index, slide_type, sequence_index, effect_index, password, folder, storage)
+      data
+    end
+
+    # Remove an effect from special slide (master, layout, notes) animation interactive sequence.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param sequence_index Interactive sequence index.
+    # @param effect_index Index of the effect to be removed.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_animation_interactive_sequence_effect_with_http_info(name, slide_index, slide_type, sequence_index, effect_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_special_slide_animation_interactive_sequence_effect ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_special_slide_animation_interactive_sequence_effect"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_special_slide_animation_interactive_sequence_effect"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.delete_special_slide_animation_interactive_sequence_effect"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'sequence_index' is set
+      if @api_client.config.client_side_validation && sequence_index.nil?
+        fail ArgumentError, "Missing the required parameter 'sequence_index' when calling SlidesApi.delete_special_slide_animation_interactive_sequence_effect"
+      end
+      # verify the required parameter 'effect_index' is set
+      if @api_client.config.client_side_validation && effect_index.nil?
+        fail ArgumentError, "Missing the required parameter 'effect_index' when calling SlidesApi.delete_special_slide_animation_interactive_sequence_effect"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/animation/interactiveSequences/{sequenceIndex}/{effectIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'sequenceIndex', sequence_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'effectIndex', effect_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'SlideAnimation')
+      return data, status_code, headers
+    end
+    # Clear all interactive sequences from special slide (master, layout, notes) animation.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_animation_interactive_sequences(name, slide_index, slide_type, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_special_slide_animation_interactive_sequences_with_http_info(name, slide_index, slide_type, password, folder, storage)
+      data
+    end
+
+    # Clear all interactive sequences from special slide (master, layout, notes) animation.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_animation_interactive_sequences_with_http_info(name, slide_index, slide_type, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_special_slide_animation_interactive_sequences ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_special_slide_animation_interactive_sequences"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_special_slide_animation_interactive_sequences"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.delete_special_slide_animation_interactive_sequences"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/animation/interactiveSequences'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'SlideAnimation')
+      return data, status_code, headers
+    end
+    # Clear main sequence in special slide (master, layout, notes) animation.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_animation_main_sequence(name, slide_index, slide_type, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_special_slide_animation_main_sequence_with_http_info(name, slide_index, slide_type, password, folder, storage)
+      data
+    end
+
+    # Clear main sequence in special slide (master, layout, notes) animation.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_animation_main_sequence_with_http_info(name, slide_index, slide_type, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_special_slide_animation_main_sequence ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_special_slide_animation_main_sequence"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_special_slide_animation_main_sequence"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.delete_special_slide_animation_main_sequence"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/animation/mainSequence'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'SlideAnimation')
+      return data, status_code, headers
+    end
+    # Remove a paragraph.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_paragraph(name, slide_index, slide_type, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_special_slide_paragraph_with_http_info(name, slide_index, slide_type, shape_index, paragraph_index, password, folder, storage)
+      data
+    end
+
+    # Remove a paragraph.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_paragraph_with_http_info(name, slide_index, slide_type, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_special_slide_paragraph ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_special_slide_paragraph"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_special_slide_paragraph"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.delete_special_slide_paragraph"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_special_slide_paragraph"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_special_slide_paragraph"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Paragraphs')
+      return data, status_code, headers
+    end
+    # Remove a range of paragraphs.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraphs The indices of the shapes to be deleted; delete all by default.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_paragraphs(name, slide_index, slide_type, shape_index, paragraphs = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_special_slide_paragraphs_with_http_info(name, slide_index, slide_type, shape_index, paragraphs, password, folder, storage)
+      data
+    end
+
+    # Remove a range of paragraphs.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraphs The indices of the shapes to be deleted; delete all by default.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_paragraphs_with_http_info(name, slide_index, slide_type, shape_index, paragraphs = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_special_slide_paragraphs ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_special_slide_paragraphs"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_special_slide_paragraphs"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.delete_special_slide_paragraphs"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_special_slide_paragraphs"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}/paragraphs'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'paragraphs'] = paragraphs unless paragraphs.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Paragraphs')
+      return data, status_code, headers
+    end
+    # Remove a portion.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_portion(name, slide_index, slide_type, shape_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_special_slide_portion_with_http_info(name, slide_index, slide_type, shape_index, paragraph_index, portion_index, password, folder, storage)
+      data
+    end
+
+    # Remove a portion.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_portion_with_http_info(name, slide_index, slide_type, shape_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_special_slide_portion ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_special_slide_portion"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_special_slide_portion"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.delete_special_slide_portion"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_special_slide_portion"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_special_slide_portion"
+      end
+      # verify the required parameter 'portion_index' is set
+      if @api_client.config.client_side_validation && portion_index.nil?
+        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.delete_special_slide_portion"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'portionIndex', portion_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Portions')
+      return data, status_code, headers
+    end
+    # Remove a range of portions.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portions The indices of the shapes to be deleted; delete all by default.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_portions(name, slide_index, slide_type, shape_index, paragraph_index, portions = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_special_slide_portions_with_http_info(name, slide_index, slide_type, shape_index, paragraph_index, portions, password, folder, storage)
+      data
+    end
+
+    # Remove a range of portions.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portions The indices of the shapes to be deleted; delete all by default.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_portions_with_http_info(name, slide_index, slide_type, shape_index, paragraph_index, portions = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_special_slide_portions ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_special_slide_portions"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_special_slide_portions"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.delete_special_slide_portions"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_special_slide_portions"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_special_slide_portions"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'portions'] = portions unless portions.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Portions')
+      return data, status_code, headers
+    end
+    # Remove a shape.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_shape(name, slide_index, slide_type, shape_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_special_slide_shape_with_http_info(name, slide_index, slide_type, shape_index, password, folder, storage)
+      data
+    end
+
+    # Remove a shape.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_shape_with_http_info(name, slide_index, slide_type, shape_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_special_slide_shape ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_special_slide_shape"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_special_slide_shape"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.delete_special_slide_shape"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_special_slide_shape"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Shapes')
+      return data, status_code, headers
+    end
+    # Remove a range of shapes.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shapes The indices of the shapes to be deleted; delete all by default.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_shapes(name, slide_index, slide_type, shapes = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_special_slide_shapes_with_http_info(name, slide_index, slide_type, shapes, password, folder, storage)
+      data
+    end
+
+    # Remove a range of shapes.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shapes The indices of the shapes to be deleted; delete all by default.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_shapes_with_http_info(name, slide_index, slide_type, shapes = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_special_slide_shapes ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_special_slide_shapes"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_special_slide_shapes"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.delete_special_slide_shapes"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+
+      # query parameters
+      query_params = {}
+      query_params[:'shapes'] = shapes unless shapes.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Shapes')
+      return data, status_code, headers
+    end
+    # Remove a shape (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_subshape(name, slide_index, slide_type, path, shape_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_special_slide_subshape_with_http_info(name, slide_index, slide_type, path, shape_index, password, folder, storage)
+      data
+    end
+
+    # Remove a shape (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_subshape_with_http_info(name, slide_index, slide_type, path, shape_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_special_slide_subshape ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_special_slide_subshape"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_special_slide_subshape"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.delete_special_slide_subshape"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.delete_special_slide_subshape"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_special_slide_subshape"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}/{shapeIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Shapes')
+      return data, status_code, headers
+    end
+    # Remove a paragraph (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_subshape_paragraph(name, slide_index, slide_type, path, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_special_slide_subshape_paragraph_with_http_info(name, slide_index, slide_type, path, shape_index, paragraph_index, password, folder, storage)
+      data
+    end
+
+    # Remove a paragraph (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_subshape_paragraph_with_http_info(name, slide_index, slide_type, path, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_special_slide_subshape_paragraph ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_special_slide_subshape_paragraph"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_special_slide_subshape_paragraph"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.delete_special_slide_subshape_paragraph"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.delete_special_slide_subshape_paragraph"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_special_slide_subshape_paragraph"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_special_slide_subshape_paragraph"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Paragraphs')
+      return data, status_code, headers
+    end
+    # Remove a range of paragraphs (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraphs The indices of the shapes to be deleted; delete all by default.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_subshape_paragraphs(name, slide_index, slide_type, path, shape_index, paragraphs = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_special_slide_subshape_paragraphs_with_http_info(name, slide_index, slide_type, path, shape_index, paragraphs, password, folder, storage)
+      data
+    end
+
+    # Remove a range of paragraphs (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraphs The indices of the shapes to be deleted; delete all by default.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_subshape_paragraphs_with_http_info(name, slide_index, slide_type, path, shape_index, paragraphs = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_special_slide_subshape_paragraphs ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_special_slide_subshape_paragraphs"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_special_slide_subshape_paragraphs"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.delete_special_slide_subshape_paragraphs"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.delete_special_slide_subshape_paragraphs"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_special_slide_subshape_paragraphs"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}/{shapeIndex}/paragraphs'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'paragraphs'] = paragraphs unless paragraphs.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Paragraphs')
+      return data, status_code, headers
+    end
+    # Remove a portion (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_subshape_portion(name, slide_index, slide_type, path, shape_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_special_slide_subshape_portion_with_http_info(name, slide_index, slide_type, path, shape_index, paragraph_index, portion_index, password, folder, storage)
+      data
+    end
+
+    # Remove a portion (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_subshape_portion_with_http_info(name, slide_index, slide_type, path, shape_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_special_slide_subshape_portion ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.delete_special_slide_subshape_portion"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.delete_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'portion_index' is set
+      if @api_client.config.client_side_validation && portion_index.nil?
+        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.delete_special_slide_subshape_portion"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'portionIndex', portion_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Portions')
+      return data, status_code, headers
+    end
+    # Remove a range of portions (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portions The indices of the shapes to be deleted; delete all by default.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_subshape_portions(name, slide_index, slide_type, path, shape_index, paragraph_index, portions = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_special_slide_subshape_portions_with_http_info(name, slide_index, slide_type, path, shape_index, paragraph_index, portions, password, folder, storage)
+      data
+    end
+
+    # Remove a range of portions (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portions The indices of the shapes to be deleted; delete all by default.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_subshape_portions_with_http_info(name, slide_index, slide_type, path, shape_index, paragraph_index, portions = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_special_slide_subshape_portions ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_special_slide_subshape_portions"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_special_slide_subshape_portions"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.delete_special_slide_subshape_portions"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.delete_special_slide_subshape_portions"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_special_slide_subshape_portions"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_special_slide_subshape_portions"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'portions'] = portions unless portions.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Portions')
+      return data, status_code, headers
+    end
+    # Remove a range of shapes (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shapes The indices of the shapes to be deleted; delete all by default.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_subshapes(name, slide_index, slide_type, path, shapes = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_special_slide_subshapes_with_http_info(name, slide_index, slide_type, path, shapes, password, folder, storage)
+      data
+    end
+
+    # Remove a range of shapes (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shapes The indices of the shapes to be deleted; delete all by default.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_special_slide_subshapes_with_http_info(name, slide_index, slide_type, path, shapes = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_special_slide_subshapes ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_special_slide_subshapes"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_special_slide_subshapes"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.delete_special_slide_subshapes"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.delete_special_slide_subshapes"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+
+      # query parameters
+      query_params = {}
+      query_params[:'shapes'] = shapes unless shapes.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Shapes')
       return data, status_code, headers
     end
     # Remove a shape (for smart art and group shapes).
@@ -6548,105 +8324,6 @@ module AsposeSlidesCloud
         :return_type => 'File')
       return data, status_code, headers
     end
-    # Render shape to specified picture format.
-    # @param name Presentation name.
-    # @param slide_index Slide index.
-    # @param shape_index Index of shape starting from 1
-    # @param format Export picture format.
-    # @param options export options
-    # @param scale_x X scale ratio.
-    # @param scale_y Y scale ratio.
-    # @param bounds Shape thumbnail bounds type.
-    # @param password Document password.
-    # @param folder Presentation folder.
-    # @param storage Presentation storage.
-    # @param fonts_folder Fonts folder.
-    def download_notes_slide_shape(name, slide_index, shape_index, format, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
-      data, _status_code, _headers = download_notes_slide_shape_with_http_info(name, slide_index, shape_index, format, options, scale_x, scale_y, bounds, password, folder, storage, fonts_folder)
-      data
-    end
-
-    # Render shape to specified picture format.
-    # @param name Presentation name.
-    # @param slide_index Slide index.
-    # @param shape_index Index of shape starting from 1
-    # @param format Export picture format.
-    # @param options export options
-    # @param scale_x X scale ratio.
-    # @param scale_y Y scale ratio.
-    # @param bounds Shape thumbnail bounds type.
-    # @param password Document password.
-    # @param folder Presentation folder.
-    # @param storage Presentation storage.
-    # @param fonts_folder Fonts folder.
-    def download_notes_slide_shape_with_http_info(name, slide_index, shape_index, format, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.download_notes_slide_shape ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.download_notes_slide_shape"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.download_notes_slide_shape"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.download_notes_slide_shape"
-      end
-      # verify the required parameter 'format' is set
-      if @api_client.config.client_side_validation && format.nil?
-        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.download_notes_slide_shape"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
-      end
-      if @api_client.config.client_side_validation && bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(bounds)==0 }
-        fail ArgumentError, "Value " + bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/{format}'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'format', format)
-
-      # query parameters
-      query_params = {}
-      query_params[:'scaleX'] = scale_x unless scale_x.nil?
-      query_params[:'scaleY'] = scale_y unless scale_y.nil?
-      query_params[:'bounds'] = bounds unless bounds.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(options)
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'File')
-      return data, status_code, headers
-    end
     # Save a presentation to a specified format.
     # @param name Document name.
     # @param format Export format.
@@ -6833,8 +8510,9 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Fonts folder.
-    def download_shape_online(document, slide_index, shape_index, format, scale_x = nil, scale_y = nil, bounds = nil, password = nil, storage = nil, fonts_folder = nil)
-      data, _status_code, _headers = download_shape_online_with_http_info(document, slide_index, shape_index, format, scale_x, scale_y, bounds, password, storage, fonts_folder)
+    # @param options Export options.
+    def download_shape_online(document, slide_index, shape_index, format, scale_x = nil, scale_y = nil, bounds = nil, password = nil, storage = nil, fonts_folder = nil, options = nil)
+      data, _status_code, _headers = download_shape_online_with_http_info(document, slide_index, shape_index, format, scale_x, scale_y, bounds, password, storage, fonts_folder, options)
       data
     end
 
@@ -6849,7 +8527,8 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Fonts folder.
-    def download_shape_online_with_http_info(document, slide_index, shape_index, format, scale_x = nil, scale_y = nil, bounds = nil, password = nil, storage = nil, fonts_folder = nil)
+    # @param options Export options.
+    def download_shape_online_with_http_info(document, slide_index, shape_index, format, scale_x = nil, scale_y = nil, bounds = nil, password = nil, storage = nil, fonts_folder = nil, options = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.download_shape_online ...'
       end
@@ -6900,7 +8579,7 @@ module AsposeSlidesCloud
       header_params[:'password'] = password unless password.nil?
 
       # http body (model)
-      post_body = nil
+      post_body = @api_client.object_to_http_body(options)
 
       # form parameters
       post_files = []
@@ -7013,8 +8692,9 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Storage folder containing custom fonts to be used with the document.
-    def download_slide_online(document, slide_index, format, width = nil, height = nil, password = nil, storage = nil, fonts_folder = nil)
-      data, _status_code, _headers = download_slide_online_with_http_info(document, slide_index, format, width, height, password, storage, fonts_folder)
+    # @param options Export options.
+    def download_slide_online(document, slide_index, format, width = nil, height = nil, password = nil, storage = nil, fonts_folder = nil, options = nil)
+      data, _status_code, _headers = download_slide_online_with_http_info(document, slide_index, format, width, height, password, storage, fonts_folder, options)
       data
     end
 
@@ -7027,7 +8707,8 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Storage folder containing custom fonts to be used with the document.
-    def download_slide_online_with_http_info(document, slide_index, format, width = nil, height = nil, password = nil, storage = nil, fonts_folder = nil)
+    # @param options Export options.
+    def download_slide_online_with_http_info(document, slide_index, format, width = nil, height = nil, password = nil, storage = nil, fonts_folder = nil, options = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.download_slide_online ...'
       end
@@ -7069,13 +8750,240 @@ module AsposeSlidesCloud
       header_params[:'password'] = password unless password.nil?
 
       # http body (model)
-      post_body = nil
+      post_body = @api_client.object_to_http_body(options)
 
       # form parameters
       post_files = []
       if document
         post_files = post_files.push(document)
       end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      return data, status_code, headers
+    end
+    # Render shape to specified picture format.
+    # @param name Presentation name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Index of shape starting from 1
+    # @param format Export picture format.
+    # @param options Export options
+    # @param scale_x X scale ratio.
+    # @param scale_y Y scale ratio.
+    # @param bounds Shape thumbnail bounds type.
+    # @param password Document password.
+    # @param folder Presentation folder.
+    # @param storage Presentation storage.
+    # @param fonts_folder Fonts folder.
+    def download_special_slide_shape(name, slide_index, slide_type, shape_index, format, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
+      data, _status_code, _headers = download_special_slide_shape_with_http_info(name, slide_index, slide_type, shape_index, format, options, scale_x, scale_y, bounds, password, folder, storage, fonts_folder)
+      data
+    end
+
+    # Render shape to specified picture format.
+    # @param name Presentation name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Index of shape starting from 1
+    # @param format Export picture format.
+    # @param options Export options
+    # @param scale_x X scale ratio.
+    # @param scale_y Y scale ratio.
+    # @param bounds Shape thumbnail bounds type.
+    # @param password Document password.
+    # @param folder Presentation folder.
+    # @param storage Presentation storage.
+    # @param fonts_folder Fonts folder.
+    def download_special_slide_shape_with_http_info(name, slide_index, slide_type, shape_index, format, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.download_special_slide_shape ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.download_special_slide_shape"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.download_special_slide_shape"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.download_special_slide_shape"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.download_special_slide_shape"
+      end
+      # verify the required parameter 'format' is set
+      if @api_client.config.client_side_validation && format.nil?
+        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.download_special_slide_shape"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+      end
+      if @api_client.config.client_side_validation && bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(bounds)==0 }
+        fail ArgumentError, "Value " + bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}/{format}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'format', format)
+
+      # query parameters
+      query_params = {}
+      query_params[:'scaleX'] = scale_x unless scale_x.nil?
+      query_params[:'scaleY'] = scale_y unless scale_y.nil?
+      query_params[:'bounds'] = bounds unless bounds.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(options)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      return data, status_code, headers
+    end
+    # Render shape to specified picture format (for smart art and group shapes).
+    # @param name Presentation name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Index of shape starting from 1
+    # @param format Export picture format.
+    # @param options export options
+    # @param scale_x X scale ratio.
+    # @param scale_y Y scale ratio.
+    # @param bounds Shape thumbnail bounds type.
+    # @param password Document password.
+    # @param folder Presentation folder.
+    # @param storage Presentation storage.
+    # @param fonts_folder Fonts folder.
+    def download_special_slide_subshape(name, slide_index, slide_type, path, shape_index, format, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
+      data, _status_code, _headers = download_special_slide_subshape_with_http_info(name, slide_index, slide_type, path, shape_index, format, options, scale_x, scale_y, bounds, password, folder, storage, fonts_folder)
+      data
+    end
+
+    # Render shape to specified picture format (for smart art and group shapes).
+    # @param name Presentation name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Index of shape starting from 1
+    # @param format Export picture format.
+    # @param options export options
+    # @param scale_x X scale ratio.
+    # @param scale_y Y scale ratio.
+    # @param bounds Shape thumbnail bounds type.
+    # @param password Document password.
+    # @param folder Presentation folder.
+    # @param storage Presentation storage.
+    # @param fonts_folder Fonts folder.
+    def download_special_slide_subshape_with_http_info(name, slide_index, slide_type, path, shape_index, format, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.download_special_slide_subshape ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.download_special_slide_subshape"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.download_special_slide_subshape"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.download_special_slide_subshape"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.download_special_slide_subshape"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.download_special_slide_subshape"
+      end
+      # verify the required parameter 'format' is set
+      if @api_client.config.client_side_validation && format.nil?
+        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.download_special_slide_subshape"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+      end
+      if @api_client.config.client_side_validation && bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(bounds)==0 }
+        fail ArgumentError, "Value " + bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}/{shapeIndex}/{format}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'format', format)
+
+      # query parameters
+      query_params = {}
+      query_params[:'scaleX'] = scale_x unless scale_x.nil?
+      query_params[:'scaleY'] = scale_y unless scale_y.nil?
+      query_params[:'bounds'] = bounds unless bounds.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(options)
+
+      # form parameters
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -8252,453 +10160,6 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'NotesSlide')
-      return data, status_code, headers
-    end
-    # Read shape paragraph info.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraph_index Paragraph index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def get_notes_slide_paragraph(name, slide_index, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = get_notes_slide_paragraph_with_http_info(name, slide_index, shape_index, paragraph_index, password, folder, storage)
-      data
-    end
-
-    # Read shape paragraph info.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraph_index Paragraph index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def get_notes_slide_paragraph_with_http_info(name, slide_index, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.get_notes_slide_paragraph ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_notes_slide_paragraph"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_notes_slide_paragraph"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_notes_slide_paragraph"
-      end
-      # verify the required parameter 'paragraph_index' is set
-      if @api_client.config.client_side_validation && paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_notes_slide_paragraph"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = nil
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'Paragraph')
-      return data, status_code, headers
-    end
-    # Read shape paragraphs info.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def get_notes_slide_paragraphs(name, slide_index, shape_index, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = get_notes_slide_paragraphs_with_http_info(name, slide_index, shape_index, password, folder, storage)
-      data
-    end
-
-    # Read shape paragraphs info.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def get_notes_slide_paragraphs_with_http_info(name, slide_index, shape_index, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.get_notes_slide_paragraphs ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_notes_slide_paragraphs"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_notes_slide_paragraphs"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_notes_slide_paragraphs"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = nil
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'Paragraphs')
-      return data, status_code, headers
-    end
-    # Read paragraph portion info.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraph_index Paragraph index.
-    # @param portion_index Portion index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def get_notes_slide_portion(name, slide_index, shape_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = get_notes_slide_portion_with_http_info(name, slide_index, shape_index, paragraph_index, portion_index, password, folder, storage)
-      data
-    end
-
-    # Read paragraph portion info.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraph_index Paragraph index.
-    # @param portion_index Portion index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def get_notes_slide_portion_with_http_info(name, slide_index, shape_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.get_notes_slide_portion ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_notes_slide_portion"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_notes_slide_portion"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_notes_slide_portion"
-      end
-      # verify the required parameter 'paragraph_index' is set
-      if @api_client.config.client_side_validation && paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_notes_slide_portion"
-      end
-      # verify the required parameter 'portion_index' is set
-      if @api_client.config.client_side_validation && portion_index.nil?
-        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.get_notes_slide_portion"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'portionIndex', portion_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = nil
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'Portion')
-      return data, status_code, headers
-    end
-    # Read paragraph portions info.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraph_index Paragraph index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def get_notes_slide_portions(name, slide_index, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = get_notes_slide_portions_with_http_info(name, slide_index, shape_index, paragraph_index, password, folder, storage)
-      data
-    end
-
-    # Read paragraph portions info.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraph_index Paragraph index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def get_notes_slide_portions_with_http_info(name, slide_index, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.get_notes_slide_portions ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_notes_slide_portions"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_notes_slide_portions"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_notes_slide_portions"
-      end
-      # verify the required parameter 'paragraph_index' is set
-      if @api_client.config.client_side_validation && paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_notes_slide_portions"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = nil
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'Portions')
-      return data, status_code, headers
-    end
-    # Read slide shape info.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def get_notes_slide_shape(name, slide_index, shape_index, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = get_notes_slide_shape_with_http_info(name, slide_index, shape_index, password, folder, storage)
-      data
-    end
-
-    # Read slide shape info.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def get_notes_slide_shape_with_http_info(name, slide_index, shape_index, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.get_notes_slide_shape ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_notes_slide_shape"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_notes_slide_shape"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_notes_slide_shape"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = nil
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'ShapeBase')
-      return data, status_code, headers
-    end
-    # Read slide shapes info.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def get_notes_slide_shapes(name, slide_index, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = get_notes_slide_shapes_with_http_info(name, slide_index, password, folder, storage)
-      data
-    end
-
-    # Read slide shapes info.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def get_notes_slide_shapes_with_http_info(name, slide_index, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.get_notes_slide_shapes ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_notes_slide_shapes"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_notes_slide_shapes"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = nil
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'Shapes')
       return data, status_code, headers
     end
     # Read shape paragraph info.
@@ -10006,6 +11467,1152 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'Slides')
+      return data, status_code, headers
+    end
+    # Read special slide (master, layout, notes) animation effects.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index. If specified, only effects related to that shape are returned.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_animation(name, slide_index, slide_type, shape_index = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_special_slide_animation_with_http_info(name, slide_index, slide_type, shape_index, password, folder, storage)
+      data
+    end
+
+    # Read special slide (master, layout, notes) animation effects.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index. If specified, only effects related to that shape are returned.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_animation_with_http_info(name, slide_index, slide_type, shape_index = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_special_slide_animation ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_special_slide_animation"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_special_slide_animation"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.get_special_slide_animation"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/animation'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+
+      # query parameters
+      query_params = {}
+      query_params[:'shapeIndex'] = shape_index unless shape_index.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'SlideAnimation')
+      return data, status_code, headers
+    end
+    # Read shape paragraph info.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_paragraph(name, slide_index, slide_type, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_special_slide_paragraph_with_http_info(name, slide_index, slide_type, shape_index, paragraph_index, password, folder, storage)
+      data
+    end
+
+    # Read shape paragraph info.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_paragraph_with_http_info(name, slide_index, slide_type, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_special_slide_paragraph ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_special_slide_paragraph"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_special_slide_paragraph"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.get_special_slide_paragraph"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_special_slide_paragraph"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_special_slide_paragraph"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Paragraph')
+      return data, status_code, headers
+    end
+    # Read special shape paragraphs info.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_paragraphs(name, slide_index, slide_type, shape_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_special_slide_paragraphs_with_http_info(name, slide_index, slide_type, shape_index, password, folder, storage)
+      data
+    end
+
+    # Read special shape paragraphs info.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_paragraphs_with_http_info(name, slide_index, slide_type, shape_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_special_slide_paragraphs ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_special_slide_paragraphs"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_special_slide_paragraphs"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.get_special_slide_paragraphs"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_special_slide_paragraphs"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}/paragraphs'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Paragraphs')
+      return data, status_code, headers
+    end
+    # Read paragraph portion info.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_portion(name, slide_index, slide_type, shape_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_special_slide_portion_with_http_info(name, slide_index, slide_type, shape_index, paragraph_index, portion_index, password, folder, storage)
+      data
+    end
+
+    # Read paragraph portion info.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_portion_with_http_info(name, slide_index, slide_type, shape_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_special_slide_portion ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_special_slide_portion"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_special_slide_portion"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.get_special_slide_portion"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_special_slide_portion"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_special_slide_portion"
+      end
+      # verify the required parameter 'portion_index' is set
+      if @api_client.config.client_side_validation && portion_index.nil?
+        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.get_special_slide_portion"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'portionIndex', portion_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Portion')
+      return data, status_code, headers
+    end
+    # Read paragraph portions info.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_portions(name, slide_index, slide_type, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_special_slide_portions_with_http_info(name, slide_index, slide_type, shape_index, paragraph_index, password, folder, storage)
+      data
+    end
+
+    # Read paragraph portions info.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_portions_with_http_info(name, slide_index, slide_type, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_special_slide_portions ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_special_slide_portions"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_special_slide_portions"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.get_special_slide_portions"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_special_slide_portions"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_special_slide_portions"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Portions')
+      return data, status_code, headers
+    end
+    # Read special slide shape info.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_shape(name, slide_index, slide_type, shape_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_special_slide_shape_with_http_info(name, slide_index, slide_type, shape_index, password, folder, storage)
+      data
+    end
+
+    # Read special slide shape info.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_shape_with_http_info(name, slide_index, slide_type, shape_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_special_slide_shape ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_special_slide_shape"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_special_slide_shape"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.get_special_slide_shape"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_special_slide_shape"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'ShapeBase')
+      return data, status_code, headers
+    end
+    # Read special slide shapes info.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_shapes(name, slide_index, slide_type, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_special_slide_shapes_with_http_info(name, slide_index, slide_type, password, folder, storage)
+      data
+    end
+
+    # Read special slide shapes info.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_shapes_with_http_info(name, slide_index, slide_type, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_special_slide_shapes ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_special_slide_shapes"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_special_slide_shapes"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.get_special_slide_shapes"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Shapes')
+      return data, status_code, headers
+    end
+    # Read special slide shape info (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_subshape(name, slide_index, slide_type, path, shape_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_special_slide_subshape_with_http_info(name, slide_index, slide_type, path, shape_index, password, folder, storage)
+      data
+    end
+
+    # Read special slide shape info (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_subshape_with_http_info(name, slide_index, slide_type, path, shape_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_special_slide_subshape ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_special_slide_subshape"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_special_slide_subshape"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.get_special_slide_subshape"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.get_special_slide_subshape"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_special_slide_subshape"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}/{shapeIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'ShapeBase')
+      return data, status_code, headers
+    end
+    # Read shape paragraph info (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_subshape_paragraph(name, slide_index, slide_type, path, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_special_slide_subshape_paragraph_with_http_info(name, slide_index, slide_type, path, shape_index, paragraph_index, password, folder, storage)
+      data
+    end
+
+    # Read shape paragraph info (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_subshape_paragraph_with_http_info(name, slide_index, slide_type, path, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_special_slide_subshape_paragraph ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_special_slide_subshape_paragraph"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_special_slide_subshape_paragraph"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.get_special_slide_subshape_paragraph"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.get_special_slide_subshape_paragraph"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_special_slide_subshape_paragraph"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_special_slide_subshape_paragraph"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Paragraph')
+      return data, status_code, headers
+    end
+    # Read shape paragraphs info (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_subshape_paragraphs(name, slide_index, slide_type, path, shape_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_special_slide_subshape_paragraphs_with_http_info(name, slide_index, slide_type, path, shape_index, password, folder, storage)
+      data
+    end
+
+    # Read shape paragraphs info (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_subshape_paragraphs_with_http_info(name, slide_index, slide_type, path, shape_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_special_slide_subshape_paragraphs ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_special_slide_subshape_paragraphs"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_special_slide_subshape_paragraphs"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.get_special_slide_subshape_paragraphs"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.get_special_slide_subshape_paragraphs"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_special_slide_subshape_paragraphs"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}/{shapeIndex}/paragraphs'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Paragraphs')
+      return data, status_code, headers
+    end
+    # Read paragraph portion info (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_subshape_portion(name, slide_index, slide_type, path, shape_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_special_slide_subshape_portion_with_http_info(name, slide_index, slide_type, path, shape_index, paragraph_index, portion_index, password, folder, storage)
+      data
+    end
+
+    # Read paragraph portion info (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_subshape_portion_with_http_info(name, slide_index, slide_type, path, shape_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_special_slide_subshape_portion ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.get_special_slide_subshape_portion"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.get_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'portion_index' is set
+      if @api_client.config.client_side_validation && portion_index.nil?
+        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.get_special_slide_subshape_portion"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'portionIndex', portion_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Portion')
+      return data, status_code, headers
+    end
+    # Read paragraph portions info (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_subshape_portions(name, slide_index, slide_type, path, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_special_slide_subshape_portions_with_http_info(name, slide_index, slide_type, path, shape_index, paragraph_index, password, folder, storage)
+      data
+    end
+
+    # Read paragraph portions info (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_subshape_portions_with_http_info(name, slide_index, slide_type, path, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_special_slide_subshape_portions ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_special_slide_subshape_portions"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_special_slide_subshape_portions"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.get_special_slide_subshape_portions"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.get_special_slide_subshape_portions"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_special_slide_subshape_portions"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_special_slide_subshape_portions"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Portions')
+      return data, status_code, headers
+    end
+    # Read special slide shapes info.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path (for smart art and group shapes).
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_subshapes(name, slide_index, slide_type, path, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_special_slide_subshapes_with_http_info(name, slide_index, slide_type, path, password, folder, storage)
+      data
+    end
+
+    # Read special slide shapes info.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path (for smart art and group shapes).
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_special_slide_subshapes_with_http_info(name, slide_index, slide_type, path, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_special_slide_subshapes ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_special_slide_subshapes"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_special_slide_subshapes"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.get_special_slide_subshapes"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.get_special_slide_subshapes"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Shapes')
       return data, status_code, headers
     end
     # Read slide shape info (for smart art and group shapes).
@@ -11833,111 +14440,6 @@ module AsposeSlidesCloud
         :return_type => 'File')
       return data, status_code, headers
     end
-    # Render shape to specified picture format.
-    # @param name Presentation name.
-    # @param slide_index Slide index.
-    # @param shape_index Index of shape starting from 1
-    # @param format Export picture format.
-    # @param out_path Output path.
-    # @param options export options
-    # @param scale_x X scale ratio.
-    # @param scale_y Y scale ratio.
-    # @param bounds Shape thumbnail bounds type.
-    # @param password Document password.
-    # @param folder Presentation folder.
-    # @param storage Presentation storage.
-    # @param fonts_folder Fonts folder.
-    def save_notes_slide_shape(name, slide_index, shape_index, format, out_path, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
-      save_notes_slide_shape_with_http_info(name, slide_index, shape_index, format, out_path, options, scale_x, scale_y, bounds, password, folder, storage, fonts_folder)
-      nil
-    end
-
-    # Render shape to specified picture format.
-    # @param name Presentation name.
-    # @param slide_index Slide index.
-    # @param shape_index Index of shape starting from 1
-    # @param format Export picture format.
-    # @param out_path Output path.
-    # @param options export options
-    # @param scale_x X scale ratio.
-    # @param scale_y Y scale ratio.
-    # @param bounds Shape thumbnail bounds type.
-    # @param password Document password.
-    # @param folder Presentation folder.
-    # @param storage Presentation storage.
-    # @param fonts_folder Fonts folder.
-    def save_notes_slide_shape_with_http_info(name, slide_index, shape_index, format, out_path, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.save_notes_slide_shape ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.save_notes_slide_shape"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.save_notes_slide_shape"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.save_notes_slide_shape"
-      end
-      # verify the required parameter 'format' is set
-      if @api_client.config.client_side_validation && format.nil?
-        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.save_notes_slide_shape"
-      end
-      # verify enum value
-      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
-      end
-      # verify the required parameter 'out_path' is set
-      if @api_client.config.client_side_validation && out_path.nil?
-        fail ArgumentError, "Missing the required parameter 'out_path' when calling SlidesApi.save_notes_slide_shape"
-      end
-      if @api_client.config.client_side_validation && bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(bounds)==0 }
-        fail ArgumentError, "Value " + bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/{format}'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'format', format)
-
-      # query parameters
-      query_params = {}
-      query_params[:'outPath'] = out_path unless out_path.nil?
-      query_params[:'scaleX'] = scale_x unless scale_x.nil?
-      query_params[:'scaleY'] = scale_y unless scale_y.nil?
-      query_params[:'bounds'] = bounds unless bounds.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(options)
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names)
-      return data, status_code, headers
-    end
     # Save a presentation to a specified format.
     # @param name Document name.
     # @param format Export format.
@@ -12137,8 +14639,9 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Fonts folder.
-    def save_shape_online(document, slide_index, shape_index, format, out_path, scale_x = nil, scale_y = nil, bounds = nil, password = nil, storage = nil, fonts_folder = nil)
-      save_shape_online_with_http_info(document, slide_index, shape_index, format, out_path, scale_x, scale_y, bounds, password, storage, fonts_folder)
+    # @param options Export options.
+    def save_shape_online(document, slide_index, shape_index, format, out_path, scale_x = nil, scale_y = nil, bounds = nil, password = nil, storage = nil, fonts_folder = nil, options = nil)
+      save_shape_online_with_http_info(document, slide_index, shape_index, format, out_path, scale_x, scale_y, bounds, password, storage, fonts_folder, options)
       nil
     end
 
@@ -12154,7 +14657,8 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Fonts folder.
-    def save_shape_online_with_http_info(document, slide_index, shape_index, format, out_path, scale_x = nil, scale_y = nil, bounds = nil, password = nil, storage = nil, fonts_folder = nil)
+    # @param options Export options.
+    def save_shape_online_with_http_info(document, slide_index, shape_index, format, out_path, scale_x = nil, scale_y = nil, bounds = nil, password = nil, storage = nil, fonts_folder = nil, options = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.save_shape_online ...'
       end
@@ -12210,7 +14714,7 @@ module AsposeSlidesCloud
       header_params[:'password'] = password unless password.nil?
 
       # http body (model)
-      post_body = nil
+      post_body = @api_client.object_to_http_body(options)
 
       # form parameters
       post_files = []
@@ -12329,8 +14833,9 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Storage folder containing custom fonts to be used with the document.
-    def save_slide_online(document, slide_index, format, out_path, width = nil, height = nil, password = nil, storage = nil, fonts_folder = nil)
-      save_slide_online_with_http_info(document, slide_index, format, out_path, width, height, password, storage, fonts_folder)
+    # @param options Export options.
+    def save_slide_online(document, slide_index, format, out_path, width = nil, height = nil, password = nil, storage = nil, fonts_folder = nil, options = nil)
+      save_slide_online_with_http_info(document, slide_index, format, out_path, width, height, password, storage, fonts_folder, options)
       nil
     end
 
@@ -12344,7 +14849,8 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Storage folder containing custom fonts to be used with the document.
-    def save_slide_online_with_http_info(document, slide_index, format, out_path, width = nil, height = nil, password = nil, storage = nil, fonts_folder = nil)
+    # @param options Export options.
+    def save_slide_online_with_http_info(document, slide_index, format, out_path, width = nil, height = nil, password = nil, storage = nil, fonts_folder = nil, options = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.save_slide_online ...'
       end
@@ -12391,13 +14897,252 @@ module AsposeSlidesCloud
       header_params[:'password'] = password unless password.nil?
 
       # http body (model)
-      post_body = nil
+      post_body = @api_client.object_to_http_body(options)
 
       # form parameters
       post_files = []
       if document
         post_files = post_files.push(document)
       end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names)
+      return data, status_code, headers
+    end
+    # Render shape to specified picture format.
+    # @param name Presentation name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Index of shape starting from 1
+    # @param format Export picture format.
+    # @param out_path Output path.
+    # @param options export options
+    # @param scale_x X scale ratio.
+    # @param scale_y Y scale ratio.
+    # @param bounds Shape thumbnail bounds type.
+    # @param password Document password.
+    # @param folder Presentation folder.
+    # @param storage Presentation storage.
+    # @param fonts_folder Fonts folder.
+    def save_special_slide_shape(name, slide_index, slide_type, shape_index, format, out_path, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
+      save_special_slide_shape_with_http_info(name, slide_index, slide_type, shape_index, format, out_path, options, scale_x, scale_y, bounds, password, folder, storage, fonts_folder)
+      nil
+    end
+
+    # Render shape to specified picture format.
+    # @param name Presentation name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Index of shape starting from 1
+    # @param format Export picture format.
+    # @param out_path Output path.
+    # @param options export options
+    # @param scale_x X scale ratio.
+    # @param scale_y Y scale ratio.
+    # @param bounds Shape thumbnail bounds type.
+    # @param password Document password.
+    # @param folder Presentation folder.
+    # @param storage Presentation storage.
+    # @param fonts_folder Fonts folder.
+    def save_special_slide_shape_with_http_info(name, slide_index, slide_type, shape_index, format, out_path, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.save_special_slide_shape ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.save_special_slide_shape"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.save_special_slide_shape"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.save_special_slide_shape"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.save_special_slide_shape"
+      end
+      # verify the required parameter 'format' is set
+      if @api_client.config.client_side_validation && format.nil?
+        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.save_special_slide_shape"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+      end
+      # verify the required parameter 'out_path' is set
+      if @api_client.config.client_side_validation && out_path.nil?
+        fail ArgumentError, "Missing the required parameter 'out_path' when calling SlidesApi.save_special_slide_shape"
+      end
+      if @api_client.config.client_side_validation && bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(bounds)==0 }
+        fail ArgumentError, "Value " + bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}/{format}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'format', format)
+
+      # query parameters
+      query_params = {}
+      query_params[:'outPath'] = out_path unless out_path.nil?
+      query_params[:'scaleX'] = scale_x unless scale_x.nil?
+      query_params[:'scaleY'] = scale_y unless scale_y.nil?
+      query_params[:'bounds'] = bounds unless bounds.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(options)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names)
+      return data, status_code, headers
+    end
+    # Render shape to specified picture format.
+    # @param name Presentation name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path (for smart art and group shapes).
+    # @param shape_index Index of shape starting from 1
+    # @param format Export picture format.
+    # @param out_path Output path.
+    # @param options export options
+    # @param scale_x X scale ratio.
+    # @param scale_y Y scale ratio.
+    # @param bounds Shape thumbnail bounds type.
+    # @param password Document password.
+    # @param folder Presentation folder.
+    # @param storage Presentation storage.
+    # @param fonts_folder Fonts folder.
+    def save_special_slide_subshape(name, slide_index, slide_type, path, shape_index, format, out_path, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
+      save_special_slide_subshape_with_http_info(name, slide_index, slide_type, path, shape_index, format, out_path, options, scale_x, scale_y, bounds, password, folder, storage, fonts_folder)
+      nil
+    end
+
+    # Render shape to specified picture format.
+    # @param name Presentation name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path (for smart art and group shapes).
+    # @param shape_index Index of shape starting from 1
+    # @param format Export picture format.
+    # @param out_path Output path.
+    # @param options export options
+    # @param scale_x X scale ratio.
+    # @param scale_y Y scale ratio.
+    # @param bounds Shape thumbnail bounds type.
+    # @param password Document password.
+    # @param folder Presentation folder.
+    # @param storage Presentation storage.
+    # @param fonts_folder Fonts folder.
+    def save_special_slide_subshape_with_http_info(name, slide_index, slide_type, path, shape_index, format, out_path, options = nil, scale_x = nil, scale_y = nil, bounds = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.save_special_slide_subshape ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.save_special_slide_subshape"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.save_special_slide_subshape"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.save_special_slide_subshape"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.save_special_slide_subshape"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.save_special_slide_subshape"
+      end
+      # verify the required parameter 'format' is set
+      if @api_client.config.client_side_validation && format.nil?
+        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.save_special_slide_subshape"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+      end
+      # verify the required parameter 'out_path' is set
+      if @api_client.config.client_side_validation && out_path.nil?
+        fail ArgumentError, "Missing the required parameter 'out_path' when calling SlidesApi.save_special_slide_subshape"
+      end
+      if @api_client.config.client_side_validation && bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(bounds)==0 }
+        fail ArgumentError, "Value " + bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}/{shapeIndex}/{format}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'format', format)
+
+      # query parameters
+      query_params = {}
+      query_params[:'outPath'] = out_path unless out_path.nil?
+      query_params[:'scaleX'] = scale_x unless scale_x.nil?
+      query_params[:'scaleY'] = scale_y unless scale_y.nil?
+      query_params[:'bounds'] = bounds unless bounds.nil?
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(options)
+
+      # form parameters
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
@@ -13313,6 +16058,87 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'SlideProperties')
+      return data, status_code, headers
+    end
+    # Set special slide (master, layout, notes) animation.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param animation Animation DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def set_special_slide_animation(name, slide_index, slide_type, animation, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = set_special_slide_animation_with_http_info(name, slide_index, slide_type, animation, password, folder, storage)
+      data
+    end
+
+    # Set special slide (master, layout, notes) animation.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param animation Animation DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def set_special_slide_animation_with_http_info(name, slide_index, slide_type, animation, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.set_special_slide_animation ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.set_special_slide_animation"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.set_special_slide_animation"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.set_special_slide_animation"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'animation' is set
+      if @api_client.config.client_side_validation && animation.nil?
+        fail ArgumentError, "Missing the required parameter 'animation' when calling SlidesApi.set_special_slide_animation"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/animation'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(animation)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'SlideAnimation')
       return data, status_code, headers
     end
     # Update presentation document properties.
@@ -14245,258 +17071,6 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def update_notes_slide_paragraph(name, slide_index, shape_index, paragraph_index, dto, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = update_notes_slide_paragraph_with_http_info(name, slide_index, shape_index, paragraph_index, dto, password, folder, storage)
-      data
-    end
-
-    # Update paragraph properties.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraph_index Paragraph index.
-    # @param dto Paragraph DTO.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def update_notes_slide_paragraph_with_http_info(name, slide_index, shape_index, paragraph_index, dto, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.update_notes_slide_paragraph ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.update_notes_slide_paragraph"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.update_notes_slide_paragraph"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.update_notes_slide_paragraph"
-      end
-      # verify the required parameter 'paragraph_index' is set
-      if @api_client.config.client_side_validation && paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.update_notes_slide_paragraph"
-      end
-      # verify the required parameter 'dto' is set
-      if @api_client.config.client_side_validation && dto.nil?
-        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.update_notes_slide_paragraph"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(dto)
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'Paragraph')
-      return data, status_code, headers
-    end
-    # Update portion properties.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraph_index Paragraph index.
-    # @param portion_index Portion index.
-    # @param dto Portion DTO.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def update_notes_slide_portion(name, slide_index, shape_index, paragraph_index, portion_index, dto, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = update_notes_slide_portion_with_http_info(name, slide_index, shape_index, paragraph_index, portion_index, dto, password, folder, storage)
-      data
-    end
-
-    # Update portion properties.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraph_index Paragraph index.
-    # @param portion_index Portion index.
-    # @param dto Portion DTO.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def update_notes_slide_portion_with_http_info(name, slide_index, shape_index, paragraph_index, portion_index, dto, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.update_notes_slide_portion ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.update_notes_slide_portion"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.update_notes_slide_portion"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.update_notes_slide_portion"
-      end
-      # verify the required parameter 'paragraph_index' is set
-      if @api_client.config.client_side_validation && paragraph_index.nil?
-        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.update_notes_slide_portion"
-      end
-      # verify the required parameter 'portion_index' is set
-      if @api_client.config.client_side_validation && portion_index.nil?
-        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.update_notes_slide_portion"
-      end
-      # verify the required parameter 'dto' is set
-      if @api_client.config.client_side_validation && dto.nil?
-        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.update_notes_slide_portion"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'portionIndex', portion_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(dto)
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'Portion')
-      return data, status_code, headers
-    end
-    # Update shape properties.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param dto Shape DTO.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def update_notes_slide_shape(name, slide_index, shape_index, dto, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = update_notes_slide_shape_with_http_info(name, slide_index, shape_index, dto, password, folder, storage)
-      data
-    end
-
-    # Update shape properties.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param dto Shape DTO.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def update_notes_slide_shape_with_http_info(name, slide_index, shape_index, dto, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.update_notes_slide_shape ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.update_notes_slide_shape"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.update_notes_slide_shape"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.update_notes_slide_shape"
-      end
-      # verify the required parameter 'dto' is set
-      if @api_client.config.client_side_validation && dto.nil?
-        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.update_notes_slide_shape"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/shapes/{shapeIndex}'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(dto)
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'ShapeBase')
-      return data, status_code, headers
-    end
-    # Update paragraph properties.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
-    # @param paragraph_index Paragraph index.
-    # @param dto Paragraph DTO.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
     def update_paragraph(name, slide_index, shape_index, paragraph_index, dto, password = nil, folder = nil, storage = nil)
       data, _status_code, _headers = update_paragraph_with_http_info(name, slide_index, shape_index, paragraph_index, dto, password, folder, storage)
       data
@@ -14879,6 +17453,780 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'Slide')
+      return data, status_code, headers
+    end
+    # Modify an animation effect for a special slide (master, layout, notes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param effect_index The position of the effect to be modified.
+    # @param effect Animation effect DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_special_slide_animation_effect(name, slide_index, slide_type, effect_index, effect, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = update_special_slide_animation_effect_with_http_info(name, slide_index, slide_type, effect_index, effect, password, folder, storage)
+      data
+    end
+
+    # Modify an animation effect for a special slide (master, layout, notes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param effect_index The position of the effect to be modified.
+    # @param effect Animation effect DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_special_slide_animation_effect_with_http_info(name, slide_index, slide_type, effect_index, effect, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.update_special_slide_animation_effect ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.update_special_slide_animation_effect"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.update_special_slide_animation_effect"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.update_special_slide_animation_effect"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'effect_index' is set
+      if @api_client.config.client_side_validation && effect_index.nil?
+        fail ArgumentError, "Missing the required parameter 'effect_index' when calling SlidesApi.update_special_slide_animation_effect"
+      end
+      # verify the required parameter 'effect' is set
+      if @api_client.config.client_side_validation && effect.nil?
+        fail ArgumentError, "Missing the required parameter 'effect' when calling SlidesApi.update_special_slide_animation_effect"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/animation/mainSequence/{effectIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'effectIndex', effect_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(effect)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'SlideAnimation')
+      return data, status_code, headers
+    end
+    # Modify an animation effect for a special slide (master, layout, notes) interactive sequence.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param sequence_index The position of the interactive sequence.
+    # @param effect_index The position of the effect to be modified.
+    # @param effect Animation effect DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_special_slide_animation_interactive_sequence_effect(name, slide_index, slide_type, sequence_index, effect_index, effect, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = update_special_slide_animation_interactive_sequence_effect_with_http_info(name, slide_index, slide_type, sequence_index, effect_index, effect, password, folder, storage)
+      data
+    end
+
+    # Modify an animation effect for a special slide (master, layout, notes) interactive sequence.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param sequence_index The position of the interactive sequence.
+    # @param effect_index The position of the effect to be modified.
+    # @param effect Animation effect DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_special_slide_animation_interactive_sequence_effect_with_http_info(name, slide_index, slide_type, sequence_index, effect_index, effect, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.update_special_slide_animation_interactive_sequence_effect ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.update_special_slide_animation_interactive_sequence_effect"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.update_special_slide_animation_interactive_sequence_effect"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.update_special_slide_animation_interactive_sequence_effect"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'sequence_index' is set
+      if @api_client.config.client_side_validation && sequence_index.nil?
+        fail ArgumentError, "Missing the required parameter 'sequence_index' when calling SlidesApi.update_special_slide_animation_interactive_sequence_effect"
+      end
+      # verify the required parameter 'effect_index' is set
+      if @api_client.config.client_side_validation && effect_index.nil?
+        fail ArgumentError, "Missing the required parameter 'effect_index' when calling SlidesApi.update_special_slide_animation_interactive_sequence_effect"
+      end
+      # verify the required parameter 'effect' is set
+      if @api_client.config.client_side_validation && effect.nil?
+        fail ArgumentError, "Missing the required parameter 'effect' when calling SlidesApi.update_special_slide_animation_interactive_sequence_effect"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/animation/interactiveSequences/{sequenceIndex}/{effectIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'sequenceIndex', sequence_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'effectIndex', effect_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(effect)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'SlideAnimation')
+      return data, status_code, headers
+    end
+    # Update paragraph properties.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param dto Paragraph DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_special_slide_paragraph(name, slide_index, slide_type, shape_index, paragraph_index, dto, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = update_special_slide_paragraph_with_http_info(name, slide_index, slide_type, shape_index, paragraph_index, dto, password, folder, storage)
+      data
+    end
+
+    # Update paragraph properties.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param dto Paragraph DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_special_slide_paragraph_with_http_info(name, slide_index, slide_type, shape_index, paragraph_index, dto, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.update_special_slide_paragraph ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.update_special_slide_paragraph"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.update_special_slide_paragraph"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.update_special_slide_paragraph"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.update_special_slide_paragraph"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.update_special_slide_paragraph"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.update_special_slide_paragraph"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Paragraph')
+      return data, status_code, headers
+    end
+    # Update portion properties.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param dto Portion DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_special_slide_portion(name, slide_index, slide_type, shape_index, paragraph_index, portion_index, dto, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = update_special_slide_portion_with_http_info(name, slide_index, slide_type, shape_index, paragraph_index, portion_index, dto, password, folder, storage)
+      data
+    end
+
+    # Update portion properties.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param dto Portion DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_special_slide_portion_with_http_info(name, slide_index, slide_type, shape_index, paragraph_index, portion_index, dto, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.update_special_slide_portion ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.update_special_slide_portion"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.update_special_slide_portion"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.update_special_slide_portion"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.update_special_slide_portion"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.update_special_slide_portion"
+      end
+      # verify the required parameter 'portion_index' is set
+      if @api_client.config.client_side_validation && portion_index.nil?
+        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.update_special_slide_portion"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.update_special_slide_portion"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'portionIndex', portion_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Portion')
+      return data, status_code, headers
+    end
+    # Update shape properties.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param dto Shape DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_special_slide_shape(name, slide_index, slide_type, shape_index, dto, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = update_special_slide_shape_with_http_info(name, slide_index, slide_type, shape_index, dto, password, folder, storage)
+      data
+    end
+
+    # Update shape properties.
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param shape_index Shape index.
+    # @param dto Shape DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_special_slide_shape_with_http_info(name, slide_index, slide_type, shape_index, dto, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.update_special_slide_shape ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.update_special_slide_shape"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.update_special_slide_shape"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.update_special_slide_shape"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.update_special_slide_shape"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.update_special_slide_shape"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'ShapeBase')
+      return data, status_code, headers
+    end
+    # Update shape properties (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param dto Shape DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_special_slide_subshape(name, slide_index, slide_type, path, shape_index, dto, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = update_special_slide_subshape_with_http_info(name, slide_index, slide_type, path, shape_index, dto, password, folder, storage)
+      data
+    end
+
+    # Update shape properties (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param dto Shape DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_special_slide_subshape_with_http_info(name, slide_index, slide_type, path, shape_index, dto, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.update_special_slide_subshape ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.update_special_slide_subshape"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.update_special_slide_subshape"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.update_special_slide_subshape"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.update_special_slide_subshape"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.update_special_slide_subshape"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.update_special_slide_subshape"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}/{shapeIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'ShapeBase')
+      return data, status_code, headers
+    end
+    # Update paragraph properties (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param dto Paragraph DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_special_slide_subshape_paragraph(name, slide_index, slide_type, path, shape_index, paragraph_index, dto, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = update_special_slide_subshape_paragraph_with_http_info(name, slide_index, slide_type, path, shape_index, paragraph_index, dto, password, folder, storage)
+      data
+    end
+
+    # Update paragraph properties (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param dto Paragraph DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_special_slide_subshape_paragraph_with_http_info(name, slide_index, slide_type, path, shape_index, paragraph_index, dto, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.update_special_slide_subshape_paragraph ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.update_special_slide_subshape_paragraph"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.update_special_slide_subshape_paragraph"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.update_special_slide_subshape_paragraph"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.update_special_slide_subshape_paragraph"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.update_special_slide_subshape_paragraph"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.update_special_slide_subshape_paragraph"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.update_special_slide_subshape_paragraph"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Paragraph')
+      return data, status_code, headers
+    end
+    # Update portion properties (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param dto Portion DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_special_slide_subshape_portion(name, slide_index, slide_type, path, shape_index, paragraph_index, portion_index, dto, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = update_special_slide_subshape_portion_with_http_info(name, slide_index, slide_type, path, shape_index, paragraph_index, portion_index, dto, password, folder, storage)
+      data
+    end
+
+    # Update portion properties (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Parent slide index.
+    # @param slide_type Slide type (master, layout or notes).
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param dto Portion DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_special_slide_subshape_portion_with_http_info(name, slide_index, slide_type, path, shape_index, paragraph_index, portion_index, dto, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.update_special_slide_subshape_portion ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.update_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.update_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'slide_type' is set
+      if @api_client.config.client_side_validation && slide_type.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_type' when calling SlidesApi.update_special_slide_subshape_portion"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
+        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.update_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.update_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.update_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'portion_index' is set
+      if @api_client.config.client_side_validation && portion_index.nil?
+        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.update_special_slide_subshape_portion"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.update_special_slide_subshape_portion"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideType', slide_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'portionIndex', portion_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = folder unless folder.nil?
+      query_params[:'storage'] = storage unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Portion')
       return data, status_code, headers
     end
     # Update shape properties (for smart art and group shapes).

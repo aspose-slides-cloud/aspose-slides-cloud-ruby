@@ -216,6 +216,7 @@ module AsposeSlidesCloud
         :'SlideExportFormat' => {  },
         :'SmartArtNode' => {  },
         :'SoftEdgeEffect' => {  },
+        :'SpecialSlideType' => {  },
         :'StorageExist' => {  },
         :'StorageFile' => {  },
         :'TableCell' => {  },
