@@ -4656,8 +4656,8 @@ describe 'SlidesApi' do
   # Create a presentation.
   # @param name Document name.
   # @param [Hash] opts the optional parameters
-  # @option opts [File] :data Document input data.
-  # @option opts [String] :input_password The password for input document.
+  # @option opts [File] :data Source presentation binary data.
+  # @option opts [String] :input_password The password for source presentation.
   # @option opts [String] :password The document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -4832,9 +4832,9 @@ describe 'SlidesApi' do
   # Create a presentation from an existing source.
   # @param name Document name.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :source_path Template file path.
-  # @option opts [String] :source_password Template file password.
-  # @option opts [String] :source_storage Template storage name.
+  # @option opts [String] :source_path Source file path.
+  # @option opts [String] :source_password Source file password.
+  # @option opts [String] :source_storage Source storage name.
   # @option opts [String] :password The document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -25494,6 +25494,7 @@ describe 'SlidesApi' do
   # @param slide_index Slide index.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :shape_index Shape index. If specified, only effects related to that shape are returned.
+  # @option opts [Integer] :paragraph_index Paragraph index.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -25503,11 +25504,12 @@ describe 'SlidesApi' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetAnimation', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetAnimation', 'Integer')
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetAnimation', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetAnimation', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetAnimation', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetAnimation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetAnimation', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetAnimation', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_animation_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_animation_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
       code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetAnimation', nil, nil)
       expect(c).to eq(code)
       expect(o).not_to be_nil
@@ -25517,13 +25519,14 @@ describe 'SlidesApi' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetAnimation', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetAnimation', 'Integer')
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetAnimation', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetAnimation', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetAnimation', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetAnimation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetAnimation', 'String')
       paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetAnimation', paramname, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetAnimation', 'name', paramname)
       begin
-        AsposeSlidesCloud::SpecUtils.api.get_animation_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.get_animation_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetAnimation', 'name')
           fail "An exception expected"
         end
@@ -25542,13 +25545,14 @@ describe 'SlidesApi' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetAnimation', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetAnimation', 'Integer')
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetAnimation', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetAnimation', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetAnimation', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetAnimation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetAnimation', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'GetAnimation', paramslide_index, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('GetAnimation', 'slideIndex', paramslide_index)
       begin
-        AsposeSlidesCloud::SpecUtils.api.get_animation_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.get_animation_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetAnimation', 'slideIndex')
           fail "An exception expected"
         end
@@ -25567,13 +25571,14 @@ describe 'SlidesApi' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetAnimation', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetAnimation', 'Integer')
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetAnimation', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetAnimation', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetAnimation', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetAnimation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetAnimation', 'String')
       paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'GetAnimation', paramshape_index, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('GetAnimation', 'shapeIndex', paramshape_index)
       begin
-        AsposeSlidesCloud::SpecUtils.api.get_animation_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.get_animation_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetAnimation', 'shapeIndex')
           fail "An exception expected"
         end
@@ -25588,17 +25593,44 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid paragraph_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetAnimation', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetAnimation', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetAnimation', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetAnimation', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetAnimation', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetAnimation', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetAnimation', 'String')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('paragraphIndex', 'GetAnimation', paramparagraph_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetAnimation', 'paragraphIndex', paramparagraph_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_animation_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetAnimation', 'paragraphIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetAnimation', 'paragraphIndex', paramparagraph_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetAnimation', 'paragraphIndex', paramparagraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
     it 'invalid password' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetAnimation', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetAnimation', 'Integer')
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetAnimation', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetAnimation', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetAnimation', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetAnimation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetAnimation', 'String')
       parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetAnimation', parampassword, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetAnimation', 'password', parampassword)
       begin
-        AsposeSlidesCloud::SpecUtils.api.get_animation_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.get_animation_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetAnimation', 'password')
           fail "An exception expected"
         end
@@ -25617,13 +25649,14 @@ describe 'SlidesApi' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetAnimation', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetAnimation', 'Integer')
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetAnimation', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetAnimation', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetAnimation', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetAnimation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetAnimation', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetAnimation', paramfolder, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetAnimation', 'folder', paramfolder)
       begin
-        AsposeSlidesCloud::SpecUtils.api.get_animation_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.get_animation_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetAnimation', 'folder')
           fail "An exception expected"
         end
@@ -25642,13 +25675,14 @@ describe 'SlidesApi' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetAnimation', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetAnimation', 'Integer')
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetAnimation', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetAnimation', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetAnimation', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetAnimation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetAnimation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetAnimation', paramstorage, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetAnimation', 'storage', paramstorage)
       begin
-        AsposeSlidesCloud::SpecUtils.api.get_animation_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.get_animation_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetAnimation', 'storage')
           fail "An exception expected"
         end
@@ -30627,6 +30661,7 @@ describe 'SlidesApi' do
   # @param slide_type Slide type (master, layout or notes).
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :shape_index Shape index. If specified, only effects related to that shape are returned.
+  # @option opts [Integer] :paragraph_index Paragraph index. If specified, only effects related to that paragraph are returned.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -30637,11 +30672,12 @@ describe 'SlidesApi' do
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSpecialSlideAnimation', 'Integer')
       paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'GetSpecialSlideAnimation', 'String')
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSpecialSlideAnimation', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetSpecialSlideAnimation', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSpecialSlideAnimation', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSpecialSlideAnimation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSpecialSlideAnimation', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetSpecialSlideAnimation', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_special_slide_animation_with_http_info(paramname, paramslide_index, paramslide_type, paramshape_index, parampassword, paramfolder, paramstorage)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_special_slide_animation_with_http_info(paramname, paramslide_index, paramslide_type, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
       code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSpecialSlideAnimation', nil, nil)
       expect(c).to eq(code)
       expect(o).not_to be_nil
@@ -30652,13 +30688,14 @@ describe 'SlidesApi' do
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSpecialSlideAnimation', 'Integer')
       paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'GetSpecialSlideAnimation', 'String')
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSpecialSlideAnimation', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetSpecialSlideAnimation', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSpecialSlideAnimation', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSpecialSlideAnimation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSpecialSlideAnimation', 'String')
       paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetSpecialSlideAnimation', paramname, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetSpecialSlideAnimation', 'name', paramname)
       begin
-        AsposeSlidesCloud::SpecUtils.api.get_special_slide_animation_with_http_info(paramname, paramslide_index, paramslide_type, paramshape_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.get_special_slide_animation_with_http_info(paramname, paramslide_index, paramslide_type, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSpecialSlideAnimation', 'name')
           fail "An exception expected"
         end
@@ -30678,13 +30715,14 @@ describe 'SlidesApi' do
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSpecialSlideAnimation', 'Integer')
       paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'GetSpecialSlideAnimation', 'String')
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSpecialSlideAnimation', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetSpecialSlideAnimation', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSpecialSlideAnimation', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSpecialSlideAnimation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSpecialSlideAnimation', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'GetSpecialSlideAnimation', paramslide_index, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('GetSpecialSlideAnimation', 'slideIndex', paramslide_index)
       begin
-        AsposeSlidesCloud::SpecUtils.api.get_special_slide_animation_with_http_info(paramname, paramslide_index, paramslide_type, paramshape_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.get_special_slide_animation_with_http_info(paramname, paramslide_index, paramslide_type, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSpecialSlideAnimation', 'slideIndex')
           fail "An exception expected"
         end
@@ -30704,13 +30742,14 @@ describe 'SlidesApi' do
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSpecialSlideAnimation', 'Integer')
       paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'GetSpecialSlideAnimation', 'String')
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSpecialSlideAnimation', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetSpecialSlideAnimation', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSpecialSlideAnimation', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSpecialSlideAnimation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSpecialSlideAnimation', 'String')
       paramslide_type = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideType', 'GetSpecialSlideAnimation', paramslide_type, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetSpecialSlideAnimation', 'slideType', paramslide_type)
       begin
-        AsposeSlidesCloud::SpecUtils.api.get_special_slide_animation_with_http_info(paramname, paramslide_index, paramslide_type, paramshape_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.get_special_slide_animation_with_http_info(paramname, paramslide_index, paramslide_type, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSpecialSlideAnimation', 'slideType')
           fail "An exception expected"
         end
@@ -30730,13 +30769,14 @@ describe 'SlidesApi' do
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSpecialSlideAnimation', 'Integer')
       paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'GetSpecialSlideAnimation', 'String')
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSpecialSlideAnimation', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetSpecialSlideAnimation', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSpecialSlideAnimation', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSpecialSlideAnimation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSpecialSlideAnimation', 'String')
       paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'GetSpecialSlideAnimation', paramshape_index, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('GetSpecialSlideAnimation', 'shapeIndex', paramshape_index)
       begin
-        AsposeSlidesCloud::SpecUtils.api.get_special_slide_animation_with_http_info(paramname, paramslide_index, paramslide_type, paramshape_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.get_special_slide_animation_with_http_info(paramname, paramslide_index, paramslide_type, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSpecialSlideAnimation', 'shapeIndex')
           fail "An exception expected"
         end
@@ -30751,18 +30791,46 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid paragraph_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSpecialSlideAnimation', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSpecialSlideAnimation', 'Integer')
+      paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'GetSpecialSlideAnimation', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSpecialSlideAnimation', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetSpecialSlideAnimation', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSpecialSlideAnimation', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSpecialSlideAnimation', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSpecialSlideAnimation', 'String')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('paragraphIndex', 'GetSpecialSlideAnimation', paramparagraph_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSpecialSlideAnimation', 'paragraphIndex', paramparagraph_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_special_slide_animation_with_http_info(paramname, paramslide_index, paramslide_type, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSpecialSlideAnimation', 'paragraphIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSpecialSlideAnimation', 'paragraphIndex', paramparagraph_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSpecialSlideAnimation', 'paragraphIndex', paramparagraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
     it 'invalid password' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSpecialSlideAnimation', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSpecialSlideAnimation', 'Integer')
       paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'GetSpecialSlideAnimation', 'String')
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSpecialSlideAnimation', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetSpecialSlideAnimation', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSpecialSlideAnimation', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSpecialSlideAnimation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSpecialSlideAnimation', 'String')
       parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetSpecialSlideAnimation', parampassword, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetSpecialSlideAnimation', 'password', parampassword)
       begin
-        AsposeSlidesCloud::SpecUtils.api.get_special_slide_animation_with_http_info(paramname, paramslide_index, paramslide_type, paramshape_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.get_special_slide_animation_with_http_info(paramname, paramslide_index, paramslide_type, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSpecialSlideAnimation', 'password')
           fail "An exception expected"
         end
@@ -30782,13 +30850,14 @@ describe 'SlidesApi' do
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSpecialSlideAnimation', 'Integer')
       paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'GetSpecialSlideAnimation', 'String')
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSpecialSlideAnimation', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetSpecialSlideAnimation', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSpecialSlideAnimation', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSpecialSlideAnimation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSpecialSlideAnimation', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetSpecialSlideAnimation', paramfolder, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetSpecialSlideAnimation', 'folder', paramfolder)
       begin
-        AsposeSlidesCloud::SpecUtils.api.get_special_slide_animation_with_http_info(paramname, paramslide_index, paramslide_type, paramshape_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.get_special_slide_animation_with_http_info(paramname, paramslide_index, paramslide_type, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSpecialSlideAnimation', 'folder')
           fail "An exception expected"
         end
@@ -30808,13 +30877,14 @@ describe 'SlidesApi' do
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSpecialSlideAnimation', 'Integer')
       paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'GetSpecialSlideAnimation', 'String')
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSpecialSlideAnimation', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetSpecialSlideAnimation', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSpecialSlideAnimation', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSpecialSlideAnimation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSpecialSlideAnimation', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetSpecialSlideAnimation', paramstorage, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetSpecialSlideAnimation', 'storage', paramstorage)
       begin
-        AsposeSlidesCloud::SpecUtils.api.get_special_slide_animation_with_http_info(paramname, paramslide_index, paramslide_type, paramshape_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.get_special_slide_animation_with_http_info(paramname, paramslide_index, paramslide_type, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSpecialSlideAnimation', 'storage')
           fail "An exception expected"
         end

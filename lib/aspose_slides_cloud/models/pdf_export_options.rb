@@ -243,66 +243,6 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
-      if @text_compression.nil?
-        invalid_properties.push('invalid value for "text_compression", text_compression cannot be nil.')
-      end
-
-      if @embed_full_fonts.nil?
-        invalid_properties.push('invalid value for "embed_full_fonts", embed_full_fonts cannot be nil.')
-      end
-
-      if @compliance.nil?
-        invalid_properties.push('invalid value for "compliance", compliance cannot be nil.')
-      end
-
-      if @sufficient_resolution.nil?
-        invalid_properties.push('invalid value for "sufficient_resolution", sufficient_resolution cannot be nil.')
-      end
-
-      if @jpeg_quality.nil?
-        invalid_properties.push('invalid value for "jpeg_quality", jpeg_quality cannot be nil.')
-      end
-
-      if @draw_slides_frame.nil?
-        invalid_properties.push('invalid value for "draw_slides_frame", draw_slides_frame cannot be nil.')
-      end
-
-      if @show_hidden_slides.nil?
-        invalid_properties.push('invalid value for "show_hidden_slides", show_hidden_slides cannot be nil.')
-      end
-
-      if @save_metafiles_as_png.nil?
-        invalid_properties.push('invalid value for "save_metafiles_as_png", save_metafiles_as_png cannot be nil.')
-      end
-
-      if @embed_true_type_fonts_for_ascii.nil?
-        invalid_properties.push('invalid value for "embed_true_type_fonts_for_ascii", embed_true_type_fonts_for_ascii cannot be nil.')
-      end
-
-      if @notes_position.nil?
-        invalid_properties.push('invalid value for "notes_position", notes_position cannot be nil.')
-      end
-
-      if @comments_position.nil?
-        invalid_properties.push('invalid value for "comments_position", comments_position cannot be nil.')
-      end
-
-      if @comments_area_width.nil?
-        invalid_properties.push('invalid value for "comments_area_width", comments_area_width cannot be nil.')
-      end
-
-      if @show_comments_by_no_author.nil?
-        invalid_properties.push('invalid value for "show_comments_by_no_author", show_comments_by_no_author cannot be nil.')
-      end
-
-      if @apply_image_transparent.nil?
-        invalid_properties.push('invalid value for "apply_image_transparent", apply_image_transparent cannot be nil.')
-      end
-
-      if @access_permissions.nil?
-        invalid_properties.push('invalid value for "access_permissions", access_permissions cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -310,29 +250,14 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      return false if @text_compression.nil?
       text_compression_validator = EnumAttributeValidator.new('String', ['None', 'Flate'])
       return false unless text_compression_validator.valid?(@text_compression)
-      return false if @embed_full_fonts.nil?
-      return false if @compliance.nil?
       compliance_validator = EnumAttributeValidator.new('String', ['Pdf15', 'PdfA1b', 'PdfA1a', 'PdfUa'])
       return false unless compliance_validator.valid?(@compliance)
-      return false if @sufficient_resolution.nil?
-      return false if @jpeg_quality.nil?
-      return false if @draw_slides_frame.nil?
-      return false if @show_hidden_slides.nil?
-      return false if @save_metafiles_as_png.nil?
-      return false if @embed_true_type_fonts_for_ascii.nil?
-      return false if @notes_position.nil?
       notes_position_validator = EnumAttributeValidator.new('String', ['None', 'BottomFull', 'BottomTruncated'])
       return false unless notes_position_validator.valid?(@notes_position)
-      return false if @comments_position.nil?
       comments_position_validator = EnumAttributeValidator.new('String', ['None', 'Bottom', 'Right'])
       return false unless comments_position_validator.valid?(@comments_position)
-      return false if @comments_area_width.nil?
-      return false if @show_comments_by_no_author.nil?
-      return false if @apply_image_transparent.nil?
-      return false if @access_permissions.nil?
       access_permissions_validator = EnumAttributeValidator.new('String', ['None', 'PrintDocument', 'ModifyContent', 'CopyTextAndGraphics', 'AddOrModifyFields', 'FillExistingFields', 'ExtractTextAndGraphics', 'AssembleDocument', 'HighQualityPrint'])
       return false unless access_permissions_validator.valid?(@access_permissions)
       true
@@ -394,6 +319,8 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
+          height == o.height &&
+          width == o.width &&
           format == o.format &&
           text_compression == o.text_compression &&
           embed_full_fonts == o.embed_full_fonts &&
@@ -425,7 +352,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, format, text_compression, embed_full_fonts, compliance, sufficient_resolution, jpeg_quality, draw_slides_frame, show_hidden_slides, save_metafiles_as_png, password, embed_true_type_fonts_for_ascii, additional_common_font_families, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author, image_transparent_color, apply_image_transparent, access_permissions].hash
+      [default_regular_font, height, width, format, text_compression, embed_full_fonts, compliance, sufficient_resolution, jpeg_quality, draw_slides_frame, show_hidden_slides, save_metafiles_as_png, password, embed_true_type_fonts_for_ascii, additional_common_font_families, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author, image_transparent_color, apply_image_transparent, access_permissions].hash
     end
 
     # Builds the object from hash

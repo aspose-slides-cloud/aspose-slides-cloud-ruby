@@ -151,42 +151,6 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
-      if @vectorize_text.nil?
-        invalid_properties.push('invalid value for "vectorize_text", vectorize_text cannot be nil.')
-      end
-
-      if @metafile_rasterization_dpi.nil?
-        invalid_properties.push('invalid value for "metafile_rasterization_dpi", metafile_rasterization_dpi cannot be nil.')
-      end
-
-      if @disable3_d_text.nil?
-        invalid_properties.push('invalid value for "disable3_d_text", disable3_d_text cannot be nil.')
-      end
-
-      if @disable_gradient_split.nil?
-        invalid_properties.push('invalid value for "disable_gradient_split", disable_gradient_split cannot be nil.')
-      end
-
-      if @disable_line_end_cropping.nil?
-        invalid_properties.push('invalid value for "disable_line_end_cropping", disable_line_end_cropping cannot be nil.')
-      end
-
-      if @jpeg_quality.nil?
-        invalid_properties.push('invalid value for "jpeg_quality", jpeg_quality cannot be nil.')
-      end
-
-      if @pictures_compression.nil?
-        invalid_properties.push('invalid value for "pictures_compression", pictures_compression cannot be nil.')
-      end
-
-      if @delete_pictures_cropped_areas.nil?
-        invalid_properties.push('invalid value for "delete_pictures_cropped_areas", delete_pictures_cropped_areas cannot be nil.')
-      end
-
-      if @external_fonts_handling.nil?
-        invalid_properties.push('invalid value for "external_fonts_handling", external_fonts_handling cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -194,17 +158,8 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      return false if @vectorize_text.nil?
-      return false if @metafile_rasterization_dpi.nil?
-      return false if @disable3_d_text.nil?
-      return false if @disable_gradient_split.nil?
-      return false if @disable_line_end_cropping.nil?
-      return false if @jpeg_quality.nil?
-      return false if @pictures_compression.nil?
       pictures_compression_validator = EnumAttributeValidator.new('String', ['Dpi330', 'Dpi220', 'Dpi150', 'Dpi96', 'Dpi72', 'DocumentResolution'])
       return false unless pictures_compression_validator.valid?(@pictures_compression)
-      return false if @delete_pictures_cropped_areas.nil?
-      return false if @external_fonts_handling.nil?
       external_fonts_handling_validator = EnumAttributeValidator.new('String', ['AddLinksToFontFiles', 'Embed', 'Vectorize'])
       return false unless external_fonts_handling_validator.valid?(@external_fonts_handling)
       true
@@ -236,6 +191,8 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
+          height == o.height &&
+          width == o.width &&
           format == o.format &&
           vectorize_text == o.vectorize_text &&
           metafile_rasterization_dpi == o.metafile_rasterization_dpi &&
@@ -257,7 +214,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, format, vectorize_text, metafile_rasterization_dpi, disable3_d_text, disable_gradient_split, disable_line_end_cropping, jpeg_quality, pictures_compression, delete_pictures_cropped_areas, external_fonts_handling].hash
+      [default_regular_font, height, width, format, vectorize_text, metafile_rasterization_dpi, disable3_d_text, disable_gradient_split, disable_line_end_cropping, jpeg_quality, pictures_compression, delete_pictures_cropped_areas, external_fonts_handling].hash
     end
 
     # Builds the object from hash

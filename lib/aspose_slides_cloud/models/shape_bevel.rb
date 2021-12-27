@@ -23,8 +23,17 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Represents SmartArt resource.
-  class SmartArtShape < GeometryShape
+  # ShapeBevel
+  class ShapeBevel
+    # Bevel type
+    attr_accessor :bevel_type
+
+    # Bevel width
+    attr_accessor :width
+
+    # Bevel height
+    attr_accessor :height
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -49,35 +58,66 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      super.merge({
-      })
+      {
+        :'bevel_type' => :'BevelType',
+        :'width' => :'Width',
+        :'height' => :'Height',
+      }
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      super.merge({
-      })
+      {
+        :'bevel_type' => :'String',
+        :'width' => :'Float',
+        :'height' => :'Float',
+      }
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      super
-      self.type = "SmartArtShape"
+      return unless attributes.is_a?(Hash)
+
+      # convert string to symbol for hash key
+      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'BevelType')
+        self.bevel_type = attributes[:'BevelType']
+      end
+
+      if attributes.has_key?(:'Width')
+        self.width = attributes[:'Width']
+      end
+
+      if attributes.has_key?(:'Height')
+        self.height = attributes[:'Height']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = super
+      invalid_properties = Array.new
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !super
+      bevel_type_validator = EnumAttributeValidator.new('String', ['Angle', 'ArtDeco', 'Circle', 'Convex', 'CoolSlant', 'Cross', 'Divot', 'HardEdge', 'RelaxedInset', 'Riblet', 'Slope', 'SoftRound', 'NotDefined'])
+      return false unless bevel_type_validator.valid?(@bevel_type)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] bevel_type Object to be assigned
+    def bevel_type=(bevel_type)
+      validator = EnumAttributeValidator.new('String', ['Angle', 'ArtDeco', 'Circle', 'Convex', 'CoolSlant', 'Cross', 'Divot', 'HardEdge', 'RelaxedInset', 'Riblet', 'Slope', 'SoftRound', 'NotDefined'])
+      unless validator.valid?(bevel_type)
+        fail ArgumentError, 'invalid value for "bevel_type", must be one of #{validator.allowable_values}.'
+      end
+      @bevel_type = bevel_type
     end
 
     # Checks equality by comparing each attribute.
@@ -85,24 +125,9 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          self_uri == o.self_uri &&
-          alternate_links == o.alternate_links &&
-          name == o.name &&
+          bevel_type == o.bevel_type &&
           width == o.width &&
-          height == o.height &&
-          alternative_text == o.alternative_text &&
-          alternative_text_title == o.alternative_text_title &&
-          hidden == o.hidden &&
-          x == o.x &&
-          y == o.y &&
-          z_order_position == o.z_order_position &&
-          shapes == o.shapes &&
-          fill_format == o.fill_format &&
-          effect_format == o.effect_format &&
-          three_d_format == o.three_d_format &&
-          line_format == o.line_format &&
-          type == o.type &&
-          shape_type == o.shape_type
+          height == o.height
     end
 
     # @see the `==` method
@@ -114,7 +139,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_linksname, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, three_d_format, line_format, typeshape_type].hash
+      [bevel_type, width, height].hash
     end
 
     # Builds the object from hash

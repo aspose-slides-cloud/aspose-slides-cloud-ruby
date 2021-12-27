@@ -28,12 +28,20 @@ module AsposeSlidesCloud
     # Default regular font for rendering the presentation. 
     attr_accessor :default_regular_font
 
+    # Gets or sets the height of slides in the output format, e.g. image size, pdf page size etc.
+    attr_accessor :height
+
+    # Gets or sets the height of slides in the output format, e.g. image size, pdf page size etc.
+    attr_accessor :width
+
     attr_accessor :format
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'default_regular_font' => :'DefaultRegularFont',
+        :'height' => :'Height',
+        :'width' => :'Width',
         :'format' => :'Format',
       }
     end
@@ -42,6 +50,8 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'default_regular_font' => :'String',
+        :'height' => :'Integer',
+        :'width' => :'Integer',
         :'format' => :'String',
       }
     end
@@ -56,6 +66,14 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'DefaultRegularFont')
         self.default_regular_font = attributes[:'DefaultRegularFont']
+      end
+
+      if attributes.has_key?(:'Height')
+        self.height = attributes[:'Height']
+      end
+
+      if attributes.has_key?(:'Width')
+        self.width = attributes[:'Width']
       end
 
       if attributes.has_key?(:'Format')
@@ -82,6 +100,8 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
+          height == o.height &&
+          width == o.width &&
           format == o.format
     end
 
@@ -94,7 +114,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, format].hash
+      [default_regular_font, height, width, format].hash
     end
 
     # Builds the object from hash

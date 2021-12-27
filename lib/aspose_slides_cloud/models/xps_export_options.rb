@@ -75,18 +75,6 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
-      if @show_hidden_slides.nil?
-        invalid_properties.push('invalid value for "show_hidden_slides", show_hidden_slides cannot be nil.')
-      end
-
-      if @save_metafiles_as_png.nil?
-        invalid_properties.push('invalid value for "save_metafiles_as_png", save_metafiles_as_png cannot be nil.')
-      end
-
-      if @draw_slides_frame.nil?
-        invalid_properties.push('invalid value for "draw_slides_frame", draw_slides_frame cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -94,9 +82,6 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      return false if @show_hidden_slides.nil?
-      return false if @save_metafiles_as_png.nil?
-      return false if @draw_slides_frame.nil?
       true
     end
 
@@ -106,6 +91,8 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
+          height == o.height &&
+          width == o.width &&
           format == o.format &&
           show_hidden_slides == o.show_hidden_slides &&
           save_metafiles_as_png == o.save_metafiles_as_png &&
@@ -121,7 +108,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, format, show_hidden_slides, save_metafiles_as_png, draw_slides_frame].hash
+      [default_regular_font, height, width, format, show_hidden_slides, save_metafiles_as_png, draw_slides_frame].hash
     end
 
     # Builds the object from hash

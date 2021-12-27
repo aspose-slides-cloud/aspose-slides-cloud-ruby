@@ -40,6 +40,7 @@ module AsposeSlidesCloud
     POTX = "Potx".freeze
     POTM = "Potm".freeze
     HTML = "Html".freeze
+    HTML5 = "Html5".freeze
     SWF = "Swf".freeze
     SVG = "Svg".freeze
     JPEG = "Jpeg".freeze

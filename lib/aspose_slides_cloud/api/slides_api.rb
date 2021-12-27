@@ -72,7 +72,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['AlignLeft', 'AlignRight', 'AlignCenter', 'AlignTop', 'AlignMiddle', 'AlignBottom', 'DistributeHorizontally', 'DistributeVertically'].any?{ |s| s.casecmp(alignment_type)==0 }
-        fail ArgumentError, "Value " + alignment_type + " is not supported for 'alignment_type', must be one of AlignLeft, AlignRight, AlignCenter, AlignTop, AlignMiddle, AlignBottom, DistributeHorizontally, DistributeVertically"
+        fail ArgumentError, "Invalid value for parameter alignment_type: " + alignment_type + ". Must be one of AlignLeft, AlignRight, AlignCenter, AlignTop, AlignMiddle, AlignBottom, DistributeHorizontally, DistributeVertically"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/align/{alignmentType}'
@@ -155,7 +155,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'alignment_type' is set
       if @api_client.config.client_side_validation && alignment_type.nil?
@@ -163,7 +163,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['AlignLeft', 'AlignRight', 'AlignCenter', 'AlignTop', 'AlignMiddle', 'AlignBottom', 'DistributeHorizontally', 'DistributeVertically'].any?{ |s| s.casecmp(alignment_type)==0 }
-        fail ArgumentError, "Value " + alignment_type + " is not supported for 'alignment_type', must be one of AlignLeft, AlignRight, AlignCenter, AlignTop, AlignMiddle, AlignBottom, DistributeHorizontally, DistributeVertically"
+        fail ArgumentError, "Invalid value for parameter alignment_type: " + alignment_type + ". Must be one of AlignLeft, AlignRight, AlignCenter, AlignTop, AlignMiddle, AlignBottom, DistributeHorizontally, DistributeVertically"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/align/{alignmentType}'
@@ -238,8 +238,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.convert"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp"
+      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp"
       end
       # resource path
       local_var_path = '/slides/convert/{format}'
@@ -315,8 +315,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.convert_and_save"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp"
+      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && out_path.nil?
@@ -1718,8 +1718,8 @@ module AsposeSlidesCloud
     end
     # Create a presentation.
     # @param name Document name.
-    # @param data Document input data.
-    # @param input_password The password for input document.
+    # @param data Source presentation binary data.
+    # @param input_password The password for source presentation.
     # @param password The document password.
     # @param folder Document folder.
     # @param storage Document storage.
@@ -1730,8 +1730,8 @@ module AsposeSlidesCloud
 
     # Create a presentation.
     # @param name Document name.
-    # @param data Document input data.
-    # @param input_password The password for input document.
+    # @param data Source presentation binary data.
+    # @param input_password The password for source presentation.
     # @param password The document password.
     # @param folder Document folder.
     # @param storage Document storage.
@@ -1783,9 +1783,9 @@ module AsposeSlidesCloud
     end
     # Create a presentation from an existing source.
     # @param name Document name.
-    # @param source_path Template file path.
-    # @param source_password Template file password.
-    # @param source_storage Template storage name.
+    # @param source_path Source file path.
+    # @param source_password Source file password.
+    # @param source_storage Source storage name.
     # @param password The document password.
     # @param folder Document folder.
     # @param storage Document storage.
@@ -1796,9 +1796,9 @@ module AsposeSlidesCloud
 
     # Create a presentation from an existing source.
     # @param name Document name.
-    # @param source_path Template file path.
-    # @param source_password Template file password.
-    # @param source_storage Template storage name.
+    # @param source_path Source file path.
+    # @param source_password Source file password.
+    # @param source_storage Source storage name.
     # @param password The document password.
     # @param folder Document folder.
     # @param storage Document storage.
@@ -2168,7 +2168,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'effect' is set
       if @api_client.config.client_side_validation && effect.nil?
@@ -2249,7 +2249,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'sequence' is set
       if @api_client.config.client_side_validation && sequence.nil?
@@ -2332,7 +2332,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'sequence_index' is set
       if @api_client.config.client_side_validation && sequence_index.nil?
@@ -2422,7 +2422,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -2515,7 +2515,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -2611,7 +2611,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes'
@@ -2696,7 +2696,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?
@@ -2786,7 +2786,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?
@@ -2886,7 +2886,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?
@@ -5455,7 +5455,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/animation'
@@ -5532,7 +5532,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'effect_index' is set
       if @api_client.config.client_side_validation && effect_index.nil?
@@ -5614,7 +5614,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'sequence_index' is set
       if @api_client.config.client_side_validation && sequence_index.nil?
@@ -5698,7 +5698,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'sequence_index' is set
       if @api_client.config.client_side_validation && sequence_index.nil?
@@ -5783,7 +5783,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/animation/interactiveSequences'
@@ -5858,7 +5858,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/animation/mainSequence'
@@ -5937,7 +5937,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -6026,7 +6026,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -6113,7 +6113,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -6209,7 +6209,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -6297,7 +6297,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -6379,7 +6379,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes'
@@ -6459,7 +6459,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?
@@ -6550,7 +6550,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?
@@ -6646,7 +6646,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?
@@ -6740,7 +6740,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?
@@ -6843,7 +6843,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?
@@ -6938,7 +6938,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?
@@ -7686,7 +7686,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff"
       end
       # resource path
       local_var_path = '/slides/{name}/images/{index}/{format}'
@@ -7881,7 +7881,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff"
       end
       # resource path
       local_var_path = '/slides/images/{index}/{format}'
@@ -7950,7 +7950,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff"
       end
       # resource path
       local_var_path = '/slides/{name}/images/download/{format}'
@@ -8124,7 +8124,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff"
       end
       # resource path
       local_var_path = '/slides/images/download/{format}'
@@ -8204,7 +8204,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/notesSlide/{format}'
@@ -8284,7 +8284,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff"
       end
       # resource path
       local_var_path = '/slides/slides/{slideIndex}/notesSlide/{format}'
@@ -8361,8 +8361,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.download_presentation"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp"
+      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp"
       end
       # resource path
       local_var_path = '/slides/{name}/{format}'
@@ -8454,10 +8454,10 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
       end
       if @api_client.config.client_side_validation && bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(bounds)==0 }
-        fail ArgumentError, "Value " + bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
+        fail ArgumentError, "Invalid value for parameter bounds: " + bounds + ". Must be one of Slide, Shape, Appearance"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/{format}'
@@ -8551,10 +8551,10 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
       end
       if @api_client.config.client_side_validation && bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(bounds)==0 }
-        fail ArgumentError, "Value " + bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
+        fail ArgumentError, "Invalid value for parameter bounds: " + bounds + ". Must be one of Slide, Shape, Appearance"
       end
       # resource path
       local_var_path = '/slides/slides/{slideIndex}/shapes/{shapeIndex}/{format}'
@@ -8643,7 +8643,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/{format}'
@@ -8727,7 +8727,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp"
       end
       # resource path
       local_var_path = '/slides/slides/{slideIndex}/{format}'
@@ -8820,7 +8820,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -8832,10 +8832,10 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
       end
       if @api_client.config.client_side_validation && bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(bounds)==0 }
-        fail ArgumentError, "Value " + bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
+        fail ArgumentError, "Invalid value for parameter bounds: " + bounds + ". Must be one of Slide, Shape, Appearance"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}/{format}'
@@ -8932,7 +8932,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?
@@ -8948,10 +8948,10 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
       end
       if @api_client.config.client_side_validation && bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(bounds)==0 }
-        fail ArgumentError, "Value " + bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
+        fail ArgumentError, "Invalid value for parameter bounds: " + bounds + ". Must be one of Slide, Shape, Appearance"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}/{shapeIndex}/{format}'
@@ -9055,10 +9055,10 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
       end
       if @api_client.config.client_side_validation && bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(bounds)==0 }
-        fail ArgumentError, "Value " + bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
+        fail ArgumentError, "Invalid value for parameter bounds: " + bounds + ". Must be one of Slide, Shape, Appearance"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/{format}'
@@ -9105,11 +9105,12 @@ module AsposeSlidesCloud
     # @param name Document name.
     # @param slide_index Slide index.
     # @param shape_index Shape index. If specified, only effects related to that shape are returned.
+    # @param paragraph_index Paragraph index.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def get_animation(name, slide_index, shape_index = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = get_animation_with_http_info(name, slide_index, shape_index, password, folder, storage)
+    def get_animation(name, slide_index, shape_index = nil, paragraph_index = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_animation_with_http_info(name, slide_index, shape_index, paragraph_index, password, folder, storage)
       data
     end
 
@@ -9117,10 +9118,11 @@ module AsposeSlidesCloud
     # @param name Document name.
     # @param slide_index Slide index.
     # @param shape_index Shape index. If specified, only effects related to that shape are returned.
+    # @param paragraph_index Paragraph index.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def get_animation_with_http_info(name, slide_index, shape_index = nil, password = nil, folder = nil, storage = nil)
+    def get_animation_with_http_info(name, slide_index, shape_index = nil, paragraph_index = nil, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.get_animation ...'
       end
@@ -9141,6 +9143,7 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'shapeIndex'] = shape_index unless shape_index.nil?
+      query_params[:'paragraphIndex'] = paragraph_index unless paragraph_index.nil?
       query_params[:'folder'] = folder unless folder.nil?
       query_params[:'storage'] = storage unless storage.nil?
 
@@ -11474,11 +11477,12 @@ module AsposeSlidesCloud
     # @param slide_index Parent slide index.
     # @param slide_type Slide type (master, layout or notes).
     # @param shape_index Shape index. If specified, only effects related to that shape are returned.
+    # @param paragraph_index Paragraph index. If specified, only effects related to that paragraph are returned.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def get_special_slide_animation(name, slide_index, slide_type, shape_index = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = get_special_slide_animation_with_http_info(name, slide_index, slide_type, shape_index, password, folder, storage)
+    def get_special_slide_animation(name, slide_index, slide_type, shape_index = nil, paragraph_index = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_special_slide_animation_with_http_info(name, slide_index, slide_type, shape_index, paragraph_index, password, folder, storage)
       data
     end
 
@@ -11487,10 +11491,11 @@ module AsposeSlidesCloud
     # @param slide_index Parent slide index.
     # @param slide_type Slide type (master, layout or notes).
     # @param shape_index Shape index. If specified, only effects related to that shape are returned.
+    # @param paragraph_index Paragraph index. If specified, only effects related to that paragraph are returned.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def get_special_slide_animation_with_http_info(name, slide_index, slide_type, shape_index = nil, password = nil, folder = nil, storage = nil)
+    def get_special_slide_animation_with_http_info(name, slide_index, slide_type, shape_index = nil, paragraph_index = nil, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.get_special_slide_animation ...'
       end
@@ -11509,7 +11514,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/animation'
@@ -11520,6 +11525,7 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'shapeIndex'] = shape_index unless shape_index.nil?
+      query_params[:'paragraphIndex'] = paragraph_index unless paragraph_index.nil?
       query_params[:'folder'] = folder unless folder.nil?
       query_params[:'storage'] = storage unless storage.nil?
 
@@ -11589,7 +11595,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -11676,7 +11682,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -11762,7 +11768,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -11856,7 +11862,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -11943,7 +11949,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -12023,7 +12029,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes'
@@ -12102,7 +12108,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?
@@ -12193,7 +12199,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?
@@ -12287,7 +12293,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?
@@ -12380,7 +12386,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?
@@ -12481,7 +12487,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?
@@ -12573,7 +12579,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?
@@ -14479,8 +14485,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.save_presentation"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp"
+      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && out_path.nil?
@@ -14578,14 +14584,14 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && out_path.nil?
         fail ArgumentError, "Missing the required parameter 'out_path' when calling SlidesApi.save_shape"
       end
       if @api_client.config.client_side_validation && bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(bounds)==0 }
-        fail ArgumentError, "Value " + bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
+        fail ArgumentError, "Invalid value for parameter bounds: " + bounds + ". Must be one of Slide, Shape, Appearance"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/{format}'
@@ -14681,14 +14687,14 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && out_path.nil?
         fail ArgumentError, "Missing the required parameter 'out_path' when calling SlidesApi.save_shape_online"
       end
       if @api_client.config.client_side_validation && bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(bounds)==0 }
-        fail ArgumentError, "Value " + bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
+        fail ArgumentError, "Invalid value for parameter bounds: " + bounds + ". Must be one of Slide, Shape, Appearance"
       end
       # resource path
       local_var_path = '/slides/slides/{slideIndex}/shapes/{shapeIndex}/{format}'
@@ -14779,7 +14785,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && out_path.nil?
@@ -14869,7 +14875,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && out_path.nil?
@@ -14968,7 +14974,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -14980,14 +14986,14 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && out_path.nil?
         fail ArgumentError, "Missing the required parameter 'out_path' when calling SlidesApi.save_special_slide_shape"
       end
       if @api_client.config.client_side_validation && bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(bounds)==0 }
-        fail ArgumentError, "Value " + bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
+        fail ArgumentError, "Invalid value for parameter bounds: " + bounds + ". Must be one of Slide, Shape, Appearance"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{shapeIndex}/{format}'
@@ -15086,7 +15092,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?
@@ -15102,14 +15108,14 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && out_path.nil?
         fail ArgumentError, "Missing the required parameter 'out_path' when calling SlidesApi.save_special_slide_subshape"
       end
       if @api_client.config.client_side_validation && bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(bounds)==0 }
-        fail ArgumentError, "Value " + bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
+        fail ArgumentError, "Invalid value for parameter bounds: " + bounds + ". Must be one of Slide, Shape, Appearance"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes/{path}/{shapeIndex}/{format}'
@@ -15215,14 +15221,14 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && out_path.nil?
         fail ArgumentError, "Missing the required parameter 'out_path' when calling SlidesApi.save_subshape"
       end
       if @api_client.config.client_side_validation && bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(bounds)==0 }
-        fail ArgumentError, "Value " + bounds + " is not supported for 'bounds', must be one of Slide, Shape, Appearance"
+        fail ArgumentError, "Invalid value for parameter bounds: " + bounds + ". Must be one of Slide, Shape, Appearance"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/{format}'
@@ -16100,7 +16106,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'animation' is set
       if @api_client.config.client_side_validation && animation.nil?
@@ -16245,7 +16251,7 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.split"
       end
       if @api_client.config.client_side_validation && format && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp"
       end
       # resource path
       local_var_path = '/slides/{name}/split'
@@ -16329,7 +16335,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp"
       end
       # resource path
       local_var_path = '/slides/split/{format}'
@@ -16412,7 +16418,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Value " + format + " is not supported for 'format', must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp"
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp"
       end
       # resource path
       local_var_path = '/slides/split/{format}'
@@ -17497,7 +17503,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'effect_index' is set
       if @api_client.config.client_side_validation && effect_index.nil?
@@ -17587,7 +17593,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'sequence_index' is set
       if @api_client.config.client_side_validation && sequence_index.nil?
@@ -17682,7 +17688,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -17779,7 +17785,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -17877,7 +17883,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
@@ -17967,7 +17973,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?
@@ -18064,7 +18070,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?
@@ -18168,7 +18174,7 @@ module AsposeSlidesCloud
       end
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
-        fail ArgumentError, "Value " + slide_type + " is not supported for 'slide_type', must be one of MasterSlide, LayoutSlide, NotesSlide"
+        fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
       end
       # verify the required parameter 'path' is set
       if @api_client.config.client_side_validation && path.nil?

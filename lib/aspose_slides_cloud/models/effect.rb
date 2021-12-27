@@ -37,6 +37,9 @@ module AsposeSlidesCloud
     # Shape index.
     attr_accessor :shape_index
 
+    # Paragraph index.
+    attr_accessor :paragraph_index
+
     # Effect trigger type.
     attr_accessor :trigger_type
 
@@ -96,6 +99,7 @@ module AsposeSlidesCloud
         :'subtype' => :'Subtype',
         :'preset_class_type' => :'PresetClassType',
         :'shape_index' => :'ShapeIndex',
+        :'paragraph_index' => :'ParagraphIndex',
         :'trigger_type' => :'TriggerType',
         :'accelerate' => :'Accelerate',
         :'auto_reverse' => :'AutoReverse',
@@ -116,6 +120,7 @@ module AsposeSlidesCloud
         :'subtype' => :'String',
         :'preset_class_type' => :'String',
         :'shape_index' => :'Integer',
+        :'paragraph_index' => :'Integer',
         :'trigger_type' => :'String',
         :'accelerate' => :'Float',
         :'auto_reverse' => :'BOOLEAN',
@@ -151,6 +156,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'ShapeIndex')
         self.shape_index = attributes[:'ShapeIndex']
+      end
+
+      if attributes.has_key?(:'ParagraphIndex')
+        self.paragraph_index = attributes[:'ParagraphIndex']
       end
 
       if attributes.has_key?(:'TriggerType')
@@ -281,6 +290,7 @@ module AsposeSlidesCloud
           subtype == o.subtype &&
           preset_class_type == o.preset_class_type &&
           shape_index == o.shape_index &&
+          paragraph_index == o.paragraph_index &&
           trigger_type == o.trigger_type &&
           accelerate == o.accelerate &&
           auto_reverse == o.auto_reverse &&
@@ -302,7 +312,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, subtype, preset_class_type, shape_index, trigger_type, accelerate, auto_reverse, decelerate, duration, repeat_count, repeat_duration, restart, speed, trigger_delay_time].hash
+      [type, subtype, preset_class_type, shape_index, paragraph_index, trigger_type, accelerate, auto_reverse, decelerate, duration, repeat_count, repeat_duration, restart, speed, trigger_delay_time].hash
     end
 
     # Builds the object from hash

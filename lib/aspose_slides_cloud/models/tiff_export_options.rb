@@ -28,12 +28,6 @@ module AsposeSlidesCloud
     # Compression type.
     attr_accessor :compression
 
-    # Width.
-    attr_accessor :width
-
-    # Height.
-    attr_accessor :height
-
     # Horizontal resolution, in dots per inch.
     attr_accessor :dpi_x
 
@@ -87,8 +81,6 @@ module AsposeSlidesCloud
     def self.attribute_map
       super.merge({
         :'compression' => :'Compression',
-        :'width' => :'Width',
-        :'height' => :'Height',
         :'dpi_x' => :'DpiX',
         :'dpi_y' => :'DpiY',
         :'show_hidden_slides' => :'ShowHiddenSlides',
@@ -105,8 +97,6 @@ module AsposeSlidesCloud
     def self.swagger_types
       super.merge({
         :'compression' => :'String',
-        :'width' => :'Integer',
-        :'height' => :'Integer',
         :'dpi_x' => :'Integer',
         :'dpi_y' => :'Integer',
         :'show_hidden_slides' => :'BOOLEAN',
@@ -126,14 +116,6 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'Compression')
         self.compression = attributes[:'Compression']
-      end
-
-      if attributes.has_key?(:'Width')
-        self.width = attributes[:'Width']
-      end
-
-      if attributes.has_key?(:'Height')
-        self.height = attributes[:'Height']
       end
 
       if attributes.has_key?(:'DpiX')
@@ -178,34 +160,6 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
-      if @compression.nil?
-        invalid_properties.push('invalid value for "compression", compression cannot be nil.')
-      end
-
-      if @show_hidden_slides.nil?
-        invalid_properties.push('invalid value for "show_hidden_slides", show_hidden_slides cannot be nil.')
-      end
-
-      if @pixel_format.nil?
-        invalid_properties.push('invalid value for "pixel_format", pixel_format cannot be nil.')
-      end
-
-      if @notes_position.nil?
-        invalid_properties.push('invalid value for "notes_position", notes_position cannot be nil.')
-      end
-
-      if @comments_position.nil?
-        invalid_properties.push('invalid value for "comments_position", comments_position cannot be nil.')
-      end
-
-      if @comments_area_width.nil?
-        invalid_properties.push('invalid value for "comments_area_width", comments_area_width cannot be nil.')
-      end
-
-      if @show_comments_by_no_author.nil?
-        invalid_properties.push('invalid value for "show_comments_by_no_author", show_comments_by_no_author cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -213,21 +167,14 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      return false if @compression.nil?
       compression_validator = EnumAttributeValidator.new('String', ['Default', 'None', 'CCITT3', 'CCITT4', 'LZW', 'RLE'])
       return false unless compression_validator.valid?(@compression)
-      return false if @show_hidden_slides.nil?
-      return false if @pixel_format.nil?
       pixel_format_validator = EnumAttributeValidator.new('String', ['Format1bppIndexed', 'Format4bppIndexed', 'Format8bppIndexed', 'Format24bppRgb', 'Format32bppArgb'])
       return false unless pixel_format_validator.valid?(@pixel_format)
-      return false if @notes_position.nil?
       notes_position_validator = EnumAttributeValidator.new('String', ['None', 'BottomFull', 'BottomTruncated'])
       return false unless notes_position_validator.valid?(@notes_position)
-      return false if @comments_position.nil?
       comments_position_validator = EnumAttributeValidator.new('String', ['None', 'Bottom', 'Right'])
       return false unless comments_position_validator.valid?(@comments_position)
-      return false if @comments_area_width.nil?
-      return false if @show_comments_by_no_author.nil?
       true
     end
 
@@ -277,10 +224,10 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
+          height == o.height &&
+          width == o.width &&
           format == o.format &&
           compression == o.compression &&
-          width == o.width &&
-          height == o.height &&
           dpi_x == o.dpi_x &&
           dpi_y == o.dpi_y &&
           show_hidden_slides == o.show_hidden_slides &&
@@ -301,7 +248,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, format, compression, width, height, dpi_x, dpi_y, show_hidden_slides, pixel_format, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author].hash
+      [default_regular_font, height, width, format, compression, dpi_x, dpi_y, show_hidden_slides, pixel_format, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author].hash
     end
 
     # Builds the object from hash

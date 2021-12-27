@@ -23,39 +23,27 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Represents SmartArt resource.
-  class SmartArtShape < GeometryShape
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
+  # Provides options that control how a presentation is saved in Html5 format.
+  class Html5ExportOptions < ExportOptions
+    # Gets or sets transitions animation option.
+    attr_accessor :animate_transitions
 
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.any?{ |s| s.casecmp(value) == 0 }
-      end
-    end
+    # Gets or sets shapes animation option.
+    attr_accessor :animate_shapes
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
+        :'animate_transitions' => :'AnimateTransitions',
+        :'animate_shapes' => :'AnimateShapes',
       })
     end
 
     # Attribute type mapping.
     def self.swagger_types
       super.merge({
+        :'animate_transitions' => :'BOOLEAN',
+        :'animate_shapes' => :'BOOLEAN',
       })
     end
 
@@ -63,7 +51,15 @@ module AsposeSlidesCloud
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       super
-      self.type = "SmartArtShape"
+
+      if attributes.has_key?(:'AnimateTransitions')
+        self.animate_transitions = attributes[:'AnimateTransitions']
+      end
+
+      if attributes.has_key?(:'AnimateShapes')
+        self.animate_shapes = attributes[:'AnimateShapes']
+      end
+      self.format = "html5"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -85,24 +81,12 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          self_uri == o.self_uri &&
-          alternate_links == o.alternate_links &&
-          name == o.name &&
-          width == o.width &&
+          default_regular_font == o.default_regular_font &&
           height == o.height &&
-          alternative_text == o.alternative_text &&
-          alternative_text_title == o.alternative_text_title &&
-          hidden == o.hidden &&
-          x == o.x &&
-          y == o.y &&
-          z_order_position == o.z_order_position &&
-          shapes == o.shapes &&
-          fill_format == o.fill_format &&
-          effect_format == o.effect_format &&
-          three_d_format == o.three_d_format &&
-          line_format == o.line_format &&
-          type == o.type &&
-          shape_type == o.shape_type
+          width == o.width &&
+          format == o.format &&
+          animate_transitions == o.animate_transitions &&
+          animate_shapes == o.animate_shapes
     end
 
     # @see the `==` method
@@ -114,7 +98,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_linksname, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, three_d_format, line_format, typeshape_type].hash
+      [default_regular_font, height, width, format, animate_transitions, animate_shapes].hash
     end
 
     # Builds the object from hash

@@ -106,18 +106,6 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
-      if @notes_position.nil?
-        invalid_properties.push('invalid value for "notes_position", notes_position cannot be nil.')
-      end
-
-      if @comments_position.nil?
-        invalid_properties.push('invalid value for "comments_position", comments_position cannot be nil.')
-      end
-
-      if @comments_area_width.nil?
-        invalid_properties.push('invalid value for "comments_area_width", comments_area_width cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -125,13 +113,10 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      return false if @notes_position.nil?
       notes_position_validator = EnumAttributeValidator.new('String', ['None', 'BottomFull', 'BottomTruncated'])
       return false unless notes_position_validator.valid?(@notes_position)
-      return false if @comments_position.nil?
       comments_position_validator = EnumAttributeValidator.new('String', ['None', 'Bottom', 'Right'])
       return false unless comments_position_validator.valid?(@comments_position)
-      return false if @comments_area_width.nil?
       true
     end
 
@@ -161,6 +146,8 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
+          height == o.height &&
+          width == o.width &&
           format == o.format &&
           notes_position == o.notes_position &&
           comments_position == o.comments_position &&
@@ -177,7 +164,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, format, notes_position, comments_position, comments_area_width, comments_area_color].hash
+      [default_regular_font, height, width, format, notes_position, comments_position, comments_area_width, comments_area_color].hash
     end
 
     # Builds the object from hash

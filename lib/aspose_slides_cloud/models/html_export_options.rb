@@ -178,42 +178,6 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
-      if @save_as_zip.nil?
-        invalid_properties.push('invalid value for "save_as_zip", save_as_zip cannot be nil.')
-      end
-
-      if @show_hidden_slides.nil?
-        invalid_properties.push('invalid value for "show_hidden_slides", show_hidden_slides cannot be nil.')
-      end
-
-      if @svg_responsive_layout.nil?
-        invalid_properties.push('invalid value for "svg_responsive_layout", svg_responsive_layout cannot be nil.')
-      end
-
-      if @jpeg_quality.nil?
-        invalid_properties.push('invalid value for "jpeg_quality", jpeg_quality cannot be nil.')
-      end
-
-      if @delete_pictures_cropped_areas.nil?
-        invalid_properties.push('invalid value for "delete_pictures_cropped_areas", delete_pictures_cropped_areas cannot be nil.')
-      end
-
-      if @notes_position.nil?
-        invalid_properties.push('invalid value for "notes_position", notes_position cannot be nil.')
-      end
-
-      if @comments_position.nil?
-        invalid_properties.push('invalid value for "comments_position", comments_position cannot be nil.')
-      end
-
-      if @comments_area_width.nil?
-        invalid_properties.push('invalid value for "comments_area_width", comments_area_width cannot be nil.')
-      end
-
-      if @show_comments_by_no_author.nil?
-        invalid_properties.push('invalid value for "show_comments_by_no_author", show_comments_by_no_author cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -221,21 +185,12 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      return false if @save_as_zip.nil?
-      return false if @show_hidden_slides.nil?
-      return false if @svg_responsive_layout.nil?
-      return false if @jpeg_quality.nil?
       pictures_compression_validator = EnumAttributeValidator.new('String', ['Dpi330', 'Dpi220', 'Dpi150', 'Dpi96', 'Dpi72', 'DocumentResolution'])
       return false unless pictures_compression_validator.valid?(@pictures_compression)
-      return false if @delete_pictures_cropped_areas.nil?
-      return false if @notes_position.nil?
       notes_position_validator = EnumAttributeValidator.new('String', ['None', 'BottomFull', 'BottomTruncated'])
       return false unless notes_position_validator.valid?(@notes_position)
-      return false if @comments_position.nil?
       comments_position_validator = EnumAttributeValidator.new('String', ['None', 'Bottom', 'Right'])
       return false unless comments_position_validator.valid?(@comments_position)
-      return false if @comments_area_width.nil?
-      return false if @show_comments_by_no_author.nil?
       true
     end
 
@@ -275,6 +230,8 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
+          height == o.height &&
+          width == o.width &&
           format == o.format &&
           save_as_zip == o.save_as_zip &&
           sub_directory_name == o.sub_directory_name &&
@@ -299,7 +256,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, format, save_as_zip, sub_directory_name, show_hidden_slides, svg_responsive_layout, jpeg_quality, pictures_compression, delete_pictures_cropped_areas, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author].hash
+      [default_regular_font, height, width, format, save_as_zip, sub_directory_name, show_hidden_slides, svg_responsive_layout, jpeg_quality, pictures_compression, delete_pictures_cropped_areas, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author].hash
     end
 
     # Builds the object from hash

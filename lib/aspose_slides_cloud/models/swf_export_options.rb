@@ -250,74 +250,6 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
-      if @show_hidden_slides.nil?
-        invalid_properties.push('invalid value for "show_hidden_slides", show_hidden_slides cannot be nil.')
-      end
-
-      if @compressed.nil?
-        invalid_properties.push('invalid value for "compressed", compressed cannot be nil.')
-      end
-
-      if @viewer_included.nil?
-        invalid_properties.push('invalid value for "viewer_included", viewer_included cannot be nil.')
-      end
-
-      if @show_page_border.nil?
-        invalid_properties.push('invalid value for "show_page_border", show_page_border cannot be nil.')
-      end
-
-      if @show_full_screen.nil?
-        invalid_properties.push('invalid value for "show_full_screen", show_full_screen cannot be nil.')
-      end
-
-      if @show_page_stepper.nil?
-        invalid_properties.push('invalid value for "show_page_stepper", show_page_stepper cannot be nil.')
-      end
-
-      if @show_search.nil?
-        invalid_properties.push('invalid value for "show_search", show_search cannot be nil.')
-      end
-
-      if @show_top_pane.nil?
-        invalid_properties.push('invalid value for "show_top_pane", show_top_pane cannot be nil.')
-      end
-
-      if @show_bottom_pane.nil?
-        invalid_properties.push('invalid value for "show_bottom_pane", show_bottom_pane cannot be nil.')
-      end
-
-      if @show_left_pane.nil?
-        invalid_properties.push('invalid value for "show_left_pane", show_left_pane cannot be nil.')
-      end
-
-      if @start_open_left_pane.nil?
-        invalid_properties.push('invalid value for "start_open_left_pane", start_open_left_pane cannot be nil.')
-      end
-
-      if @enable_context_menu.nil?
-        invalid_properties.push('invalid value for "enable_context_menu", enable_context_menu cannot be nil.')
-      end
-
-      if @jpeg_quality.nil?
-        invalid_properties.push('invalid value for "jpeg_quality", jpeg_quality cannot be nil.')
-      end
-
-      if @notes_position.nil?
-        invalid_properties.push('invalid value for "notes_position", notes_position cannot be nil.')
-      end
-
-      if @comments_position.nil?
-        invalid_properties.push('invalid value for "comments_position", comments_position cannot be nil.')
-      end
-
-      if @comments_area_width.nil?
-        invalid_properties.push('invalid value for "comments_area_width", comments_area_width cannot be nil.')
-      end
-
-      if @show_comments_by_no_author.nil?
-        invalid_properties.push('invalid value for "show_comments_by_no_author", show_comments_by_no_author cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -325,27 +257,10 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      return false if @show_hidden_slides.nil?
-      return false if @compressed.nil?
-      return false if @viewer_included.nil?
-      return false if @show_page_border.nil?
-      return false if @show_full_screen.nil?
-      return false if @show_page_stepper.nil?
-      return false if @show_search.nil?
-      return false if @show_top_pane.nil?
-      return false if @show_bottom_pane.nil?
-      return false if @show_left_pane.nil?
-      return false if @start_open_left_pane.nil?
-      return false if @enable_context_menu.nil?
-      return false if @jpeg_quality.nil?
-      return false if @notes_position.nil?
       notes_position_validator = EnumAttributeValidator.new('String', ['None', 'BottomFull', 'BottomTruncated'])
       return false unless notes_position_validator.valid?(@notes_position)
-      return false if @comments_position.nil?
       comments_position_validator = EnumAttributeValidator.new('String', ['None', 'Bottom', 'Right'])
       return false unless comments_position_validator.valid?(@comments_position)
-      return false if @comments_area_width.nil?
-      return false if @show_comments_by_no_author.nil?
       true
     end
 
@@ -375,6 +290,8 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
+          height == o.height &&
+          width == o.width &&
           format == o.format &&
           show_hidden_slides == o.show_hidden_slides &&
           compressed == o.compressed &&
@@ -407,7 +324,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, format, show_hidden_slides, compressed, viewer_included, show_page_border, show_full_screen, show_page_stepper, show_search, show_top_pane, show_bottom_pane, show_left_pane, start_open_left_pane, enable_context_menu, logo_image, logo_link, jpeg_quality, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author].hash
+      [default_regular_font, height, width, format, show_hidden_slides, compressed, viewer_included, show_page_border, show_full_screen, show_page_stepper, show_search, show_top_pane, show_bottom_pane, show_left_pane, start_open_left_pane, enable_context_menu, logo_image, logo_link, jpeg_quality, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author].hash
     end
 
     # Builds the object from hash

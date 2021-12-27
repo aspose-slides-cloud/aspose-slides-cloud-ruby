@@ -108,27 +108,12 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @scale_x.nil?
-        invalid_properties.push('invalid value for "scale_x", scale_x cannot be nil.')
-      end
-
-      if @scale_y.nil?
-        invalid_properties.push('invalid value for "scale_y", scale_y cannot be nil.')
-      end
-
-      if @thumbnail_bounds.nil?
-        invalid_properties.push('invalid value for "thumbnail_bounds", thumbnail_bounds cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @scale_x.nil?
-      return false if @scale_y.nil?
-      return false if @thumbnail_bounds.nil?
       thumbnail_bounds_validator = EnumAttributeValidator.new('String', ['Slide', 'Shape', 'Appearance'])
       return false unless thumbnail_bounds_validator.valid?(@thumbnail_bounds)
       true

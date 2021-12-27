@@ -79,10 +79,6 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
-      if @conformance.nil?
-        invalid_properties.push('invalid value for "conformance", conformance cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -90,7 +86,6 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      return false if @conformance.nil?
       conformance_validator = EnumAttributeValidator.new('String', ['Ecma376_2006', 'Iso29500_2008_Transitional', 'Iso29500_2008_Strict'])
       return false unless conformance_validator.valid?(@conformance)
       true
@@ -112,6 +107,8 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
+          height == o.height &&
+          width == o.width &&
           format == o.format &&
           conformance == o.conformance
     end
@@ -125,7 +122,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, format, conformance].hash
+      [default_regular_font, height, width, format, conformance].hash
     end
 
     # Builds the object from hash
