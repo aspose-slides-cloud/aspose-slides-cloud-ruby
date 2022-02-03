@@ -558,6 +558,290 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for align_subshapes
+  # Changes the placement of selected shapes on the slide. Aligns shapes to the margins or the edge of the slide or aligns them relative to each other (for group shapes only).
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param path Shape path (for smart art and group shapes).
+  # @param alignment_type Alignment type that will be applied to the shapes.
+  # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :align_to_slide If true, shapes will be aligned relative to the slide edges.
+  # @option opts [String] :shapes Shapes indexes.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Shapes]
+  describe 'align_subshapes test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'AlignSubshapes', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'AlignSubshapes', 'Integer')
+      parampath = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'AlignSubshapes', 'String')
+      paramalignment_type = AsposeSlidesCloud::SpecUtils.get_param_value('alignmentType', 'AlignSubshapes', 'String')
+      paramalign_to_slide = AsposeSlidesCloud::SpecUtils.get_param_value('alignToSlide', 'AlignSubshapes', 'BOOLEAN')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'AlignSubshapes', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'AlignSubshapes', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'AlignSubshapes', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'AlignSubshapes', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('AlignSubshapes', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.align_subshapes_with_http_info(paramname, paramslide_index, parampath, paramalignment_type, paramalign_to_slide, paramshapes, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('AlignSubshapes', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'AlignSubshapes', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'AlignSubshapes', 'Integer')
+      parampath = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'AlignSubshapes', 'String')
+      paramalignment_type = AsposeSlidesCloud::SpecUtils.get_param_value('alignmentType', 'AlignSubshapes', 'String')
+      paramalign_to_slide = AsposeSlidesCloud::SpecUtils.get_param_value('alignToSlide', 'AlignSubshapes', 'BOOLEAN')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'AlignSubshapes', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'AlignSubshapes', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'AlignSubshapes', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'AlignSubshapes', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'AlignSubshapes', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('AlignSubshapes', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.align_subshapes_with_http_info(paramname, paramslide_index, parampath, paramalignment_type, paramalign_to_slide, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('AlignSubshapes', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('AlignSubshapes', 'name', paramname)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('AlignSubshapes', 'name', paramname)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'AlignSubshapes', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'AlignSubshapes', 'Integer')
+      parampath = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'AlignSubshapes', 'String')
+      paramalignment_type = AsposeSlidesCloud::SpecUtils.get_param_value('alignmentType', 'AlignSubshapes', 'String')
+      paramalign_to_slide = AsposeSlidesCloud::SpecUtils.get_param_value('alignToSlide', 'AlignSubshapes', 'BOOLEAN')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'AlignSubshapes', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'AlignSubshapes', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'AlignSubshapes', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'AlignSubshapes', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'AlignSubshapes', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('AlignSubshapes', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.align_subshapes_with_http_info(paramname, paramslide_index, parampath, paramalignment_type, paramalign_to_slide, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('AlignSubshapes', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('AlignSubshapes', 'slideIndex', paramslide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('AlignSubshapes', 'slideIndex', paramslide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid path' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'AlignSubshapes', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'AlignSubshapes', 'Integer')
+      parampath = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'AlignSubshapes', 'String')
+      paramalignment_type = AsposeSlidesCloud::SpecUtils.get_param_value('alignmentType', 'AlignSubshapes', 'String')
+      paramalign_to_slide = AsposeSlidesCloud::SpecUtils.get_param_value('alignToSlide', 'AlignSubshapes', 'BOOLEAN')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'AlignSubshapes', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'AlignSubshapes', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'AlignSubshapes', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'AlignSubshapes', 'String')
+      parampath = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'AlignSubshapes', parampath, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('AlignSubshapes', 'path', parampath)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.align_subshapes_with_http_info(paramname, paramslide_index, parampath, paramalignment_type, paramalign_to_slide, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('AlignSubshapes', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('AlignSubshapes', 'path', parampath)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('AlignSubshapes', 'path', parampath)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid alignment_type' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'AlignSubshapes', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'AlignSubshapes', 'Integer')
+      parampath = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'AlignSubshapes', 'String')
+      paramalignment_type = AsposeSlidesCloud::SpecUtils.get_param_value('alignmentType', 'AlignSubshapes', 'String')
+      paramalign_to_slide = AsposeSlidesCloud::SpecUtils.get_param_value('alignToSlide', 'AlignSubshapes', 'BOOLEAN')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'AlignSubshapes', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'AlignSubshapes', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'AlignSubshapes', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'AlignSubshapes', 'String')
+      paramalignment_type = AsposeSlidesCloud::SpecUtils.invalidize_param_value('alignmentType', 'AlignSubshapes', paramalignment_type, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('AlignSubshapes', 'alignmentType', paramalignment_type)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.align_subshapes_with_http_info(paramname, paramslide_index, parampath, paramalignment_type, paramalign_to_slide, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('AlignSubshapes', 'alignmentType')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('AlignSubshapes', 'alignmentType', paramalignment_type)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('AlignSubshapes', 'alignmentType', paramalignment_type)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid align_to_slide' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'AlignSubshapes', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'AlignSubshapes', 'Integer')
+      parampath = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'AlignSubshapes', 'String')
+      paramalignment_type = AsposeSlidesCloud::SpecUtils.get_param_value('alignmentType', 'AlignSubshapes', 'String')
+      paramalign_to_slide = AsposeSlidesCloud::SpecUtils.get_param_value('alignToSlide', 'AlignSubshapes', 'BOOLEAN')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'AlignSubshapes', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'AlignSubshapes', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'AlignSubshapes', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'AlignSubshapes', 'String')
+      paramalign_to_slide = AsposeSlidesCloud::SpecUtils.invalidize_param_value('alignToSlide', 'AlignSubshapes', paramalign_to_slide, 'BOOLEAN')
+      AsposeSlidesCloud::SpecUtils.initialize('AlignSubshapes', 'alignToSlide', paramalign_to_slide)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.align_subshapes_with_http_info(paramname, paramslide_index, parampath, paramalignment_type, paramalign_to_slide, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('AlignSubshapes', 'alignToSlide')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('AlignSubshapes', 'alignToSlide', paramalign_to_slide)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('AlignSubshapes', 'alignToSlide', paramalign_to_slide)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shapes' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'AlignSubshapes', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'AlignSubshapes', 'Integer')
+      parampath = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'AlignSubshapes', 'String')
+      paramalignment_type = AsposeSlidesCloud::SpecUtils.get_param_value('alignmentType', 'AlignSubshapes', 'String')
+      paramalign_to_slide = AsposeSlidesCloud::SpecUtils.get_param_value('alignToSlide', 'AlignSubshapes', 'BOOLEAN')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'AlignSubshapes', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'AlignSubshapes', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'AlignSubshapes', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'AlignSubshapes', 'String')
+      paramshapes = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapes', 'AlignSubshapes', paramshapes, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('AlignSubshapes', 'shapes', paramshapes)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.align_subshapes_with_http_info(paramname, paramslide_index, parampath, paramalignment_type, paramalign_to_slide, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('AlignSubshapes', 'shapes')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('AlignSubshapes', 'shapes', paramshapes)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('AlignSubshapes', 'shapes', paramshapes)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'AlignSubshapes', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'AlignSubshapes', 'Integer')
+      parampath = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'AlignSubshapes', 'String')
+      paramalignment_type = AsposeSlidesCloud::SpecUtils.get_param_value('alignmentType', 'AlignSubshapes', 'String')
+      paramalign_to_slide = AsposeSlidesCloud::SpecUtils.get_param_value('alignToSlide', 'AlignSubshapes', 'BOOLEAN')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'AlignSubshapes', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'AlignSubshapes', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'AlignSubshapes', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'AlignSubshapes', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'AlignSubshapes', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('AlignSubshapes', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.align_subshapes_with_http_info(paramname, paramslide_index, parampath, paramalignment_type, paramalign_to_slide, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('AlignSubshapes', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('AlignSubshapes', 'password', parampassword)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('AlignSubshapes', 'password', parampassword)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'AlignSubshapes', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'AlignSubshapes', 'Integer')
+      parampath = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'AlignSubshapes', 'String')
+      paramalignment_type = AsposeSlidesCloud::SpecUtils.get_param_value('alignmentType', 'AlignSubshapes', 'String')
+      paramalign_to_slide = AsposeSlidesCloud::SpecUtils.get_param_value('alignToSlide', 'AlignSubshapes', 'BOOLEAN')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'AlignSubshapes', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'AlignSubshapes', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'AlignSubshapes', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'AlignSubshapes', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'AlignSubshapes', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('AlignSubshapes', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.align_subshapes_with_http_info(paramname, paramslide_index, parampath, paramalignment_type, paramalign_to_slide, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('AlignSubshapes', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('AlignSubshapes', 'folder', paramfolder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('AlignSubshapes', 'folder', paramfolder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'AlignSubshapes', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'AlignSubshapes', 'Integer')
+      parampath = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'AlignSubshapes', 'String')
+      paramalignment_type = AsposeSlidesCloud::SpecUtils.get_param_value('alignmentType', 'AlignSubshapes', 'String')
+      paramalign_to_slide = AsposeSlidesCloud::SpecUtils.get_param_value('alignToSlide', 'AlignSubshapes', 'BOOLEAN')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'AlignSubshapes', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'AlignSubshapes', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'AlignSubshapes', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'AlignSubshapes', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'AlignSubshapes', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('AlignSubshapes', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.align_subshapes_with_http_info(paramname, paramslide_index, parampath, paramalignment_type, paramalign_to_slide, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('AlignSubshapes', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('AlignSubshapes', 'storage', paramstorage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('AlignSubshapes', 'storage', paramstorage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for convert
   # Convert presentation from request content to format specified.
   # @param document Document data.
@@ -12697,7 +12981,7 @@ describe 'SlidesApi' do
   # @param slide_index Slide index.
   # @param shape_index Shape index.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :paragraphs The indices of the shapes to be deleted; delete all by default.
+  # @option opts [String] :paragraphs The indices of the paragraphs to be deleted; delete all by default.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -13154,7 +13438,7 @@ describe 'SlidesApi' do
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :portions The indices of the shapes to be deleted; delete all by default.
+  # @option opts [String] :portions The indices of the portions to be deleted; delete all by default.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -19694,7 +19978,7 @@ describe 'SlidesApi' do
   # @param path Shape path.
   # @param shape_index Shape index.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :paragraphs The indices of the shapes to be deleted; delete all by default.
+  # @option opts [String] :paragraphs The indices of the paragraphs to be deleted; delete all by default.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -20225,7 +20509,7 @@ describe 'SlidesApi' do
   # @param shape_index Shape index.
   # @param paragraph_index Paragraph index.
   # @param [Hash] opts the optional parameters
-  # @option opts [String] :portions The indices of the shapes to be deleted; delete all by default.
+  # @option opts [String] :portions The indices of the portions to be deleted; delete all by default.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -22438,6 +22722,252 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadNotesSlideOnline', 'fontsFolder', paramfonts_folder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for download_portion_as_math_ml
+  # Convert Mathematical Text to MathML Format
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param paragraph_index Paragraph index.
+  # @param portion_index Portion index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [File]
+  describe 'download_portion_as_math_ml test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DownloadPortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DownloadPortionAsMathMl', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DownloadPortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DownloadPortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DownloadPortionAsMathMl', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DownloadPortionAsMathMl', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.download_portion_as_math_ml_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPortionAsMathMl', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DownloadPortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DownloadPortionAsMathMl', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DownloadPortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DownloadPortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DownloadPortionAsMathMl', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'DownloadPortionAsMathMl', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DownloadPortionAsMathMl', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.download_portion_as_math_ml_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DownloadPortionAsMathMl', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPortionAsMathMl', 'name', paramname)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPortionAsMathMl', 'name', paramname)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DownloadPortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DownloadPortionAsMathMl', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DownloadPortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DownloadPortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DownloadPortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'DownloadPortionAsMathMl', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DownloadPortionAsMathMl', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.download_portion_as_math_ml_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DownloadPortionAsMathMl', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPortionAsMathMl', 'slideIndex', paramslide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPortionAsMathMl', 'slideIndex', paramslide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DownloadPortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DownloadPortionAsMathMl', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DownloadPortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DownloadPortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DownloadPortionAsMathMl', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'DownloadPortionAsMathMl', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DownloadPortionAsMathMl', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.download_portion_as_math_ml_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DownloadPortionAsMathMl', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPortionAsMathMl', 'shapeIndex', paramshape_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPortionAsMathMl', 'shapeIndex', paramshape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid paragraph_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DownloadPortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DownloadPortionAsMathMl', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DownloadPortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DownloadPortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DownloadPortionAsMathMl', 'String')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('paragraphIndex', 'DownloadPortionAsMathMl', paramparagraph_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DownloadPortionAsMathMl', 'paragraphIndex', paramparagraph_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.download_portion_as_math_ml_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DownloadPortionAsMathMl', 'paragraphIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPortionAsMathMl', 'paragraphIndex', paramparagraph_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPortionAsMathMl', 'paragraphIndex', paramparagraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid portion_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DownloadPortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DownloadPortionAsMathMl', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DownloadPortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DownloadPortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DownloadPortionAsMathMl', 'String')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('portionIndex', 'DownloadPortionAsMathMl', paramportion_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DownloadPortionAsMathMl', 'portionIndex', paramportion_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.download_portion_as_math_ml_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DownloadPortionAsMathMl', 'portionIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPortionAsMathMl', 'portionIndex', paramportion_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPortionAsMathMl', 'portionIndex', paramportion_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DownloadPortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DownloadPortionAsMathMl', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DownloadPortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DownloadPortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DownloadPortionAsMathMl', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'DownloadPortionAsMathMl', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DownloadPortionAsMathMl', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.download_portion_as_math_ml_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DownloadPortionAsMathMl', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPortionAsMathMl', 'password', parampassword)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPortionAsMathMl', 'password', parampassword)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DownloadPortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DownloadPortionAsMathMl', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DownloadPortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DownloadPortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DownloadPortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'DownloadPortionAsMathMl', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DownloadPortionAsMathMl', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.download_portion_as_math_ml_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DownloadPortionAsMathMl', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPortionAsMathMl', 'folder', paramfolder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPortionAsMathMl', 'folder', paramfolder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DownloadPortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DownloadPortionAsMathMl', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DownloadPortionAsMathMl', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DownloadPortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DownloadPortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DownloadPortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'DownloadPortionAsMathMl', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DownloadPortionAsMathMl', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.download_portion_as_math_ml_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DownloadPortionAsMathMl', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPortionAsMathMl', 'storage', paramstorage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadPortionAsMathMl', 'storage', paramstorage)
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
@@ -29524,6 +30054,182 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetShape', 'storage', paramstorage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for get_shape_geometry_path
+  # Returns geometry path of the shape
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [GeometryPaths]
+  describe 'get_shape_geometry_path test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetShapeGeometryPath', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetShapeGeometryPath', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetShapeGeometryPath', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetShapeGeometryPath', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetShapeGeometryPath', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetShapeGeometryPath', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetShapeGeometryPath', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_shape_geometry_path_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetShapeGeometryPath', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetShapeGeometryPath', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetShapeGeometryPath', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetShapeGeometryPath', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetShapeGeometryPath', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetShapeGeometryPath', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetShapeGeometryPath', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetShapeGeometryPath', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetShapeGeometryPath', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_shape_geometry_path_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetShapeGeometryPath', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetShapeGeometryPath', 'name', paramname)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetShapeGeometryPath', 'name', paramname)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetShapeGeometryPath', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetShapeGeometryPath', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetShapeGeometryPath', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetShapeGeometryPath', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetShapeGeometryPath', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetShapeGeometryPath', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'GetShapeGeometryPath', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetShapeGeometryPath', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_shape_geometry_path_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetShapeGeometryPath', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetShapeGeometryPath', 'slideIndex', paramslide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetShapeGeometryPath', 'slideIndex', paramslide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetShapeGeometryPath', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetShapeGeometryPath', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetShapeGeometryPath', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetShapeGeometryPath', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetShapeGeometryPath', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetShapeGeometryPath', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'GetShapeGeometryPath', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetShapeGeometryPath', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_shape_geometry_path_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetShapeGeometryPath', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetShapeGeometryPath', 'shapeIndex', paramshape_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetShapeGeometryPath', 'shapeIndex', paramshape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetShapeGeometryPath', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetShapeGeometryPath', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetShapeGeometryPath', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetShapeGeometryPath', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetShapeGeometryPath', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetShapeGeometryPath', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetShapeGeometryPath', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetShapeGeometryPath', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_shape_geometry_path_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetShapeGeometryPath', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetShapeGeometryPath', 'password', parampassword)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetShapeGeometryPath', 'password', parampassword)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetShapeGeometryPath', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetShapeGeometryPath', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetShapeGeometryPath', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetShapeGeometryPath', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetShapeGeometryPath', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetShapeGeometryPath', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetShapeGeometryPath', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetShapeGeometryPath', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_shape_geometry_path_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetShapeGeometryPath', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetShapeGeometryPath', 'folder', paramfolder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetShapeGeometryPath', 'folder', paramfolder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetShapeGeometryPath', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetShapeGeometryPath', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetShapeGeometryPath', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetShapeGeometryPath', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetShapeGeometryPath', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetShapeGeometryPath', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetShapeGeometryPath', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetShapeGeometryPath', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_shape_geometry_path_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetShapeGeometryPath', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetShapeGeometryPath', 'storage', paramstorage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetShapeGeometryPath', 'storage', paramstorage)
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
@@ -38205,6 +38911,289 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for save_portion_as_math_ml
+  # Convert Mathematical Text to MathML Format and saves result to the storage
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param paragraph_index Paragraph index.
+  # @param portion_index Portion index.
+  # @param out_path Path to save result.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Presentation folder.
+  # @option opts [String] :storage Presentation storage.
+  # @return [nil]
+  describe 'save_portion_as_math_ml test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SavePortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SavePortionAsMathMl', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SavePortionAsMathMl', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'SavePortionAsMathMl', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'SavePortionAsMathMl', 'Integer')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'SavePortionAsMathMl', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SavePortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePortionAsMathMl', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SavePortionAsMathMl', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.save_portion_as_math_ml_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, paramout_path, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePortionAsMathMl', nil, nil)
+      expect(c).to eq(code)
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SavePortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SavePortionAsMathMl', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SavePortionAsMathMl', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'SavePortionAsMathMl', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'SavePortionAsMathMl', 'Integer')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'SavePortionAsMathMl', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SavePortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePortionAsMathMl', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'SavePortionAsMathMl', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SavePortionAsMathMl', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.save_portion_as_math_ml_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, paramout_path, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SavePortionAsMathMl', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePortionAsMathMl', 'name', paramname)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePortionAsMathMl', 'name', paramname)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SavePortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SavePortionAsMathMl', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SavePortionAsMathMl', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'SavePortionAsMathMl', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'SavePortionAsMathMl', 'Integer')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'SavePortionAsMathMl', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SavePortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'SavePortionAsMathMl', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('SavePortionAsMathMl', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.save_portion_as_math_ml_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, paramout_path, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SavePortionAsMathMl', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePortionAsMathMl', 'slideIndex', paramslide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePortionAsMathMl', 'slideIndex', paramslide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SavePortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SavePortionAsMathMl', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SavePortionAsMathMl', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'SavePortionAsMathMl', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'SavePortionAsMathMl', 'Integer')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'SavePortionAsMathMl', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SavePortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePortionAsMathMl', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'SavePortionAsMathMl', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('SavePortionAsMathMl', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.save_portion_as_math_ml_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, paramout_path, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SavePortionAsMathMl', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePortionAsMathMl', 'shapeIndex', paramshape_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePortionAsMathMl', 'shapeIndex', paramshape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid paragraph_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SavePortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SavePortionAsMathMl', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SavePortionAsMathMl', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'SavePortionAsMathMl', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'SavePortionAsMathMl', 'Integer')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'SavePortionAsMathMl', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SavePortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePortionAsMathMl', 'String')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('paragraphIndex', 'SavePortionAsMathMl', paramparagraph_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('SavePortionAsMathMl', 'paragraphIndex', paramparagraph_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.save_portion_as_math_ml_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, paramout_path, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SavePortionAsMathMl', 'paragraphIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePortionAsMathMl', 'paragraphIndex', paramparagraph_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePortionAsMathMl', 'paragraphIndex', paramparagraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid portion_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SavePortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SavePortionAsMathMl', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SavePortionAsMathMl', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'SavePortionAsMathMl', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'SavePortionAsMathMl', 'Integer')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'SavePortionAsMathMl', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SavePortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePortionAsMathMl', 'String')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('portionIndex', 'SavePortionAsMathMl', paramportion_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('SavePortionAsMathMl', 'portionIndex', paramportion_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.save_portion_as_math_ml_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, paramout_path, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SavePortionAsMathMl', 'portionIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePortionAsMathMl', 'portionIndex', paramportion_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePortionAsMathMl', 'portionIndex', paramportion_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid out_path' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SavePortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SavePortionAsMathMl', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SavePortionAsMathMl', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'SavePortionAsMathMl', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'SavePortionAsMathMl', 'Integer')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'SavePortionAsMathMl', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SavePortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePortionAsMathMl', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('outPath', 'SavePortionAsMathMl', paramout_path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SavePortionAsMathMl', 'outPath', paramout_path)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.save_portion_as_math_ml_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, paramout_path, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SavePortionAsMathMl', 'outPath')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePortionAsMathMl', 'outPath', paramout_path)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePortionAsMathMl', 'outPath', paramout_path)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SavePortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SavePortionAsMathMl', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SavePortionAsMathMl', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'SavePortionAsMathMl', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'SavePortionAsMathMl', 'Integer')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'SavePortionAsMathMl', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SavePortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePortionAsMathMl', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'SavePortionAsMathMl', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SavePortionAsMathMl', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.save_portion_as_math_ml_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, paramout_path, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SavePortionAsMathMl', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePortionAsMathMl', 'password', parampassword)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePortionAsMathMl', 'password', parampassword)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SavePortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SavePortionAsMathMl', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SavePortionAsMathMl', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'SavePortionAsMathMl', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'SavePortionAsMathMl', 'Integer')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'SavePortionAsMathMl', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SavePortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'SavePortionAsMathMl', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SavePortionAsMathMl', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.save_portion_as_math_ml_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, paramout_path, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SavePortionAsMathMl', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePortionAsMathMl', 'folder', paramfolder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePortionAsMathMl', 'folder', paramfolder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SavePortionAsMathMl', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SavePortionAsMathMl', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SavePortionAsMathMl', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'SavePortionAsMathMl', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'SavePortionAsMathMl', 'Integer')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'SavePortionAsMathMl', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SavePortionAsMathMl', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SavePortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SavePortionAsMathMl', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'SavePortionAsMathMl', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SavePortionAsMathMl', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.save_portion_as_math_ml_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, paramout_path, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SavePortionAsMathMl', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePortionAsMathMl', 'storage', paramstorage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SavePortionAsMathMl', 'storage', paramstorage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for save_presentation
   # Save a presentation to a specified format.
   # @param name Document name.
@@ -43134,6 +44123,216 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetSections', 'storage', paramstorage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for set_shape_geometry_path
+  # Sets geometry path to the shape
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param dto Geometry paths DTO.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [ShapeBase]
+  describe 'set_shape_geometry_path test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetShapeGeometryPath', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SetShapeGeometryPath', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SetShapeGeometryPath', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'SetShapeGeometryPath', 'GeometryPaths')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetShapeGeometryPath', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetShapeGeometryPath', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetShapeGeometryPath', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetShapeGeometryPath', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.set_shape_geometry_path_with_http_info(paramname, paramslide_index, paramshape_index, paramdto, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetShapeGeometryPath', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetShapeGeometryPath', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SetShapeGeometryPath', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SetShapeGeometryPath', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'SetShapeGeometryPath', 'GeometryPaths')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetShapeGeometryPath', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetShapeGeometryPath', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetShapeGeometryPath', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'SetShapeGeometryPath', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetShapeGeometryPath', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.set_shape_geometry_path_with_http_info(paramname, paramslide_index, paramshape_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetShapeGeometryPath', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetShapeGeometryPath', 'name', paramname)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetShapeGeometryPath', 'name', paramname)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetShapeGeometryPath', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SetShapeGeometryPath', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SetShapeGeometryPath', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'SetShapeGeometryPath', 'GeometryPaths')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetShapeGeometryPath', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetShapeGeometryPath', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetShapeGeometryPath', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'SetShapeGeometryPath', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('SetShapeGeometryPath', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.set_shape_geometry_path_with_http_info(paramname, paramslide_index, paramshape_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetShapeGeometryPath', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetShapeGeometryPath', 'slideIndex', paramslide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetShapeGeometryPath', 'slideIndex', paramslide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetShapeGeometryPath', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SetShapeGeometryPath', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SetShapeGeometryPath', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'SetShapeGeometryPath', 'GeometryPaths')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetShapeGeometryPath', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetShapeGeometryPath', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetShapeGeometryPath', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'SetShapeGeometryPath', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('SetShapeGeometryPath', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.set_shape_geometry_path_with_http_info(paramname, paramslide_index, paramshape_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetShapeGeometryPath', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetShapeGeometryPath', 'shapeIndex', paramshape_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetShapeGeometryPath', 'shapeIndex', paramshape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid dto' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetShapeGeometryPath', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SetShapeGeometryPath', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SetShapeGeometryPath', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'SetShapeGeometryPath', 'GeometryPaths')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetShapeGeometryPath', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetShapeGeometryPath', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetShapeGeometryPath', 'String')
+      paramdto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'SetShapeGeometryPath', paramdto, 'GeometryPaths')
+      AsposeSlidesCloud::SpecUtils.initialize('SetShapeGeometryPath', 'dto', paramdto)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.set_shape_geometry_path_with_http_info(paramname, paramslide_index, paramshape_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetShapeGeometryPath', 'dto')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetShapeGeometryPath', 'dto', paramdto)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetShapeGeometryPath', 'dto', paramdto)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetShapeGeometryPath', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SetShapeGeometryPath', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SetShapeGeometryPath', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'SetShapeGeometryPath', 'GeometryPaths')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetShapeGeometryPath', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetShapeGeometryPath', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetShapeGeometryPath', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'SetShapeGeometryPath', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetShapeGeometryPath', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.set_shape_geometry_path_with_http_info(paramname, paramslide_index, paramshape_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetShapeGeometryPath', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetShapeGeometryPath', 'password', parampassword)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetShapeGeometryPath', 'password', parampassword)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetShapeGeometryPath', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SetShapeGeometryPath', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SetShapeGeometryPath', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'SetShapeGeometryPath', 'GeometryPaths')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetShapeGeometryPath', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetShapeGeometryPath', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetShapeGeometryPath', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'SetShapeGeometryPath', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetShapeGeometryPath', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.set_shape_geometry_path_with_http_info(paramname, paramslide_index, paramshape_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetShapeGeometryPath', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetShapeGeometryPath', 'folder', paramfolder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetShapeGeometryPath', 'folder', paramfolder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetShapeGeometryPath', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SetShapeGeometryPath', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SetShapeGeometryPath', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'SetShapeGeometryPath', 'GeometryPaths')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetShapeGeometryPath', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetShapeGeometryPath', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetShapeGeometryPath', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'SetShapeGeometryPath', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetShapeGeometryPath', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.set_shape_geometry_path_with_http_info(paramname, paramslide_index, paramshape_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetShapeGeometryPath', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetShapeGeometryPath', 'storage', paramstorage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetShapeGeometryPath', 'storage', paramstorage)
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end

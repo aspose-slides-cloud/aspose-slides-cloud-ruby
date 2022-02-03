@@ -84,7 +84,13 @@ module AsposeSlidesCloud
       value = "test" + name
       SpecUtils.test_rules["Values"].each do |rule|
         if SpecUtils.good_rule?(rule, name, method) and rule.key?("Value")
-          value = rule["Value"]
+          if rule.key?("Type")
+            if TypeRegistry.subclass?(rule["Type"], type)
+              value = rule["Value"]
+            end
+          else
+            value = rule["Value"]
+          end
         end
       end
       value

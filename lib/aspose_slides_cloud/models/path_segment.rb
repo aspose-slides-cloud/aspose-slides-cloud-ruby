@@ -23,28 +23,9 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Represents VideoFrame resource.
-  class VideoFrame < GeometryShape
-    # Determines whether a video is shown in full screen mode.
-    attr_accessor :full_screen_mode
-
-    # Determines whether a VideoFrame is hidden. 
-    attr_accessor :hide_at_showing
-
-    # Determines whether a video is looped.
-    attr_accessor :play_loop_mode
-
-    # Returns or sets the video play mode.  
-    attr_accessor :play_mode
-
-    # Determines whether a video is automatically rewinded to start as soon as the movie has finished playing
-    attr_accessor :rewind_video
-
-    # Returns or sets the audio volume.
-    attr_accessor :volume
-
-    # Video data encoded in base64.
-    attr_accessor :base64_data
+  # Represents segment of geometry path
+  class PathSegment
+    attr_accessor :type
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -70,101 +51,54 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      super.merge({
-        :'full_screen_mode' => :'FullScreenMode',
-        :'hide_at_showing' => :'HideAtShowing',
-        :'play_loop_mode' => :'PlayLoopMode',
-        :'play_mode' => :'PlayMode',
-        :'rewind_video' => :'RewindVideo',
-        :'volume' => :'Volume',
-        :'base64_data' => :'Base64Data',
-      })
+      {
+        :'type' => :'Type',
+      }
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      super.merge({
-        :'full_screen_mode' => :'BOOLEAN',
-        :'hide_at_showing' => :'BOOLEAN',
-        :'play_loop_mode' => :'BOOLEAN',
-        :'play_mode' => :'String',
-        :'rewind_video' => :'BOOLEAN',
-        :'volume' => :'String',
-        :'base64_data' => :'String',
-      })
+      {
+        :'type' => :'String',
+      }
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      super
+      return unless attributes.is_a?(Hash)
 
-      if attributes.has_key?(:'FullScreenMode')
-        self.full_screen_mode = attributes[:'FullScreenMode']
-      end
+      # convert string to symbol for hash key
+      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'HideAtShowing')
-        self.hide_at_showing = attributes[:'HideAtShowing']
+      if attributes.has_key?(:'Type')
+        self.type = attributes[:'Type']
       end
-
-      if attributes.has_key?(:'PlayLoopMode')
-        self.play_loop_mode = attributes[:'PlayLoopMode']
-      end
-
-      if attributes.has_key?(:'PlayMode')
-        self.play_mode = attributes[:'PlayMode']
-      end
-
-      if attributes.has_key?(:'RewindVideo')
-        self.rewind_video = attributes[:'RewindVideo']
-      end
-
-      if attributes.has_key?(:'Volume')
-        self.volume = attributes[:'Volume']
-      end
-
-      if attributes.has_key?(:'Base64Data')
-        self.base64_data = attributes[:'Base64Data']
-      end
-      self.type = "VideoFrame"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = super
+      invalid_properties = Array.new
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !super
-      play_mode_validator = EnumAttributeValidator.new('String', ['Auto', 'OnClick', 'AllSlides', 'InClickSequence', 'Mixed'])
-      return false unless play_mode_validator.valid?(@play_mode)
-      volume_validator = EnumAttributeValidator.new('String', ['Mute', 'Low', 'Medium', 'Loud', 'Mixed'])
-      return false unless volume_validator.valid?(@volume)
+      type_validator = EnumAttributeValidator.new('String', ['Close', 'MoveTo', 'LineTo', 'ArcTo', 'QuadBezierTo', 'CubicBezierTo'])
+      return false unless type_validator.valid?(@type)
       true
     end
 
     # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] play_mode Object to be assigned
-    def play_mode=(play_mode)
-      validator = EnumAttributeValidator.new('String', ['Auto', 'OnClick', 'AllSlides', 'InClickSequence', 'Mixed'])
-      unless validator.valid?(play_mode)
-        fail ArgumentError, 'invalid value for "play_mode", must be one of #{validator.allowable_values}.'
+    # @param [Object] type Object to be assigned
+    def type=(type)
+      validator = EnumAttributeValidator.new('String', ['Close', 'MoveTo', 'LineTo', 'ArcTo', 'QuadBezierTo', 'CubicBezierTo'])
+      unless validator.valid?(type)
+        fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
       end
-      @play_mode = play_mode
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] volume Object to be assigned
-    def volume=(volume)
-      validator = EnumAttributeValidator.new('String', ['Mute', 'Low', 'Medium', 'Loud', 'Mixed'])
-      unless validator.valid?(volume)
-        fail ArgumentError, 'invalid value for "volume", must be one of #{validator.allowable_values}.'
-      end
-      @volume = volume
+      @type = type
     end
 
     # Checks equality by comparing each attribute.
@@ -172,33 +106,7 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          self_uri == o.self_uri &&
-          alternate_links == o.alternate_links &&
-          name == o.name &&
-          width == o.width &&
-          height == o.height &&
-          alternative_text == o.alternative_text &&
-          alternative_text_title == o.alternative_text_title &&
-          hidden == o.hidden &&
-          x == o.x &&
-          y == o.y &&
-          z_order_position == o.z_order_position &&
-          shapes == o.shapes &&
-          fill_format == o.fill_format &&
-          effect_format == o.effect_format &&
-          three_d_format == o.three_d_format &&
-          line_format == o.line_format &&
-          hyperlink_click == o.hyperlink_click &&
-          hyperlink_mouse_over == o.hyperlink_mouse_over &&
-          type == o.type &&
-          shape_type == o.shape_type &&
-          full_screen_mode == o.full_screen_mode &&
-          hide_at_showing == o.hide_at_showing &&
-          play_loop_mode == o.play_loop_mode &&
-          play_mode == o.play_mode &&
-          rewind_video == o.rewind_video &&
-          volume == o.volume &&
-          base64_data == o.base64_data
+          type == o.type
     end
 
     # @see the `==` method
@@ -210,7 +118,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, shape_type, full_screen_mode, hide_at_showing, play_loop_mode, play_mode, rewind_video, volume, base64_data].hash
+      [type].hash
     end
 
     # Builds the object from hash

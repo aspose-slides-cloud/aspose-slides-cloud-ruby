@@ -23,28 +23,31 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Represents VideoFrame resource.
-  class VideoFrame < GeometryShape
-    # Determines whether a video is shown in full screen mode.
-    attr_accessor :full_screen_mode
+  # Specifies an N-ary mathematical object, such as Summation and Integral.
+  class NaryOperatorElement < MathElement
+    # Base argument
+    attr_accessor :base
 
-    # Determines whether a VideoFrame is hidden. 
-    attr_accessor :hide_at_showing
+    # Subscript argument
+    attr_accessor :subscript
 
-    # Determines whether a video is looped.
-    attr_accessor :play_loop_mode
+    # Superscript argument
+    attr_accessor :superscript
 
-    # Returns or sets the video play mode.  
-    attr_accessor :play_mode
+    # Nary Operator Character
+    attr_accessor :operator
 
-    # Determines whether a video is automatically rewinded to start as soon as the movie has finished playing
-    attr_accessor :rewind_video
+    # The location of limits (subscript and superscript)
+    attr_accessor :limit_location
 
-    # Returns or sets the audio volume.
-    attr_accessor :volume
+    # Operator Character grows vertically to match its operand height
+    attr_accessor :grow_to_match_operand_height
 
-    # Video data encoded in base64.
-    attr_accessor :base64_data
+    # Hide Subscript
+    attr_accessor :hide_subscript
+
+    # Hide Superscript
+    attr_accessor :hide_superscript
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -71,26 +74,28 @@ module AsposeSlidesCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
-        :'full_screen_mode' => :'FullScreenMode',
-        :'hide_at_showing' => :'HideAtShowing',
-        :'play_loop_mode' => :'PlayLoopMode',
-        :'play_mode' => :'PlayMode',
-        :'rewind_video' => :'RewindVideo',
-        :'volume' => :'Volume',
-        :'base64_data' => :'Base64Data',
+        :'base' => :'Base',
+        :'subscript' => :'Subscript',
+        :'superscript' => :'Superscript',
+        :'operator' => :'Operator',
+        :'limit_location' => :'LimitLocation',
+        :'grow_to_match_operand_height' => :'GrowToMatchOperandHeight',
+        :'hide_subscript' => :'HideSubscript',
+        :'hide_superscript' => :'HideSuperscript',
       })
     end
 
     # Attribute type mapping.
     def self.swagger_types
       super.merge({
-        :'full_screen_mode' => :'BOOLEAN',
-        :'hide_at_showing' => :'BOOLEAN',
-        :'play_loop_mode' => :'BOOLEAN',
-        :'play_mode' => :'String',
-        :'rewind_video' => :'BOOLEAN',
-        :'volume' => :'String',
-        :'base64_data' => :'String',
+        :'base' => :'MathElement',
+        :'subscript' => :'MathElement',
+        :'superscript' => :'MathElement',
+        :'operator' => :'String',
+        :'limit_location' => :'String',
+        :'grow_to_match_operand_height' => :'BOOLEAN',
+        :'hide_subscript' => :'BOOLEAN',
+        :'hide_superscript' => :'BOOLEAN',
       })
     end
 
@@ -99,34 +104,38 @@ module AsposeSlidesCloud
     def initialize(attributes = {})
       super
 
-      if attributes.has_key?(:'FullScreenMode')
-        self.full_screen_mode = attributes[:'FullScreenMode']
+      if attributes.has_key?(:'Base')
+        self.base = attributes[:'Base']
       end
 
-      if attributes.has_key?(:'HideAtShowing')
-        self.hide_at_showing = attributes[:'HideAtShowing']
+      if attributes.has_key?(:'Subscript')
+        self.subscript = attributes[:'Subscript']
       end
 
-      if attributes.has_key?(:'PlayLoopMode')
-        self.play_loop_mode = attributes[:'PlayLoopMode']
+      if attributes.has_key?(:'Superscript')
+        self.superscript = attributes[:'Superscript']
       end
 
-      if attributes.has_key?(:'PlayMode')
-        self.play_mode = attributes[:'PlayMode']
+      if attributes.has_key?(:'Operator')
+        self.operator = attributes[:'Operator']
       end
 
-      if attributes.has_key?(:'RewindVideo')
-        self.rewind_video = attributes[:'RewindVideo']
+      if attributes.has_key?(:'LimitLocation')
+        self.limit_location = attributes[:'LimitLocation']
       end
 
-      if attributes.has_key?(:'Volume')
-        self.volume = attributes[:'Volume']
+      if attributes.has_key?(:'GrowToMatchOperandHeight')
+        self.grow_to_match_operand_height = attributes[:'GrowToMatchOperandHeight']
       end
 
-      if attributes.has_key?(:'Base64Data')
-        self.base64_data = attributes[:'Base64Data']
+      if attributes.has_key?(:'HideSubscript')
+        self.hide_subscript = attributes[:'HideSubscript']
       end
-      self.type = "VideoFrame"
+
+      if attributes.has_key?(:'HideSuperscript')
+        self.hide_superscript = attributes[:'HideSuperscript']
+      end
+      self.type = "NaryOperator"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -140,31 +149,19 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      play_mode_validator = EnumAttributeValidator.new('String', ['Auto', 'OnClick', 'AllSlides', 'InClickSequence', 'Mixed'])
-      return false unless play_mode_validator.valid?(@play_mode)
-      volume_validator = EnumAttributeValidator.new('String', ['Mute', 'Low', 'Medium', 'Loud', 'Mixed'])
-      return false unless volume_validator.valid?(@volume)
+      limit_location_validator = EnumAttributeValidator.new('String', ['NotDefined', 'UnderOver', 'SubscriptSuperscript'])
+      return false unless limit_location_validator.valid?(@limit_location)
       true
     end
 
     # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] play_mode Object to be assigned
-    def play_mode=(play_mode)
-      validator = EnumAttributeValidator.new('String', ['Auto', 'OnClick', 'AllSlides', 'InClickSequence', 'Mixed'])
-      unless validator.valid?(play_mode)
-        fail ArgumentError, 'invalid value for "play_mode", must be one of #{validator.allowable_values}.'
+    # @param [Object] limit_location Object to be assigned
+    def limit_location=(limit_location)
+      validator = EnumAttributeValidator.new('String', ['NotDefined', 'UnderOver', 'SubscriptSuperscript'])
+      unless validator.valid?(limit_location)
+        fail ArgumentError, 'invalid value for "limit_location", must be one of #{validator.allowable_values}.'
       end
-      @play_mode = play_mode
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] volume Object to be assigned
-    def volume=(volume)
-      validator = EnumAttributeValidator.new('String', ['Mute', 'Low', 'Medium', 'Loud', 'Mixed'])
-      unless validator.valid?(volume)
-        fail ArgumentError, 'invalid value for "volume", must be one of #{validator.allowable_values}.'
-      end
-      @volume = volume
+      @limit_location = limit_location
     end
 
     # Checks equality by comparing each attribute.
@@ -172,33 +169,15 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          self_uri == o.self_uri &&
-          alternate_links == o.alternate_links &&
-          name == o.name &&
-          width == o.width &&
-          height == o.height &&
-          alternative_text == o.alternative_text &&
-          alternative_text_title == o.alternative_text_title &&
-          hidden == o.hidden &&
-          x == o.x &&
-          y == o.y &&
-          z_order_position == o.z_order_position &&
-          shapes == o.shapes &&
-          fill_format == o.fill_format &&
-          effect_format == o.effect_format &&
-          three_d_format == o.three_d_format &&
-          line_format == o.line_format &&
-          hyperlink_click == o.hyperlink_click &&
-          hyperlink_mouse_over == o.hyperlink_mouse_over &&
           type == o.type &&
-          shape_type == o.shape_type &&
-          full_screen_mode == o.full_screen_mode &&
-          hide_at_showing == o.hide_at_showing &&
-          play_loop_mode == o.play_loop_mode &&
-          play_mode == o.play_mode &&
-          rewind_video == o.rewind_video &&
-          volume == o.volume &&
-          base64_data == o.base64_data
+          base == o.base &&
+          subscript == o.subscript &&
+          superscript == o.superscript &&
+          operator == o.operator &&
+          limit_location == o.limit_location &&
+          grow_to_match_operand_height == o.grow_to_match_operand_height &&
+          hide_subscript == o.hide_subscript &&
+          hide_superscript == o.hide_superscript
     end
 
     # @see the `==` method
@@ -210,7 +189,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, shape_type, full_screen_mode, hide_at_showing, play_loop_mode, play_mode, rewind_video, volume, base64_data].hash
+      [type, base, subscript, superscript, operator, limit_location, grow_to_match_operand_height, hide_subscript, hide_superscript].hash
     end
 
     # Builds the object from hash

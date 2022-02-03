@@ -46,6 +46,7 @@ module AsposeSlidesCloud
     POTM = "Potm".freeze
     SVG = "Svg".freeze
     FODP = "Fodp".freeze
+    XAML = "Xaml".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

@@ -28,6 +28,9 @@ module AsposeSlidesCloud
     # Text.
     attr_accessor :text
 
+    # Math paragraph.
+    attr_accessor :math_paragraph
+
     # True for bold font.
     attr_accessor :font_bold
 
@@ -100,6 +103,12 @@ module AsposeSlidesCloud
     # Underline line format.
     attr_accessor :underline_line_format
 
+    # Hyperlink defined for mouse click.
+    attr_accessor :hyperlink_click
+
+    # Hyperlink defined for mouse over.
+    attr_accessor :hyperlink_mouse_over
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -126,6 +135,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       super.merge({
         :'text' => :'Text',
+        :'math_paragraph' => :'MathParagraph',
         :'font_bold' => :'FontBold',
         :'font_italic' => :'FontItalic',
         :'font_underline' => :'FontUnderline',
@@ -150,6 +160,8 @@ module AsposeSlidesCloud
         :'line_format' => :'LineFormat',
         :'underline_fill_format' => :'UnderlineFillFormat',
         :'underline_line_format' => :'UnderlineLineFormat',
+        :'hyperlink_click' => :'HyperlinkClick',
+        :'hyperlink_mouse_over' => :'HyperlinkMouseOver',
       })
     end
 
@@ -157,6 +169,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       super.merge({
         :'text' => :'String',
+        :'math_paragraph' => :'MathParagraph',
         :'font_bold' => :'String',
         :'font_italic' => :'String',
         :'font_underline' => :'String',
@@ -181,6 +194,8 @@ module AsposeSlidesCloud
         :'line_format' => :'LineFormat',
         :'underline_fill_format' => :'FillFormat',
         :'underline_line_format' => :'LineFormat',
+        :'hyperlink_click' => :'Hyperlink',
+        :'hyperlink_mouse_over' => :'Hyperlink',
       })
     end
 
@@ -191,6 +206,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'Text')
         self.text = attributes[:'Text']
+      end
+
+      if attributes.has_key?(:'MathParagraph')
+        self.math_paragraph = attributes[:'MathParagraph']
       end
 
       if attributes.has_key?(:'FontBold')
@@ -287,6 +306,14 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'UnderlineLineFormat')
         self.underline_line_format = attributes[:'UnderlineLineFormat']
+      end
+
+      if attributes.has_key?(:'HyperlinkClick')
+        self.hyperlink_click = attributes[:'HyperlinkClick']
+      end
+
+      if attributes.has_key?(:'HyperlinkMouseOver')
+        self.hyperlink_mouse_over = attributes[:'HyperlinkMouseOver']
       end
     end
 
@@ -432,6 +459,7 @@ module AsposeSlidesCloud
           self_uri == o.self_uri &&
           alternate_links == o.alternate_links &&
           text == o.text &&
+          math_paragraph == o.math_paragraph &&
           font_bold == o.font_bold &&
           font_italic == o.font_italic &&
           font_underline == o.font_underline &&
@@ -455,7 +483,9 @@ module AsposeSlidesCloud
           effect_format == o.effect_format &&
           line_format == o.line_format &&
           underline_fill_format == o.underline_fill_format &&
-          underline_line_format == o.underline_line_format
+          underline_line_format == o.underline_line_format &&
+          hyperlink_click == o.hyperlink_click &&
+          hyperlink_mouse_over == o.hyperlink_mouse_over
     end
 
     # @see the `==` method
@@ -467,7 +497,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, text, font_bold, font_italic, font_underline, strikethrough_type, text_cap_type, escapement, spacing, font_color, highlight_color, font_height, normalise_height, proof_disabled, smart_tag_clean, kerning_minimal_size, kumimoji, language_id, alternative_language_id, is_hard_underline_fill, is_hard_underline_line, fill_format, effect_format, line_format, underline_fill_format, underline_line_format].hash
+      [self_uri, alternate_links, text, math_paragraph, font_bold, font_italic, font_underline, strikethrough_type, text_cap_type, escapement, spacing, font_color, highlight_color, font_height, normalise_height, proof_disabled, smart_tag_clean, kerning_minimal_size, kumimoji, language_id, alternative_language_id, is_hard_underline_fill, is_hard_underline_line, fill_format, effect_format, line_format, underline_fill_format, underline_line_format, hyperlink_click, hyperlink_mouse_over].hash
     end
 
     # Builds the object from hash

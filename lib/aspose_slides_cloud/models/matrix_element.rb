@@ -23,28 +23,31 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Represents VideoFrame resource.
-  class VideoFrame < GeometryShape
-    # Determines whether a video is shown in full screen mode.
-    attr_accessor :full_screen_mode
+  # Specifies the Matrix object,
+  class MatrixElement < MathElement
+    # Hide the placeholders for empty matrix elements
+    attr_accessor :hide_placeholders
 
-    # Determines whether a VideoFrame is hidden. 
-    attr_accessor :hide_at_showing
+    # Specifies the vertical justification respect to surrounding text. 
+    attr_accessor :base_justification
 
-    # Determines whether a video is looped.
-    attr_accessor :play_loop_mode
+    # Minimum column width in twips (1/20th of a point)
+    attr_accessor :min_column_width
 
-    # Returns or sets the video play mode.  
-    attr_accessor :play_mode
+    # The type of horizontal spacing between columns of a matrix.
+    attr_accessor :column_gap_rule
 
-    # Determines whether a video is automatically rewinded to start as soon as the movie has finished playing
-    attr_accessor :rewind_video
+    # The value of horizontal spacing between columns of a matrix
+    attr_accessor :column_gap
 
-    # Returns or sets the audio volume.
-    attr_accessor :volume
+    # The type of vertical spacing between rows of a matrix
+    attr_accessor :row_gap_rule
 
-    # Video data encoded in base64.
-    attr_accessor :base64_data
+    # The value of vertical spacing between rows of a matrix;             
+    attr_accessor :row_gap
+
+    # Matrix items
+    attr_accessor :items
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -71,26 +74,28 @@ module AsposeSlidesCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
-        :'full_screen_mode' => :'FullScreenMode',
-        :'hide_at_showing' => :'HideAtShowing',
-        :'play_loop_mode' => :'PlayLoopMode',
-        :'play_mode' => :'PlayMode',
-        :'rewind_video' => :'RewindVideo',
-        :'volume' => :'Volume',
-        :'base64_data' => :'Base64Data',
+        :'hide_placeholders' => :'HidePlaceholders',
+        :'base_justification' => :'BaseJustification',
+        :'min_column_width' => :'MinColumnWidth',
+        :'column_gap_rule' => :'ColumnGapRule',
+        :'column_gap' => :'ColumnGap',
+        :'row_gap_rule' => :'RowGapRule',
+        :'row_gap' => :'RowGap',
+        :'items' => :'Items',
       })
     end
 
     # Attribute type mapping.
     def self.swagger_types
       super.merge({
-        :'full_screen_mode' => :'BOOLEAN',
-        :'hide_at_showing' => :'BOOLEAN',
-        :'play_loop_mode' => :'BOOLEAN',
-        :'play_mode' => :'String',
-        :'rewind_video' => :'BOOLEAN',
-        :'volume' => :'String',
-        :'base64_data' => :'String',
+        :'hide_placeholders' => :'BOOLEAN',
+        :'base_justification' => :'String',
+        :'min_column_width' => :'Integer',
+        :'column_gap_rule' => :'String',
+        :'column_gap' => :'Integer',
+        :'row_gap_rule' => :'String',
+        :'row_gap' => :'Integer',
+        :'items' => :'Array<Array<MathElement>>',
       })
     end
 
@@ -99,34 +104,40 @@ module AsposeSlidesCloud
     def initialize(attributes = {})
       super
 
-      if attributes.has_key?(:'FullScreenMode')
-        self.full_screen_mode = attributes[:'FullScreenMode']
+      if attributes.has_key?(:'HidePlaceholders')
+        self.hide_placeholders = attributes[:'HidePlaceholders']
       end
 
-      if attributes.has_key?(:'HideAtShowing')
-        self.hide_at_showing = attributes[:'HideAtShowing']
+      if attributes.has_key?(:'BaseJustification')
+        self.base_justification = attributes[:'BaseJustification']
       end
 
-      if attributes.has_key?(:'PlayLoopMode')
-        self.play_loop_mode = attributes[:'PlayLoopMode']
+      if attributes.has_key?(:'MinColumnWidth')
+        self.min_column_width = attributes[:'MinColumnWidth']
       end
 
-      if attributes.has_key?(:'PlayMode')
-        self.play_mode = attributes[:'PlayMode']
+      if attributes.has_key?(:'ColumnGapRule')
+        self.column_gap_rule = attributes[:'ColumnGapRule']
       end
 
-      if attributes.has_key?(:'RewindVideo')
-        self.rewind_video = attributes[:'RewindVideo']
+      if attributes.has_key?(:'ColumnGap')
+        self.column_gap = attributes[:'ColumnGap']
       end
 
-      if attributes.has_key?(:'Volume')
-        self.volume = attributes[:'Volume']
+      if attributes.has_key?(:'RowGapRule')
+        self.row_gap_rule = attributes[:'RowGapRule']
       end
 
-      if attributes.has_key?(:'Base64Data')
-        self.base64_data = attributes[:'Base64Data']
+      if attributes.has_key?(:'RowGap')
+        self.row_gap = attributes[:'RowGap']
       end
-      self.type = "VideoFrame"
+
+      if attributes.has_key?(:'Items')
+        if (value = attributes[:'Items']).is_a?(Array)
+          self.items = value
+        end
+      end
+      self.type = "Matrix"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -140,31 +151,43 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      play_mode_validator = EnumAttributeValidator.new('String', ['Auto', 'OnClick', 'AllSlides', 'InClickSequence', 'Mixed'])
-      return false unless play_mode_validator.valid?(@play_mode)
-      volume_validator = EnumAttributeValidator.new('String', ['Mute', 'Low', 'Medium', 'Loud', 'Mixed'])
-      return false unless volume_validator.valid?(@volume)
+      base_justification_validator = EnumAttributeValidator.new('String', ['NotDefined', 'Top', 'Center', 'Bottom'])
+      return false unless base_justification_validator.valid?(@base_justification)
+      column_gap_rule_validator = EnumAttributeValidator.new('String', ['SingleSpacingGap', 'OneAndHalfSpacingGap', 'DoubleSpacingGap', 'Exactly', 'Multiple'])
+      return false unless column_gap_rule_validator.valid?(@column_gap_rule)
+      row_gap_rule_validator = EnumAttributeValidator.new('String', ['SingleSpacingGap', 'OneAndHalfSpacingGap', 'DoubleSpacingGap', 'Exactly', 'Multiple'])
+      return false unless row_gap_rule_validator.valid?(@row_gap_rule)
       true
     end
 
     # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] play_mode Object to be assigned
-    def play_mode=(play_mode)
-      validator = EnumAttributeValidator.new('String', ['Auto', 'OnClick', 'AllSlides', 'InClickSequence', 'Mixed'])
-      unless validator.valid?(play_mode)
-        fail ArgumentError, 'invalid value for "play_mode", must be one of #{validator.allowable_values}.'
+    # @param [Object] base_justification Object to be assigned
+    def base_justification=(base_justification)
+      validator = EnumAttributeValidator.new('String', ['NotDefined', 'Top', 'Center', 'Bottom'])
+      unless validator.valid?(base_justification)
+        fail ArgumentError, 'invalid value for "base_justification", must be one of #{validator.allowable_values}.'
       end
-      @play_mode = play_mode
+      @base_justification = base_justification
     end
 
     # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] volume Object to be assigned
-    def volume=(volume)
-      validator = EnumAttributeValidator.new('String', ['Mute', 'Low', 'Medium', 'Loud', 'Mixed'])
-      unless validator.valid?(volume)
-        fail ArgumentError, 'invalid value for "volume", must be one of #{validator.allowable_values}.'
+    # @param [Object] column_gap_rule Object to be assigned
+    def column_gap_rule=(column_gap_rule)
+      validator = EnumAttributeValidator.new('String', ['SingleSpacingGap', 'OneAndHalfSpacingGap', 'DoubleSpacingGap', 'Exactly', 'Multiple'])
+      unless validator.valid?(column_gap_rule)
+        fail ArgumentError, 'invalid value for "column_gap_rule", must be one of #{validator.allowable_values}.'
       end
-      @volume = volume
+      @column_gap_rule = column_gap_rule
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] row_gap_rule Object to be assigned
+    def row_gap_rule=(row_gap_rule)
+      validator = EnumAttributeValidator.new('String', ['SingleSpacingGap', 'OneAndHalfSpacingGap', 'DoubleSpacingGap', 'Exactly', 'Multiple'])
+      unless validator.valid?(row_gap_rule)
+        fail ArgumentError, 'invalid value for "row_gap_rule", must be one of #{validator.allowable_values}.'
+      end
+      @row_gap_rule = row_gap_rule
     end
 
     # Checks equality by comparing each attribute.
@@ -172,33 +195,15 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          self_uri == o.self_uri &&
-          alternate_links == o.alternate_links &&
-          name == o.name &&
-          width == o.width &&
-          height == o.height &&
-          alternative_text == o.alternative_text &&
-          alternative_text_title == o.alternative_text_title &&
-          hidden == o.hidden &&
-          x == o.x &&
-          y == o.y &&
-          z_order_position == o.z_order_position &&
-          shapes == o.shapes &&
-          fill_format == o.fill_format &&
-          effect_format == o.effect_format &&
-          three_d_format == o.three_d_format &&
-          line_format == o.line_format &&
-          hyperlink_click == o.hyperlink_click &&
-          hyperlink_mouse_over == o.hyperlink_mouse_over &&
           type == o.type &&
-          shape_type == o.shape_type &&
-          full_screen_mode == o.full_screen_mode &&
-          hide_at_showing == o.hide_at_showing &&
-          play_loop_mode == o.play_loop_mode &&
-          play_mode == o.play_mode &&
-          rewind_video == o.rewind_video &&
-          volume == o.volume &&
-          base64_data == o.base64_data
+          hide_placeholders == o.hide_placeholders &&
+          base_justification == o.base_justification &&
+          min_column_width == o.min_column_width &&
+          column_gap_rule == o.column_gap_rule &&
+          column_gap == o.column_gap &&
+          row_gap_rule == o.row_gap_rule &&
+          row_gap == o.row_gap &&
+          items == o.items
     end
 
     # @see the `==` method
@@ -210,7 +215,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, shape_type, full_screen_mode, hide_at_showing, play_loop_mode, play_mode, rewind_video, volume, base64_data].hash
+      [type, hide_placeholders, base_justification, min_column_width, column_gap_rule, column_gap, row_gap_rule, row_gap, items].hash
     end
 
     # Builds the object from hash

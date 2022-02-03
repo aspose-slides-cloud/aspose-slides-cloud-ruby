@@ -23,28 +23,25 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Represents VideoFrame resource.
-  class VideoFrame < GeometryShape
-    # Determines whether a video is shown in full screen mode.
-    attr_accessor :full_screen_mode
+  # An array of elements.
+  class ArrayElement < MathElement
+    # Arguments
+    attr_accessor :arguments
 
-    # Determines whether a VideoFrame is hidden. 
-    attr_accessor :hide_at_showing
+    # Specifies alignment of the array relative to surrounding text
+    attr_accessor :base_justification
 
-    # Determines whether a video is looped.
-    attr_accessor :play_loop_mode
+    # Maximum Distribution
+    attr_accessor :maximum_distribution
 
-    # Returns or sets the video play mode.  
-    attr_accessor :play_mode
+    # Object Distribution
+    attr_accessor :object_distribution
 
-    # Determines whether a video is automatically rewinded to start as soon as the movie has finished playing
-    attr_accessor :rewind_video
+    # The type of vertical spacing between array elements
+    attr_accessor :row_spacing_rule
 
-    # Returns or sets the audio volume.
-    attr_accessor :volume
-
-    # Video data encoded in base64.
-    attr_accessor :base64_data
+    # Spacing between rows of an array
+    attr_accessor :row_spacing
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -71,26 +68,24 @@ module AsposeSlidesCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
-        :'full_screen_mode' => :'FullScreenMode',
-        :'hide_at_showing' => :'HideAtShowing',
-        :'play_loop_mode' => :'PlayLoopMode',
-        :'play_mode' => :'PlayMode',
-        :'rewind_video' => :'RewindVideo',
-        :'volume' => :'Volume',
-        :'base64_data' => :'Base64Data',
+        :'arguments' => :'Arguments',
+        :'base_justification' => :'BaseJustification',
+        :'maximum_distribution' => :'MaximumDistribution',
+        :'object_distribution' => :'ObjectDistribution',
+        :'row_spacing_rule' => :'RowSpacingRule',
+        :'row_spacing' => :'RowSpacing',
       })
     end
 
     # Attribute type mapping.
     def self.swagger_types
       super.merge({
-        :'full_screen_mode' => :'BOOLEAN',
-        :'hide_at_showing' => :'BOOLEAN',
-        :'play_loop_mode' => :'BOOLEAN',
-        :'play_mode' => :'String',
-        :'rewind_video' => :'BOOLEAN',
-        :'volume' => :'String',
-        :'base64_data' => :'String',
+        :'arguments' => :'Array<MathElement>',
+        :'base_justification' => :'String',
+        :'maximum_distribution' => :'BOOLEAN',
+        :'object_distribution' => :'BOOLEAN',
+        :'row_spacing_rule' => :'String',
+        :'row_spacing' => :'Integer',
       })
     end
 
@@ -99,34 +94,32 @@ module AsposeSlidesCloud
     def initialize(attributes = {})
       super
 
-      if attributes.has_key?(:'FullScreenMode')
-        self.full_screen_mode = attributes[:'FullScreenMode']
+      if attributes.has_key?(:'Arguments')
+        if (value = attributes[:'Arguments']).is_a?(Array)
+          self.arguments = value
+        end
       end
 
-      if attributes.has_key?(:'HideAtShowing')
-        self.hide_at_showing = attributes[:'HideAtShowing']
+      if attributes.has_key?(:'BaseJustification')
+        self.base_justification = attributes[:'BaseJustification']
       end
 
-      if attributes.has_key?(:'PlayLoopMode')
-        self.play_loop_mode = attributes[:'PlayLoopMode']
+      if attributes.has_key?(:'MaximumDistribution')
+        self.maximum_distribution = attributes[:'MaximumDistribution']
       end
 
-      if attributes.has_key?(:'PlayMode')
-        self.play_mode = attributes[:'PlayMode']
+      if attributes.has_key?(:'ObjectDistribution')
+        self.object_distribution = attributes[:'ObjectDistribution']
       end
 
-      if attributes.has_key?(:'RewindVideo')
-        self.rewind_video = attributes[:'RewindVideo']
+      if attributes.has_key?(:'RowSpacingRule')
+        self.row_spacing_rule = attributes[:'RowSpacingRule']
       end
 
-      if attributes.has_key?(:'Volume')
-        self.volume = attributes[:'Volume']
+      if attributes.has_key?(:'RowSpacing')
+        self.row_spacing = attributes[:'RowSpacing']
       end
-
-      if attributes.has_key?(:'Base64Data')
-        self.base64_data = attributes[:'Base64Data']
-      end
-      self.type = "VideoFrame"
+      self.type = "Array"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -140,31 +133,31 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      play_mode_validator = EnumAttributeValidator.new('String', ['Auto', 'OnClick', 'AllSlides', 'InClickSequence', 'Mixed'])
-      return false unless play_mode_validator.valid?(@play_mode)
-      volume_validator = EnumAttributeValidator.new('String', ['Mute', 'Low', 'Medium', 'Loud', 'Mixed'])
-      return false unless volume_validator.valid?(@volume)
+      base_justification_validator = EnumAttributeValidator.new('String', ['NotDefined', 'Top', 'Center', 'Bottom'])
+      return false unless base_justification_validator.valid?(@base_justification)
+      row_spacing_rule_validator = EnumAttributeValidator.new('String', ['SingleLineGap', 'OneAndAHalfLineGap', 'TwoLineGap', 'Exactly', 'Multiple'])
+      return false unless row_spacing_rule_validator.valid?(@row_spacing_rule)
       true
     end
 
     # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] play_mode Object to be assigned
-    def play_mode=(play_mode)
-      validator = EnumAttributeValidator.new('String', ['Auto', 'OnClick', 'AllSlides', 'InClickSequence', 'Mixed'])
-      unless validator.valid?(play_mode)
-        fail ArgumentError, 'invalid value for "play_mode", must be one of #{validator.allowable_values}.'
+    # @param [Object] base_justification Object to be assigned
+    def base_justification=(base_justification)
+      validator = EnumAttributeValidator.new('String', ['NotDefined', 'Top', 'Center', 'Bottom'])
+      unless validator.valid?(base_justification)
+        fail ArgumentError, 'invalid value for "base_justification", must be one of #{validator.allowable_values}.'
       end
-      @play_mode = play_mode
+      @base_justification = base_justification
     end
 
     # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] volume Object to be assigned
-    def volume=(volume)
-      validator = EnumAttributeValidator.new('String', ['Mute', 'Low', 'Medium', 'Loud', 'Mixed'])
-      unless validator.valid?(volume)
-        fail ArgumentError, 'invalid value for "volume", must be one of #{validator.allowable_values}.'
+    # @param [Object] row_spacing_rule Object to be assigned
+    def row_spacing_rule=(row_spacing_rule)
+      validator = EnumAttributeValidator.new('String', ['SingleLineGap', 'OneAndAHalfLineGap', 'TwoLineGap', 'Exactly', 'Multiple'])
+      unless validator.valid?(row_spacing_rule)
+        fail ArgumentError, 'invalid value for "row_spacing_rule", must be one of #{validator.allowable_values}.'
       end
-      @volume = volume
+      @row_spacing_rule = row_spacing_rule
     end
 
     # Checks equality by comparing each attribute.
@@ -172,33 +165,13 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          self_uri == o.self_uri &&
-          alternate_links == o.alternate_links &&
-          name == o.name &&
-          width == o.width &&
-          height == o.height &&
-          alternative_text == o.alternative_text &&
-          alternative_text_title == o.alternative_text_title &&
-          hidden == o.hidden &&
-          x == o.x &&
-          y == o.y &&
-          z_order_position == o.z_order_position &&
-          shapes == o.shapes &&
-          fill_format == o.fill_format &&
-          effect_format == o.effect_format &&
-          three_d_format == o.three_d_format &&
-          line_format == o.line_format &&
-          hyperlink_click == o.hyperlink_click &&
-          hyperlink_mouse_over == o.hyperlink_mouse_over &&
           type == o.type &&
-          shape_type == o.shape_type &&
-          full_screen_mode == o.full_screen_mode &&
-          hide_at_showing == o.hide_at_showing &&
-          play_loop_mode == o.play_loop_mode &&
-          play_mode == o.play_mode &&
-          rewind_video == o.rewind_video &&
-          volume == o.volume &&
-          base64_data == o.base64_data
+          arguments == o.arguments &&
+          base_justification == o.base_justification &&
+          maximum_distribution == o.maximum_distribution &&
+          object_distribution == o.object_distribution &&
+          row_spacing_rule == o.row_spacing_rule &&
+          row_spacing == o.row_spacing
     end
 
     # @see the `==` method
@@ -210,7 +183,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, shape_type, full_screen_mode, hide_at_showing, play_loop_mode, play_mode, rewind_video, volume, base64_data].hash
+      [type, arguments, base_justification, maximum_distribution, object_distribution, row_spacing_rule, row_spacing].hash
     end
 
     # Builds the object from hash

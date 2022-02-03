@@ -55,6 +55,12 @@ module AsposeSlidesCloud
     # Audio data encoded in base64.
     attr_accessor :base64_data
 
+    # Determines whether an audio is playing across the slides.
+    attr_accessor :play_across_slides
+
+    # Determines whether audio is automatically rewound to start after playing.
+    attr_accessor :rewind_audio
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -90,6 +96,8 @@ module AsposeSlidesCloud
         :'play_mode' => :'PlayMode',
         :'volume' => :'Volume',
         :'base64_data' => :'Base64Data',
+        :'play_across_slides' => :'PlayAcrossSlides',
+        :'rewind_audio' => :'RewindAudio',
       })
     end
 
@@ -106,6 +114,8 @@ module AsposeSlidesCloud
         :'play_mode' => :'String',
         :'volume' => :'String',
         :'base64_data' => :'String',
+        :'play_across_slides' => :'BOOLEAN',
+        :'rewind_audio' => :'BOOLEAN',
       })
     end
 
@@ -153,6 +163,14 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Base64Data')
         self.base64_data = attributes[:'Base64Data']
       end
+
+      if attributes.has_key?(:'PlayAcrossSlides')
+        self.play_across_slides = attributes[:'PlayAcrossSlides']
+      end
+
+      if attributes.has_key?(:'RewindAudio')
+        self.rewind_audio = attributes[:'RewindAudio']
+      end
       self.type = "AudioFrame"
     end
 
@@ -167,7 +185,7 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      play_mode_validator = EnumAttributeValidator.new('String', ['Auto', 'OnClick', 'AllSlides', 'Mixed'])
+      play_mode_validator = EnumAttributeValidator.new('String', ['Auto', 'OnClick', 'AllSlides', 'InClickSequence', 'Mixed'])
       return false unless play_mode_validator.valid?(@play_mode)
       volume_validator = EnumAttributeValidator.new('String', ['Mute', 'Low', 'Medium', 'Loud', 'Mixed'])
       return false unless volume_validator.valid?(@volume)
@@ -177,7 +195,7 @@ module AsposeSlidesCloud
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] play_mode Object to be assigned
     def play_mode=(play_mode)
-      validator = EnumAttributeValidator.new('String', ['Auto', 'OnClick', 'AllSlides', 'Mixed'])
+      validator = EnumAttributeValidator.new('String', ['Auto', 'OnClick', 'AllSlides', 'InClickSequence', 'Mixed'])
       unless validator.valid?(play_mode)
         fail ArgumentError, 'invalid value for "play_mode", must be one of #{validator.allowable_values}.'
       end
@@ -215,6 +233,8 @@ module AsposeSlidesCloud
           effect_format == o.effect_format &&
           three_d_format == o.three_d_format &&
           line_format == o.line_format &&
+          hyperlink_click == o.hyperlink_click &&
+          hyperlink_mouse_over == o.hyperlink_mouse_over &&
           type == o.type &&
           shape_type == o.shape_type &&
           audio_cd_end_track == o.audio_cd_end_track &&
@@ -226,7 +246,9 @@ module AsposeSlidesCloud
           play_loop_mode == o.play_loop_mode &&
           play_mode == o.play_mode &&
           volume == o.volume &&
-          base64_data == o.base64_data
+          base64_data == o.base64_data &&
+          play_across_slides == o.play_across_slides &&
+          rewind_audio == o.rewind_audio
     end
 
     # @see the `==` method
@@ -238,7 +260,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, three_d_format, line_format, type, shape_type, audio_cd_end_track, audio_cd_end_track_time, audio_cd_start_track, audio_cd_start_track_time, embedded, hide_at_showing, play_loop_mode, play_mode, volume, base64_data].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, shape_type, audio_cd_end_track, audio_cd_end_track_time, audio_cd_start_track, audio_cd_start_track_time, embedded, hide_at_showing, play_loop_mode, play_mode, volume, base64_data, play_across_slides, rewind_audio].hash
     end
 
     # Builds the object from hash
