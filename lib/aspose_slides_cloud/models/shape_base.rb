@@ -233,7 +233,7 @@ module AsposeSlidesCloud
     def valid?
       return false if !super
       return false if @z_order_position.nil?
-      type_validator = EnumAttributeValidator.new('String', ['Shape', 'Chart', 'Table', 'PictureFrame', 'VideoFrame', 'AudioFrame', 'SmartArt', 'OleObjectFrame', 'GroupShape', 'GraphicalObject', 'Connector', 'SmartArtShape'])
+      type_validator = EnumAttributeValidator.new('String', ['Shape', 'Chart', 'Table', 'PictureFrame', 'VideoFrame', 'AudioFrame', 'SmartArt', 'OleObjectFrame', 'GroupShape', 'GraphicalObject', 'Connector', 'SmartArtShape', 'ZoomFrame', 'SectionZoomFrame', 'SummaryZoomFrame', 'SummaryZoomSection'])
       return false unless type_validator.valid?(@type)
       true
     end
@@ -241,7 +241,7 @@ module AsposeSlidesCloud
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] type Object to be assigned
     def type=(type)
-      validator = EnumAttributeValidator.new('String', ['Shape', 'Chart', 'Table', 'PictureFrame', 'VideoFrame', 'AudioFrame', 'SmartArt', 'OleObjectFrame', 'GroupShape', 'GraphicalObject', 'Connector', 'SmartArtShape'])
+      validator = EnumAttributeValidator.new('String', ['Shape', 'Chart', 'Table', 'PictureFrame', 'VideoFrame', 'AudioFrame', 'SmartArt', 'OleObjectFrame', 'GroupShape', 'GraphicalObject', 'Connector', 'SmartArtShape', 'ZoomFrame', 'SectionZoomFrame', 'SummaryZoomFrame', 'SummaryZoomSection'])
       unless validator.valid?(type)
         fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
       end
@@ -355,6 +355,10 @@ module AsposeSlidesCloud
           end
         end
       else # model
+        registry_type = AsposeSlidesCloud::TypeRegistry.get_type(type.to_s, value)
+        if registry_type
+          type = registry_type
+        end
         temp_model = AsposeSlidesCloud.const_get(type).new
         temp_model.build_from_hash(value)
       end

@@ -34,19 +34,21 @@ Gem::Specification.new do |s|
   s.homepage    = "https://github.com/aspose-slides-cloud/aspose-slides-cloud-ruby"
   s.summary     = "Aspose.Slides Cloud SDK"
   s.description = "SDK for Aspose.Slides Cloud"
-  s.license     = "MIT License"
+  s.license     = "MIT"
   s.required_ruby_version = ">= 1.9"
 
-  s.add_dependency 'faraday', '~> 0.9.2', '>= 0.9.2'
+  s.add_dependency 'faraday', '~> 0.17', '>= 0.17.3'
   s.add_dependency 'json', '~> 2.1', '>= 2.1.0'
 
   s.add_development_dependency 'rspec', '~> 3.6', '>= 3.6.0'
+  s.add_development_dependency 'rspec_junit_formatter', '~> 0.5', '>= 0.5.1'
   s.add_development_dependency 'vcr', '~> 3.0', '>= 3.0.1'
   s.add_development_dependency 'webmock', '~> 1.24', '>= 1.24.3'
   s.add_development_dependency 'autotest', '~> 4.4', '>= 4.4.6'
   s.add_development_dependency 'autotest-rails-pure', '~> 4.1', '>= 4.1.2'
   s.add_development_dependency 'autotest-growl', '~> 0.2', '>= 0.2.16'
   s.add_development_dependency 'autotest-fsevent', '~> 0.2', '>= 0.2.12'
+  s.add_development_dependency 'rubyzip', '~> 2.3', '>= 2.3.0'
   s.files         = `git ls-files -z`.split("\x0").uniq.sort.select { |f| !f.empty? }
   s.test_files    = `git ls-files -z`.split("\x0").uniq.sort.select { |f| !f.empty? && f.start_with?("spec") }
   s.executables   = []

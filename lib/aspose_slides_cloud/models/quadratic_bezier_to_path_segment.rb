@@ -229,6 +229,10 @@ module AsposeSlidesCloud
           end
         end
       else # model
+        registry_type = AsposeSlidesCloud::TypeRegistry.get_type(type.to_s, value)
+        if registry_type
+          type = registry_type
+        end
         temp_model = AsposeSlidesCloud.const_get(type).new
         temp_model.build_from_hash(value)
       end

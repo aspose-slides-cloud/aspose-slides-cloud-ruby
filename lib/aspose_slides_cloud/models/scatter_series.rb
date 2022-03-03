@@ -24,7 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # A scatter series
-  class ScatterSeries < Series
+  class ScatterSeries < XYSeries
     # Gets or sets the values.
     attr_accessor :data_points
 
@@ -103,10 +103,6 @@ module AsposeSlidesCloud
           smooth == o.smooth &&
           plot_on_second_axis == o.plot_on_second_axis &&
           order == o.order &&
-          number_format_of_y_values == o.number_format_of_y_values &&
-          number_format_of_x_values == o.number_format_of_x_values &&
-          number_format_of_values == o.number_format_of_values &&
-          number_format_of_bubble_sizes == o.number_format_of_bubble_sizes &&
           invert_if_negative == o.invert_if_negative &&
           explosion == o.explosion &&
           marker == o.marker &&
@@ -114,6 +110,8 @@ module AsposeSlidesCloud
           effect_format == o.effect_format &&
           line_format == o.line_format &&
           data_point_type == o.data_point_type &&
+          number_format_of_y_values == o.number_format_of_y_values &&
+          number_format_of_x_values == o.number_format_of_x_values &&
           data_points == o.data_points
     end
 
@@ -126,7 +124,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, number_format_of_y_values, number_format_of_x_values, number_format_of_values, number_format_of_bubble_sizes, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type, data_points].hash
+      [type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type, number_format_of_y_values, number_format_of_x_values, data_points].hash
     end
 
     # Builds the object from hash
@@ -198,6 +196,10 @@ module AsposeSlidesCloud
           end
         end
       else # model
+        registry_type = AsposeSlidesCloud::TypeRegistry.get_type(type.to_s, value)
+        if registry_type
+          type = registry_type
+        end
         temp_model = AsposeSlidesCloud.const_get(type).new
         temp_model.build_from_hash(value)
       end

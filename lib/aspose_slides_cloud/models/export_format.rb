@@ -49,6 +49,7 @@ module AsposeSlidesCloud
     BMP = "Bmp".freeze
     FODP = "Fodp".freeze
     XAML = "Xaml".freeze
+    MPEG4 = "Mpeg4".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

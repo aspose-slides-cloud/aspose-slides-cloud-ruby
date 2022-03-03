@@ -182,7 +182,7 @@ module AsposeSlidesCloud
     end
 
     def base_path
-      URI.encode("#{[base_url, version].join('/')}".sub(/\/+\z/, ''))
+      "#{[base_url, version].join('/')}".sub(/\/+\z/, '')
     end
   end
 end

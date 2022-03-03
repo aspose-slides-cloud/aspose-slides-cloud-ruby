@@ -82,10 +82,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'alignToSlide'] = align_to_slide unless align_to_slide.nil?
-      query_params[:'shapes'] = shapes unless shapes.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'alignToSlide'] = @api_client.prepare_for_query(align_to_slide) unless align_to_slide.nil?
+      query_params[:'shapes'] = @api_client.prepare_for_query(shapes) unless shapes.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -174,10 +174,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'alignToSlide'] = align_to_slide unless align_to_slide.nil?
-      query_params[:'shapes'] = shapes unless shapes.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'alignToSlide'] = @api_client.prepare_for_query(align_to_slide) unless align_to_slide.nil?
+      query_params[:'shapes'] = @api_client.prepare_for_query(shapes) unless shapes.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -262,10 +262,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'alignToSlide'] = align_to_slide unless align_to_slide.nil?
-      query_params[:'shapes'] = shapes unless shapes.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'alignToSlide'] = @api_client.prepare_for_query(align_to_slide) unless align_to_slide.nil?
+      query_params[:'shapes'] = @api_client.prepare_for_query(shapes) unless shapes.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -326,8 +326,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.convert"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp', 'Xaml'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp, Xaml"
+      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp', 'Xaml', 'Mpeg4'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp, Xaml, Mpeg4"
       end
       # resource path
       local_var_path = '/slides/convert/{format}'
@@ -335,9 +335,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
-      query_params[:'slides'] = slides unless slides.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
+      query_params[:'slides'] = @api_client.prepare_for_query(slides) unless slides.nil?
 
       # header parameters
       header_params = {}
@@ -403,8 +403,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.convert_and_save"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp', 'Xaml'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp, Xaml"
+      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp', 'Xaml', 'Mpeg4'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp, Xaml, Mpeg4"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && out_path.nil?
@@ -416,10 +416,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'outPath'] = out_path unless out_path.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
-      query_params[:'slides'] = slides unless slides.nil?
+      query_params[:'outPath'] = @api_client.prepare_for_query(out_path) unless out_path.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
+      query_params[:'slides'] = @api_client.prepare_for_query(slides) unless slides.nil?
 
       # header parameters
       header_params = {}
@@ -483,10 +483,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'destPath'] = dest_path unless dest_path.nil?
-      query_params[:'srcStorageName'] = src_storage_name unless src_storage_name.nil?
-      query_params[:'destStorageName'] = dest_storage_name unless dest_storage_name.nil?
-      query_params[:'versionId'] = version_id unless version_id.nil?
+      query_params[:'destPath'] = @api_client.prepare_for_query(dest_path) unless dest_path.nil?
+      query_params[:'srcStorageName'] = @api_client.prepare_for_query(src_storage_name) unless src_storage_name.nil?
+      query_params[:'destStorageName'] = @api_client.prepare_for_query(dest_storage_name) unless dest_storage_name.nil?
+      query_params[:'versionId'] = @api_client.prepare_for_query(version_id) unless version_id.nil?
 
       # header parameters
       header_params = {}
@@ -544,9 +544,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'destPath'] = dest_path unless dest_path.nil?
-      query_params[:'srcStorageName'] = src_storage_name unless src_storage_name.nil?
-      query_params[:'destStorageName'] = dest_storage_name unless dest_storage_name.nil?
+      query_params[:'destPath'] = @api_client.prepare_for_query(dest_path) unless dest_path.nil?
+      query_params[:'srcStorageName'] = @api_client.prepare_for_query(src_storage_name) unless src_storage_name.nil?
+      query_params[:'destStorageName'] = @api_client.prepare_for_query(dest_storage_name) unless dest_storage_name.nil?
 
       # header parameters
       header_params = {}
@@ -616,11 +616,11 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'cloneFrom'] = clone_from unless clone_from.nil?
-      query_params[:'cloneFromPosition'] = clone_from_position unless clone_from_position.nil?
-      query_params[:'cloneFromStorage'] = clone_from_storage unless clone_from_storage.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'cloneFrom'] = @api_client.prepare_for_query(clone_from) unless clone_from.nil?
+      query_params[:'cloneFromPosition'] = @api_client.prepare_for_query(clone_from_position) unless clone_from_position.nil?
+      query_params[:'cloneFromStorage'] = @api_client.prepare_for_query(clone_from_storage) unless clone_from_storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -695,12 +695,12 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'cloneFrom'] = clone_from unless clone_from.nil?
-      query_params[:'cloneFromPosition'] = clone_from_position unless clone_from_position.nil?
-      query_params[:'cloneFromStorage'] = clone_from_storage unless clone_from_storage.nil?
-      query_params[:'applyToAll'] = apply_to_all unless apply_to_all.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'cloneFrom'] = @api_client.prepare_for_query(clone_from) unless clone_from.nil?
+      query_params[:'cloneFromPosition'] = @api_client.prepare_for_query(clone_from_position) unless clone_from_position.nil?
+      query_params[:'cloneFromStorage'] = @api_client.prepare_for_query(clone_from_storage) unless clone_from_storage.nil?
+      query_params[:'applyToAll'] = @api_client.prepare_for_query(apply_to_all) unless apply_to_all.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -771,12 +771,12 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'slideToCopy'] = slide_to_copy unless slide_to_copy.nil?
-      query_params[:'position'] = position unless position.nil?
-      query_params[:'source'] = source unless source.nil?
-      query_params[:'sourceStorage'] = source_storage unless source_storage.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'slideToCopy'] = @api_client.prepare_for_query(slide_to_copy) unless slide_to_copy.nil?
+      query_params[:'position'] = @api_client.prepare_for_query(position) unless position.nil?
+      query_params[:'source'] = @api_client.prepare_for_query(source) unless source.nil?
+      query_params[:'sourceStorage'] = @api_client.prepare_for_query(source_storage) unless source_storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -846,8 +846,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -916,8 +916,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -993,8 +993,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -1070,8 +1070,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -1154,8 +1154,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -1231,8 +1231,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -1301,8 +1301,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -1420,7 +1420,7 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'storageName'] = storage_name unless storage_name.nil?
+      query_params[:'storageName'] = @api_client.prepare_for_query(storage_name) unless storage_name.nil?
 
       # header parameters
       header_params = {}
@@ -1478,8 +1478,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -1610,8 +1610,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -1689,9 +1689,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'position'] = position unless position.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'position'] = @api_client.prepare_for_query(position) unless position.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -1776,9 +1776,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'position'] = position unless position.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'position'] = @api_client.prepare_for_query(position) unless position.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -1838,8 +1838,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -1905,10 +1905,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'sourcePath'] = source_path unless source_path.nil?
-      query_params[:'sourceStorage'] = source_storage unless source_storage.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'sourcePath'] = @api_client.prepare_for_query(source_path) unless source_path.nil?
+      query_params[:'sourceStorage'] = @api_client.prepare_for_query(source_storage) unless source_storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -1979,11 +1979,11 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'templatePath'] = template_path unless template_path.nil?
-      query_params[:'templateStorage'] = template_storage unless template_storage.nil?
-      query_params[:'isImageDataEmbedded'] = is_image_data_embedded unless is_image_data_embedded.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'templatePath'] = @api_client.prepare_for_query(template_path) unless template_path.nil?
+      query_params[:'templateStorage'] = @api_client.prepare_for_query(template_storage) unless template_storage.nil?
+      query_params[:'isImageDataEmbedded'] = @api_client.prepare_for_query(is_image_data_embedded) unless is_image_data_embedded.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -2052,10 +2052,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'sectionName'] = section_name unless section_name.nil?
-      query_params[:'slideIndex'] = slide_index unless slide_index.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'sectionName'] = @api_client.prepare_for_query(section_name) unless section_name.nil?
+      query_params[:'slideIndex'] = @api_client.prepare_for_query(slide_index) unless slide_index.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -2124,10 +2124,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'shapeToClone'] = shape_to_clone unless shape_to_clone.nil?
-      query_params[:'position'] = position unless position.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'shapeToClone'] = @api_client.prepare_for_query(shape_to_clone) unless shape_to_clone.nil?
+      query_params[:'position'] = @api_client.prepare_for_query(position) unless position.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -2187,10 +2187,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'layoutAlias'] = layout_alias unless layout_alias.nil?
-      query_params[:'position'] = position unless position.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'layoutAlias'] = @api_client.prepare_for_query(layout_alias) unless layout_alias.nil?
+      query_params[:'position'] = @api_client.prepare_for_query(position) unless position.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -2270,8 +2270,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -2351,8 +2351,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -2439,8 +2439,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -2529,9 +2529,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'position'] = position unless position.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'position'] = @api_client.prepare_for_query(position) unless position.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -2627,9 +2627,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'position'] = position unless position.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'position'] = @api_client.prepare_for_query(position) unless position.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -2709,10 +2709,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'shapeToClone'] = shape_to_clone unless shape_to_clone.nil?
-      query_params[:'position'] = position unless position.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'shapeToClone'] = @api_client.prepare_for_query(shape_to_clone) unless shape_to_clone.nil?
+      query_params[:'position'] = @api_client.prepare_for_query(position) unless position.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -2799,10 +2799,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'shapeToClone'] = shape_to_clone unless shape_to_clone.nil?
-      query_params[:'position'] = position unless position.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'shapeToClone'] = @api_client.prepare_for_query(shape_to_clone) unless shape_to_clone.nil?
+      query_params[:'position'] = @api_client.prepare_for_query(position) unless position.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -2898,9 +2898,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'position'] = position unless position.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'position'] = @api_client.prepare_for_query(position) unless position.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -3003,9 +3003,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'position'] = position unless position.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'position'] = @api_client.prepare_for_query(position) unless position.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -3081,10 +3081,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'shapeToClone'] = shape_to_clone unless shape_to_clone.nil?
-      query_params[:'position'] = position unless position.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'shapeToClone'] = @api_client.prepare_for_query(shape_to_clone) unless shape_to_clone.nil?
+      query_params[:'position'] = @api_client.prepare_for_query(position) unless position.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -3169,9 +3169,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'position'] = position unless position.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'position'] = @api_client.prepare_for_query(position) unless position.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -3263,9 +3263,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'position'] = position unless position.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'position'] = @api_client.prepare_for_query(position) unless position.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -3331,12 +3331,12 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'fontHeight'] = font_height unless font_height.nil?
-      query_params[:'text'] = text unless text.nil?
-      query_params[:'fontName'] = font_name unless font_name.nil?
-      query_params[:'fontColor'] = font_color unless font_color.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'fontHeight'] = @api_client.prepare_for_query(font_height) unless font_height.nil?
+      query_params[:'text'] = @api_client.prepare_for_query(text) unless text.nil?
+      query_params[:'fontName'] = @api_client.prepare_for_query(font_name) unless font_name.nil?
+      query_params[:'fontColor'] = @api_client.prepare_for_query(font_color) unless font_color.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -3396,10 +3396,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'fontHeight'] = font_height unless font_height.nil?
-      query_params[:'text'] = text unless text.nil?
-      query_params[:'fontName'] = font_name unless font_name.nil?
-      query_params[:'fontColor'] = font_color unless font_color.nil?
+      query_params[:'fontHeight'] = @api_client.prepare_for_query(font_height) unless font_height.nil?
+      query_params[:'text'] = @api_client.prepare_for_query(text) unless text.nil?
+      query_params[:'fontName'] = @api_client.prepare_for_query(font_name) unless font_name.nil?
+      query_params[:'fontColor'] = @api_client.prepare_for_query(font_color) unless font_color.nil?
 
       # header parameters
       header_params = {}
@@ -3465,8 +3465,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -3536,8 +3536,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -3607,8 +3607,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -3685,8 +3685,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -3749,8 +3749,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -3813,8 +3813,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -3877,8 +3877,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -3955,8 +3955,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -4040,8 +4040,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -4118,8 +4118,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -4177,9 +4177,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'author'] = author unless author.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'author'] = @api_client.prepare_for_query(author) unless author.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -4231,7 +4231,7 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'author'] = author unless author.nil?
+      query_params[:'author'] = @api_client.prepare_for_query(author) unless author.nil?
 
       # header parameters
       header_params = {}
@@ -4290,8 +4290,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -4354,8 +4354,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -4409,8 +4409,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'storageName'] = storage_name unless storage_name.nil?
-      query_params[:'versionId'] = version_id unless version_id.nil?
+      query_params[:'storageName'] = @api_client.prepare_for_query(storage_name) unless storage_name.nil?
+      query_params[:'versionId'] = @api_client.prepare_for_query(version_id) unless version_id.nil?
 
       # header parameters
       header_params = {}
@@ -4462,8 +4462,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'storageName'] = storage_name unless storage_name.nil?
-      query_params[:'recursive'] = recursive unless recursive.nil?
+      query_params[:'storageName'] = @api_client.prepare_for_query(storage_name) unless storage_name.nil?
+      query_params[:'recursive'] = @api_client.prepare_for_query(recursive) unless recursive.nil?
 
       # header parameters
       header_params = {}
@@ -4524,8 +4524,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -4602,8 +4602,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -4675,9 +4675,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'paragraphs'] = paragraphs unless paragraphs.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'paragraphs'] = @api_client.prepare_for_query(paragraphs) unless paragraphs.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -4761,8 +4761,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -4841,9 +4841,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'portions'] = portions unless portions.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'portions'] = @api_client.prepare_for_query(portions) unless portions.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -4899,8 +4899,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -5022,9 +5022,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'withSlides'] = with_slides unless with_slides.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'withSlides'] = @api_client.prepare_for_query(with_slides) unless with_slides.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -5084,10 +5084,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'sections'] = sections unless sections.nil?
-      query_params[:'withSlides'] = with_slides unless with_slides.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'sections'] = @api_client.prepare_for_query(sections) unless sections.nil?
+      query_params[:'withSlides'] = @api_client.prepare_for_query(with_slides) unless with_slides.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -5157,8 +5157,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -5223,9 +5223,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'shapes'] = shapes unless shapes.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'shapes'] = @api_client.prepare_for_query(shapes) unless shapes.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -5288,8 +5288,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -5354,9 +5354,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'author'] = author unless author.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'author'] = @api_client.prepare_for_query(author) unless author.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -5416,7 +5416,7 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'author'] = author unless author.nil?
+      query_params[:'author'] = @api_client.prepare_for_query(author) unless author.nil?
 
       # header parameters
       header_params = {}
@@ -5477,9 +5477,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'slides'] = slides unless slides.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'slides'] = @api_client.prepare_for_query(slides) unless slides.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -5553,8 +5553,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -5635,8 +5635,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -5717,8 +5717,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -5806,8 +5806,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -5881,8 +5881,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -5956,8 +5956,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -6045,8 +6045,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -6129,9 +6129,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'paragraphs'] = paragraphs unless paragraphs.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'paragraphs'] = @api_client.prepare_for_query(paragraphs) unless paragraphs.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -6226,8 +6226,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -6317,9 +6317,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'portions'] = portions unless portions.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'portions'] = @api_client.prepare_for_query(portions) unless portions.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -6400,8 +6400,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -6477,9 +6477,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'shapes'] = shapes unless shapes.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'shapes'] = @api_client.prepare_for_query(shapes) unless shapes.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -6567,8 +6567,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -6663,8 +6663,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -6754,9 +6754,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'paragraphs'] = paragraphs unless paragraphs.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'paragraphs'] = @api_client.prepare_for_query(paragraphs) unless paragraphs.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -6858,8 +6858,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -6956,9 +6956,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'portions'] = portions unless portions.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'portions'] = @api_client.prepare_for_query(portions) unless portions.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -7041,9 +7041,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'shapes'] = shapes unless shapes.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'shapes'] = @api_client.prepare_for_query(shapes) unless shapes.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -7120,8 +7120,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -7205,8 +7205,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -7285,9 +7285,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'paragraphs'] = paragraphs unless paragraphs.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'paragraphs'] = @api_client.prepare_for_query(paragraphs) unless paragraphs.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -7378,8 +7378,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -7465,9 +7465,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'portions'] = portions unless portions.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'portions'] = @api_client.prepare_for_query(portions) unless portions.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -7539,9 +7539,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'shapes'] = shapes unless shapes.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'shapes'] = @api_client.prepare_for_query(shapes) unless shapes.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -7565,6 +7565,116 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'Shapes')
+      return data, status_code, headers
+    end
+    # Removes unused layout slides.
+    # @param name Document name.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_unused_layout_slides(name, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_unused_layout_slides_with_http_info(name, password, folder, storage)
+      data
+    end
+
+    # Removes unused layout slides.
+    # @param name Document name.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_unused_layout_slides_with_http_info(name, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_unused_layout_slides ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_unused_layout_slides"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/layoutSlides'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'LayoutSlides')
+      return data, status_code, headers
+    end
+    # Removes unused layout slides.
+    # @param document Document data
+    # @param password Document password.
+    def delete_unused_layout_slides_online(document, password = nil)
+      data, _status_code, _headers = delete_unused_layout_slides_online_with_http_info(document, password)
+      data
+    end
+
+    # Removes unused layout slides.
+    # @param document Document data
+    # @param password Document password.
+    def delete_unused_layout_slides_online_with_http_info(document, password = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_unused_layout_slides_online ...'
+      end
+
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && document.nil?
+        fail ArgumentError, "Missing the required parameter 'document' when calling SlidesApi.delete_unused_layout_slides_online"
+      end
+      # resource path
+      local_var_path = '/slides/layoutSlides/delete'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'File')
       return data, status_code, headers
     end
     # Removes shapes with name \"watermark\" from the presentation.
@@ -7599,9 +7709,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'shapeName'] = shape_name unless shape_name.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'shapeName'] = @api_client.prepare_for_query(shape_name) unless shape_name.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -7653,7 +7763,7 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'shapeName'] = shape_name unless shape_name.nil?
+      query_params[:'shapeName'] = @api_client.prepare_for_query(shape_name) unless shape_name.nil?
 
       # header parameters
       header_params = {}
@@ -7710,8 +7820,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'storageName'] = storage_name unless storage_name.nil?
-      query_params[:'versionId'] = version_id unless version_id.nil?
+      query_params[:'storageName'] = @api_client.prepare_for_query(storage_name) unless storage_name.nil?
+      query_params[:'versionId'] = @api_client.prepare_for_query(version_id) unless version_id.nil?
 
       # header parameters
       header_params = {}
@@ -7784,8 +7894,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -7848,8 +7958,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -8047,8 +8157,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -8104,8 +8214,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -8302,11 +8412,11 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'width'] = width unless width.nil?
-      query_params[:'height'] = height unless height.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'width'] = @api_client.prepare_for_query(width) unless width.nil?
+      query_params[:'height'] = @api_client.prepare_for_query(height) unless height.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
 
       # header parameters
       header_params = {}
@@ -8381,9 +8491,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'width'] = width unless width.nil?
-      query_params[:'height'] = height unless height.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'width'] = @api_client.prepare_for_query(width) unless width.nil?
+      query_params[:'height'] = @api_client.prepare_for_query(height) unless height.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
 
       # header parameters
       header_params = {}
@@ -8470,8 +8580,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -8534,8 +8644,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.download_presentation"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp', 'Xaml'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp, Xaml"
+      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp', 'Xaml', 'Mpeg4'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp, Xaml, Mpeg4"
       end
       # resource path
       local_var_path = '/slides/{name}/{format}'
@@ -8544,10 +8654,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
-      query_params[:'slides'] = slides unless slides.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
+      query_params[:'slides'] = @api_client.prepare_for_query(slides) unless slides.nil?
 
       # header parameters
       header_params = {}
@@ -8641,12 +8751,12 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'scaleX'] = scale_x unless scale_x.nil?
-      query_params[:'scaleY'] = scale_y unless scale_y.nil?
-      query_params[:'bounds'] = bounds unless bounds.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'scaleX'] = @api_client.prepare_for_query(scale_x) unless scale_x.nil?
+      query_params[:'scaleY'] = @api_client.prepare_for_query(scale_y) unless scale_y.nil?
+      query_params[:'bounds'] = @api_client.prepare_for_query(bounds) unless bounds.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
 
       # header parameters
       header_params = {}
@@ -8737,11 +8847,11 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'scaleX'] = scale_x unless scale_x.nil?
-      query_params[:'scaleY'] = scale_y unless scale_y.nil?
-      query_params[:'bounds'] = bounds unless bounds.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'scaleX'] = @api_client.prepare_for_query(scale_x) unless scale_x.nil?
+      query_params[:'scaleY'] = @api_client.prepare_for_query(scale_y) unless scale_y.nil?
+      query_params[:'bounds'] = @api_client.prepare_for_query(bounds) unless bounds.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
 
       # header parameters
       header_params = {}
@@ -8826,11 +8936,11 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'width'] = width unless width.nil?
-      query_params[:'height'] = height unless height.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'width'] = @api_client.prepare_for_query(width) unless width.nil?
+      query_params[:'height'] = @api_client.prepare_for_query(height) unless height.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
 
       # header parameters
       header_params = {}
@@ -8909,10 +9019,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'width'] = width unless width.nil?
-      query_params[:'height'] = height unless height.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'width'] = @api_client.prepare_for_query(width) unless width.nil?
+      query_params[:'height'] = @api_client.prepare_for_query(height) unless height.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
 
       # header parameters
       header_params = {}
@@ -9020,12 +9130,12 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'scaleX'] = scale_x unless scale_x.nil?
-      query_params[:'scaleY'] = scale_y unless scale_y.nil?
-      query_params[:'bounds'] = bounds unless bounds.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'scaleX'] = @api_client.prepare_for_query(scale_x) unless scale_x.nil?
+      query_params[:'scaleY'] = @api_client.prepare_for_query(scale_y) unless scale_y.nil?
+      query_params[:'bounds'] = @api_client.prepare_for_query(bounds) unless bounds.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
 
       # header parameters
       header_params = {}
@@ -9137,12 +9247,12 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'scaleX'] = scale_x unless scale_x.nil?
-      query_params[:'scaleY'] = scale_y unless scale_y.nil?
-      query_params[:'bounds'] = bounds unless bounds.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'scaleX'] = @api_client.prepare_for_query(scale_x) unless scale_x.nil?
+      query_params[:'scaleY'] = @api_client.prepare_for_query(scale_y) unless scale_y.nil?
+      query_params[:'bounds'] = @api_client.prepare_for_query(bounds) unless bounds.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
 
       # header parameters
       header_params = {}
@@ -9243,12 +9353,12 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'scaleX'] = scale_x unless scale_x.nil?
-      query_params[:'scaleY'] = scale_y unless scale_y.nil?
-      query_params[:'bounds'] = bounds unless bounds.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'scaleX'] = @api_client.prepare_for_query(scale_x) unless scale_x.nil?
+      query_params[:'scaleY'] = @api_client.prepare_for_query(scale_y) unless scale_y.nil?
+      query_params[:'bounds'] = @api_client.prepare_for_query(bounds) unless bounds.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
 
       # header parameters
       header_params = {}
@@ -9315,10 +9425,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'shapeIndex'] = shape_index unless shape_index.nil?
-      query_params[:'paragraphIndex'] = paragraph_index unless paragraph_index.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'shapeIndex'] = @api_client.prepare_for_query(shape_index) unless shape_index.nil?
+      query_params[:'paragraphIndex'] = @api_client.prepare_for_query(paragraph_index) unless paragraph_index.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -9422,8 +9532,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -9486,8 +9596,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -9532,7 +9642,7 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'storageName'] = storage_name unless storage_name.nil?
+      query_params[:'storageName'] = @api_client.prepare_for_query(storage_name) unless storage_name.nil?
 
       # header parameters
       header_params = {}
@@ -9587,8 +9697,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -9651,8 +9761,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -9704,7 +9814,7 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'storageName'] = storage_name unless storage_name.nil?
+      query_params[:'storageName'] = @api_client.prepare_for_query(storage_name) unless storage_name.nil?
 
       # header parameters
       header_params = {}
@@ -9755,7 +9865,7 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'storageName'] = storage_name unless storage_name.nil?
+      query_params[:'storageName'] = @api_client.prepare_for_query(storage_name) unless storage_name.nil?
 
       # header parameters
       header_params = {}
@@ -9817,8 +9927,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -9881,8 +9991,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -9945,8 +10055,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -10002,8 +10112,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -10066,8 +10176,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -10123,8 +10233,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -10187,8 +10297,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -10251,8 +10361,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -10389,8 +10499,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -10460,8 +10570,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -10531,8 +10641,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -10595,8 +10705,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -10680,8 +10790,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -10758,8 +10868,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -10815,8 +10925,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -10872,8 +10982,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -10931,9 +11041,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'withEmpty'] = with_empty unless with_empty.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'withEmpty'] = @api_client.prepare_for_query(with_empty) unless with_empty.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -10989,8 +11099,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -11046,8 +11156,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -11117,8 +11227,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -11188,8 +11298,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -11252,8 +11362,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -11316,8 +11426,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -11380,8 +11490,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -11444,8 +11554,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -11508,8 +11618,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -11565,8 +11675,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -11631,9 +11741,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'withEmpty'] = with_empty unless with_empty.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'withEmpty'] = @api_client.prepare_for_query(with_empty) unless with_empty.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -11689,8 +11799,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -11768,10 +11878,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'shapeIndex'] = shape_index unless shape_index.nil?
-      query_params[:'paragraphIndex'] = paragraph_index unless paragraph_index.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'shapeIndex'] = @api_client.prepare_for_query(shape_index) unless shape_index.nil?
+      query_params[:'paragraphIndex'] = @api_client.prepare_for_query(paragraph_index) unless paragraph_index.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -11859,8 +11969,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -11941,8 +12051,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -12037,8 +12147,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -12126,8 +12236,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -12208,8 +12318,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -12283,8 +12393,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -12372,8 +12482,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -12468,8 +12578,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -12557,8 +12667,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -12660,8 +12770,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -12756,8 +12866,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -12838,8 +12948,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -12916,8 +13026,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -13001,8 +13111,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -13079,8 +13189,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -13171,8 +13281,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -13256,8 +13366,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -13327,8 +13437,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -13391,8 +13501,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -13448,8 +13558,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -13473,6 +13583,188 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'ViewProperties')
+      return data, status_code, headers
+    end
+    # Highlight all matches of sample in text frame text using specified color.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param regex Regular expression.
+    # @param color Highlighting color.
+    # @param whole_words_only Match only whole words.
+    # @param ignore_case True to search ignoring char case.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def highlight_shape_regex(name, slide_index, shape_index, regex, color, whole_words_only = nil, ignore_case = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = highlight_shape_regex_with_http_info(name, slide_index, shape_index, regex, color, whole_words_only, ignore_case, password, folder, storage)
+      data
+    end
+
+    # Highlight all matches of sample in text frame text using specified color.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param regex Regular expression.
+    # @param color Highlighting color.
+    # @param whole_words_only Match only whole words.
+    # @param ignore_case True to search ignoring char case.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def highlight_shape_regex_with_http_info(name, slide_index, shape_index, regex, color, whole_words_only = nil, ignore_case = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.highlight_shape_regex ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.highlight_shape_regex"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.highlight_shape_regex"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.highlight_shape_regex"
+      end
+      # verify the required parameter 'regex' is set
+      if @api_client.config.client_side_validation && regex.nil?
+        fail ArgumentError, "Missing the required parameter 'regex' when calling SlidesApi.highlight_shape_regex"
+      end
+      # verify the required parameter 'color' is set
+      if @api_client.config.client_side_validation && color.nil?
+        fail ArgumentError, "Missing the required parameter 'color' when calling SlidesApi.highlight_shape_regex"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/highlightRegex'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'regex'] = @api_client.prepare_for_query(regex) unless regex.nil?
+      query_params[:'color'] = @api_client.prepare_for_query(color) unless color.nil?
+      query_params[:'wholeWordsOnly'] = @api_client.prepare_for_query(whole_words_only) unless whole_words_only.nil?
+      query_params[:'ignoreCase'] = @api_client.prepare_for_query(ignore_case) unless ignore_case.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Shape')
+      return data, status_code, headers
+    end
+    # Highlight all matches of sample in text frame text using specified color.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param text Text sample to highlight.
+    # @param color Highlighting color.
+    # @param whole_words_only Match only whole words.
+    # @param ignore_case True to search ignoring char case.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def highlight_shape_text(name, slide_index, shape_index, text, color, whole_words_only = nil, ignore_case = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = highlight_shape_text_with_http_info(name, slide_index, shape_index, text, color, whole_words_only, ignore_case, password, folder, storage)
+      data
+    end
+
+    # Highlight all matches of sample in text frame text using specified color.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param text Text sample to highlight.
+    # @param color Highlighting color.
+    # @param whole_words_only Match only whole words.
+    # @param ignore_case True to search ignoring char case.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def highlight_shape_text_with_http_info(name, slide_index, shape_index, text, color, whole_words_only = nil, ignore_case = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.highlight_shape_text ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.highlight_shape_text"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.highlight_shape_text"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.highlight_shape_text"
+      end
+      # verify the required parameter 'text' is set
+      if @api_client.config.client_side_validation && text.nil?
+        fail ArgumentError, "Missing the required parameter 'text' when calling SlidesApi.highlight_shape_text"
+      end
+      # verify the required parameter 'color' is set
+      if @api_client.config.client_side_validation && color.nil?
+        fail ArgumentError, "Missing the required parameter 'color' when calling SlidesApi.highlight_shape_text"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/highlightText'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'text'] = @api_client.prepare_for_query(text) unless text.nil?
+      query_params[:'color'] = @api_client.prepare_for_query(color) unless color.nil?
+      query_params[:'wholeWordsOnly'] = @api_client.prepare_for_query(whole_words_only) unless whole_words_only.nil?
+      query_params[:'ignoreCase'] = @api_client.prepare_for_query(ignore_case) unless ignore_case.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Shape')
       return data, status_code, headers
     end
     # Create presentation document from html.
@@ -13507,8 +13799,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -13566,8 +13858,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -13632,8 +13924,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -13688,8 +13980,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'outPath'] = out_path unless out_path.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'outPath'] = @api_client.prepare_for_query(out_path) unless out_path.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -13739,7 +14031,7 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -13803,10 +14095,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'destPath'] = dest_path unless dest_path.nil?
-      query_params[:'srcStorageName'] = src_storage_name unless src_storage_name.nil?
-      query_params[:'destStorageName'] = dest_storage_name unless dest_storage_name.nil?
-      query_params[:'versionId'] = version_id unless version_id.nil?
+      query_params[:'destPath'] = @api_client.prepare_for_query(dest_path) unless dest_path.nil?
+      query_params[:'srcStorageName'] = @api_client.prepare_for_query(src_storage_name) unless src_storage_name.nil?
+      query_params[:'destStorageName'] = @api_client.prepare_for_query(dest_storage_name) unless dest_storage_name.nil?
+      query_params[:'versionId'] = @api_client.prepare_for_query(version_id) unless version_id.nil?
 
       # header parameters
       header_params = {}
@@ -13864,9 +14156,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'destPath'] = dest_path unless dest_path.nil?
-      query_params[:'srcStorageName'] = src_storage_name unless src_storage_name.nil?
-      query_params[:'destStorageName'] = dest_storage_name unless dest_storage_name.nil?
+      query_params[:'destPath'] = @api_client.prepare_for_query(dest_path) unless dest_path.nil?
+      query_params[:'srcStorageName'] = @api_client.prepare_for_query(src_storage_name) unless src_storage_name.nil?
+      query_params[:'destStorageName'] = @api_client.prepare_for_query(dest_storage_name) unless dest_storage_name.nil?
 
       # header parameters
       header_params = {}
@@ -13933,9 +14225,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'newPosition'] = new_position unless new_position.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'newPosition'] = @api_client.prepare_for_query(new_position) unless new_position.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -14004,9 +14296,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'newPosition'] = new_position unless new_position.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'newPosition'] = @api_client.prepare_for_query(new_position) unless new_position.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -14069,8 +14361,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -14184,8 +14476,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'storageName'] = storage_name unless storage_name.nil?
-      query_params[:'versionId'] = version_id unless version_id.nil?
+      query_params[:'storageName'] = @api_client.prepare_for_query(storage_name) unless storage_name.nil?
+      query_params[:'versionId'] = @api_client.prepare_for_query(version_id) unless version_id.nil?
 
       # header parameters
       header_params = {}
@@ -14246,8 +14538,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -14359,10 +14651,10 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'oldPositions'] = old_positions unless old_positions.nil?
-      query_params[:'newPositions'] = new_positions unless new_positions.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'oldPositions'] = @api_client.prepare_for_query(old_positions) unless old_positions.nil?
+      query_params[:'newPositions'] = @api_client.prepare_for_query(new_positions) unless new_positions.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -14432,11 +14724,11 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'oldValue'] = old_value unless old_value.nil?
-      query_params[:'newValue'] = new_value unless new_value.nil?
-      query_params[:'ignoreCase'] = ignore_case unless ignore_case.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'oldValue'] = @api_client.prepare_for_query(old_value) unless old_value.nil?
+      query_params[:'newValue'] = @api_client.prepare_for_query(new_value) unless new_value.nil?
+      query_params[:'ignoreCase'] = @api_client.prepare_for_query(ignore_case) unless ignore_case.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -14501,9 +14793,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'oldValue'] = old_value unless old_value.nil?
-      query_params[:'newValue'] = new_value unless new_value.nil?
-      query_params[:'ignoreCase'] = ignore_case unless ignore_case.nil?
+      query_params[:'oldValue'] = @api_client.prepare_for_query(old_value) unless old_value.nil?
+      query_params[:'newValue'] = @api_client.prepare_for_query(new_value) unless new_value.nil?
+      query_params[:'ignoreCase'] = @api_client.prepare_for_query(ignore_case) unless ignore_case.nil?
 
       # header parameters
       header_params = {}
@@ -14583,11 +14875,11 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'oldValue'] = old_value unless old_value.nil?
-      query_params[:'newValue'] = new_value unless new_value.nil?
-      query_params[:'ignoreCase'] = ignore_case unless ignore_case.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'oldValue'] = @api_client.prepare_for_query(old_value) unless old_value.nil?
+      query_params[:'newValue'] = @api_client.prepare_for_query(new_value) unless new_value.nil?
+      query_params[:'ignoreCase'] = @api_client.prepare_for_query(ignore_case) unless ignore_case.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -14659,9 +14951,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'oldValue'] = old_value unless old_value.nil?
-      query_params[:'newValue'] = new_value unless new_value.nil?
-      query_params[:'ignoreCase'] = ignore_case unless ignore_case.nil?
+      query_params[:'oldValue'] = @api_client.prepare_for_query(old_value) unless old_value.nil?
+      query_params[:'newValue'] = @api_client.prepare_for_query(new_value) unless new_value.nil?
+      query_params[:'ignoreCase'] = @api_client.prepare_for_query(ignore_case) unless ignore_case.nil?
 
       # header parameters
       header_params = {}
@@ -14754,9 +15046,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'outPath'] = out_path unless out_path.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'outPath'] = @api_client.prepare_for_query(out_path) unless out_path.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -14820,8 +15112,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.save_presentation"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp', 'Xaml'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp, Xaml"
+      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp', 'Xaml', 'Mpeg4'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp, Xaml, Mpeg4"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && out_path.nil?
@@ -14834,11 +15126,11 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'outPath'] = out_path unless out_path.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
-      query_params[:'slides'] = slides unless slides.nil?
+      query_params[:'outPath'] = @api_client.prepare_for_query(out_path) unless out_path.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
+      query_params[:'slides'] = @api_client.prepare_for_query(slides) unless slides.nil?
 
       # header parameters
       header_params = {}
@@ -14937,13 +15229,13 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'outPath'] = out_path unless out_path.nil?
-      query_params[:'scaleX'] = scale_x unless scale_x.nil?
-      query_params[:'scaleY'] = scale_y unless scale_y.nil?
-      query_params[:'bounds'] = bounds unless bounds.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'outPath'] = @api_client.prepare_for_query(out_path) unless out_path.nil?
+      query_params[:'scaleX'] = @api_client.prepare_for_query(scale_x) unless scale_x.nil?
+      query_params[:'scaleY'] = @api_client.prepare_for_query(scale_y) unless scale_y.nil?
+      query_params[:'bounds'] = @api_client.prepare_for_query(bounds) unless bounds.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
 
       # header parameters
       header_params = {}
@@ -15039,12 +15331,12 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'outPath'] = out_path unless out_path.nil?
-      query_params[:'scaleX'] = scale_x unless scale_x.nil?
-      query_params[:'scaleY'] = scale_y unless scale_y.nil?
-      query_params[:'bounds'] = bounds unless bounds.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'outPath'] = @api_client.prepare_for_query(out_path) unless out_path.nil?
+      query_params[:'scaleX'] = @api_client.prepare_for_query(scale_x) unless scale_x.nil?
+      query_params[:'scaleY'] = @api_client.prepare_for_query(scale_y) unless scale_y.nil?
+      query_params[:'bounds'] = @api_client.prepare_for_query(bounds) unless bounds.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
 
       # header parameters
       header_params = {}
@@ -15134,12 +15426,12 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'outPath'] = out_path unless out_path.nil?
-      query_params[:'width'] = width unless width.nil?
-      query_params[:'height'] = height unless height.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'outPath'] = @api_client.prepare_for_query(out_path) unless out_path.nil?
+      query_params[:'width'] = @api_client.prepare_for_query(width) unless width.nil?
+      query_params[:'height'] = @api_client.prepare_for_query(height) unless height.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
 
       # header parameters
       header_params = {}
@@ -15223,11 +15515,11 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'outPath'] = out_path unless out_path.nil?
-      query_params[:'width'] = width unless width.nil?
-      query_params[:'height'] = height unless height.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'outPath'] = @api_client.prepare_for_query(out_path) unless out_path.nil?
+      query_params[:'width'] = @api_client.prepare_for_query(width) unless width.nil?
+      query_params[:'height'] = @api_client.prepare_for_query(height) unless height.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
 
       # header parameters
       header_params = {}
@@ -15340,13 +15632,13 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'outPath'] = out_path unless out_path.nil?
-      query_params[:'scaleX'] = scale_x unless scale_x.nil?
-      query_params[:'scaleY'] = scale_y unless scale_y.nil?
-      query_params[:'bounds'] = bounds unless bounds.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'outPath'] = @api_client.prepare_for_query(out_path) unless out_path.nil?
+      query_params[:'scaleX'] = @api_client.prepare_for_query(scale_x) unless scale_x.nil?
+      query_params[:'scaleY'] = @api_client.prepare_for_query(scale_y) unless scale_y.nil?
+      query_params[:'bounds'] = @api_client.prepare_for_query(bounds) unless bounds.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
 
       # header parameters
       header_params = {}
@@ -15463,13 +15755,13 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'outPath'] = out_path unless out_path.nil?
-      query_params[:'scaleX'] = scale_x unless scale_x.nil?
-      query_params[:'scaleY'] = scale_y unless scale_y.nil?
-      query_params[:'bounds'] = bounds unless bounds.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'outPath'] = @api_client.prepare_for_query(out_path) unless out_path.nil?
+      query_params[:'scaleX'] = @api_client.prepare_for_query(scale_x) unless scale_x.nil?
+      query_params[:'scaleY'] = @api_client.prepare_for_query(scale_y) unless scale_y.nil?
+      query_params[:'bounds'] = @api_client.prepare_for_query(bounds) unless bounds.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
 
       # header parameters
       header_params = {}
@@ -15575,13 +15867,13 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'outPath'] = out_path unless out_path.nil?
-      query_params[:'scaleX'] = scale_x unless scale_x.nil?
-      query_params[:'scaleY'] = scale_y unless scale_y.nil?
-      query_params[:'bounds'] = bounds unless bounds.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'outPath'] = @api_client.prepare_for_query(out_path) unless out_path.nil?
+      query_params[:'scaleX'] = @api_client.prepare_for_query(scale_x) unless scale_x.nil?
+      query_params[:'scaleY'] = @api_client.prepare_for_query(scale_y) unless scale_y.nil?
+      query_params[:'bounds'] = @api_client.prepare_for_query(bounds) unless bounds.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
 
       # header parameters
       header_params = {}
@@ -15649,8 +15941,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -15719,8 +16011,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -15789,9 +16081,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'color'] = color unless color.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'color'] = @api_client.prepare_for_query(color) unless color.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -15853,8 +16145,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -15923,8 +16215,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -15993,8 +16285,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -16056,8 +16348,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -16119,8 +16411,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -16241,8 +16533,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -16318,8 +16610,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -16388,8 +16680,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -16451,8 +16743,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -16532,8 +16824,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -16595,8 +16887,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -16671,15 +16963,15 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'format'] = format unless format.nil?
-      query_params[:'width'] = width unless width.nil?
-      query_params[:'height'] = height unless height.nil?
-      query_params[:'from'] = from unless from.nil?
-      query_params[:'to'] = to unless to.nil?
-      query_params[:'destFolder'] = dest_folder unless dest_folder.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'format'] = @api_client.prepare_for_query(format) unless format.nil?
+      query_params[:'width'] = @api_client.prepare_for_query(width) unless width.nil?
+      query_params[:'height'] = @api_client.prepare_for_query(height) unless height.nil?
+      query_params[:'from'] = @api_client.prepare_for_query(from) unless from.nil?
+      query_params[:'to'] = @api_client.prepare_for_query(to) unless to.nil?
+      query_params[:'destFolder'] = @api_client.prepare_for_query(dest_folder) unless dest_folder.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
 
       # header parameters
       header_params = {}
@@ -16755,13 +17047,13 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'destFolder'] = dest_folder unless dest_folder.nil?
-      query_params[:'width'] = width unless width.nil?
-      query_params[:'height'] = height unless height.nil?
-      query_params[:'from'] = from unless from.nil?
-      query_params[:'to'] = to unless to.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'destFolder'] = @api_client.prepare_for_query(dest_folder) unless dest_folder.nil?
+      query_params[:'width'] = @api_client.prepare_for_query(width) unless width.nil?
+      query_params[:'height'] = @api_client.prepare_for_query(height) unless height.nil?
+      query_params[:'from'] = @api_client.prepare_for_query(from) unless from.nil?
+      query_params[:'to'] = @api_client.prepare_for_query(to) unless to.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
 
       # header parameters
       header_params = {}
@@ -16838,12 +17130,12 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'width'] = width unless width.nil?
-      query_params[:'height'] = height unless height.nil?
-      query_params[:'from'] = from unless from.nil?
-      query_params[:'to'] = to unless to.nil?
-      query_params[:'storage'] = storage unless storage.nil?
-      query_params[:'fontsFolder'] = fonts_folder unless fonts_folder.nil?
+      query_params[:'width'] = @api_client.prepare_for_query(width) unless width.nil?
+      query_params[:'height'] = @api_client.prepare_for_query(height) unless height.nil?
+      query_params[:'from'] = @api_client.prepare_for_query(from) unless from.nil?
+      query_params[:'to'] = @api_client.prepare_for_query(to) unless to.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
 
       # header parameters
       header_params = {}
@@ -16970,8 +17262,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -17054,8 +17346,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -17138,8 +17430,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -17229,8 +17521,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -17313,8 +17605,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -17383,8 +17675,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -17453,8 +17745,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -17537,8 +17829,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -17628,8 +17920,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -17698,9 +17990,9 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'sectionName'] = section_name unless section_name.nil?
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'sectionName'] = @api_client.prepare_for_query(section_name) unless section_name.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -17776,8 +18068,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -17846,8 +18138,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -17934,8 +18226,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -18029,8 +18321,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -18124,8 +18416,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -18226,8 +18518,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -18314,8 +18606,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -18409,8 +18701,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -18511,8 +18803,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -18620,8 +18912,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -18704,8 +18996,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -18795,8 +19087,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -18893,8 +19185,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'folder'] = folder unless folder.nil?
-      query_params[:'storage'] = storage unless storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
       # header parameters
       header_params = {}
@@ -18952,7 +19244,7 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
-      query_params[:'storageName'] = storage_name unless storage_name.nil?
+      query_params[:'storageName'] = @api_client.prepare_for_query(storage_name) unless storage_name.nil?
 
       # header parameters
       header_params = {}

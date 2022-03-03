@@ -46,18 +46,6 @@ module AsposeSlidesCloud
     # Series order.
     attr_accessor :order
 
-    # The number format for the series y values.
-    attr_accessor :number_format_of_y_values
-
-    # The number format for the series x values.
-    attr_accessor :number_format_of_x_values
-
-    # The number format for the series values.
-    attr_accessor :number_format_of_values
-
-    # The number format for the series bubble sizes.
-    attr_accessor :number_format_of_bubble_sizes
-
     # True if the series shall invert its colors if the value is negative. Applies to bar, column and bubble series.
     attr_accessor :invert_if_negative
 
@@ -110,10 +98,6 @@ module AsposeSlidesCloud
         :'smooth' => :'Smooth',
         :'plot_on_second_axis' => :'PlotOnSecondAxis',
         :'order' => :'Order',
-        :'number_format_of_y_values' => :'NumberFormatOfYValues',
-        :'number_format_of_x_values' => :'NumberFormatOfXValues',
-        :'number_format_of_values' => :'NumberFormatOfValues',
-        :'number_format_of_bubble_sizes' => :'NumberFormatOfBubbleSizes',
         :'invert_if_negative' => :'InvertIfNegative',
         :'explosion' => :'Explosion',
         :'marker' => :'Marker',
@@ -134,10 +118,6 @@ module AsposeSlidesCloud
         :'smooth' => :'BOOLEAN',
         :'plot_on_second_axis' => :'BOOLEAN',
         :'order' => :'Integer',
-        :'number_format_of_y_values' => :'String',
-        :'number_format_of_x_values' => :'String',
-        :'number_format_of_values' => :'String',
-        :'number_format_of_bubble_sizes' => :'String',
         :'invert_if_negative' => :'BOOLEAN',
         :'explosion' => :'Integer',
         :'marker' => :'SeriesMarker',
@@ -182,22 +162,6 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'Order')
         self.order = attributes[:'Order']
-      end
-
-      if attributes.has_key?(:'NumberFormatOfYValues')
-        self.number_format_of_y_values = attributes[:'NumberFormatOfYValues']
-      end
-
-      if attributes.has_key?(:'NumberFormatOfXValues')
-        self.number_format_of_x_values = attributes[:'NumberFormatOfXValues']
-      end
-
-      if attributes.has_key?(:'NumberFormatOfValues')
-        self.number_format_of_values = attributes[:'NumberFormatOfValues']
-      end
-
-      if attributes.has_key?(:'NumberFormatOfBubbleSizes')
-        self.number_format_of_bubble_sizes = attributes[:'NumberFormatOfBubbleSizes']
       end
 
       if attributes.has_key?(:'InvertIfNegative')
@@ -278,10 +242,6 @@ module AsposeSlidesCloud
           smooth == o.smooth &&
           plot_on_second_axis == o.plot_on_second_axis &&
           order == o.order &&
-          number_format_of_y_values == o.number_format_of_y_values &&
-          number_format_of_x_values == o.number_format_of_x_values &&
-          number_format_of_values == o.number_format_of_values &&
-          number_format_of_bubble_sizes == o.number_format_of_bubble_sizes &&
           invert_if_negative == o.invert_if_negative &&
           explosion == o.explosion &&
           marker == o.marker &&
@@ -300,7 +260,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, number_format_of_y_values, number_format_of_x_values, number_format_of_values, number_format_of_bubble_sizes, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type].hash
+      [type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type].hash
     end
 
     # Builds the object from hash
@@ -372,6 +332,10 @@ module AsposeSlidesCloud
           end
         end
       else # model
+        registry_type = AsposeSlidesCloud::TypeRegistry.get_type(type.to_s, value)
+        if registry_type
+          type = registry_type
+        end
         temp_model = AsposeSlidesCloud.const_get(type).new
         temp_model.build_from_hash(value)
       end

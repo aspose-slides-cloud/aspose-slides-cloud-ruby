@@ -413,7 +413,18 @@ module AsposeSlidesCloud
       if value.to_s != ""
         value = "/" + value.to_s
       end
-      path.sub('/{' + name + '}', URI::encode(value))
+      path.sub('/{' + name + '}', CGI.escape(value))
+    end
+
+    # Process parameter for query.
+    # @param [Object] obj object to be converted into JSON string
+    # @return [String] JSON string representation of the object
+    def prepare_for_query(value)
+      if value.kind_of?(Array)
+        value.join(',')
+      else
+        value
+      end
     end
 
     # Build parameter value according to the given collection format.

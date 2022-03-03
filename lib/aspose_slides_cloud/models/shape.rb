@@ -31,6 +31,9 @@ module AsposeSlidesCloud
     # Get or sets list to paragraphs list
     attr_accessor :paragraphs
 
+    # Returns TextFrame's formatting properties.
+    attr_accessor :text_frame_format
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -58,6 +61,7 @@ module AsposeSlidesCloud
       super.merge({
         :'text' => :'Text',
         :'paragraphs' => :'Paragraphs',
+        :'text_frame_format' => :'TextFrameFormat',
       })
     end
 
@@ -66,6 +70,7 @@ module AsposeSlidesCloud
       super.merge({
         :'text' => :'String',
         :'paragraphs' => :'ResourceUri',
+        :'text_frame_format' => :'TextFrameFormat',
       })
     end
 
@@ -80,6 +85,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'Paragraphs')
         self.paragraphs = attributes[:'Paragraphs']
+      end
+
+      if attributes.has_key?(:'TextFrameFormat')
+        self.text_frame_format = attributes[:'TextFrameFormat']
       end
       self.type = "Shape"
     end
@@ -124,7 +133,8 @@ module AsposeSlidesCloud
           type == o.type &&
           shape_type == o.shape_type &&
           text == o.text &&
-          paragraphs == o.paragraphs
+          paragraphs == o.paragraphs &&
+          text_frame_format == o.text_frame_format
     end
 
     # @see the `==` method
@@ -136,7 +146,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, shape_type, text, paragraphs].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, shape_type, text, paragraphs, text_frame_format].hash
     end
 
     # Builds the object from hash
@@ -208,6 +218,10 @@ module AsposeSlidesCloud
           end
         end
       else # model
+        registry_type = AsposeSlidesCloud::TypeRegistry.get_type(type.to_s, value)
+        if registry_type
+          type = registry_type
+        end
         temp_model = AsposeSlidesCloud.const_get(type).new
         temp_model.build_from_hash(value)
       end

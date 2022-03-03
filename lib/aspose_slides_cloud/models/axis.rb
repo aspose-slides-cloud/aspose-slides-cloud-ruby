@@ -406,13 +406,13 @@ module AsposeSlidesCloud
       return false unless position_validator.valid?(@position)
       display_unit_validator = EnumAttributeValidator.new('String', ['None', 'Hundreds', 'Thousands', 'TenThousands', 'HundredThousands', 'Millions', 'TenMillions', 'HundredMillions', 'Billions', 'Trillions', 'CustomValue'])
       return false unless display_unit_validator.valid?(@display_unit)
-      base_unit_scale_validator = EnumAttributeValidator.new('String', ['Days', 'Months', 'Years'])
+      base_unit_scale_validator = EnumAttributeValidator.new('String', ['None', 'Days', 'Months', 'Years'])
       return false unless base_unit_scale_validator.valid?(@base_unit_scale)
-      major_unit_scale_validator = EnumAttributeValidator.new('String', ['Days', 'Months', 'Years'])
+      major_unit_scale_validator = EnumAttributeValidator.new('String', ['None', 'Days', 'Months', 'Years'])
       return false unless major_unit_scale_validator.valid?(@major_unit_scale)
       major_tick_mark_validator = EnumAttributeValidator.new('String', ['Cross', 'Inside', 'None', 'Outside'])
       return false unless major_tick_mark_validator.valid?(@major_tick_mark)
-      minor_unit_scale_validator = EnumAttributeValidator.new('String', ['Days', 'Months', 'Years'])
+      minor_unit_scale_validator = EnumAttributeValidator.new('String', ['None', 'Days', 'Months', 'Years'])
       return false unless minor_unit_scale_validator.valid?(@minor_unit_scale)
       minor_tick_mark_validator = EnumAttributeValidator.new('String', ['Cross', 'Inside', 'None', 'Outside'])
       return false unless minor_tick_mark_validator.valid?(@minor_tick_mark)
@@ -448,7 +448,7 @@ module AsposeSlidesCloud
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] base_unit_scale Object to be assigned
     def base_unit_scale=(base_unit_scale)
-      validator = EnumAttributeValidator.new('String', ['Days', 'Months', 'Years'])
+      validator = EnumAttributeValidator.new('String', ['None', 'Days', 'Months', 'Years'])
       unless validator.valid?(base_unit_scale)
         fail ArgumentError, 'invalid value for "base_unit_scale", must be one of #{validator.allowable_values}.'
       end
@@ -458,7 +458,7 @@ module AsposeSlidesCloud
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] major_unit_scale Object to be assigned
     def major_unit_scale=(major_unit_scale)
-      validator = EnumAttributeValidator.new('String', ['Days', 'Months', 'Years'])
+      validator = EnumAttributeValidator.new('String', ['None', 'Days', 'Months', 'Years'])
       unless validator.valid?(major_unit_scale)
         fail ArgumentError, 'invalid value for "major_unit_scale", must be one of #{validator.allowable_values}.'
       end
@@ -478,7 +478,7 @@ module AsposeSlidesCloud
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] minor_unit_scale Object to be assigned
     def minor_unit_scale=(minor_unit_scale)
-      validator = EnumAttributeValidator.new('String', ['Days', 'Months', 'Years'])
+      validator = EnumAttributeValidator.new('String', ['None', 'Days', 'Months', 'Years'])
       unless validator.valid?(minor_unit_scale)
         fail ArgumentError, 'invalid value for "minor_unit_scale", must be one of #{validator.allowable_values}.'
       end
@@ -649,6 +649,10 @@ module AsposeSlidesCloud
           end
         end
       else # model
+        registry_type = AsposeSlidesCloud::TypeRegistry.get_type(type.to_s, value)
+        if registry_type
+          type = registry_type
+        end
         temp_model = AsposeSlidesCloud.const_get(type).new
         temp_model.build_from_hash(value)
       end

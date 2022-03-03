@@ -35,8 +35,10 @@ module AsposeSlidesCloud
     end
 
     def self.get_type(class_name, map)
+      no_descendants = true
       type_hierarchy.each do |k, v|
         if v.to_s == class_name
+          no_descendants = false
           newType = get_type(k.to_s, map)
           if newType != ""
             return newType
@@ -44,7 +46,8 @@ module AsposeSlidesCloud
         end
       end
       determiners = type_determiners[class_name.to_sym]
-      if determiners
+      is_good = false
+      if (determiners && determiners.keys.length > 0) || no_descendants
         is_good = true
         determiners.each do |k, v|
           is_good_key = false
@@ -80,7 +83,6 @@ module AsposeSlidesCloud
         :'BlockElement' => :'MathElement',
         :'BorderBoxElement' => :'MathElement',
         :'BoxElement' => :'MathElement',
-        :'BubbleSeries' => :'Series',
         :'ClosePathSegment' => :'PathSegment',
         :'ColorScheme' => :'ResourceBase',
         :'CubicBezierToPathSegment' => :'PathSegment',
@@ -145,7 +147,6 @@ module AsposeSlidesCloud
         :'SaveShape' => :'Task',
         :'SaveSlide' => :'Task',
         :'ScatterChartDataPoint' => :'DataPoint',
-        :'ScatterSeries' => :'Series',
         :'Section' => :'ResourceBase',
         :'Sections' => :'ResourceBase',
         :'ShapeBase' => :'ResourceBase',
@@ -168,28 +169,37 @@ module AsposeSlidesCloud
         :'TiffExportOptions' => :'ExportOptions',
         :'UpdateBackground' => :'Task',
         :'UpdateShape' => :'Task',
+        :'VideoExportOptions' => :'ExportOptions',
         :'ViewProperties' => :'ResourceBase',
+        :'XYSeries' => :'Series',
         :'XamlExportOptions' => :'ExportOptions',
         :'XpsExportOptions' => :'ExportOptions',
         :'BoxAndWhiskerSeries' => :'OneValueSeries',
         :'BubbleChartDataPoint' => :'ScatterChartDataPoint',
+        :'BubbleSeries' => :'XYSeries',
         :'Chart' => :'ShapeBase',
         :'DocumentReplaceResult' => :'Document',
         :'GeometryShape' => :'ShapeBase',
         :'GraphicalObject' => :'ShapeBase',
         :'GroupShape' => :'ShapeBase',
         :'OleObjectFrame' => :'ShapeBase',
+        :'ScatterSeries' => :'XYSeries',
         :'SlideReplaceResult' => :'Slide',
         :'SmartArt' => :'ShapeBase',
+        :'SummaryZoomFrame' => :'ShapeBase',
         :'Table' => :'ShapeBase',
         :'WaterfallChartDataPoint' => :'OneValueChartDataPoint',
         :'WaterfallSeries' => :'OneValueSeries',
+        :'ZoomObject' => :'ShapeBase',
         :'AudioFrame' => :'GeometryShape',
         :'Connector' => :'GeometryShape',
         :'PictureFrame' => :'GeometryShape',
+        :'SectionZoomFrame' => :'ZoomObject',
         :'Shape' => :'GeometryShape',
         :'SmartArtShape' => :'GeometryShape',
         :'VideoFrame' => :'GeometryShape',
+        :'ZoomFrame' => :'ZoomObject',
+        :'SummaryZoomSection' => :'SectionZoomFrame',
         
       }
     end
@@ -272,6 +282,7 @@ module AsposeSlidesCloud
         :'TableColumn' => {  },
         :'TableRow' => {  },
         :'Task' => {  },
+        :'TextFrameFormat' => {  },
         :'TextItem' => {  },
         :'ThreeDFormat' => {  },
         :'AccentElement' => { :'Type' => "Accent", },
@@ -286,7 +297,6 @@ module AsposeSlidesCloud
         :'BlockElement' => { :'Type' => "Block", },
         :'BorderBoxElement' => { :'Type' => "BorderBox", },
         :'BoxElement' => { :'Type' => "Box", },
-        :'BubbleSeries' => { :'DataPointType' => "Bubble", },
         :'ClosePathSegment' => { :'Type' => "Close", },
         :'ColorScheme' => {  },
         :'CubicBezierToPathSegment' => { :'Type' => "CubicBezierTo", },
@@ -351,7 +361,6 @@ module AsposeSlidesCloud
         :'SaveShape' => { :'Type' => "SaveShape", },
         :'SaveSlide' => { :'Type' => "SaveSlide", },
         :'ScatterChartDataPoint' => {  },
-        :'ScatterSeries' => { :'DataPointType' => "Scatter", },
         :'Section' => {  },
         :'Sections' => {  },
         :'ShapeBase' => {  },
@@ -374,28 +383,37 @@ module AsposeSlidesCloud
         :'TiffExportOptions' => { :'Format' => "tiff", },
         :'UpdateBackground' => { :'Type' => "UpdateBackground", },
         :'UpdateShape' => { :'Type' => "UpdateShape", },
+        :'VideoExportOptions' => { :'Format' => "mpeg4", },
         :'ViewProperties' => {  },
+        :'XYSeries' => {  },
         :'XamlExportOptions' => { :'Format' => "xaml", },
         :'XpsExportOptions' => { :'Format' => "xps", },
         :'BoxAndWhiskerSeries' => { :'DataPointType' => "OneValue", },
         :'BubbleChartDataPoint' => {  },
+        :'BubbleSeries' => { :'DataPointType' => "Bubble", },
         :'Chart' => { :'Type' => "Chart", },
         :'DocumentReplaceResult' => {  },
         :'GeometryShape' => {  },
         :'GraphicalObject' => { :'Type' => "GraphicalObject", },
         :'GroupShape' => { :'Type' => "GroupShape", },
         :'OleObjectFrame' => { :'Type' => "OleObjectFrame", },
+        :'ScatterSeries' => { :'DataPointType' => "Scatter", },
         :'SlideReplaceResult' => {  },
         :'SmartArt' => { :'Type' => "SmartArt", },
+        :'SummaryZoomFrame' => { :'Type' => "SummaryZoomFrame", },
         :'Table' => { :'Type' => "Table", },
         :'WaterfallChartDataPoint' => {  },
         :'WaterfallSeries' => { :'DataPointType' => "OneValue", },
+        :'ZoomObject' => {  },
         :'AudioFrame' => { :'Type' => "AudioFrame", },
         :'Connector' => { :'Type' => "Connector", },
         :'PictureFrame' => { :'Type' => "PictureFrame", },
+        :'SectionZoomFrame' => { :'Type' => "SectionZoomFrame", },
         :'Shape' => { :'Type' => "Shape", },
         :'SmartArtShape' => { :'Type' => "SmartArtShape", },
         :'VideoFrame' => { :'Type' => "VideoFrame", },
+        :'ZoomFrame' => { :'Type' => "ZoomFrame", },
+        :'SummaryZoomSection' => { :'Type' => "SummaryZoomSection", },
       }
     end
   end
