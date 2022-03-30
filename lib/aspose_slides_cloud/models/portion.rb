@@ -109,6 +109,15 @@ module AsposeSlidesCloud
     # Hyperlink defined for mouse over.
     attr_accessor :hyperlink_mouse_over
 
+    # Returns or sets the Latin font info.
+    attr_accessor :latin_font
+
+    # Returns or sets the East Asian font info.
+    attr_accessor :east_asian_font
+
+    # Returns or sets the complex script font info.
+    attr_accessor :complex_script_font
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -162,6 +171,9 @@ module AsposeSlidesCloud
         :'underline_line_format' => :'UnderlineLineFormat',
         :'hyperlink_click' => :'HyperlinkClick',
         :'hyperlink_mouse_over' => :'HyperlinkMouseOver',
+        :'latin_font' => :'LatinFont',
+        :'east_asian_font' => :'EastAsianFont',
+        :'complex_script_font' => :'ComplexScriptFont',
       })
     end
 
@@ -196,6 +208,9 @@ module AsposeSlidesCloud
         :'underline_line_format' => :'LineFormat',
         :'hyperlink_click' => :'Hyperlink',
         :'hyperlink_mouse_over' => :'Hyperlink',
+        :'latin_font' => :'String',
+        :'east_asian_font' => :'String',
+        :'complex_script_font' => :'String',
       })
     end
 
@@ -314,6 +329,18 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'HyperlinkMouseOver')
         self.hyperlink_mouse_over = attributes[:'HyperlinkMouseOver']
+      end
+
+      if attributes.has_key?(:'LatinFont')
+        self.latin_font = attributes[:'LatinFont']
+      end
+
+      if attributes.has_key?(:'EastAsianFont')
+        self.east_asian_font = attributes[:'EastAsianFont']
+      end
+
+      if attributes.has_key?(:'ComplexScriptFont')
+        self.complex_script_font = attributes[:'ComplexScriptFont']
       end
     end
 
@@ -485,7 +512,10 @@ module AsposeSlidesCloud
           underline_fill_format == o.underline_fill_format &&
           underline_line_format == o.underline_line_format &&
           hyperlink_click == o.hyperlink_click &&
-          hyperlink_mouse_over == o.hyperlink_mouse_over
+          hyperlink_mouse_over == o.hyperlink_mouse_over &&
+          latin_font == o.latin_font &&
+          east_asian_font == o.east_asian_font &&
+          complex_script_font == o.complex_script_font
     end
 
     # @see the `==` method
@@ -497,7 +527,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, text, math_paragraph, font_bold, font_italic, font_underline, strikethrough_type, text_cap_type, escapement, spacing, font_color, highlight_color, font_height, normalise_height, proof_disabled, smart_tag_clean, kerning_minimal_size, kumimoji, language_id, alternative_language_id, is_hard_underline_fill, is_hard_underline_line, fill_format, effect_format, line_format, underline_fill_format, underline_line_format, hyperlink_click, hyperlink_mouse_over].hash
+      [self_uri, alternate_links, text, math_paragraph, font_bold, font_italic, font_underline, strikethrough_type, text_cap_type, escapement, spacing, font_color, highlight_color, font_height, normalise_height, proof_disabled, smart_tag_clean, kerning_minimal_size, kumimoji, language_id, alternative_language_id, is_hard_underline_fill, is_hard_underline_line, fill_format, effect_format, line_format, underline_fill_format, underline_line_format, hyperlink_click, hyperlink_mouse_over, latin_font, east_asian_font, complex_script_font].hash
     end
 
     # Builds the object from hash

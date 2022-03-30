@@ -23,41 +23,27 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Represents export options for whole presentation.
-  class ExportOptions
-    # Default regular font for rendering the presentation. 
-    attr_accessor :default_regular_font
+  # Represents the lines format of chart elements. 
+  class ChartLinesFormat
+    # Get or sets the effect format.
+    attr_accessor :effect_format
 
-    # Gets or sets the height of slides in the output format, e.g. image size, pdf page size etc.
-    attr_accessor :height
-
-    # Gets or sets the height of slides in the output format, e.g. image size, pdf page size etc.
-    attr_accessor :width
-
-    # Gets of sets list of font fallback rules.
-    attr_accessor :font_fallback_rules
-
-    attr_accessor :format
+    # Get or sets the line format.
+    attr_accessor :line_format
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'default_regular_font' => :'DefaultRegularFont',
-        :'height' => :'Height',
-        :'width' => :'Width',
-        :'font_fallback_rules' => :'FontFallbackRules',
-        :'format' => :'Format',
+        :'effect_format' => :'EffectFormat',
+        :'line_format' => :'LineFormat',
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'default_regular_font' => :'String',
-        :'height' => :'Integer',
-        :'width' => :'Integer',
-        :'font_fallback_rules' => :'Array<FontFallbackRule>',
-        :'format' => :'String',
+        :'effect_format' => :'EffectFormat',
+        :'line_format' => :'LineFormat',
       }
     end
 
@@ -69,26 +55,12 @@ module AsposeSlidesCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'DefaultRegularFont')
-        self.default_regular_font = attributes[:'DefaultRegularFont']
+      if attributes.has_key?(:'EffectFormat')
+        self.effect_format = attributes[:'EffectFormat']
       end
 
-      if attributes.has_key?(:'Height')
-        self.height = attributes[:'Height']
-      end
-
-      if attributes.has_key?(:'Width')
-        self.width = attributes[:'Width']
-      end
-
-      if attributes.has_key?(:'FontFallbackRules')
-        if (value = attributes[:'FontFallbackRules']).is_a?(Array)
-          self.font_fallback_rules = value
-        end
-      end
-
-      if attributes.has_key?(:'Format')
-        self.format = attributes[:'Format']
+      if attributes.has_key?(:'LineFormat')
+        self.line_format = attributes[:'LineFormat']
       end
     end
 
@@ -110,11 +82,8 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          default_regular_font == o.default_regular_font &&
-          height == o.height &&
-          width == o.width &&
-          font_fallback_rules == o.font_fallback_rules &&
-          format == o.format
+          effect_format == o.effect_format &&
+          line_format == o.line_format
     end
 
     # @see the `==` method
@@ -126,7 +95,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, height, width, font_fallback_rules, format].hash
+      [effect_format, line_format].hash
     end
 
     # Builds the object from hash

@@ -95,7 +95,6 @@ describe 'UseCases' do
       presentation1.path = "file1"
       presentation1.password = "password"
       presentation2 = AsposeSlidesCloud::PresentationToMerge.new
-      presentation2.path = "test-unprotected.pptx"
       presentation2.slides = [ 1, 2 ]
       presentation2.source = 'Storage'
       presentation2.path = folder_name + "/" + file_name2

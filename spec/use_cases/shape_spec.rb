@@ -314,7 +314,6 @@ describe 'UseCases' do
       shape1_index = 1
       shape2_index = 2
       AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      dto = AsposeSlidesCloud::Connector.new
       shape11 = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slide_index, shape1_index, password, folder_name)
       shape12 = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slide_index, shape2_index, password, folder_name)
       expect(shape12.x).not_to be_within(1).of(shape11.x)
@@ -341,7 +340,6 @@ describe 'UseCases' do
       shape1_index = 1
       shape2_index = 2
       AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      dto = AsposeSlidesCloud::Connector.new
       shape11 = AsposeSlidesCloud::SpecUtils.api.get_subshape(file_name, slide_index, path, shape1_index, password, folder_name)
       shape12 = AsposeSlidesCloud::SpecUtils.api.get_subshape(file_name, slide_index, path, shape2_index, password, folder_name)
       expect(shape12.x).not_to be_within(1).of(shape11.x)

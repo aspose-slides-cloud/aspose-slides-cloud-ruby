@@ -23,41 +23,63 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Represents export options for whole presentation.
-  class ExportOptions
-    # Default regular font for rendering the presentation. 
-    attr_accessor :default_regular_font
+  # Represents slide comment
+  class SlideCommentBase
+    # Author.
+    attr_accessor :author
 
-    # Gets or sets the height of slides in the output format, e.g. image size, pdf page size etc.
-    attr_accessor :height
+    # Text.
+    attr_accessor :text
 
-    # Gets or sets the height of slides in the output format, e.g. image size, pdf page size etc.
-    attr_accessor :width
+    # Creation time.
+    attr_accessor :created_time
 
-    # Gets of sets list of font fallback rules.
-    attr_accessor :font_fallback_rules
+    # Child comments.
+    attr_accessor :child_comments
 
-    attr_accessor :format
+    attr_accessor :type
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.any?{ |s| s.casecmp(value) == 0 }
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'default_regular_font' => :'DefaultRegularFont',
-        :'height' => :'Height',
-        :'width' => :'Width',
-        :'font_fallback_rules' => :'FontFallbackRules',
-        :'format' => :'Format',
+        :'author' => :'Author',
+        :'text' => :'Text',
+        :'created_time' => :'CreatedTime',
+        :'child_comments' => :'ChildComments',
+        :'type' => :'Type',
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'default_regular_font' => :'String',
-        :'height' => :'Integer',
-        :'width' => :'Integer',
-        :'font_fallback_rules' => :'Array<FontFallbackRule>',
-        :'format' => :'String',
+        :'author' => :'String',
+        :'text' => :'String',
+        :'created_time' => :'String',
+        :'child_comments' => :'Array<SlideCommentBase>',
+        :'type' => :'String',
       }
     end
 
@@ -69,26 +91,26 @@ module AsposeSlidesCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'DefaultRegularFont')
-        self.default_regular_font = attributes[:'DefaultRegularFont']
+      if attributes.has_key?(:'Author')
+        self.author = attributes[:'Author']
       end
 
-      if attributes.has_key?(:'Height')
-        self.height = attributes[:'Height']
+      if attributes.has_key?(:'Text')
+        self.text = attributes[:'Text']
       end
 
-      if attributes.has_key?(:'Width')
-        self.width = attributes[:'Width']
+      if attributes.has_key?(:'CreatedTime')
+        self.created_time = attributes[:'CreatedTime']
       end
 
-      if attributes.has_key?(:'FontFallbackRules')
-        if (value = attributes[:'FontFallbackRules']).is_a?(Array)
-          self.font_fallback_rules = value
+      if attributes.has_key?(:'ChildComments')
+        if (value = attributes[:'ChildComments']).is_a?(Array)
+          self.child_comments = value
         end
       end
 
-      if attributes.has_key?(:'Format')
-        self.format = attributes[:'Format']
+      if attributes.has_key?(:'Type')
+        self.type = attributes[:'Type']
       end
     end
 
@@ -102,7 +124,19 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      type_validator = EnumAttributeValidator.new('String', ['Regular', 'Modern'])
+      return false unless type_validator.valid?(@type)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] type Object to be assigned
+    def type=(type)
+      validator = EnumAttributeValidator.new('String', ['Regular', 'Modern'])
+      unless validator.valid?(type)
+        fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
+      end
+      @type = type
     end
 
     # Checks equality by comparing each attribute.
@@ -110,11 +144,11 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          default_regular_font == o.default_regular_font &&
-          height == o.height &&
-          width == o.width &&
-          font_fallback_rules == o.font_fallback_rules &&
-          format == o.format
+          author == o.author &&
+          text == o.text &&
+          created_time == o.created_time &&
+          child_comments == o.child_comments &&
+          type == o.type
     end
 
     # @see the `==` method
@@ -126,7 +160,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, height, width, font_fallback_rules, format].hash
+      [author, text, created_time, child_comments, type].hash
     end
 
     # Builds the object from hash

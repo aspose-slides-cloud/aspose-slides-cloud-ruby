@@ -23,41 +23,37 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Represents export options for whole presentation.
-  class ExportOptions
-    # Default regular font for rendering the presentation. 
-    attr_accessor :default_regular_font
+  # Represents text bounds within a paragraph or portion.
+  class TextBounds
+    # X coordinate of the text bounds.
+    attr_accessor :x
 
-    # Gets or sets the height of slides in the output format, e.g. image size, pdf page size etc.
-    attr_accessor :height
+    # X coordinate of the text bounds.             
+    attr_accessor :y
 
-    # Gets or sets the height of slides in the output format, e.g. image size, pdf page size etc.
+    # Width of the text bounds.
     attr_accessor :width
 
-    # Gets of sets list of font fallback rules.
-    attr_accessor :font_fallback_rules
-
-    attr_accessor :format
+    # Height of the text bounds.
+    attr_accessor :height
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'default_regular_font' => :'DefaultRegularFont',
-        :'height' => :'Height',
+        :'x' => :'X',
+        :'y' => :'Y',
         :'width' => :'Width',
-        :'font_fallback_rules' => :'FontFallbackRules',
-        :'format' => :'Format',
+        :'height' => :'Height',
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'default_regular_font' => :'String',
-        :'height' => :'Integer',
-        :'width' => :'Integer',
-        :'font_fallback_rules' => :'Array<FontFallbackRule>',
-        :'format' => :'String',
+        :'x' => :'Float',
+        :'y' => :'Float',
+        :'width' => :'Float',
+        :'height' => :'Float',
       }
     end
 
@@ -69,26 +65,20 @@ module AsposeSlidesCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'DefaultRegularFont')
-        self.default_regular_font = attributes[:'DefaultRegularFont']
+      if attributes.has_key?(:'X')
+        self.x = attributes[:'X']
       end
 
-      if attributes.has_key?(:'Height')
-        self.height = attributes[:'Height']
+      if attributes.has_key?(:'Y')
+        self.y = attributes[:'Y']
       end
 
       if attributes.has_key?(:'Width')
         self.width = attributes[:'Width']
       end
 
-      if attributes.has_key?(:'FontFallbackRules')
-        if (value = attributes[:'FontFallbackRules']).is_a?(Array)
-          self.font_fallback_rules = value
-        end
-      end
-
-      if attributes.has_key?(:'Format')
-        self.format = attributes[:'Format']
+      if attributes.has_key?(:'Height')
+        self.height = attributes[:'Height']
       end
     end
 
@@ -96,12 +86,32 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @x.nil?
+        invalid_properties.push('invalid value for "x", x cannot be nil.')
+      end
+
+      if @y.nil?
+        invalid_properties.push('invalid value for "y", y cannot be nil.')
+      end
+
+      if @width.nil?
+        invalid_properties.push('invalid value for "width", width cannot be nil.')
+      end
+
+      if @height.nil?
+        invalid_properties.push('invalid value for "height", height cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @x.nil?
+      return false if @y.nil?
+      return false if @width.nil?
+      return false if @height.nil?
       true
     end
 
@@ -110,11 +120,10 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          default_regular_font == o.default_regular_font &&
-          height == o.height &&
+          x == o.x &&
+          y == o.y &&
           width == o.width &&
-          font_fallback_rules == o.font_fallback_rules &&
-          format == o.format
+          height == o.height
     end
 
     # @see the `==` method
@@ -126,7 +135,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, height, width, font_fallback_rules, format].hash
+      [x, y, width, height].hash
     end
 
     # Builds the object from hash

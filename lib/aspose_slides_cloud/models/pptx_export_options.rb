@@ -109,6 +109,7 @@ module AsposeSlidesCloud
           default_regular_font == o.default_regular_font &&
           height == o.height &&
           width == o.width &&
+          font_fallback_rules == o.font_fallback_rules &&
           format == o.format &&
           conformance == o.conformance
     end
@@ -122,7 +123,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, height, width, format, conformance].hash
+      [default_regular_font, height, width, font_fallback_rules, format, conformance].hash
     end
 
     # Builds the object from hash

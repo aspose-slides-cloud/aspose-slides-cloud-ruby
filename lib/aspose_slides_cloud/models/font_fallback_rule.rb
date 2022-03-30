@@ -23,41 +23,32 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Represents export options for whole presentation.
-  class ExportOptions
-    # Default regular font for rendering the presentation. 
-    attr_accessor :default_regular_font
+  # Represents font fallback rule.             
+  class FontFallbackRule
+    # First index of continuous unicode range.
+    attr_accessor :range_start_index
 
-    # Gets or sets the height of slides in the output format, e.g. image size, pdf page size etc.
-    attr_accessor :height
+    # Last index of continuous unicode range.
+    attr_accessor :range_end_index
 
-    # Gets or sets the height of slides in the output format, e.g. image size, pdf page size etc.
-    attr_accessor :width
-
-    # Gets of sets list of font fallback rules.
-    attr_accessor :font_fallback_rules
-
-    attr_accessor :format
+    # List of fallback font links.
+    attr_accessor :fallback_font_list
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'default_regular_font' => :'DefaultRegularFont',
-        :'height' => :'Height',
-        :'width' => :'Width',
-        :'font_fallback_rules' => :'FontFallbackRules',
-        :'format' => :'Format',
+        :'range_start_index' => :'RangeStartIndex',
+        :'range_end_index' => :'RangeEndIndex',
+        :'fallback_font_list' => :'FallbackFontList',
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'default_regular_font' => :'String',
-        :'height' => :'Integer',
-        :'width' => :'Integer',
-        :'font_fallback_rules' => :'Array<FontFallbackRule>',
-        :'format' => :'String',
+        :'range_start_index' => :'Integer',
+        :'range_end_index' => :'Integer',
+        :'fallback_font_list' => :'Array<String>',
       }
     end
 
@@ -69,26 +60,18 @@ module AsposeSlidesCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'DefaultRegularFont')
-        self.default_regular_font = attributes[:'DefaultRegularFont']
+      if attributes.has_key?(:'RangeStartIndex')
+        self.range_start_index = attributes[:'RangeStartIndex']
       end
 
-      if attributes.has_key?(:'Height')
-        self.height = attributes[:'Height']
+      if attributes.has_key?(:'RangeEndIndex')
+        self.range_end_index = attributes[:'RangeEndIndex']
       end
 
-      if attributes.has_key?(:'Width')
-        self.width = attributes[:'Width']
-      end
-
-      if attributes.has_key?(:'FontFallbackRules')
-        if (value = attributes[:'FontFallbackRules']).is_a?(Array)
-          self.font_fallback_rules = value
+      if attributes.has_key?(:'FallbackFontList')
+        if (value = attributes[:'FallbackFontList']).is_a?(Array)
+          self.fallback_font_list = value
         end
-      end
-
-      if attributes.has_key?(:'Format')
-        self.format = attributes[:'Format']
       end
     end
 
@@ -96,12 +79,22 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
+      if @range_start_index.nil?
+        invalid_properties.push('invalid value for "range_start_index", range_start_index cannot be nil.')
+      end
+
+      if @range_end_index.nil?
+        invalid_properties.push('invalid value for "range_end_index", range_end_index cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if @range_start_index.nil?
+      return false if @range_end_index.nil?
       true
     end
 
@@ -110,11 +103,9 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          default_regular_font == o.default_regular_font &&
-          height == o.height &&
-          width == o.width &&
-          font_fallback_rules == o.font_fallback_rules &&
-          format == o.format
+          range_start_index == o.range_start_index &&
+          range_end_index == o.range_end_index &&
+          fallback_font_list == o.fallback_font_list
     end
 
     # @see the `==` method
@@ -126,7 +117,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, height, width, font_fallback_rules, format].hash
+      [range_start_index, range_end_index, fallback_font_list].hash
     end
 
     # Builds the object from hash

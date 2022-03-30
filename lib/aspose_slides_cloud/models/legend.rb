@@ -52,6 +52,9 @@ module AsposeSlidesCloud
     # Get or sets the line format.
     attr_accessor :line_format
 
+    # Get or sets value determines the visibility of legend
+    attr_accessor :has_legend
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -86,6 +89,7 @@ module AsposeSlidesCloud
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
         :'line_format' => :'LineFormat',
+        :'has_legend' => :'HasLegend',
       }
     end
 
@@ -101,6 +105,7 @@ module AsposeSlidesCloud
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
         :'line_format' => :'LineFormat',
+        :'has_legend' => :'BOOLEAN',
       }
     end
 
@@ -147,6 +152,10 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'LineFormat')
         self.line_format = attributes[:'LineFormat']
       end
+
+      if attributes.has_key?(:'HasLegend')
+        self.has_legend = attributes[:'HasLegend']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -187,7 +196,8 @@ module AsposeSlidesCloud
           overlay == o.overlay &&
           fill_format == o.fill_format &&
           effect_format == o.effect_format &&
-          line_format == o.line_format
+          line_format == o.line_format &&
+          has_legend == o.has_legend
     end
 
     # @see the `==` method
@@ -199,7 +209,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [position, x, y, width, height, overlay, fill_format, effect_format, line_format].hash
+      [position, x, y, width, height, overlay, fill_format, effect_format, line_format, has_legend].hash
     end
 
     # Builds the object from hash

@@ -38,7 +38,7 @@ module AsposeSlidesCloud
     # Attribute type mapping.
     def self.swagger_types
       super.merge({
-        :'list' => :'Array<SlideComment>',
+        :'list' => :'Array<SlideCommentBase>',
       })
     end
 

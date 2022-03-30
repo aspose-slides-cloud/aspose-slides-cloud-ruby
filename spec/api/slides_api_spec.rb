@@ -3600,6 +3600,7 @@ describe 'SlidesApi' do
   # @param slide_index Slide index.
   # @param dto Comment DTO.
   # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :shape_index Shape index.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -3608,12 +3609,13 @@ describe 'SlidesApi' do
     it 'should work' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateComment', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateComment', 'Integer')
-      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateComment', 'SlideComment')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateComment', 'SlideCommentBase')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateComment', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateComment', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateComment', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateComment', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateComment', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.api.create_comment_with_http_info(paramname, paramslide_index, paramdto, parampassword, paramfolder, paramstorage)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.create_comment_with_http_info(paramname, paramslide_index, paramdto, paramshape_index, parampassword, paramfolder, paramstorage)
       code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateComment', nil, nil)
       expect(c).to eq(code)
       expect(o).not_to be_nil
@@ -3622,14 +3624,15 @@ describe 'SlidesApi' do
     it 'invalid name' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateComment', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateComment', 'Integer')
-      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateComment', 'SlideComment')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateComment', 'SlideCommentBase')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateComment', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateComment', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateComment', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateComment', 'String')
       paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'CreateComment', paramname, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateComment', 'name', paramname)
       begin
-        AsposeSlidesCloud::SpecUtils.api.create_comment_with_http_info(paramname, paramslide_index, paramdto, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.create_comment_with_http_info(paramname, paramslide_index, paramdto, paramshape_index, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateComment', 'name')
           fail "An exception expected"
         end
@@ -3647,14 +3650,15 @@ describe 'SlidesApi' do
     it 'invalid slide_index' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateComment', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateComment', 'Integer')
-      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateComment', 'SlideComment')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateComment', 'SlideCommentBase')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateComment', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateComment', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateComment', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateComment', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'CreateComment', paramslide_index, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('CreateComment', 'slideIndex', paramslide_index)
       begin
-        AsposeSlidesCloud::SpecUtils.api.create_comment_with_http_info(paramname, paramslide_index, paramdto, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.create_comment_with_http_info(paramname, paramslide_index, paramdto, paramshape_index, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateComment', 'slideIndex')
           fail "An exception expected"
         end
@@ -3672,14 +3676,15 @@ describe 'SlidesApi' do
     it 'invalid dto' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateComment', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateComment', 'Integer')
-      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateComment', 'SlideComment')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateComment', 'SlideCommentBase')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateComment', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateComment', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateComment', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateComment', 'String')
-      paramdto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'CreateComment', paramdto, 'SlideComment')
+      paramdto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'CreateComment', paramdto, 'SlideCommentBase')
       AsposeSlidesCloud::SpecUtils.initialize('CreateComment', 'dto', paramdto)
       begin
-        AsposeSlidesCloud::SpecUtils.api.create_comment_with_http_info(paramname, paramslide_index, paramdto, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.create_comment_with_http_info(paramname, paramslide_index, paramdto, paramshape_index, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateComment', 'dto')
           fail "An exception expected"
         end
@@ -3694,17 +3699,44 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateComment', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateComment', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateComment', 'SlideCommentBase')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateComment', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateComment', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateComment', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateComment', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'CreateComment', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateComment', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_comment_with_http_info(paramname, paramslide_index, paramdto, paramshape_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateComment', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateComment', 'shapeIndex', paramshape_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateComment', 'shapeIndex', paramshape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
     it 'invalid password' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateComment', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateComment', 'Integer')
-      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateComment', 'SlideComment')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateComment', 'SlideCommentBase')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateComment', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateComment', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateComment', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateComment', 'String')
       parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'CreateComment', parampassword, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateComment', 'password', parampassword)
       begin
-        AsposeSlidesCloud::SpecUtils.api.create_comment_with_http_info(paramname, paramslide_index, paramdto, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.create_comment_with_http_info(paramname, paramslide_index, paramdto, paramshape_index, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateComment', 'password')
           fail "An exception expected"
         end
@@ -3722,14 +3754,15 @@ describe 'SlidesApi' do
     it 'invalid folder' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateComment', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateComment', 'Integer')
-      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateComment', 'SlideComment')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateComment', 'SlideCommentBase')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateComment', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateComment', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateComment', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateComment', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'CreateComment', paramfolder, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateComment', 'folder', paramfolder)
       begin
-        AsposeSlidesCloud::SpecUtils.api.create_comment_with_http_info(paramname, paramslide_index, paramdto, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.create_comment_with_http_info(paramname, paramslide_index, paramdto, paramshape_index, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateComment', 'folder')
           fail "An exception expected"
         end
@@ -3747,14 +3780,15 @@ describe 'SlidesApi' do
     it 'invalid storage' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateComment', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateComment', 'Integer')
-      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateComment', 'SlideComment')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateComment', 'SlideCommentBase')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateComment', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateComment', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateComment', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateComment', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'CreateComment', paramstorage, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateComment', 'storage', paramstorage)
       begin
-        AsposeSlidesCloud::SpecUtils.api.create_comment_with_http_info(paramname, paramslide_index, paramdto, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.create_comment_with_http_info(paramname, paramslide_index, paramdto, paramshape_index, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateComment', 'storage')
           fail "An exception expected"
         end
@@ -3776,16 +3810,18 @@ describe 'SlidesApi' do
   # @param slide_index Slide index.
   # @param dto Comment DTO.
   # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :shape_index Shape index.
   # @option opts [String] :password Document password.
   # @return [File]
   describe 'create_comment_online test' do
     it 'should work' do
       paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'CreateCommentOnline', 'File')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateCommentOnline', 'Integer')
-      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateCommentOnline', 'SlideComment')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateCommentOnline', 'SlideCommentBase')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateCommentOnline', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateCommentOnline', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateCommentOnline', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.api.create_comment_online_with_http_info(paramdocument, paramslide_index, paramdto, parampassword)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.create_comment_online_with_http_info(paramdocument, paramslide_index, paramdto, paramshape_index, parampassword)
       code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCommentOnline', nil, nil)
       expect(c).to eq(code)
     end
@@ -3793,12 +3829,13 @@ describe 'SlidesApi' do
     it 'invalid document' do
       paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'CreateCommentOnline', 'File')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateCommentOnline', 'Integer')
-      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateCommentOnline', 'SlideComment')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateCommentOnline', 'SlideCommentBase')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateCommentOnline', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateCommentOnline', 'String')
       paramdocument = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'CreateCommentOnline', paramdocument, 'File')
       AsposeSlidesCloud::SpecUtils.initialize('CreateCommentOnline', 'document', paramdocument)
       begin
-        AsposeSlidesCloud::SpecUtils.api.create_comment_online_with_http_info(paramdocument, paramslide_index, paramdto, parampassword)
+        AsposeSlidesCloud::SpecUtils.api.create_comment_online_with_http_info(paramdocument, paramslide_index, paramdto, paramshape_index, parampassword)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateCommentOnline', 'document')
           fail "An exception expected"
         end
@@ -3816,12 +3853,13 @@ describe 'SlidesApi' do
     it 'invalid slide_index' do
       paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'CreateCommentOnline', 'File')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateCommentOnline', 'Integer')
-      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateCommentOnline', 'SlideComment')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateCommentOnline', 'SlideCommentBase')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateCommentOnline', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateCommentOnline', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'CreateCommentOnline', paramslide_index, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('CreateCommentOnline', 'slideIndex', paramslide_index)
       begin
-        AsposeSlidesCloud::SpecUtils.api.create_comment_online_with_http_info(paramdocument, paramslide_index, paramdto, parampassword)
+        AsposeSlidesCloud::SpecUtils.api.create_comment_online_with_http_info(paramdocument, paramslide_index, paramdto, paramshape_index, parampassword)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateCommentOnline', 'slideIndex')
           fail "An exception expected"
         end
@@ -3839,12 +3877,13 @@ describe 'SlidesApi' do
     it 'invalid dto' do
       paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'CreateCommentOnline', 'File')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateCommentOnline', 'Integer')
-      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateCommentOnline', 'SlideComment')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateCommentOnline', 'SlideCommentBase')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateCommentOnline', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateCommentOnline', 'String')
-      paramdto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'CreateCommentOnline', paramdto, 'SlideComment')
+      paramdto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'CreateCommentOnline', paramdto, 'SlideCommentBase')
       AsposeSlidesCloud::SpecUtils.initialize('CreateCommentOnline', 'dto', paramdto)
       begin
-        AsposeSlidesCloud::SpecUtils.api.create_comment_online_with_http_info(paramdocument, paramslide_index, paramdto, parampassword)
+        AsposeSlidesCloud::SpecUtils.api.create_comment_online_with_http_info(paramdocument, paramslide_index, paramdto, paramshape_index, parampassword)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateCommentOnline', 'dto')
           fail "An exception expected"
         end
@@ -3859,15 +3898,40 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid shape_index' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'CreateCommentOnline', 'File')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateCommentOnline', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateCommentOnline', 'SlideCommentBase')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateCommentOnline', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateCommentOnline', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'CreateCommentOnline', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateCommentOnline', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_comment_online_with_http_info(paramdocument, paramslide_index, paramdto, paramshape_index, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateCommentOnline', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCommentOnline', 'shapeIndex', paramshape_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCommentOnline', 'shapeIndex', paramshape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
     it 'invalid password' do
       paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'CreateCommentOnline', 'File')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateCommentOnline', 'Integer')
-      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateCommentOnline', 'SlideComment')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateCommentOnline', 'SlideCommentBase')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateCommentOnline', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateCommentOnline', 'String')
       parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'CreateCommentOnline', parampassword, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateCommentOnline', 'password', parampassword)
       begin
-        AsposeSlidesCloud::SpecUtils.api.create_comment_online_with_http_info(paramdocument, paramslide_index, paramdto, parampassword)
+        AsposeSlidesCloud::SpecUtils.api.create_comment_online_with_http_info(paramdocument, paramslide_index, paramdto, paramshape_index, parampassword)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateCommentOnline', 'password')
           fail "An exception expected"
         end
@@ -28506,6 +28570,216 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for get_paragraph_rectangle
+  # Return coordinates of rect that bounds paragraph. The rect includes all the lines of text in paragraph, including empty ones.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param paragraph_index Paragraph index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [TextBounds]
+  describe 'get_paragraph_rectangle test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphRectangle', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphRectangle', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphRectangle', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphRectangle', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphRectangle', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphRectangle', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphRectangle', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetParagraphRectangle', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_paragraph_rectangle_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphRectangle', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphRectangle', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphRectangle', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphRectangle', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphRectangle', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphRectangle', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphRectangle', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphRectangle', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetParagraphRectangle', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetParagraphRectangle', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_paragraph_rectangle_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetParagraphRectangle', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphRectangle', 'name', paramname)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphRectangle', 'name', paramname)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphRectangle', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphRectangle', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphRectangle', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphRectangle', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphRectangle', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphRectangle', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphRectangle', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'GetParagraphRectangle', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetParagraphRectangle', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_paragraph_rectangle_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetParagraphRectangle', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphRectangle', 'slideIndex', paramslide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphRectangle', 'slideIndex', paramslide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphRectangle', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphRectangle', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphRectangle', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphRectangle', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphRectangle', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphRectangle', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphRectangle', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'GetParagraphRectangle', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetParagraphRectangle', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_paragraph_rectangle_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetParagraphRectangle', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphRectangle', 'shapeIndex', paramshape_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphRectangle', 'shapeIndex', paramshape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid paragraph_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphRectangle', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphRectangle', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphRectangle', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphRectangle', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphRectangle', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphRectangle', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphRectangle', 'String')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('paragraphIndex', 'GetParagraphRectangle', paramparagraph_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetParagraphRectangle', 'paragraphIndex', paramparagraph_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_paragraph_rectangle_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetParagraphRectangle', 'paragraphIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphRectangle', 'paragraphIndex', paramparagraph_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphRectangle', 'paragraphIndex', paramparagraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphRectangle', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphRectangle', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphRectangle', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphRectangle', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphRectangle', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphRectangle', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphRectangle', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetParagraphRectangle', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetParagraphRectangle', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_paragraph_rectangle_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetParagraphRectangle', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphRectangle', 'password', parampassword)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphRectangle', 'password', parampassword)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphRectangle', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphRectangle', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphRectangle', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphRectangle', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphRectangle', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphRectangle', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphRectangle', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetParagraphRectangle', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetParagraphRectangle', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_paragraph_rectangle_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetParagraphRectangle', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphRectangle', 'folder', paramfolder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphRectangle', 'folder', paramfolder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetParagraphRectangle', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetParagraphRectangle', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetParagraphRectangle', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetParagraphRectangle', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetParagraphRectangle', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetParagraphRectangle', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetParagraphRectangle', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetParagraphRectangle', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetParagraphRectangle', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_paragraph_rectangle_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetParagraphRectangle', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphRectangle', 'storage', paramstorage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetParagraphRectangle', 'storage', paramstorage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for get_paragraphs
   # Read shape paragraphs info.
   # @param name Document name.
@@ -29242,6 +29516,252 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetPortion', 'storage', paramstorage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for get_portion_rectangle
+  # Return coordinates of rect that bounds paragraph. The rect includes all the lines of text in paragraph, including empty ones.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param paragraph_index Paragraph index.
+  # @param portion_index Portion index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [TextBounds]
+  describe 'get_portion_rectangle test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetPortionRectangle', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetPortionRectangle', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetPortionRectangle', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetPortionRectangle', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetPortionRectangle', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetPortionRectangle', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetPortionRectangle', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetPortionRectangle', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetPortionRectangle', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_portion_rectangle_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetPortionRectangle', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetPortionRectangle', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetPortionRectangle', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetPortionRectangle', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetPortionRectangle', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetPortionRectangle', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetPortionRectangle', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetPortionRectangle', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetPortionRectangle', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetPortionRectangle', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetPortionRectangle', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_portion_rectangle_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetPortionRectangle', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetPortionRectangle', 'name', paramname)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetPortionRectangle', 'name', paramname)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetPortionRectangle', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetPortionRectangle', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetPortionRectangle', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetPortionRectangle', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetPortionRectangle', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetPortionRectangle', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetPortionRectangle', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetPortionRectangle', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'GetPortionRectangle', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetPortionRectangle', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_portion_rectangle_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetPortionRectangle', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetPortionRectangle', 'slideIndex', paramslide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetPortionRectangle', 'slideIndex', paramslide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetPortionRectangle', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetPortionRectangle', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetPortionRectangle', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetPortionRectangle', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetPortionRectangle', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetPortionRectangle', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetPortionRectangle', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetPortionRectangle', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'GetPortionRectangle', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetPortionRectangle', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_portion_rectangle_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetPortionRectangle', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetPortionRectangle', 'shapeIndex', paramshape_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetPortionRectangle', 'shapeIndex', paramshape_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid paragraph_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetPortionRectangle', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetPortionRectangle', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetPortionRectangle', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetPortionRectangle', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetPortionRectangle', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetPortionRectangle', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetPortionRectangle', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetPortionRectangle', 'String')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('paragraphIndex', 'GetPortionRectangle', paramparagraph_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetPortionRectangle', 'paragraphIndex', paramparagraph_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_portion_rectangle_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetPortionRectangle', 'paragraphIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetPortionRectangle', 'paragraphIndex', paramparagraph_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetPortionRectangle', 'paragraphIndex', paramparagraph_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid portion_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetPortionRectangle', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetPortionRectangle', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetPortionRectangle', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetPortionRectangle', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetPortionRectangle', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetPortionRectangle', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetPortionRectangle', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetPortionRectangle', 'String')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('portionIndex', 'GetPortionRectangle', paramportion_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetPortionRectangle', 'portionIndex', paramportion_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_portion_rectangle_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetPortionRectangle', 'portionIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetPortionRectangle', 'portionIndex', paramportion_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetPortionRectangle', 'portionIndex', paramportion_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetPortionRectangle', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetPortionRectangle', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetPortionRectangle', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetPortionRectangle', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetPortionRectangle', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetPortionRectangle', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetPortionRectangle', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetPortionRectangle', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetPortionRectangle', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetPortionRectangle', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_portion_rectangle_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetPortionRectangle', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetPortionRectangle', 'password', parampassword)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetPortionRectangle', 'password', parampassword)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetPortionRectangle', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetPortionRectangle', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetPortionRectangle', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetPortionRectangle', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetPortionRectangle', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetPortionRectangle', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetPortionRectangle', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetPortionRectangle', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetPortionRectangle', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetPortionRectangle', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_portion_rectangle_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetPortionRectangle', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetPortionRectangle', 'folder', paramfolder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetPortionRectangle', 'folder', paramfolder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetPortionRectangle', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetPortionRectangle', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetPortionRectangle', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetPortionRectangle', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetPortionRectangle', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetPortionRectangle', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetPortionRectangle', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetPortionRectangle', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetPortionRectangle', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetPortionRectangle', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_portion_rectangle_with_http_info(paramname, paramslide_index, paramshape_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetPortionRectangle', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetPortionRectangle', 'storage', paramstorage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetPortionRectangle', 'storage', paramstorage)
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
@@ -30418,6 +30938,7 @@ describe 'SlidesApi' do
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
+  # @option opts [String] :shape_type Shape type.
   # @return [Shapes]
   describe 'get_shapes test' do
     it 'should work' do
@@ -30426,8 +30947,9 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetShapes', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetShapes', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetShapes', 'String')
+      paramshape_type = AsposeSlidesCloud::SpecUtils.get_param_value('shapeType', 'GetShapes', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetShapes', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_shapes_with_http_info(paramname, paramslide_index, parampassword, paramfolder, paramstorage)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_shapes_with_http_info(paramname, paramslide_index, parampassword, paramfolder, paramstorage, paramshape_type)
       code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetShapes', nil, nil)
       expect(c).to eq(code)
       expect(o).not_to be_nil
@@ -30439,10 +30961,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetShapes', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetShapes', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetShapes', 'String')
+      paramshape_type = AsposeSlidesCloud::SpecUtils.get_param_value('shapeType', 'GetShapes', 'String')
       paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetShapes', paramname, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetShapes', 'name', paramname)
       begin
-        AsposeSlidesCloud::SpecUtils.api.get_shapes_with_http_info(paramname, paramslide_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.get_shapes_with_http_info(paramname, paramslide_index, parampassword, paramfolder, paramstorage, paramshape_type)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetShapes', 'name')
           fail "An exception expected"
         end
@@ -30463,10 +30986,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetShapes', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetShapes', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetShapes', 'String')
+      paramshape_type = AsposeSlidesCloud::SpecUtils.get_param_value('shapeType', 'GetShapes', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'GetShapes', paramslide_index, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('GetShapes', 'slideIndex', paramslide_index)
       begin
-        AsposeSlidesCloud::SpecUtils.api.get_shapes_with_http_info(paramname, paramslide_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.get_shapes_with_http_info(paramname, paramslide_index, parampassword, paramfolder, paramstorage, paramshape_type)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetShapes', 'slideIndex')
           fail "An exception expected"
         end
@@ -30487,10 +31011,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetShapes', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetShapes', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetShapes', 'String')
+      paramshape_type = AsposeSlidesCloud::SpecUtils.get_param_value('shapeType', 'GetShapes', 'String')
       parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetShapes', parampassword, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetShapes', 'password', parampassword)
       begin
-        AsposeSlidesCloud::SpecUtils.api.get_shapes_with_http_info(paramname, paramslide_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.get_shapes_with_http_info(paramname, paramslide_index, parampassword, paramfolder, paramstorage, paramshape_type)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetShapes', 'password')
           fail "An exception expected"
         end
@@ -30511,10 +31036,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetShapes', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetShapes', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetShapes', 'String')
+      paramshape_type = AsposeSlidesCloud::SpecUtils.get_param_value('shapeType', 'GetShapes', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetShapes', paramfolder, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetShapes', 'folder', paramfolder)
       begin
-        AsposeSlidesCloud::SpecUtils.api.get_shapes_with_http_info(paramname, paramslide_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.get_shapes_with_http_info(paramname, paramslide_index, parampassword, paramfolder, paramstorage, paramshape_type)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetShapes', 'folder')
           fail "An exception expected"
         end
@@ -30535,10 +31061,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetShapes', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetShapes', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetShapes', 'String')
+      paramshape_type = AsposeSlidesCloud::SpecUtils.get_param_value('shapeType', 'GetShapes', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetShapes', paramstorage, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetShapes', 'storage', paramstorage)
       begin
-        AsposeSlidesCloud::SpecUtils.api.get_shapes_with_http_info(paramname, paramslide_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.api.get_shapes_with_http_info(paramname, paramslide_index, parampassword, paramfolder, paramstorage, paramshape_type)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetShapes', 'storage')
           fail "An exception expected"
         end
@@ -30548,6 +31075,31 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetShapes', 'storage', paramstorage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_type' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetShapes', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetShapes', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetShapes', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetShapes', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetShapes', 'String')
+      paramshape_type = AsposeSlidesCloud::SpecUtils.get_param_value('shapeType', 'GetShapes', 'String')
+      paramshape_type = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeType', 'GetShapes', paramshape_type, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetShapes', 'shapeType', paramshape_type)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_shapes_with_http_info(paramname, paramslide_index, parampassword, paramfolder, paramstorage, paramshape_type)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetShapes', 'shapeType')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetShapes', 'shapeType', paramshape_type)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetShapes', 'shapeType', paramshape_type)
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
@@ -37171,8 +37723,8 @@ describe 'SlidesApi' do
   # unit tests for import_from_pdf
   # Create presentation document from pdf or append pdf to an existing presentation.
   # @param name Document name.
+  # @param pdf PDF data.
   # @param [Hash] opts the optional parameters
-  # @option opts [File] :pdf PDF data.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.

@@ -23,6 +23,7 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
+  # Zoom object.
   class ZoomObject < ShapeBase
     # Image type of a zoom object. 
     attr_accessor :image_type

@@ -23,86 +23,100 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Represents export options for whole presentation.
-  class ExportOptions
-    # Default regular font for rendering the presentation. 
-    attr_accessor :default_regular_font
+  # Represents modern comment of slide
+  class SlideModernComment < SlideCommentBase
+    # Returns or sets starting position of text selection in text frame if the comment associated with AutoShape. Read/write Int32.
+    attr_accessor :text_selection_start
 
-    # Gets or sets the height of slides in the output format, e.g. image size, pdf page size etc.
-    attr_accessor :height
+    # Returns or sets text selection length in text frame if the comment associated with AutoShape. Read/write Int32.
+    attr_accessor :text_selection_length
 
-    # Gets or sets the height of slides in the output format, e.g. image size, pdf page size etc.
-    attr_accessor :width
+    # Returns or sets the status of the comment. Read/write ModernCommentStatus.
+    attr_accessor :status
 
-    # Gets of sets list of font fallback rules.
-    attr_accessor :font_fallback_rules
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
 
-    attr_accessor :format
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.any?{ |s| s.casecmp(value) == 0 }
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'default_regular_font' => :'DefaultRegularFont',
-        :'height' => :'Height',
-        :'width' => :'Width',
-        :'font_fallback_rules' => :'FontFallbackRules',
-        :'format' => :'Format',
-      }
+      super.merge({
+        :'text_selection_start' => :'TextSelectionStart',
+        :'text_selection_length' => :'TextSelectionLength',
+        :'status' => :'Status',
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'default_regular_font' => :'String',
-        :'height' => :'Integer',
-        :'width' => :'Integer',
-        :'font_fallback_rules' => :'Array<FontFallbackRule>',
-        :'format' => :'String',
-      }
+      super.merge({
+        :'text_selection_start' => :'Integer',
+        :'text_selection_length' => :'Integer',
+        :'status' => :'String',
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
+      super
 
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'DefaultRegularFont')
-        self.default_regular_font = attributes[:'DefaultRegularFont']
+      if attributes.has_key?(:'TextSelectionStart')
+        self.text_selection_start = attributes[:'TextSelectionStart']
       end
 
-      if attributes.has_key?(:'Height')
-        self.height = attributes[:'Height']
+      if attributes.has_key?(:'TextSelectionLength')
+        self.text_selection_length = attributes[:'TextSelectionLength']
       end
 
-      if attributes.has_key?(:'Width')
-        self.width = attributes[:'Width']
+      if attributes.has_key?(:'Status')
+        self.status = attributes[:'Status']
       end
-
-      if attributes.has_key?(:'FontFallbackRules')
-        if (value = attributes[:'FontFallbackRules']).is_a?(Array)
-          self.font_fallback_rules = value
-        end
-      end
-
-      if attributes.has_key?(:'Format')
-        self.format = attributes[:'Format']
-      end
+      self.type = "Modern"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = super
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !super
+      status_validator = EnumAttributeValidator.new('String', ['NotDefined', 'Active', 'Resolved', 'Closed'])
+      return false unless status_validator.valid?(@status)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] status Object to be assigned
+    def status=(status)
+      validator = EnumAttributeValidator.new('String', ['NotDefined', 'Active', 'Resolved', 'Closed'])
+      unless validator.valid?(status)
+        fail ArgumentError, 'invalid value for "status", must be one of #{validator.allowable_values}.'
+      end
+      @status = status
     end
 
     # Checks equality by comparing each attribute.
@@ -110,11 +124,14 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          default_regular_font == o.default_regular_font &&
-          height == o.height &&
-          width == o.width &&
-          font_fallback_rules == o.font_fallback_rules &&
-          format == o.format
+          author == o.author &&
+          text == o.text &&
+          created_time == o.created_time &&
+          child_comments == o.child_comments &&
+          type == o.type &&
+          text_selection_start == o.text_selection_start &&
+          text_selection_length == o.text_selection_length &&
+          status == o.status
     end
 
     # @see the `==` method
@@ -126,7 +143,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, height, width, font_fallback_rules, format].hash
+      [author, text, created_time, child_comments, type, text_selection_start, text_selection_length, status].hash
     end
 
     # Builds the object from hash

@@ -20,6 +20,35 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 =end
 
+require 'date'
+
 module AsposeSlidesCloud
-  VERSION = '22.3.0'
+  class ShapeType
+    
+    SHAPE = "Shape".freeze
+    CHART = "Chart".freeze
+    TABLE = "Table".freeze
+    PICTURE_FRAME = "PictureFrame".freeze
+    VIDEO_FRAME = "VideoFrame".freeze
+    AUDIO_FRAME = "AudioFrame".freeze
+    SMART_ART = "SmartArt".freeze
+    OLE_OBJECT_FRAME = "OleObjectFrame".freeze
+    GROUP_SHAPE = "GroupShape".freeze
+    GRAPHICAL_OBJECT = "GraphicalObject".freeze
+    CONNECTOR = "Connector".freeze
+    SMART_ART_SHAPE = "SmartArtShape".freeze
+    ZOOM_FRAME = "ZoomFrame".freeze
+    SECTION_ZOOM_FRAME = "SectionZoomFrame".freeze
+    SUMMARY_ZOOM_FRAME = "SummaryZoomFrame".freeze
+    SUMMARY_ZOOM_SECTION = "SummaryZoomSection".freeze
+
+    # Builds the enum from string
+    # @param [String] The enum value in the form of the string
+    # @return [String] The enum value
+    def build_from_hash(value)
+      constantValues = ShapeType.constants.select { |c| ShapeType::const_get(c) == value }
+      raise "Invalid ENUM value #{value} for class #ShapeType" if constantValues.empty?
+      value
+    end
+  end
 end

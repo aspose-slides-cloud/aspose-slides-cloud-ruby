@@ -133,6 +133,12 @@ module AsposeSlidesCloud
     # Get or sets the line format.
     attr_accessor :line_format
 
+    # Get or sets the format of major grid lines.
+    attr_accessor :major_grid_lines_format
+
+    # Get or sets the format of major grid lines.
+    attr_accessor :minor_grid_lines_format
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -194,6 +200,8 @@ module AsposeSlidesCloud
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
         :'line_format' => :'LineFormat',
+        :'major_grid_lines_format' => :'MajorGridLinesFormat',
+        :'minor_grid_lines_format' => :'MinorGridLinesFormat',
       }
     end
 
@@ -236,6 +244,8 @@ module AsposeSlidesCloud
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
         :'line_format' => :'LineFormat',
+        :'major_grid_lines_format' => :'ChartLinesFormat',
+        :'minor_grid_lines_format' => :'ChartLinesFormat',
       }
     end
 
@@ -389,6 +399,14 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'LineFormat')
         self.line_format = attributes[:'LineFormat']
+      end
+
+      if attributes.has_key?(:'MajorGridLinesFormat')
+        self.major_grid_lines_format = attributes[:'MajorGridLinesFormat']
+      end
+
+      if attributes.has_key?(:'MinorGridLinesFormat')
+        self.minor_grid_lines_format = attributes[:'MinorGridLinesFormat']
       end
     end
 
@@ -565,7 +583,9 @@ module AsposeSlidesCloud
           tick_label_rotation_angle == o.tick_label_rotation_angle &&
           fill_format == o.fill_format &&
           effect_format == o.effect_format &&
-          line_format == o.line_format
+          line_format == o.line_format &&
+          major_grid_lines_format == o.major_grid_lines_format &&
+          minor_grid_lines_format == o.minor_grid_lines_format
     end
 
     # @see the `==` method
@@ -577,7 +597,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [is_visible, has_title, position, display_unit, base_unit_scale, is_automatic_major_unit, major_unit, major_unit_scale, major_tick_mark, is_automatic_minor_unit, minor_unit, minor_unit_scale, minor_tick_mark, is_automatic_max_value, max_value, is_automatic_min_value, min_value, is_logarithmic, log_base, category_axis_type, axis_between_categories, label_offset, is_plot_order_reversed, is_number_format_linked_to_source, number_format, cross_type, cross_at, is_automatic_tick_marks_spacing, tick_marks_spacing, is_automatic_tick_label_spacing, tick_label_spacing, tick_label_position, tick_label_rotation_angle, fill_format, effect_format, line_format].hash
+      [is_visible, has_title, position, display_unit, base_unit_scale, is_automatic_major_unit, major_unit, major_unit_scale, major_tick_mark, is_automatic_minor_unit, minor_unit, minor_unit_scale, minor_tick_mark, is_automatic_max_value, max_value, is_automatic_min_value, min_value, is_logarithmic, log_base, category_axis_type, axis_between_categories, label_offset, is_plot_order_reversed, is_number_format_linked_to_source, number_format, cross_type, cross_at, is_automatic_tick_marks_spacing, tick_marks_spacing, is_automatic_tick_label_spacing, tick_label_spacing, tick_label_position, tick_label_rotation_angle, fill_format, effect_format, line_format, major_grid_lines_format, minor_grid_lines_format].hash
     end
 
     # Builds the object from hash

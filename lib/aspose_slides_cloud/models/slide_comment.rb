@@ -24,76 +24,59 @@ require 'date'
 
 module AsposeSlidesCloud
   # Represents comment of slide
-  class SlideComment
-    # Author.
-    attr_accessor :author
+  class SlideComment < SlideCommentBase
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
 
-    # Text.
-    attr_accessor :text
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
 
-    # Creation time.
-    attr_accessor :created_time
-
-    # Child comments.
-    attr_accessor :child_comments
+      def valid?(value)
+        !value || allowable_values.any?{ |s| s.casecmp(value) == 0 }
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      {
-        :'author' => :'Author',
-        :'text' => :'Text',
-        :'created_time' => :'CreatedTime',
-        :'child_comments' => :'ChildComments',
-      }
+      super.merge({
+      })
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      {
-        :'author' => :'String',
-        :'text' => :'String',
-        :'created_time' => :'String',
-        :'child_comments' => :'Array<SlideComment>',
-      }
+      super.merge({
+      })
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      return unless attributes.is_a?(Hash)
-
-      # convert string to symbol for hash key
-      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
-
-      if attributes.has_key?(:'Author')
-        self.author = attributes[:'Author']
-      end
-
-      if attributes.has_key?(:'Text')
-        self.text = attributes[:'Text']
-      end
-
-      if attributes.has_key?(:'CreatedTime')
-        self.created_time = attributes[:'CreatedTime']
-      end
-
-      if attributes.has_key?(:'ChildComments')
-        if (value = attributes[:'ChildComments']).is_a?(Array)
-          self.child_comments = value
-        end
-      end
+      super
+      self.type = "Regular"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = Array.new
+      invalid_properties = super
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      return false if !super
       true
     end
 
@@ -105,7 +88,8 @@ module AsposeSlidesCloud
           author == o.author &&
           text == o.text &&
           created_time == o.created_time &&
-          child_comments == o.child_comments
+          child_comments == o.child_comments &&
+          type == o.type
     end
 
     # @see the `==` method
@@ -117,7 +101,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [author, text, created_time, child_comments].hash
+      [author, text, created_time, child_comments, type].hash
     end
 
     # Builds the object from hash
