@@ -290,8 +290,6 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
-          height == o.height &&
-          width == o.width &&
           font_fallback_rules == o.font_fallback_rules &&
           format == o.format &&
           show_hidden_slides == o.show_hidden_slides &&
@@ -325,7 +323,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, height, width, font_fallback_rules, format, show_hidden_slides, compressed, viewer_included, show_page_border, show_full_screen, show_page_stepper, show_search, show_top_pane, show_bottom_pane, show_left_pane, start_open_left_pane, enable_context_menu, logo_image, logo_link, jpeg_quality, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author].hash
+      [default_regular_font, font_fallback_rules, format, show_hidden_slides, compressed, viewer_included, show_page_border, show_full_screen, show_page_stepper, show_search, show_top_pane, show_bottom_pane, show_left_pane, start_open_left_pane, enable_context_menu, logo_image, logo_link, jpeg_quality, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author].hash
     end
 
     # Builds the object from hash

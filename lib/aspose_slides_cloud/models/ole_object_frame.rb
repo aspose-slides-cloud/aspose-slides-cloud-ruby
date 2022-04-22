@@ -31,6 +31,27 @@ module AsposeSlidesCloud
     # The title for OleObject icon.             
     attr_accessor :substitute_picture_title
 
+    # OleObject image fill properties.
+    attr_accessor :substitute_picture_format
+
+    # Returns or sets the name of an object.
+    attr_accessor :object_name
+
+    # File data of embedded OLE object. 
+    attr_accessor :embedded_file_base64_data
+
+    # File extension for the current embedded OLE object
+    attr_accessor :embedded_file_extension
+
+    # ProgID of an object.
+    attr_accessor :object_prog_id
+
+    # Full path to a linked file.
+    attr_accessor :link_path
+
+    # Determines if the linked embedded object is automatically updated when the presentation is opened or printed. Read/write Boolean.
+    attr_accessor :update_automatic
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -58,6 +79,13 @@ module AsposeSlidesCloud
       super.merge({
         :'is_object_icon' => :'IsObjectIcon',
         :'substitute_picture_title' => :'SubstitutePictureTitle',
+        :'substitute_picture_format' => :'SubstitutePictureFormat',
+        :'object_name' => :'ObjectName',
+        :'embedded_file_base64_data' => :'EmbeddedFileBase64Data',
+        :'embedded_file_extension' => :'EmbeddedFileExtension',
+        :'object_prog_id' => :'ObjectProgId',
+        :'link_path' => :'LinkPath',
+        :'update_automatic' => :'UpdateAutomatic',
       })
     end
 
@@ -66,6 +94,13 @@ module AsposeSlidesCloud
       super.merge({
         :'is_object_icon' => :'BOOLEAN',
         :'substitute_picture_title' => :'String',
+        :'substitute_picture_format' => :'PictureFill',
+        :'object_name' => :'String',
+        :'embedded_file_base64_data' => :'String',
+        :'embedded_file_extension' => :'String',
+        :'object_prog_id' => :'String',
+        :'link_path' => :'String',
+        :'update_automatic' => :'BOOLEAN',
       })
     end
 
@@ -80,6 +115,34 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'SubstitutePictureTitle')
         self.substitute_picture_title = attributes[:'SubstitutePictureTitle']
+      end
+
+      if attributes.has_key?(:'SubstitutePictureFormat')
+        self.substitute_picture_format = attributes[:'SubstitutePictureFormat']
+      end
+
+      if attributes.has_key?(:'ObjectName')
+        self.object_name = attributes[:'ObjectName']
+      end
+
+      if attributes.has_key?(:'EmbeddedFileBase64Data')
+        self.embedded_file_base64_data = attributes[:'EmbeddedFileBase64Data']
+      end
+
+      if attributes.has_key?(:'EmbeddedFileExtension')
+        self.embedded_file_extension = attributes[:'EmbeddedFileExtension']
+      end
+
+      if attributes.has_key?(:'ObjectProgId')
+        self.object_prog_id = attributes[:'ObjectProgId']
+      end
+
+      if attributes.has_key?(:'LinkPath')
+        self.link_path = attributes[:'LinkPath']
+      end
+
+      if attributes.has_key?(:'UpdateAutomatic')
+        self.update_automatic = attributes[:'UpdateAutomatic']
       end
       self.type = "OleObjectFrame"
     end
@@ -119,7 +182,6 @@ module AsposeSlidesCloud
           x == o.x &&
           y == o.y &&
           z_order_position == o.z_order_position &&
-          shapes == o.shapes &&
           fill_format == o.fill_format &&
           effect_format == o.effect_format &&
           three_d_format == o.three_d_format &&
@@ -128,7 +190,14 @@ module AsposeSlidesCloud
           hyperlink_mouse_over == o.hyperlink_mouse_over &&
           type == o.type &&
           is_object_icon == o.is_object_icon &&
-          substitute_picture_title == o.substitute_picture_title
+          substitute_picture_title == o.substitute_picture_title &&
+          substitute_picture_format == o.substitute_picture_format &&
+          object_name == o.object_name &&
+          embedded_file_base64_data == o.embedded_file_base64_data &&
+          embedded_file_extension == o.embedded_file_extension &&
+          object_prog_id == o.object_prog_id &&
+          link_path == o.link_path &&
+          update_automatic == o.update_automatic
     end
 
     # @see the `==` method
@@ -140,7 +209,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, is_object_icon, substitute_picture_title].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, is_object_icon, substitute_picture_title, substitute_picture_format, object_name, embedded_file_base64_data, embedded_file_extension, object_prog_id, link_path, update_automatic].hash
     end
 
     # Builds the object from hash

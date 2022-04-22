@@ -85,6 +85,9 @@ module AsposeSlidesCloud
     # List of portion links.
     attr_accessor :portion_list
 
+    # Default portion format.
+    attr_accessor :default_portion_format
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -130,6 +133,7 @@ module AsposeSlidesCloud
         :'latin_line_break' => :'LatinLineBreak',
         :'right_to_left' => :'RightToLeft',
         :'portion_list' => :'PortionList',
+        :'default_portion_format' => :'DefaultPortionFormat',
       })
     end
 
@@ -156,6 +160,7 @@ module AsposeSlidesCloud
         :'latin_line_break' => :'String',
         :'right_to_left' => :'String',
         :'portion_list' => :'Array<Portion>',
+        :'default_portion_format' => :'PortionFormat',
       })
     end
 
@@ -244,6 +249,10 @@ module AsposeSlidesCloud
         if (value = attributes[:'PortionList']).is_a?(Array)
           self.portion_list = value
         end
+      end
+
+      if attributes.has_key?(:'DefaultPortionFormat')
+        self.default_portion_format = attributes[:'DefaultPortionFormat']
       end
     end
 
@@ -383,7 +392,8 @@ module AsposeSlidesCloud
           east_asian_line_break == o.east_asian_line_break &&
           latin_line_break == o.latin_line_break &&
           right_to_left == o.right_to_left &&
-          portion_list == o.portion_list
+          portion_list == o.portion_list &&
+          default_portion_format == o.default_portion_format
     end
 
     # @see the `==` method
@@ -395,7 +405,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, margin_left, margin_right, space_before, space_after, space_within, indent, alignment, font_alignment, default_tab_size, depth, bullet_char, bullet_height, bullet_type, numbered_bullet_start_with, numbered_bullet_style, hanging_punctuation, east_asian_line_break, latin_line_break, right_to_left, portion_list].hash
+      [self_uri, alternate_links, margin_left, margin_right, space_before, space_after, space_within, indent, alignment, font_alignment, default_tab_size, depth, bullet_char, bullet_height, bullet_type, numbered_bullet_start_with, numbered_bullet_style, hanging_punctuation, east_asian_line_break, latin_line_break, right_to_left, portion_list, default_portion_format].hash
     end
 
     # Builds the object from hash

@@ -25,7 +25,13 @@ require 'date'
 module AsposeSlidesCloud
   # Provides options that control how a presentation is saved in an video format.
   class VideoExportOptions < ExportOptions
-    # Transition duration.
+    # Slides transition duration.
+    attr_accessor :slides_transition_duration
+
+    # Video transition type
+    attr_accessor :transition_type
+
+    # Duration of transition defined in TransitionType property.
     attr_accessor :transition_duration
 
     # Video resolution type
@@ -56,6 +62,8 @@ module AsposeSlidesCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
+        :'slides_transition_duration' => :'SlidesTransitionDuration',
+        :'transition_type' => :'TransitionType',
         :'transition_duration' => :'TransitionDuration',
         :'video_resolution_type' => :'VideoResolutionType',
       })
@@ -64,6 +72,8 @@ module AsposeSlidesCloud
     # Attribute type mapping.
     def self.swagger_types
       super.merge({
+        :'slides_transition_duration' => :'Integer',
+        :'transition_type' => :'String',
         :'transition_duration' => :'Integer',
         :'video_resolution_type' => :'String',
       })
@@ -73,6 +83,14 @@ module AsposeSlidesCloud
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       super
+
+      if attributes.has_key?(:'SlidesTransitionDuration')
+        self.slides_transition_duration = attributes[:'SlidesTransitionDuration']
+      end
+
+      if attributes.has_key?(:'TransitionType')
+        self.transition_type = attributes[:'TransitionType']
+      end
 
       if attributes.has_key?(:'TransitionDuration')
         self.transition_duration = attributes[:'TransitionDuration']
@@ -95,9 +113,21 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
+      transition_type_validator = EnumAttributeValidator.new('String', ['None', 'Fade', 'Distance', 'Slidedown', 'Slideright', 'Slideleft', 'Slideup', 'Smoothleft', 'Smoothright', 'Smoothup', 'Smoothdown', 'Rectcrop', 'Circlecrop', 'Circleclose', 'Circleopen', 'Horzclose', 'Horzopen', 'Vertclose', 'Vertopen', 'Diagbl', 'Diagbr', 'Diagtl', 'Diagtr', 'Hlslice', 'Hrslice', 'Vuslice', 'Vdslice', 'Dissolve', 'Pixelize', 'Radial'])
+      return false unless transition_type_validator.valid?(@transition_type)
       video_resolution_type_validator = EnumAttributeValidator.new('String', ['FullHD', 'SD', 'HD', 'QHD'])
       return false unless video_resolution_type_validator.valid?(@video_resolution_type)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] transition_type Object to be assigned
+    def transition_type=(transition_type)
+      validator = EnumAttributeValidator.new('String', ['None', 'Fade', 'Distance', 'Slidedown', 'Slideright', 'Slideleft', 'Slideup', 'Smoothleft', 'Smoothright', 'Smoothup', 'Smoothdown', 'Rectcrop', 'Circlecrop', 'Circleclose', 'Circleopen', 'Horzclose', 'Horzopen', 'Vertclose', 'Vertopen', 'Diagbl', 'Diagbr', 'Diagtl', 'Diagtr', 'Hlslice', 'Hrslice', 'Vuslice', 'Vdslice', 'Dissolve', 'Pixelize', 'Radial'])
+      unless validator.valid?(transition_type)
+        fail ArgumentError, 'invalid value for "transition_type", must be one of #{validator.allowable_values}.'
+      end
+      @transition_type = transition_type
     end
 
     # Custom attribute writer method checking allowed values (enum).
@@ -116,10 +146,10 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
-          height == o.height &&
-          width == o.width &&
           font_fallback_rules == o.font_fallback_rules &&
           format == o.format &&
+          slides_transition_duration == o.slides_transition_duration &&
+          transition_type == o.transition_type &&
           transition_duration == o.transition_duration &&
           video_resolution_type == o.video_resolution_type
     end
@@ -133,7 +163,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, height, width, font_fallback_rules, format, transition_duration, video_resolution_type].hash
+      [default_regular_font, font_fallback_rules, format, slides_transition_duration, transition_type, transition_duration, video_resolution_type].hash
     end
 
     # Builds the object from hash

@@ -24,7 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Provides options that control how a presentation is saved in TIFF format.
-  class TiffExportOptions < ExportOptions
+  class TiffExportOptions < ImageExportOptionsBase
     # Compression type.
     attr_accessor :compression
 
@@ -224,10 +224,10 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
-          height == o.height &&
-          width == o.width &&
           font_fallback_rules == o.font_fallback_rules &&
           format == o.format &&
+          height == o.height &&
+          width == o.width &&
           compression == o.compression &&
           dpi_x == o.dpi_x &&
           dpi_y == o.dpi_y &&
@@ -249,7 +249,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, height, width, font_fallback_rules, format, compression, dpi_x, dpi_y, show_hidden_slides, pixel_format, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author].hash
+      [default_regular_font, font_fallback_rules, format, height, width, compression, dpi_x, dpi_y, show_hidden_slides, pixel_format, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author].hash
     end
 
     # Builds the object from hash

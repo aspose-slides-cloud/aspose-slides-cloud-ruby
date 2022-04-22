@@ -23,54 +23,27 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Represents AutoShape resource.
-  class Shape < GeometryShape
-    # Gets or sets the text.
-    attr_accessor :text
+  # The class provides shared options for image formats.
+  class ImageExportOptionsBase < ExportOptions
+    # Gets or sets the height of slides in the output image format.
+    attr_accessor :height
 
-    # Get or sets list to paragraphs list
-    attr_accessor :paragraphs
-
-    # Returns TextFrame's formatting properties.
-    attr_accessor :text_frame_format
-
-    class EnumAttributeValidator
-      attr_reader :datatype
-      attr_reader :allowable_values
-
-      def initialize(datatype, allowable_values)
-        @allowable_values = allowable_values.map do |value|
-          case datatype.to_s
-          when /Integer/i
-            value.to_i
-          when /Float/i
-            value.to_f
-          else
-            value
-          end
-        end
-      end
-
-      def valid?(value)
-        !value || allowable_values.any?{ |s| s.casecmp(value) == 0 }
-      end
-    end
+    # Gets or sets the height of slides in the output the output image format.
+    attr_accessor :width
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
-        :'text' => :'Text',
-        :'paragraphs' => :'Paragraphs',
-        :'text_frame_format' => :'TextFrameFormat',
+        :'height' => :'Height',
+        :'width' => :'Width',
       })
     end
 
     # Attribute type mapping.
     def self.swagger_types
       super.merge({
-        :'text' => :'String',
-        :'paragraphs' => :'ResourceUri',
-        :'text_frame_format' => :'TextFrameFormat',
+        :'height' => :'Integer',
+        :'width' => :'Integer',
       })
     end
 
@@ -79,18 +52,13 @@ module AsposeSlidesCloud
     def initialize(attributes = {})
       super
 
-      if attributes.has_key?(:'Text')
-        self.text = attributes[:'Text']
+      if attributes.has_key?(:'Height')
+        self.height = attributes[:'Height']
       end
 
-      if attributes.has_key?(:'Paragraphs')
-        self.paragraphs = attributes[:'Paragraphs']
+      if attributes.has_key?(:'Width')
+        self.width = attributes[:'Width']
       end
-
-      if attributes.has_key?(:'TextFrameFormat')
-        self.text_frame_format = attributes[:'TextFrameFormat']
-      end
-      self.type = "Shape"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -112,28 +80,11 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          self_uri == o.self_uri &&
-          alternate_links == o.alternate_links &&
-          name == o.name &&
-          width == o.width &&
+          default_regular_font == o.default_regular_font &&
+          font_fallback_rules == o.font_fallback_rules &&
+          format == o.format &&
           height == o.height &&
-          alternative_text == o.alternative_text &&
-          alternative_text_title == o.alternative_text_title &&
-          hidden == o.hidden &&
-          x == o.x &&
-          y == o.y &&
-          z_order_position == o.z_order_position &&
-          fill_format == o.fill_format &&
-          effect_format == o.effect_format &&
-          three_d_format == o.three_d_format &&
-          line_format == o.line_format &&
-          hyperlink_click == o.hyperlink_click &&
-          hyperlink_mouse_over == o.hyperlink_mouse_over &&
-          type == o.type &&
-          shape_type == o.shape_type &&
-          text == o.text &&
-          paragraphs == o.paragraphs &&
-          text_frame_format == o.text_frame_format
+          width == o.width
     end
 
     # @see the `==` method
@@ -145,7 +96,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, shape_type, text, paragraphs, text_frame_format].hash
+      [default_regular_font, font_fallback_rules, format, height, width].hash
     end
 
     # Builds the object from hash

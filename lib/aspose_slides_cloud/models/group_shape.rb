@@ -25,6 +25,9 @@ require 'date'
 module AsposeSlidesCloud
   # Represents GroupShape resource.
   class GroupShape < ShapeBase
+    # Gets or sets the link to shapes.
+    attr_accessor :shapes
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -50,12 +53,14 @@ module AsposeSlidesCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
+        :'shapes' => :'Shapes',
       })
     end
 
     # Attribute type mapping.
     def self.swagger_types
       super.merge({
+        :'shapes' => :'ResourceUri',
       })
     end
 
@@ -63,6 +68,10 @@ module AsposeSlidesCloud
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       super
+
+      if attributes.has_key?(:'Shapes')
+        self.shapes = attributes[:'Shapes']
+      end
       self.type = "GroupShape"
     end
 
@@ -96,14 +105,14 @@ module AsposeSlidesCloud
           x == o.x &&
           y == o.y &&
           z_order_position == o.z_order_position &&
-          shapes == o.shapes &&
           fill_format == o.fill_format &&
           effect_format == o.effect_format &&
           three_d_format == o.three_d_format &&
           line_format == o.line_format &&
           hyperlink_click == o.hyperlink_click &&
           hyperlink_mouse_over == o.hyperlink_mouse_over &&
-          type == o.type
+          type == o.type &&
+          shapes == o.shapes
     end
 
     # @see the `==` method
@@ -115,7 +124,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_linksname, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, shapes].hash
     end
 
     # Builds the object from hash

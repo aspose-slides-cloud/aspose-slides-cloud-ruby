@@ -52,9 +52,6 @@ module AsposeSlidesCloud
     # Gets z-order position of shape
     attr_accessor :z_order_position
 
-    # Gets or sets the link to shapes.
-    attr_accessor :shapes
-
     # Gets or sets the fill format.
     attr_accessor :fill_format
 
@@ -109,7 +106,6 @@ module AsposeSlidesCloud
         :'x' => :'X',
         :'y' => :'Y',
         :'z_order_position' => :'ZOrderPosition',
-        :'shapes' => :'Shapes',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
         :'three_d_format' => :'ThreeDFormat',
@@ -132,7 +128,6 @@ module AsposeSlidesCloud
         :'x' => :'Float',
         :'y' => :'Float',
         :'z_order_position' => :'Integer',
-        :'shapes' => :'ResourceUri',
         :'fill_format' => :'FillFormat',
         :'effect_format' => :'EffectFormat',
         :'three_d_format' => :'ThreeDFormat',
@@ -182,10 +177,6 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'ZOrderPosition')
         self.z_order_position = attributes[:'ZOrderPosition']
-      end
-
-      if attributes.has_key?(:'Shapes')
-        self.shapes = attributes[:'Shapes']
       end
 
       if attributes.has_key?(:'FillFormat')
@@ -264,7 +255,6 @@ module AsposeSlidesCloud
           x == o.x &&
           y == o.y &&
           z_order_position == o.z_order_position &&
-          shapes == o.shapes &&
           fill_format == o.fill_format &&
           effect_format == o.effect_format &&
           three_d_format == o.three_d_format &&
@@ -283,7 +273,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type].hash
     end
 
     # Builds the object from hash

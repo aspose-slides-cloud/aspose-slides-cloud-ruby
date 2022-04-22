@@ -73,6 +73,12 @@ module AsposeSlidesCloud
     # Line properties set for the diagonal down border of the cell.
     attr_accessor :border_diagonal_down
 
+    # Cell column index
+    attr_accessor :column_index
+
+    # Cell row index
+    attr_accessor :row_index
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -114,6 +120,8 @@ module AsposeSlidesCloud
         :'border_bottom' => :'BorderBottom',
         :'border_diagonal_up' => :'BorderDiagonalUp',
         :'border_diagonal_down' => :'BorderDiagonalDown',
+        :'column_index' => :'ColumnIndex',
+        :'row_index' => :'RowIndex',
       }
     end
 
@@ -136,6 +144,8 @@ module AsposeSlidesCloud
         :'border_bottom' => :'LineFormat',
         :'border_diagonal_up' => :'LineFormat',
         :'border_diagonal_down' => :'LineFormat',
+        :'column_index' => :'Integer',
+        :'row_index' => :'Integer',
       }
     end
 
@@ -210,6 +220,14 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'BorderDiagonalDown')
         self.border_diagonal_down = attributes[:'BorderDiagonalDown']
       end
+
+      if attributes.has_key?(:'ColumnIndex')
+        self.column_index = attributes[:'ColumnIndex']
+      end
+
+      if attributes.has_key?(:'RowIndex')
+        self.row_index = attributes[:'RowIndex']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -269,7 +287,9 @@ module AsposeSlidesCloud
           border_left == o.border_left &&
           border_bottom == o.border_bottom &&
           border_diagonal_up == o.border_diagonal_up &&
-          border_diagonal_down == o.border_diagonal_down
+          border_diagonal_down == o.border_diagonal_down &&
+          column_index == o.column_index &&
+          row_index == o.row_index
     end
 
     # @see the `==` method
@@ -281,7 +301,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [text, row_span, col_span, margin_top, margin_right, margin_left, margin_bottom, text_anchor_type, text_vertical_type, fill_format, border_top, border_right, border_left, border_bottom, border_diagonal_up, border_diagonal_down].hash
+      [text, row_span, col_span, margin_top, margin_right, margin_left, margin_bottom, text_anchor_type, text_vertical_type, fill_format, border_top, border_right, border_left, border_bottom, border_diagonal_up, border_diagonal_down, column_index, row_index].hash
     end
 
     # Builds the object from hash

@@ -24,7 +24,7 @@ require 'date'
 
 module AsposeSlidesCloud
   # Provides options that control how a presentation is saved in an image format.
-  class ImageExportOptions < ExportOptions
+  class ImageExportOptions < ImageExportOptionsBase
     # Gets or sets the position of the notes on the page.
     attr_accessor :notes_position
 
@@ -146,10 +146,10 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
-          height == o.height &&
-          width == o.width &&
           font_fallback_rules == o.font_fallback_rules &&
           format == o.format &&
+          height == o.height &&
+          width == o.width &&
           notes_position == o.notes_position &&
           comments_position == o.comments_position &&
           comments_area_width == o.comments_area_width &&
@@ -165,7 +165,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, height, width, font_fallback_rules, format, notes_position, comments_position, comments_area_width, comments_area_color].hash
+      [default_regular_font, font_fallback_rules, format, height, width, notes_position, comments_position, comments_area_width, comments_area_color].hash
     end
 
     # Builds the object from hash

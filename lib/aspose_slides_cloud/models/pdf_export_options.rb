@@ -150,7 +150,7 @@ module AsposeSlidesCloud
         :'show_comments_by_no_author' => :'BOOLEAN',
         :'image_transparent_color' => :'String',
         :'apply_image_transparent' => :'BOOLEAN',
-        :'access_permissions' => :'String',
+        :'access_permissions' => :'AccessPermissions',
       })
     end
 
@@ -258,8 +258,6 @@ module AsposeSlidesCloud
       return false unless notes_position_validator.valid?(@notes_position)
       comments_position_validator = EnumAttributeValidator.new('String', ['None', 'Bottom', 'Right'])
       return false unless comments_position_validator.valid?(@comments_position)
-      access_permissions_validator = EnumAttributeValidator.new('String', ['None', 'PrintDocument', 'ModifyContent', 'CopyTextAndGraphics', 'AddOrModifyFields', 'FillExistingFields', 'ExtractTextAndGraphics', 'AssembleDocument', 'HighQualityPrint'])
-      return false unless access_permissions_validator.valid?(@access_permissions)
       true
     end
 
@@ -303,24 +301,12 @@ module AsposeSlidesCloud
       @comments_position = comments_position
     end
 
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] access_permissions Object to be assigned
-    def access_permissions=(access_permissions)
-      validator = EnumAttributeValidator.new('String', ['None', 'PrintDocument', 'ModifyContent', 'CopyTextAndGraphics', 'AddOrModifyFields', 'FillExistingFields', 'ExtractTextAndGraphics', 'AssembleDocument', 'HighQualityPrint'])
-      unless validator.valid?(access_permissions)
-        fail ArgumentError, 'invalid value for "access_permissions", must be one of #{validator.allowable_values}.'
-      end
-      @access_permissions = access_permissions
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
-          height == o.height &&
-          width == o.width &&
           font_fallback_rules == o.font_fallback_rules &&
           format == o.format &&
           text_compression == o.text_compression &&
@@ -353,7 +339,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, height, width, font_fallback_rules, format, text_compression, embed_full_fonts, compliance, sufficient_resolution, jpeg_quality, draw_slides_frame, show_hidden_slides, save_metafiles_as_png, password, embed_true_type_fonts_for_ascii, additional_common_font_families, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author, image_transparent_color, apply_image_transparent, access_permissions].hash
+      [default_regular_font, font_fallback_rules, format, text_compression, embed_full_fonts, compliance, sufficient_resolution, jpeg_quality, draw_slides_frame, show_hidden_slides, save_metafiles_as_png, password, embed_true_type_fonts_for_ascii, additional_common_font_families, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author, image_transparent_color, apply_image_transparent, access_permissions].hash
     end
 
     # Builds the object from hash

@@ -61,6 +61,9 @@ module AsposeSlidesCloud
     # Determines whether audio is automatically rewound to start after playing.
     attr_accessor :rewind_audio
 
+    # Picture fill format.
+    attr_accessor :picture_fill_format
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -98,6 +101,7 @@ module AsposeSlidesCloud
         :'base64_data' => :'Base64Data',
         :'play_across_slides' => :'PlayAcrossSlides',
         :'rewind_audio' => :'RewindAudio',
+        :'picture_fill_format' => :'PictureFillFormat',
       })
     end
 
@@ -116,6 +120,7 @@ module AsposeSlidesCloud
         :'base64_data' => :'String',
         :'play_across_slides' => :'BOOLEAN',
         :'rewind_audio' => :'BOOLEAN',
+        :'picture_fill_format' => :'PictureFill',
       })
     end
 
@@ -170,6 +175,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'RewindAudio')
         self.rewind_audio = attributes[:'RewindAudio']
+      end
+
+      if attributes.has_key?(:'PictureFillFormat')
+        self.picture_fill_format = attributes[:'PictureFillFormat']
       end
       self.type = "AudioFrame"
     end
@@ -228,7 +237,6 @@ module AsposeSlidesCloud
           x == o.x &&
           y == o.y &&
           z_order_position == o.z_order_position &&
-          shapes == o.shapes &&
           fill_format == o.fill_format &&
           effect_format == o.effect_format &&
           three_d_format == o.three_d_format &&
@@ -248,7 +256,8 @@ module AsposeSlidesCloud
           volume == o.volume &&
           base64_data == o.base64_data &&
           play_across_slides == o.play_across_slides &&
-          rewind_audio == o.rewind_audio
+          rewind_audio == o.rewind_audio &&
+          picture_fill_format == o.picture_fill_format
     end
 
     # @see the `==` method
@@ -260,7 +269,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, shapes, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, shape_type, audio_cd_end_track, audio_cd_end_track_time, audio_cd_start_track, audio_cd_start_track_time, embedded, hide_at_showing, play_loop_mode, play_mode, volume, base64_data, play_across_slides, rewind_audio].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, shape_type, audio_cd_end_track, audio_cd_end_track_time, audio_cd_start_track, audio_cd_start_track_time, embedded, hide_at_showing, play_loop_mode, play_mode, volume, base64_data, play_across_slides, rewind_audio, picture_fill_format].hash
     end
 
     # Builds the object from hash
