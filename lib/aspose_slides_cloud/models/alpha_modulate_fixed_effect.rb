@@ -23,10 +23,10 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # One value series.
-  class WaterfallSeries < OneValueSeries
-    # True if inner points are shown.
-    attr_accessor :show_connector_lines
+  # Represents an Alpha Modulate Fixed effect.
+  class AlphaModulateFixedEffect < ImageTransformEffect
+    # Returns an amount of effect in percents.    
+    attr_accessor :amount
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -53,14 +53,14 @@ module AsposeSlidesCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
-        :'show_connector_lines' => :'ShowConnectorLines',
+        :'amount' => :'Amount',
       })
     end
 
     # Attribute type mapping.
     def self.swagger_types
       super.merge({
-        :'show_connector_lines' => :'BOOLEAN',
+        :'amount' => :'Float',
       })
     end
 
@@ -69,16 +69,20 @@ module AsposeSlidesCloud
     def initialize(attributes = {})
       super
 
-      if attributes.has_key?(:'ShowConnectorLines')
-        self.show_connector_lines = attributes[:'ShowConnectorLines']
+      if attributes.has_key?(:'Amount')
+        self.amount = attributes[:'Amount']
       end
-      self.data_point_type = "OneValue"
+      self.type = "AlphaModulateFixed"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
+      if @amount.nil?
+        invalid_properties.push('invalid value for "amount", amount cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -86,6 +90,7 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
+      return false if @amount.nil?
       true
     end
 
@@ -95,22 +100,7 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           type == o.type &&
-          name == o.name &&
-          is_color_varied == o.is_color_varied &&
-          inverted_solid_fill_color == o.inverted_solid_fill_color &&
-          smooth == o.smooth &&
-          plot_on_second_axis == o.plot_on_second_axis &&
-          order == o.order &&
-          invert_if_negative == o.invert_if_negative &&
-          explosion == o.explosion &&
-          marker == o.marker &&
-          fill_format == o.fill_format &&
-          effect_format == o.effect_format &&
-          line_format == o.line_format &&
-          data_point_type == o.data_point_type &&
-          data_points == o.data_points &&
-          number_format_of_values == o.number_format_of_values &&
-          show_connector_lines == o.show_connector_lines
+          amount == o.amount
     end
 
     # @see the `==` method
@@ -122,7 +112,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type, data_points, number_format_of_values, show_connector_lines].hash
+      [type, amount].hash
     end
 
     # Builds the object from hash

@@ -28,10 +28,14 @@ module AsposeSlidesCloud
     # Value.
     attr_accessor :value
 
+    # SetAsTotal. Applied to Waterfall data points only.
+    attr_accessor :set_as_total
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
         :'value' => :'Value',
+        :'set_as_total' => :'SetAsTotal',
       })
     end
 
@@ -39,6 +43,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       super.merge({
         :'value' => :'Float',
+        :'set_as_total' => :'BOOLEAN',
       })
     end
 
@@ -49,6 +54,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'Value')
         self.value = attributes[:'Value']
+      end
+
+      if attributes.has_key?(:'SetAsTotal')
+        self.set_as_total = attributes[:'SetAsTotal']
       end
     end
 
@@ -76,7 +85,8 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          value == o.value
+          value == o.value &&
+          set_as_total == o.set_as_total
     end
 
     # @see the `==` method
@@ -88,7 +98,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [value].hash
+      [value, set_as_total].hash
     end
 
     # Builds the object from hash

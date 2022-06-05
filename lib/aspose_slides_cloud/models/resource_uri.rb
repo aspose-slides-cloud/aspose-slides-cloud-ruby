@@ -37,6 +37,12 @@ module AsposeSlidesCloud
     # Gets or sets the title of link.
     attr_accessor :title
 
+    # Resource slide index.
+    attr_accessor :slide_index
+
+    # Resource shape index.
+    attr_accessor :shape_index
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -44,6 +50,8 @@ module AsposeSlidesCloud
         :'relation' => :'Relation',
         :'link_type' => :'LinkType',
         :'title' => :'Title',
+        :'slide_index' => :'SlideIndex',
+        :'shape_index' => :'ShapeIndex',
       }
     end
 
@@ -54,6 +62,8 @@ module AsposeSlidesCloud
         :'relation' => :'String',
         :'link_type' => :'String',
         :'title' => :'String',
+        :'slide_index' => :'Integer',
+        :'shape_index' => :'Integer',
       }
     end
 
@@ -80,6 +90,14 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Title')
         self.title = attributes[:'Title']
       end
+
+      if attributes.has_key?(:'SlideIndex')
+        self.slide_index = attributes[:'SlideIndex']
+      end
+
+      if attributes.has_key?(:'ShapeIndex')
+        self.shape_index = attributes[:'ShapeIndex']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -103,7 +121,9 @@ module AsposeSlidesCloud
           href == o.href &&
           relation == o.relation &&
           link_type == o.link_type &&
-          title == o.title
+          title == o.title &&
+          slide_index == o.slide_index &&
+          shape_index == o.shape_index
     end
 
     # @see the `==` method
@@ -115,7 +135,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [href, relation, link_type, title].hash
+      [href, relation, link_type, title, slide_index, shape_index].hash
     end
 
     # Builds the object from hash

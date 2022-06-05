@@ -52,6 +52,9 @@ module AsposeSlidesCloud
     # Fill mode.
     attr_accessor :picture_fill_mode
 
+    # Image transform effects.
+    attr_accessor :image_transform_list
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -86,6 +89,7 @@ module AsposeSlidesCloud
         :'base64_data' => :'Base64Data',
         :'svg_data' => :'SvgData',
         :'picture_fill_mode' => :'PictureFillMode',
+        :'image_transform_list' => :'ImageTransformList',
       })
     end
 
@@ -101,6 +105,7 @@ module AsposeSlidesCloud
         :'base64_data' => :'String',
         :'svg_data' => :'String',
         :'picture_fill_mode' => :'String',
+        :'image_transform_list' => :'Array<ImageTransformEffect>',
       })
     end
 
@@ -143,6 +148,12 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'PictureFillMode')
         self.picture_fill_mode = attributes[:'PictureFillMode']
+      end
+
+      if attributes.has_key?(:'ImageTransformList')
+        if (value = attributes[:'ImageTransformList']).is_a?(Array)
+          self.image_transform_list = value
+        end
       end
       self.type = "Picture"
     end
@@ -217,7 +228,8 @@ module AsposeSlidesCloud
           image == o.image &&
           base64_data == o.base64_data &&
           svg_data == o.svg_data &&
-          picture_fill_mode == o.picture_fill_mode
+          picture_fill_mode == o.picture_fill_mode &&
+          image_transform_list == o.image_transform_list
     end
 
     # @see the `==` method
@@ -229,7 +241,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, crop_bottom, crop_left, crop_right, crop_top, dpi, image, base64_data, svg_data, picture_fill_mode].hash
+      [type, crop_bottom, crop_left, crop_right, crop_top, dpi, image, base64_data, svg_data, picture_fill_mode, image_transform_list].hash
     end
 
     # Builds the object from hash

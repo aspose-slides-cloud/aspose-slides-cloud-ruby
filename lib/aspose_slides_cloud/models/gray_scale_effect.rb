@@ -23,22 +23,39 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # One value chart data point.
-  class WaterfallChartDataPoint < OneValueChartDataPoint
-    # Value.
-    attr_accessor :set_as_total
+  # Represents an Gray Scale effect.
+  class GrayScaleEffect < ImageTransformEffect
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.any?{ |s| s.casecmp(value) == 0 }
+      end
+    end
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
-        :'set_as_total' => :'SetAsTotal',
       })
     end
 
     # Attribute type mapping.
     def self.swagger_types
       super.merge({
-        :'set_as_total' => :'BOOLEAN',
       })
     end
 
@@ -46,10 +63,7 @@ module AsposeSlidesCloud
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       super
-
-      if attributes.has_key?(:'SetAsTotal')
-        self.set_as_total = attributes[:'SetAsTotal']
-      end
+      self.type = "GrayScale"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -71,8 +85,7 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          value == o.value &&
-          set_as_total == o.set_as_total
+          type == o.type
     end
 
     # @see the `==` method
@@ -84,7 +97,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [value, set_as_total].hash
+      [type].hash
     end
 
     # Builds the object from hash

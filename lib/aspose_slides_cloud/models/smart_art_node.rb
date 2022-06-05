@@ -40,6 +40,9 @@ module AsposeSlidesCloud
     # Organization chart layout type associated with current node.
     attr_accessor :org_chart_layout
 
+    # Get or sets list to paragraphs list
+    attr_accessor :paragraphs
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -70,6 +73,7 @@ module AsposeSlidesCloud
         :'is_assistant' => :'IsAssistant',
         :'text' => :'Text',
         :'org_chart_layout' => :'OrgChartLayout',
+        :'paragraphs' => :'Paragraphs',
       }
     end
 
@@ -81,6 +85,7 @@ module AsposeSlidesCloud
         :'is_assistant' => :'BOOLEAN',
         :'text' => :'String',
         :'org_chart_layout' => :'String',
+        :'paragraphs' => :'ResourceUri',
       }
     end
 
@@ -112,6 +117,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'OrgChartLayout')
         self.org_chart_layout = attributes[:'OrgChartLayout']
+      end
+
+      if attributes.has_key?(:'Paragraphs')
+        self.paragraphs = attributes[:'Paragraphs']
       end
     end
 
@@ -159,7 +168,8 @@ module AsposeSlidesCloud
           shapes == o.shapes &&
           is_assistant == o.is_assistant &&
           text == o.text &&
-          org_chart_layout == o.org_chart_layout
+          org_chart_layout == o.org_chart_layout &&
+          paragraphs == o.paragraphs
     end
 
     # @see the `==` method
@@ -171,7 +181,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [nodes, shapes, is_assistant, text, org_chart_layout].hash
+      [nodes, shapes, is_assistant, text, org_chart_layout, paragraphs].hash
     end
 
     # Builds the object from hash

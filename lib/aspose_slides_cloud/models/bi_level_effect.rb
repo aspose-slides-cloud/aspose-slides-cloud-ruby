@@ -23,22 +23,10 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # One value series.
-  class BoxAndWhiskerSeries < OneValueSeries
-    # Quartile method.
-    attr_accessor :quartile_method
-
-    # True if inner points are shown.
-    attr_accessor :show_inner_points
-
-    # True if mean line is shown.
-    attr_accessor :show_mean_line
-
-    # True if mean markers are shown.
-    attr_accessor :show_mean_markers
-
-    # True if outlier points are shown.
-    attr_accessor :show_outlier_points
+  # Represents an BiLevel effect.
+  class BiLevelEffect < ImageTransformEffect
+    # Returns effect threshold.
+    attr_accessor :threshold
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -65,22 +53,14 @@ module AsposeSlidesCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
-        :'quartile_method' => :'QuartileMethod',
-        :'show_inner_points' => :'ShowInnerPoints',
-        :'show_mean_line' => :'ShowMeanLine',
-        :'show_mean_markers' => :'ShowMeanMarkers',
-        :'show_outlier_points' => :'ShowOutlierPoints',
+        :'threshold' => :'Threshold',
       })
     end
 
     # Attribute type mapping.
     def self.swagger_types
       super.merge({
-        :'quartile_method' => :'String',
-        :'show_inner_points' => :'BOOLEAN',
-        :'show_mean_line' => :'BOOLEAN',
-        :'show_mean_markers' => :'BOOLEAN',
-        :'show_outlier_points' => :'BOOLEAN',
+        :'threshold' => :'Float',
       })
     end
 
@@ -89,32 +69,20 @@ module AsposeSlidesCloud
     def initialize(attributes = {})
       super
 
-      if attributes.has_key?(:'QuartileMethod')
-        self.quartile_method = attributes[:'QuartileMethod']
+      if attributes.has_key?(:'Threshold')
+        self.threshold = attributes[:'Threshold']
       end
-
-      if attributes.has_key?(:'ShowInnerPoints')
-        self.show_inner_points = attributes[:'ShowInnerPoints']
-      end
-
-      if attributes.has_key?(:'ShowMeanLine')
-        self.show_mean_line = attributes[:'ShowMeanLine']
-      end
-
-      if attributes.has_key?(:'ShowMeanMarkers')
-        self.show_mean_markers = attributes[:'ShowMeanMarkers']
-      end
-
-      if attributes.has_key?(:'ShowOutlierPoints')
-        self.show_outlier_points = attributes[:'ShowOutlierPoints']
-      end
-      self.data_point_type = "OneValue"
+      self.type = "BiLevel"
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
+      if @threshold.nil?
+        invalid_properties.push('invalid value for "threshold", threshold cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -122,19 +90,8 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      quartile_method_validator = EnumAttributeValidator.new('String', ['Exclusive', 'Inclusive'])
-      return false unless quartile_method_validator.valid?(@quartile_method)
+      return false if @threshold.nil?
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] quartile_method Object to be assigned
-    def quartile_method=(quartile_method)
-      validator = EnumAttributeValidator.new('String', ['Exclusive', 'Inclusive'])
-      unless validator.valid?(quartile_method)
-        fail ArgumentError, 'invalid value for "quartile_method", must be one of #{validator.allowable_values}.'
-      end
-      @quartile_method = quartile_method
     end
 
     # Checks equality by comparing each attribute.
@@ -143,26 +100,7 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           type == o.type &&
-          name == o.name &&
-          is_color_varied == o.is_color_varied &&
-          inverted_solid_fill_color == o.inverted_solid_fill_color &&
-          smooth == o.smooth &&
-          plot_on_second_axis == o.plot_on_second_axis &&
-          order == o.order &&
-          invert_if_negative == o.invert_if_negative &&
-          explosion == o.explosion &&
-          marker == o.marker &&
-          fill_format == o.fill_format &&
-          effect_format == o.effect_format &&
-          line_format == o.line_format &&
-          data_point_type == o.data_point_type &&
-          data_points == o.data_points &&
-          number_format_of_values == o.number_format_of_values &&
-          quartile_method == o.quartile_method &&
-          show_inner_points == o.show_inner_points &&
-          show_mean_line == o.show_mean_line &&
-          show_mean_markers == o.show_mean_markers &&
-          show_outlier_points == o.show_outlier_points
+          threshold == o.threshold
     end
 
     # @see the `==` method
@@ -174,7 +112,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type, data_points, number_format_of_values, quartile_method, show_inner_points, show_mean_line, show_mean_markers, show_outlier_points].hash
+      [type, threshold].hash
     end
 
     # Builds the object from hash
