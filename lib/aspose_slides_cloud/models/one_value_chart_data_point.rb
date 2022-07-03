@@ -31,11 +31,15 @@ module AsposeSlidesCloud
     # SetAsTotal. Applied to Waterfall data points only.
     attr_accessor :set_as_total
 
+    # True if the data point shall invert its colors if the value is negative. Applies to bar, column and bubble series.
+    attr_accessor :invert_if_negative
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
         :'value' => :'Value',
         :'set_as_total' => :'SetAsTotal',
+        :'invert_if_negative' => :'InvertIfNegative',
       })
     end
 
@@ -44,6 +48,7 @@ module AsposeSlidesCloud
       super.merge({
         :'value' => :'Float',
         :'set_as_total' => :'BOOLEAN',
+        :'invert_if_negative' => :'BOOLEAN',
       })
     end
 
@@ -58,6 +63,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'SetAsTotal')
         self.set_as_total = attributes[:'SetAsTotal']
+      end
+
+      if attributes.has_key?(:'InvertIfNegative')
+        self.invert_if_negative = attributes[:'InvertIfNegative']
       end
     end
 
@@ -86,7 +95,8 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           value == o.value &&
-          set_as_total == o.set_as_total
+          set_as_total == o.set_as_total &&
+          invert_if_negative == o.invert_if_negative
     end
 
     # @see the `==` method
@@ -98,7 +108,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [value, set_as_total].hash
+      [value, set_as_total, invert_if_negative].hash
     end
 
     # Builds the object from hash

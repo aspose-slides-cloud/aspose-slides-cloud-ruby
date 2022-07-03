@@ -58,6 +58,12 @@ module AsposeSlidesCloud
     # Gets or sets the plot area.
     attr_accessor :plot_area
 
+    # Specifies the chart area shall have rounded corners.
+    attr_accessor :has_rounded_corners
+
+    # Gets groups of series. 
+    attr_accessor :series_groups
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -94,6 +100,8 @@ module AsposeSlidesCloud
         :'legend' => :'Legend',
         :'axes' => :'Axes',
         :'plot_area' => :'PlotArea',
+        :'has_rounded_corners' => :'HasRoundedCorners',
+        :'series_groups' => :'SeriesGroups',
       })
     end
 
@@ -111,6 +119,8 @@ module AsposeSlidesCloud
         :'legend' => :'Legend',
         :'axes' => :'Axes',
         :'plot_area' => :'PlotArea',
+        :'has_rounded_corners' => :'BOOLEAN',
+        :'series_groups' => :'Array<ChartSeriesGroup>',
       })
     end
 
@@ -165,6 +175,16 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'PlotArea')
         self.plot_area = attributes[:'PlotArea']
+      end
+
+      if attributes.has_key?(:'HasRoundedCorners')
+        self.has_rounded_corners = attributes[:'HasRoundedCorners']
+      end
+
+      if attributes.has_key?(:'SeriesGroups')
+        if (value = attributes[:'SeriesGroups']).is_a?(Array)
+          self.series_groups = value
+        end
       end
       self.type = "Chart"
     end
@@ -233,7 +253,9 @@ module AsposeSlidesCloud
           floor == o.floor &&
           legend == o.legend &&
           axes == o.axes &&
-          plot_area == o.plot_area
+          plot_area == o.plot_area &&
+          has_rounded_corners == o.has_rounded_corners &&
+          series_groups == o.series_groups
     end
 
     # @see the `==` method
@@ -245,7 +267,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, chart_type, show_data_labels_over_maximum, series, categories, title, back_wall, side_wall, floor, legend, axes, plot_area].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, chart_type, show_data_labels_over_maximum, series, categories, title, back_wall, side_wall, floor, legend, axes, plot_area, has_rounded_corners, series_groups].hash
     end
 
     # Builds the object from hash

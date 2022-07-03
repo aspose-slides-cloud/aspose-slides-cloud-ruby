@@ -232,6 +232,7 @@ module AsposeSlidesCloud
         :'Camera' => {  },
         :'ChartCategory' => {  },
         :'ChartLinesFormat' => {  },
+        :'ChartSeriesGroup' => {  },
         :'ChartTitle' => {  },
         :'ChartWall' => {  },
         :'CommonSlideViewProperties' => {  },

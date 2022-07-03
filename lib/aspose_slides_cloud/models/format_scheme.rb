@@ -25,16 +25,16 @@ require 'date'
 module AsposeSlidesCloud
   # Represents Format Scheme for slide's theme
   class FormatScheme < ResourceBase
-    # Background style links.
+    # Background styles.
     attr_accessor :background_styles
 
-    # Effect style links.
+    # Effect styles.
     attr_accessor :effect_styles
 
-    # Fill style links.
+    # Fill styles.
     attr_accessor :fill_styles
 
-    # Line style links.
+    # Line style.
     attr_accessor :line_styles
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -50,10 +50,10 @@ module AsposeSlidesCloud
     # Attribute type mapping.
     def self.swagger_types
       super.merge({
-        :'background_styles' => :'Array<ResourceUri>',
-        :'effect_styles' => :'Array<ResourceUri>',
-        :'fill_styles' => :'Array<ResourceUri>',
-        :'line_styles' => :'Array<ResourceUri>',
+        :'background_styles' => :'Array<FillFormat>',
+        :'effect_styles' => :'Array<EffectFormat>',
+        :'fill_styles' => :'Array<FillFormat>',
+        :'line_styles' => :'Array<LineFormat>',
       })
     end
 

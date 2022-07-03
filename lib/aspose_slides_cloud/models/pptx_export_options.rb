@@ -86,7 +86,7 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      conformance_validator = EnumAttributeValidator.new('String', ['Ecma376_2006', 'Iso29500_2008_Transitional', 'Iso29500_2008_Strict'])
+      conformance_validator = EnumAttributeValidator.new('String', ['Ecma376', 'Iso29500Transitional', 'Iso29500Strict'])
       return false unless conformance_validator.valid?(@conformance)
       true
     end
@@ -94,7 +94,7 @@ module AsposeSlidesCloud
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] conformance Object to be assigned
     def conformance=(conformance)
-      validator = EnumAttributeValidator.new('String', ['Ecma376_2006', 'Iso29500_2008_Transitional', 'Iso29500_2008_Strict'])
+      validator = EnumAttributeValidator.new('String', ['Ecma376', 'Iso29500Transitional', 'Iso29500Strict'])
       unless validator.valid?(conformance)
         fail ArgumentError, 'invalid value for "conformance", must be one of #{validator.allowable_values}.'
       end

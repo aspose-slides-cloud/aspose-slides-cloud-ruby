@@ -8891,8 +8891,8 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     # @param format Output file format.
     # @param options Export options.
-    # @param width Output file width; 0 to not adjust the size. Default is 0.
-    # @param height Output file height; 0 to not adjust the size. Default is 0.
+    # @param width The width of the slide representation in the output format; 0 to not adjust the size. Default is 0.
+    # @param height The height of the slide representation in the output format; 0 to not adjust the size. Default is 0.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
@@ -8907,8 +8907,8 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     # @param format Output file format.
     # @param options Export options.
-    # @param width Output file width; 0 to not adjust the size. Default is 0.
-    # @param height Output file height; 0 to not adjust the size. Default is 0.
+    # @param width The width of the slide representation in the output format; 0 to not adjust the size. Default is 0.
+    # @param height The height of the slide representation in the output format; 0 to not adjust the size. Default is 0.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
@@ -8976,8 +8976,8 @@ module AsposeSlidesCloud
     # @param document Document data.
     # @param slide_index Slide index.
     # @param format Output file format.
-    # @param width Output file width; 0 to not adjust the size. Default is 0.
-    # @param height Output file height; 0 to not adjust the size. Default is 0.
+    # @param width The width of the slide representation in the output format; 0 to not adjust the size. Default is 0.
+    # @param height The height of the slide representation in the output format; 0 to not adjust the size. Default is 0.
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Storage folder containing custom fonts to be used with the document.
@@ -8991,8 +8991,8 @@ module AsposeSlidesCloud
     # @param document Document data.
     # @param slide_index Slide index.
     # @param format Output file format.
-    # @param width Output file width; 0 to not adjust the size. Default is 0.
-    # @param height Output file height; 0 to not adjust the size. Default is 0.
+    # @param width The width of the slide representation in the output format; 0 to not adjust the size. Default is 0.
+    # @param height The height of the slide representation in the output format; 0 to not adjust the size. Default is 0.
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Storage folder containing custom fonts to be used with the document.
@@ -10532,6 +10532,84 @@ module AsposeSlidesCloud
         :return_type => 'Paragraph')
       return data, status_code, headers
     end
+    # Read effective paragraph info.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_paragraph_effective(name, slide_index, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_paragraph_effective_with_http_info(name, slide_index, shape_index, paragraph_index, password, folder, storage)
+      data
+    end
+
+    # Read effective paragraph info.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_paragraph_effective_with_http_info(name, slide_index, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_paragraph_effective ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_paragraph_effective"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_paragraph_effective"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_paragraph_effective"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_paragraph_effective"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/effective'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Paragraph')
+      return data, status_code, headers
+    end
     # Return coordinates of rect that bounds paragraph. The rect includes all the lines of text in paragraph, including empty ones.
     # @param name Document name.
     # @param slide_index Slide index.
@@ -10866,6 +10944,91 @@ module AsposeSlidesCloud
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'portionIndex', portion_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Portion')
+      return data, status_code, headers
+    end
+    # Read effective portion info.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_portion_effective(name, slide_index, shape_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_portion_effective_with_http_info(name, slide_index, shape_index, paragraph_index, portion_index, password, folder, storage)
+      data
+    end
+
+    # Read effective portion info.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_portion_effective_with_http_info(name, slide_index, shape_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_portion_effective ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_portion_effective"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_portion_effective"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_portion_effective"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_portion_effective"
+      end
+      # verify the required parameter 'portion_index' is set
+      if @api_client.config.client_side_validation && portion_index.nil?
+        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.get_portion_effective"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}/effective'
       local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
       local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
       local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
@@ -13313,6 +13476,91 @@ module AsposeSlidesCloud
         :return_type => 'Paragraph')
       return data, status_code, headers
     end
+    # Read effective paragraph info (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_subshape_paragraph_effective(name, slide_index, path, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_subshape_paragraph_effective_with_http_info(name, slide_index, path, shape_index, paragraph_index, password, folder, storage)
+      data
+    end
+
+    # Read effective paragraph info (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_subshape_paragraph_effective_with_http_info(name, slide_index, path, shape_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_subshape_paragraph_effective ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_subshape_paragraph_effective"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_subshape_paragraph_effective"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.get_subshape_paragraph_effective"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_subshape_paragraph_effective"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_subshape_paragraph_effective"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/effective'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Paragraph')
+      return data, status_code, headers
+    end
     # Read shape paragraphs info (for smart art and group shapes).
     # @param name Document name.
     # @param slide_index Slide index.
@@ -13447,6 +13695,98 @@ module AsposeSlidesCloud
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'portionIndex', portion_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Portion')
+      return data, status_code, headers
+    end
+    # Read effective portion info (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_subshape_portion_effective(name, slide_index, path, shape_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_subshape_portion_effective_with_http_info(name, slide_index, path, shape_index, paragraph_index, portion_index, password, folder, storage)
+      data
+    end
+
+    # Read effective portion info (for smart art and group shapes).
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param path Shape path.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_subshape_portion_effective_with_http_info(name, slide_index, path, shape_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_subshape_portion_effective ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_subshape_portion_effective"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_subshape_portion_effective"
+      end
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesApi.get_subshape_portion_effective"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_subshape_portion_effective"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_subshape_portion_effective"
+      end
+      # verify the required parameter 'portion_index' is set
+      if @api_client.config.client_side_validation && portion_index.nil?
+        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.get_subshape_portion_effective"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{path}/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}/effective'
       local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
       local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
       local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
@@ -15549,8 +15889,8 @@ module AsposeSlidesCloud
     # @param format Output file format.
     # @param out_path Path to upload the output file to.
     # @param options Export options.
-    # @param width Output file width; 0 to not adjust the size. Default is 0.
-    # @param height Output file height; 0 to not adjust the size. Default is 0.
+    # @param width The width of the slide representation in the output format; 0 to not adjust the size. Default is 0.
+    # @param height The height of the slide representation in the output format; 0 to not adjust the size. Default is 0.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
@@ -15566,8 +15906,8 @@ module AsposeSlidesCloud
     # @param format Output file format.
     # @param out_path Path to upload the output file to.
     # @param options Export options.
-    # @param width Output file width; 0 to not adjust the size. Default is 0.
-    # @param height Output file height; 0 to not adjust the size. Default is 0.
+    # @param width The width of the slide representation in the output format; 0 to not adjust the size. Default is 0.
+    # @param height The height of the slide representation in the output format; 0 to not adjust the size. Default is 0.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
@@ -15640,8 +15980,8 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     # @param format Output file format.
     # @param out_path Path to save result.
-    # @param width Output file width; 0 to not adjust the size. Default is 0.
-    # @param height Output file height; 0 to not adjust the size. Default is 0.
+    # @param width The width of the slide representation in the output format; 0 to not adjust the size. Default is 0.
+    # @param height The height of the slide representation in the output format; 0 to not adjust the size. Default is 0.
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Storage folder containing custom fonts to be used with the document.
@@ -15656,8 +15996,8 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     # @param format Output file format.
     # @param out_path Path to save result.
-    # @param width Output file width; 0 to not adjust the size. Default is 0.
-    # @param height Output file height; 0 to not adjust the size. Default is 0.
+    # @param width The width of the slide representation in the output format; 0 to not adjust the size. Default is 0.
+    # @param height The height of the slide representation in the output format; 0 to not adjust the size. Default is 0.
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Storage folder containing custom fonts to be used with the document.
@@ -17797,6 +18137,90 @@ module AsposeSlidesCloud
 
       # http body (model)
       post_body = @api_client.object_to_http_body(series)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Chart')
+      return data, status_code, headers
+    end
+    # Update a series group in a chart.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must be a chart).
+    # @param series_group_index Series group index.
+    # @param series_group Series group DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_chart_series_group(name, slide_index, shape_index, series_group_index, series_group, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = update_chart_series_group_with_http_info(name, slide_index, shape_index, series_group_index, series_group, password, folder, storage)
+      data
+    end
+
+    # Update a series group in a chart.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must be a chart).
+    # @param series_group_index Series group index.
+    # @param series_group Series group DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_chart_series_group_with_http_info(name, slide_index, shape_index, series_group_index, series_group, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.update_chart_series_group ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.update_chart_series_group"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.update_chart_series_group"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.update_chart_series_group"
+      end
+      # verify the required parameter 'series_group_index' is set
+      if @api_client.config.client_side_validation && series_group_index.nil?
+        fail ArgumentError, "Missing the required parameter 'series_group_index' when calling SlidesApi.update_chart_series_group"
+      end
+      # verify the required parameter 'series_group' is set
+      if @api_client.config.client_side_validation && series_group.nil?
+        fail ArgumentError, "Missing the required parameter 'series_group' when calling SlidesApi.update_chart_series_group"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/seriesGroup/{seriesGroupIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'seriesGroupIndex', series_group_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(series_group)
 
       # form parameters
       post_files = []
