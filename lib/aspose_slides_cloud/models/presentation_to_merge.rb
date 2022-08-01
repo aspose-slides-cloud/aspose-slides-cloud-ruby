@@ -116,7 +116,7 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      source_validator = EnumAttributeValidator.new('String', ['Storage', 'Request'])
+      source_validator = EnumAttributeValidator.new('String', ['Storage', 'Request', 'Url'])
       return false unless source_validator.valid?(@source)
       true
     end
@@ -124,7 +124,7 @@ module AsposeSlidesCloud
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] source Object to be assigned
     def source=(source)
-      validator = EnumAttributeValidator.new('String', ['Storage', 'Request'])
+      validator = EnumAttributeValidator.new('String', ['Storage', 'Request', 'Url'])
       unless validator.valid?(source)
         fail ArgumentError, 'invalid value for "source", must be one of #{validator.allowable_values}.'
       end

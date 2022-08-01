@@ -23,38 +23,18 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  class NotesSlideExportFormat
+  class ChartWallType
     
-    JPEG = "Jpeg".freeze
-    PNG = "Png".freeze
-    GIF = "Gif".freeze
-    BMP = "Bmp".freeze
-    TIFF = "Tiff".freeze
-    HTML = "Html".freeze
-    PDF = "Pdf".freeze
-    XPS = "Xps".freeze
-    PPTX = "Pptx".freeze
-    ODP = "Odp".freeze
-    OTP = "Otp".freeze
-    PPT = "Ppt".freeze
-    PPS = "Pps".freeze
-    PPSX = "Ppsx".freeze
-    PPTM = "Pptm".freeze
-    PPSM = "Ppsm".freeze
-    POTX = "Potx".freeze
-    POT = "Pot".freeze
-    POTM = "Potm".freeze
-    SVG = "Svg".freeze
-    FODP = "Fodp".freeze
-    XAML = "Xaml".freeze
-    HTML5 = "Html5".freeze
+    FLOOR = "Floor".freeze
+    SIDE_WALL = "SideWall".freeze
+    BACK_WALL = "BackWall".freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string
     # @return [String] The enum value
     def build_from_hash(value)
-      constantValues = NotesSlideExportFormat.constants.select { |c| NotesSlideExportFormat::const_get(c) == value }
-      raise "Invalid ENUM value #{value} for class #NotesSlideExportFormat" if constantValues.empty?
+      constantValues = ChartWallType.constants.select { |c| ChartWallType::const_get(c) == value }
+      raise "Invalid ENUM value #{value} for class #ChartWallType" if constantValues.empty?
       value
     end
   end
