@@ -4387,6 +4387,130 @@ module AsposeSlidesCloud
         :return_type => 'DocumentProperties')
       return data, status_code, headers
     end
+    # Removes specified embedded font and returns presentation fonts info.
+    # @param name Document name.
+    # @param font_name Font name.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_embedded_font(name, font_name, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_embedded_font_with_http_info(name, font_name, password, folder, storage)
+      data
+    end
+
+    # Removes specified embedded font and returns presentation fonts info.
+    # @param name Document name.
+    # @param font_name Font name.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_embedded_font_with_http_info(name, font_name, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_embedded_font ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_embedded_font"
+      end
+      # verify the required parameter 'font_name' is set
+      if @api_client.config.client_side_validation && font_name.nil?
+        fail ArgumentError, "Missing the required parameter 'font_name' when calling SlidesApi.delete_embedded_font"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/fonts/embedded/{fontName}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'fontName', font_name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'FontsData')
+      return data, status_code, headers
+    end
+    # Removes specified embedded font and returns presentation.
+    # @param document Document data.
+    # @param font_name Document name.
+    # @param password Document password.
+    def delete_embedded_font_online(document, font_name, password = nil)
+      data, _status_code, _headers = delete_embedded_font_online_with_http_info(document, font_name, password)
+      data
+    end
+
+    # Removes specified embedded font and returns presentation.
+    # @param document Document data.
+    # @param font_name Document name.
+    # @param password Document password.
+    def delete_embedded_font_online_with_http_info(document, font_name, password = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_embedded_font_online ...'
+      end
+
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && document.nil?
+        fail ArgumentError, "Missing the required parameter 'document' when calling SlidesApi.delete_embedded_font_online"
+      end
+      # verify the required parameter 'font_name' is set
+      if @api_client.config.client_side_validation && font_name.nil?
+        fail ArgumentError, "Missing the required parameter 'font_name' when calling SlidesApi.delete_embedded_font_online"
+      end
+      # resource path
+      local_var_path = '/slides/fonts/embedded/{fontName}/delete'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'fontName', font_name)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      return data, status_code, headers
+    end
     # Delete file
     # @param path File path e.g. '/folder/file.ext'
     # @param storage_name Storage name
@@ -10076,6 +10200,116 @@ module AsposeSlidesCloud
         :return_type => 'FontScheme')
       return data, status_code, headers
     end
+    # Returns presentation fonts info.
+    # @param name Document name.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_fonts(name, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_fonts_with_http_info(name, password, folder, storage)
+      data
+    end
+
+    # Returns presentation fonts info.
+    # @param name Document name.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_fonts_with_http_info(name, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_fonts ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_fonts"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/fonts'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'FontsData')
+      return data, status_code, headers
+    end
+    # Returns presentation fonts info.
+    # @param document Document data.
+    # @param password Document password.
+    def get_fonts_online(document, password = nil)
+      data, _status_code, _headers = get_fonts_online_with_http_info(document, password)
+      data
+    end
+
+    # Returns presentation fonts info.
+    # @param document Document data.
+    # @param password Document password.
+    def get_fonts_online_with_http_info(document, password = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_fonts_online ...'
+      end
+
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && document.nil?
+        fail ArgumentError, "Missing the required parameter 'document' when calling SlidesApi.get_fonts_online"
+      end
+      # resource path
+      local_var_path = '/slides/fonts'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'FontsData')
+      return data, status_code, headers
+    end
     # Read slide theme format scheme info.
     # @param name Document name.
     # @param slide_index Slide index.
@@ -14523,6 +14757,90 @@ module AsposeSlidesCloud
         :return_type => 'Document')
       return data, status_code, headers
     end
+    # Imports shapes from SVG file.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param image SVG image data.
+    # @param x The X coordinate of the imported group of shapes (0 is default if not specified).
+    # @param y The Y coordinate of the imported group of shapes (0 is default if not specified).
+    # @param width The width of the imported group of shapes (default is SVG image width).
+    # @param height The height of the imported group of shapes (default is SVG image width).
+    # @param shapes Indexes of shapes to import. All shapes are imported if not specified.
+    # @param password Document password.
+    # @param folder Presentation folder.
+    # @param storage Presentation storage.
+    def import_shapes_from_svg(name, slide_index, image = nil, x = nil, y = nil, width = nil, height = nil, shapes = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = import_shapes_from_svg_with_http_info(name, slide_index, image, x, y, width, height, shapes, password, folder, storage)
+      data
+    end
+
+    # Imports shapes from SVG file.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param image SVG image data.
+    # @param x The X coordinate of the imported group of shapes (0 is default if not specified).
+    # @param y The Y coordinate of the imported group of shapes (0 is default if not specified).
+    # @param width The width of the imported group of shapes (default is SVG image width).
+    # @param height The height of the imported group of shapes (default is SVG image width).
+    # @param shapes Indexes of shapes to import. All shapes are imported if not specified.
+    # @param password Document password.
+    # @param folder Presentation folder.
+    # @param storage Presentation storage.
+    def import_shapes_from_svg_with_http_info(name, slide_index, image = nil, x = nil, y = nil, width = nil, height = nil, shapes = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.import_shapes_from_svg ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.import_shapes_from_svg"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.import_shapes_from_svg"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/fromSvg'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'x'] = @api_client.prepare_for_query(x) unless x.nil?
+      query_params[:'y'] = @api_client.prepare_for_query(y) unless y.nil?
+      query_params[:'width'] = @api_client.prepare_for_query(width) unless width.nil?
+      query_params[:'height'] = @api_client.prepare_for_query(height) unless height.nil?
+      query_params[:'shapes'] = @api_client.prepare_for_query(shapes) unless shapes.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+      if image
+        post_files = post_files.push(image)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Shapes')
+      return data, status_code, headers
+    end
     # Merge the presentation with other presentations specified in the request parameter.
     # @param name Document name.
     # @param request PresentationsMergeRequest with a list of presentations to merge.
@@ -17212,6 +17530,136 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'DocumentProperty')
+      return data, status_code, headers
+    end
+    # Embeds specified font and returns presentation fonts info.
+    # @param name Document name.
+    # @param font_name Document name.
+    # @param only_used Only used characters will be embedded.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def set_embedded_font(name, font_name, only_used = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = set_embedded_font_with_http_info(name, font_name, only_used, password, folder, storage)
+      data
+    end
+
+    # Embeds specified font and returns presentation fonts info.
+    # @param name Document name.
+    # @param font_name Document name.
+    # @param only_used Only used characters will be embedded.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def set_embedded_font_with_http_info(name, font_name, only_used = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.set_embedded_font ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.set_embedded_font"
+      end
+      # verify the required parameter 'font_name' is set
+      if @api_client.config.client_side_validation && font_name.nil?
+        fail ArgumentError, "Missing the required parameter 'font_name' when calling SlidesApi.set_embedded_font"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/fonts/embedded/{fontName}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'fontName', font_name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'onlyUsed'] = @api_client.prepare_for_query(only_used) unless only_used.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'FontsData')
+      return data, status_code, headers
+    end
+    # Embeds specified font and returns presentation.
+    # @param document Document data.
+    # @param font_name Font name.
+    # @param only_used Only used characters will be embedded.
+    # @param password Document password.
+    def set_embedded_font_online(document, font_name, only_used = nil, password = nil)
+      data, _status_code, _headers = set_embedded_font_online_with_http_info(document, font_name, only_used, password)
+      data
+    end
+
+    # Embeds specified font and returns presentation.
+    # @param document Document data.
+    # @param font_name Font name.
+    # @param only_used Only used characters will be embedded.
+    # @param password Document password.
+    def set_embedded_font_online_with_http_info(document, font_name, only_used = nil, password = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.set_embedded_font_online ...'
+      end
+
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && document.nil?
+        fail ArgumentError, "Missing the required parameter 'document' when calling SlidesApi.set_embedded_font_online"
+      end
+      # verify the required parameter 'font_name' is set
+      if @api_client.config.client_side_validation && font_name.nil?
+        fail ArgumentError, "Missing the required parameter 'font_name' when calling SlidesApi.set_embedded_font_online"
+      end
+      # resource path
+      local_var_path = '/slides/fonts/embedded/{fontName}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'fontName', font_name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'onlyUsed'] = @api_client.prepare_for_query(only_used) unless only_used.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'File')
       return data, status_code, headers
     end
     # Set header/footer the notes slide.

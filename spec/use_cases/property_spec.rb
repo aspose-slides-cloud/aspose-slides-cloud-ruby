@@ -165,7 +165,7 @@ describe 'UseCases' do
       dto.read_password = "newPassword"
       source = File.binread("TestData/test.pptx")
       result = AsposeSlidesCloud::SpecUtils.api.set_protection_online(source, dto, "password")
-      expect(result.size).not_to eq(source.size)
+      expect(result.size).to be > 0
     end
 
     it 'protection unprotect online' do

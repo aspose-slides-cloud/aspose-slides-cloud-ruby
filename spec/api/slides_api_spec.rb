@@ -12515,6 +12515,236 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for delete_embedded_font
+  # Removes specified embedded font and returns presentation fonts info.
+  # @param name Document name.
+  # @param font_name Font name.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [FontsData]
+  describe 'delete_embedded_font test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteEmbeddedFont', 'String')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'DeleteEmbeddedFont', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteEmbeddedFont', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteEmbeddedFont', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteEmbeddedFont', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteEmbeddedFont', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.delete_embedded_font_with_http_info(paramname, paramfont_name, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteEmbeddedFont', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteEmbeddedFont', 'String')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'DeleteEmbeddedFont', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteEmbeddedFont', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteEmbeddedFont', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteEmbeddedFont', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'DeleteEmbeddedFont', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteEmbeddedFont', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_embedded_font_with_http_info(paramname, paramfont_name, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteEmbeddedFont', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteEmbeddedFont', 'name', paramname)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteEmbeddedFont', 'name', paramname)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid font_name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteEmbeddedFont', 'String')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'DeleteEmbeddedFont', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteEmbeddedFont', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteEmbeddedFont', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteEmbeddedFont', 'String')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontName', 'DeleteEmbeddedFont', paramfont_name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteEmbeddedFont', 'fontName', paramfont_name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_embedded_font_with_http_info(paramname, paramfont_name, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteEmbeddedFont', 'fontName')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteEmbeddedFont', 'fontName', paramfont_name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteEmbeddedFont', 'fontName', paramfont_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteEmbeddedFont', 'String')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'DeleteEmbeddedFont', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteEmbeddedFont', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteEmbeddedFont', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteEmbeddedFont', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'DeleteEmbeddedFont', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteEmbeddedFont', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_embedded_font_with_http_info(paramname, paramfont_name, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteEmbeddedFont', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteEmbeddedFont', 'password', parampassword)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteEmbeddedFont', 'password', parampassword)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteEmbeddedFont', 'String')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'DeleteEmbeddedFont', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteEmbeddedFont', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteEmbeddedFont', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteEmbeddedFont', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'DeleteEmbeddedFont', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteEmbeddedFont', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_embedded_font_with_http_info(paramname, paramfont_name, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteEmbeddedFont', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteEmbeddedFont', 'folder', paramfolder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteEmbeddedFont', 'folder', paramfolder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteEmbeddedFont', 'String')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'DeleteEmbeddedFont', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteEmbeddedFont', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteEmbeddedFont', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteEmbeddedFont', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'DeleteEmbeddedFont', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteEmbeddedFont', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_embedded_font_with_http_info(paramname, paramfont_name, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteEmbeddedFont', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteEmbeddedFont', 'storage', paramstorage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteEmbeddedFont', 'storage', paramstorage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for delete_embedded_font_online
+  # Removes specified embedded font and returns presentation.
+  # @param document Document data.
+  # @param font_name Document name.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @return [File]
+  describe 'delete_embedded_font_online test' do
+    it 'should work' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'DeleteEmbeddedFontOnline', 'File')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'DeleteEmbeddedFontOnline', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteEmbeddedFontOnline', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteEmbeddedFontOnline', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.delete_embedded_font_online_with_http_info(paramdocument, paramfont_name, parampassword)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteEmbeddedFontOnline', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid document' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'DeleteEmbeddedFontOnline', 'File')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'DeleteEmbeddedFontOnline', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteEmbeddedFontOnline', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'DeleteEmbeddedFontOnline', paramdocument, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteEmbeddedFontOnline', 'document', paramdocument)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_embedded_font_online_with_http_info(paramdocument, paramfont_name, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteEmbeddedFontOnline', 'document')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteEmbeddedFontOnline', 'document', paramdocument)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteEmbeddedFontOnline', 'document', paramdocument)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid font_name' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'DeleteEmbeddedFontOnline', 'File')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'DeleteEmbeddedFontOnline', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteEmbeddedFontOnline', 'String')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontName', 'DeleteEmbeddedFontOnline', paramfont_name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteEmbeddedFontOnline', 'fontName', paramfont_name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_embedded_font_online_with_http_info(paramdocument, paramfont_name, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteEmbeddedFontOnline', 'fontName')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteEmbeddedFontOnline', 'fontName', paramfont_name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteEmbeddedFontOnline', 'fontName', paramfont_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'DeleteEmbeddedFontOnline', 'File')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'DeleteEmbeddedFontOnline', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteEmbeddedFontOnline', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'DeleteEmbeddedFontOnline', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteEmbeddedFontOnline', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_embedded_font_online_with_http_info(paramdocument, paramfont_name, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteEmbeddedFontOnline', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteEmbeddedFontOnline', 'password', parampassword)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteEmbeddedFontOnline', 'password', parampassword)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for delete_file
   # Delete file
   # @param path File path e.g. &#39;/folder/file.ext&#39;
@@ -27556,6 +27786,180 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for get_fonts
+  # Returns presentation fonts info.
+  # @param name Document name.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [FontsData]
+  describe 'get_fonts test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetFonts', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetFonts', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetFonts', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_fonts_with_http_info(paramname, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFonts', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetFonts', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetFonts', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetFonts', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetFonts', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_fonts_with_http_info(paramname, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetFonts', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFonts', 'name', paramname)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFonts', 'name', paramname)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetFonts', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetFonts', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetFonts', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetFonts', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_fonts_with_http_info(paramname, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetFonts', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFonts', 'password', parampassword)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFonts', 'password', parampassword)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetFonts', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetFonts', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetFonts', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_fonts_with_http_info(paramname, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetFonts', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFonts', 'folder', paramfolder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFonts', 'folder', paramfolder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetFonts', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetFonts', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetFonts', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_fonts_with_http_info(paramname, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetFonts', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFonts', 'storage', paramstorage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFonts', 'storage', paramstorage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for get_fonts_online
+  # Returns presentation fonts info.
+  # @param document Document data.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @return [FontsData]
+  describe 'get_fonts_online test' do
+    it 'should work' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'GetFontsOnline', 'File')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetFontsOnline', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetFontsOnline', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_fonts_online_with_http_info(paramdocument, parampassword)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFontsOnline', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid document' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'GetFontsOnline', 'File')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetFontsOnline', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'GetFontsOnline', paramdocument, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('GetFontsOnline', 'document', paramdocument)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_fonts_online_with_http_info(paramdocument, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetFontsOnline', 'document')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFontsOnline', 'document', paramdocument)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFontsOnline', 'document', paramdocument)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'GetFontsOnline', 'File')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetFontsOnline', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetFontsOnline', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetFontsOnline', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_fonts_online_with_http_info(paramdocument, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetFontsOnline', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFontsOnline', 'password', parampassword)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetFontsOnline', 'password', parampassword)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for get_format_scheme
   # Read slide theme format scheme info.
   # @param name Document name.
@@ -39080,6 +39484,372 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for import_shapes_from_svg
+  # Imports shapes from SVG file.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [File] :image SVG image data.
+  # @option opts [Integer] :x The X coordinate of the imported group of shapes (0 is default if not specified).
+  # @option opts [Integer] :y The Y coordinate of the imported group of shapes (0 is default if not specified).
+  # @option opts [Integer] :width The width of the imported group of shapes (default is SVG image width).
+  # @option opts [Integer] :height The height of the imported group of shapes (default is SVG image width).
+  # @option opts [String] :shapes Indexes of shapes to import. All shapes are imported if not specified.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Presentation folder.
+  # @option opts [String] :storage Presentation storage.
+  # @return [Shapes]
+  describe 'import_shapes_from_svg test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportShapesFromSvg', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportShapesFromSvg', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ImportShapesFromSvg', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportShapesFromSvg', 'Integer')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportShapesFromSvg', 'Integer')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'ImportShapesFromSvg', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'ImportShapesFromSvg', 'Integer')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'ImportShapesFromSvg', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportShapesFromSvg', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportShapesFromSvg', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportShapesFromSvg', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportShapesFromSvg', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.import_shapes_from_svg_with_http_info(paramname, paramslide_index, paramimage, paramx, paramy, paramwidth, paramheight, paramshapes, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportShapesFromSvg', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportShapesFromSvg', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ImportShapesFromSvg', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportShapesFromSvg', 'Integer')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportShapesFromSvg', 'Integer')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'ImportShapesFromSvg', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'ImportShapesFromSvg', 'Integer')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'ImportShapesFromSvg', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportShapesFromSvg', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportShapesFromSvg', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportShapesFromSvg', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'ImportShapesFromSvg', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportShapesFromSvg', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.import_shapes_from_svg_with_http_info(paramname, paramslide_index, paramimage, paramx, paramy, paramwidth, paramheight, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportShapesFromSvg', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'name', paramname)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'name', paramname)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportShapesFromSvg', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportShapesFromSvg', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ImportShapesFromSvg', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportShapesFromSvg', 'Integer')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportShapesFromSvg', 'Integer')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'ImportShapesFromSvg', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'ImportShapesFromSvg', 'Integer')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'ImportShapesFromSvg', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportShapesFromSvg', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportShapesFromSvg', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportShapesFromSvg', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'ImportShapesFromSvg', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportShapesFromSvg', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.import_shapes_from_svg_with_http_info(paramname, paramslide_index, paramimage, paramx, paramy, paramwidth, paramheight, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportShapesFromSvg', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'slideIndex', paramslide_index)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'slideIndex', paramslide_index)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid image' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportShapesFromSvg', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportShapesFromSvg', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ImportShapesFromSvg', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportShapesFromSvg', 'Integer')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportShapesFromSvg', 'Integer')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'ImportShapesFromSvg', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'ImportShapesFromSvg', 'Integer')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'ImportShapesFromSvg', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportShapesFromSvg', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportShapesFromSvg', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportShapesFromSvg', 'String')
+      paramimage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('image', 'ImportShapesFromSvg', paramimage, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportShapesFromSvg', 'image', paramimage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.import_shapes_from_svg_with_http_info(paramname, paramslide_index, paramimage, paramx, paramy, paramwidth, paramheight, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportShapesFromSvg', 'image')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'image', paramimage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'image', paramimage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid x' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportShapesFromSvg', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportShapesFromSvg', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ImportShapesFromSvg', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportShapesFromSvg', 'Integer')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportShapesFromSvg', 'Integer')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'ImportShapesFromSvg', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'ImportShapesFromSvg', 'Integer')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'ImportShapesFromSvg', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportShapesFromSvg', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportShapesFromSvg', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportShapesFromSvg', 'String')
+      paramx = AsposeSlidesCloud::SpecUtils.invalidize_param_value('x', 'ImportShapesFromSvg', paramx, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportShapesFromSvg', 'x', paramx)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.import_shapes_from_svg_with_http_info(paramname, paramslide_index, paramimage, paramx, paramy, paramwidth, paramheight, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportShapesFromSvg', 'x')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'x', paramx)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'x', paramx)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid y' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportShapesFromSvg', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportShapesFromSvg', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ImportShapesFromSvg', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportShapesFromSvg', 'Integer')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportShapesFromSvg', 'Integer')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'ImportShapesFromSvg', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'ImportShapesFromSvg', 'Integer')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'ImportShapesFromSvg', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportShapesFromSvg', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportShapesFromSvg', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportShapesFromSvg', 'String')
+      paramy = AsposeSlidesCloud::SpecUtils.invalidize_param_value('y', 'ImportShapesFromSvg', paramy, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportShapesFromSvg', 'y', paramy)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.import_shapes_from_svg_with_http_info(paramname, paramslide_index, paramimage, paramx, paramy, paramwidth, paramheight, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportShapesFromSvg', 'y')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'y', paramy)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'y', paramy)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid width' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportShapesFromSvg', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportShapesFromSvg', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ImportShapesFromSvg', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportShapesFromSvg', 'Integer')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportShapesFromSvg', 'Integer')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'ImportShapesFromSvg', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'ImportShapesFromSvg', 'Integer')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'ImportShapesFromSvg', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportShapesFromSvg', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportShapesFromSvg', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportShapesFromSvg', 'String')
+      paramwidth = AsposeSlidesCloud::SpecUtils.invalidize_param_value('width', 'ImportShapesFromSvg', paramwidth, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportShapesFromSvg', 'width', paramwidth)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.import_shapes_from_svg_with_http_info(paramname, paramslide_index, paramimage, paramx, paramy, paramwidth, paramheight, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportShapesFromSvg', 'width')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'width', paramwidth)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'width', paramwidth)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid height' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportShapesFromSvg', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportShapesFromSvg', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ImportShapesFromSvg', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportShapesFromSvg', 'Integer')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportShapesFromSvg', 'Integer')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'ImportShapesFromSvg', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'ImportShapesFromSvg', 'Integer')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'ImportShapesFromSvg', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportShapesFromSvg', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportShapesFromSvg', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportShapesFromSvg', 'String')
+      paramheight = AsposeSlidesCloud::SpecUtils.invalidize_param_value('height', 'ImportShapesFromSvg', paramheight, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportShapesFromSvg', 'height', paramheight)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.import_shapes_from_svg_with_http_info(paramname, paramslide_index, paramimage, paramx, paramy, paramwidth, paramheight, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportShapesFromSvg', 'height')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'height', paramheight)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'height', paramheight)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shapes' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportShapesFromSvg', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportShapesFromSvg', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ImportShapesFromSvg', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportShapesFromSvg', 'Integer')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportShapesFromSvg', 'Integer')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'ImportShapesFromSvg', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'ImportShapesFromSvg', 'Integer')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'ImportShapesFromSvg', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportShapesFromSvg', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportShapesFromSvg', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportShapesFromSvg', 'String')
+      paramshapes = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapes', 'ImportShapesFromSvg', paramshapes, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportShapesFromSvg', 'shapes', paramshapes)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.import_shapes_from_svg_with_http_info(paramname, paramslide_index, paramimage, paramx, paramy, paramwidth, paramheight, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportShapesFromSvg', 'shapes')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'shapes', paramshapes)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'shapes', paramshapes)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportShapesFromSvg', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportShapesFromSvg', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ImportShapesFromSvg', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportShapesFromSvg', 'Integer')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportShapesFromSvg', 'Integer')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'ImportShapesFromSvg', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'ImportShapesFromSvg', 'Integer')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'ImportShapesFromSvg', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportShapesFromSvg', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportShapesFromSvg', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportShapesFromSvg', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'ImportShapesFromSvg', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportShapesFromSvg', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.import_shapes_from_svg_with_http_info(paramname, paramslide_index, paramimage, paramx, paramy, paramwidth, paramheight, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportShapesFromSvg', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'password', parampassword)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'password', parampassword)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportShapesFromSvg', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportShapesFromSvg', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ImportShapesFromSvg', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportShapesFromSvg', 'Integer')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportShapesFromSvg', 'Integer')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'ImportShapesFromSvg', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'ImportShapesFromSvg', 'Integer')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'ImportShapesFromSvg', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportShapesFromSvg', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportShapesFromSvg', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportShapesFromSvg', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'ImportShapesFromSvg', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportShapesFromSvg', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.import_shapes_from_svg_with_http_info(paramname, paramslide_index, paramimage, paramx, paramy, paramwidth, paramheight, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportShapesFromSvg', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'folder', paramfolder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'folder', paramfolder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportShapesFromSvg', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportShapesFromSvg', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ImportShapesFromSvg', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportShapesFromSvg', 'Integer')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportShapesFromSvg', 'Integer')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'ImportShapesFromSvg', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'ImportShapesFromSvg', 'Integer')
+      paramshapes = AsposeSlidesCloud::SpecUtils.get_param_value('shapes', 'ImportShapesFromSvg', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportShapesFromSvg', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportShapesFromSvg', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportShapesFromSvg', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'ImportShapesFromSvg', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportShapesFromSvg', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.import_shapes_from_svg_with_http_info(paramname, paramslide_index, paramimage, paramx, paramy, paramwidth, paramheight, paramshapes, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportShapesFromSvg', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'storage', paramstorage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'storage', paramstorage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for merge
   # Merge the presentation with other presentations specified in the request parameter.
   # @param name Document name.
@@ -46968,6 +47738,296 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetDocumentProperty', 'storage', paramstorage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for set_embedded_font
+  # Embeds specified font and returns presentation fonts info.
+  # @param name Document name.
+  # @param font_name Document name.
+  # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :only_used Only used characters will be embedded.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [FontsData]
+  describe 'set_embedded_font test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFont', 'String')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'SetEmbeddedFont', 'String')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFont', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFont', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFont', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFont', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFont', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.set_embedded_font_with_http_info(paramname, paramfont_name, paramonly_used, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFont', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFont', 'String')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'SetEmbeddedFont', 'String')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFont', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFont', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFont', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFont', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'SetEmbeddedFont', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFont', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.set_embedded_font_with_http_info(paramname, paramfont_name, paramonly_used, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFont', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFont', 'name', paramname)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFont', 'name', paramname)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid font_name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFont', 'String')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'SetEmbeddedFont', 'String')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFont', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFont', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFont', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFont', 'String')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontName', 'SetEmbeddedFont', paramfont_name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFont', 'fontName', paramfont_name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.set_embedded_font_with_http_info(paramname, paramfont_name, paramonly_used, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFont', 'fontName')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFont', 'fontName', paramfont_name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFont', 'fontName', paramfont_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid only_used' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFont', 'String')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'SetEmbeddedFont', 'String')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFont', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFont', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFont', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFont', 'String')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.invalidize_param_value('onlyUsed', 'SetEmbeddedFont', paramonly_used, 'BOOLEAN')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFont', 'onlyUsed', paramonly_used)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.set_embedded_font_with_http_info(paramname, paramfont_name, paramonly_used, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFont', 'onlyUsed')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFont', 'onlyUsed', paramonly_used)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFont', 'onlyUsed', paramonly_used)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFont', 'String')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'SetEmbeddedFont', 'String')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFont', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFont', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFont', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFont', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'SetEmbeddedFont', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFont', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.set_embedded_font_with_http_info(paramname, paramfont_name, paramonly_used, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFont', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFont', 'password', parampassword)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFont', 'password', parampassword)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFont', 'String')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'SetEmbeddedFont', 'String')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFont', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFont', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFont', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFont', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'SetEmbeddedFont', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFont', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.set_embedded_font_with_http_info(paramname, paramfont_name, paramonly_used, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFont', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFont', 'folder', paramfolder)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFont', 'folder', paramfolder)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFont', 'String')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'SetEmbeddedFont', 'String')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFont', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFont', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFont', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFont', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'SetEmbeddedFont', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFont', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.set_embedded_font_with_http_info(paramname, paramfont_name, paramonly_used, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFont', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFont', 'storage', paramstorage)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFont', 'storage', paramstorage)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for set_embedded_font_online
+  # Embeds specified font and returns presentation.
+  # @param document Document data.
+  # @param font_name Font name.
+  # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :only_used Only used characters will be embedded.
+  # @option opts [String] :password Document password.
+  # @return [File]
+  describe 'set_embedded_font_online test' do
+    it 'should work' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'SetEmbeddedFontOnline', 'File')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'SetEmbeddedFontOnline', 'String')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontOnline', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontOnline', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.set_embedded_font_online_with_http_info(paramdocument, paramfont_name, paramonly_used, parampassword)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontOnline', nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid document' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'SetEmbeddedFontOnline', 'File')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'SetEmbeddedFontOnline', 'String')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontOnline', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'SetEmbeddedFontOnline', paramdocument, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontOnline', 'document', paramdocument)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.set_embedded_font_online_with_http_info(paramdocument, paramfont_name, paramonly_used, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFontOnline', 'document')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontOnline', 'document', paramdocument)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontOnline', 'document', paramdocument)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid font_name' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'SetEmbeddedFontOnline', 'File')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'SetEmbeddedFontOnline', 'String')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontOnline', 'String')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontName', 'SetEmbeddedFontOnline', paramfont_name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontOnline', 'fontName', paramfont_name)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.set_embedded_font_online_with_http_info(paramdocument, paramfont_name, paramonly_used, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFontOnline', 'fontName')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontOnline', 'fontName', paramfont_name)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontOnline', 'fontName', paramfont_name)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid only_used' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'SetEmbeddedFontOnline', 'File')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'SetEmbeddedFontOnline', 'String')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontOnline', 'String')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.invalidize_param_value('onlyUsed', 'SetEmbeddedFontOnline', paramonly_used, 'BOOLEAN')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontOnline', 'onlyUsed', paramonly_used)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.set_embedded_font_online_with_http_info(paramdocument, paramfont_name, paramonly_used, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFontOnline', 'onlyUsed')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontOnline', 'onlyUsed', paramonly_used)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontOnline', 'onlyUsed', paramonly_used)
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'SetEmbeddedFontOnline', 'File')
+      paramfont_name = AsposeSlidesCloud::SpecUtils.get_param_value('fontName', 'SetEmbeddedFontOnline', 'String')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontOnline', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'SetEmbeddedFontOnline', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontOnline', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.set_embedded_font_online_with_http_info(paramdocument, paramfont_name, paramonly_used, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFontOnline', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontOnline', 'password', parampassword)
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontOnline', 'password', parampassword)
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end

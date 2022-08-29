@@ -71,7 +71,11 @@ module AsposeSlidesCloud
         if method.casecmp("ImportFromPdf") == 0
           fileName = "test.pdf"
         elsif name.casecmp("Image") == 0
-          fileName = "watermark.png"
+          if method.casecmp("ImportShapesFromSvg") == 0
+            fileName = "shapes.svg"
+          else
+            fileName = "watermark.png"
+          end
         end
         return File.binread(File.join(TEST_DATA_PATH, fileName))
       end
