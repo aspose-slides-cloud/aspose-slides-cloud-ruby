@@ -192,6 +192,7 @@ module AsposeSlidesCloud
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
           font_fallback_rules == o.font_fallback_rules &&
+          font_subst_rules == o.font_subst_rules &&
           format == o.format &&
           vectorize_text == o.vectorize_text &&
           metafile_rasterization_dpi == o.metafile_rasterization_dpi &&
@@ -213,7 +214,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, font_fallback_rules, format, vectorize_text, metafile_rasterization_dpi, disable3_d_text, disable_gradient_split, disable_line_end_cropping, jpeg_quality, pictures_compression, delete_pictures_cropped_areas, external_fonts_handling].hash
+      [default_regular_font, font_fallback_rules, font_subst_rules, format, vectorize_text, metafile_rasterization_dpi, disable3_d_text, disable_gradient_split, disable_line_end_cropping, jpeg_quality, pictures_compression, delete_pictures_cropped_areas, external_fonts_handling].hash
     end
 
     # Builds the object from hash

@@ -186,5 +186,21 @@ describe 'UseCases' do
       AsposeSlidesCloud::SpecUtils.api.delete_special_slide_animation(file_name, slide_index, AsposeSlidesCloud::SpecialSlideType::MASTER_SLIDE, password, folder_name)
       expect(animation.main_sequence.length).to eq(0)
     end
+
+    it "delete unused" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      response = AsposeSlidesCloud::SpecUtils.api.delete_unused_master_slides(file_name, true, password, folder_name)
+      expect(response.slide_list.length).to eq(1)
+    end
+
+    it "delete unused online" do
+      source = File.binread("TestData/test.pptx")
+      password = "password"
+      response = AsposeSlidesCloud::SpecUtils.api.delete_unused_master_slides_online(source, true, password)
+      expect(response.size).not_to eq(0)
+    end
   end
 end

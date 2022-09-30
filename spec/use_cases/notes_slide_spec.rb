@@ -168,5 +168,39 @@ describe 'UseCases' do
       portions = AsposeSlidesCloud::SpecUtils.api.get_special_slide_portions(file_name, slide_index, AsposeSlidesCloud::SpecialSlideType::NOTES_SLIDE, shape_index, paragraph_index, password, folder_name)
       expect(portions.items.length).to eq(portion_count)
     end
+
+    it "create" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      slide_index = 1
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      dto = AsposeSlidesCloud::NotesSlide.new
+      dto.text = "Notes slide text"
+      response = AsposeSlidesCloud::SpecUtils.api.create_notes_slide(file_name, slide_index, dto, password, folder_name)
+      expect(response.text).to eq(dto.text)
+    end
+
+    it "update" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      slide_index = 1
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      dto = AsposeSlidesCloud::NotesSlide.new
+      dto.text = "Notes slide text"
+      response = AsposeSlidesCloud::SpecUtils.api.update_notes_slide(file_name, slide_index, dto, password, folder_name)
+      expect(response.text).to eq(dto.text)
+    end
+
+    it "delete" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      slide_index = 1
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      response = AsposeSlidesCloud::SpecUtils.api.delete_notes_slide(file_name, slide_index, password, folder_name)
+      expect(response.notes_slide).to eq(nil)
+    end
   end
 end

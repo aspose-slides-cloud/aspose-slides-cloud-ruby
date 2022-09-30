@@ -31,6 +31,9 @@ module AsposeSlidesCloud
     # Gets of sets list of font fallback rules.
     attr_accessor :font_fallback_rules
 
+    # Gets of sets list of font substitution rules.
+    attr_accessor :font_subst_rules
+
     attr_accessor :format
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -38,6 +41,7 @@ module AsposeSlidesCloud
       {
         :'default_regular_font' => :'DefaultRegularFont',
         :'font_fallback_rules' => :'FontFallbackRules',
+        :'font_subst_rules' => :'FontSubstRules',
         :'format' => :'Format',
       }
     end
@@ -47,6 +51,7 @@ module AsposeSlidesCloud
       {
         :'default_regular_font' => :'String',
         :'font_fallback_rules' => :'Array<FontFallbackRule>',
+        :'font_subst_rules' => :'Array<FontSubstRule>',
         :'format' => :'String',
       }
     end
@@ -66,6 +71,12 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'FontFallbackRules')
         if (value = attributes[:'FontFallbackRules']).is_a?(Array)
           self.font_fallback_rules = value
+        end
+      end
+
+      if attributes.has_key?(:'FontSubstRules')
+        if (value = attributes[:'FontSubstRules']).is_a?(Array)
+          self.font_subst_rules = value
         end
       end
 
@@ -94,6 +105,7 @@ module AsposeSlidesCloud
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
           font_fallback_rules == o.font_fallback_rules &&
+          font_subst_rules == o.font_subst_rules &&
           format == o.format
     end
 
@@ -106,7 +118,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, font_fallback_rules, format].hash
+      [default_regular_font, font_fallback_rules, font_subst_rules, format].hash
     end
 
     # Builds the object from hash

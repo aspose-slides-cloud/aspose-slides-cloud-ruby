@@ -256,6 +256,7 @@ module AsposeSlidesCloud
         :'FontData' => {  },
         :'FontFallbackRule' => {  },
         :'FontSet' => {  },
+        :'FontSubstRule' => {  },
         :'FontsData' => {  },
         :'GeometryPath' => {  },
         :'GeometryPaths' => {  },

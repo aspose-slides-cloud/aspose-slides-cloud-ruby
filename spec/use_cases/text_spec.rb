@@ -70,5 +70,44 @@ describe 'UseCases' do
       AsposeSlidesCloud::SpecUtils.api.replace_slide_text_online(source, slide_index, old_value, new_value, nil, password)
       AsposeSlidesCloud::SpecUtils.api.replace_slide_text_online(source, slide_index, old_value, new_value, true, password)
     end
+
+    it "highlight shape text" do
+        folder_name = "TempSlidesSDK"
+        file_name = "test.pptx"
+        password = "password"
+        slide_index = 6
+        shape_index = 1
+        paragraph_index = 1
+        highlight_color = "#FFF5FF8A"
+        text_to_highlight = "highlight"
+        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        AsposeSlidesCloud::SpecUtils.api.highlight_shape_text(file_name, slide_index, shape_index, text_to_highlight, highlight_color,
+          nil, false, password, folder_name)
+        para = AsposeSlidesCloud::SpecUtils.api.get_paragraph(file_name, slide_index, shape_index, paragraph_index, password, folder_name)
+        expect(para.portion_list[0].text).not_to eq(text_to_highlight)
+        expect(para.portion_list[0].highlight_color).not_to eq(highlight_color)
+        expect(para.portion_list[1].text).to eq(text_to_highlight)
+        expect(para.portion_list[1].highlight_color).to eq(highlight_color)
+    end
+
+    it "highlight shape regex" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      slide_index = 6
+      shape_index = 1
+      paragraph_index = 1
+      text_to_highlight = "highlight"
+      highlight_color = "#FFF5FF8A"
+      regex =  "h.ghl[abci]ght"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.api.highlight_shape_regex(file_name, slide_index, shape_index, regex, highlight_color,
+        nil, false, password, folder_name)
+      para = AsposeSlidesCloud::SpecUtils.api.get_paragraph(file_name, slide_index, shape_index, paragraph_index, password, folder_name)
+      expect(para.portion_list[0].text).not_to eq(text_to_highlight)
+      expect(para.portion_list[0].highlight_color).not_to eq(highlight_color)
+      expect(para.portion_list[1].text).to eq(text_to_highlight)
+      expect(para.portion_list[1].highlight_color).to eq(highlight_color)
+  end
   end
 end

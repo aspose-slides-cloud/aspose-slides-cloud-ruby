@@ -76,6 +76,10 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
+          fill_format == o.fill_format &&
+          effect_format == o.effect_format &&
+          three_d_format == o.three_d_format &&
+          line_format == o.line_format &&
           x_value == o.x_value &&
           y_value == o.y_value &&
           bubble_size == o.bubble_size
@@ -90,7 +94,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [x_value, y_value, bubble_size].hash
+      [fill_format, effect_format, three_d_format, line_format, x_value, y_value, bubble_size].hash
     end
 
     # Builds the object from hash

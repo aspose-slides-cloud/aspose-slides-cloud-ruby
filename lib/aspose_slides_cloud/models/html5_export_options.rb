@@ -83,6 +83,7 @@ module AsposeSlidesCloud
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
           font_fallback_rules == o.font_fallback_rules &&
+          font_subst_rules == o.font_subst_rules &&
           format == o.format &&
           animate_transitions == o.animate_transitions &&
           animate_shapes == o.animate_shapes
@@ -97,7 +98,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, font_fallback_rules, format, animate_transitions, animate_shapes].hash
+      [default_regular_font, font_fallback_rules, font_subst_rules, format, animate_transitions, animate_shapes].hash
     end
 
     # Builds the object from hash

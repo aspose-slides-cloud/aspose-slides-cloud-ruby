@@ -393,5 +393,198 @@ describe 'UseCases' do
       shape = AsposeSlidesCloud::SpecUtils.api.set_shape_geometry_path(file_name, 4, 1, dto, "password", folder_name)
       expect(shape).to be_truthy
     end
+
+    it "zoom frame add" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 3
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      dto = AsposeSlidesCloud::ZoomFrame.new
+      dto.x = 20
+      dto.y = 20
+      dto.width = 200
+      dto.height = 100
+      dto.target_slide_index = 2
+      shape = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
+      expect(shape).to be_kind_of(AsposeSlidesCloud::ZoomFrame)
+      expect(shape.target_slide_index).to eq(2)
+    end
+
+    it "section zoom frame add" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 3
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      dto = AsposeSlidesCloud::SectionZoomFrame.new
+      dto.x = 20
+      dto.y = 20
+      dto.width = 200
+      dto.height = 100
+      dto.target_section_index = 2
+      shape = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
+      expect(shape).to be_kind_of(AsposeSlidesCloud::SectionZoomFrame)
+      expect(shape.target_section_index).to eq(2)
+    end
+
+    it "ole object frame add by link" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 3
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      dto = AsposeSlidesCloud::OleObjectFrame.new
+      dto.x = 20
+      dto.y = 20
+      dto.width = 200
+      dto.height = 200
+      dto.link_path = "oleObject.xlsx"
+      dto.object_prog_id = "Excel.Sheet.8"
+      shape = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
+      expect(shape).to be_kind_of(AsposeSlidesCloud::OleObjectFrame)
+      expect(shape.link_path).to eq(dto.link_path)
+    end
+
+    it "ole object frame add embedded" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 3
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      source = File.binread("TestData/oleObject.xlsx")
+
+      dto = AsposeSlidesCloud::OleObjectFrame.new
+      dto.x = 20
+      dto.y = 20
+      dto.width = 200
+      dto.height = 200
+      dto.embedded_file_extension = "xlsx"
+      dto.embedded_file_base64_data = Base64.encode64(source)
+
+      shape = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
+      expect(shape).to be_kind_of(AsposeSlidesCloud::OleObjectFrame)
+      expect(shape.embedded_file_base64_data).not_to eq(nil)
+    end
+
+    it "group shape add" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 5
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      shapes = AsposeSlidesCloud::SpecUtils.api.get_shapes(file_name, slide_index, password, folder_name)
+      expect(shapes.shapes_links.length).to eq(0)
+
+      group_shape = AsposeSlidesCloud::GroupShape.new
+      AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, group_shape, nil, nil, password, folder_name)
+
+      shape1 = AsposeSlidesCloud::Shape.new
+      shape1.shape_type = "Rectangle"
+      shape1.x = 50
+      shape1.y = 400
+      shape1.width = 50
+      shape1.height = 50
+      shape2 = AsposeSlidesCloud::Shape.new
+      shape2.shape_type = "Ellipse"
+      shape2.x = 150
+      shape2.y = 400
+      shape2.width = 50
+      shape2.height = 50
+      shape3 = AsposeSlidesCloud::Shape.new
+      shape3.shape_type = "Triangle"
+      shape3.x = 250
+      shape3.y = 400
+      shape3.width = 50
+      shape3.height = 50
+
+      AsposeSlidesCloud::SpecUtils.api.create_subshape(file_name, slide_index, "1/shapes", shape1, nil, nil, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.api.create_subshape(file_name, slide_index, "1/shapes", shape2, nil, nil, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.api.create_subshape(file_name, slide_index, "1/shapes", shape3, nil, nil, password, folder_name)
+
+      shapes = AsposeSlidesCloud::SpecUtils.api.get_shapes(file_name, slide_index, password, folder_name)
+      expect(shapes.shapes_links.length).to eq(1)
+      shapes = AsposeSlidesCloud::SpecUtils.api.get_subshapes(file_name, slide_index, "1/shapes", password, folder_name)
+      expect(shapes.shapes_links.length).to eq(3)
+    end
+
+    it "import shapes from SVG" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 5
+      password = "password"
+      source = File.binread("TestData/shapes.svg")
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      response = AsposeSlidesCloud::SpecUtils.api.import_shapes_from_svg(file_name, slide_index, source, 50, 50, 300, 300,
+        [1,3,5], false, password, folder_name)
+      expect(response.shapes_links.length).to eq(3)
+    end
+
+    it "create smart art node" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 7
+      smart_art_index = 1
+      new_node_text = "New-root-node"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      response = AsposeSlidesCloud::SpecUtils.api.create_smart_art_node(file_name, slide_index, smart_art_index, nil, new_node_text,
+        nil, "password", folder_name)
+      expect(response.nodes.length).to eq(2)
+      expect(response.nodes[1].text).to eq(new_node_text)
+    end
+
+    it "create smart art sub node" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 7
+      smart_art_index = 1
+      sub_node_path = "1"
+      position = 1
+      new_node_text = "New-sub-node"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      response = AsposeSlidesCloud::SpecUtils.api.create_smart_art_node(file_name, slide_index, smart_art_index, sub_node_path, 
+        new_node_text, position, "password", folder_name)
+      expect(response.nodes[0].nodes.length).to eq(5)
+      expect(response.nodes[0].nodes[0].text).to eq(new_node_text)
+    end
+
+    it "create smart art sub sub node" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 7
+      smart_art_index = 1
+      sub_node_path = "1/nodes/1"
+      new_node_text = "New-sub-sub-node"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      response = AsposeSlidesCloud::SpecUtils.api.create_smart_art_node(file_name, slide_index, smart_art_index, sub_node_path, 
+        new_node_text, nil, "password", folder_name)
+      expect(response.nodes[0].nodes[0].nodes.length).to eq(1)
+      expect(response.nodes[0].nodes[0].nodes[0].text).to eq(new_node_text)
+    end
+
+    it "delete smart art node" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 7
+      smart_art_index = 2
+      node_index = 1
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      response = AsposeSlidesCloud::SpecUtils.api.delete_smart_art_node(file_name, slide_index, smart_art_index, node_index, nil,
+        "password", folder_name)
+      expect(response.nodes.length).to eq(2)
+    end
+
+    it "delete smart art sub node" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 7
+      smart_art_index = 1
+      node_index = 1
+      sub_node_path = "2"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      response = AsposeSlidesCloud::SpecUtils.api.delete_smart_art_node(file_name, slide_index, smart_art_index, node_index, 
+        sub_node_path, "password", folder_name)
+      expect(response.nodes[0].nodes.length).to eq(3)
+    end
   end
 end

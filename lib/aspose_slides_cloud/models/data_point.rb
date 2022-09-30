@@ -25,15 +25,35 @@ require 'date'
 module AsposeSlidesCloud
   # Data point.
   class DataPoint
+    # Gets or sets the fill format.
+    attr_accessor :fill_format
+
+    # Gets or sets the effect format.
+    attr_accessor :effect_format
+
+    # Gets or sets the 3D format
+    attr_accessor :three_d_format
+
+    # Gets or sets the line format.
+    attr_accessor :line_format
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
+        :'fill_format' => :'FillFormat',
+        :'effect_format' => :'EffectFormat',
+        :'three_d_format' => :'ThreeDFormat',
+        :'line_format' => :'LineFormat',
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
+        :'fill_format' => :'FillFormat',
+        :'effect_format' => :'EffectFormat',
+        :'three_d_format' => :'ThreeDFormat',
+        :'line_format' => :'LineFormat',
       }
     end
 
@@ -44,6 +64,22 @@ module AsposeSlidesCloud
 
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'FillFormat')
+        self.fill_format = attributes[:'FillFormat']
+      end
+
+      if attributes.has_key?(:'EffectFormat')
+        self.effect_format = attributes[:'EffectFormat']
+      end
+
+      if attributes.has_key?(:'ThreeDFormat')
+        self.three_d_format = attributes[:'ThreeDFormat']
+      end
+
+      if attributes.has_key?(:'LineFormat')
+        self.line_format = attributes[:'LineFormat']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -63,7 +99,11 @@ module AsposeSlidesCloud
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
-      self.class == o.class
+      self.class == o.class &&
+          fill_format == o.fill_format &&
+          effect_format == o.effect_format &&
+          three_d_format == o.three_d_format &&
+          line_format == o.line_format
     end
 
     # @see the `==` method
@@ -75,7 +115,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [].hash
+      [fill_format, effect_format, three_d_format, line_format].hash
     end
 
     # Builds the object from hash

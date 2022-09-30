@@ -287,5 +287,214 @@ describe 'UseCases' do
       expect(result.series.length).to eq(1)
       expect(result.categories.length).to eq(4)
     end
+
+    it 'multi level category axis' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      
+      chart = AsposeSlidesCloud::Chart.new
+      chart.x = 100
+      charty = 100
+      chart.width = 500
+      chart.height = 400
+      chart.chart_type = "ClusteredColumn"
+
+      series = AsposeSlidesCloud::OneValueSeries.new
+      series.type = "ClusteredColumn"
+      point1 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point1.value = 1
+      point2 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point2.value = 2
+      point3 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point3.value = 3
+      point4 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point4.value = 4
+      point5 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point5.value = 5
+      point6 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point6.value = 6
+      point7 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point7.value = 7
+      point8 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point8.value = 8
+      series.data_points = [ point1, point2, point3, point4, point5, point6, point7, point8 ]
+      chart.series = [ series ]
+
+      category1 = AsposeSlidesCloud::ChartCategory.new
+      category1.value = "Category 1"
+      category1.parent_categories = ["Sub-category 1", "Root 1"]
+      category2 = AsposeSlidesCloud::ChartCategory.new
+      category2.value = "Category 2"
+      category3 = AsposeSlidesCloud::ChartCategory.new
+      category3.value = "Category 3"
+      category3.parent_categories = ["Sub-category 2"]
+      category4 = AsposeSlidesCloud::ChartCategory.new
+      category4.value = "Category 4"
+      category5 = AsposeSlidesCloud::ChartCategory.new
+      category5.value = "Category 5"
+      category5.parent_categories = ["Sub-category 3", "Root 2"]
+      category6 = AsposeSlidesCloud::ChartCategory.new
+      category6.value = "Category 6"
+      category7 = AsposeSlidesCloud::ChartCategory.new
+      category7.value = "Category 7"
+      category7.parent_categories = ["Sub-category 4"]
+      category8 = AsposeSlidesCloud::ChartCategory.new
+      category8.value = "Category 7"
+      chart.categories = [category1, category2, category3, category4, category5, category6, category7, category8]
+
+      response = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
+      expect(response.categories.length).to eq(8)
+      expect(response.series.length).to eq(1)
+      expect(response.categories[0].parent_categories.length).to eq(2)
+    end
+
+    it "hide chart legend" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 3
+      shape_index = 1
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+
+      chart = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slide_index, shape_index, "password", folder_name)
+      chart.legend.has_legend = false
+      response = AsposeSlidesCloud::SpecUtils.api.update_shape(file_name, slide_index, shape_index, chart, "password", folder_name)
+      expect(response.legend.has_legend).to eq(false)
+    end
+
+    it "grid lines format" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 3
+      shape_index = 1
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+
+      chart = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slide_index, shape_index, "password", folder_name)
+      chart.axes = AsposeSlidesCloud::Axes.new
+      
+      horizontal_axis = AsposeSlidesCloud::Axis.new
+      horizontal_axis.major_grid_lines_format = AsposeSlidesCloud::ChartLinesFormat.new
+      horizontal_axis.major_grid_lines_format.line_format = AsposeSlidesCloud::LineFormat.new
+      horizontal_axis.major_grid_lines_format.line_format.fill_format = AsposeSlidesCloud::NoFill.new
+
+      horizontal_axis.minor_grid_lines_format = AsposeSlidesCloud::ChartLinesFormat.new
+      horizontal_axis.minor_grid_lines_format.line_format = AsposeSlidesCloud::LineFormat.new
+      horizontal_axis.minor_grid_lines_format.line_format.fill_format = AsposeSlidesCloud::SolidFill.new
+      horizontal_axis.minor_grid_lines_format.line_format.fill_format.color = "Black"
+
+      vertical_axis = AsposeSlidesCloud::Axis.new
+      vertical_axis.major_grid_lines_format = AsposeSlidesCloud::ChartLinesFormat.new
+      vertical_axis.major_grid_lines_format.line_format = AsposeSlidesCloud::LineFormat.new
+      gradient_fill = AsposeSlidesCloud::GradientFill.new
+      gradient_fill.direction = "FromCorner1"
+      gradient_stop1 = AsposeSlidesCloud::GradientFillStop.new
+      gradient_stop1.color = "White"
+      gradient_stop1.position = 0
+      gradient_stop2 = AsposeSlidesCloud::GradientFillStop.new
+      gradient_stop2.color = "Black"
+      gradient_stop2.position = 1
+      gradient_fill.stops = [gradient_stop1, gradient_stop2]
+      vertical_axis.major_grid_lines_format.line_format.fill_format = gradient_fill
+
+      vertical_axis.minor_grid_lines_format = AsposeSlidesCloud::ChartLinesFormat.new
+      vertical_axis.minor_grid_lines_format.line_format = AsposeSlidesCloud::LineFormat.new
+      vertical_axis.minor_grid_lines_format.line_format.fill_format = AsposeSlidesCloud::NoFill.new
+
+      response = AsposeSlidesCloud::SpecUtils.api.update_shape(file_name, slide_index, shape_index, chart, "password", folder_name)
+      expect(horizontal_axis.major_grid_lines_format.line_format.fill_format.type).to eq("NoFill")
+      expect(horizontal_axis.minor_grid_lines_format.line_format.fill_format.type).to eq("Solid")
+      expect(vertical_axis.major_grid_lines_format.line_format.fill_format.type).to eq("Gradient")
+      expect(vertical_axis.minor_grid_lines_format.line_format.fill_format.type).to eq("NoFill")
+    end
+
+    it "chart series groups" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 3
+      shape_index = 1
+      series_group_index = 1
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      chart = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slide_index, shape_index, "password", folder_name)
+      expect(chart.series_groups.length).to eq(1)
+      series_group = chart.series_groups[0]
+      series_group.overlap = 10
+      chart = AsposeSlidesCloud::SpecUtils.api.set_chart_series_group(file_name, slide_index, shape_index, series_group_index, 
+        series_group, "password", folder_name)
+        expect(chart.series_groups[0].overlap).to eq(10)
+    end
+
+    it "set chart legend" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 3
+      shape_index = 1
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      legend_dto = AsposeSlidesCloud::Legend.new
+      legend_dto.overlay = true
+      legend_dto.fill_format = AsposeSlidesCloud::SolidFill.new
+      legend_dto.fill_format.color = "#77CEF9"
+      response = AsposeSlidesCloud::SpecUtils.api.set_chart_legend(file_name, slide_index, shape_index, legend_dto, "password", folder_name)
+      expect(response.overlay).to eq(true)
+      expect(response.fill_format.type).to eq("Solid")
+    end
+
+    it "set chart axis" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 3
+      shape_index = 1
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      axis_dto = AsposeSlidesCloud::Axis.new
+      axis_dto.has_title = true
+      axis_dto.is_automatic_max_value = false
+      axis_dto.max_value = 10
+      response = AsposeSlidesCloud::SpecUtils.api.set_chart_axis(file_name, slide_index, shape_index, "verticalAxis", axis_dto, "password", folder_name)
+      expect(response.has_title).to eq(true)
+      expect(response.is_automatic_max_value).to eq(false)
+      expect(response.max_value).to eq(axis_dto.max_value)
+    end
+
+    it "set chart wall" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 8
+      shape_index = 2
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      wall_dto = AsposeSlidesCloud::ChartWall.new
+      wall_dto.fill_format = AsposeSlidesCloud::SolidFill.new
+      wall_dto.fill_format.color = "#77CEF9"
+      response = AsposeSlidesCloud::SpecUtils.api.set_chart_wall(file_name, slide_index, shape_index, "BackWall", wall_dto, "password", folder_name)
+      expect(response.fill_format.type).to eq("Solid")
+    end
+
+    it "update data point format" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 8
+      shape_index = 2
+      series_index = 2
+      data_point_index = 2
+      color = "#77CEF9"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      
+      dto = AsposeSlidesCloud::OneValueChartDataPoint.new
+      dto.value = 40
+      dto.fill_format = AsposeSlidesCloud::SolidFill.new
+      dto.fill_format.color = color
+      dto.line_format = AsposeSlidesCloud::LineFormat.new
+      dto.line_format.fill_format = AsposeSlidesCloud::SolidFill.new
+      dto.line_format.fill_format.color = color
+      dto.effect_format = AsposeSlidesCloud::EffectFormat.new
+      dto.effect_format.blur = AsposeSlidesCloud::BlurEffect.new
+      dto.effect_format.blur.grow = true
+      dto.effect_format.blur.radius = 5
+
+      response = AsposeSlidesCloud::SpecUtils.api.update_chart_data_point(file_name, slide_index, shape_index, series_index, 
+          data_point_index, dto, "password", folder_name)
+      data_point = response.series[series_index - 1].data_points[data_point_index - 1]
+      expect(data_point.fill_format.type).to eq("Solid")
+      expect(data_point.line_format.fill_format.type).to eq("Solid")
+      expect(data_point.effect_format.blur).not_to eq(nil)
+    end
   end
 end

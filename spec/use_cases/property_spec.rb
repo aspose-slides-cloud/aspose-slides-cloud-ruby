@@ -173,5 +173,41 @@ describe 'UseCases' do
       result = AsposeSlidesCloud::SpecUtils.api.delete_protection_online(source, "password")
       expect(result.size).not_to eq(source.size)
     end
+
+    it "get view properties" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      response = AsposeSlidesCloud::SpecUtils.api.get_view_properties(file_name, password, folder_name)
+      expect(response.show_comments).to eq ('True')
+    end
+
+    it "set view properties" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      dto = AsposeSlidesCloud::ViewProperties.new
+      dto.show_comments = "False"
+      dto.slide_view_properties = AsposeSlidesCloud::CommonSlideViewProperties.new
+      dto.slide_view_properties.scale = 50
+      response = AsposeSlidesCloud::SpecUtils.api.set_view_properties(file_name, dto, password, folder_name)
+      expect(response.show_comments).to eq "False"
+      expect(response.slide_view_properties.scale).to eq 50
+    end
+
+    it "protection check" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      protection_properties = AsposeSlidesCloud::SpecUtils.api.get_protection_properties(file_name, nil, folder_name)
+      expect(protection_properties.is_encrypted).to eq true
+      expect(protection_properties.read_password).to eq nil
+      protection_properties = AsposeSlidesCloud::SpecUtils.api.get_protection_properties(file_name, password, folder_name)
+      expect(protection_properties.is_encrypted).to eq true
+      expect(protection_properties.read_password).not_to eq nil
+    end
   end
 end

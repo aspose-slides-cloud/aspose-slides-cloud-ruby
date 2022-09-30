@@ -142,6 +142,14 @@ describe 'UseCases' do
       AsposeSlidesCloud::SpecUtils.api.download_shape(file_name, 1, 1, AsposeSlidesCloud::ShapeExportFormat::PNG, nil, nil, nil, nil, "password", folder_name)
     end
 
+    it 'subshape post from storage' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      response = AsposeSlidesCloud::SpecUtils.api.download_subshape(file_name, 1, "4/shapes", 1, AsposeSlidesCloud::ShapeExportFormat::PNG, nil, nil, nil, nil, "password", folder_name)
+      expect(response.size).not_to eq(0)
+    end
+
     it 'shape put from storage' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
@@ -149,6 +157,37 @@ describe 'UseCases' do
       AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       AsposeSlidesCloud::SpecUtils.api.save_shape(file_name, 1, 1, AsposeSlidesCloud::ShapeExportFormat::PNG, out_path, nil, nil, nil, nil, "password", folder_name)
       expect(AsposeSlidesCloud::SpecUtils.api.object_exists(out_path).exists).to be true
+    end
+
+    it 'subshape put from storage' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      out_path = "TestData/test.png"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.api.save_subshape(file_name, 1, "4/shapes", 1, AsposeSlidesCloud::ShapeExportFormat::PNG, out_path, nil, nil, nil, nil, "password", folder_name)
+      expect(AsposeSlidesCloud::SpecUtils.api.object_exists(out_path).exists).to be true
+    end
+
+    it "font fallback rules" do
+      font_rule1 = AsposeSlidesCloud::FontFallbackRule.new
+      font_rule1.range_start_index = 0x0B80
+      font_rule1.range_end_index = 0x0BFF
+      font_rule1.fallback_font_list = ["Vijaya"]
+
+      font_rule2 = AsposeSlidesCloud::FontFallbackRule.new
+      font_rule2.range_start_index = 0x0B80
+      font_rule2.range_end_index = 0x0BFF
+      font_rule2.fallback_font_list = ["Segoe UI Emoji", "Segoe UI Symbol", "Arial"]
+
+      font_rules = [font_rule1, font_rule2]
+      export_options = AsposeSlidesCloud::ImageExportOptions.new
+      export_options.font_fallback_rules = font_rules
+
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      response = AsposeSlidesCloud::SpecUtils.api.download_presentation(file_name, "PNG", export_options, "password", folder_name)
+      expect(response.size).not_to eq(0)
     end
   end
 end
