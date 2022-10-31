@@ -145,8 +145,11 @@ describe 'UseCases' do
     it 'subshape post from storage' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
+      shape_index = 4
+      sub_shape = "1"
       AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      response = AsposeSlidesCloud::SpecUtils.api.download_subshape(file_name, 1, "4/shapes", 1, AsposeSlidesCloud::ShapeExportFormat::PNG, nil, nil, nil, nil, "password", folder_name)
+      response = AsposeSlidesCloud::SpecUtils.api.download_shape(file_name, 1, shape_index, AsposeSlidesCloud::ShapeExportFormat::PNG, 
+        nil, nil, nil, nil, "password", folder_name, "", sub_shape)
       expect(response.size).not_to eq(0)
     end
 
@@ -163,8 +166,11 @@ describe 'UseCases' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       out_path = "TestData/test.png"
+      shape_index = 4
+      sub_shape = "1"
       AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      AsposeSlidesCloud::SpecUtils.api.save_subshape(file_name, 1, "4/shapes", 1, AsposeSlidesCloud::ShapeExportFormat::PNG, out_path, nil, nil, nil, nil, "password", folder_name)
+      AsposeSlidesCloud::SpecUtils.api.save_shape(file_name, 1, shape_index, AsposeSlidesCloud::ShapeExportFormat::PNG, 
+        out_path, nil, nil, nil, nil, "password", folder_name, "", sub_shape)
       expect(AsposeSlidesCloud::SpecUtils.api.object_exists(out_path).exists).to be true
     end
 

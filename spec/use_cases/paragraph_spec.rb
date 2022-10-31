@@ -53,10 +53,11 @@ describe 'UseCases' do
             file_name = "test.pptx"
             password = "password"
             slide_index = 6
-            shape_index = 1
+            shape_index = 3
+            sub_shape = "1"
             paragraph_index = 1
             AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-            response = AsposeSlidesCloud::SpecUtils.api.get_subshape_paragraph(file_name, slide_index, "3/shapes", shape_index, paragraph_index, password, folder_name)
+            response = AsposeSlidesCloud::SpecUtils.api.get_paragraph(file_name, slide_index, shape_index, paragraph_index, password, folder_name, "", sub_shape)
             expect(response.portion_list.length).to eq(2)
         end
         
@@ -65,9 +66,10 @@ describe 'UseCases' do
             file_name = "test.pptx"
             password = "password"
             slide_index = 6
-            shape_index = 1
+            shape_index = 3
+            sub_shape = "1"
             AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-            response = AsposeSlidesCloud::SpecUtils.api.get_subshape_paragraphs(file_name, slide_index, "3/shapes", shape_index, password, folder_name)
+            response = AsposeSlidesCloud::SpecUtils.api.get_paragraphs(file_name, slide_index, shape_index, password, folder_name, "", sub_shape)
             expect(response.paragraph_links.length).to eq(2)
         end
 
@@ -104,7 +106,7 @@ describe 'UseCases' do
             portion2 = AsposeSlidesCloud::Portion.new
             portion2.text = "Portion2"
             portion2.font_bold = "True"
-            dto.portion = [portion1, portion2]
+            dto.portion_list = [portion1, portion2]
 
             response = AsposeSlidesCloud::SpecUtils.api.create_paragraph(file_name, slide_index, shape_index, dto, nil, password, folder_name)
             expect(response.portion_list.length).to eq(2)
@@ -115,7 +117,8 @@ describe 'UseCases' do
             file_name = "test.pptx"
             password = "password"
             slide_index = 6
-            shape_index = 1
+            shape_index = 3
+            sub_shape = "1"
             AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             dto = AsposeSlidesCloud::Paragraph.new
@@ -123,7 +126,7 @@ describe 'UseCases' do
             dto.margin_right = 2
             dto.alignment = "Center"
 
-            response = AsposeSlidesCloud::SpecUtils.api.create_subshape_paragraph(file_name, slide_index, "3/shapes", shape_index, dto, nil, password, folder_name)
+            response = AsposeSlidesCloud::SpecUtils.api.create_paragraph(file_name, slide_index, shape_index, dto, nil, password, folder_name, "", sub_shape)
             expect(response.margin_left).to eq(dto.margin_left)
             expect(response.margin_right).to eq(dto.margin_right)
             expect(response.alignment).to eq(dto.alignment)
@@ -155,7 +158,8 @@ describe 'UseCases' do
             file_name = "test.pptx"
             password = "password"
             slide_index = 6
-            shape_index = 1
+            shape_index = 3
+            sub_shape = "1"
             paragraph_index = 1
             AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
@@ -164,8 +168,8 @@ describe 'UseCases' do
             dto.margin_right = 2
             dto.alignment = "Center"
 
-            response = AsposeSlidesCloud::SpecUtils.api.update_subshape_paragraph(file_name, slide_index, "3/shapes", shape_index, 
-                paragraph_index, dto, password, folder_name)
+            response = AsposeSlidesCloud::SpecUtils.api.update_paragraph(file_name, slide_index, shape_index, 
+                paragraph_index, dto, password, folder_name, "", sub_shape)
             expect(response.margin_left).to eq(dto.margin_left)
             expect(response.margin_right).to eq(dto.margin_right)
             expect(response.alignment).to eq(dto.alignment)
@@ -202,11 +206,12 @@ describe 'UseCases' do
             file_name = "test.pptx"
             password = "password"
             slide_index = 6
-            shape_index = 1
+            shape_index = 3
+            sub_shape = "1"
             AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
-            response = AsposeSlidesCloud::SpecUtils.api.delete_subshape_paragraphs(file_name, slide_index, "3/shapes", shape_index, nil,
-                 password, folder_name)
+            response = AsposeSlidesCloud::SpecUtils.api.delete_paragraphs(file_name, slide_index, shape_index, nil,
+                 password, folder_name, "", sub_shape)
                  expect(response.paragraph_links.length).to eq(0)
         end
 
@@ -215,11 +220,12 @@ describe 'UseCases' do
             file_name = "test.pptx"
             password = "password"
             slide_index = 6
-            shape_index = 1
+            shape_index = 3
+            sub_shape = "1"
             AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
-            response = AsposeSlidesCloud::SpecUtils.api.delete_subshape_paragraphs(file_name, slide_index, "3/shapes", shape_index, [1],
-                 password, folder_name)
+            response = AsposeSlidesCloud::SpecUtils.api.delete_paragraphs(file_name, slide_index, shape_index, [1],
+                 password, folder_name, "", sub_shape)
                  expect(response.paragraph_links.length).to eq(1)
         end
 
@@ -242,12 +248,13 @@ describe 'UseCases' do
             file_name = "test.pptx"
             password = "password"
             slide_index = 6
-            shape_index = 1
+            shape_index = 3
+            sub_shape = "1"
             paragraph_index = 1
             AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
-            response = AsposeSlidesCloud::SpecUtils.api.delete_subshape_paragraph(file_name, slide_index, "3/shapes", shape_index, paragraph_index,
-                 password, folder_name)
+            response = AsposeSlidesCloud::SpecUtils.api.delete_paragraph(file_name, slide_index, shape_index, paragraph_index,
+                 password, folder_name, "", sub_shape)
             expect(response.paragraph_links.length).to eq(1)
         end
 
@@ -311,11 +318,12 @@ describe 'UseCases' do
             file_name = "test.pptx"
             password = "password"
             slide_index = 6
-            shape_index = 1
+            shape_index = 3
+            sub_shape = "1"
             paragraph_index = 1
             AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-            response = AsposeSlidesCloud::SpecUtils.api.get_subshape_paragraph_effective(file_name, slide_index, "3/shapes", shape_index, paragraph_index, 
-                password, folder_name)
+            response = AsposeSlidesCloud::SpecUtils.api.get_paragraph_effective(file_name, slide_index, shape_index, paragraph_index, 
+                password, folder_name, "", sub_shape)
             expect(response.default_tab_size).to eq(72)
         end
     end

@@ -411,9 +411,9 @@ module AsposeSlidesCloud
         value = ""
       end
       if value.to_s != ""
-        value = "/" + value.to_s
+        value = "/" + CGI.escape(value.to_s).gsub('+', '%20')
       end
-      path.sub('/{' + name + '}', CGI.escape(value))
+      path.sub('/{' + name + '}', value)
     end
 
     # Process parameter for query.

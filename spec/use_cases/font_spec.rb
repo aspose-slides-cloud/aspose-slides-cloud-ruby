@@ -86,7 +86,7 @@ describe 'UseCases' do
             response = AsposeSlidesCloud::SpecUtils.api.set_embedded_font(file_name, font_name, false, "password", folder_name)
             expect(response.list[2].is_embedded).to eq(true)
             response = AsposeSlidesCloud::SpecUtils.api.delete_embedded_font(file_name, font_name, "password", folder_name)
-            expect(response.list[2].is_embedded).to eq(false)
+            expect(response.list[2].is_embedded).to eq(nil)
         end
 
         it "delete embedded font online" do
@@ -102,7 +102,7 @@ describe 'UseCases' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
             source_font_name = "Calibri"
-            target_font_name = "Times%20New%20Roman"
+            target_font_name = "Times New Roman"
             embed = true
             AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
             response = AsposeSlidesCloud::SpecUtils.api.replace_font(file_name, source_font_name, target_font_name, embed, 
@@ -115,7 +115,7 @@ describe 'UseCases' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
             source_font_name = "Calibri"
-            target_font_name = "Times%20New%20Roman"
+            target_font_name = "Times New Roman"
             embed = true
             source = File.binread("TestData/test.pptx") 
             response = AsposeSlidesCloud::SpecUtils.api.replace_font_online(source, source_font_name, target_font_name, embed, 
@@ -126,7 +126,7 @@ describe 'UseCases' do
         it "font substitution" do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            target_font_name = "Times%20New%20Roman"
+            target_font_name = "Times New Roman"
             AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
             font_rule1 = AsposeSlidesCloud::FontSubstRule.new
             font_rule1.source_font = "Arial"

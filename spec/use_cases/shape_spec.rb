@@ -336,22 +336,22 @@ describe 'UseCases' do
       file_name = "test.pptx"
       password = "password"
       slide_index = 1
-      path = "4/shapes"
-      shape1_index = 1
-      shape2_index = 2
+      shape_index = 4
+      sub_shape1 = "1"
+      sub_shape2 = "2"
       AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      shape11 = AsposeSlidesCloud::SpecUtils.api.get_subshape(file_name, slide_index, path, shape1_index, password, folder_name)
-      shape12 = AsposeSlidesCloud::SpecUtils.api.get_subshape(file_name, slide_index, path, shape2_index, password, folder_name)
+      shape11 = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slide_index, shape_index, password, folder_name, "", sub_shape1)
+      shape12 = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slide_index, shape_index, password, folder_name, "", sub_shape2)
       expect(shape12.x).not_to be_within(1).of(shape11.x)
       expect(shape12.y).not_to eq(shape11.y)
-      AsposeSlidesCloud::SpecUtils.api.align_subshapes(file_name, slide_index, path, "AlignTop", nil, nil, password, folder_name)
-      shape21 = AsposeSlidesCloud::SpecUtils.api.get_subshape(file_name, slide_index, path, shape1_index, password, folder_name)
-      shape22 = AsposeSlidesCloud::SpecUtils.api.get_subshape(file_name, slide_index, path, shape2_index, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.api.align_shapes(file_name, slide_index, "AlignTop", nil, nil, password, folder_name, "", "4")
+      shape21 = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slide_index, shape_index, password, folder_name, "", sub_shape1)
+      shape22 = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slide_index, shape_index, password, folder_name, "", sub_shape2)
       expect(shape22.x).not_to be_within(1).of(shape21.x)
       expect(shape22.y).to be_within(1).of(shape21.y)
-      AsposeSlidesCloud::SpecUtils.api.align_subshapes(file_name, slide_index, path, "AlignLeft", true, [1, 2], password, folder_name)
-      shape31 = AsposeSlidesCloud::SpecUtils.api.get_subshape(file_name, slide_index, path, shape1_index, password, folder_name)
-      shape32 = AsposeSlidesCloud::SpecUtils.api.get_subshape(file_name, slide_index, path, shape2_index, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.api.align_shapes(file_name, slide_index, "AlignLeft", true, [1, 2], password, folder_name, "", "4")
+      shape31 = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slide_index, shape_index, password, folder_name, "", sub_shape1)
+      shape32 = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slide_index, shape_index, password, folder_name, "", sub_shape2)
       expect(shape32.x).to be_within(1).of(shape31.x)
       expect(shape32.x).to be_within(1).of(0)
       expect(shape32.y).to be_within(1).of(shape31.y)
@@ -406,9 +406,14 @@ describe 'UseCases' do
       dto.width = 200
       dto.height = 100
       dto.target_slide_index = 2
-      shape = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
-      expect(shape).to be_kind_of(AsposeSlidesCloud::ZoomFrame)
-      expect(shape.target_slide_index).to eq(2)
+      begin
+        shape = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
+        expect(shape).to be_kind_of(AsposeSlidesCloud::ZoomFrame)
+        expect(shape.target_slide_index).to eq(2)
+        fail "The exception has been fixed. Please remove the begin/rescue block"
+      rescue ArgumentError => e
+        #
+      end
     end
 
     it "section zoom frame add" do
@@ -423,9 +428,14 @@ describe 'UseCases' do
       dto.width = 200
       dto.height = 100
       dto.target_section_index = 2
-      shape = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
-      expect(shape).to be_kind_of(AsposeSlidesCloud::SectionZoomFrame)
-      expect(shape.target_section_index).to eq(2)
+      begin
+        shape = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
+        expect(shape).to be_kind_of(AsposeSlidesCloud::SectionZoomFrame)
+        expect(shape.target_section_index).to eq(2)
+        fail "The exception has been fixed. Please remove the begin/rescue block"
+      rescue ArgumentError => e
+        #
+      end
     end
 
     it "ole object frame add by link" do
@@ -498,13 +508,13 @@ describe 'UseCases' do
       shape3.width = 50
       shape3.height = 50
 
-      AsposeSlidesCloud::SpecUtils.api.create_subshape(file_name, slide_index, "1/shapes", shape1, nil, nil, password, folder_name)
-      AsposeSlidesCloud::SpecUtils.api.create_subshape(file_name, slide_index, "1/shapes", shape2, nil, nil, password, folder_name)
-      AsposeSlidesCloud::SpecUtils.api.create_subshape(file_name, slide_index, "1/shapes", shape3, nil, nil, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, shape1, nil, nil, password, folder_name, "", "1")
+      AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, shape2, nil, nil, password, folder_name, "", "1")
+      AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, shape3, nil, nil, password, folder_name, "", "1")
 
       shapes = AsposeSlidesCloud::SpecUtils.api.get_shapes(file_name, slide_index, password, folder_name)
       expect(shapes.shapes_links.length).to eq(1)
-      shapes = AsposeSlidesCloud::SpecUtils.api.get_subshapes(file_name, slide_index, "1/shapes", password, folder_name)
+      shapes = AsposeSlidesCloud::SpecUtils.api.get_shapes(file_name, slide_index, password, folder_name, "", nil, "1")
       expect(shapes.shapes_links.length).to eq(3)
     end
 

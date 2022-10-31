@@ -76,6 +76,8 @@ module AsposeSlidesCloud
           else
             fileName = "watermark.png"
           end
+        elsif name.casecmp("Font") == 0
+            fileName = "calibri.ttf"
         end
         return File.binread(File.join(TEST_DATA_PATH, fileName))
       end

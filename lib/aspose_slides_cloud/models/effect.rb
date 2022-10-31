@@ -70,6 +70,12 @@ module AsposeSlidesCloud
     # Delay time after trigger.
     attr_accessor :trigger_delay_time
 
+    # Specifies if the effect will repeat until the end of slide.
+    attr_accessor :repeat_until_end_slide
+
+    # Specifies if the effect will repeat until the next click.
+    attr_accessor :repeat_until_next_click
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -110,6 +116,8 @@ module AsposeSlidesCloud
         :'restart' => :'Restart',
         :'speed' => :'Speed',
         :'trigger_delay_time' => :'TriggerDelayTime',
+        :'repeat_until_end_slide' => :'RepeatUntilEndSlide',
+        :'repeat_until_next_click' => :'RepeatUntilNextClick',
       }
     end
 
@@ -131,6 +139,8 @@ module AsposeSlidesCloud
         :'restart' => :'String',
         :'speed' => :'Float',
         :'trigger_delay_time' => :'Float',
+        :'repeat_until_end_slide' => :'BOOLEAN',
+        :'repeat_until_next_click' => :'BOOLEAN',
       }
     end
 
@@ -200,6 +210,14 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'TriggerDelayTime')
         self.trigger_delay_time = attributes[:'TriggerDelayTime']
+      end
+
+      if attributes.has_key?(:'RepeatUntilEndSlide')
+        self.repeat_until_end_slide = attributes[:'RepeatUntilEndSlide']
+      end
+
+      if attributes.has_key?(:'RepeatUntilNextClick')
+        self.repeat_until_next_click = attributes[:'RepeatUntilNextClick']
       end
     end
 
@@ -300,7 +318,9 @@ module AsposeSlidesCloud
           repeat_duration == o.repeat_duration &&
           restart == o.restart &&
           speed == o.speed &&
-          trigger_delay_time == o.trigger_delay_time
+          trigger_delay_time == o.trigger_delay_time &&
+          repeat_until_end_slide == o.repeat_until_end_slide &&
+          repeat_until_next_click == o.repeat_until_next_click
     end
 
     # @see the `==` method
@@ -312,7 +332,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, subtype, preset_class_type, shape_index, paragraph_index, trigger_type, accelerate, auto_reverse, decelerate, duration, repeat_count, repeat_duration, restart, speed, trigger_delay_time].hash
+      [type, subtype, preset_class_type, shape_index, paragraph_index, trigger_type, accelerate, auto_reverse, decelerate, duration, repeat_count, repeat_duration, restart, speed, trigger_delay_time, repeat_until_end_slide, repeat_until_next_click].hash
     end
 
     # Builds the object from hash

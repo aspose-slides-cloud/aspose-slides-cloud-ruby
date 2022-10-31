@@ -209,5 +209,28 @@ describe 'UseCases' do
       expect(protection_properties.is_encrypted).to eq true
       expect(protection_properties.read_password).not_to eq nil
     end
+
+    it "get slide show properties" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      response = AsposeSlidesCloud::SpecUtils.api.get_slide_show_properties(file_name, password, folder_name)
+      expect(response.show_animation).to eq (true)
+      expect(response.show_narration).to eq (true)
+    end
+
+    it "set slide show properties" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      dto = AsposeSlidesCloud::SlideShowProperties.new
+      dto.loop = true
+      dto.slide_show_type = "PresentedBySpeaker"
+      response = AsposeSlidesCloud::SpecUtils.api.set_slide_show_properties(file_name, dto, password, folder_name)
+      expect(response.loop).to eq dto.loop
+      expect(response.slide_show_type).to eq dto.slide_show_type
+    end
   end
 end
