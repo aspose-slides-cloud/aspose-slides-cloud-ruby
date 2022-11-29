@@ -72,7 +72,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'TargetSectionIndex')
         self.target_section_index = attributes[:'TargetSectionIndex']
       end
-      self.type = "SectionZoomFrame"
+      self.type = 'SectionZoomFrame'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

@@ -83,7 +83,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Background')
         self.background = attributes[:'Background']
       end
-      self.type = "UpdateBackground"
+      self.type = 'UpdateBackground'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

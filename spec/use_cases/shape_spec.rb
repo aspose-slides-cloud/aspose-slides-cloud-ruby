@@ -180,13 +180,17 @@ describe 'UseCases' do
       expect(result).to be_kind_of(AsposeSlidesCloud::SmartArt)
     end
 
-    it 'chart empty' do #See Chart tests for non-empty chart examples
+    it 'chart empty' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::Chart.new
-      result = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
-      expect(result).to be_kind_of(AsposeSlidesCloud::Chart)
+      begin
+        result = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
+        fail "Chart with undefinined series should not have been created"
+      rescue AsposeSlidesCloud::ApiError => e
+        expect(e.code).to eq(500)
+      end
     end
 
     it 'table add' do
@@ -406,14 +410,9 @@ describe 'UseCases' do
       dto.width = 200
       dto.height = 100
       dto.target_slide_index = 2
-      begin
-        shape = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
-        expect(shape).to be_kind_of(AsposeSlidesCloud::ZoomFrame)
-        expect(shape.target_slide_index).to eq(2)
-        fail "The exception has been fixed. Please remove the begin/rescue block"
-      rescue ArgumentError => e
-        #
-      end
+      shape = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
+      expect(shape).to be_kind_of(AsposeSlidesCloud::ZoomFrame)
+      expect(shape.target_slide_index).to eq(2)
     end
 
     it "section zoom frame add" do
@@ -428,14 +427,9 @@ describe 'UseCases' do
       dto.width = 200
       dto.height = 100
       dto.target_section_index = 2
-      begin
-        shape = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
-        expect(shape).to be_kind_of(AsposeSlidesCloud::SectionZoomFrame)
-        expect(shape.target_section_index).to eq(2)
-        fail "The exception has been fixed. Please remove the begin/rescue block"
-      rescue ArgumentError => e
-        #
-      end
+      shape = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
+      expect(shape).to be_kind_of(AsposeSlidesCloud::SectionZoomFrame)
+      expect(shape.target_section_index).to eq(2)
     end
 
     it "ole object frame add by link" do

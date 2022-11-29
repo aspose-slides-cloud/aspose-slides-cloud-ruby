@@ -25,10 +25,10 @@ require 'date'
 module AsposeSlidesCloud
   class AxisType
     
-    HORIZONTAL_AXIS = "HorizontalAxis".freeze
-    VERTICAL_AXIS = "VerticalAxis".freeze
-    SECONDARY_HORIZONTAL_AXIS = "SecondaryHorizontalAxis".freeze
-    SECONDARY_VERTICAL_AXIS = "SecondaryVerticalAxis".freeze
+    HORIZONTAL_AXIS = 'HorizontalAxis'.freeze
+    VERTICAL_AXIS = 'VerticalAxis'.freeze
+    SECONDARY_HORIZONTAL_AXIS = 'SecondaryHorizontalAxis'.freeze
+    SECONDARY_VERTICAL_AXIS = 'SecondaryVerticalAxis'.freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

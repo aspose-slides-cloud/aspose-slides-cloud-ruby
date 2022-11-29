@@ -28,6 +28,9 @@ module AsposeSlidesCloud
     # Value.
     attr_accessor :value
 
+    # Spreadsheet formula in A1-style.
+    attr_accessor :value_formula
+
     # SetAsTotal. Applied to Waterfall data points only.
     attr_accessor :set_as_total
 
@@ -38,6 +41,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       super.merge({
         :'value' => :'Value',
+        :'value_formula' => :'ValueFormula',
         :'set_as_total' => :'SetAsTotal',
         :'invert_if_negative' => :'InvertIfNegative',
       })
@@ -47,6 +51,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       super.merge({
         :'value' => :'Float',
+        :'value_formula' => :'String',
         :'set_as_total' => :'BOOLEAN',
         :'invert_if_negative' => :'BOOLEAN',
       })
@@ -59,6 +64,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'Value')
         self.value = attributes[:'Value']
+      end
+
+      if attributes.has_key?(:'ValueFormula')
+        self.value_formula = attributes[:'ValueFormula']
       end
 
       if attributes.has_key?(:'SetAsTotal')
@@ -99,6 +108,7 @@ module AsposeSlidesCloud
           three_d_format == o.three_d_format &&
           line_format == o.line_format &&
           value == o.value &&
+          value_formula == o.value_formula &&
           set_as_total == o.set_as_total &&
           invert_if_negative == o.invert_if_negative
     end
@@ -112,7 +122,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [fill_format, effect_format, three_d_format, line_format, value, set_as_total, invert_if_negative].hash
+      [fill_format, effect_format, three_d_format, line_format, value, value_formula, set_as_total, invert_if_negative].hash
     end
 
     # Builds the object from hash

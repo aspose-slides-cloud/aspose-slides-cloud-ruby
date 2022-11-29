@@ -90,7 +90,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'HideDegree')
         self.hide_degree = attributes[:'HideDegree']
       end
-      self.type = "Radical"
+      self.type = 'Radical'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

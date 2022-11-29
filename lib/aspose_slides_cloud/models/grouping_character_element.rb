@@ -99,7 +99,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'VerticalJustification')
         self.vertical_justification = attributes[:'VerticalJustification']
       end
-      self.type = "GroupingCharacter"
+      self.type = 'GroupingCharacter'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

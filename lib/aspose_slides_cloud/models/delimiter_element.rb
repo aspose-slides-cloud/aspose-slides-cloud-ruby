@@ -119,7 +119,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'DelimiterShape')
         self.delimiter_shape = attributes[:'DelimiterShape']
       end
-      self.type = "Delimiter"
+      self.type = 'Delimiter'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

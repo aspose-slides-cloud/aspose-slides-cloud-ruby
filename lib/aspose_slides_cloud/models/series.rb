@@ -31,6 +31,9 @@ module AsposeSlidesCloud
     # Series name.
     attr_accessor :name
 
+    # Series name data source.
+    attr_accessor :data_source_for_series_name
+
     # True if each data marker in the series has a different color.
     attr_accessor :is_color_varied
 
@@ -93,6 +96,7 @@ module AsposeSlidesCloud
       {
         :'type' => :'Type',
         :'name' => :'Name',
+        :'data_source_for_series_name' => :'DataSourceForSeriesName',
         :'is_color_varied' => :'IsColorVaried',
         :'inverted_solid_fill_color' => :'InvertedSolidFillColor',
         :'smooth' => :'Smooth',
@@ -113,6 +117,7 @@ module AsposeSlidesCloud
       {
         :'type' => :'String',
         :'name' => :'String',
+        :'data_source_for_series_name' => :'DataSource',
         :'is_color_varied' => :'BOOLEAN',
         :'inverted_solid_fill_color' => :'String',
         :'smooth' => :'BOOLEAN',
@@ -142,6 +147,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'Name')
         self.name = attributes[:'Name']
+      end
+
+      if attributes.has_key?(:'DataSourceForSeriesName')
+        self.data_source_for_series_name = attributes[:'DataSourceForSeriesName']
       end
 
       if attributes.has_key?(:'IsColorVaried')
@@ -237,6 +246,7 @@ module AsposeSlidesCloud
       self.class == o.class &&
           type == o.type &&
           name == o.name &&
+          data_source_for_series_name == o.data_source_for_series_name &&
           is_color_varied == o.is_color_varied &&
           inverted_solid_fill_color == o.inverted_solid_fill_color &&
           smooth == o.smooth &&
@@ -260,7 +270,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type].hash
+      [type, name, data_source_for_series_name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type].hash
     end
 
     # Builds the object from hash

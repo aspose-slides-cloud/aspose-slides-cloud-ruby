@@ -45,11 +45,11 @@ module AsposeSlidesCloud
       end
       files = Hash.new
       SpecUtils.test_rules["Files"].each do |rule|
-        if SpecUtils.good_rule?(rule, name, method)
-          actual_name = SpecUtils.untemplatize(rule["File"], value)
+        if SpecUtils.good_rule?(rule, name, method, nil)
+          actual_name = SpecUtils.untemplatize(rule["File"], name, value)
           path = "TempSlidesSDK"
           if rule.key?("Folder")
-            path = SpecUtils.untemplatize(rule["Folder"], value)
+            path = SpecUtils.untemplatize(rule["Folder"], name, value)
           end
           path = path + "/" + actual_name
           files[path] = rule
@@ -61,70 +61,41 @@ module AsposeSlidesCloud
           SpecUtils.api.copy_file("TempTests/" + rule['ActualName'], path)
         elsif rule["Action"] == "Delete"
           SpecUtils.api.delete_file(path)
+          SpecUtils.api.delete_folder(path)
         end
       end
     end
 
     def self.get_param_value(name, method, type)
-      if type == 'File'
-        fileName = "test.pptx"
-        if method.casecmp("ImportFromPdf") == 0
-          fileName = "test.pdf"
-        elsif name.casecmp("Image") == 0
-          if method.casecmp("ImportShapesFromSvg") == 0
-            fileName = "shapes.svg"
-          else
-            fileName = "watermark.png"
-          end
-        elsif name.casecmp("Font") == 0
-            fileName = "calibri.ttf"
-        end
-        return File.binread(File.join(TEST_DATA_PATH, fileName))
-      end
-      if type == 'File[]'
-        files = []
-        files.push(File.binread(File.join(AsposeSlidesCloud::SpecUtils::TEST_DATA_PATH, "test.pptx")))
-        files.push(File.binread(File.join(AsposeSlidesCloud::SpecUtils::TEST_DATA_PATH, "test-unprotected.pptx")))
-        return files
-      end
-      value = "test" + name
+      value = nil
       SpecUtils.test_rules["Values"].each do |rule|
-        if SpecUtils.good_rule?(rule, name, method) and rule.key?("Value")
-          if rule.key?("Type")
-            if TypeRegistry.subclass?(rule["Type"], type)
-              value = rule["Value"]
-            end
-          else
-            value = rule["Value"]
-          end
+        if SpecUtils.good_rule?(rule, name, method, type) and rule.key?("Value")
+          value = rule["Value"]
         end
       end
-      value
+      SpecUtils.untemplatize(value, name, nil)
     end
 
     def self.invalidize_param_value(name, method, value, type)
-      if type == 'File'
-        return nil
-      end
       invalid_value = nil
       SpecUtils.test_rules["Values"].each do |rule|
-        if SpecUtils.good_rule?(rule, name, method) and rule.key?("InvalidValue")
+        if SpecUtils.good_rule?(rule, name, method, type) and rule.key?("InvalidValue")
           invalid_value = rule["InvalidValue"]
         end
       end
-      SpecUtils.untemplatize(invalid_value, value)
+      SpecUtils.untemplatize(invalid_value, name, value)
     end
 
-    def self.get_expected_error(method, name, value)
+    def self.get_expected_error(method, name, value, type)
       code = 0
       message = "Unexpeceted message"
       SpecUtils.test_rules["Results"].each do |rule|
-        if SpecUtils.good_rule?(rule, name, method)
+        if SpecUtils.good_rule?(rule, name, method, type)
           if rule.key?("Code")
             code = rule["Code"]
           end
           if rule.key?("Message")
-            message = SpecUtils.untemplatize(rule["Message"], value)
+            message = SpecUtils.untemplatize(rule["Message"], name, value)
           end
         end
       end
@@ -138,28 +109,93 @@ module AsposeSlidesCloud
       return false
     end
 
-    def self.good_rule?(rule, name, method)
-      (not rule.key?("Language") or rule["Language"].casecmp("Ruby") == 0) \
+    def self.good_rule?(rule, name, method, type)
+      SpecUtils.good_rule_key?(rule, "Language", "Ruby") \
         and (not rule.key?("Invalid") or ((name != nil) == rule["Invalid"])) \
-        and (not rule.key?("Parameter") or (name != nil and rule["Parameter"].casecmp(name) == 0)) \
-        and (not rule.key?("Method") or (method != nil and rule["Method"].casecmp(method) == 0))
+        and SpecUtils.good_rule_key?(rule, "Parameter", name) \
+        and SpecUtils.good_rule_key?(rule, "Method", method) \
+        and SpecUtils.good_rule_type?(rule, type)
     end
 
-    def self.untemplatize(template, value)
+    def self.good_rule_key?(rule, key, value)
+      if not rule.key?(key)
+        return true
+      end
+      if not value
+        return false
+      end
+      if rule[key].start_with?("/") and rule[key].end_with?("/")
+        return value =~ /#{rule[key][1..-2]}/i
+      end
+      return rule[key].casecmp(value) == 0
+    end
+
+    def self.good_rule_type?(rule, type)
+      if not rule.key?("Type")
+        return true
+      end
+      if not type
+        return false
+      end
+      if rule["Type"] == "bool"
+        return type == "BOOLEAN"
+      end
+      if rule["Type"] == "number"
+        return type == "Integer"
+      end
+      if rule["Type"] == "int"
+        return type == "Integer"
+      end
+      if rule["Type"] == "int[]"
+        return type == "Integer[]"
+      end
+      if rule["Type"] == "stream"
+        return type == "File"
+      end
+      if rule["Type"] == "stream[]"
+        return type == "File[]"
+      end
+      if rule["Type"] == "model"
+        return !TypeRegistry.type_determiners[type.to_sym].nil?
+      end
+      if !TypeRegistry.type_determiners[rule["Type"].to_sym].nil?
+        return TypeRegistry.subclass?(rule["Type"], type)
+      end
+      return false
+    end
+
+    def self.untemplatize(template, name, value)
       if template == nil
         value
       else
         result = template
-        if template.is_a? String and template.match("%v")
+        if template.is_a? String
           result = "" + template
-          if value != nil
-            result["%v"] = value.to_s
+          if template.start_with?("@")
+            file_name = result[1..-1]
+            if file_name.start_with?("(") and file_name.end_with?(")")
+              result = file_name[1..-2].split(",").map {|f| File.binread(File.join(AsposeSlidesCloud::SpecUtils::TEST_DATA_PATH, f)) }
+            else
+              result = File.binread(File.join(AsposeSlidesCloud::SpecUtils::TEST_DATA_PATH, file_name))
+            end
           else
-            result["%v"] = ""
+            result = SpecUtils.replace(result, "%n", name)
+            result = SpecUtils.replace(result, "%v", value)
           end
         end
         result
       end
+    end
+
+    def self.replace(template, oldValue, newValue)
+      if template.match(oldValue)
+        if newValue != nil
+          template[oldValue] = newValue.to_s
+        else
+          template[oldValue] = ""
+        end
+      end
+      template
     end
 
     def self.test_rules
@@ -180,6 +216,7 @@ module AsposeSlidesCloud
         configuration.app_sid = config["ClientId"]
         configuration.app_key = config["ClientSecret"]
         configuration.debugging = config["Debug"]
+        configuration.verify_ssl = !config["AllowInsecureRequests"]
         @@api = AsposeSlidesCloud::SlidesApi.new(configuration)
       end
       @@api

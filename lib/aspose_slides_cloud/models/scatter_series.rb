@@ -74,7 +74,7 @@ module AsposeSlidesCloud
           self.data_points = value
         end
       end
-      self.data_point_type = "Scatter"
+      self.data_point_type = 'Scatter'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -98,6 +98,7 @@ module AsposeSlidesCloud
       self.class == o.class &&
           type == o.type &&
           name == o.name &&
+          data_source_for_series_name == o.data_source_for_series_name &&
           is_color_varied == o.is_color_varied &&
           inverted_solid_fill_color == o.inverted_solid_fill_color &&
           smooth == o.smooth &&
@@ -112,6 +113,8 @@ module AsposeSlidesCloud
           data_point_type == o.data_point_type &&
           number_format_of_y_values == o.number_format_of_y_values &&
           number_format_of_x_values == o.number_format_of_x_values &&
+          data_source_for_x_values == o.data_source_for_x_values &&
+          data_source_for_y_values == o.data_source_for_y_values &&
           data_points == o.data_points
     end
 
@@ -124,7 +127,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type, number_format_of_y_values, number_format_of_x_values, data_points].hash
+      [type, name, data_source_for_series_name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type, number_format_of_y_values, number_format_of_x_values, data_source_for_x_values, data_source_for_y_values, data_points].hash
     end
 
     # Builds the object from hash

@@ -72,7 +72,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Position')
         self.position = attributes[:'Position']
       end
-      self.type = "ResetSlide"
+      self.type = 'ResetSlide'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

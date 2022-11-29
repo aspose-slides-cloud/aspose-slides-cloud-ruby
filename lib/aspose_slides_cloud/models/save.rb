@@ -90,7 +90,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Options')
         self.options = attributes[:'Options']
       end
-      self.type = "Save"
+      self.type = 'Save'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

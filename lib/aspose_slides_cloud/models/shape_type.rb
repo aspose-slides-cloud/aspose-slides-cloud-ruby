@@ -25,22 +25,22 @@ require 'date'
 module AsposeSlidesCloud
   class ShapeType
     
-    SHAPE = "Shape".freeze
-    CHART = "Chart".freeze
-    TABLE = "Table".freeze
-    PICTURE_FRAME = "PictureFrame".freeze
-    VIDEO_FRAME = "VideoFrame".freeze
-    AUDIO_FRAME = "AudioFrame".freeze
-    SMART_ART = "SmartArt".freeze
-    OLE_OBJECT_FRAME = "OleObjectFrame".freeze
-    GROUP_SHAPE = "GroupShape".freeze
-    GRAPHICAL_OBJECT = "GraphicalObject".freeze
-    CONNECTOR = "Connector".freeze
-    SMART_ART_SHAPE = "SmartArtShape".freeze
-    ZOOM_FRAME = "ZoomFrame".freeze
-    SECTION_ZOOM_FRAME = "SectionZoomFrame".freeze
-    SUMMARY_ZOOM_FRAME = "SummaryZoomFrame".freeze
-    SUMMARY_ZOOM_SECTION = "SummaryZoomSection".freeze
+    SHAPE = 'Shape'.freeze
+    CHART = 'Chart'.freeze
+    TABLE = 'Table'.freeze
+    PICTURE_FRAME = 'PictureFrame'.freeze
+    VIDEO_FRAME = 'VideoFrame'.freeze
+    AUDIO_FRAME = 'AudioFrame'.freeze
+    SMART_ART = 'SmartArt'.freeze
+    OLE_OBJECT_FRAME = 'OleObjectFrame'.freeze
+    GROUP_SHAPE = 'GroupShape'.freeze
+    GRAPHICAL_OBJECT = 'GraphicalObject'.freeze
+    CONNECTOR = 'Connector'.freeze
+    SMART_ART_SHAPE = 'SmartArtShape'.freeze
+    ZOOM_FRAME = 'ZoomFrame'.freeze
+    SECTION_ZOOM_FRAME = 'SectionZoomFrame'.freeze
+    SUMMARY_ZOOM_FRAME = 'SummaryZoomFrame'.freeze
+    SUMMARY_ZOOM_SECTION = 'SummaryZoomSection'.freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

@@ -28,10 +28,14 @@ module AsposeSlidesCloud
     # Bubble size.
     attr_accessor :bubble_size
 
+    # Spreadsheet formula in A1-style.
+    attr_accessor :bubble_size_formula
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
         :'bubble_size' => :'BubbleSize',
+        :'bubble_size_formula' => :'BubbleSizeFormula',
       })
     end
 
@@ -39,6 +43,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       super.merge({
         :'bubble_size' => :'Float',
+        :'bubble_size_formula' => :'String',
       })
     end
 
@@ -49,6 +54,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'BubbleSize')
         self.bubble_size = attributes[:'BubbleSize']
+      end
+
+      if attributes.has_key?(:'BubbleSizeFormula')
+        self.bubble_size_formula = attributes[:'BubbleSizeFormula']
       end
     end
 
@@ -82,7 +91,10 @@ module AsposeSlidesCloud
           line_format == o.line_format &&
           x_value == o.x_value &&
           y_value == o.y_value &&
-          bubble_size == o.bubble_size
+          x_value_formula == o.x_value_formula &&
+          y_value_formula == o.y_value_formula &&
+          bubble_size == o.bubble_size &&
+          bubble_size_formula == o.bubble_size_formula
     end
 
     # @see the `==` method
@@ -94,7 +106,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [fill_format, effect_format, three_d_format, line_format, x_value, y_value, bubble_size].hash
+      [fill_format, effect_format, three_d_format, line_format, x_value, y_value, x_value_formula, y_value_formula, bubble_size, bubble_size_formula].hash
     end
 
     # Builds the object from hash

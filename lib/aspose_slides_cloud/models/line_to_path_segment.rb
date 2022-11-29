@@ -81,7 +81,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Y')
         self.y = attributes[:'Y']
       end
-      self.type = "LineTo"
+      self.type = 'LineTo'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

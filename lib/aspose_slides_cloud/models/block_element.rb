@@ -74,7 +74,7 @@ module AsposeSlidesCloud
           self.math_element_list = value
         end
       end
-      self.type = "Block"
+      self.type = 'Block'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

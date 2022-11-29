@@ -81,7 +81,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'ToColor')
         self.to_color = attributes[:'ToColor']
       end
-      self.type = "ColorChange"
+      self.type = 'ColorChange'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

@@ -90,7 +90,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'UpperLimit')
         self.upper_limit = attributes[:'UpperLimit']
       end
-      self.type = "Limit"
+      self.type = 'Limit'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

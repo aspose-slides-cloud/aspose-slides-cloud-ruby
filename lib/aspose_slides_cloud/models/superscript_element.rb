@@ -81,7 +81,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Superscript')
         self.superscript = attributes[:'Superscript']
       end
-      self.type = "SuperscriptElement"
+      self.type = 'SuperscriptElement'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

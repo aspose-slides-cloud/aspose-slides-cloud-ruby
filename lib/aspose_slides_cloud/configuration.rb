@@ -137,7 +137,7 @@ module AsposeSlidesCloud
       @timeout = 0
       @custom_headers = Hash.new
       @client_side_validation = true
-      @verify_ssl = false
+      @verify_ssl = true
       @verify_ssl_host = false
       @params_encoding = nil
       @cert_file = nil

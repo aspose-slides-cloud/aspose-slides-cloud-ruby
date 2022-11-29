@@ -11572,7 +11572,7 @@ module AsposeSlidesCloud
         :return_type => 'Theme')
       return data, status_code, headers
     end
-    # Read presentation document properties.
+    # Read presentation view properties.
     # @param name Document name.
     # @param password Document password.
     # @param folder Document folder.
@@ -11582,7 +11582,7 @@ module AsposeSlidesCloud
       data
     end
 
-    # Read presentation document properties.
+    # Read presentation view properties.
     # @param name Document name.
     # @param password Document password.
     # @param folder Document folder.
@@ -15577,7 +15577,7 @@ module AsposeSlidesCloud
         :return_type => 'SlideAnimation')
       return data, status_code, headers
     end
-    # Update presentation document properties.
+    # Update presentation view properties.
     # @param name Document name.
     # @param dto The view properties data.
     # @param password Document password.
@@ -15588,7 +15588,7 @@ module AsposeSlidesCloud
       data
     end
 
-    # Update presentation document properties.
+    # Update presentation view properties.
     # @param name Document name.
     # @param dto The view properties data.
     # @param password Document password.

@@ -81,7 +81,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'CloneFromPosition')
         self.clone_from_position = attributes[:'CloneFromPosition']
       end
-      self.type = "AddLayoutSlide"
+      self.type = 'AddLayoutSlide'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

@@ -117,7 +117,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'ExplicitBreak')
         self.explicit_break = attributes[:'ExplicitBreak']
       end
-      self.type = "Box"
+      self.type = 'Box'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

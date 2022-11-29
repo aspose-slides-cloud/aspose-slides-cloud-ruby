@@ -99,7 +99,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'EndShapeConnectedToIndex')
         self.end_shape_connected_to_index = attributes[:'EndShapeConnectedToIndex']
       end
-      self.type = "Connector"
+      self.type = 'Connector'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

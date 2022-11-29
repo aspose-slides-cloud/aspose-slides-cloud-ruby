@@ -99,7 +99,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Y2')
         self.y2 = attributes[:'Y2']
       end
-      self.type = "QuadBezierTo"
+      self.type = 'QuadBezierTo'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

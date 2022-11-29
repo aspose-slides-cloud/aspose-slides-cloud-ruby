@@ -110,7 +110,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'IsReversed')
         self.is_reversed = attributes[:'IsReversed']
       end
-      self.type = "SmartArt"
+      self.type = 'SmartArt'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

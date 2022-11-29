@@ -81,7 +81,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'FillFormat')
         self.fill_format = attributes[:'FillFormat']
       end
-      self.type = "FillOverlay"
+      self.type = 'FillOverlay'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

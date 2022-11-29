@@ -109,7 +109,7 @@ module AsposeSlidesCloud
     # @return [Array<(Object, Fixnum, Hash)>] an array of 3 elements:
     #   the data deserialized from response body (could be nil), response status code and response headers.
     def call_api_method(http_method, path, opts = {})
-      connection = Faraday.new(:url => @config.base_path)
+      connection = Faraday.new(:url => @config.base_path, ssl: { verify: @config.verify_ssl })
       case http_method
       when :GET
         response = connection.get do |req|

@@ -25,9 +25,9 @@ require 'date'
 module AsposeSlidesCloud
   class ShapeThumbnailBounds
     
-    SLIDE = "Slide".freeze
-    SHAPE = "Shape".freeze
-    APPEARANCE = "Appearance".freeze
+    SLIDE = 'Slide'.freeze
+    SHAPE = 'Shape'.freeze
+    APPEARANCE = 'Appearance'.freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

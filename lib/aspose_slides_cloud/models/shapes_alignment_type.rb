@@ -25,14 +25,14 @@ require 'date'
 module AsposeSlidesCloud
   class ShapesAlignmentType
     
-    ALIGN_LEFT = "AlignLeft".freeze
-    ALIGN_RIGHT = "AlignRight".freeze
-    ALIGN_CENTER = "AlignCenter".freeze
-    ALIGN_TOP = "AlignTop".freeze
-    ALIGN_MIDDLE = "AlignMiddle".freeze
-    ALIGN_BOTTOM = "AlignBottom".freeze
-    DISTRIBUTE_HORIZONTALLY = "DistributeHorizontally".freeze
-    DISTRIBUTE_VERTICALLY = "DistributeVertically".freeze
+    ALIGN_LEFT = 'AlignLeft'.freeze
+    ALIGN_RIGHT = 'AlignRight'.freeze
+    ALIGN_CENTER = 'AlignCenter'.freeze
+    ALIGN_TOP = 'AlignTop'.freeze
+    ALIGN_MIDDLE = 'AlignMiddle'.freeze
+    ALIGN_BOTTOM = 'AlignBottom'.freeze
+    DISTRIBUTE_HORIZONTALLY = 'DistributeHorizontally'.freeze
+    DISTRIBUTE_VERTICALLY = 'DistributeVertically'.freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

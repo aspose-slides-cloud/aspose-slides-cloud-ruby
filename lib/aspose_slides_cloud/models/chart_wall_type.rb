@@ -25,9 +25,9 @@ require 'date'
 module AsposeSlidesCloud
   class ChartWallType
     
-    FLOOR = "Floor".freeze
-    SIDE_WALL = "SideWall".freeze
-    BACK_WALL = "BackWall".freeze
+    FLOOR = 'Floor'.freeze
+    SIDE_WALL = 'SideWall'.freeze
+    BACK_WALL = 'BackWall'.freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

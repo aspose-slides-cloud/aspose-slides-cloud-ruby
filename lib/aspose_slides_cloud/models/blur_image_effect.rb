@@ -81,7 +81,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Grow')
         self.grow = attributes[:'Grow']
       end
-      self.type = "Blur"
+      self.type = 'Blur'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

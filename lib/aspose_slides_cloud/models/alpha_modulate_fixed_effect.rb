@@ -72,7 +72,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Amount')
         self.amount = attributes[:'Amount']
       end
-      self.type = "AlphaModulateFixed"
+      self.type = 'AlphaModulateFixed'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

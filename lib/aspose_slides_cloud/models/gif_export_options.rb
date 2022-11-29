@@ -68,7 +68,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'DefaultDelay')
         self.default_delay = attributes[:'DefaultDelay']
       end
-      self.format = "gif"
+      self.format = 'gif'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

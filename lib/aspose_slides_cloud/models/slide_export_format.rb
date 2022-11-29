@@ -25,29 +25,29 @@ require 'date'
 module AsposeSlidesCloud
   class SlideExportFormat
     
-    JPEG = "Jpeg".freeze
-    PNG = "Png".freeze
-    GIF = "Gif".freeze
-    BMP = "Bmp".freeze
-    TIFF = "Tiff".freeze
-    HTML = "Html".freeze
-    PDF = "Pdf".freeze
-    XPS = "Xps".freeze
-    PPTX = "Pptx".freeze
-    ODP = "Odp".freeze
-    OTP = "Otp".freeze
-    PPT = "Ppt".freeze
-    PPS = "Pps".freeze
-    PPSX = "Ppsx".freeze
-    PPTM = "Pptm".freeze
-    PPSM = "Ppsm".freeze
-    POTX = "Potx".freeze
-    POT = "Pot".freeze
-    POTM = "Potm".freeze
-    SVG = "Svg".freeze
-    FODP = "Fodp".freeze
-    XAML = "Xaml".freeze
-    HTML5 = "Html5".freeze
+    JPEG = 'Jpeg'.freeze
+    PNG = 'Png'.freeze
+    GIF = 'Gif'.freeze
+    BMP = 'Bmp'.freeze
+    TIFF = 'Tiff'.freeze
+    HTML = 'Html'.freeze
+    PDF = 'Pdf'.freeze
+    XPS = 'Xps'.freeze
+    PPTX = 'Pptx'.freeze
+    ODP = 'Odp'.freeze
+    OTP = 'Otp'.freeze
+    PPT = 'Ppt'.freeze
+    PPS = 'Pps'.freeze
+    PPSX = 'Ppsx'.freeze
+    PPTM = 'Pptm'.freeze
+    PPSM = 'Ppsm'.freeze
+    POTX = 'Potx'.freeze
+    POT = 'Pot'.freeze
+    POTM = 'Potm'.freeze
+    SVG = 'Svg'.freeze
+    FODP = 'Fodp'.freeze
+    XAML = 'Xaml'.freeze
+    HTML5 = 'Html5'.freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

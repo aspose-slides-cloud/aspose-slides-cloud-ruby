@@ -153,7 +153,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'ShowCommentsByNoAuthor')
         self.show_comments_by_no_author = attributes[:'ShowCommentsByNoAuthor']
       end
-      self.format = "tiff"
+      self.format = 'tiff'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

@@ -119,7 +119,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'TileFlip')
         self.tile_flip = attributes[:'TileFlip']
       end
-      self.type = "Gradient"
+      self.type = 'Gradient'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

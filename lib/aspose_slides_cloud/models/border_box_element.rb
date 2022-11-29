@@ -144,7 +144,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'StrikethroughTopLeftToBottomRight')
         self.strikethrough_top_left_to_bottom_right = attributes[:'StrikethroughTopLeftToBottomRight']
       end
-      self.type = "BorderBox"
+      self.type = 'BorderBox'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

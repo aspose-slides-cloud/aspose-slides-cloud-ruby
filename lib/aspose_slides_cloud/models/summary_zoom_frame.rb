@@ -83,7 +83,7 @@ module AsposeSlidesCloud
           self.sections = value
         end
       end
-      self.type = "SummaryZoomFrame"
+      self.type = 'SummaryZoomFrame'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

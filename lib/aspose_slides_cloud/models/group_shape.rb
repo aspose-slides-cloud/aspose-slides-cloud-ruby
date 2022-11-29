@@ -72,7 +72,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Shapes')
         self.shapes = attributes[:'Shapes']
       end
-      self.type = "GroupShape"
+      self.type = 'GroupShape'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

@@ -90,7 +90,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'ApplyToAll')
         self.apply_to_all = attributes[:'ApplyToAll']
       end
-      self.type = "AddMasterSlide"
+      self.type = 'AddMasterSlide'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

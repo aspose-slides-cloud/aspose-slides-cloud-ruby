@@ -31,6 +31,9 @@ module AsposeSlidesCloud
     # The number format for the series bubble sizes.
     attr_accessor :number_format_of_bubble_sizes
 
+    # Data source type for Bubble size values.
+    attr_accessor :data_source_for_bubble_size_values
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -58,6 +61,7 @@ module AsposeSlidesCloud
       super.merge({
         :'data_points' => :'DataPoints',
         :'number_format_of_bubble_sizes' => :'NumberFormatOfBubbleSizes',
+        :'data_source_for_bubble_size_values' => :'DataSourceForBubbleSizeValues',
       })
     end
 
@@ -66,6 +70,7 @@ module AsposeSlidesCloud
       super.merge({
         :'data_points' => :'Array<BubbleChartDataPoint>',
         :'number_format_of_bubble_sizes' => :'String',
+        :'data_source_for_bubble_size_values' => :'DataSource',
       })
     end
 
@@ -83,7 +88,11 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'NumberFormatOfBubbleSizes')
         self.number_format_of_bubble_sizes = attributes[:'NumberFormatOfBubbleSizes']
       end
-      self.data_point_type = "Bubble"
+
+      if attributes.has_key?(:'DataSourceForBubbleSizeValues')
+        self.data_source_for_bubble_size_values = attributes[:'DataSourceForBubbleSizeValues']
+      end
+      self.data_point_type = 'Bubble'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -107,6 +116,7 @@ module AsposeSlidesCloud
       self.class == o.class &&
           type == o.type &&
           name == o.name &&
+          data_source_for_series_name == o.data_source_for_series_name &&
           is_color_varied == o.is_color_varied &&
           inverted_solid_fill_color == o.inverted_solid_fill_color &&
           smooth == o.smooth &&
@@ -121,8 +131,11 @@ module AsposeSlidesCloud
           data_point_type == o.data_point_type &&
           number_format_of_y_values == o.number_format_of_y_values &&
           number_format_of_x_values == o.number_format_of_x_values &&
+          data_source_for_x_values == o.data_source_for_x_values &&
+          data_source_for_y_values == o.data_source_for_y_values &&
           data_points == o.data_points &&
-          number_format_of_bubble_sizes == o.number_format_of_bubble_sizes
+          number_format_of_bubble_sizes == o.number_format_of_bubble_sizes &&
+          data_source_for_bubble_size_values == o.data_source_for_bubble_size_values
     end
 
     # @see the `==` method
@@ -134,7 +147,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type, number_format_of_y_values, number_format_of_x_values, data_points, number_format_of_bubble_sizes].hash
+      [type, name, data_source_for_series_name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type, number_format_of_y_values, number_format_of_x_values, data_source_for_x_values, data_source_for_y_values, data_points, number_format_of_bubble_sizes, data_source_for_bubble_size_values].hash
     end
 
     # Builds the object from hash

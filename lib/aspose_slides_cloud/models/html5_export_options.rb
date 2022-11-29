@@ -59,7 +59,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'AnimateShapes')
         self.animate_shapes = attributes[:'AnimateShapes']
       end
-      self.format = "html5"
+      self.format = 'html5'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

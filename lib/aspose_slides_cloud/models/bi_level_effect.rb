@@ -72,7 +72,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Threshold')
         self.threshold = attributes[:'Threshold']
       end
-      self.type = "BiLevel"
+      self.type = 'BiLevel'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

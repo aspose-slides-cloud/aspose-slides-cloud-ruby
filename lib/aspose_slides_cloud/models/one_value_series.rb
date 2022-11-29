@@ -31,6 +31,9 @@ module AsposeSlidesCloud
     # The number format for the series values.
     attr_accessor :number_format_of_values
 
+    # Data source type for values.
+    attr_accessor :data_source_for_values
+
     # True if inner points are shown. Applied to Waterfall series only.
     attr_accessor :show_connector_lines
 
@@ -76,6 +79,7 @@ module AsposeSlidesCloud
       super.merge({
         :'data_points' => :'DataPoints',
         :'number_format_of_values' => :'NumberFormatOfValues',
+        :'data_source_for_values' => :'DataSourceForValues',
         :'show_connector_lines' => :'ShowConnectorLines',
         :'quartile_method' => :'QuartileMethod',
         :'show_inner_points' => :'ShowInnerPoints',
@@ -90,6 +94,7 @@ module AsposeSlidesCloud
       super.merge({
         :'data_points' => :'Array<OneValueChartDataPoint>',
         :'number_format_of_values' => :'String',
+        :'data_source_for_values' => :'DataSource',
         :'show_connector_lines' => :'BOOLEAN',
         :'quartile_method' => :'String',
         :'show_inner_points' => :'BOOLEAN',
@@ -112,6 +117,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'NumberFormatOfValues')
         self.number_format_of_values = attributes[:'NumberFormatOfValues']
+      end
+
+      if attributes.has_key?(:'DataSourceForValues')
+        self.data_source_for_values = attributes[:'DataSourceForValues']
       end
 
       if attributes.has_key?(:'ShowConnectorLines')
@@ -137,7 +146,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'ShowOutlierPoints')
         self.show_outlier_points = attributes[:'ShowOutlierPoints']
       end
-      self.data_point_type = "OneValue"
+      self.data_point_type = 'OneValue'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -173,6 +182,7 @@ module AsposeSlidesCloud
       self.class == o.class &&
           type == o.type &&
           name == o.name &&
+          data_source_for_series_name == o.data_source_for_series_name &&
           is_color_varied == o.is_color_varied &&
           inverted_solid_fill_color == o.inverted_solid_fill_color &&
           smooth == o.smooth &&
@@ -187,6 +197,7 @@ module AsposeSlidesCloud
           data_point_type == o.data_point_type &&
           data_points == o.data_points &&
           number_format_of_values == o.number_format_of_values &&
+          data_source_for_values == o.data_source_for_values &&
           show_connector_lines == o.show_connector_lines &&
           quartile_method == o.quartile_method &&
           show_inner_points == o.show_inner_points &&
@@ -204,7 +215,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type, data_points, number_format_of_values, show_connector_lines, quartile_method, show_inner_points, show_mean_line, show_mean_markers, show_outlier_points].hash
+      [type, name, data_source_for_series_name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type, data_points, number_format_of_values, data_source_for_values, show_connector_lines, quartile_method, show_inner_points, show_mean_line, show_mean_markers, show_outlier_points].hash
     end
 
     # Builds the object from hash

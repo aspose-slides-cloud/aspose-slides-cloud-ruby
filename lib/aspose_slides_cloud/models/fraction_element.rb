@@ -90,7 +90,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Denominator')
         self.denominator = attributes[:'Denominator']
       end
-      self.type = "Fraction"
+      self.type = 'Fraction'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

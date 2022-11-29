@@ -72,7 +72,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Alpha')
         self.alpha = attributes[:'Alpha']
       end
-      self.type = "AlphaReplace"
+      self.type = 'AlphaReplace'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

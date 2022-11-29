@@ -99,7 +99,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'VideoResolutionType')
         self.video_resolution_type = attributes[:'VideoResolutionType']
       end
-      self.format = "mpeg4"
+      self.format = 'mpeg4'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

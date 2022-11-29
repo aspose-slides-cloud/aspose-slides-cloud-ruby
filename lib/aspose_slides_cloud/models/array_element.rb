@@ -119,7 +119,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'RowSpacing')
         self.row_spacing = attributes[:'RowSpacing']
       end
-      self.type = "Array"
+      self.type = 'Array'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

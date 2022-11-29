@@ -31,11 +31,19 @@ module AsposeSlidesCloud
     # Y-value
     attr_accessor :y_value
 
+    # Spreadsheet formula in A1-style.
+    attr_accessor :x_value_formula
+
+    # Spreadsheet formula in A1-style.
+    attr_accessor :y_value_formula
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
         :'x_value' => :'XValue',
         :'y_value' => :'YValue',
+        :'x_value_formula' => :'XValueFormula',
+        :'y_value_formula' => :'YValueFormula',
       })
     end
 
@@ -44,6 +52,8 @@ module AsposeSlidesCloud
       super.merge({
         :'x_value' => :'Float',
         :'y_value' => :'Float',
+        :'x_value_formula' => :'String',
+        :'y_value_formula' => :'String',
       })
     end
 
@@ -58,6 +68,14 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'YValue')
         self.y_value = attributes[:'YValue']
+      end
+
+      if attributes.has_key?(:'XValueFormula')
+        self.x_value_formula = attributes[:'XValueFormula']
+      end
+
+      if attributes.has_key?(:'YValueFormula')
+        self.y_value_formula = attributes[:'YValueFormula']
       end
     end
 
@@ -95,7 +113,9 @@ module AsposeSlidesCloud
           three_d_format == o.three_d_format &&
           line_format == o.line_format &&
           x_value == o.x_value &&
-          y_value == o.y_value
+          y_value == o.y_value &&
+          x_value_formula == o.x_value_formula &&
+          y_value_formula == o.y_value_formula
     end
 
     # @see the `==` method
@@ -107,7 +127,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [fill_format, effect_format, three_d_format, line_format, x_value, y_value].hash
+      [fill_format, effect_format, three_d_format, line_format, x_value, y_value, x_value_formula, y_value_formula].hash
     end
 
     # Builds the object from hash

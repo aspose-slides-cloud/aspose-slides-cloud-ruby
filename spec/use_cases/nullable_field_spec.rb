@@ -42,6 +42,13 @@ describe 'UseCases' do
       dto.title = AsposeSlidesCloud::ChartTitle.new
       dto.title.has_title = true
       dto.title.text = "MyTitle"
+
+      category1 = AsposeSlidesCloud::ChartCategory.new
+      category1.value = "Category1"
+      category2 = AsposeSlidesCloud::ChartCategory.new
+      category2.value = "Category2"
+      dto.categories = [ category1, category2 ]
+
       dto.series = []
       dto.series.push(AsposeSlidesCloud::OneValueSeries.new)
       dto.series[0].type = "ClusteredColumn"

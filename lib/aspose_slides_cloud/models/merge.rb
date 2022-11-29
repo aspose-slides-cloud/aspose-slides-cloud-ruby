@@ -74,7 +74,7 @@ module AsposeSlidesCloud
           self.presentations = value
         end
       end
-      self.type = "Merge"
+      self.type = 'Merge'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

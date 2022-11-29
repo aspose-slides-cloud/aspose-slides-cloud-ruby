@@ -68,7 +68,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'DrawSlidesFrame')
         self.draw_slides_frame = attributes[:'DrawSlidesFrame']
       end
-      self.format = "xps"
+      self.format = 'xps'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

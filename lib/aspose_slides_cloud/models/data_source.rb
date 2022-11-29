@@ -23,16 +23,9 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Specifies the Sub-Superscript object
-  class LeftSubSuperscriptElement < MathElement
-    # Base argument
-    attr_accessor :base
-
-    # Subscript
-    attr_accessor :subscript
-
-    # Superscript
-    attr_accessor :superscript
+  # Data source for chart values.
+  class DataSource
+    attr_accessor :type
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -58,53 +51,54 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      super.merge({
-        :'base' => :'Base',
-        :'subscript' => :'Subscript',
-        :'superscript' => :'Superscript',
-      })
+      {
+        :'type' => :'Type',
+      }
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      super.merge({
-        :'base' => :'MathElement',
-        :'subscript' => :'MathElement',
-        :'superscript' => :'MathElement',
-      })
+      {
+        :'type' => :'String',
+      }
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      super
+      return unless attributes.is_a?(Hash)
 
-      if attributes.has_key?(:'Base')
-        self.base = attributes[:'Base']
-      end
+      # convert string to symbol for hash key
+      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
 
-      if attributes.has_key?(:'Subscript')
-        self.subscript = attributes[:'Subscript']
+      if attributes.has_key?(:'Type')
+        self.type = attributes[:'Type']
       end
-
-      if attributes.has_key?(:'Superscript')
-        self.superscript = attributes[:'Superscript']
-      end
-      self.type = 'LeftSubSuperscriptElement'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = super
+      invalid_properties = Array.new
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !super
+      type_validator = EnumAttributeValidator.new('String', ['Workbook', 'Literals'])
+      return false unless type_validator.valid?(@type)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] type Object to be assigned
+    def type=(type)
+      validator = EnumAttributeValidator.new('String', ['Workbook', 'Literals'])
+      unless validator.valid?(type)
+        fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
+      end
+      @type = type
     end
 
     # Checks equality by comparing each attribute.
@@ -112,10 +106,7 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          base == o.base &&
-          subscript == o.subscript &&
-          superscript == o.superscript
+          type == o.type
     end
 
     # @see the `==` method
@@ -127,7 +118,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, base, subscript, superscript].hash
+      [type].hash
     end
 
     # Builds the object from hash

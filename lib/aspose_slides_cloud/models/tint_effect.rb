@@ -81,7 +81,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Amount')
         self.amount = attributes[:'Amount']
       end
-      self.type = "Tint"
+      self.type = 'Tint'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

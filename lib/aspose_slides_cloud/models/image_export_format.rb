@@ -25,11 +25,11 @@ require 'date'
 module AsposeSlidesCloud
   class ImageExportFormat
     
-    JPEG = "Jpeg".freeze
-    PNG = "Png".freeze
-    GIF = "Gif".freeze
-    BMP = "Bmp".freeze
-    TIFF = "Tiff".freeze
+    JPEG = 'Jpeg'.freeze
+    PNG = 'Png'.freeze
+    GIF = 'Gif'.freeze
+    BMP = 'Bmp'.freeze
+    TIFF = 'Tiff'.freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

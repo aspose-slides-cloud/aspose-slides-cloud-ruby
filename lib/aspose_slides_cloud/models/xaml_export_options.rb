@@ -50,7 +50,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'ExportHiddenSlides')
         self.export_hidden_slides = attributes[:'ExportHiddenSlides']
       end
-      self.format = "xaml"
+      self.format = 'xaml'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

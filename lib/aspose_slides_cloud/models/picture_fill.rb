@@ -155,7 +155,7 @@ module AsposeSlidesCloud
           self.image_transform_list = value
         end
       end
-      self.type = "Picture"
+      self.type = 'Picture'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

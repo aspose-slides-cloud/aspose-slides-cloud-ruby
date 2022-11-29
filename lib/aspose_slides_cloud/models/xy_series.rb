@@ -31,6 +31,12 @@ module AsposeSlidesCloud
     # The number format for the series x values.
     attr_accessor :number_format_of_x_values
 
+    # Data source type for X Values.
+    attr_accessor :data_source_for_x_values
+
+    # Data source type for Y Values.
+    attr_accessor :data_source_for_y_values
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -58,6 +64,8 @@ module AsposeSlidesCloud
       super.merge({
         :'number_format_of_y_values' => :'NumberFormatOfYValues',
         :'number_format_of_x_values' => :'NumberFormatOfXValues',
+        :'data_source_for_x_values' => :'DataSourceForXValues',
+        :'data_source_for_y_values' => :'DataSourceForYValues',
       })
     end
 
@@ -66,6 +74,8 @@ module AsposeSlidesCloud
       super.merge({
         :'number_format_of_y_values' => :'String',
         :'number_format_of_x_values' => :'String',
+        :'data_source_for_x_values' => :'DataSource',
+        :'data_source_for_y_values' => :'DataSource',
       })
     end
 
@@ -80,6 +90,14 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'NumberFormatOfXValues')
         self.number_format_of_x_values = attributes[:'NumberFormatOfXValues']
+      end
+
+      if attributes.has_key?(:'DataSourceForXValues')
+        self.data_source_for_x_values = attributes[:'DataSourceForXValues']
+      end
+
+      if attributes.has_key?(:'DataSourceForYValues')
+        self.data_source_for_y_values = attributes[:'DataSourceForYValues']
       end
     end
 
@@ -104,6 +122,7 @@ module AsposeSlidesCloud
       self.class == o.class &&
           type == o.type &&
           name == o.name &&
+          data_source_for_series_name == o.data_source_for_series_name &&
           is_color_varied == o.is_color_varied &&
           inverted_solid_fill_color == o.inverted_solid_fill_color &&
           smooth == o.smooth &&
@@ -117,7 +136,9 @@ module AsposeSlidesCloud
           line_format == o.line_format &&
           data_point_type == o.data_point_type &&
           number_format_of_y_values == o.number_format_of_y_values &&
-          number_format_of_x_values == o.number_format_of_x_values
+          number_format_of_x_values == o.number_format_of_x_values &&
+          data_source_for_x_values == o.data_source_for_x_values &&
+          data_source_for_y_values == o.data_source_for_y_values
     end
 
     # @see the `==` method
@@ -129,7 +150,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type, number_format_of_y_values, number_format_of_x_values].hash
+      [type, name, data_source_for_series_name, is_color_varied, inverted_solid_fill_color, smooth, plot_on_second_axis, order, invert_if_negative, explosion, marker, fill_format, effect_format, line_format, data_point_type, number_format_of_y_values, number_format_of_x_values, data_source_for_x_values, data_source_for_y_values].hash
     end
 
     # Builds the object from hash

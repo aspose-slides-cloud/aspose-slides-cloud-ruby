@@ -52,6 +52,12 @@ module AsposeSlidesCloud
     # Determines a way of handling externally loaded fonts.
     attr_accessor :external_fonts_handling
 
+    # Determines whether the text frame will be included in a rendering area or not.
+    attr_accessor :use_frame_size
+
+    # Determines whether to perform the specified rotation of the shape when rendering or not.
+    attr_accessor :use_frame_rotation
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -86,6 +92,8 @@ module AsposeSlidesCloud
         :'pictures_compression' => :'PicturesCompression',
         :'delete_pictures_cropped_areas' => :'DeletePicturesCroppedAreas',
         :'external_fonts_handling' => :'ExternalFontsHandling',
+        :'use_frame_size' => :'UseFrameSize',
+        :'use_frame_rotation' => :'UseFrameRotation',
       })
     end
 
@@ -101,6 +109,8 @@ module AsposeSlidesCloud
         :'pictures_compression' => :'String',
         :'delete_pictures_cropped_areas' => :'BOOLEAN',
         :'external_fonts_handling' => :'String',
+        :'use_frame_size' => :'BOOLEAN',
+        :'use_frame_rotation' => :'BOOLEAN',
       })
     end
 
@@ -144,7 +154,15 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'ExternalFontsHandling')
         self.external_fonts_handling = attributes[:'ExternalFontsHandling']
       end
-      self.format = "svg"
+
+      if attributes.has_key?(:'UseFrameSize')
+        self.use_frame_size = attributes[:'UseFrameSize']
+      end
+
+      if attributes.has_key?(:'UseFrameRotation')
+        self.use_frame_rotation = attributes[:'UseFrameRotation']
+      end
+      self.format = 'svg'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -202,7 +220,9 @@ module AsposeSlidesCloud
           jpeg_quality == o.jpeg_quality &&
           pictures_compression == o.pictures_compression &&
           delete_pictures_cropped_areas == o.delete_pictures_cropped_areas &&
-          external_fonts_handling == o.external_fonts_handling
+          external_fonts_handling == o.external_fonts_handling &&
+          use_frame_size == o.use_frame_size &&
+          use_frame_rotation == o.use_frame_rotation
     end
 
     # @see the `==` method
@@ -214,7 +234,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, font_fallback_rules, font_subst_rules, format, vectorize_text, metafile_rasterization_dpi, disable3_d_text, disable_gradient_split, disable_line_end_cropping, jpeg_quality, pictures_compression, delete_pictures_cropped_areas, external_fonts_handling].hash
+      [default_regular_font, font_fallback_rules, font_subst_rules, format, vectorize_text, metafile_rasterization_dpi, disable3_d_text, disable_gradient_split, disable_line_end_cropping, jpeg_quality, pictures_compression, delete_pictures_cropped_areas, external_fonts_handling, use_frame_size, use_frame_rotation].hash
     end
 
     # Builds the object from hash

@@ -135,7 +135,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'HideSuperscript')
         self.hide_superscript = attributes[:'HideSuperscript']
       end
-      self.type = "NaryOperator"
+      self.type = 'NaryOperator'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

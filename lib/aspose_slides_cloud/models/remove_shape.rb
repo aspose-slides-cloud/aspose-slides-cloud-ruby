@@ -72,7 +72,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'ShapePath')
         self.shape_path = attributes[:'ShapePath']
       end
-      self.type = "RemoveShape"
+      self.type = 'RemoveShape'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

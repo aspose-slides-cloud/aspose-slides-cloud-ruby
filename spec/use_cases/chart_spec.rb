@@ -33,7 +33,7 @@ describe 'UseCases' do
       expect(chart.categories.length).to eq(4)
     end
 
-    it 'create' do
+    it 'create chart auto data source' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
@@ -52,6 +52,118 @@ describe 'UseCases' do
       series1.data_points = [point11, point12, point13]
       series2 = AsposeSlidesCloud::OneValueSeries.new
       series2.name = "Series2"
+      point21 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point21.value = 55
+      point22 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point22.value = 35
+      point23 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point23.value = 90
+      series2.data_points = [point21, point22, point23]
+      chart.series = [ series1, series2 ]
+      category1 = AsposeSlidesCloud::ChartCategory.new
+      category1.value = "Category1"
+      category2 = AsposeSlidesCloud::ChartCategory.new
+      category2.value = "Category2"
+      category3 = AsposeSlidesCloud::ChartCategory.new
+      category3.value = "Category3"
+      chart.categories = [category1, category2, category3]
+      result = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
+      expect(result.series.length).to eq(2)
+      expect(result.categories.length).to eq(3)
+    end
+
+    it 'create chart workbook data source' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      chart = AsposeSlidesCloud::Chart.new
+      chart.chart_type = 'ClusteredColumn'
+      chart.width = 400
+      chart.height = 300
+
+      data_source_for_categories = AsposeSlidesCloud::Workbook.new
+      data_source_for_categories.worksheet_index = 0
+      data_source_for_categories.column_index = 0
+      data_source_for_categories.row_index = 1
+      chart.data_source_for_categories = data_source_for_categories
+
+      series1 = AsposeSlidesCloud::OneValueSeries.new
+      data_source_for_series1_name = AsposeSlidesCloud::Workbook.new
+      data_source_for_series1_name.worksheet_index = 0
+      data_source_for_series1_name.column_index = 1
+      data_source_for_series1_name.row_index = 0
+      series1.data_source_for_series_name = data_source_for_series1_name    
+      series1.name = "Series1"
+      data_source_for_series1_values =  AsposeSlidesCloud::Workbook.new
+      data_source_for_series1_values.worksheet_index = 0
+      data_source_for_series1_values.column_index = 1
+      data_source_for_series1_values.row_index = 1
+      series1.data_source_for_values = data_source_for_series1_values
+      point11 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point11.value = 40
+      point12 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point12.value = 50
+      point13 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point13.value = 70
+      series1.data_points = [point11, point12, point13]
+      series2 = AsposeSlidesCloud::OneValueSeries.new
+      data_source_for_series2_name = AsposeSlidesCloud::Workbook.new
+      data_source_for_series2_name.worksheet_index = 0
+      data_source_for_series2_name.column_index = 2
+      data_source_for_series2_name.row_index = 0
+      series2.data_source_for_series_name = data_source_for_series2_name 
+      series2.name = "Series2"
+      data_source_for_series2_values = AsposeSlidesCloud::Workbook.new
+      data_source_for_series2_values.worksheet_index = 0
+      data_source_for_series2_values.column_index = 2
+      data_source_for_series2_values.row_index = 1
+      series2.data_source_for_values = data_source_for_series2_values
+      point21 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point21.value = 55
+      point22 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point22.value = 35
+      point23 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point23.value = 90
+      series2.data_points = [point21, point22, point23]
+      chart.series = [ series1, series2 ]
+      category1 = AsposeSlidesCloud::ChartCategory.new
+      category1.value = "Category1"
+      category2 = AsposeSlidesCloud::ChartCategory.new
+      category2.value = "Category2"
+      category3 = AsposeSlidesCloud::ChartCategory.new
+      category3.value = "Category3"
+      chart.categories = [category1, category2, category3]
+      result = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
+      expect(result.series.length).to eq(2)
+      expect(result.categories.length).to eq(3)
+    end
+
+    it 'create chart literals' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      chart = AsposeSlidesCloud::Chart.new
+      chart.chart_type = 'ClusteredColumn'
+      chart.width = 400
+      chart.height = 300
+
+      chart.data_source_for_categories = AsposeSlidesCloud::Literals.new
+
+      series1 = AsposeSlidesCloud::OneValueSeries.new
+      series1.data_source_for_series_name = AsposeSlidesCloud::Literals.new
+      series1.name = "Series1"
+      series1.data_source_for_values = AsposeSlidesCloud::Literals.new
+      point11 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point11.value = 40
+      point12 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point12.value = 50
+      point13 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point13.value = 70
+      series1.data_points = [point11, point12, point13]
+      series2 = AsposeSlidesCloud::OneValueSeries.new
+      series2.data_source_for_series_name = AsposeSlidesCloud::Workbook.new
+      series2.name = "Series2"
+      series2.data_source_for_values = AsposeSlidesCloud::Workbook.new
       point21 = AsposeSlidesCloud::OneValueChartDataPoint.new
       point21.value = 55
       point22 = AsposeSlidesCloud::OneValueChartDataPoint.new
@@ -495,6 +607,53 @@ describe 'UseCases' do
       expect(data_point.fill_format.type).to eq("Solid")
       expect(data_point.line_format.fill_format.type).to eq("Solid")
       expect(data_point.effect_format.blur).not_to eq(nil)
+    end
+
+    it 'chart formulas' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      chart = AsposeSlidesCloud::Chart.new
+      chart.chart_type = 'ClusteredColumn'
+      chart.width = 400
+      chart.height = 300
+
+      data_source_for_categories = AsposeSlidesCloud::Workbook.new
+      data_source_for_categories.worksheet_index = 0
+      data_source_for_categories.column_index = 0
+      data_source_for_categories.row_index = 1
+      chart.data_source_for_categories = data_source_for_categories
+
+      series1 = AsposeSlidesCloud::OneValueSeries.new
+      data_source_for_series1_name = AsposeSlidesCloud::Workbook.new
+      data_source_for_series1_name.worksheet_index = 0
+      data_source_for_series1_name.column_index = 1
+      data_source_for_series1_name.row_index = 0
+      series1.data_source_for_series_name = data_source_for_series1_name    
+      series1.name = "Series1"
+      data_source_for_series1_values = AsposeSlidesCloud::Workbook.new
+      data_source_for_series1_values.worksheet_index = 0
+      data_source_for_series1_values.column_index = 1
+      data_source_for_series1_values.row_index = 1
+      series1.data_source_for_values = data_source_for_series1_values
+      point11 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point11.value = 40
+      point12 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point12.value = 50
+      point13 = AsposeSlidesCloud::OneValueChartDataPoint.new
+      point13.value = 0
+      point13.value_formula = "SUM(B2:B3)"
+      series1.data_points = [point11, point12, point13]
+      chart.series = [ series1 ]
+      category1 = AsposeSlidesCloud::ChartCategory.new
+      category1.value = "Category1"
+      category2 = AsposeSlidesCloud::ChartCategory.new
+      category2.value = "Category2"
+      category3 = AsposeSlidesCloud::ChartCategory.new
+      category3.value = "Category3"
+      chart.categories = [category1, category2, category3]
+      result = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
+      expect(result.series[0].data_points[2].value).to eq(90)
     end
   end
 end

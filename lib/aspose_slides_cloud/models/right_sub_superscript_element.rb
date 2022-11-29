@@ -99,7 +99,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'AlignScripts')
         self.align_scripts = attributes[:'AlignScripts']
       end
-      self.type = "RightSubSuperscriptElement"
+      self.type = 'RightSubSuperscriptElement'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

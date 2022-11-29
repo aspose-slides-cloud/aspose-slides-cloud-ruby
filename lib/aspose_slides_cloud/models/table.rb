@@ -157,7 +157,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'VerticalBanding')
         self.vertical_banding = attributes[:'VerticalBanding']
       end
-      self.type = "Table"
+      self.type = 'Table'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

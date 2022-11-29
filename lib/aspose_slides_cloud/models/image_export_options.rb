@@ -99,7 +99,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'CommentsAreaColor')
         self.comments_area_color = attributes[:'CommentsAreaColor']
       end
-      self.format = "image"
+      self.format = 'image'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

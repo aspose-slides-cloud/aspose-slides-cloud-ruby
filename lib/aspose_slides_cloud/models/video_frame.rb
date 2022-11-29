@@ -135,7 +135,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'PictureFillFormat')
         self.picture_fill_format = attributes[:'PictureFillFormat']
       end
-      self.type = "VideoFrame"
+      self.type = 'VideoFrame'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

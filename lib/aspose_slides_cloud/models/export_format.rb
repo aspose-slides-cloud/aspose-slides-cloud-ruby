@@ -25,31 +25,31 @@ require 'date'
 module AsposeSlidesCloud
   class ExportFormat
     
-    PDF = "Pdf".freeze
-    XPS = "Xps".freeze
-    TIFF = "Tiff".freeze
-    PPTX = "Pptx".freeze
-    ODP = "Odp".freeze
-    OTP = "Otp".freeze
-    PPT = "Ppt".freeze
-    PPS = "Pps".freeze
-    PPSX = "Ppsx".freeze
-    PPTM = "Pptm".freeze
-    PPSM = "Ppsm".freeze
-    POT = "Pot".freeze
-    POTX = "Potx".freeze
-    POTM = "Potm".freeze
-    HTML = "Html".freeze
-    HTML5 = "Html5".freeze
-    SWF = "Swf".freeze
-    SVG = "Svg".freeze
-    JPEG = "Jpeg".freeze
-    PNG = "Png".freeze
-    GIF = "Gif".freeze
-    BMP = "Bmp".freeze
-    FODP = "Fodp".freeze
-    XAML = "Xaml".freeze
-    MPEG4 = "Mpeg4".freeze
+    PDF = 'Pdf'.freeze
+    XPS = 'Xps'.freeze
+    TIFF = 'Tiff'.freeze
+    PPTX = 'Pptx'.freeze
+    ODP = 'Odp'.freeze
+    OTP = 'Otp'.freeze
+    PPT = 'Ppt'.freeze
+    PPS = 'Pps'.freeze
+    PPSX = 'Ppsx'.freeze
+    PPTM = 'Pptm'.freeze
+    PPSM = 'Ppsm'.freeze
+    POT = 'Pot'.freeze
+    POTX = 'Potx'.freeze
+    POTM = 'Potm'.freeze
+    HTML = 'Html'.freeze
+    HTML5 = 'Html5'.freeze
+    SWF = 'Swf'.freeze
+    SVG = 'Svg'.freeze
+    JPEG = 'Jpeg'.freeze
+    PNG = 'Png'.freeze
+    GIF = 'Gif'.freeze
+    BMP = 'Bmp'.freeze
+    FODP = 'Fodp'.freeze
+    XAML = 'Xaml'.freeze
+    MPEG4 = 'Mpeg4'.freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

@@ -23,16 +23,16 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Specifies the Sub-Superscript object
-  class LeftSubSuperscriptElement < MathElement
-    # Base argument
-    attr_accessor :base
+  # Represents Excel spreadsheet data source.
+  class Workbook < DataSource
+    # Worksheet index.
+    attr_accessor :worksheet_index
 
-    # Subscript
-    attr_accessor :subscript
+    # Column index of the first value.
+    attr_accessor :column_index
 
-    # Superscript
-    attr_accessor :superscript
+    # Row index of the first value.
+    attr_accessor :row_index
 
     class EnumAttributeValidator
       attr_reader :datatype
@@ -59,18 +59,18 @@ module AsposeSlidesCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
-        :'base' => :'Base',
-        :'subscript' => :'Subscript',
-        :'superscript' => :'Superscript',
+        :'worksheet_index' => :'WorksheetIndex',
+        :'column_index' => :'ColumnIndex',
+        :'row_index' => :'RowIndex',
       })
     end
 
     # Attribute type mapping.
     def self.swagger_types
       super.merge({
-        :'base' => :'MathElement',
-        :'subscript' => :'MathElement',
-        :'superscript' => :'MathElement',
+        :'worksheet_index' => :'Integer',
+        :'column_index' => :'Integer',
+        :'row_index' => :'Integer',
       })
     end
 
@@ -79,24 +79,36 @@ module AsposeSlidesCloud
     def initialize(attributes = {})
       super
 
-      if attributes.has_key?(:'Base')
-        self.base = attributes[:'Base']
+      if attributes.has_key?(:'WorksheetIndex')
+        self.worksheet_index = attributes[:'WorksheetIndex']
       end
 
-      if attributes.has_key?(:'Subscript')
-        self.subscript = attributes[:'Subscript']
+      if attributes.has_key?(:'ColumnIndex')
+        self.column_index = attributes[:'ColumnIndex']
       end
 
-      if attributes.has_key?(:'Superscript')
-        self.superscript = attributes[:'Superscript']
+      if attributes.has_key?(:'RowIndex')
+        self.row_index = attributes[:'RowIndex']
       end
-      self.type = 'LeftSubSuperscriptElement'
+      self.type = 'Workbook'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
+      if @worksheet_index.nil?
+        invalid_properties.push('invalid value for "worksheet_index", worksheet_index cannot be nil.')
+      end
+
+      if @column_index.nil?
+        invalid_properties.push('invalid value for "column_index", column_index cannot be nil.')
+      end
+
+      if @row_index.nil?
+        invalid_properties.push('invalid value for "row_index", row_index cannot be nil.')
+      end
+
       invalid_properties
     end
 
@@ -104,6 +116,9 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
+      return false if @worksheet_index.nil?
+      return false if @column_index.nil?
+      return false if @row_index.nil?
       true
     end
 
@@ -113,9 +128,9 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           type == o.type &&
-          base == o.base &&
-          subscript == o.subscript &&
-          superscript == o.superscript
+          worksheet_index == o.worksheet_index &&
+          column_index == o.column_index &&
+          row_index == o.row_index
     end
 
     # @see the `==` method
@@ -127,7 +142,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, base, subscript, superscript].hash
+      [type, worksheet_index, column_index, row_index].hash
     end
 
     # Builds the object from hash

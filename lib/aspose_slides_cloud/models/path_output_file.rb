@@ -81,7 +81,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Storage')
         self.storage = attributes[:'Storage']
       end
-      self.type = "Path"
+      self.type = 'Path'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

@@ -99,7 +99,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'SweepAngle')
         self.sweep_angle = attributes[:'SweepAngle']
       end
-      self.type = "ArcTo"
+      self.type = 'ArcTo'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

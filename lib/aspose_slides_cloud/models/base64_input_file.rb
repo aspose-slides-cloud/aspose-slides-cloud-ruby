@@ -72,7 +72,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Data')
         self.data = attributes[:'Data']
       end
-      self.type = "Base64"
+      self.type = 'Base64'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

@@ -23,17 +23,8 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Specifies the Sub-Superscript object
-  class LeftSubSuperscriptElement < MathElement
-    # Base argument
-    attr_accessor :base
-
-    # Subscript
-    attr_accessor :subscript
-
-    # Superscript
-    attr_accessor :superscript
-
+  # Represents string or double literals data source.
+  class Literals < DataSource
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -59,18 +50,12 @@ module AsposeSlidesCloud
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
-        :'base' => :'Base',
-        :'subscript' => :'Subscript',
-        :'superscript' => :'Superscript',
       })
     end
 
     # Attribute type mapping.
     def self.swagger_types
       super.merge({
-        :'base' => :'MathElement',
-        :'subscript' => :'MathElement',
-        :'superscript' => :'MathElement',
       })
     end
 
@@ -78,19 +63,7 @@ module AsposeSlidesCloud
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       super
-
-      if attributes.has_key?(:'Base')
-        self.base = attributes[:'Base']
-      end
-
-      if attributes.has_key?(:'Subscript')
-        self.subscript = attributes[:'Subscript']
-      end
-
-      if attributes.has_key?(:'Superscript')
-        self.superscript = attributes[:'Superscript']
-      end
-      self.type = 'LeftSubSuperscriptElement'
+      self.type = 'Literals'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -112,10 +85,7 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          base == o.base &&
-          subscript == o.subscript &&
-          superscript == o.superscript
+          type == o.type
     end
 
     # @see the `==` method
@@ -127,7 +97,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, base, subscript, superscript].hash
+      [type].hash
     end
 
     # Builds the object from hash

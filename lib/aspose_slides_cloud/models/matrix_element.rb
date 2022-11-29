@@ -137,7 +137,7 @@ module AsposeSlidesCloud
           self.items = value
         end
       end
-      self.type = "Matrix"
+      self.type = 'Matrix'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

@@ -81,7 +81,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Subscript')
         self.subscript = attributes[:'Subscript']
       end
-      self.type = "SubscriptElement"
+      self.type = 'SubscriptElement'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

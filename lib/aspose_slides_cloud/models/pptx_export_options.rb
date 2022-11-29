@@ -72,7 +72,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'Conformance')
         self.conformance = attributes[:'Conformance']
       end
-      self.format = "pptx"
+      self.format = 'pptx'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

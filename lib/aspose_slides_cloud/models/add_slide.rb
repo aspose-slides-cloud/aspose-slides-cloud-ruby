@@ -99,7 +99,7 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'LayoutAlias')
         self.layout_alias = attributes[:'LayoutAlias']
       end
-      self.type = "AddSlide"
+      self.type = 'AddSlide'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?

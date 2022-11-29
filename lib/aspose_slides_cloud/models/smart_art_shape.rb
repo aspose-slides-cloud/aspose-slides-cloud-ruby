@@ -63,7 +63,7 @@ module AsposeSlidesCloud
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       super
-      self.type = "SmartArtShape"
+      self.type = 'SmartArtShape'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
