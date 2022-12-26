@@ -37,6 +37,30 @@ module AsposeSlidesCloud
     # Gets or sets the line format.
     attr_accessor :line_format
 
+    attr_accessor :type
+
+    class EnumAttributeValidator
+      attr_reader :datatype
+      attr_reader :allowable_values
+
+      def initialize(datatype, allowable_values)
+        @allowable_values = allowable_values.map do |value|
+          case datatype.to_s
+          when /Integer/i
+            value.to_i
+          when /Float/i
+            value.to_f
+          else
+            value
+          end
+        end
+      end
+
+      def valid?(value)
+        !value || allowable_values.any?{ |s| s.casecmp(value) == 0 }
+      end
+    end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -44,6 +68,7 @@ module AsposeSlidesCloud
         :'effect_format' => :'EffectFormat',
         :'three_d_format' => :'ThreeDFormat',
         :'line_format' => :'LineFormat',
+        :'type' => :'Type',
       }
     end
 
@@ -54,6 +79,7 @@ module AsposeSlidesCloud
         :'effect_format' => :'EffectFormat',
         :'three_d_format' => :'ThreeDFormat',
         :'line_format' => :'LineFormat',
+        :'type' => :'String',
       }
     end
 
@@ -80,6 +106,10 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'LineFormat')
         self.line_format = attributes[:'LineFormat']
       end
+
+      if attributes.has_key?(:'Type')
+        self.type = attributes[:'Type']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -92,7 +122,19 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      type_validator = EnumAttributeValidator.new('String', ['OneValue', 'Scatter', 'Bubble'])
+      return false unless type_validator.valid?(@type)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] type Object to be assigned
+    def type=(type)
+      validator = EnumAttributeValidator.new('String', ['OneValue', 'Scatter', 'Bubble'])
+      unless validator.valid?(type)
+        fail ArgumentError, 'invalid value for "type", must be one of #{validator.allowable_values}.'
+      end
+      @type = type
     end
 
     # Checks equality by comparing each attribute.
@@ -103,7 +145,8 @@ module AsposeSlidesCloud
           fill_format == o.fill_format &&
           effect_format == o.effect_format &&
           three_d_format == o.three_d_format &&
-          line_format == o.line_format
+          line_format == o.line_format &&
+          type == o.type
     end
 
     # @see the `==` method
@@ -115,7 +158,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [fill_format, effect_format, three_d_format, line_format].hash
+      [fill_format, effect_format, three_d_format, line_format, type].hash
     end
 
     # Builds the object from hash
@@ -155,44 +198,48 @@ module AsposeSlidesCloud
     # @param string value Value to be deserialized
     # @return [Object] Deserialized data
     def _deserialize(type, value)
-      case type.to_sym
-      when :DateTime
-        DateTime.parse(value)
-      when :Date
-        Date.parse(value)
-      when :String
-        value.to_s
-      when :Integer
-        value.to_i
-      when :Float
-        value.to_f
-      when :BOOLEAN
-        if value.to_s =~ /\A(true|t|yes|y|1)\z/i
-          true
-        else
-          false
-        end
-      when :Object
-        # generic object (usually a Hash), return directly
-        value
-      when /\AArray<(?<inner_type>.+)>\z/
-        inner_type = Regexp.last_match[:inner_type]
-        value.map { |v| _deserialize(inner_type, v) }
-      when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
-        k_type = Regexp.last_match[:k_type]
-        v_type = Regexp.last_match[:v_type]
-        {}.tap do |hash|
-          value.each do |k, v|
-            hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
+      if value.nil?
+        nil
+      else
+        case type.to_sym
+        when :DateTime
+          DateTime.parse(value)
+        when :Date
+          Date.parse(value)
+        when :String
+          value.to_s
+        when :Integer
+          value.to_i
+        when :Float
+          value.to_f
+        when :BOOLEAN
+          if value.to_s =~ /\A(true|t|yes|y|1)\z/i
+            true
+          else
+            false
           end
+        when :Object
+          # generic object (usually a Hash), return directly
+          value
+        when /\AArray<(?<inner_type>.+)>\z/
+          inner_type = Regexp.last_match[:inner_type]
+          value.map { |v| _deserialize(inner_type, v) }
+        when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
+          k_type = Regexp.last_match[:k_type]
+          v_type = Regexp.last_match[:v_type]
+          {}.tap do |hash|
+            value.each do |k, v|
+              hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
+            end
+          end
+        else # model
+          registry_type = AsposeSlidesCloud::TypeRegistry.get_type(type.to_s, value)
+          if registry_type
+            type = registry_type
+          end
+          temp_model = AsposeSlidesCloud.const_get(type).new
+          temp_model.build_from_hash(value)
         end
-      else # model
-        registry_type = AsposeSlidesCloud::TypeRegistry.get_type(type.to_s, value)
-        if registry_type
-          type = registry_type
-        end
-        temp_model = AsposeSlidesCloud.const_get(type).new
-        temp_model.build_from_hash(value)
       end
     end
 

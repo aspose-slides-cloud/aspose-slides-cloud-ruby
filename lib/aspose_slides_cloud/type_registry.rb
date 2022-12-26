@@ -51,13 +51,15 @@ module AsposeSlidesCloud
         is_good = true
         determiners.each do |k, v|
           is_good_key = false
-          if !map[k].nil?
-            is_good_key = v == map[k]
-          else
-            keyString = k.to_s
-            keyString[0] = keyString[0].downcase
-            if !map[keyString.to_sym].nil?
-              is_good_key = v == map[keyString.to_sym]
+          if !map.nil?
+            if !map[k].nil?
+              is_good_key = v == map[k]
+            else
+              keyString = k.to_s
+              keyString[0] = keyString[0].downcase
+              if !map[keyString.to_sym].nil?
+                is_good_key = v == map[keyString.to_sym]
+              end
             end
           end
           is_good = is_good && is_good_key
@@ -264,8 +266,8 @@ module AsposeSlidesCloud
         :'BorderBoxElement' => { :'Type' => 'BorderBox', },
         :'BoxElement' => { :'Type' => 'Box', },
         :'DataPoint' => {  },
-        :'ScatterChartDataPoint' => {  },
-        :'BubbleChartDataPoint' => {  },
+        :'ScatterChartDataPoint' => { :'Type' => 'Scatter', },
+        :'BubbleChartDataPoint' => { :'Type' => 'Bubble', },
         :'Series' => {  },
         :'XYSeries' => {  },
         :'BubbleSeries' => { :'DataPointType' => 'Bubble', },
@@ -366,7 +368,7 @@ module AsposeSlidesCloud
         :'NotesSlideHeaderFooter' => {  },
         :'ObjectExist' => {  },
         :'OleObjectFrame' => { :'Type' => 'OleObjectFrame', },
-        :'OneValueChartDataPoint' => {  },
+        :'OneValueChartDataPoint' => { :'Type' => 'OneValue', },
         :'OneValueSeries' => { :'DataPointType' => 'OneValue', },
         :'OrderedMergeRequest' => {  },
         :'OuterShadowEffect' => {  },

@@ -364,44 +364,48 @@ module AsposeSlidesCloud
     # @param string value Value to be deserialized
     # @return [Object] Deserialized data
     def _deserialize(type, value)
-      case type.to_sym
-      when :DateTime
-        DateTime.parse(value)
-      when :Date
-        Date.parse(value)
-      when :String
-        value.to_s
-      when :Integer
-        value.to_i
-      when :Float
-        value.to_f
-      when :BOOLEAN
-        if value.to_s =~ /\A(true|t|yes|y|1)\z/i
-          true
-        else
-          false
-        end
-      when :Object
-        # generic object (usually a Hash), return directly
-        value
-      when /\AArray<(?<inner_type>.+)>\z/
-        inner_type = Regexp.last_match[:inner_type]
-        value.map { |v| _deserialize(inner_type, v) }
-      when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
-        k_type = Regexp.last_match[:k_type]
-        v_type = Regexp.last_match[:v_type]
-        {}.tap do |hash|
-          value.each do |k, v|
-            hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
+      if value.nil?
+        nil
+      else
+        case type.to_sym
+        when :DateTime
+          DateTime.parse(value)
+        when :Date
+          Date.parse(value)
+        when :String
+          value.to_s
+        when :Integer
+          value.to_i
+        when :Float
+          value.to_f
+        when :BOOLEAN
+          if value.to_s =~ /\A(true|t|yes|y|1)\z/i
+            true
+          else
+            false
           end
+        when :Object
+          # generic object (usually a Hash), return directly
+          value
+        when /\AArray<(?<inner_type>.+)>\z/
+          inner_type = Regexp.last_match[:inner_type]
+          value.map { |v| _deserialize(inner_type, v) }
+        when /\AHash<(?<k_type>.+?), (?<v_type>.+)>\z/
+          k_type = Regexp.last_match[:k_type]
+          v_type = Regexp.last_match[:v_type]
+          {}.tap do |hash|
+            value.each do |k, v|
+              hash[_deserialize(k_type, k)] = _deserialize(v_type, v)
+            end
+          end
+        else # model
+          registry_type = AsposeSlidesCloud::TypeRegistry.get_type(type.to_s, value)
+          if registry_type
+            type = registry_type
+          end
+          temp_model = AsposeSlidesCloud.const_get(type).new
+          temp_model.build_from_hash(value)
         end
-      else # model
-        registry_type = AsposeSlidesCloud::TypeRegistry.get_type(type.to_s, value)
-        if registry_type
-          type = registry_type
-        end
-        temp_model = AsposeSlidesCloud.const_get(type).new
-        temp_model.build_from_hash(value)
       end
     end
 
