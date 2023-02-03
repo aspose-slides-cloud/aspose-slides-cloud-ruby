@@ -636,6 +636,179 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for compress_embedded_fonts
+  # Compresses embedded fonts by removing unused characters.
+  # @param name Document name.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [nil]
+  describe 'compress_embedded_fonts test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CompressEmbeddedFonts', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CompressEmbeddedFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CompressEmbeddedFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CompressEmbeddedFonts', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CompressEmbeddedFonts', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.compress_embedded_fonts_with_http_info(paramname, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressEmbeddedFonts', nil, nil, nil)
+      expect(c).to eq(code)
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CompressEmbeddedFonts', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CompressEmbeddedFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CompressEmbeddedFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CompressEmbeddedFonts', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'CompressEmbeddedFonts', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CompressEmbeddedFonts', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.compress_embedded_fonts_with_http_info(paramname, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CompressEmbeddedFonts', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressEmbeddedFonts', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressEmbeddedFonts', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CompressEmbeddedFonts', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CompressEmbeddedFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CompressEmbeddedFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CompressEmbeddedFonts', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'CompressEmbeddedFonts', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CompressEmbeddedFonts', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.compress_embedded_fonts_with_http_info(paramname, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CompressEmbeddedFonts', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressEmbeddedFonts', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressEmbeddedFonts', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CompressEmbeddedFonts', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CompressEmbeddedFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CompressEmbeddedFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CompressEmbeddedFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'CompressEmbeddedFonts', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CompressEmbeddedFonts', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.compress_embedded_fonts_with_http_info(paramname, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CompressEmbeddedFonts', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressEmbeddedFonts', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressEmbeddedFonts', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CompressEmbeddedFonts', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CompressEmbeddedFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CompressEmbeddedFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CompressEmbeddedFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'CompressEmbeddedFonts', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CompressEmbeddedFonts', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.compress_embedded_fonts_with_http_info(paramname, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CompressEmbeddedFonts', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressEmbeddedFonts', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressEmbeddedFonts', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for compress_embedded_fonts_online
+  # Compresses embedded fonts by removing unused characters.
+  # @param document Document data.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @return [File]
+  describe 'compress_embedded_fonts_online test' do
+    it 'should work' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'CompressEmbeddedFontsOnline', 'File')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CompressEmbeddedFontsOnline', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CompressEmbeddedFontsOnline', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.compress_embedded_fonts_online_with_http_info(paramdocument, parampassword)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressEmbeddedFontsOnline', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid document' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'CompressEmbeddedFontsOnline', 'File')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CompressEmbeddedFontsOnline', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'CompressEmbeddedFontsOnline', paramdocument, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('CompressEmbeddedFontsOnline', 'document', paramdocument)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.compress_embedded_fonts_online_with_http_info(paramdocument, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CompressEmbeddedFontsOnline', 'document')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressEmbeddedFontsOnline', 'document', paramdocument, 'File')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressEmbeddedFontsOnline', 'document', paramdocument, 'File')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'CompressEmbeddedFontsOnline', 'File')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CompressEmbeddedFontsOnline', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'CompressEmbeddedFontsOnline', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CompressEmbeddedFontsOnline', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.compress_embedded_fonts_online_with_http_info(paramdocument, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CompressEmbeddedFontsOnline', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressEmbeddedFontsOnline', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressEmbeddedFontsOnline', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for convert
   # Convert presentation from request content to format specified.
   # @param document Document data.

@@ -78,6 +78,27 @@ describe 'UseCases' do
             expect(response.size).not_to eq(sourceDocument.size)
         end
 
+        it "compress embedded fonts" do
+            folder_name = "TempSlidesSDK"
+            file_name = "test.pptx"
+            font_name = "Calibri"
+            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            response = AsposeSlidesCloud::SpecUtils.api.set_embedded_font(file_name, font_name, false, "password", folder_name)
+            expect(response.list[2].is_embedded).to eq(true)
+            #In a real world example, you would rather get the same result by calling set_embedded_font with onlyUsed = true
+            AsposeSlidesCloud::SpecUtils.api.compress_embedded_fonts(file_name, "password", folder_name)
+        end
+
+        it "compress embedded fonts online" do
+            source = File.binread("TestData/test.pptx")
+            font_name = "Calibri"
+            response_embedded = AsposeSlidesCloud::SpecUtils.api.set_embedded_font_online(source, font_name, false, "password")
+            expect(response_embedded.size).not_to eq(source.size)
+            #In a real world example, you would rather get the same result by calling set_embedded_font with onlyUsed = true
+            response_compressed = AsposeSlidesCloud::SpecUtils.api.compress_embedded_fonts_online(response_embedded, "password")
+            expect(response_compressed.size).to be <  response_embedded.size
+        end
+
         it "delete embedded font" do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"

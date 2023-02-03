@@ -209,6 +209,115 @@ module AsposeSlidesCloud
         :return_type => 'Shapes')
       return data, status_code, headers
     end
+    # Compresses embedded fonts by removing unused characters.
+    # @param name Document name.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def compress_embedded_fonts(name, password = nil, folder = nil, storage = nil)
+      compress_embedded_fonts_with_http_info(name, password, folder, storage)
+      nil
+    end
+
+    # Compresses embedded fonts by removing unused characters.
+    # @param name Document name.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def compress_embedded_fonts_with_http_info(name, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.compress_embedded_fonts ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.compress_embedded_fonts"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/fonts/embedded/compress'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names)
+      return data, status_code, headers
+    end
+    # Compresses embedded fonts by removing unused characters.
+    # @param document Document data.
+    # @param password Document password.
+    def compress_embedded_fonts_online(document, password = nil)
+      data, _status_code, _headers = compress_embedded_fonts_online_with_http_info(document, password)
+      data
+    end
+
+    # Compresses embedded fonts by removing unused characters.
+    # @param document Document data.
+    # @param password Document password.
+    def compress_embedded_fonts_online_with_http_info(document, password = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.compress_embedded_fonts_online ...'
+      end
+
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && document.nil?
+        fail ArgumentError, "Missing the required parameter 'document' when calling SlidesApi.compress_embedded_fonts_online"
+      end
+      # resource path
+      local_var_path = '/slides/fonts/embedded/compress'
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      return data, status_code, headers
+    end
     # Convert presentation from request content to format specified.
     # @param document Document data.
     # @param format Export format.
