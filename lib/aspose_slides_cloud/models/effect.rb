@@ -76,6 +76,9 @@ module AsposeSlidesCloud
     # Specifies if the effect will repeat until the next click.
     attr_accessor :repeat_until_next_click
 
+    # This attribute specifies if the animation effect stops the previous sound.
+    attr_accessor :stop_previous_sound
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -118,6 +121,7 @@ module AsposeSlidesCloud
         :'trigger_delay_time' => :'TriggerDelayTime',
         :'repeat_until_end_slide' => :'RepeatUntilEndSlide',
         :'repeat_until_next_click' => :'RepeatUntilNextClick',
+        :'stop_previous_sound' => :'StopPreviousSound',
       }
     end
 
@@ -141,6 +145,7 @@ module AsposeSlidesCloud
         :'trigger_delay_time' => :'Float',
         :'repeat_until_end_slide' => :'BOOLEAN',
         :'repeat_until_next_click' => :'BOOLEAN',
+        :'stop_previous_sound' => :'BOOLEAN',
       }
     end
 
@@ -218,6 +223,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'RepeatUntilNextClick')
         self.repeat_until_next_click = attributes[:'RepeatUntilNextClick']
+      end
+
+      if attributes.has_key?(:'StopPreviousSound')
+        self.stop_previous_sound = attributes[:'StopPreviousSound']
       end
     end
 
@@ -320,7 +329,8 @@ module AsposeSlidesCloud
           speed == o.speed &&
           trigger_delay_time == o.trigger_delay_time &&
           repeat_until_end_slide == o.repeat_until_end_slide &&
-          repeat_until_next_click == o.repeat_until_next_click
+          repeat_until_next_click == o.repeat_until_next_click &&
+          stop_previous_sound == o.stop_previous_sound
     end
 
     # @see the `==` method
@@ -332,7 +342,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, subtype, preset_class_type, shape_index, paragraph_index, trigger_type, accelerate, auto_reverse, decelerate, duration, repeat_count, repeat_duration, restart, speed, trigger_delay_time, repeat_until_end_slide, repeat_until_next_click].hash
+      [type, subtype, preset_class_type, shape_index, paragraph_index, trigger_type, accelerate, auto_reverse, decelerate, duration, repeat_count, repeat_duration, restart, speed, trigger_delay_time, repeat_until_end_slide, repeat_until_next_click, stop_previous_sound].hash
     end
 
     # Builds the object from hash

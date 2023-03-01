@@ -70,5 +70,35 @@ describe 'UseCases' do
         result = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
         expect(result).to be_kind_of(AsposeSlidesCloud::Shape)
     end
+
+    it "text frame format" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      slide_index = 1
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+
+      dto = AsposeSlidesCloud::Shape.new
+      dto.shape_type = "Rectangle"
+      dto.x = 100
+      dto.y = 100
+      dto.height = 100
+      dto.width = 200
+      dto.text = "Sample text"
+
+      dto.text_frame_format = AsposeSlidesCloud::TextFrameFormat.new
+      dto.text_frame_format.center_text = "True"
+      dto.text_frame_format.margin_left = 2
+      dto.text_frame_format.margin_right = 2
+      dto.text_frame_format.margin_top = 2
+      dto.text_frame_format.margin_bottom = 2
+      dto.text_frame_format.default_paragraph_format = AsposeSlidesCloud::ParagraphFormat.new
+      solidFill = AsposeSlidesCloud::SolidFill.new
+      solidFill.color = "#FF0000"
+      dto.text_frame_format.default_paragraph_format.bullet_fill_format = solidFill
+
+      result = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
+      expect(result).to be_kind_of(AsposeSlidesCloud::Shape)
+  end
   end
 end

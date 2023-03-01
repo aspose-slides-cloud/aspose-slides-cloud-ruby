@@ -252,7 +252,7 @@ module AsposeSlidesCloud
       return false if !super
       text_compression_validator = EnumAttributeValidator.new('String', ['None', 'Flate'])
       return false unless text_compression_validator.valid?(@text_compression)
-      compliance_validator = EnumAttributeValidator.new('String', ['Pdf15', 'PdfA1b', 'PdfA1a', 'PdfUa'])
+      compliance_validator = EnumAttributeValidator.new('String', ['Pdf15', 'Pdf16', 'Pdf17', 'PdfA1b', 'PdfA1a', 'PdfA2b', 'PdfA2a', 'PdfA3b', 'PdfA3a', 'PdfUa', 'PdfA2u'])
       return false unless compliance_validator.valid?(@compliance)
       notes_position_validator = EnumAttributeValidator.new('String', ['None', 'BottomFull', 'BottomTruncated'])
       return false unless notes_position_validator.valid?(@notes_position)
@@ -274,7 +274,7 @@ module AsposeSlidesCloud
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] compliance Object to be assigned
     def compliance=(compliance)
-      validator = EnumAttributeValidator.new('String', ['Pdf15', 'PdfA1b', 'PdfA1a', 'PdfUa'])
+      validator = EnumAttributeValidator.new('String', ['Pdf15', 'Pdf16', 'Pdf17', 'PdfA1b', 'PdfA1a', 'PdfA2b', 'PdfA2a', 'PdfA3b', 'PdfA3a', 'PdfUa', 'PdfA2u'])
       unless validator.valid?(compliance)
         fail ArgumentError, 'invalid value for "compliance", must be one of #{validator.allowable_values}.'
       end

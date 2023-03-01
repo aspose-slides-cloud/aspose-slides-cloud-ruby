@@ -7658,6 +7658,64 @@ module AsposeSlidesCloud
         :return_type => 'File')
       return data, status_code, headers
     end
+    # Creates the shape from the DTO and returns the result in the specified format.
+    # @param format Export format
+    # @param dto Shape DTO.
+    def download_shape_from_dto(format, dto)
+      data, _status_code, _headers = download_shape_from_dto_with_http_info(format, dto)
+      data
+    end
+
+    # Creates the shape from the DTO and returns the result in the specified format.
+    # @param format Export format
+    # @param dto Shape DTO.
+    def download_shape_from_dto_with_http_info(format, dto)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.download_shape_from_dto ...'
+      end
+
+      # verify the required parameter 'format' is set
+      if @api_client.config.client_side_validation && format.nil?
+        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.download_shape_from_dto"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.download_shape_from_dto"
+      end
+      # resource path
+      local_var_path = '/slides/shape/{format}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'format', format)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      return data, status_code, headers
+    end
     # Render shape to specified picture format.
     # @param document Document data.
     # @param slide_index Slide index.

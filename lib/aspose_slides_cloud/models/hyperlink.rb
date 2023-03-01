@@ -55,6 +55,9 @@ module AsposeSlidesCloud
     # Represents the source of hyperlink color
     attr_accessor :color_source
 
+    # Audio data encoded in base64. Represents the playing sound of the hyperlink. 
+    attr_accessor :sound_base64
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -90,6 +93,7 @@ module AsposeSlidesCloud
         :'highlight_click' => :'HighlightClick',
         :'stop_sound_on_click' => :'StopSoundOnClick',
         :'color_source' => :'ColorSource',
+        :'sound_base64' => :'SoundBase64',
       }
     end
 
@@ -106,6 +110,7 @@ module AsposeSlidesCloud
         :'highlight_click' => :'BOOLEAN',
         :'stop_sound_on_click' => :'BOOLEAN',
         :'color_source' => :'String',
+        :'sound_base64' => :'String',
       }
     end
 
@@ -155,6 +160,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'ColorSource')
         self.color_source = attributes[:'ColorSource']
+      end
+
+      if attributes.has_key?(:'SoundBase64')
+        self.sound_base64 = attributes[:'SoundBase64']
       end
     end
 
@@ -214,7 +223,8 @@ module AsposeSlidesCloud
           history == o.history &&
           highlight_click == o.highlight_click &&
           stop_sound_on_click == o.stop_sound_on_click &&
-          color_source == o.color_source
+          color_source == o.color_source &&
+          sound_base64 == o.sound_base64
     end
 
     # @see the `==` method
@@ -226,7 +236,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [is_disabled, action_type, external_url, target_slide_index, target_frame, tooltip, history, highlight_click, stop_sound_on_click, color_source].hash
+      [is_disabled, action_type, external_url, target_slide_index, target_frame, tooltip, history, highlight_click, stop_sound_on_click, color_source, sound_base64].hash
     end
 
     # Builds the object from hash

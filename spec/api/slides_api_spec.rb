@@ -20459,6 +20459,66 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for download_shape_from_dto
+  # Creates the shape from the DTO and returns the result in the specified format.
+  # @param format Export format
+  # @param dto Shape DTO.
+  # @param [Hash] opts the optional parameters
+  # @return [File]
+  describe 'download_shape_from_dto test' do
+    it 'should work' do
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'DownloadShapeFromDto', 'String')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'DownloadShapeFromDto', 'ShapeBase')
+      AsposeSlidesCloud::SpecUtils.initialize('DownloadShapeFromDto', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.download_shape_from_dto_with_http_info(paramformat, paramdto)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadShapeFromDto', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid format' do
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'DownloadShapeFromDto', 'String')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'DownloadShapeFromDto', 'ShapeBase')
+      paramformat = AsposeSlidesCloud::SpecUtils.invalidize_param_value('format', 'DownloadShapeFromDto', paramformat, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DownloadShapeFromDto', 'format', paramformat)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.download_shape_from_dto_with_http_info(paramformat, paramdto)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DownloadShapeFromDto', 'format')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadShapeFromDto', 'format', paramformat, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadShapeFromDto', 'format', paramformat, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid dto' do
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'DownloadShapeFromDto', 'String')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'DownloadShapeFromDto', 'ShapeBase')
+      paramdto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'DownloadShapeFromDto', paramdto, 'ShapeBase')
+      AsposeSlidesCloud::SpecUtils.initialize('DownloadShapeFromDto', 'dto', paramdto)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.download_shape_from_dto_with_http_info(paramformat, paramdto)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DownloadShapeFromDto', 'dto')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadShapeFromDto', 'dto', paramdto, 'ShapeBase')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DownloadShapeFromDto', 'dto', paramdto, 'ShapeBase')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for download_shape_online
   # Render shape to specified picture format.
   # @param document Document data.

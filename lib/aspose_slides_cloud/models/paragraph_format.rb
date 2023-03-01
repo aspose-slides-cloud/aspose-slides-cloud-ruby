@@ -23,8 +23,14 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Represents paragraph resource
-  class Paragraph < ResourceBase
+  # Paragraph formatting properties.
+  class ParagraphFormat
+    # Depth.
+    attr_accessor :depth
+
+    # Text alignment.
+    attr_accessor :alignment
+
     # Left margin.
     attr_accessor :margin_left
 
@@ -40,35 +46,26 @@ module AsposeSlidesCloud
     # Spacing between lines.
     attr_accessor :space_within
 
-    # First line indent.
-    attr_accessor :indent
-
-    # Text alignment.
-    attr_accessor :alignment
-
     # Font alignment.
     attr_accessor :font_alignment
 
-    # Default tabulation size.
-    attr_accessor :default_tab_size
+    # First line indent.
+    attr_accessor :indent
 
-    # Depth.
-    attr_accessor :depth
-
-    # True if hanging punctuation is used with the paragraph.
-    attr_accessor :hanging_punctuation
-
-    # True if East Asian line break is used with the paragraph.
-    attr_accessor :east_asian_line_break
-
-    # True if Latin line break is used with the paragraph.
-    attr_accessor :latin_line_break
-
-    # True if right to left direction is used with the paragraph.
+    # Determines whether the Right to Left writing is used in a paragraph. No inheritance applied.
     attr_accessor :right_to_left
 
-    # List of portion links.
-    attr_accessor :portion_list
+    # Determines whether the East Asian line break is used in a paragraph. No inheritance applied.
+    attr_accessor :east_asian_line_break
+
+    # Determines whether the Latin line break is used in a paragraph. No inheritance applied.
+    attr_accessor :latin_line_break
+
+    # Determines whether the hanging punctuation is used in a paragraph. No inheritance applied.
+    attr_accessor :hanging_punctuation
+
+    # Returns or sets default tabulation size with no inheritance.
+    attr_accessor :default_tab_size
 
     # Default portion format.
     attr_accessor :default_portion_format
@@ -115,22 +112,21 @@ module AsposeSlidesCloud
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      super.merge({
+      {
+        :'depth' => :'Depth',
+        :'alignment' => :'Alignment',
         :'margin_left' => :'MarginLeft',
         :'margin_right' => :'MarginRight',
         :'space_before' => :'SpaceBefore',
         :'space_after' => :'SpaceAfter',
         :'space_within' => :'SpaceWithin',
-        :'indent' => :'Indent',
-        :'alignment' => :'Alignment',
         :'font_alignment' => :'FontAlignment',
-        :'default_tab_size' => :'DefaultTabSize',
-        :'depth' => :'Depth',
-        :'hanging_punctuation' => :'HangingPunctuation',
+        :'indent' => :'Indent',
+        :'right_to_left' => :'RightToLeft',
         :'east_asian_line_break' => :'EastAsianLineBreak',
         :'latin_line_break' => :'LatinLineBreak',
-        :'right_to_left' => :'RightToLeft',
-        :'portion_list' => :'PortionList',
+        :'hanging_punctuation' => :'HangingPunctuation',
+        :'default_tab_size' => :'DefaultTabSize',
         :'default_portion_format' => :'DefaultPortionFormat',
         :'bullet_char' => :'BulletChar',
         :'bullet_height' => :'BulletHeight',
@@ -138,27 +134,26 @@ module AsposeSlidesCloud
         :'numbered_bullet_start_with' => :'NumberedBulletStartWith',
         :'numbered_bullet_style' => :'NumberedBulletStyle',
         :'bullet_fill_format' => :'BulletFillFormat',
-      })
+      }
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      super.merge({
+      {
+        :'depth' => :'Integer',
+        :'alignment' => :'String',
         :'margin_left' => :'Float',
         :'margin_right' => :'Float',
         :'space_before' => :'Float',
         :'space_after' => :'Float',
         :'space_within' => :'Float',
-        :'indent' => :'Float',
-        :'alignment' => :'String',
         :'font_alignment' => :'String',
-        :'default_tab_size' => :'Float',
-        :'depth' => :'Integer',
-        :'hanging_punctuation' => :'String',
+        :'indent' => :'Float',
+        :'right_to_left' => :'String',
         :'east_asian_line_break' => :'String',
         :'latin_line_break' => :'String',
-        :'right_to_left' => :'String',
-        :'portion_list' => :'Array<Portion>',
+        :'hanging_punctuation' => :'String',
+        :'default_tab_size' => :'Float',
         :'default_portion_format' => :'PortionFormat',
         :'bullet_char' => :'String',
         :'bullet_height' => :'Float',
@@ -166,13 +161,24 @@ module AsposeSlidesCloud
         :'numbered_bullet_start_with' => :'Integer',
         :'numbered_bullet_style' => :'String',
         :'bullet_fill_format' => :'FillFormat',
-      })
+      }
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      super
+      return unless attributes.is_a?(Hash)
+
+      # convert string to symbol for hash key
+      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'Depth')
+        self.depth = attributes[:'Depth']
+      end
+
+      if attributes.has_key?(:'Alignment')
+        self.alignment = attributes[:'Alignment']
+      end
 
       if attributes.has_key?(:'MarginLeft')
         self.margin_left = attributes[:'MarginLeft']
@@ -194,28 +200,16 @@ module AsposeSlidesCloud
         self.space_within = attributes[:'SpaceWithin']
       end
 
-      if attributes.has_key?(:'Indent')
-        self.indent = attributes[:'Indent']
-      end
-
-      if attributes.has_key?(:'Alignment')
-        self.alignment = attributes[:'Alignment']
-      end
-
       if attributes.has_key?(:'FontAlignment')
         self.font_alignment = attributes[:'FontAlignment']
       end
 
-      if attributes.has_key?(:'DefaultTabSize')
-        self.default_tab_size = attributes[:'DefaultTabSize']
+      if attributes.has_key?(:'Indent')
+        self.indent = attributes[:'Indent']
       end
 
-      if attributes.has_key?(:'Depth')
-        self.depth = attributes[:'Depth']
-      end
-
-      if attributes.has_key?(:'HangingPunctuation')
-        self.hanging_punctuation = attributes[:'HangingPunctuation']
+      if attributes.has_key?(:'RightToLeft')
+        self.right_to_left = attributes[:'RightToLeft']
       end
 
       if attributes.has_key?(:'EastAsianLineBreak')
@@ -226,14 +220,12 @@ module AsposeSlidesCloud
         self.latin_line_break = attributes[:'LatinLineBreak']
       end
 
-      if attributes.has_key?(:'RightToLeft')
-        self.right_to_left = attributes[:'RightToLeft']
+      if attributes.has_key?(:'HangingPunctuation')
+        self.hanging_punctuation = attributes[:'HangingPunctuation']
       end
 
-      if attributes.has_key?(:'PortionList')
-        if (value = attributes[:'PortionList']).is_a?(Array)
-          self.portion_list = value
-        end
+      if attributes.has_key?(:'DefaultTabSize')
+        self.default_tab_size = attributes[:'DefaultTabSize']
       end
 
       if attributes.has_key?(:'DefaultPortionFormat')
@@ -268,26 +260,25 @@ module AsposeSlidesCloud
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = super
+      invalid_properties = Array.new
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !super
       alignment_validator = EnumAttributeValidator.new('String', ['Left', 'Center', 'Right', 'Justify', 'JustifyLow', 'Distributed', 'NotDefined'])
       return false unless alignment_validator.valid?(@alignment)
       font_alignment_validator = EnumAttributeValidator.new('String', ['Automatic', 'Top', 'Center', 'Bottom', 'Baseline', 'Default'])
       return false unless font_alignment_validator.valid?(@font_alignment)
-      hanging_punctuation_validator = EnumAttributeValidator.new('String', ['False', 'True', 'NotDefined'])
-      return false unless hanging_punctuation_validator.valid?(@hanging_punctuation)
+      right_to_left_validator = EnumAttributeValidator.new('String', ['False', 'True', 'NotDefined'])
+      return false unless right_to_left_validator.valid?(@right_to_left)
       east_asian_line_break_validator = EnumAttributeValidator.new('String', ['False', 'True', 'NotDefined'])
       return false unless east_asian_line_break_validator.valid?(@east_asian_line_break)
       latin_line_break_validator = EnumAttributeValidator.new('String', ['False', 'True', 'NotDefined'])
       return false unless latin_line_break_validator.valid?(@latin_line_break)
-      right_to_left_validator = EnumAttributeValidator.new('String', ['False', 'True', 'NotDefined'])
-      return false unless right_to_left_validator.valid?(@right_to_left)
+      hanging_punctuation_validator = EnumAttributeValidator.new('String', ['False', 'True', 'NotDefined'])
+      return false unless hanging_punctuation_validator.valid?(@hanging_punctuation)
       bullet_type_validator = EnumAttributeValidator.new('String', ['None', 'Symbol', 'Numbered', 'Picture', 'NotDefined'])
       return false unless bullet_type_validator.valid?(@bullet_type)
       numbered_bullet_style_validator = EnumAttributeValidator.new('String', ['BulletAlphaLCPeriod', 'BulletAlphaUCPeriod', 'BulletArabicParenRight', 'BulletArabicPeriod', 'BulletRomanLCParenBoth', 'BulletRomanLCParenRight', 'BulletRomanLCPeriod', 'BulletRomanUCPeriod', 'BulletAlphaLCParenBoth', 'BulletAlphaLCParenRight', 'BulletAlphaUCParenBoth', 'BulletAlphaUCParenRight', 'BulletArabicParenBoth', 'BulletArabicPlain', 'BulletRomanUCParenBoth', 'BulletRomanUCParenRight', 'BulletSimpChinPlain', 'BulletSimpChinPeriod', 'BulletCircleNumDBPlain', 'BulletCircleNumWDWhitePlain', 'BulletCircleNumWDBlackPlain', 'BulletTradChinPlain', 'BulletTradChinPeriod', 'BulletArabicAlphaDash', 'BulletArabicAbjadDash', 'BulletHebrewAlphaDash', 'BulletKanjiKoreanPlain', 'BulletKanjiKoreanPeriod', 'BulletArabicDBPlain', 'BulletArabicDBPeriod', 'BulletThaiAlphaPeriod', 'BulletThaiAlphaParenRight', 'BulletThaiAlphaParenBoth', 'BulletThaiNumPeriod', 'BulletThaiNumParenRight', 'BulletThaiNumParenBoth', 'BulletHindiAlphaPeriod', 'BulletHindiNumPeriod', 'BulletKanjiSimpChinDBPeriod', 'BulletHindiNumParenRight', 'BulletHindiAlpha1Period', 'NotDefined'])
@@ -316,13 +307,13 @@ module AsposeSlidesCloud
     end
 
     # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] hanging_punctuation Object to be assigned
-    def hanging_punctuation=(hanging_punctuation)
+    # @param [Object] right_to_left Object to be assigned
+    def right_to_left=(right_to_left)
       validator = EnumAttributeValidator.new('String', ['False', 'True', 'NotDefined'])
-      unless validator.valid?(hanging_punctuation)
-        fail ArgumentError, 'invalid value for "hanging_punctuation", must be one of #{validator.allowable_values}.'
+      unless validator.valid?(right_to_left)
+        fail ArgumentError, 'invalid value for "right_to_left", must be one of #{validator.allowable_values}.'
       end
-      @hanging_punctuation = hanging_punctuation
+      @right_to_left = right_to_left
     end
 
     # Custom attribute writer method checking allowed values (enum).
@@ -346,13 +337,13 @@ module AsposeSlidesCloud
     end
 
     # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] right_to_left Object to be assigned
-    def right_to_left=(right_to_left)
+    # @param [Object] hanging_punctuation Object to be assigned
+    def hanging_punctuation=(hanging_punctuation)
       validator = EnumAttributeValidator.new('String', ['False', 'True', 'NotDefined'])
-      unless validator.valid?(right_to_left)
-        fail ArgumentError, 'invalid value for "right_to_left", must be one of #{validator.allowable_values}.'
+      unless validator.valid?(hanging_punctuation)
+        fail ArgumentError, 'invalid value for "hanging_punctuation", must be one of #{validator.allowable_values}.'
       end
-      @right_to_left = right_to_left
+      @hanging_punctuation = hanging_punctuation
     end
 
     # Custom attribute writer method checking allowed values (enum).
@@ -380,23 +371,20 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          self_uri == o.self_uri &&
-          alternate_links == o.alternate_links &&
+          depth == o.depth &&
+          alignment == o.alignment &&
           margin_left == o.margin_left &&
           margin_right == o.margin_right &&
           space_before == o.space_before &&
           space_after == o.space_after &&
           space_within == o.space_within &&
-          indent == o.indent &&
-          alignment == o.alignment &&
           font_alignment == o.font_alignment &&
-          default_tab_size == o.default_tab_size &&
-          depth == o.depth &&
-          hanging_punctuation == o.hanging_punctuation &&
+          indent == o.indent &&
+          right_to_left == o.right_to_left &&
           east_asian_line_break == o.east_asian_line_break &&
           latin_line_break == o.latin_line_break &&
-          right_to_left == o.right_to_left &&
-          portion_list == o.portion_list &&
+          hanging_punctuation == o.hanging_punctuation &&
+          default_tab_size == o.default_tab_size &&
           default_portion_format == o.default_portion_format &&
           bullet_char == o.bullet_char &&
           bullet_height == o.bullet_height &&
@@ -415,7 +403,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, margin_left, margin_right, space_before, space_after, space_within, indent, alignment, font_alignment, default_tab_size, depth, hanging_punctuation, east_asian_line_break, latin_line_break, right_to_left, portion_list, default_portion_format, bullet_char, bullet_height, bullet_type, numbered_bullet_start_with, numbered_bullet_style, bullet_fill_format].hash
+      [depth, alignment, margin_left, margin_right, space_before, space_after, space_within, font_alignment, indent, right_to_left, east_asian_line_break, latin_line_break, hanging_punctuation, default_tab_size, default_portion_format, bullet_char, bullet_height, bullet_type, numbered_bullet_start_with, numbered_bullet_style, bullet_fill_format].hash
     end
 
     # Builds the object from hash

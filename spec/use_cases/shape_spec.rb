@@ -590,5 +590,15 @@ describe 'UseCases' do
         sub_node_path, "password", folder_name)
       expect(response.nodes[0].nodes.length).to eq(3)
     end
+
+    it "download shape from DTO" do
+      shape = AsposeSlidesCloud::Shape.new
+      shape.shape_type = "Rectangle"
+      shape.width = 400
+      shape.height = 200
+      shape.text = "Shape text"
+
+      response = AsposeSlidesCloud::SpecUtils.api.download_shape_from_dto(AsposeSlidesCloud::ShapeExportFormat::PNG, shape)
+    end
   end
 end
