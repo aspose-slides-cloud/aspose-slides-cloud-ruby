@@ -15901,8 +15901,9 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Custom fonts folder.
-    def split_and_save_online(document, format, dest_folder = nil, width = nil, height = nil, from = nil, to = nil, password = nil, storage = nil, fonts_folder = nil)
-      data, _status_code, _headers = split_and_save_online_with_http_info(document, format, dest_folder, width, height, from, to, password, storage, fonts_folder)
+    # @param options Export options.
+    def split_and_save_online(document, format, dest_folder = nil, width = nil, height = nil, from = nil, to = nil, password = nil, storage = nil, fonts_folder = nil, options = nil)
+      data, _status_code, _headers = split_and_save_online_with_http_info(document, format, dest_folder, width, height, from, to, password, storage, fonts_folder, options)
       data
     end
 
@@ -15917,7 +15918,8 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Custom fonts folder.
-    def split_and_save_online_with_http_info(document, format, dest_folder = nil, width = nil, height = nil, from = nil, to = nil, password = nil, storage = nil, fonts_folder = nil)
+    # @param options Export options.
+    def split_and_save_online_with_http_info(document, format, dest_folder = nil, width = nil, height = nil, from = nil, to = nil, password = nil, storage = nil, fonts_folder = nil, options = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.split_and_save_online ...'
       end
@@ -15957,7 +15959,7 @@ module AsposeSlidesCloud
       header_params[:'password'] = password unless password.nil?
 
       # http body (model)
-      post_body = nil
+      post_body = @api_client.object_to_http_body(options)
 
       # form parameters
       post_files = []
@@ -15985,8 +15987,9 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Custom fonts folder.
-    def split_online(document, format, width = nil, height = nil, from = nil, to = nil, password = nil, storage = nil, fonts_folder = nil)
-      data, _status_code, _headers = split_online_with_http_info(document, format, width, height, from, to, password, storage, fonts_folder)
+    # @param options Export options.
+    def split_online(document, format, width = nil, height = nil, from = nil, to = nil, password = nil, storage = nil, fonts_folder = nil, options = nil)
+      data, _status_code, _headers = split_online_with_http_info(document, format, width, height, from, to, password, storage, fonts_folder, options)
       data
     end
 
@@ -16000,7 +16003,8 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param storage Document storage.
     # @param fonts_folder Custom fonts folder.
-    def split_online_with_http_info(document, format, width = nil, height = nil, from = nil, to = nil, password = nil, storage = nil, fonts_folder = nil)
+    # @param options Export options.
+    def split_online_with_http_info(document, format, width = nil, height = nil, from = nil, to = nil, password = nil, storage = nil, fonts_folder = nil, options = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.split_online ...'
       end
@@ -16039,7 +16043,7 @@ module AsposeSlidesCloud
       header_params[:'password'] = password unless password.nil?
 
       # http body (model)
-      post_body = nil
+      post_body = @api_client.object_to_http_body(options)
 
       # form parameters
       post_files = []

@@ -37,6 +37,9 @@ module AsposeSlidesCloud
     # Gets or sets the color of comments area (Applies only if comments are displayed on the right).
     attr_accessor :comments_area_color
 
+    # Show hidden slides. If true, hidden are exported.
+    attr_accessor :show_hidden_slides
+
     class EnumAttributeValidator
       attr_reader :datatype
       attr_reader :allowable_values
@@ -66,6 +69,7 @@ module AsposeSlidesCloud
         :'comments_position' => :'CommentsPosition',
         :'comments_area_width' => :'CommentsAreaWidth',
         :'comments_area_color' => :'CommentsAreaColor',
+        :'show_hidden_slides' => :'ShowHiddenSlides',
       })
     end
 
@@ -76,6 +80,7 @@ module AsposeSlidesCloud
         :'comments_position' => :'String',
         :'comments_area_width' => :'Integer',
         :'comments_area_color' => :'String',
+        :'show_hidden_slides' => :'BOOLEAN',
       })
     end
 
@@ -98,6 +103,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'CommentsAreaColor')
         self.comments_area_color = attributes[:'CommentsAreaColor']
+      end
+
+      if attributes.has_key?(:'ShowHiddenSlides')
+        self.show_hidden_slides = attributes[:'ShowHiddenSlides']
       end
       self.format = 'image'
     end
@@ -154,7 +163,8 @@ module AsposeSlidesCloud
           notes_position == o.notes_position &&
           comments_position == o.comments_position &&
           comments_area_width == o.comments_area_width &&
-          comments_area_color == o.comments_area_color
+          comments_area_color == o.comments_area_color &&
+          show_hidden_slides == o.show_hidden_slides
     end
 
     # @see the `==` method
@@ -166,7 +176,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, font_fallback_rules, font_subst_rules, format, height, width, notes_position, comments_position, comments_area_width, comments_area_color].hash
+      [default_regular_font, font_fallback_rules, font_subst_rules, format, height, width, notes_position, comments_position, comments_area_width, comments_area_color, show_hidden_slides].hash
     end
 
     # Builds the object from hash

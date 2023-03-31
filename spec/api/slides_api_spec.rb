@@ -42445,6 +42445,7 @@ describe 'SlidesApi' do
   # @option opts [String] :password Document password.
   # @option opts [String] :storage Document storage.
   # @option opts [String] :fonts_folder Custom fonts folder.
+  # @option opts [ExportOptions] :options Export options.
   # @return [SplitDocumentResult]
   describe 'split_and_save_online test' do
     it 'should work' do
@@ -42458,11 +42459,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitAndSaveOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitAndSaveOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitAndSaveOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitAndSaveOnline', 'ExportOptions')
       AsposeSlidesCloud::SpecUtils.initialize('SplitAndSaveOnline', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
       code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitAndSaveOnline', nil, nil, nil)
       expect(c).to eq(code)
-      expect(o).not_to be_nil
     end
 
     it 'invalid document' do
@@ -42476,10 +42477,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitAndSaveOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitAndSaveOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitAndSaveOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitAndSaveOnline', 'ExportOptions')
       paramdocument = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'SplitAndSaveOnline', paramdocument, 'File')
       AsposeSlidesCloud::SpecUtils.initialize('SplitAndSaveOnline', 'document', paramdocument)
       begin
-        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitAndSaveOnline', 'document')
           fail "An exception expected"
         end
@@ -42505,10 +42507,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitAndSaveOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitAndSaveOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitAndSaveOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitAndSaveOnline', 'ExportOptions')
       paramformat = AsposeSlidesCloud::SpecUtils.invalidize_param_value('format', 'SplitAndSaveOnline', paramformat, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('SplitAndSaveOnline', 'format', paramformat)
       begin
-        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitAndSaveOnline', 'format')
           fail "An exception expected"
         end
@@ -42534,10 +42537,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitAndSaveOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitAndSaveOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitAndSaveOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitAndSaveOnline', 'ExportOptions')
       paramdest_folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('destFolder', 'SplitAndSaveOnline', paramdest_folder, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('SplitAndSaveOnline', 'destFolder', paramdest_folder)
       begin
-        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitAndSaveOnline', 'destFolder')
           fail "An exception expected"
         end
@@ -42563,10 +42567,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitAndSaveOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitAndSaveOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitAndSaveOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitAndSaveOnline', 'ExportOptions')
       paramwidth = AsposeSlidesCloud::SpecUtils.invalidize_param_value('width', 'SplitAndSaveOnline', paramwidth, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('SplitAndSaveOnline', 'width', paramwidth)
       begin
-        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitAndSaveOnline', 'width')
           fail "An exception expected"
         end
@@ -42592,10 +42597,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitAndSaveOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitAndSaveOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitAndSaveOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitAndSaveOnline', 'ExportOptions')
       paramheight = AsposeSlidesCloud::SpecUtils.invalidize_param_value('height', 'SplitAndSaveOnline', paramheight, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('SplitAndSaveOnline', 'height', paramheight)
       begin
-        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitAndSaveOnline', 'height')
           fail "An exception expected"
         end
@@ -42621,10 +42627,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitAndSaveOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitAndSaveOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitAndSaveOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitAndSaveOnline', 'ExportOptions')
       paramfrom = AsposeSlidesCloud::SpecUtils.invalidize_param_value('from', 'SplitAndSaveOnline', paramfrom, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('SplitAndSaveOnline', 'from', paramfrom)
       begin
-        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitAndSaveOnline', 'from')
           fail "An exception expected"
         end
@@ -42650,10 +42657,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitAndSaveOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitAndSaveOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitAndSaveOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitAndSaveOnline', 'ExportOptions')
       paramto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('to', 'SplitAndSaveOnline', paramto, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('SplitAndSaveOnline', 'to', paramto)
       begin
-        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitAndSaveOnline', 'to')
           fail "An exception expected"
         end
@@ -42679,10 +42687,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitAndSaveOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitAndSaveOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitAndSaveOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitAndSaveOnline', 'ExportOptions')
       parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'SplitAndSaveOnline', parampassword, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('SplitAndSaveOnline', 'password', parampassword)
       begin
-        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitAndSaveOnline', 'password')
           fail "An exception expected"
         end
@@ -42708,10 +42717,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitAndSaveOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitAndSaveOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitAndSaveOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitAndSaveOnline', 'ExportOptions')
       paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'SplitAndSaveOnline', paramstorage, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('SplitAndSaveOnline', 'storage', paramstorage)
       begin
-        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitAndSaveOnline', 'storage')
           fail "An exception expected"
         end
@@ -42737,10 +42747,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitAndSaveOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitAndSaveOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitAndSaveOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitAndSaveOnline', 'ExportOptions')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontsFolder', 'SplitAndSaveOnline', paramfonts_folder, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('SplitAndSaveOnline', 'fontsFolder', paramfonts_folder)
       begin
-        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitAndSaveOnline', 'fontsFolder')
           fail "An exception expected"
         end
@@ -42750,6 +42761,36 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitAndSaveOnline', 'fontsFolder', paramfonts_folder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid options' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'SplitAndSaveOnline', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'SplitAndSaveOnline', 'String')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'SplitAndSaveOnline', 'String')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'SplitAndSaveOnline', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'SplitAndSaveOnline', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'SplitAndSaveOnline', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'SplitAndSaveOnline', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitAndSaveOnline', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitAndSaveOnline', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitAndSaveOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitAndSaveOnline', 'ExportOptions')
+      paramoptions = AsposeSlidesCloud::SpecUtils.invalidize_param_value('options', 'SplitAndSaveOnline', paramoptions, 'ExportOptions')
+      AsposeSlidesCloud::SpecUtils.initialize('SplitAndSaveOnline', 'options', paramoptions)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.split_and_save_online_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitAndSaveOnline', 'options')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitAndSaveOnline', 'options', paramoptions, 'ExportOptions')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitAndSaveOnline', 'options', paramoptions, 'ExportOptions')
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
@@ -42768,6 +42809,7 @@ describe 'SlidesApi' do
   # @option opts [String] :password Document password.
   # @option opts [String] :storage Document storage.
   # @option opts [String] :fonts_folder Custom fonts folder.
+  # @option opts [ExportOptions] :options Export options.
   # @return [File]
   describe 'split_online test' do
     it 'should work' do
@@ -42780,11 +42822,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitOnline', 'ExportOptions')
       AsposeSlidesCloud::SpecUtils.initialize('SplitOnline', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
       code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitOnline', nil, nil, nil)
       expect(c).to eq(code)
-      expect(o).not_to be_nil
     end
 
     it 'invalid document' do
@@ -42797,10 +42839,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitOnline', 'ExportOptions')
       paramdocument = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'SplitOnline', paramdocument, 'File')
       AsposeSlidesCloud::SpecUtils.initialize('SplitOnline', 'document', paramdocument)
       begin
-        AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitOnline', 'document')
           fail "An exception expected"
         end
@@ -42825,10 +42868,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitOnline', 'ExportOptions')
       paramformat = AsposeSlidesCloud::SpecUtils.invalidize_param_value('format', 'SplitOnline', paramformat, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('SplitOnline', 'format', paramformat)
       begin
-        AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitOnline', 'format')
           fail "An exception expected"
         end
@@ -42853,10 +42897,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitOnline', 'ExportOptions')
       paramwidth = AsposeSlidesCloud::SpecUtils.invalidize_param_value('width', 'SplitOnline', paramwidth, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('SplitOnline', 'width', paramwidth)
       begin
-        AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitOnline', 'width')
           fail "An exception expected"
         end
@@ -42881,10 +42926,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitOnline', 'ExportOptions')
       paramheight = AsposeSlidesCloud::SpecUtils.invalidize_param_value('height', 'SplitOnline', paramheight, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('SplitOnline', 'height', paramheight)
       begin
-        AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitOnline', 'height')
           fail "An exception expected"
         end
@@ -42909,10 +42955,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitOnline', 'ExportOptions')
       paramfrom = AsposeSlidesCloud::SpecUtils.invalidize_param_value('from', 'SplitOnline', paramfrom, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('SplitOnline', 'from', paramfrom)
       begin
-        AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitOnline', 'from')
           fail "An exception expected"
         end
@@ -42937,10 +42984,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitOnline', 'ExportOptions')
       paramto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('to', 'SplitOnline', paramto, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('SplitOnline', 'to', paramto)
       begin
-        AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitOnline', 'to')
           fail "An exception expected"
         end
@@ -42965,10 +43013,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitOnline', 'ExportOptions')
       parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'SplitOnline', parampassword, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('SplitOnline', 'password', parampassword)
       begin
-        AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitOnline', 'password')
           fail "An exception expected"
         end
@@ -42993,10 +43042,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitOnline', 'ExportOptions')
       paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'SplitOnline', paramstorage, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('SplitOnline', 'storage', paramstorage)
       begin
-        AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitOnline', 'storage')
           fail "An exception expected"
         end
@@ -43021,10 +43071,11 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitOnline', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitOnline', 'String')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitOnline', 'ExportOptions')
       paramfonts_folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontsFolder', 'SplitOnline', paramfonts_folder, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('SplitOnline', 'fontsFolder', paramfonts_folder)
       begin
-        AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder)
+        AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitOnline', 'fontsFolder')
           fail "An exception expected"
         end
@@ -43034,6 +43085,35 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitOnline', 'fontsFolder', paramfonts_folder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid options' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'SplitOnline', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'SplitOnline', 'String')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'SplitOnline', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'SplitOnline', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'SplitOnline', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'SplitOnline', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitOnline', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitOnline', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'SplitOnline', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'SplitOnline', 'ExportOptions')
+      paramoptions = AsposeSlidesCloud::SpecUtils.invalidize_param_value('options', 'SplitOnline', paramoptions, 'ExportOptions')
+      AsposeSlidesCloud::SpecUtils.initialize('SplitOnline', 'options', paramoptions)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.split_online_with_http_info(paramdocument, paramformat, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitOnline', 'options')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitOnline', 'options', paramoptions, 'ExportOptions')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitOnline', 'options', paramoptions, 'ExportOptions')
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
