@@ -451,6 +451,8 @@ module AsposeSlidesCloud
         :'SwfExportOptions' => { :'Format' => 'swf', },
         :'Table' => { :'Type' => 'Table', },
         :'TableCell' => {  },
+        :'TableCellMergeOptions' => {  },
+        :'TableCellSplitType' => {  },
         :'TableColumn' => {  },
         :'TableRow' => {  },
         :'TextBounds' => {  },

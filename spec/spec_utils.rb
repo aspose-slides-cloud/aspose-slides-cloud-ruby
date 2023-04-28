@@ -141,7 +141,7 @@ module AsposeSlidesCloud
         return type == "BOOLEAN"
       end
       if rule["Type"] == "number"
-        return type == "Integer"
+        return type == "Integer" || type == "Float"
       end
       if rule["Type"] == "int"
         return type == "Integer"

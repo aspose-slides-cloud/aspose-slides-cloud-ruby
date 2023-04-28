@@ -8315,6 +8315,860 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for create_table_cell_paragraph
+  # Creates table cell paragraph.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param row_index Row index.
+  # @param cell_index Table cell index.
+  # @param dto Paragraph DTO.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Paragraph]
+  describe 'create_table_cell_paragraph test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellParagraph', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellParagraph', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.create_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellParagraph', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellParagraph', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'CreateTableCellParagraph', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellParagraph', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableCellParagraph', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellParagraph', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellParagraph', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'CreateTableCellParagraph', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellParagraph', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableCellParagraph', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellParagraph', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellParagraph', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellParagraph', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'CreateTableCellParagraph', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellParagraph', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableCellParagraph', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellParagraph', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellParagraph', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid row_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellParagraph', 'String')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('rowIndex', 'CreateTableCellParagraph', paramrow_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellParagraph', 'rowIndex', paramrow_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableCellParagraph', 'rowIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellParagraph', 'rowIndex', paramrow_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellParagraph', 'rowIndex', paramrow_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid cell_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellParagraph', 'String')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('cellIndex', 'CreateTableCellParagraph', paramcell_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellParagraph', 'cellIndex', paramcell_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableCellParagraph', 'cellIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellParagraph', 'cellIndex', paramcell_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellParagraph', 'cellIndex', paramcell_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid dto' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellParagraph', 'String')
+      paramdto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'CreateTableCellParagraph', paramdto, 'Paragraph')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellParagraph', 'dto', paramdto)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableCellParagraph', 'dto')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellParagraph', 'dto', paramdto, 'Paragraph')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellParagraph', 'dto', paramdto, 'Paragraph')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellParagraph', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'CreateTableCellParagraph', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellParagraph', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableCellParagraph', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellParagraph', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellParagraph', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'CreateTableCellParagraph', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellParagraph', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableCellParagraph', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellParagraph', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellParagraph', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'CreateTableCellParagraph', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellParagraph', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableCellParagraph', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellParagraph', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellParagraph', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for create_table_cell_portion
+  # Creates table cell portion.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param row_index Row index.
+  # @param cell_index Table cell index.
+  # @param paragraph_index Paragraph index.
+  # @param dto Portion DTO.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Portion]
+  describe 'create_table_cell_portion test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'CreateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellPortion', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellPortion', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.create_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'CreateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellPortion', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'CreateTableCellPortion', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellPortion', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableCellPortion', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'CreateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'CreateTableCellPortion', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellPortion', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableCellPortion', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'CreateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellPortion', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'CreateTableCellPortion', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellPortion', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableCellPortion', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid row_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'CreateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellPortion', 'String')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('rowIndex', 'CreateTableCellPortion', paramrow_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellPortion', 'rowIndex', paramrow_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableCellPortion', 'rowIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'rowIndex', paramrow_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'rowIndex', paramrow_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid cell_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'CreateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellPortion', 'String')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('cellIndex', 'CreateTableCellPortion', paramcell_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellPortion', 'cellIndex', paramcell_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableCellPortion', 'cellIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'cellIndex', paramcell_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'cellIndex', paramcell_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid paragraph_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'CreateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellPortion', 'String')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('paragraphIndex', 'CreateTableCellPortion', paramparagraph_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellPortion', 'paragraphIndex', paramparagraph_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableCellPortion', 'paragraphIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'paragraphIndex', paramparagraph_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'paragraphIndex', paramparagraph_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid dto' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'CreateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellPortion', 'String')
+      paramdto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'CreateTableCellPortion', paramdto, 'Portion')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellPortion', 'dto', paramdto)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableCellPortion', 'dto')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'dto', paramdto, 'Portion')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'dto', paramdto, 'Portion')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'CreateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellPortion', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'CreateTableCellPortion', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellPortion', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableCellPortion', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'CreateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'CreateTableCellPortion', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellPortion', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableCellPortion', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'CreateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'CreateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'CreateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'CreateTableCellPortion', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableCellPortion', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableCellPortion', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableCellPortion', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for create_table_row
+  # Inserts the table row in the specified position. If position is not specified, the row add to the end of the table.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param dto Table row data.
+  # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :position Position.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [TableRow]
+  describe 'create_table_row test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableRow', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableRow', 'TableRow')
+      paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateTableRow', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableRow', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableRow', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.create_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramdto, paramposition, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableRow', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableRow', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableRow', 'TableRow')
+      paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateTableRow', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableRow', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'CreateTableRow', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableRow', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramdto, paramposition, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableRow', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableRow', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableRow', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableRow', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableRow', 'TableRow')
+      paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateTableRow', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'CreateTableRow', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableRow', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramdto, paramposition, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableRow', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableRow', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableRow', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableRow', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableRow', 'TableRow')
+      paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateTableRow', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableRow', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'CreateTableRow', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableRow', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramdto, paramposition, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableRow', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableRow', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableRow', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid dto' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableRow', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableRow', 'TableRow')
+      paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateTableRow', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableRow', 'String')
+      paramdto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'CreateTableRow', paramdto, 'TableRow')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableRow', 'dto', paramdto)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramdto, paramposition, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableRow', 'dto')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableRow', 'dto', paramdto, 'TableRow')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableRow', 'dto', paramdto, 'TableRow')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid position' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableRow', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableRow', 'TableRow')
+      paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateTableRow', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableRow', 'String')
+      paramposition = AsposeSlidesCloud::SpecUtils.invalidize_param_value('position', 'CreateTableRow', paramposition, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableRow', 'position', paramposition)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramdto, paramposition, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableRow', 'position')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableRow', 'position', paramposition, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableRow', 'position', paramposition, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableRow', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableRow', 'TableRow')
+      paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateTableRow', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableRow', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'CreateTableRow', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableRow', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramdto, paramposition, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableRow', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableRow', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableRow', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableRow', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableRow', 'TableRow')
+      paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateTableRow', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'CreateTableRow', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableRow', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramdto, paramposition, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableRow', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableRow', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableRow', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateTableRow', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateTableRow', 'TableRow')
+      paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateTableRow', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'CreateTableRow', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateTableRow', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramdto, paramposition, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateTableRow', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableRow', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateTableRow', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for create_watermark
   # Adds a text watermark to each slide of the presentation. Text watermark can be setup via method arguments or withing Shape DTO for detailed customization. Both options are applicable simultaneously. 
   # @param name Document name.
@@ -17368,6 +18222,860 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteSpecialSlideShapes', 'subShape', paramsub_shape, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for delete_table_cell_paragraph
+  # Delete cell paragraph.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param row_index Row index.
+  # @param cell_index Table cell index.
+  # @param paragraph_index Paragraph index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Paragraphs]
+  describe 'delete_table_cell_paragraph test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellParagraph', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellParagraph', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.delete_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellParagraph', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellParagraph', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'DeleteTableCellParagraph', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellParagraph', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableCellParagraph', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellParagraph', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellParagraph', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'DeleteTableCellParagraph', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellParagraph', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableCellParagraph', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellParagraph', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellParagraph', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellParagraph', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'DeleteTableCellParagraph', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellParagraph', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableCellParagraph', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellParagraph', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellParagraph', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid row_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellParagraph', 'String')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('rowIndex', 'DeleteTableCellParagraph', paramrow_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellParagraph', 'rowIndex', paramrow_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableCellParagraph', 'rowIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellParagraph', 'rowIndex', paramrow_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellParagraph', 'rowIndex', paramrow_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid cell_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellParagraph', 'String')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('cellIndex', 'DeleteTableCellParagraph', paramcell_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellParagraph', 'cellIndex', paramcell_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableCellParagraph', 'cellIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellParagraph', 'cellIndex', paramcell_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellParagraph', 'cellIndex', paramcell_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid paragraph_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellParagraph', 'String')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('paragraphIndex', 'DeleteTableCellParagraph', paramparagraph_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellParagraph', 'paragraphIndex', paramparagraph_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableCellParagraph', 'paragraphIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellParagraph', 'paragraphIndex', paramparagraph_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellParagraph', 'paragraphIndex', paramparagraph_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellParagraph', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'DeleteTableCellParagraph', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellParagraph', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableCellParagraph', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellParagraph', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellParagraph', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'DeleteTableCellParagraph', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellParagraph', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableCellParagraph', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellParagraph', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellParagraph', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'DeleteTableCellParagraph', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellParagraph', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableCellParagraph', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellParagraph', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellParagraph', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for delete_table_cell_portion
+  # Delete table ell portion.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param row_index Row index.
+  # @param cell_index Table cell index.
+  # @param paragraph_index Paragraph index.
+  # @param portion_index Portion index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Portions]
+  describe 'delete_table_cell_portion test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellPortion', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellPortion', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.delete_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellPortion', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'DeleteTableCellPortion', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellPortion', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableCellPortion', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'DeleteTableCellPortion', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellPortion', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableCellPortion', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellPortion', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'DeleteTableCellPortion', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellPortion', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableCellPortion', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid row_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellPortion', 'String')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('rowIndex', 'DeleteTableCellPortion', paramrow_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellPortion', 'rowIndex', paramrow_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableCellPortion', 'rowIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'rowIndex', paramrow_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'rowIndex', paramrow_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid cell_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellPortion', 'String')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('cellIndex', 'DeleteTableCellPortion', paramcell_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellPortion', 'cellIndex', paramcell_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableCellPortion', 'cellIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'cellIndex', paramcell_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'cellIndex', paramcell_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid paragraph_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellPortion', 'String')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('paragraphIndex', 'DeleteTableCellPortion', paramparagraph_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellPortion', 'paragraphIndex', paramparagraph_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableCellPortion', 'paragraphIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'paragraphIndex', paramparagraph_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'paragraphIndex', paramparagraph_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid portion_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellPortion', 'String')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('portionIndex', 'DeleteTableCellPortion', paramportion_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellPortion', 'portionIndex', paramportion_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableCellPortion', 'portionIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'portionIndex', paramportion_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'portionIndex', paramportion_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellPortion', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'DeleteTableCellPortion', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellPortion', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableCellPortion', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'DeleteTableCellPortion', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellPortion', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableCellPortion', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'DeleteTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'DeleteTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'DeleteTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'DeleteTableCellPortion', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableCellPortion', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableCellPortion', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableCellPortion', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for delete_table_row
+  # Deletes the table row.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param row_index Row index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :with_attached_rows Also delete all attached rows.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Table]
+  describe 'delete_table_row test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableRow', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableRow', 'Integer')
+      paramwith_attached_rows = AsposeSlidesCloud::SpecUtils.get_param_value('withAttachedRows', 'DeleteTableRow', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableRow', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableRow', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.delete_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramwith_attached_rows, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableRow', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableRow', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableRow', 'Integer')
+      paramwith_attached_rows = AsposeSlidesCloud::SpecUtils.get_param_value('withAttachedRows', 'DeleteTableRow', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableRow', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'DeleteTableRow', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableRow', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramwith_attached_rows, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableRow', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableRow', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableRow', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableRow', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableRow', 'Integer')
+      paramwith_attached_rows = AsposeSlidesCloud::SpecUtils.get_param_value('withAttachedRows', 'DeleteTableRow', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'DeleteTableRow', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableRow', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramwith_attached_rows, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableRow', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableRow', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableRow', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableRow', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableRow', 'Integer')
+      paramwith_attached_rows = AsposeSlidesCloud::SpecUtils.get_param_value('withAttachedRows', 'DeleteTableRow', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableRow', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'DeleteTableRow', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableRow', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramwith_attached_rows, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableRow', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableRow', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableRow', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid row_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableRow', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableRow', 'Integer')
+      paramwith_attached_rows = AsposeSlidesCloud::SpecUtils.get_param_value('withAttachedRows', 'DeleteTableRow', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableRow', 'String')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('rowIndex', 'DeleteTableRow', paramrow_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableRow', 'rowIndex', paramrow_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramwith_attached_rows, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableRow', 'rowIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableRow', 'rowIndex', paramrow_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableRow', 'rowIndex', paramrow_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid with_attached_rows' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableRow', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableRow', 'Integer')
+      paramwith_attached_rows = AsposeSlidesCloud::SpecUtils.get_param_value('withAttachedRows', 'DeleteTableRow', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableRow', 'String')
+      paramwith_attached_rows = AsposeSlidesCloud::SpecUtils.invalidize_param_value('withAttachedRows', 'DeleteTableRow', paramwith_attached_rows, 'BOOLEAN')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableRow', 'withAttachedRows', paramwith_attached_rows)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramwith_attached_rows, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableRow', 'withAttachedRows')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableRow', 'withAttachedRows', paramwith_attached_rows, 'BOOLEAN')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableRow', 'withAttachedRows', paramwith_attached_rows, 'BOOLEAN')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableRow', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableRow', 'Integer')
+      paramwith_attached_rows = AsposeSlidesCloud::SpecUtils.get_param_value('withAttachedRows', 'DeleteTableRow', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableRow', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'DeleteTableRow', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableRow', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramwith_attached_rows, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableRow', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableRow', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableRow', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableRow', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableRow', 'Integer')
+      paramwith_attached_rows = AsposeSlidesCloud::SpecUtils.get_param_value('withAttachedRows', 'DeleteTableRow', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'DeleteTableRow', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableRow', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramwith_attached_rows, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableRow', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableRow', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableRow', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteTableRow', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'DeleteTableRow', 'Integer')
+      paramwith_attached_rows = AsposeSlidesCloud::SpecUtils.get_param_value('withAttachedRows', 'DeleteTableRow', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'DeleteTableRow', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteTableRow', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramwith_attached_rows, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteTableRow', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableRow', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteTableRow', 'storage', paramstorage, 'String')
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
@@ -30695,6 +32403,1144 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for get_table_cell_paragraph
+  # Returns paragraph info.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param row_index Row index.
+  # @param cell_index Table cell index.
+  # @param paragraph_index Paragraph index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Paragraph]
+  describe 'get_table_cell_paragraph test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellParagraph', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellParagraph', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraph', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellParagraph', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetTableCellParagraph', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellParagraph', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellParagraph', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraph', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraph', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'GetTableCellParagraph', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellParagraph', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellParagraph', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraph', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraph', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellParagraph', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'GetTableCellParagraph', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellParagraph', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellParagraph', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraph', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraph', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid row_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellParagraph', 'String')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('rowIndex', 'GetTableCellParagraph', paramrow_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellParagraph', 'rowIndex', paramrow_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellParagraph', 'rowIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraph', 'rowIndex', paramrow_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraph', 'rowIndex', paramrow_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid cell_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellParagraph', 'String')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('cellIndex', 'GetTableCellParagraph', paramcell_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellParagraph', 'cellIndex', paramcell_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellParagraph', 'cellIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraph', 'cellIndex', paramcell_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraph', 'cellIndex', paramcell_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid paragraph_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellParagraph', 'String')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('paragraphIndex', 'GetTableCellParagraph', paramparagraph_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellParagraph', 'paragraphIndex', paramparagraph_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellParagraph', 'paragraphIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraph', 'paragraphIndex', paramparagraph_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraph', 'paragraphIndex', paramparagraph_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellParagraph', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetTableCellParagraph', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellParagraph', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellParagraph', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraph', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraph', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetTableCellParagraph', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellParagraph', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellParagraph', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraph', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraph', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellParagraph', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetTableCellParagraph', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellParagraph', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellParagraph', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraph', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraph', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for get_table_cell_paragraphs
+  # Returns table cell paragraphs.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param row_index Row index.
+  # @param cell_index Table cell index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Paragraphs]
+  describe 'get_table_cell_paragraphs test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellParagraphs', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellParagraphs', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellParagraphs', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellParagraphs', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellParagraphs', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellParagraphs', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellParagraphs', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellParagraphs', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellParagraphs', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraphs_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraphs', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellParagraphs', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellParagraphs', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellParagraphs', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellParagraphs', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellParagraphs', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellParagraphs', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellParagraphs', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellParagraphs', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetTableCellParagraphs', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellParagraphs', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraphs_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellParagraphs', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraphs', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraphs', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellParagraphs', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellParagraphs', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellParagraphs', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellParagraphs', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellParagraphs', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellParagraphs', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellParagraphs', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellParagraphs', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'GetTableCellParagraphs', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellParagraphs', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraphs_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellParagraphs', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraphs', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraphs', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellParagraphs', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellParagraphs', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellParagraphs', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellParagraphs', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellParagraphs', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellParagraphs', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellParagraphs', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellParagraphs', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'GetTableCellParagraphs', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellParagraphs', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraphs_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellParagraphs', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraphs', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraphs', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid row_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellParagraphs', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellParagraphs', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellParagraphs', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellParagraphs', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellParagraphs', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellParagraphs', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellParagraphs', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellParagraphs', 'String')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('rowIndex', 'GetTableCellParagraphs', paramrow_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellParagraphs', 'rowIndex', paramrow_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraphs_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellParagraphs', 'rowIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraphs', 'rowIndex', paramrow_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraphs', 'rowIndex', paramrow_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid cell_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellParagraphs', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellParagraphs', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellParagraphs', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellParagraphs', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellParagraphs', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellParagraphs', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellParagraphs', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellParagraphs', 'String')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('cellIndex', 'GetTableCellParagraphs', paramcell_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellParagraphs', 'cellIndex', paramcell_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraphs_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellParagraphs', 'cellIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraphs', 'cellIndex', paramcell_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraphs', 'cellIndex', paramcell_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellParagraphs', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellParagraphs', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellParagraphs', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellParagraphs', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellParagraphs', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellParagraphs', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellParagraphs', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellParagraphs', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetTableCellParagraphs', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellParagraphs', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraphs_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellParagraphs', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraphs', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraphs', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellParagraphs', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellParagraphs', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellParagraphs', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellParagraphs', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellParagraphs', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellParagraphs', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellParagraphs', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellParagraphs', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetTableCellParagraphs', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellParagraphs', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraphs_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellParagraphs', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraphs', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraphs', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellParagraphs', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellParagraphs', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellParagraphs', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellParagraphs', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellParagraphs', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellParagraphs', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellParagraphs', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellParagraphs', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetTableCellParagraphs', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellParagraphs', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraphs_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellParagraphs', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraphs', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellParagraphs', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for get_table_cell_portion
+  # Returns table cell portion.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param row_index Row index.
+  # @param cell_index Table cell index.
+  # @param paragraph_index Paragraph index.
+  # @param portion_index Portion index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Portion]
+  describe 'get_table_cell_portion test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortion', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortion', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortion', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetTableCellPortion', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortion', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellPortion', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'GetTableCellPortion', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortion', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellPortion', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortion', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'GetTableCellPortion', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortion', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellPortion', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid row_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortion', 'String')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('rowIndex', 'GetTableCellPortion', paramrow_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortion', 'rowIndex', paramrow_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellPortion', 'rowIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'rowIndex', paramrow_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'rowIndex', paramrow_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid cell_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortion', 'String')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('cellIndex', 'GetTableCellPortion', paramcell_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortion', 'cellIndex', paramcell_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellPortion', 'cellIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'cellIndex', paramcell_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'cellIndex', paramcell_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid paragraph_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortion', 'String')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('paragraphIndex', 'GetTableCellPortion', paramparagraph_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortion', 'paragraphIndex', paramparagraph_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellPortion', 'paragraphIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'paragraphIndex', paramparagraph_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'paragraphIndex', paramparagraph_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid portion_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortion', 'String')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('portionIndex', 'GetTableCellPortion', paramportion_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortion', 'portionIndex', paramportion_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellPortion', 'portionIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'portionIndex', paramportion_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'portionIndex', paramportion_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortion', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetTableCellPortion', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortion', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellPortion', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetTableCellPortion', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortion', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellPortion', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'GetTableCellPortion', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetTableCellPortion', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortion', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellPortion', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortion', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for get_table_cell_portions
+  # Returns table cell portions.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param row_index Row index.
+  # @param cell_index Table cell index.
+  # @param paragraph_index Paragraph index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Portions]
+  describe 'get_table_cell_portions test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortions', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortions', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortions', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortions', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortions', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortions', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortions', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortions', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortions', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortions', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_table_cell_portions_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortions', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortions', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortions', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortions', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortions', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortions', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortions', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortions', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortions', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortions', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetTableCellPortions', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortions', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_portions_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellPortions', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortions', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortions', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortions', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortions', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortions', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortions', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortions', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortions', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortions', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortions', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortions', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'GetTableCellPortions', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortions', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_portions_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellPortions', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortions', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortions', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortions', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortions', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortions', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortions', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortions', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortions', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortions', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortions', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortions', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'GetTableCellPortions', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortions', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_portions_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellPortions', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortions', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortions', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid row_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortions', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortions', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortions', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortions', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortions', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortions', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortions', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortions', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortions', 'String')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('rowIndex', 'GetTableCellPortions', paramrow_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortions', 'rowIndex', paramrow_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_portions_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellPortions', 'rowIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortions', 'rowIndex', paramrow_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortions', 'rowIndex', paramrow_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid cell_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortions', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortions', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortions', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortions', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortions', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortions', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortions', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortions', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortions', 'String')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('cellIndex', 'GetTableCellPortions', paramcell_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortions', 'cellIndex', paramcell_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_portions_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellPortions', 'cellIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortions', 'cellIndex', paramcell_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortions', 'cellIndex', paramcell_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid paragraph_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortions', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortions', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortions', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortions', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortions', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortions', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortions', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortions', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortions', 'String')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('paragraphIndex', 'GetTableCellPortions', paramparagraph_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortions', 'paragraphIndex', paramparagraph_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_portions_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellPortions', 'paragraphIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortions', 'paragraphIndex', paramparagraph_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortions', 'paragraphIndex', paramparagraph_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortions', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortions', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortions', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortions', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortions', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortions', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortions', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortions', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortions', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetTableCellPortions', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortions', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_portions_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellPortions', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortions', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortions', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortions', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortions', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortions', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortions', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortions', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortions', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortions', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortions', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortions', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetTableCellPortions', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortions', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_portions_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellPortions', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortions', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortions', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetTableCellPortions', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetTableCellPortions', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetTableCellPortions', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'GetTableCellPortions', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'GetTableCellPortions', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'GetTableCellPortions', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetTableCellPortions', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetTableCellPortions', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetTableCellPortions', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetTableCellPortions', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetTableCellPortions', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_table_cell_portions_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetTableCellPortions', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortions', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTableCellPortions', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for get_theme
   # Read slide theme info.
   # @param name Document name.
@@ -32635,6 +35481,216 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MergeOnline', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for merge_table_cells
+  # Merge table cells.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param table_cell_merge_options Merge settings.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Table]
+  describe 'merge_table_cells test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'MergeTableCells', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'MergeTableCells', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'MergeTableCells', 'Integer')
+      paramtable_cell_merge_options = AsposeSlidesCloud::SpecUtils.get_param_value('tableCellMergeOptions', 'MergeTableCells', 'TableCellMergeOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'MergeTableCells', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'MergeTableCells', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'MergeTableCells', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('MergeTableCells', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.merge_table_cells_with_http_info(paramname, paramslide_index, paramshape_index, paramtable_cell_merge_options, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MergeTableCells', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'MergeTableCells', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'MergeTableCells', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'MergeTableCells', 'Integer')
+      paramtable_cell_merge_options = AsposeSlidesCloud::SpecUtils.get_param_value('tableCellMergeOptions', 'MergeTableCells', 'TableCellMergeOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'MergeTableCells', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'MergeTableCells', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'MergeTableCells', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'MergeTableCells', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('MergeTableCells', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.merge_table_cells_with_http_info(paramname, paramslide_index, paramshape_index, paramtable_cell_merge_options, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('MergeTableCells', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MergeTableCells', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MergeTableCells', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'MergeTableCells', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'MergeTableCells', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'MergeTableCells', 'Integer')
+      paramtable_cell_merge_options = AsposeSlidesCloud::SpecUtils.get_param_value('tableCellMergeOptions', 'MergeTableCells', 'TableCellMergeOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'MergeTableCells', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'MergeTableCells', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'MergeTableCells', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'MergeTableCells', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('MergeTableCells', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.merge_table_cells_with_http_info(paramname, paramslide_index, paramshape_index, paramtable_cell_merge_options, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('MergeTableCells', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MergeTableCells', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MergeTableCells', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'MergeTableCells', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'MergeTableCells', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'MergeTableCells', 'Integer')
+      paramtable_cell_merge_options = AsposeSlidesCloud::SpecUtils.get_param_value('tableCellMergeOptions', 'MergeTableCells', 'TableCellMergeOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'MergeTableCells', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'MergeTableCells', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'MergeTableCells', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'MergeTableCells', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('MergeTableCells', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.merge_table_cells_with_http_info(paramname, paramslide_index, paramshape_index, paramtable_cell_merge_options, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('MergeTableCells', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MergeTableCells', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MergeTableCells', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid table_cell_merge_options' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'MergeTableCells', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'MergeTableCells', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'MergeTableCells', 'Integer')
+      paramtable_cell_merge_options = AsposeSlidesCloud::SpecUtils.get_param_value('tableCellMergeOptions', 'MergeTableCells', 'TableCellMergeOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'MergeTableCells', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'MergeTableCells', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'MergeTableCells', 'String')
+      paramtable_cell_merge_options = AsposeSlidesCloud::SpecUtils.invalidize_param_value('tableCellMergeOptions', 'MergeTableCells', paramtable_cell_merge_options, 'TableCellMergeOptions')
+      AsposeSlidesCloud::SpecUtils.initialize('MergeTableCells', 'tableCellMergeOptions', paramtable_cell_merge_options)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.merge_table_cells_with_http_info(paramname, paramslide_index, paramshape_index, paramtable_cell_merge_options, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('MergeTableCells', 'tableCellMergeOptions')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MergeTableCells', 'tableCellMergeOptions', paramtable_cell_merge_options, 'TableCellMergeOptions')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MergeTableCells', 'tableCellMergeOptions', paramtable_cell_merge_options, 'TableCellMergeOptions')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'MergeTableCells', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'MergeTableCells', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'MergeTableCells', 'Integer')
+      paramtable_cell_merge_options = AsposeSlidesCloud::SpecUtils.get_param_value('tableCellMergeOptions', 'MergeTableCells', 'TableCellMergeOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'MergeTableCells', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'MergeTableCells', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'MergeTableCells', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'MergeTableCells', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('MergeTableCells', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.merge_table_cells_with_http_info(paramname, paramslide_index, paramshape_index, paramtable_cell_merge_options, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('MergeTableCells', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MergeTableCells', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MergeTableCells', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'MergeTableCells', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'MergeTableCells', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'MergeTableCells', 'Integer')
+      paramtable_cell_merge_options = AsposeSlidesCloud::SpecUtils.get_param_value('tableCellMergeOptions', 'MergeTableCells', 'TableCellMergeOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'MergeTableCells', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'MergeTableCells', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'MergeTableCells', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'MergeTableCells', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('MergeTableCells', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.merge_table_cells_with_http_info(paramname, paramslide_index, paramshape_index, paramtable_cell_merge_options, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('MergeTableCells', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MergeTableCells', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MergeTableCells', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'MergeTableCells', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'MergeTableCells', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'MergeTableCells', 'Integer')
+      paramtable_cell_merge_options = AsposeSlidesCloud::SpecUtils.get_param_value('tableCellMergeOptions', 'MergeTableCells', 'TableCellMergeOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'MergeTableCells', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'MergeTableCells', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'MergeTableCells', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'MergeTableCells', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('MergeTableCells', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.merge_table_cells_with_http_info(paramname, paramslide_index, paramshape_index, paramtable_cell_merge_options, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('MergeTableCells', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MergeTableCells', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('MergeTableCells', 'storage', paramstorage, 'String')
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
@@ -43120,6 +46176,330 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for split_table_cell
+  # Split table cell.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param row_index Row index.
+  # @param cell_index Table cell index.
+  # @param split_type Table cell split type (SplitByWidth, SplitByHeight,SplitByColSpan or SplitByRowSpan).
+  # @param value Split value. In case of splitting by column or row span, the value must be an integer number.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Table]
+  describe 'split_table_cell test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SplitTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SplitTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SplitTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'SplitTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'SplitTableCell', 'Integer')
+      paramsplit_type = AsposeSlidesCloud::SpecUtils.get_param_value('splitType', 'SplitTableCell', 'String')
+      paramvalue = AsposeSlidesCloud::SpecUtils.get_param_value('value', 'SplitTableCell', 'Float')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SplitTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitTableCell', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SplitTableCell', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.split_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramsplit_type, paramvalue, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SplitTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SplitTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SplitTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'SplitTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'SplitTableCell', 'Integer')
+      paramsplit_type = AsposeSlidesCloud::SpecUtils.get_param_value('splitType', 'SplitTableCell', 'String')
+      paramvalue = AsposeSlidesCloud::SpecUtils.get_param_value('value', 'SplitTableCell', 'Float')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SplitTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitTableCell', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'SplitTableCell', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SplitTableCell', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.split_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramsplit_type, paramvalue, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitTableCell', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SplitTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SplitTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SplitTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'SplitTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'SplitTableCell', 'Integer')
+      paramsplit_type = AsposeSlidesCloud::SpecUtils.get_param_value('splitType', 'SplitTableCell', 'String')
+      paramvalue = AsposeSlidesCloud::SpecUtils.get_param_value('value', 'SplitTableCell', 'Float')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SplitTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'SplitTableCell', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('SplitTableCell', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.split_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramsplit_type, paramvalue, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitTableCell', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SplitTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SplitTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SplitTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'SplitTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'SplitTableCell', 'Integer')
+      paramsplit_type = AsposeSlidesCloud::SpecUtils.get_param_value('splitType', 'SplitTableCell', 'String')
+      paramvalue = AsposeSlidesCloud::SpecUtils.get_param_value('value', 'SplitTableCell', 'Float')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SplitTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitTableCell', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'SplitTableCell', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('SplitTableCell', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.split_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramsplit_type, paramvalue, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitTableCell', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid row_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SplitTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SplitTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SplitTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'SplitTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'SplitTableCell', 'Integer')
+      paramsplit_type = AsposeSlidesCloud::SpecUtils.get_param_value('splitType', 'SplitTableCell', 'String')
+      paramvalue = AsposeSlidesCloud::SpecUtils.get_param_value('value', 'SplitTableCell', 'Float')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SplitTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitTableCell', 'String')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('rowIndex', 'SplitTableCell', paramrow_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('SplitTableCell', 'rowIndex', paramrow_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.split_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramsplit_type, paramvalue, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitTableCell', 'rowIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'rowIndex', paramrow_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'rowIndex', paramrow_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid cell_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SplitTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SplitTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SplitTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'SplitTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'SplitTableCell', 'Integer')
+      paramsplit_type = AsposeSlidesCloud::SpecUtils.get_param_value('splitType', 'SplitTableCell', 'String')
+      paramvalue = AsposeSlidesCloud::SpecUtils.get_param_value('value', 'SplitTableCell', 'Float')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SplitTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitTableCell', 'String')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('cellIndex', 'SplitTableCell', paramcell_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('SplitTableCell', 'cellIndex', paramcell_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.split_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramsplit_type, paramvalue, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitTableCell', 'cellIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'cellIndex', paramcell_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'cellIndex', paramcell_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid split_type' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SplitTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SplitTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SplitTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'SplitTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'SplitTableCell', 'Integer')
+      paramsplit_type = AsposeSlidesCloud::SpecUtils.get_param_value('splitType', 'SplitTableCell', 'String')
+      paramvalue = AsposeSlidesCloud::SpecUtils.get_param_value('value', 'SplitTableCell', 'Float')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SplitTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitTableCell', 'String')
+      paramsplit_type = AsposeSlidesCloud::SpecUtils.invalidize_param_value('splitType', 'SplitTableCell', paramsplit_type, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SplitTableCell', 'splitType', paramsplit_type)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.split_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramsplit_type, paramvalue, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitTableCell', 'splitType')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'splitType', paramsplit_type, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'splitType', paramsplit_type, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid value' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SplitTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SplitTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SplitTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'SplitTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'SplitTableCell', 'Integer')
+      paramsplit_type = AsposeSlidesCloud::SpecUtils.get_param_value('splitType', 'SplitTableCell', 'String')
+      paramvalue = AsposeSlidesCloud::SpecUtils.get_param_value('value', 'SplitTableCell', 'Float')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SplitTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitTableCell', 'String')
+      paramvalue = AsposeSlidesCloud::SpecUtils.invalidize_param_value('value', 'SplitTableCell', paramvalue, 'Float')
+      AsposeSlidesCloud::SpecUtils.initialize('SplitTableCell', 'value', paramvalue)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.split_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramsplit_type, paramvalue, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitTableCell', 'value')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'value', paramvalue, 'Float')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'value', paramvalue, 'Float')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SplitTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SplitTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SplitTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'SplitTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'SplitTableCell', 'Integer')
+      paramsplit_type = AsposeSlidesCloud::SpecUtils.get_param_value('splitType', 'SplitTableCell', 'String')
+      paramvalue = AsposeSlidesCloud::SpecUtils.get_param_value('value', 'SplitTableCell', 'Float')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SplitTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitTableCell', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'SplitTableCell', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SplitTableCell', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.split_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramsplit_type, paramvalue, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitTableCell', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SplitTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SplitTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SplitTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'SplitTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'SplitTableCell', 'Integer')
+      paramsplit_type = AsposeSlidesCloud::SpecUtils.get_param_value('splitType', 'SplitTableCell', 'String')
+      paramvalue = AsposeSlidesCloud::SpecUtils.get_param_value('value', 'SplitTableCell', 'Float')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SplitTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'SplitTableCell', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SplitTableCell', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.split_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramsplit_type, paramvalue, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitTableCell', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SplitTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'SplitTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'SplitTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'SplitTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'SplitTableCell', 'Integer')
+      paramsplit_type = AsposeSlidesCloud::SpecUtils.get_param_value('splitType', 'SplitTableCell', 'String')
+      paramvalue = AsposeSlidesCloud::SpecUtils.get_param_value('value', 'SplitTableCell', 'Float')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SplitTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SplitTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SplitTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'SplitTableCell', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SplitTableCell', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.split_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramsplit_type, paramvalue, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SplitTableCell', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SplitTableCell', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for storage_exists
   # Check if storage exists
   # @param storage_name Storage name
@@ -47444,6 +50824,1226 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateSpecialSlideShape', 'subShape', paramsub_shape, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for update_table_cell
+  # Update the table cell.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param row_index Row index.
+  # @param cell_index Table cell index.
+  # @param dto Table cell data.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [TableCell]
+  describe 'update_table_cell test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCell', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCell', 'TableCell')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCell', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCell', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.update_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCell', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCell', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCell', 'TableCell')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCell', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'UpdateTableCell', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCell', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCell', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCell', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCell', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCell', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCell', 'TableCell')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'UpdateTableCell', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCell', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCell', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCell', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCell', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCell', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCell', 'TableCell')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCell', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'UpdateTableCell', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCell', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCell', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCell', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCell', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid row_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCell', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCell', 'TableCell')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCell', 'String')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('rowIndex', 'UpdateTableCell', paramrow_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCell', 'rowIndex', paramrow_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCell', 'rowIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCell', 'rowIndex', paramrow_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCell', 'rowIndex', paramrow_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid cell_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCell', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCell', 'TableCell')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCell', 'String')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('cellIndex', 'UpdateTableCell', paramcell_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCell', 'cellIndex', paramcell_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCell', 'cellIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCell', 'cellIndex', paramcell_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCell', 'cellIndex', paramcell_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid dto' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCell', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCell', 'TableCell')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCell', 'String')
+      paramdto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'UpdateTableCell', paramdto, 'TableCell')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCell', 'dto', paramdto)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCell', 'dto')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCell', 'dto', paramdto, 'TableCell')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCell', 'dto', paramdto, 'TableCell')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCell', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCell', 'TableCell')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCell', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'UpdateTableCell', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCell', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCell', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCell', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCell', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCell', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCell', 'TableCell')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'UpdateTableCell', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCell', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCell', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCell', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCell', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCell', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCell', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCell', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCell', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCell', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCell', 'TableCell')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCell', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCell', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'UpdateTableCell', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCell', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCell', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCell', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCell', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for update_table_cell_paragraph
+  # Updates table cell paragraph.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param row_index Row index.
+  # @param cell_index Table cell index.
+  # @param paragraph_index Paragraph index.
+  # @param dto Paragraph DTO.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Paragraph]
+  describe 'update_table_cell_paragraph test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellParagraph', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellParagraph', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.update_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellParagraph', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'UpdateTableCellParagraph', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellParagraph', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellParagraph', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'UpdateTableCellParagraph', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellParagraph', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellParagraph', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellParagraph', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'UpdateTableCellParagraph', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellParagraph', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellParagraph', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid row_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellParagraph', 'String')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('rowIndex', 'UpdateTableCellParagraph', paramrow_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellParagraph', 'rowIndex', paramrow_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellParagraph', 'rowIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'rowIndex', paramrow_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'rowIndex', paramrow_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid cell_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellParagraph', 'String')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('cellIndex', 'UpdateTableCellParagraph', paramcell_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellParagraph', 'cellIndex', paramcell_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellParagraph', 'cellIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'cellIndex', paramcell_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'cellIndex', paramcell_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid paragraph_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellParagraph', 'String')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('paragraphIndex', 'UpdateTableCellParagraph', paramparagraph_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellParagraph', 'paragraphIndex', paramparagraph_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellParagraph', 'paragraphIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'paragraphIndex', paramparagraph_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'paragraphIndex', paramparagraph_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid dto' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellParagraph', 'String')
+      paramdto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'UpdateTableCellParagraph', paramdto, 'Paragraph')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellParagraph', 'dto', paramdto)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellParagraph', 'dto')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'dto', paramdto, 'Paragraph')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'dto', paramdto, 'Paragraph')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellParagraph', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'UpdateTableCellParagraph', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellParagraph', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellParagraph', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'UpdateTableCellParagraph', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellParagraph', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellParagraph', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellParagraph', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellParagraph', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellParagraph', 'Paragraph')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellParagraph', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellParagraph', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'UpdateTableCellParagraph', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellParagraph', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_paragraph_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellParagraph', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellParagraph', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for update_table_cell_portion
+  # Updates table cell portion.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param row_index Row index.
+  # @param cell_index Table cell index.
+  # @param paragraph_index Paragraph index.
+  # @param portion_index Portion index.
+  # @param dto Portion DTO.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Portion]
+  describe 'update_table_cell_portion test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'UpdateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellPortion', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellPortion', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.update_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, paramdto, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'UpdateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellPortion', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'UpdateTableCellPortion', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellPortion', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellPortion', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'UpdateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'UpdateTableCellPortion', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellPortion', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellPortion', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'UpdateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellPortion', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'UpdateTableCellPortion', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellPortion', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellPortion', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid row_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'UpdateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellPortion', 'String')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('rowIndex', 'UpdateTableCellPortion', paramrow_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellPortion', 'rowIndex', paramrow_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellPortion', 'rowIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'rowIndex', paramrow_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'rowIndex', paramrow_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid cell_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'UpdateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellPortion', 'String')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('cellIndex', 'UpdateTableCellPortion', paramcell_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellPortion', 'cellIndex', paramcell_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellPortion', 'cellIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'cellIndex', paramcell_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'cellIndex', paramcell_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid paragraph_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'UpdateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellPortion', 'String')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('paragraphIndex', 'UpdateTableCellPortion', paramparagraph_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellPortion', 'paragraphIndex', paramparagraph_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellPortion', 'paragraphIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'paragraphIndex', paramparagraph_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'paragraphIndex', paramparagraph_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid portion_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'UpdateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellPortion', 'String')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('portionIndex', 'UpdateTableCellPortion', paramportion_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellPortion', 'portionIndex', paramportion_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellPortion', 'portionIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'portionIndex', paramportion_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'portionIndex', paramportion_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid dto' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'UpdateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellPortion', 'String')
+      paramdto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'UpdateTableCellPortion', paramdto, 'Portion')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellPortion', 'dto', paramdto)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellPortion', 'dto')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'dto', paramdto, 'Portion')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'dto', paramdto, 'Portion')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'UpdateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellPortion', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'UpdateTableCellPortion', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellPortion', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellPortion', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'UpdateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'UpdateTableCellPortion', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellPortion', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellPortion', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableCellPortion', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableCellPortion', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableCellPortion', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableCellPortion', 'Integer')
+      paramcell_index = AsposeSlidesCloud::SpecUtils.get_param_value('cellIndex', 'UpdateTableCellPortion', 'Integer')
+      paramparagraph_index = AsposeSlidesCloud::SpecUtils.get_param_value('paragraphIndex', 'UpdateTableCellPortion', 'Integer')
+      paramportion_index = AsposeSlidesCloud::SpecUtils.get_param_value('portionIndex', 'UpdateTableCellPortion', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableCellPortion', 'Portion')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableCellPortion', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableCellPortion', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'UpdateTableCellPortion', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableCellPortion', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_cell_portion_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramcell_index, paramparagraph_index, paramportion_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableCellPortion', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableCellPortion', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for update_table_row
+  # Update the table row.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index.
+  # @param row_index Row index.
+  # @param dto Table cell data.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [TableRow]
+  describe 'update_table_row test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableRow', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableRow', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableRow', 'TableRow')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableRow', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableRow', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.update_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramdto, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableRow', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableRow', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableRow', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableRow', 'TableRow')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableRow', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'UpdateTableRow', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableRow', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableRow', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableRow', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableRow', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableRow', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableRow', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableRow', 'TableRow')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'UpdateTableRow', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableRow', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableRow', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableRow', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableRow', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableRow', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableRow', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableRow', 'TableRow')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableRow', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'UpdateTableRow', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableRow', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableRow', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableRow', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableRow', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid row_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableRow', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableRow', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableRow', 'TableRow')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableRow', 'String')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('rowIndex', 'UpdateTableRow', paramrow_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableRow', 'rowIndex', paramrow_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableRow', 'rowIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableRow', 'rowIndex', paramrow_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableRow', 'rowIndex', paramrow_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid dto' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableRow', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableRow', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableRow', 'TableRow')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableRow', 'String')
+      paramdto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'UpdateTableRow', paramdto, 'TableRow')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableRow', 'dto', paramdto)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableRow', 'dto')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableRow', 'dto', paramdto, 'TableRow')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableRow', 'dto', paramdto, 'TableRow')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableRow', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableRow', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableRow', 'TableRow')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableRow', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'UpdateTableRow', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableRow', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableRow', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableRow', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableRow', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableRow', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableRow', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableRow', 'TableRow')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'UpdateTableRow', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableRow', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableRow', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableRow', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableRow', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateTableRow', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'UpdateTableRow', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'UpdateTableRow', 'Integer')
+      paramrow_index = AsposeSlidesCloud::SpecUtils.get_param_value('rowIndex', 'UpdateTableRow', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'UpdateTableRow', 'TableRow')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateTableRow', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateTableRow', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'UpdateTableRow', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateTableRow', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_table_row_with_http_info(paramname, paramslide_index, paramshape_index, paramrow_index, paramdto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateTableRow', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableRow', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableRow', 'storage', paramstorage, 'String')
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end

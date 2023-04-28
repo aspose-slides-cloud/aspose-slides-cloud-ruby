@@ -20,6 +20,23 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 =end
 
+require 'date'
+
 module AsposeSlidesCloud
-  VERSION = '23.4.0'
+  class TableCellSplitType
+    
+    SPLIT_BY_WIDTH = 'SplitByWidth'.freeze
+    SPLIT_BY_HEIGHT = 'SplitByHeight'.freeze
+    SPLIT_BY_COL_SPAN = 'SplitByColSpan'.freeze
+    SPLIT_BY_ROW_SPAN = 'SplitByRowSpan'.freeze
+
+    # Builds the enum from string
+    # @param [String] The enum value in the form of the string
+    # @return [String] The enum value
+    def build_from_hash(value)
+      constantValues = TableCellSplitType.constants.select { |c| TableCellSplitType::const_get(c) == value }
+      raise "Invalid ENUM value #{value} for class #TableCellSplitType" if constantValues.empty?
+      value
+    end
+  end
 end

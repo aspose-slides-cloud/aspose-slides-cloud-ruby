@@ -2869,6 +2869,275 @@ module AsposeSlidesCloud
         :return_type => 'ShapeBase')
       return data, status_code, headers
     end
+    # Creates table cell paragraph.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param dto Paragraph DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_table_cell_paragraph(name, slide_index, shape_index, row_index, cell_index, dto, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = create_table_cell_paragraph_with_http_info(name, slide_index, shape_index, row_index, cell_index, dto, password, folder, storage)
+      data
+    end
+
+    # Creates table cell paragraph.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param dto Paragraph DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_table_cell_paragraph_with_http_info(name, slide_index, shape_index, row_index, cell_index, dto, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.create_table_cell_paragraph ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.create_table_cell_paragraph"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.create_table_cell_paragraph"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.create_table_cell_paragraph"
+      end
+      # verify the required parameter 'row_index' is set
+      if @api_client.config.client_side_validation && row_index.nil?
+        fail ArgumentError, "Missing the required parameter 'row_index' when calling SlidesApi.create_table_cell_paragraph"
+      end
+      # verify the required parameter 'cell_index' is set
+      if @api_client.config.client_side_validation && cell_index.nil?
+        fail ArgumentError, "Missing the required parameter 'cell_index' when calling SlidesApi.create_table_cell_paragraph"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.create_table_cell_paragraph"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/rows/{rowIndex}/cells/{cellIndex}/paragraphs'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'rowIndex', row_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'cellIndex', cell_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Paragraph')
+      return data, status_code, headers
+    end
+    # Creates table cell portion.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param paragraph_index Paragraph index.
+    # @param dto Portion DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_table_cell_portion(name, slide_index, shape_index, row_index, cell_index, paragraph_index, dto, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = create_table_cell_portion_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, dto, password, folder, storage)
+      data
+    end
+
+    # Creates table cell portion.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param paragraph_index Paragraph index.
+    # @param dto Portion DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_table_cell_portion_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, dto, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.create_table_cell_portion ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.create_table_cell_portion"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.create_table_cell_portion"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.create_table_cell_portion"
+      end
+      # verify the required parameter 'row_index' is set
+      if @api_client.config.client_side_validation && row_index.nil?
+        fail ArgumentError, "Missing the required parameter 'row_index' when calling SlidesApi.create_table_cell_portion"
+      end
+      # verify the required parameter 'cell_index' is set
+      if @api_client.config.client_side_validation && cell_index.nil?
+        fail ArgumentError, "Missing the required parameter 'cell_index' when calling SlidesApi.create_table_cell_portion"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.create_table_cell_portion"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.create_table_cell_portion"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/rows/{rowIndex}/cells/{cellIndex}/paragraphs/{paragraphIndex}/portions'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'rowIndex', row_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'cellIndex', cell_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Portion')
+      return data, status_code, headers
+    end
+    # Inserts the table row in the specified position. If position is not specified, the row add to the end of the table.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param dto Table row data.
+    # @param position Position.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_table_row(name, slide_index, shape_index, dto, position = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = create_table_row_with_http_info(name, slide_index, shape_index, dto, position, password, folder, storage)
+      data
+    end
+
+    # Inserts the table row in the specified position. If position is not specified, the row add to the end of the table.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param dto Table row data.
+    # @param position Position.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_table_row_with_http_info(name, slide_index, shape_index, dto, position = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.create_table_row ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.create_table_row"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.create_table_row"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.create_table_row"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.create_table_row"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/rows'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'position'] = @api_client.prepare_for_query(position) unless position.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'TableRow')
+      return data, status_code, headers
+    end
     # Adds a text watermark to each slide of the presentation. Text watermark can be setup via method arguments or withing Shape DTO for detailed customization. Both options are applicable simultaneously. 
     # @param name Document name.
     # @param shape Shape DTO
@@ -6322,6 +6591,278 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'Shapes')
+      return data, status_code, headers
+    end
+    # Delete cell paragraph.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_table_cell_paragraph(name, slide_index, shape_index, row_index, cell_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_table_cell_paragraph_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, password, folder, storage)
+      data
+    end
+
+    # Delete cell paragraph.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_table_cell_paragraph_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_table_cell_paragraph ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_table_cell_paragraph"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_table_cell_paragraph"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_table_cell_paragraph"
+      end
+      # verify the required parameter 'row_index' is set
+      if @api_client.config.client_side_validation && row_index.nil?
+        fail ArgumentError, "Missing the required parameter 'row_index' when calling SlidesApi.delete_table_cell_paragraph"
+      end
+      # verify the required parameter 'cell_index' is set
+      if @api_client.config.client_side_validation && cell_index.nil?
+        fail ArgumentError, "Missing the required parameter 'cell_index' when calling SlidesApi.delete_table_cell_paragraph"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_table_cell_paragraph"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/rows/{rowIndex}/cells/{cellIndex}/paragraphs/{paragraphIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'rowIndex', row_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'cellIndex', cell_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Paragraphs')
+      return data, status_code, headers
+    end
+    # Delete table ell portion.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_table_cell_portion(name, slide_index, shape_index, row_index, cell_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_table_cell_portion_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, portion_index, password, folder, storage)
+      data
+    end
+
+    # Delete table ell portion.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_table_cell_portion_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_table_cell_portion ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_table_cell_portion"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_table_cell_portion"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_table_cell_portion"
+      end
+      # verify the required parameter 'row_index' is set
+      if @api_client.config.client_side_validation && row_index.nil?
+        fail ArgumentError, "Missing the required parameter 'row_index' when calling SlidesApi.delete_table_cell_portion"
+      end
+      # verify the required parameter 'cell_index' is set
+      if @api_client.config.client_side_validation && cell_index.nil?
+        fail ArgumentError, "Missing the required parameter 'cell_index' when calling SlidesApi.delete_table_cell_portion"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.delete_table_cell_portion"
+      end
+      # verify the required parameter 'portion_index' is set
+      if @api_client.config.client_side_validation && portion_index.nil?
+        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.delete_table_cell_portion"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/rows/{rowIndex}/cells/{cellIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'rowIndex', row_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'cellIndex', cell_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'portionIndex', portion_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Portions')
+      return data, status_code, headers
+    end
+    # Deletes the table row.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param with_attached_rows Also delete all attached rows.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_table_row(name, slide_index, shape_index, row_index, with_attached_rows = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_table_row_with_http_info(name, slide_index, shape_index, row_index, with_attached_rows, password, folder, storage)
+      data
+    end
+
+    # Deletes the table row.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param with_attached_rows Also delete all attached rows.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_table_row_with_http_info(name, slide_index, shape_index, row_index, with_attached_rows = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_table_row ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_table_row"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_table_row"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_table_row"
+      end
+      # verify the required parameter 'row_index' is set
+      if @api_client.config.client_side_validation && row_index.nil?
+        fail ArgumentError, "Missing the required parameter 'row_index' when calling SlidesApi.delete_table_row"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/rows/{rowIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'rowIndex', row_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'withAttachedRows'] = @api_client.prepare_for_query(with_attached_rows) unless with_attached_rows.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Table')
       return data, status_code, headers
     end
     # Removes unused layout slides.
@@ -11675,6 +12216,374 @@ module AsposeSlidesCloud
         :return_type => 'Shapes')
       return data, status_code, headers
     end
+    # Returns paragraph info.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_table_cell_paragraph(name, slide_index, shape_index, row_index, cell_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_table_cell_paragraph_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, password, folder, storage)
+      data
+    end
+
+    # Returns paragraph info.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_table_cell_paragraph_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_table_cell_paragraph ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_table_cell_paragraph"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_table_cell_paragraph"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_table_cell_paragraph"
+      end
+      # verify the required parameter 'row_index' is set
+      if @api_client.config.client_side_validation && row_index.nil?
+        fail ArgumentError, "Missing the required parameter 'row_index' when calling SlidesApi.get_table_cell_paragraph"
+      end
+      # verify the required parameter 'cell_index' is set
+      if @api_client.config.client_side_validation && cell_index.nil?
+        fail ArgumentError, "Missing the required parameter 'cell_index' when calling SlidesApi.get_table_cell_paragraph"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_table_cell_paragraph"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/rows/{rowIndex}/cells/{cellIndex}/paragraphs/{paragraphIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'rowIndex', row_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'cellIndex', cell_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Paragraph')
+      return data, status_code, headers
+    end
+    # Returns table cell paragraphs.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_table_cell_paragraphs(name, slide_index, shape_index, row_index, cell_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_table_cell_paragraphs_with_http_info(name, slide_index, shape_index, row_index, cell_index, password, folder, storage)
+      data
+    end
+
+    # Returns table cell paragraphs.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_table_cell_paragraphs_with_http_info(name, slide_index, shape_index, row_index, cell_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_table_cell_paragraphs ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_table_cell_paragraphs"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_table_cell_paragraphs"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_table_cell_paragraphs"
+      end
+      # verify the required parameter 'row_index' is set
+      if @api_client.config.client_side_validation && row_index.nil?
+        fail ArgumentError, "Missing the required parameter 'row_index' when calling SlidesApi.get_table_cell_paragraphs"
+      end
+      # verify the required parameter 'cell_index' is set
+      if @api_client.config.client_side_validation && cell_index.nil?
+        fail ArgumentError, "Missing the required parameter 'cell_index' when calling SlidesApi.get_table_cell_paragraphs"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/rows/{rowIndex}/cells/{cellIndex}/paragraphs'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'rowIndex', row_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'cellIndex', cell_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Paragraphs')
+      return data, status_code, headers
+    end
+    # Returns table cell portion.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_table_cell_portion(name, slide_index, shape_index, row_index, cell_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_table_cell_portion_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, portion_index, password, folder, storage)
+      data
+    end
+
+    # Returns table cell portion.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_table_cell_portion_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, portion_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_table_cell_portion ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_table_cell_portion"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_table_cell_portion"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_table_cell_portion"
+      end
+      # verify the required parameter 'row_index' is set
+      if @api_client.config.client_side_validation && row_index.nil?
+        fail ArgumentError, "Missing the required parameter 'row_index' when calling SlidesApi.get_table_cell_portion"
+      end
+      # verify the required parameter 'cell_index' is set
+      if @api_client.config.client_side_validation && cell_index.nil?
+        fail ArgumentError, "Missing the required parameter 'cell_index' when calling SlidesApi.get_table_cell_portion"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_table_cell_portion"
+      end
+      # verify the required parameter 'portion_index' is set
+      if @api_client.config.client_side_validation && portion_index.nil?
+        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.get_table_cell_portion"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/rows/{rowIndex}/cells/{cellIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'rowIndex', row_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'cellIndex', cell_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'portionIndex', portion_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Portion')
+      return data, status_code, headers
+    end
+    # Returns table cell portions.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_table_cell_portions(name, slide_index, shape_index, row_index, cell_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_table_cell_portions_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, password, folder, storage)
+      data
+    end
+
+    # Returns table cell portions.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param paragraph_index Paragraph index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_table_cell_portions_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_table_cell_portions ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_table_cell_portions"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_table_cell_portions"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_table_cell_portions"
+      end
+      # verify the required parameter 'row_index' is set
+      if @api_client.config.client_side_validation && row_index.nil?
+        fail ArgumentError, "Missing the required parameter 'row_index' when calling SlidesApi.get_table_cell_portions"
+      end
+      # verify the required parameter 'cell_index' is set
+      if @api_client.config.client_side_validation && cell_index.nil?
+        fail ArgumentError, "Missing the required parameter 'cell_index' when calling SlidesApi.get_table_cell_portions"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.get_table_cell_portions"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/rows/{rowIndex}/cells/{cellIndex}/paragraphs/{paragraphIndex}/portions'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'rowIndex', row_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'cellIndex', cell_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Portions')
+      return data, status_code, headers
+    end
     # Read slide theme info.
     # @param name Document name.
     # @param slide_index Slide index.
@@ -12359,6 +13268,83 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'File')
+      return data, status_code, headers
+    end
+    # Merge table cells.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param table_cell_merge_options Merge settings.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def merge_table_cells(name, slide_index, shape_index, table_cell_merge_options, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = merge_table_cells_with_http_info(name, slide_index, shape_index, table_cell_merge_options, password, folder, storage)
+      data
+    end
+
+    # Merge table cells.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param table_cell_merge_options Merge settings.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def merge_table_cells_with_http_info(name, slide_index, shape_index, table_cell_merge_options, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.merge_table_cells ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.merge_table_cells"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.merge_table_cells"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.merge_table_cells"
+      end
+      # verify the required parameter 'table_cell_merge_options' is set
+      if @api_client.config.client_side_validation && table_cell_merge_options.nil?
+        fail ArgumentError, "Missing the required parameter 'table_cell_merge_options' when calling SlidesApi.merge_table_cells"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/mergeCells'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(table_cell_merge_options)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Table')
       return data, status_code, headers
     end
     # Move file
@@ -16061,6 +17047,109 @@ module AsposeSlidesCloud
         :return_type => 'File')
       return data, status_code, headers
     end
+    # Split table cell.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param split_type Table cell split type (SplitByWidth, SplitByHeight,SplitByColSpan or SplitByRowSpan).
+    # @param value Split value. In case of splitting by column or row span, the value must be an integer number.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def split_table_cell(name, slide_index, shape_index, row_index, cell_index, split_type, value, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = split_table_cell_with_http_info(name, slide_index, shape_index, row_index, cell_index, split_type, value, password, folder, storage)
+      data
+    end
+
+    # Split table cell.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param split_type Table cell split type (SplitByWidth, SplitByHeight,SplitByColSpan or SplitByRowSpan).
+    # @param value Split value. In case of splitting by column or row span, the value must be an integer number.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def split_table_cell_with_http_info(name, slide_index, shape_index, row_index, cell_index, split_type, value, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.split_table_cell ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.split_table_cell"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.split_table_cell"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.split_table_cell"
+      end
+      # verify the required parameter 'row_index' is set
+      if @api_client.config.client_side_validation && row_index.nil?
+        fail ArgumentError, "Missing the required parameter 'row_index' when calling SlidesApi.split_table_cell"
+      end
+      # verify the required parameter 'cell_index' is set
+      if @api_client.config.client_side_validation && cell_index.nil?
+        fail ArgumentError, "Missing the required parameter 'cell_index' when calling SlidesApi.split_table_cell"
+      end
+      # verify the required parameter 'split_type' is set
+      if @api_client.config.client_side_validation && split_type.nil?
+        fail ArgumentError, "Missing the required parameter 'split_type' when calling SlidesApi.split_table_cell"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['SplitByWidth', 'SplitByHeight', 'SplitByColSpan', 'SplitByRowSpan'].any?{ |s| s.casecmp(split_type)==0 }
+        fail ArgumentError, "Invalid value for parameter split_type: " + split_type + ". Must be one of SplitByWidth, SplitByHeight, SplitByColSpan, SplitByRowSpan"
+      end
+      # verify the required parameter 'value' is set
+      if @api_client.config.client_side_validation && value.nil?
+        fail ArgumentError, "Missing the required parameter 'value' when calling SlidesApi.split_table_cell"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/rows/{rowIndex}/cells/{cellIndex}/{splitType}/{value}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'rowIndex', row_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'cellIndex', cell_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'splitType', split_type)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'value', value)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Table')
+      return data, status_code, headers
+    end
     # Check if storage exists
     # @param storage_name Storage name
     def storage_exists(storage_name)
@@ -17546,6 +18635,384 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'ShapeBase')
+      return data, status_code, headers
+    end
+    # Update the table cell.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param dto Table cell data.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_table_cell(name, slide_index, shape_index, row_index, cell_index, dto, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = update_table_cell_with_http_info(name, slide_index, shape_index, row_index, cell_index, dto, password, folder, storage)
+      data
+    end
+
+    # Update the table cell.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param dto Table cell data.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_table_cell_with_http_info(name, slide_index, shape_index, row_index, cell_index, dto, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.update_table_cell ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.update_table_cell"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.update_table_cell"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.update_table_cell"
+      end
+      # verify the required parameter 'row_index' is set
+      if @api_client.config.client_side_validation && row_index.nil?
+        fail ArgumentError, "Missing the required parameter 'row_index' when calling SlidesApi.update_table_cell"
+      end
+      # verify the required parameter 'cell_index' is set
+      if @api_client.config.client_side_validation && cell_index.nil?
+        fail ArgumentError, "Missing the required parameter 'cell_index' when calling SlidesApi.update_table_cell"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.update_table_cell"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/rows/{rowIndex}/cells/{cellIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'rowIndex', row_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'cellIndex', cell_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'TableCell')
+      return data, status_code, headers
+    end
+    # Updates table cell paragraph.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param paragraph_index Paragraph index.
+    # @param dto Paragraph DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_table_cell_paragraph(name, slide_index, shape_index, row_index, cell_index, paragraph_index, dto, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = update_table_cell_paragraph_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, dto, password, folder, storage)
+      data
+    end
+
+    # Updates table cell paragraph.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param paragraph_index Paragraph index.
+    # @param dto Paragraph DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_table_cell_paragraph_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, dto, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.update_table_cell_paragraph ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.update_table_cell_paragraph"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.update_table_cell_paragraph"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.update_table_cell_paragraph"
+      end
+      # verify the required parameter 'row_index' is set
+      if @api_client.config.client_side_validation && row_index.nil?
+        fail ArgumentError, "Missing the required parameter 'row_index' when calling SlidesApi.update_table_cell_paragraph"
+      end
+      # verify the required parameter 'cell_index' is set
+      if @api_client.config.client_side_validation && cell_index.nil?
+        fail ArgumentError, "Missing the required parameter 'cell_index' when calling SlidesApi.update_table_cell_paragraph"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.update_table_cell_paragraph"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.update_table_cell_paragraph"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/rows/{rowIndex}/cells/{cellIndex}/paragraphs/{paragraphIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'rowIndex', row_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'cellIndex', cell_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Paragraph')
+      return data, status_code, headers
+    end
+    # Updates table cell portion.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param dto Portion DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_table_cell_portion(name, slide_index, shape_index, row_index, cell_index, paragraph_index, portion_index, dto, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = update_table_cell_portion_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, portion_index, dto, password, folder, storage)
+      data
+    end
+
+    # Updates table cell portion.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param cell_index Table cell index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param dto Portion DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_table_cell_portion_with_http_info(name, slide_index, shape_index, row_index, cell_index, paragraph_index, portion_index, dto, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.update_table_cell_portion ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.update_table_cell_portion"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.update_table_cell_portion"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.update_table_cell_portion"
+      end
+      # verify the required parameter 'row_index' is set
+      if @api_client.config.client_side_validation && row_index.nil?
+        fail ArgumentError, "Missing the required parameter 'row_index' when calling SlidesApi.update_table_cell_portion"
+      end
+      # verify the required parameter 'cell_index' is set
+      if @api_client.config.client_side_validation && cell_index.nil?
+        fail ArgumentError, "Missing the required parameter 'cell_index' when calling SlidesApi.update_table_cell_portion"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.update_table_cell_portion"
+      end
+      # verify the required parameter 'portion_index' is set
+      if @api_client.config.client_side_validation && portion_index.nil?
+        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.update_table_cell_portion"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.update_table_cell_portion"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/rows/{rowIndex}/cells/{cellIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'rowIndex', row_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'cellIndex', cell_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'portionIndex', portion_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Portion')
+      return data, status_code, headers
+    end
+    # Update the table row.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param dto Table cell data.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_table_row(name, slide_index, shape_index, row_index, dto, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = update_table_row_with_http_info(name, slide_index, shape_index, row_index, dto, password, folder, storage)
+      data
+    end
+
+    # Update the table row.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param row_index Row index.
+    # @param dto Table cell data.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_table_row_with_http_info(name, slide_index, shape_index, row_index, dto, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.update_table_row ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.update_table_row"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.update_table_row"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.update_table_row"
+      end
+      # verify the required parameter 'row_index' is set
+      if @api_client.config.client_side_validation && row_index.nil?
+        fail ArgumentError, "Missing the required parameter 'row_index' when calling SlidesApi.update_table_row"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.update_table_row"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/rows/{rowIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'rowIndex', row_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'TableRow')
       return data, status_code, headers
     end
     # Upload file
