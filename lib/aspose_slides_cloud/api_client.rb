@@ -25,7 +25,10 @@ require 'json'
 require 'logger'
 require 'tempfile'
 require 'faraday'
+require 'faraday/httpclient'
 require 'uri'
+
+Faraday.default_adapter = :httpclient
 
 module AsposeSlidesCloud
   class ApiClient

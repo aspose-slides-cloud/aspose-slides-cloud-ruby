@@ -3138,6 +3138,69 @@ module AsposeSlidesCloud
         :return_type => 'TableRow')
       return data, status_code, headers
     end
+    # Append module to VBA project             
+    # @param name Document name.
+    # @param module_dto VBA module DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_vba_module(name, module_dto, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = create_vba_module_with_http_info(name, module_dto, password, folder, storage)
+      data
+    end
+
+    # Append module to VBA project             
+    # @param name Document name.
+    # @param module_dto VBA module DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def create_vba_module_with_http_info(name, module_dto, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.create_vba_module ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.create_vba_module"
+      end
+      # verify the required parameter 'module_dto' is set
+      if @api_client.config.client_side_validation && module_dto.nil?
+        fail ArgumentError, "Missing the required parameter 'module_dto' when calling SlidesApi.create_vba_module"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/vbaProject/modules'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(module_dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'VbaModule')
+      return data, status_code, headers
+    end
     # Adds a text watermark to each slide of the presentation. Text watermark can be setup via method arguments or withing Shape DTO for detailed customization. Both options are applicable simultaneously. 
     # @param name Document name.
     # @param shape Shape DTO
@@ -7089,6 +7152,70 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'File')
+      return data, status_code, headers
+    end
+    # Delete module from VBA project.
+    # @param name Document name.
+    # @param module_index The index of the macros module to remove.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_vba_module(name, module_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = delete_vba_module_with_http_info(name, module_index, password, folder, storage)
+      data
+    end
+
+    # Delete module from VBA project.
+    # @param name Document name.
+    # @param module_index The index of the macros module to remove.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def delete_vba_module_with_http_info(name, module_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_vba_module ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_vba_module"
+      end
+      # verify the required parameter 'module_index' is set
+      if @api_client.config.client_side_validation && module_index.nil?
+        fail ArgumentError, "Missing the required parameter 'module_index' when calling SlidesApi.delete_vba_module"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/vbaProject/modules/{moduleIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'moduleIndex', module_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'VbaProject')
       return data, status_code, headers
     end
     # Removes shapes with name \"watermark\" from the presentation.
@@ -12646,6 +12773,127 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'Theme')
+      return data, status_code, headers
+    end
+    # Get VBA module info.
+    # @param name Document name.
+    # @param module_index The index of the macros module to remove.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_vba_module(name, module_index, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_vba_module_with_http_info(name, module_index, password, folder, storage)
+      data
+    end
+
+    # Get VBA module info.
+    # @param name Document name.
+    # @param module_index The index of the macros module to remove.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_vba_module_with_http_info(name, module_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_vba_module ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_vba_module"
+      end
+      # verify the required parameter 'module_index' is set
+      if @api_client.config.client_side_validation && module_index.nil?
+        fail ArgumentError, "Missing the required parameter 'module_index' when calling SlidesApi.get_vba_module"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/vbaProject/modules/{moduleIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'moduleIndex', module_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'VbaModule')
+      return data, status_code, headers
+    end
+    # Get VBA project info.
+    # @param name Document name.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_vba_project(name, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_vba_project_with_http_info(name, password, folder, storage)
+      data
+    end
+
+    # Get VBA project info.
+    # @param name Document name.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def get_vba_project_with_http_info(name, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_vba_project ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_vba_project"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/vbaProject'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'VbaProject')
       return data, status_code, headers
     end
     # Read presentation view properties.
@@ -19013,6 +19261,72 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'TableRow')
+      return data, status_code, headers
+    end
+    # Update VBA module.
+    # @param name Document name.
+    # @param module_index The index of the macros module to remove.
+    # @param module_dto VBA module DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_vba_module(name, module_index, module_dto = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = update_vba_module_with_http_info(name, module_index, module_dto, password, folder, storage)
+      data
+    end
+
+    # Update VBA module.
+    # @param name Document name.
+    # @param module_index The index of the macros module to remove.
+    # @param module_dto VBA module DTO.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def update_vba_module_with_http_info(name, module_index, module_dto = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.update_vba_module ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.update_vba_module"
+      end
+      # verify the required parameter 'module_index' is set
+      if @api_client.config.client_side_validation && module_index.nil?
+        fail ArgumentError, "Missing the required parameter 'module_index' when calling SlidesApi.update_vba_module"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/vbaProject/modules/{moduleIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'moduleIndex', module_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(module_dto)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'VbaModule')
       return data, status_code, headers
     end
     # Upload file

@@ -9169,6 +9169,150 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for create_vba_module
+  # Append module to VBA project             
+  # @param name Document name.
+  # @param module_dto VBA module DTO.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [VbaModule]
+  describe 'create_vba_module test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateVbaModule', 'String')
+      parammodule_dto = AsposeSlidesCloud::SpecUtils.get_param_value('moduleDto', 'CreateVbaModule', 'VbaModule')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateVbaModule', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateVbaModule', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.create_vba_module_with_http_info(paramname, parammodule_dto, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVbaModule', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateVbaModule', 'String')
+      parammodule_dto = AsposeSlidesCloud::SpecUtils.get_param_value('moduleDto', 'CreateVbaModule', 'VbaModule')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateVbaModule', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'CreateVbaModule', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateVbaModule', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_vba_module_with_http_info(paramname, parammodule_dto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateVbaModule', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVbaModule', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVbaModule', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid module_dto' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateVbaModule', 'String')
+      parammodule_dto = AsposeSlidesCloud::SpecUtils.get_param_value('moduleDto', 'CreateVbaModule', 'VbaModule')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateVbaModule', 'String')
+      parammodule_dto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('moduleDto', 'CreateVbaModule', parammodule_dto, 'VbaModule')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateVbaModule', 'moduleDto', parammodule_dto)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_vba_module_with_http_info(paramname, parammodule_dto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateVbaModule', 'moduleDto')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVbaModule', 'moduleDto', parammodule_dto, 'VbaModule')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVbaModule', 'moduleDto', parammodule_dto, 'VbaModule')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateVbaModule', 'String')
+      parammodule_dto = AsposeSlidesCloud::SpecUtils.get_param_value('moduleDto', 'CreateVbaModule', 'VbaModule')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateVbaModule', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'CreateVbaModule', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateVbaModule', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_vba_module_with_http_info(paramname, parammodule_dto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateVbaModule', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVbaModule', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVbaModule', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateVbaModule', 'String')
+      parammodule_dto = AsposeSlidesCloud::SpecUtils.get_param_value('moduleDto', 'CreateVbaModule', 'VbaModule')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'CreateVbaModule', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateVbaModule', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_vba_module_with_http_info(paramname, parammodule_dto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateVbaModule', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVbaModule', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVbaModule', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateVbaModule', 'String')
+      parammodule_dto = AsposeSlidesCloud::SpecUtils.get_param_value('moduleDto', 'CreateVbaModule', 'VbaModule')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'CreateVbaModule', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateVbaModule', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.create_vba_module_with_http_info(paramname, parammodule_dto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateVbaModule', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVbaModule', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVbaModule', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for create_watermark
   # Adds a text watermark to each slide of the presentation. Text watermark can be setup via method arguments or withing Shape DTO for detailed customization. Both options are applicable simultaneously. 
   # @param name Document name.
@@ -19480,6 +19624,150 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteUnusedMasterSlidesOnline', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for delete_vba_module
+  # Delete module from VBA project.
+  # @param name Document name.
+  # @param module_index The index of the macros module to remove.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [VbaProject]
+  describe 'delete_vba_module test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.get_param_value('moduleIndex', 'DeleteVbaModule', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVbaModule', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteVbaModule', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.delete_vba_module_with_http_info(paramname, parammodule_index, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVbaModule', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.get_param_value('moduleIndex', 'DeleteVbaModule', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVbaModule', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'DeleteVbaModule', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteVbaModule', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_vba_module_with_http_info(paramname, parammodule_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteVbaModule', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVbaModule', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVbaModule', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid module_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.get_param_value('moduleIndex', 'DeleteVbaModule', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('moduleIndex', 'DeleteVbaModule', parammodule_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteVbaModule', 'moduleIndex', parammodule_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_vba_module_with_http_info(paramname, parammodule_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteVbaModule', 'moduleIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVbaModule', 'moduleIndex', parammodule_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVbaModule', 'moduleIndex', parammodule_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.get_param_value('moduleIndex', 'DeleteVbaModule', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVbaModule', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'DeleteVbaModule', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteVbaModule', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_vba_module_with_http_info(paramname, parammodule_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteVbaModule', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVbaModule', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVbaModule', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.get_param_value('moduleIndex', 'DeleteVbaModule', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'DeleteVbaModule', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteVbaModule', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_vba_module_with_http_info(paramname, parammodule_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteVbaModule', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVbaModule', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVbaModule', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.get_param_value('moduleIndex', 'DeleteVbaModule', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'DeleteVbaModule', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteVbaModule', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.delete_vba_module_with_http_info(paramname, parammodule_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteVbaModule', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVbaModule', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVbaModule', 'storage', paramstorage, 'String')
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
@@ -33679,6 +33967,264 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetTheme', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for get_vba_module
+  # Get VBA module info.
+  # @param name Document name.
+  # @param module_index The index of the macros module to remove.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [VbaModule]
+  describe 'get_vba_module test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.get_param_value('moduleIndex', 'GetVbaModule', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetVbaModule', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetVbaModule', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_vba_module_with_http_info(paramname, parammodule_index, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaModule', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.get_param_value('moduleIndex', 'GetVbaModule', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetVbaModule', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetVbaModule', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetVbaModule', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_vba_module_with_http_info(paramname, parammodule_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetVbaModule', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaModule', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaModule', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid module_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.get_param_value('moduleIndex', 'GetVbaModule', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('moduleIndex', 'GetVbaModule', parammodule_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetVbaModule', 'moduleIndex', parammodule_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_vba_module_with_http_info(paramname, parammodule_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetVbaModule', 'moduleIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaModule', 'moduleIndex', parammodule_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaModule', 'moduleIndex', parammodule_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.get_param_value('moduleIndex', 'GetVbaModule', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetVbaModule', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetVbaModule', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetVbaModule', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_vba_module_with_http_info(paramname, parammodule_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetVbaModule', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaModule', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaModule', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.get_param_value('moduleIndex', 'GetVbaModule', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetVbaModule', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetVbaModule', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_vba_module_with_http_info(paramname, parammodule_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetVbaModule', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaModule', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaModule', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.get_param_value('moduleIndex', 'GetVbaModule', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetVbaModule', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetVbaModule', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_vba_module_with_http_info(paramname, parammodule_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetVbaModule', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaModule', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaModule', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for get_vba_project
+  # Get VBA project info.
+  # @param name Document name.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [VbaProject]
+  describe 'get_vba_project test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetVbaProject', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetVbaProject', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetVbaProject', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetVbaProject', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetVbaProject', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.get_vba_project_with_http_info(paramname, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaProject', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetVbaProject', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetVbaProject', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetVbaProject', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetVbaProject', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetVbaProject', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetVbaProject', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_vba_project_with_http_info(paramname, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetVbaProject', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaProject', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaProject', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetVbaProject', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetVbaProject', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetVbaProject', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetVbaProject', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetVbaProject', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetVbaProject', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_vba_project_with_http_info(paramname, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetVbaProject', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaProject', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaProject', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetVbaProject', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetVbaProject', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetVbaProject', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetVbaProject', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetVbaProject', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetVbaProject', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_vba_project_with_http_info(paramname, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetVbaProject', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaProject', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaProject', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetVbaProject', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetVbaProject', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetVbaProject', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetVbaProject', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetVbaProject', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetVbaProject', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.get_vba_project_with_http_info(paramname, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetVbaProject', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaProject', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaProject', 'storage', paramstorage, 'String')
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
@@ -52044,6 +52590,182 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateTableRow', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for update_vba_module
+  # Update VBA module.
+  # @param name Document name.
+  # @param module_index The index of the macros module to remove.
+  # @param [Hash] opts the optional parameters
+  # @option opts [VbaModule] :module_dto VBA module DTO.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [VbaModule]
+  describe 'update_vba_module test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.get_param_value('moduleIndex', 'UpdateVbaModule', 'Integer')
+      parammodule_dto = AsposeSlidesCloud::SpecUtils.get_param_value('moduleDto', 'UpdateVbaModule', 'VbaModule')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateVbaModule', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateVbaModule', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.update_vba_module_with_http_info(paramname, parammodule_index, parammodule_dto, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateVbaModule', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.get_param_value('moduleIndex', 'UpdateVbaModule', 'Integer')
+      parammodule_dto = AsposeSlidesCloud::SpecUtils.get_param_value('moduleDto', 'UpdateVbaModule', 'VbaModule')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateVbaModule', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'UpdateVbaModule', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateVbaModule', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_vba_module_with_http_info(paramname, parammodule_index, parammodule_dto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateVbaModule', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateVbaModule', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateVbaModule', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid module_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.get_param_value('moduleIndex', 'UpdateVbaModule', 'Integer')
+      parammodule_dto = AsposeSlidesCloud::SpecUtils.get_param_value('moduleDto', 'UpdateVbaModule', 'VbaModule')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('moduleIndex', 'UpdateVbaModule', parammodule_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateVbaModule', 'moduleIndex', parammodule_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_vba_module_with_http_info(paramname, parammodule_index, parammodule_dto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateVbaModule', 'moduleIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateVbaModule', 'moduleIndex', parammodule_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateVbaModule', 'moduleIndex', parammodule_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid module_dto' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.get_param_value('moduleIndex', 'UpdateVbaModule', 'Integer')
+      parammodule_dto = AsposeSlidesCloud::SpecUtils.get_param_value('moduleDto', 'UpdateVbaModule', 'VbaModule')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateVbaModule', 'String')
+      parammodule_dto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('moduleDto', 'UpdateVbaModule', parammodule_dto, 'VbaModule')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateVbaModule', 'moduleDto', parammodule_dto)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_vba_module_with_http_info(paramname, parammodule_index, parammodule_dto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateVbaModule', 'moduleDto')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateVbaModule', 'moduleDto', parammodule_dto, 'VbaModule')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateVbaModule', 'moduleDto', parammodule_dto, 'VbaModule')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.get_param_value('moduleIndex', 'UpdateVbaModule', 'Integer')
+      parammodule_dto = AsposeSlidesCloud::SpecUtils.get_param_value('moduleDto', 'UpdateVbaModule', 'VbaModule')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateVbaModule', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'UpdateVbaModule', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateVbaModule', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_vba_module_with_http_info(paramname, parammodule_index, parammodule_dto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateVbaModule', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateVbaModule', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateVbaModule', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.get_param_value('moduleIndex', 'UpdateVbaModule', 'Integer')
+      parammodule_dto = AsposeSlidesCloud::SpecUtils.get_param_value('moduleDto', 'UpdateVbaModule', 'VbaModule')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'UpdateVbaModule', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateVbaModule', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_vba_module_with_http_info(paramname, parammodule_index, parammodule_dto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateVbaModule', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateVbaModule', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateVbaModule', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'UpdateVbaModule', 'String')
+      parammodule_index = AsposeSlidesCloud::SpecUtils.get_param_value('moduleIndex', 'UpdateVbaModule', 'Integer')
+      parammodule_dto = AsposeSlidesCloud::SpecUtils.get_param_value('moduleDto', 'UpdateVbaModule', 'VbaModule')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'UpdateVbaModule', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'UpdateVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'UpdateVbaModule', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'UpdateVbaModule', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('UpdateVbaModule', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.update_vba_module_with_http_info(paramname, parammodule_index, parammodule_dto, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('UpdateVbaModule', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateVbaModule', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('UpdateVbaModule', 'storage', paramstorage, 'String')
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
