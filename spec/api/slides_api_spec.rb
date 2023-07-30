@@ -38744,6 +38744,427 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for replace_text_formatting
+  # Finds and replaces text in presentation with given format.
+  # @param name Document name.
+  # @param old_value Text value to be replaced.
+  # @param new_value Text value to replace with.
+  # @param [Hash] opts the optional parameters
+  # @option opts [PortionFormat] :portion_format Portion format.
+  # @option opts [BOOLEAN] :with_masters Text replacement includes master slides.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [Document]
+  describe 'replace_text_formatting test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplaceTextFormatting', 'String')
+      paramold_value = AsposeSlidesCloud::SpecUtils.get_param_value('oldValue', 'ReplaceTextFormatting', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplaceTextFormatting', 'String')
+      paramportion_format = AsposeSlidesCloud::SpecUtils.get_param_value('portionFormat', 'ReplaceTextFormatting', 'PortionFormat')
+      paramwith_masters = AsposeSlidesCloud::SpecUtils.get_param_value('withMasters', 'ReplaceTextFormatting', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceTextFormatting', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplaceTextFormatting', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplaceTextFormatting', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceTextFormatting', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.replace_text_formatting_with_http_info(paramname, paramold_value, paramnew_value, paramportion_format, paramwith_masters, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormatting', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplaceTextFormatting', 'String')
+      paramold_value = AsposeSlidesCloud::SpecUtils.get_param_value('oldValue', 'ReplaceTextFormatting', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplaceTextFormatting', 'String')
+      paramportion_format = AsposeSlidesCloud::SpecUtils.get_param_value('portionFormat', 'ReplaceTextFormatting', 'PortionFormat')
+      paramwith_masters = AsposeSlidesCloud::SpecUtils.get_param_value('withMasters', 'ReplaceTextFormatting', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceTextFormatting', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplaceTextFormatting', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplaceTextFormatting', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'ReplaceTextFormatting', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceTextFormatting', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_text_formatting_with_http_info(paramname, paramold_value, paramnew_value, paramportion_format, paramwith_masters, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceTextFormatting', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormatting', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormatting', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid old_value' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplaceTextFormatting', 'String')
+      paramold_value = AsposeSlidesCloud::SpecUtils.get_param_value('oldValue', 'ReplaceTextFormatting', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplaceTextFormatting', 'String')
+      paramportion_format = AsposeSlidesCloud::SpecUtils.get_param_value('portionFormat', 'ReplaceTextFormatting', 'PortionFormat')
+      paramwith_masters = AsposeSlidesCloud::SpecUtils.get_param_value('withMasters', 'ReplaceTextFormatting', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceTextFormatting', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplaceTextFormatting', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplaceTextFormatting', 'String')
+      paramold_value = AsposeSlidesCloud::SpecUtils.invalidize_param_value('oldValue', 'ReplaceTextFormatting', paramold_value, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceTextFormatting', 'oldValue', paramold_value)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_text_formatting_with_http_info(paramname, paramold_value, paramnew_value, paramportion_format, paramwith_masters, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceTextFormatting', 'oldValue')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormatting', 'oldValue', paramold_value, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormatting', 'oldValue', paramold_value, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid new_value' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplaceTextFormatting', 'String')
+      paramold_value = AsposeSlidesCloud::SpecUtils.get_param_value('oldValue', 'ReplaceTextFormatting', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplaceTextFormatting', 'String')
+      paramportion_format = AsposeSlidesCloud::SpecUtils.get_param_value('portionFormat', 'ReplaceTextFormatting', 'PortionFormat')
+      paramwith_masters = AsposeSlidesCloud::SpecUtils.get_param_value('withMasters', 'ReplaceTextFormatting', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceTextFormatting', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplaceTextFormatting', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplaceTextFormatting', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.invalidize_param_value('newValue', 'ReplaceTextFormatting', paramnew_value, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceTextFormatting', 'newValue', paramnew_value)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_text_formatting_with_http_info(paramname, paramold_value, paramnew_value, paramportion_format, paramwith_masters, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceTextFormatting', 'newValue')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormatting', 'newValue', paramnew_value, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormatting', 'newValue', paramnew_value, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid portion_format' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplaceTextFormatting', 'String')
+      paramold_value = AsposeSlidesCloud::SpecUtils.get_param_value('oldValue', 'ReplaceTextFormatting', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplaceTextFormatting', 'String')
+      paramportion_format = AsposeSlidesCloud::SpecUtils.get_param_value('portionFormat', 'ReplaceTextFormatting', 'PortionFormat')
+      paramwith_masters = AsposeSlidesCloud::SpecUtils.get_param_value('withMasters', 'ReplaceTextFormatting', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceTextFormatting', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplaceTextFormatting', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplaceTextFormatting', 'String')
+      paramportion_format = AsposeSlidesCloud::SpecUtils.invalidize_param_value('portionFormat', 'ReplaceTextFormatting', paramportion_format, 'PortionFormat')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceTextFormatting', 'portionFormat', paramportion_format)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_text_formatting_with_http_info(paramname, paramold_value, paramnew_value, paramportion_format, paramwith_masters, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceTextFormatting', 'portionFormat')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormatting', 'portionFormat', paramportion_format, 'PortionFormat')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormatting', 'portionFormat', paramportion_format, 'PortionFormat')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid with_masters' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplaceTextFormatting', 'String')
+      paramold_value = AsposeSlidesCloud::SpecUtils.get_param_value('oldValue', 'ReplaceTextFormatting', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplaceTextFormatting', 'String')
+      paramportion_format = AsposeSlidesCloud::SpecUtils.get_param_value('portionFormat', 'ReplaceTextFormatting', 'PortionFormat')
+      paramwith_masters = AsposeSlidesCloud::SpecUtils.get_param_value('withMasters', 'ReplaceTextFormatting', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceTextFormatting', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplaceTextFormatting', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplaceTextFormatting', 'String')
+      paramwith_masters = AsposeSlidesCloud::SpecUtils.invalidize_param_value('withMasters', 'ReplaceTextFormatting', paramwith_masters, 'BOOLEAN')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceTextFormatting', 'withMasters', paramwith_masters)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_text_formatting_with_http_info(paramname, paramold_value, paramnew_value, paramportion_format, paramwith_masters, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceTextFormatting', 'withMasters')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormatting', 'withMasters', paramwith_masters, 'BOOLEAN')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormatting', 'withMasters', paramwith_masters, 'BOOLEAN')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplaceTextFormatting', 'String')
+      paramold_value = AsposeSlidesCloud::SpecUtils.get_param_value('oldValue', 'ReplaceTextFormatting', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplaceTextFormatting', 'String')
+      paramportion_format = AsposeSlidesCloud::SpecUtils.get_param_value('portionFormat', 'ReplaceTextFormatting', 'PortionFormat')
+      paramwith_masters = AsposeSlidesCloud::SpecUtils.get_param_value('withMasters', 'ReplaceTextFormatting', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceTextFormatting', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplaceTextFormatting', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplaceTextFormatting', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'ReplaceTextFormatting', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceTextFormatting', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_text_formatting_with_http_info(paramname, paramold_value, paramnew_value, paramportion_format, paramwith_masters, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceTextFormatting', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormatting', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormatting', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplaceTextFormatting', 'String')
+      paramold_value = AsposeSlidesCloud::SpecUtils.get_param_value('oldValue', 'ReplaceTextFormatting', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplaceTextFormatting', 'String')
+      paramportion_format = AsposeSlidesCloud::SpecUtils.get_param_value('portionFormat', 'ReplaceTextFormatting', 'PortionFormat')
+      paramwith_masters = AsposeSlidesCloud::SpecUtils.get_param_value('withMasters', 'ReplaceTextFormatting', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceTextFormatting', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplaceTextFormatting', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplaceTextFormatting', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'ReplaceTextFormatting', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceTextFormatting', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_text_formatting_with_http_info(paramname, paramold_value, paramnew_value, paramportion_format, paramwith_masters, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceTextFormatting', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormatting', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormatting', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplaceTextFormatting', 'String')
+      paramold_value = AsposeSlidesCloud::SpecUtils.get_param_value('oldValue', 'ReplaceTextFormatting', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplaceTextFormatting', 'String')
+      paramportion_format = AsposeSlidesCloud::SpecUtils.get_param_value('portionFormat', 'ReplaceTextFormatting', 'PortionFormat')
+      paramwith_masters = AsposeSlidesCloud::SpecUtils.get_param_value('withMasters', 'ReplaceTextFormatting', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceTextFormatting', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplaceTextFormatting', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplaceTextFormatting', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'ReplaceTextFormatting', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceTextFormatting', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_text_formatting_with_http_info(paramname, paramold_value, paramnew_value, paramportion_format, paramwith_masters, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceTextFormatting', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormatting', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormatting', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for replace_text_formatting_online
+  # Finds and replaces text in presentation with given format.
+  # @param document Document data.
+  # @param old_value Text value to be replaced.
+  # @param new_value Text value to replace with.
+  # @param [Hash] opts the optional parameters
+  # @option opts [PortionFormat] :portion_format Portion format.
+  # @option opts [BOOLEAN] :with_masters Text replacement includes master slides.
+  # @option opts [String] :password Document password.
+  # @return [File]
+  describe 'replace_text_formatting_online test' do
+    it 'should work' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ReplaceTextFormattingOnline', 'File')
+      paramold_value = AsposeSlidesCloud::SpecUtils.get_param_value('oldValue', 'ReplaceTextFormattingOnline', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplaceTextFormattingOnline', 'String')
+      paramportion_format = AsposeSlidesCloud::SpecUtils.get_param_value('portionFormat', 'ReplaceTextFormattingOnline', 'PortionFormat')
+      paramwith_masters = AsposeSlidesCloud::SpecUtils.get_param_value('withMasters', 'ReplaceTextFormattingOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceTextFormattingOnline', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceTextFormattingOnline', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.replace_text_formatting_online_with_http_info(paramdocument, paramold_value, paramnew_value, paramportion_format, paramwith_masters, parampassword)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormattingOnline', nil, nil, nil)
+      expect(c).to eq(code)
+    end
+
+    it 'invalid document' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ReplaceTextFormattingOnline', 'File')
+      paramold_value = AsposeSlidesCloud::SpecUtils.get_param_value('oldValue', 'ReplaceTextFormattingOnline', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplaceTextFormattingOnline', 'String')
+      paramportion_format = AsposeSlidesCloud::SpecUtils.get_param_value('portionFormat', 'ReplaceTextFormattingOnline', 'PortionFormat')
+      paramwith_masters = AsposeSlidesCloud::SpecUtils.get_param_value('withMasters', 'ReplaceTextFormattingOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceTextFormattingOnline', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'ReplaceTextFormattingOnline', paramdocument, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceTextFormattingOnline', 'document', paramdocument)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_text_formatting_online_with_http_info(paramdocument, paramold_value, paramnew_value, paramportion_format, paramwith_masters, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceTextFormattingOnline', 'document')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormattingOnline', 'document', paramdocument, 'File')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormattingOnline', 'document', paramdocument, 'File')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid old_value' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ReplaceTextFormattingOnline', 'File')
+      paramold_value = AsposeSlidesCloud::SpecUtils.get_param_value('oldValue', 'ReplaceTextFormattingOnline', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplaceTextFormattingOnline', 'String')
+      paramportion_format = AsposeSlidesCloud::SpecUtils.get_param_value('portionFormat', 'ReplaceTextFormattingOnline', 'PortionFormat')
+      paramwith_masters = AsposeSlidesCloud::SpecUtils.get_param_value('withMasters', 'ReplaceTextFormattingOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceTextFormattingOnline', 'String')
+      paramold_value = AsposeSlidesCloud::SpecUtils.invalidize_param_value('oldValue', 'ReplaceTextFormattingOnline', paramold_value, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceTextFormattingOnline', 'oldValue', paramold_value)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_text_formatting_online_with_http_info(paramdocument, paramold_value, paramnew_value, paramportion_format, paramwith_masters, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceTextFormattingOnline', 'oldValue')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormattingOnline', 'oldValue', paramold_value, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormattingOnline', 'oldValue', paramold_value, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid new_value' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ReplaceTextFormattingOnline', 'File')
+      paramold_value = AsposeSlidesCloud::SpecUtils.get_param_value('oldValue', 'ReplaceTextFormattingOnline', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplaceTextFormattingOnline', 'String')
+      paramportion_format = AsposeSlidesCloud::SpecUtils.get_param_value('portionFormat', 'ReplaceTextFormattingOnline', 'PortionFormat')
+      paramwith_masters = AsposeSlidesCloud::SpecUtils.get_param_value('withMasters', 'ReplaceTextFormattingOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceTextFormattingOnline', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.invalidize_param_value('newValue', 'ReplaceTextFormattingOnline', paramnew_value, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceTextFormattingOnline', 'newValue', paramnew_value)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_text_formatting_online_with_http_info(paramdocument, paramold_value, paramnew_value, paramportion_format, paramwith_masters, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceTextFormattingOnline', 'newValue')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormattingOnline', 'newValue', paramnew_value, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormattingOnline', 'newValue', paramnew_value, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid portion_format' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ReplaceTextFormattingOnline', 'File')
+      paramold_value = AsposeSlidesCloud::SpecUtils.get_param_value('oldValue', 'ReplaceTextFormattingOnline', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplaceTextFormattingOnline', 'String')
+      paramportion_format = AsposeSlidesCloud::SpecUtils.get_param_value('portionFormat', 'ReplaceTextFormattingOnline', 'PortionFormat')
+      paramwith_masters = AsposeSlidesCloud::SpecUtils.get_param_value('withMasters', 'ReplaceTextFormattingOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceTextFormattingOnline', 'String')
+      paramportion_format = AsposeSlidesCloud::SpecUtils.invalidize_param_value('portionFormat', 'ReplaceTextFormattingOnline', paramportion_format, 'PortionFormat')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceTextFormattingOnline', 'portionFormat', paramportion_format)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_text_formatting_online_with_http_info(paramdocument, paramold_value, paramnew_value, paramportion_format, paramwith_masters, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceTextFormattingOnline', 'portionFormat')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormattingOnline', 'portionFormat', paramportion_format, 'PortionFormat')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormattingOnline', 'portionFormat', paramportion_format, 'PortionFormat')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid with_masters' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ReplaceTextFormattingOnline', 'File')
+      paramold_value = AsposeSlidesCloud::SpecUtils.get_param_value('oldValue', 'ReplaceTextFormattingOnline', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplaceTextFormattingOnline', 'String')
+      paramportion_format = AsposeSlidesCloud::SpecUtils.get_param_value('portionFormat', 'ReplaceTextFormattingOnline', 'PortionFormat')
+      paramwith_masters = AsposeSlidesCloud::SpecUtils.get_param_value('withMasters', 'ReplaceTextFormattingOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceTextFormattingOnline', 'String')
+      paramwith_masters = AsposeSlidesCloud::SpecUtils.invalidize_param_value('withMasters', 'ReplaceTextFormattingOnline', paramwith_masters, 'BOOLEAN')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceTextFormattingOnline', 'withMasters', paramwith_masters)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_text_formatting_online_with_http_info(paramdocument, paramold_value, paramnew_value, paramportion_format, paramwith_masters, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceTextFormattingOnline', 'withMasters')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormattingOnline', 'withMasters', paramwith_masters, 'BOOLEAN')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormattingOnline', 'withMasters', paramwith_masters, 'BOOLEAN')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ReplaceTextFormattingOnline', 'File')
+      paramold_value = AsposeSlidesCloud::SpecUtils.get_param_value('oldValue', 'ReplaceTextFormattingOnline', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplaceTextFormattingOnline', 'String')
+      paramportion_format = AsposeSlidesCloud::SpecUtils.get_param_value('portionFormat', 'ReplaceTextFormattingOnline', 'PortionFormat')
+      paramwith_masters = AsposeSlidesCloud::SpecUtils.get_param_value('withMasters', 'ReplaceTextFormattingOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceTextFormattingOnline', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'ReplaceTextFormattingOnline', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceTextFormattingOnline', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_text_formatting_online_with_http_info(paramdocument, paramold_value, paramnew_value, paramportion_format, paramwith_masters, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceTextFormattingOnline', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormattingOnline', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceTextFormattingOnline', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for save_portion_as_math_ml
   # Convert Mathematical Text to MathML Format and saves result to the storage
   # @param name Document name.
@@ -52600,8 +53021,8 @@ describe 'SlidesApi' do
   # Update VBA module.
   # @param name Document name.
   # @param module_index The index of the macros module to remove.
+  # @param module_dto VBA module DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [VbaModule] :module_dto VBA module DTO.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.

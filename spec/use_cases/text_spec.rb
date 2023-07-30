@@ -71,6 +71,40 @@ describe 'UseCases' do
       AsposeSlidesCloud::SpecUtils.api.replace_slide_text_online(source, slide_index, old_value, new_value, true, password)
     end
 
+    it 'replace text formatting' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      slide_index = 1
+      shape_index = 1
+      paragraph_index = 1
+      portion_index = 1
+      old_text = "banana"
+      new_text = "orange"
+      color = "#FFFFA500"
+
+      portion = AsposeSlidesCloud::Portion.new
+      portion.text = old_text
+
+      portion_format = AsposeSlidesCloud::PortionFormat.new
+      portion_format.font_color = color
+
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.api.create_portion(file_name, slide_index, shape_index, paragraph_index, portion, portion_index, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.api.replace_text_formatting(file_name, old_text, new_text, portion_format, nil, password, folder_name)
+      updated_portion = AsposeSlidesCloud::SpecUtils.api.get_portion(file_name, slide_index, shape_index, paragraph_index, portion_index, password, folder_name)
+      expect(updated_portion.text).to eq(new_text)
+      expect(updated_portion.font_color).to eq(color)
+    end
+
+    it 'replace text formatting online' do
+      password = "password"
+      source = File.binread("TestData/test.pptx")
+      portion_format = AsposeSlidesCloud::PortionFormat.new
+      portion_format.font_color = "#FFFFA500"
+      AsposeSlidesCloud::SpecUtils.api.replace_text_formatting_online(source, "banana", "orange", portion_format, nil, password)
+    end
+
     it "highlight shape text" do
         folder_name = "TempSlidesSDK"
         file_name = "test.pptx"

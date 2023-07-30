@@ -79,6 +79,15 @@ module AsposeSlidesCloud
     # This attribute specifies if the animation effect stops the previous sound.
     attr_accessor :stop_previous_sound
 
+    # This attribute specifies if the effect will rewind when done playing.
+    attr_accessor :rewind
+
+    # Defined an after animation color for effect.
+    attr_accessor :after_animation_type
+
+    # Defined an after animation color for effect. Applied when the AfterAnimationType property is set to Color.
+    attr_accessor :after_animation_color
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -100,6 +109,9 @@ module AsposeSlidesCloud
         :'repeat_until_end_slide' => :'RepeatUntilEndSlide',
         :'repeat_until_next_click' => :'RepeatUntilNextClick',
         :'stop_previous_sound' => :'StopPreviousSound',
+        :'rewind' => :'Rewind',
+        :'after_animation_type' => :'AfterAnimationType',
+        :'after_animation_color' => :'AfterAnimationColor',
       }
     end
 
@@ -124,6 +136,9 @@ module AsposeSlidesCloud
         :'repeat_until_end_slide' => :'BOOLEAN',
         :'repeat_until_next_click' => :'BOOLEAN',
         :'stop_previous_sound' => :'BOOLEAN',
+        :'rewind' => :'BOOLEAN',
+        :'after_animation_type' => :'String',
+        :'after_animation_color' => :'String',
       }
     end
 
@@ -206,6 +221,18 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'StopPreviousSound')
         self.stop_previous_sound = attributes[:'StopPreviousSound']
       end
+
+      if attributes.has_key?(:'Rewind')
+        self.rewind = attributes[:'Rewind']
+      end
+
+      if attributes.has_key?(:'AfterAnimationType')
+        self.after_animation_type = attributes[:'AfterAnimationType']
+      end
+
+      if attributes.has_key?(:'AfterAnimationColor')
+        self.after_animation_color = attributes[:'AfterAnimationColor']
+      end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -233,6 +260,8 @@ module AsposeSlidesCloud
       return false unless trigger_type_validator.valid?(@trigger_type)
       restart_validator = EnumAttributeValidator.new('String', ['Always', 'WhenNotActive', 'Never', 'NotDefined'])
       return false unless restart_validator.valid?(@restart)
+      after_animation_type_validator = EnumAttributeValidator.new('String', ['DoNotDim', 'Color', 'HideAfterAnimation', 'HideOnNextMouseClick'])
+      return false unless after_animation_type_validator.valid?(@after_animation_type)
       true
     end
 
@@ -286,6 +315,16 @@ module AsposeSlidesCloud
       @restart = restart
     end
 
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] after_animation_type Object to be assigned
+    def after_animation_type=(after_animation_type)
+      validator = EnumAttributeValidator.new('String', ['DoNotDim', 'Color', 'HideAfterAnimation', 'HideOnNextMouseClick'])
+      unless validator.valid?(after_animation_type)
+        fail ArgumentError, 'invalid value for "after_animation_type", must be one of #{validator.allowable_values}.'
+      end
+      @after_animation_type = after_animation_type
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -308,7 +347,10 @@ module AsposeSlidesCloud
           trigger_delay_time == o.trigger_delay_time &&
           repeat_until_end_slide == o.repeat_until_end_slide &&
           repeat_until_next_click == o.repeat_until_next_click &&
-          stop_previous_sound == o.stop_previous_sound
+          stop_previous_sound == o.stop_previous_sound &&
+          rewind == o.rewind &&
+          after_animation_type == o.after_animation_type &&
+          after_animation_color == o.after_animation_color
     end
 
     # @see the `==` method
@@ -320,7 +362,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, subtype, preset_class_type, shape_index, paragraph_index, trigger_type, accelerate, auto_reverse, decelerate, duration, repeat_count, repeat_duration, restart, speed, trigger_delay_time, repeat_until_end_slide, repeat_until_next_click, stop_previous_sound].hash
+      [type, subtype, preset_class_type, shape_index, paragraph_index, trigger_type, accelerate, auto_reverse, decelerate, duration, repeat_count, repeat_duration, restart, speed, trigger_delay_time, repeat_until_end_slide, repeat_until_next_click, stop_previous_sound, rewind, after_animation_type, after_animation_color].hash
     end
   end
 end

@@ -14668,6 +14668,154 @@ module AsposeSlidesCloud
         :return_type => 'File')
       return data, status_code, headers
     end
+    # Finds and replaces text in presentation with given format.
+    # @param name Document name.
+    # @param old_value Text value to be replaced.
+    # @param new_value Text value to replace with.
+    # @param portion_format Portion format.
+    # @param with_masters Text replacement includes master slides.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def replace_text_formatting(name, old_value, new_value, portion_format = nil, with_masters = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = replace_text_formatting_with_http_info(name, old_value, new_value, portion_format, with_masters, password, folder, storage)
+      data
+    end
+
+    # Finds and replaces text in presentation with given format.
+    # @param name Document name.
+    # @param old_value Text value to be replaced.
+    # @param new_value Text value to replace with.
+    # @param portion_format Portion format.
+    # @param with_masters Text replacement includes master slides.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def replace_text_formatting_with_http_info(name, old_value, new_value, portion_format = nil, with_masters = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.replace_text_formatting ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.replace_text_formatting"
+      end
+      # verify the required parameter 'old_value' is set
+      if @api_client.config.client_side_validation && old_value.nil?
+        fail ArgumentError, "Missing the required parameter 'old_value' when calling SlidesApi.replace_text_formatting"
+      end
+      # verify the required parameter 'new_value' is set
+      if @api_client.config.client_side_validation && new_value.nil?
+        fail ArgumentError, "Missing the required parameter 'new_value' when calling SlidesApi.replace_text_formatting"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/replaceTextFormatting'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'oldValue'] = @api_client.prepare_for_query(old_value) unless old_value.nil?
+      query_params[:'newValue'] = @api_client.prepare_for_query(new_value) unless new_value.nil?
+      query_params[:'withMasters'] = @api_client.prepare_for_query(with_masters) unless with_masters.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(portion_format)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'Document')
+      return data, status_code, headers
+    end
+    # Finds and replaces text in presentation with given format.
+    # @param document Document data.
+    # @param old_value Text value to be replaced.
+    # @param new_value Text value to replace with.
+    # @param portion_format Portion format.
+    # @param with_masters Text replacement includes master slides.
+    # @param password Document password.
+    def replace_text_formatting_online(document, old_value, new_value, portion_format = nil, with_masters = nil, password = nil)
+      data, _status_code, _headers = replace_text_formatting_online_with_http_info(document, old_value, new_value, portion_format, with_masters, password)
+      data
+    end
+
+    # Finds and replaces text in presentation with given format.
+    # @param document Document data.
+    # @param old_value Text value to be replaced.
+    # @param new_value Text value to replace with.
+    # @param portion_format Portion format.
+    # @param with_masters Text replacement includes master slides.
+    # @param password Document password.
+    def replace_text_formatting_online_with_http_info(document, old_value, new_value, portion_format = nil, with_masters = nil, password = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.replace_text_formatting_online ...'
+      end
+
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && document.nil?
+        fail ArgumentError, "Missing the required parameter 'document' when calling SlidesApi.replace_text_formatting_online"
+      end
+      # verify the required parameter 'old_value' is set
+      if @api_client.config.client_side_validation && old_value.nil?
+        fail ArgumentError, "Missing the required parameter 'old_value' when calling SlidesApi.replace_text_formatting_online"
+      end
+      # verify the required parameter 'new_value' is set
+      if @api_client.config.client_side_validation && new_value.nil?
+        fail ArgumentError, "Missing the required parameter 'new_value' when calling SlidesApi.replace_text_formatting_online"
+      end
+      # resource path
+      local_var_path = '/slides/replaceTextFormatting'
+
+      # query parameters
+      query_params = {}
+      query_params[:'oldValue'] = @api_client.prepare_for_query(old_value) unless old_value.nil?
+      query_params[:'newValue'] = @api_client.prepare_for_query(new_value) unless new_value.nil?
+      query_params[:'withMasters'] = @api_client.prepare_for_query(with_masters) unless with_masters.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(portion_format)
+
+      # form parameters
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      return data, status_code, headers
+    end
     # Convert Mathematical Text to MathML Format and saves result to the storage
     # @param name Document name.
     # @param slide_index Slide index.
@@ -19270,7 +19418,7 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def update_vba_module(name, module_index, module_dto = nil, password = nil, folder = nil, storage = nil)
+    def update_vba_module(name, module_index, module_dto, password = nil, folder = nil, storage = nil)
       data, _status_code, _headers = update_vba_module_with_http_info(name, module_index, module_dto, password, folder, storage)
       data
     end
@@ -19282,7 +19430,7 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def update_vba_module_with_http_info(name, module_index, module_dto = nil, password = nil, folder = nil, storage = nil)
+    def update_vba_module_with_http_info(name, module_index, module_dto, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.update_vba_module ...'
       end
@@ -19294,6 +19442,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'module_index' is set
       if @api_client.config.client_side_validation && module_index.nil?
         fail ArgumentError, "Missing the required parameter 'module_index' when calling SlidesApi.update_vba_module"
+      end
+      # verify the required parameter 'module_dto' is set
+      if @api_client.config.client_side_validation && module_dto.nil?
+        fail ArgumentError, "Missing the required parameter 'module_dto' when calling SlidesApi.update_vba_module"
       end
       # resource path
       local_var_path = '/slides/{name}/vbaProject/modules/{moduleIndex}'

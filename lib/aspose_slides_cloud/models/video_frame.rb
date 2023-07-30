@@ -49,6 +49,12 @@ module AsposeSlidesCloud
     # Picture fill format.
     attr_accessor :picture_fill_format
 
+    # Trim start [ms]
+    attr_accessor :trim_from_start
+
+    # Trim end [ms]
+    attr_accessor :trim_from_end
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
@@ -60,6 +66,8 @@ module AsposeSlidesCloud
         :'volume' => :'Volume',
         :'base64_data' => :'Base64Data',
         :'picture_fill_format' => :'PictureFillFormat',
+        :'trim_from_start' => :'TrimFromStart',
+        :'trim_from_end' => :'TrimFromEnd',
       })
     end
 
@@ -74,6 +82,8 @@ module AsposeSlidesCloud
         :'volume' => :'String',
         :'base64_data' => :'String',
         :'picture_fill_format' => :'PictureFill',
+        :'trim_from_start' => :'Float',
+        :'trim_from_end' => :'Float',
       })
     end
 
@@ -112,6 +122,14 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'PictureFillFormat')
         self.picture_fill_format = attributes[:'PictureFillFormat']
+      end
+
+      if attributes.has_key?(:'TrimFromStart')
+        self.trim_from_start = attributes[:'TrimFromStart']
+      end
+
+      if attributes.has_key?(:'TrimFromEnd')
+        self.trim_from_end = attributes[:'TrimFromEnd']
       end
       self.type = 'VideoFrame'
     end
@@ -185,7 +203,9 @@ module AsposeSlidesCloud
           rewind_video == o.rewind_video &&
           volume == o.volume &&
           base64_data == o.base64_data &&
-          picture_fill_format == o.picture_fill_format
+          picture_fill_format == o.picture_fill_format &&
+          trim_from_start == o.trim_from_start &&
+          trim_from_end == o.trim_from_end
     end
 
     # @see the `==` method
@@ -197,7 +217,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, shape_type, full_screen_mode, hide_at_showing, play_loop_mode, play_mode, rewind_video, volume, base64_data, picture_fill_format].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, shape_type, full_screen_mode, hide_at_showing, play_loop_mode, play_mode, rewind_video, volume, base64_data, picture_fill_format, trim_from_start, trim_from_end].hash
     end
   end
 end
