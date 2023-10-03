@@ -98,5 +98,26 @@ describe 'UseCases' do
       png_result = AsposeSlidesCloud::SpecUtils.api.download_image_online(source, slide_index, 'png', password)
       expect(png_result.size).not_to eq(default_result.size)
     end
+
+    it 'replace image' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      image_index = 1
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+
+      image = File.binread("TestData/watermark.png")
+      AsposeSlidesCloud::SpecUtils.api.replace_image(file_name, image_index, image, password, folder_name)
+    end
+
+    it 'replace image request' do
+      image_index = 1
+      password = "password"
+
+      file = File.binread("TestData/test.pptx")
+      image = File.binread("TestData/watermark.png")
+      response = AsposeSlidesCloud::SpecUtils.api.replace_image_online(file, image_index, image, password)
+      expect(response.size).not_to eq(0)
+    end
   end
 end

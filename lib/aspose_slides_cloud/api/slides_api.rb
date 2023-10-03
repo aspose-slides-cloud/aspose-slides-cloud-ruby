@@ -2794,7 +2794,7 @@ module AsposeSlidesCloud
     # @param folder Document folder.
     # @param storage Document storage.
     # @param sub_shape Sub-shape path (e.g. \"3\", \"3/shapes/2).
-    def create_special_slide_shape(name, slide_index, slide_type, dto = nil, shape_to_clone = nil, position = nil, password = nil, folder = nil, storage = nil, sub_shape = nil)
+    def create_special_slide_shape(name, slide_index, slide_type, dto, shape_to_clone = nil, position = nil, password = nil, folder = nil, storage = nil, sub_shape = nil)
       data, _status_code, _headers = create_special_slide_shape_with_http_info(name, slide_index, slide_type, dto, shape_to_clone, position, password, folder, storage, sub_shape)
       data
     end
@@ -2810,7 +2810,7 @@ module AsposeSlidesCloud
     # @param folder Document folder.
     # @param storage Document storage.
     # @param sub_shape Sub-shape path (e.g. \"3\", \"3/shapes/2).
-    def create_special_slide_shape_with_http_info(name, slide_index, slide_type, dto = nil, shape_to_clone = nil, position = nil, password = nil, folder = nil, storage = nil, sub_shape = nil)
+    def create_special_slide_shape_with_http_info(name, slide_index, slide_type, dto, shape_to_clone = nil, position = nil, password = nil, folder = nil, storage = nil, sub_shape = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.create_special_slide_shape ...'
       end
@@ -2830,6 +2830,10 @@ module AsposeSlidesCloud
       # verify enum value
       if @api_client.config.client_side_validation && !['MasterSlide', 'LayoutSlide', 'NotesSlide'].any?{ |s| s.casecmp(slide_type)==0 }
         fail ArgumentError, "Invalid value for parameter slide_type: " + slide_type + ". Must be one of MasterSlide, LayoutSlide, NotesSlide"
+      end
+      # verify the required parameter 'dto' is set
+      if @api_client.config.client_side_validation && dto.nil?
+        fail ArgumentError, "Missing the required parameter 'dto' when calling SlidesApi.create_special_slide_shape"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/{slideType}/shapes'
@@ -4975,7 +4979,7 @@ module AsposeSlidesCloud
     # Resets all presentation protection settings. 
     # @param document Document data.
     # @param password Presentation password.
-    def delete_protection_online(document, password)
+    def delete_protection_online(document, password = nil)
       data, _status_code, _headers = delete_protection_online_with_http_info(document, password)
       data
     end
@@ -4983,7 +4987,7 @@ module AsposeSlidesCloud
     # Resets all presentation protection settings. 
     # @param document Document data.
     # @param password Presentation password.
-    def delete_protection_online_with_http_info(document, password)
+    def delete_protection_online_with_http_info(document, password = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.delete_protection_online ...'
       end
@@ -4991,10 +4995,6 @@ module AsposeSlidesCloud
       # verify the required parameter 'document' is set
       if @api_client.config.client_side_validation && document.nil?
         fail ArgumentError, "Missing the required parameter 'document' when calling SlidesApi.delete_protection_online"
-      end
-      # verify the required parameter 'password' is set
-      if @api_client.config.client_side_validation && password.nil?
-        fail ArgumentError, "Missing the required parameter 'password' when calling SlidesApi.delete_protection_online"
       end
       # resource path
       local_var_path = '/slides/protection/delete'
@@ -5008,7 +5008,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
-      header_params[:'password'] = password
+      header_params[:'password'] = password unless password.nil?
 
       # http body (model)
       post_body = nil
@@ -14354,6 +14354,139 @@ module AsposeSlidesCloud
       post_files = []
       if document
         post_files = post_files.push(document)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      return data, status_code, headers
+    end
+    # Replaces image by the specified index.
+    # @param name Document name.
+    # @param image_index Image index.
+    # @param image Image data.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def replace_image(name, image_index, image = nil, password = nil, folder = nil, storage = nil)
+      replace_image_with_http_info(name, image_index, image, password, folder, storage)
+      nil
+    end
+
+    # Replaces image by the specified index.
+    # @param name Document name.
+    # @param image_index Image index.
+    # @param image Image data.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def replace_image_with_http_info(name, image_index, image = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.replace_image ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.replace_image"
+      end
+      # verify the required parameter 'image_index' is set
+      if @api_client.config.client_side_validation && image_index.nil?
+        fail ArgumentError, "Missing the required parameter 'image_index' when calling SlidesApi.replace_image"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/images/{imageIndex}/replace'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'imageIndex', image_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+      if image
+        post_files = post_files.push(image)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names)
+      return data, status_code, headers
+    end
+    # Replaces image by the specified index and returns updated document. 
+    # @param document Document data.
+    # @param image_index Image index.
+    # @param image Image data.
+    # @param password Password.
+    def replace_image_online(document, image_index, image = nil, password = nil)
+      data, _status_code, _headers = replace_image_online_with_http_info(document, image_index, image, password)
+      data
+    end
+
+    # Replaces image by the specified index and returns updated document. 
+    # @param document Document data.
+    # @param image_index Image index.
+    # @param image Image data.
+    # @param password Password.
+    def replace_image_online_with_http_info(document, image_index, image = nil, password = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.replace_image_online ...'
+      end
+
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && document.nil?
+        fail ArgumentError, "Missing the required parameter 'document' when calling SlidesApi.replace_image_online"
+      end
+      # verify the required parameter 'image_index' is set
+      if @api_client.config.client_side_validation && image_index.nil?
+        fail ArgumentError, "Missing the required parameter 'image_index' when calling SlidesApi.replace_image_online"
+      end
+      # resource path
+      local_var_path = '/slides/images/{imageIndex}/replace'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'imageIndex', image_index)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
+      if image
+        post_files = post_files.push(image)
       end
 
       auth_names = ['JWT']

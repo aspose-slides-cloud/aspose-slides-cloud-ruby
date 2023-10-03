@@ -7996,8 +7996,8 @@ describe 'SlidesApi' do
   # @param name Document name.
   # @param slide_index Parent slide index.
   # @param slide_type Slide type (master, layout or notes).
+  # @param dto Shape DTO.
   # @param [Hash] opts the optional parameters
-  # @option opts [ShapeBase] :dto Shape DTO.
   # @option opts [Integer] :shape_to_clone Optional index for clone shape instead of adding a new one.
   # @option opts [Integer] :position Position of the new shape in the list. Default is at the end of the list.
   # @option opts [String] :password Document password.
@@ -13817,8 +13817,8 @@ describe 'SlidesApi' do
   # unit tests for delete_protection_online
   # Resets all presentation protection settings. 
   # @param document Document data.
-  # @param password Presentation password.
   # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Presentation password.
   # @return [File]
   describe 'delete_protection_online test' do
     it 'should work' do
@@ -37962,6 +37962,295 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceFontOnline', 'fontsFolder', paramfonts_folder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for replace_image
+  # Replaces image by the specified index.
+  # @param name Document name.
+  # @param image_index Image index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [File] :image Image data.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [nil]
+  describe 'replace_image test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplaceImage', 'String')
+      paramimage_index = AsposeSlidesCloud::SpecUtils.get_param_value('imageIndex', 'ReplaceImage', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ReplaceImage', 'File')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceImage', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplaceImage', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplaceImage', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceImage', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.replace_image_with_http_info(paramname, paramimage_index, paramimage, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImage', nil, nil, nil)
+      expect(c).to eq(code)
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplaceImage', 'String')
+      paramimage_index = AsposeSlidesCloud::SpecUtils.get_param_value('imageIndex', 'ReplaceImage', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ReplaceImage', 'File')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceImage', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplaceImage', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplaceImage', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'ReplaceImage', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceImage', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_image_with_http_info(paramname, paramimage_index, paramimage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceImage', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImage', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImage', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid image_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplaceImage', 'String')
+      paramimage_index = AsposeSlidesCloud::SpecUtils.get_param_value('imageIndex', 'ReplaceImage', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ReplaceImage', 'File')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceImage', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplaceImage', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplaceImage', 'String')
+      paramimage_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('imageIndex', 'ReplaceImage', paramimage_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceImage', 'imageIndex', paramimage_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_image_with_http_info(paramname, paramimage_index, paramimage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceImage', 'imageIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImage', 'imageIndex', paramimage_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImage', 'imageIndex', paramimage_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid image' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplaceImage', 'String')
+      paramimage_index = AsposeSlidesCloud::SpecUtils.get_param_value('imageIndex', 'ReplaceImage', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ReplaceImage', 'File')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceImage', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplaceImage', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplaceImage', 'String')
+      paramimage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('image', 'ReplaceImage', paramimage, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceImage', 'image', paramimage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_image_with_http_info(paramname, paramimage_index, paramimage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceImage', 'image')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImage', 'image', paramimage, 'File')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImage', 'image', paramimage, 'File')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplaceImage', 'String')
+      paramimage_index = AsposeSlidesCloud::SpecUtils.get_param_value('imageIndex', 'ReplaceImage', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ReplaceImage', 'File')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceImage', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplaceImage', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplaceImage', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'ReplaceImage', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceImage', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_image_with_http_info(paramname, paramimage_index, paramimage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceImage', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImage', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImage', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplaceImage', 'String')
+      paramimage_index = AsposeSlidesCloud::SpecUtils.get_param_value('imageIndex', 'ReplaceImage', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ReplaceImage', 'File')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceImage', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplaceImage', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplaceImage', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'ReplaceImage', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceImage', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_image_with_http_info(paramname, paramimage_index, paramimage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceImage', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImage', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImage', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplaceImage', 'String')
+      paramimage_index = AsposeSlidesCloud::SpecUtils.get_param_value('imageIndex', 'ReplaceImage', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ReplaceImage', 'File')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceImage', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplaceImage', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplaceImage', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'ReplaceImage', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceImage', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_image_with_http_info(paramname, paramimage_index, paramimage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceImage', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImage', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImage', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for replace_image_online
+  # Replaces image by the specified index and returns updated document. 
+  # @param document Document data.
+  # @param image_index Image index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [File] :image Image data.
+  # @option opts [String] :password Password.
+  # @return [File]
+  describe 'replace_image_online test' do
+    it 'should work' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ReplaceImageOnline', 'File')
+      paramimage_index = AsposeSlidesCloud::SpecUtils.get_param_value('imageIndex', 'ReplaceImageOnline', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ReplaceImageOnline', 'File')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceImageOnline', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceImageOnline', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.api.replace_image_online_with_http_info(paramdocument, paramimage_index, paramimage, parampassword)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImageOnline', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid document' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ReplaceImageOnline', 'File')
+      paramimage_index = AsposeSlidesCloud::SpecUtils.get_param_value('imageIndex', 'ReplaceImageOnline', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ReplaceImageOnline', 'File')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceImageOnline', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'ReplaceImageOnline', paramdocument, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceImageOnline', 'document', paramdocument)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_image_online_with_http_info(paramdocument, paramimage_index, paramimage, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceImageOnline', 'document')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImageOnline', 'document', paramdocument, 'File')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImageOnline', 'document', paramdocument, 'File')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid image_index' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ReplaceImageOnline', 'File')
+      paramimage_index = AsposeSlidesCloud::SpecUtils.get_param_value('imageIndex', 'ReplaceImageOnline', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ReplaceImageOnline', 'File')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceImageOnline', 'String')
+      paramimage_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('imageIndex', 'ReplaceImageOnline', paramimage_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceImageOnline', 'imageIndex', paramimage_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_image_online_with_http_info(paramdocument, paramimage_index, paramimage, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceImageOnline', 'imageIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImageOnline', 'imageIndex', paramimage_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImageOnline', 'imageIndex', paramimage_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid image' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ReplaceImageOnline', 'File')
+      paramimage_index = AsposeSlidesCloud::SpecUtils.get_param_value('imageIndex', 'ReplaceImageOnline', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ReplaceImageOnline', 'File')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceImageOnline', 'String')
+      paramimage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('image', 'ReplaceImageOnline', paramimage, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceImageOnline', 'image', paramimage)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_image_online_with_http_info(paramdocument, paramimage_index, paramimage, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceImageOnline', 'image')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImageOnline', 'image', paramimage, 'File')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImageOnline', 'image', paramimage, 'File')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ReplaceImageOnline', 'File')
+      paramimage_index = AsposeSlidesCloud::SpecUtils.get_param_value('imageIndex', 'ReplaceImageOnline', 'Integer')
+      paramimage = AsposeSlidesCloud::SpecUtils.get_param_value('image', 'ReplaceImageOnline', 'File')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplaceImageOnline', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'ReplaceImageOnline', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplaceImageOnline', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.api.replace_image_online_with_http_info(paramdocument, paramimage_index, paramimage, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplaceImageOnline', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImageOnline', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImageOnline', 'password', parampassword, 'String')
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
