@@ -28,7 +28,7 @@ describe 'UseCases' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
             slide_index = 3
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
             dto = AsposeSlidesCloud::SlideComment.new
             dto.text = "Comment text"
             dto.author = "Test author"
@@ -36,7 +36,7 @@ describe 'UseCases' do
             child_comment.text = "Child comment text"
             child_comment.author = "Test author"
             dto.child_comments = [child_comment]
-            response = AsposeSlidesCloud::SpecUtils.api.create_comment(file_name, slide_index, dto, nil, "password", folder_name)
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_comment(file_name, slide_index, dto, nil, "password", folder_name)
             expect(response.list.length).to eq(1)
             expect(response.list[0].text).to eq(dto.text)
             expect(response.list[0].author).to eq(dto.author)
@@ -56,7 +56,7 @@ describe 'UseCases' do
 
             source = File.binread("TestData/test.pptx")
             slide_index = 3
-            response = AsposeSlidesCloud::SpecUtils.api.create_comment_online(source, slide_index, dto, nil, "password")
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_comment_online(source, slide_index, dto, nil, "password")
             expect(response.size).not_to eq(source.size)
         end
 
@@ -64,8 +64,8 @@ describe 'UseCases' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
             slide_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-            response = AsposeSlidesCloud::SpecUtils.api.get_slide_comments(file_name, slide_index, "password", folder_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_comments(file_name, slide_index, "password", folder_name)
             expect(response.list.length).to eq(2)
             expect(response.list[0].child_comments.length).to eq(1)
         end
@@ -74,15 +74,15 @@ describe 'UseCases' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
             slide_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-            AsposeSlidesCloud::SpecUtils.api.delete_comments(file_name, nil, "password", folder_name)
-            response = AsposeSlidesCloud::SpecUtils.api.get_slide_comments(file_name, slide_index, "password", folder_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_comments(file_name, nil, "password", folder_name)
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_comments(file_name, slide_index, "password", folder_name)
             expect(response.list.length).to eq(0)
         end
 
         it "delete comments online" do
             source = File.binread("TestData/test.pptx")
-            response = AsposeSlidesCloud::SpecUtils.api.delete_comments_online(source, nil, "password")
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_comments_online(source, nil, "password")
             expect(response.size).not_to eq(source.size)
         end
 
@@ -90,16 +90,16 @@ describe 'UseCases' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
             slide_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-            AsposeSlidesCloud::SpecUtils.api.delete_slide_comments(file_name, slide_index, nil, "password", folder_name)
-            response = AsposeSlidesCloud::SpecUtils.api.get_slide_comments(file_name, slide_index, "password", folder_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_slide_comments(file_name, slide_index, nil, "password", folder_name)
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_comments(file_name, slide_index, "password", folder_name)
             expect(response.list.length).to eq(0)
         end
 
         it "delete slide comments online" do
             source = File.binread("TestData/test.pptx")
             slide_index = 1
-            response = AsposeSlidesCloud::SpecUtils.api.delete_slide_comments_online(source, slide_index, nil, "password")
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_slide_comments_online(source, slide_index, nil, "password")
             expect(response.size).not_to eq(source.size)
         end
 
@@ -123,8 +123,8 @@ describe 'UseCases' do
             comment.text_selection_length = text_selection_length
             comment.child_comments = [child_comment]
 
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-            response = AsposeSlidesCloud::SpecUtils.api.create_comment(file_name, slide_index, comment, nil, "password", folder_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_comment(file_name, slide_index, comment, nil, "password", folder_name)
             expect(response.list.length).to eq(1)
             expect(response.list[0].type).to eq("Modern")
         end
@@ -150,8 +150,8 @@ describe 'UseCases' do
             comment.text_selection_length = text_selection_length
             comment.child_comments = [child_comment]
 
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-            response = AsposeSlidesCloud::SpecUtils.api.create_comment(file_name, slide_index, comment, shape_index, "password", folder_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_comment(file_name, slide_index, comment, shape_index, "password", folder_name)
             expect(response.list.length).to eq(1)
             expect(response.list[0].type).to eq("Modern")
         end

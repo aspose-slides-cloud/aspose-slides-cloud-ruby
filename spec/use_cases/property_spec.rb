@@ -30,18 +30,18 @@ describe 'UseCases' do
       password = "password"
       property_name = "Author"
       updated_property_value = "New Value"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      result = AsposeSlidesCloud::SpecUtils.api.get_document_property(file_name, property_name, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_document_property(file_name, property_name, password, folder_name)
       expect(result.name).to eq(property_name)
       expect(result.built_in).to be true
       property = AsposeSlidesCloud::DocumentProperty.new
       property.value = updated_property_value
-      result = AsposeSlidesCloud::SpecUtils.api.set_document_property(file_name, property_name, property, password, folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_document_property(file_name, property_name, property, password, folder_name)
       expect(result.name).to eq(property_name)
       expect(result.value).to eq(updated_property_value)
       expect(result.built_in).to be true
-      AsposeSlidesCloud::SpecUtils.api.delete_document_property(file_name, property_name, password, folder_name)
-      result = AsposeSlidesCloud::SpecUtils.api.get_document_property(file_name, property_name, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_document_property(file_name, property_name, password, folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_document_property(file_name, property_name, password, folder_name)
       #built-in property is not actually deleted
       expect(result.name).to eq(property_name)
       expect(result.value).not_to eq(updated_property_value)
@@ -54,16 +54,16 @@ describe 'UseCases' do
       password = "password"
       property_name = "CustomProperty2"
       updated_property_value = "New Value"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       property = AsposeSlidesCloud::DocumentProperty.new
       property.value = updated_property_value
-      result = AsposeSlidesCloud::SpecUtils.api.set_document_property(file_name, property_name, property, password, folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_document_property(file_name, property_name, property, password, folder_name)
       expect(result.name).to eq(property_name)
       expect(result.value).to eq(updated_property_value)
       expect(result.built_in).not_to be true
-      AsposeSlidesCloud::SpecUtils.api.delete_document_property(file_name, property_name, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_document_property(file_name, property_name, password, folder_name)
       begin
-        AsposeSlidesCloud::SpecUtils.api.get_document_property(file_name, property_name, password, folder_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_document_property(file_name, property_name, password, folder_name)
         fail "The property must have been deleted"
       rescue AsposeSlidesCloud::ApiError => e
         expect(e.code).to eq(404)
@@ -77,8 +77,8 @@ describe 'UseCases' do
       property_name = "Author"
       custom_property_name = "CustomProperty2"
       updated_property_value = "New Value"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      result = AsposeSlidesCloud::SpecUtils.api.get_document_properties(file_name, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_document_properties(file_name, password, folder_name)
       count = result.list.length
       property1 = AsposeSlidesCloud::DocumentProperty.new
       property1.name = property_name
@@ -88,9 +88,9 @@ describe 'UseCases' do
       property2.value = updated_property_value
       properties = AsposeSlidesCloud::DocumentProperties.new
       properties.list = [ property1, property2 ]
-      result = AsposeSlidesCloud::SpecUtils.api.set_document_properties(file_name, properties, password, folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_document_properties(file_name, properties, password, folder_name)
       expect(result.list.length).to eq(count + 1)
-      result = AsposeSlidesCloud::SpecUtils.api.delete_document_properties(file_name, password, folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_document_properties(file_name, password, folder_name)
       expect(result.list.length).to eq(count - 1)
     end
 
@@ -98,11 +98,11 @@ describe 'UseCases' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       password = "password"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      get_result = AsposeSlidesCloud::SpecUtils.api.get_slide_properties(file_name, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      get_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_properties(file_name, password, folder_name)
       dto = AsposeSlidesCloud::SlideProperties.new
       dto.first_slide_number = get_result.first_slide_number + 2
-      put_result = AsposeSlidesCloud::SpecUtils.api.set_slide_properties(file_name, dto, password, folder_name)
+      put_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_slide_properties(file_name, dto, password, folder_name)
       expect(put_result.orientation).to eq(get_result.orientation)
       expect(put_result.first_slide_number).not_to eq(get_result.first_slide_number)
     end
@@ -111,10 +111,10 @@ describe 'UseCases' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       password = "password"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::SlideProperties.new
       dto.size_type = 'B4IsoPaper'
-      result = AsposeSlidesCloud::SpecUtils.api.set_slide_properties(file_name, dto, password, folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_slide_properties(file_name, dto, password, folder_name)
       expect(result.size_type).to eq('B4IsoPaper')
       expect(result.width).to eq(852)
       expect(result.height).to eq(639)
@@ -126,11 +126,11 @@ describe 'UseCases' do
       password = "password"
       width = 800
       height = 500
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::SlideProperties.new
       dto.width = width
       dto.height = height
-      result = AsposeSlidesCloud::SpecUtils.api.set_slide_properties(file_name, dto, password, folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_slide_properties(file_name, dto, password, folder_name)
       expect(result.size_type).to eq('Custom')
       expect(result.width).to eq(width)
       expect(result.height).to eq(height)
@@ -140,11 +140,11 @@ describe 'UseCases' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       password = "password"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      get_result = AsposeSlidesCloud::SpecUtils.api.get_protection_properties(file_name, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      get_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_protection_properties(file_name, password, folder_name)
       dto = AsposeSlidesCloud::ProtectionProperties.new
       dto.read_only_recommended = !get_result.read_only_recommended
-      put_result = AsposeSlidesCloud::SpecUtils.api.set_protection(file_name, dto, password, folder_name)
+      put_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_protection(file_name, dto, password, folder_name)
       expect(put_result.encrypt_document_properties).to eq(get_result.encrypt_document_properties)
       expect(put_result.read_only_recommended).not_to eq(get_result.read_only_recommended)
     end
@@ -153,8 +153,8 @@ describe 'UseCases' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       password = "password"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      result = AsposeSlidesCloud::SpecUtils.api.delete_protection(file_name, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_protection(file_name, password, folder_name)
       expect(result.is_encrypted).not_to be true
       expect(result.read_only_recommended).not_to be true
       expect(result.read_password).not_to be true
@@ -164,13 +164,13 @@ describe 'UseCases' do
       dto = AsposeSlidesCloud::ProtectionProperties.new
       dto.read_password = "newPassword"
       source = File.binread("TestData/test.pptx")
-      result = AsposeSlidesCloud::SpecUtils.api.set_protection_online(source, dto, "password")
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_protection_online(source, dto, "password")
       expect(result.size).to be > 0
     end
 
     it 'protection unprotect online' do
       source = File.binread("TestData/test.pptx")
-      result = AsposeSlidesCloud::SpecUtils.api.delete_protection_online(source, "password")
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_protection_online(source, "password")
       expect(result.size).not_to eq(source.size)
     end
 
@@ -178,8 +178,8 @@ describe 'UseCases' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       password = "password"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      response = AsposeSlidesCloud::SpecUtils.api.get_view_properties(file_name, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      response = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_view_properties(file_name, password, folder_name)
       expect(response.show_comments).to eq ('True')
     end
 
@@ -187,12 +187,12 @@ describe 'UseCases' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       password = "password"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::ViewProperties.new
       dto.show_comments = "False"
       dto.slide_view_properties = AsposeSlidesCloud::CommonSlideViewProperties.new
       dto.slide_view_properties.scale = 50
-      response = AsposeSlidesCloud::SpecUtils.api.set_view_properties(file_name, dto, password, folder_name)
+      response = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_view_properties(file_name, dto, password, folder_name)
       expect(response.show_comments).to eq "False"
       expect(response.slide_view_properties.scale).to eq 50
     end
@@ -201,11 +201,11 @@ describe 'UseCases' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       password = "password"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      protection_properties = AsposeSlidesCloud::SpecUtils.api.get_protection_properties(file_name, nil, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      protection_properties = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_protection_properties(file_name, nil, folder_name)
       expect(protection_properties.is_encrypted).to eq true
       expect(protection_properties.read_password).to eq nil
-      protection_properties = AsposeSlidesCloud::SpecUtils.api.get_protection_properties(file_name, password, folder_name)
+      protection_properties = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_protection_properties(file_name, password, folder_name)
       expect(protection_properties.is_encrypted).to eq true
       expect(protection_properties.read_password).not_to eq nil
     end
@@ -214,8 +214,8 @@ describe 'UseCases' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       password = "password"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      response = AsposeSlidesCloud::SpecUtils.api.get_slide_show_properties(file_name, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      response = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_show_properties(file_name, password, folder_name)
       expect(response.show_animation).to eq (true)
       expect(response.show_narration).to eq (true)
     end
@@ -224,11 +224,11 @@ describe 'UseCases' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       password = "password"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::SlideShowProperties.new
       dto.loop = true
       dto.slide_show_type = "PresentedBySpeaker"
-      response = AsposeSlidesCloud::SpecUtils.api.set_slide_show_properties(file_name, dto, password, folder_name)
+      response = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_slide_show_properties(file_name, dto, password, folder_name)
       expect(response.loop).to eq dto.loop
       expect(response.slide_show_type).to eq dto.slide_show_type
     end

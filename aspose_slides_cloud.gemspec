@@ -49,7 +49,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'autotest', '~> 4.4', '>= 4.4.6'
   s.add_development_dependency 'autotest-rails-pure', '~> 4.1', '>= 4.1.2'
   s.add_development_dependency 'autotest-growl', '~> 0.2', '>= 0.2.16'
-  s.add_development_dependency 'autotest-fsevent', '~> 0.2', '>= 0.2.12'
   s.add_development_dependency 'rubyzip', '~> 2.3', '>= 2.3.0'
   s.files         = `find *`.split("\n").uniq.sort.select { |f| !f.empty? }
   s.test_files    = `find spec/*`.split("\n").uniq.sort.select { |f| !f.empty? && f.start_with?("spec") }

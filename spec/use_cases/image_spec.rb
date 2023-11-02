@@ -29,9 +29,9 @@ describe 'UseCases' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       password = "password"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      presentation_result = AsposeSlidesCloud::SpecUtils.api.get_presentation_images(file_name, password, folder_name)
-      slide_result = AsposeSlidesCloud::SpecUtils.api.get_slide_images(file_name, 1, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      presentation_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_presentation_images(file_name, password, folder_name)
+      slide_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_images(file_name, 1, password, folder_name)
       expect(slide_result.list.length).to be < presentation_result.list.length
     end
 
@@ -39,9 +39,9 @@ describe 'UseCases' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       password = "password"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      default_result = AsposeSlidesCloud::SpecUtils.api.download_images_default_format(file_name, password, folder_name)
-      png_result = AsposeSlidesCloud::SpecUtils.api.download_images(file_name, 'png', password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      default_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.download_images_default_format(file_name, password, folder_name)
+      png_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.download_images(file_name, 'png', password, folder_name)
       expect(png_result.size).not_to eq(default_result.size)
       default_count = 0
       Zip::File.open_buffer(default_result) do |zip|
@@ -61,8 +61,8 @@ describe 'UseCases' do
     it 'download all request' do
       password = "password"
       source = File.binread("TestData/test.pptx")
-      default_result = AsposeSlidesCloud::SpecUtils.api.download_images_default_format_online(source, password)
-      png_result = AsposeSlidesCloud::SpecUtils.api.download_images_online(source, 'png', password)
+      default_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.download_images_default_format_online(source, password)
+      png_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.download_images_online(source, 'png', password)
       expect(png_result.size).not_to eq(default_result.size)
       default_count = 0
       Zip::File.open_buffer(default_result) do |zip|
@@ -84,9 +84,9 @@ describe 'UseCases' do
       file_name = "test.pptx"
       slide_index = 1
       password = "password"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      default_result = AsposeSlidesCloud::SpecUtils.api.download_image_default_format(file_name, slide_index, password, folder_name)
-      png_result = AsposeSlidesCloud::SpecUtils.api.download_image(file_name, slide_index, 'png', password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      default_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.download_image_default_format(file_name, slide_index, password, folder_name)
+      png_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.download_image(file_name, slide_index, 'png', password, folder_name)
       expect(png_result.size).not_to eq(default_result.size)
     end
 
@@ -94,8 +94,8 @@ describe 'UseCases' do
       slide_index = 1
       password = "password"
       source = File.binread("TestData/test.pptx")
-      default_result = AsposeSlidesCloud::SpecUtils.api.download_image_default_format_online(source, slide_index, password)
-      png_result = AsposeSlidesCloud::SpecUtils.api.download_image_online(source, slide_index, 'png', password)
+      default_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.download_image_default_format_online(source, slide_index, password)
+      png_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.download_image_online(source, slide_index, 'png', password)
       expect(png_result.size).not_to eq(default_result.size)
     end
 
@@ -104,10 +104,10 @@ describe 'UseCases' do
       file_name = "test.pptx"
       image_index = 1
       password = "password"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
       image = File.binread("TestData/watermark.png")
-      AsposeSlidesCloud::SpecUtils.api.replace_image(file_name, image_index, image, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_image(file_name, image_index, image, password, folder_name)
     end
 
     it 'replace image request' do
@@ -116,7 +116,7 @@ describe 'UseCases' do
 
       file = File.binread("TestData/test.pptx")
       image = File.binread("TestData/watermark.png")
-      response = AsposeSlidesCloud::SpecUtils.api.replace_image_online(file, image_index, image, password)
+      response = AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_image_online(file, image_index, image, password)
       expect(response.size).not_to eq(0)
     end
   end

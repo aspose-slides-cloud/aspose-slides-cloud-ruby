@@ -28,8 +28,8 @@ describe 'UseCases' do
         folder_name = "TempSlidesSDK"
         file_name = "test.pptx"
         password = "password"
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-        slides = AsposeSlidesCloud::SpecUtils.api.get_slides(file_name, password, folder_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        slides = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slides(file_name, password, folder_name)
         expect(slides.slide_list.length).to eq(9)
     end
 
@@ -38,8 +38,8 @@ describe 'UseCases' do
         file_name = "test.pptx"
         password = "password"
         slide_index = 1
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-        slide = AsposeSlidesCloud::SpecUtils.api.get_slides(file_name, password, folder_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        slide = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slides(file_name, password, folder_name)
         expect(slide).not_to eq(nil)
     end
 
@@ -47,11 +47,11 @@ describe 'UseCases' do
         folder_name = "TempSlidesSDK"
         file_name = "test.pptx"
         password = "password"
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
-        slides = AsposeSlidesCloud::SpecUtils.api.create_slide(file_name, "layoutSlides/3", 1, password, folder_name)
+        slides = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_slide(file_name, "layoutSlides/3", 1, password, folder_name)
         expect(slides.slide_list.length).to eq(10)
-        slides = AsposeSlidesCloud::SpecUtils.api.create_slide(file_name, "layoutSlides/3", nil, password, folder_name)
+        slides = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_slide(file_name, "layoutSlides/3", nil, password, folder_name)
         expect(slides.slide_list.length).to eq(11)
     end
 
@@ -60,8 +60,8 @@ describe 'UseCases' do
         file_name = "test.pptx"
         password = "password"
         slide_index = 3
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-        slides = AsposeSlidesCloud::SpecUtils.api.copy_slide(file_name, slide_index, nil, nil, nil, nil, password, folder_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        slides = AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_slide(file_name, slide_index, nil, nil, nil, nil, password, folder_name)
         expect(slides.slide_list.length).to eq(10)
     end
 
@@ -71,10 +71,10 @@ describe 'UseCases' do
         source_file_name = "TemplateCV.pptx"
         password = "password"
         slide_index = 1
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + source_file_name, folder_name + "/" + source_file_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + source_file_name, folder_name + "/" + source_file_name)
 
-        slides = AsposeSlidesCloud::SpecUtils.api.copy_slide(file_name, slide_index, 1, folder_name + "/" + source_file_name, 
+        slides = AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_slide(file_name, slide_index, 1, folder_name + "/" + source_file_name, 
             nil, nil, password, folder_name)
         expect(slides.slide_list.length).to eq(10)
     end
@@ -84,8 +84,8 @@ describe 'UseCases' do
         file_name = "test.pptx"
         password = "password"
         slide_index = 1
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-        slides = AsposeSlidesCloud::SpecUtils.api.move_slide(file_name, slide_index, 2, password, folder_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        slides = AsposeSlidesCloud::SpecUtils.testSlidesApi.move_slide(file_name, slide_index, 2, password, folder_name)
         expect(slides.slide_list.length).to eq(9)
     end
 
@@ -96,8 +96,8 @@ describe 'UseCases' do
         old_positions = [1,2,3,4,5,6]
         new_positions = [6,5,4,3,2,1]
 
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-        slides = AsposeSlidesCloud::SpecUtils.api.reorder_slides(file_name, old_positions, new_positions, password, folder_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        slides = AsposeSlidesCloud::SpecUtils.testSlidesApi.reorder_slides(file_name, old_positions, new_positions, password, folder_name)
         expect(slides.slide_list.length).to eq(9)
     end
 
@@ -107,13 +107,13 @@ describe 'UseCases' do
         password = "password"
         layout_slide_href = "layoutSlides/3"
         slide_index = 1
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
         dto = AsposeSlidesCloud::Slide.new
         dto.layout_slide = AsposeSlidesCloud::ResourceUri.new
         dto.layout_slide.href = layout_slide_href
 
-        slide = AsposeSlidesCloud::SpecUtils.api.update_slide(file_name, slide_index, dto, password, folder_name)
+        slide = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_slide(file_name, slide_index, dto, password, folder_name)
         expect(slide.layout_slide.href.include? layout_slide_href).to eq(true)
     end
 
@@ -121,8 +121,8 @@ describe 'UseCases' do
         folder_name = "TempSlidesSDK"
         file_name = "test.pptx"
         password = "password"
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-        slides = AsposeSlidesCloud::SpecUtils.api.delete_slides(file_name, nil, password, folder_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        slides = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_slides(file_name, nil, password, folder_name)
         expect(slides.slide_list.length).to eq(1)
     end
 
@@ -130,8 +130,8 @@ describe 'UseCases' do
         folder_name = "TempSlidesSDK"
         file_name = "test.pptx"
         password = "password"
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-        slides = AsposeSlidesCloud::SpecUtils.api.delete_slides(file_name, [1,3,5], password, folder_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        slides = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_slides(file_name, [1,3,5], password, folder_name)
         expect(slides.slide_list.length).to eq(6)
     end
 
@@ -140,8 +140,8 @@ describe 'UseCases' do
         file_name = "test.pptx"
         password = "password"
         slide_index = 1
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-        slides = AsposeSlidesCloud::SpecUtils.api.delete_slide(file_name, slide_index, password, folder_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        slides = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_slide(file_name, slide_index, password, folder_name)
         expect(slides.slide_list.length).to eq(8)
     end
 
@@ -150,8 +150,8 @@ describe 'UseCases' do
         file_name = "test.pptx"
         password = "password"
         slide_index = 5
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-        response = AsposeSlidesCloud::SpecUtils.api.get_background(file_name, slide_index, password, folder_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        response = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_background(file_name, slide_index, password, folder_name)
         expect(response.fill_format).to be_kind_of(AsposeSlidesCloud::SolidFill)
     end
 
@@ -160,12 +160,12 @@ describe 'UseCases' do
         file_name = "test.pptx"
         password = "password"
         slide_index = 1
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
         dto = AsposeSlidesCloud::SlideBackground.new
         dto.fill_format = AsposeSlidesCloud::SolidFill.new
         dto.fill_format.color = "#FFF5FF8A"
 
-        response = AsposeSlidesCloud::SpecUtils.api.set_background(file_name, slide_index, dto, password, folder_name)
+        response = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_background(file_name, slide_index, dto, password, folder_name)
         expect(response.fill_format).to be_kind_of(AsposeSlidesCloud::SolidFill)
         expect(response.fill_format.color).to eq(dto.fill_format.color)
     end
@@ -176,9 +176,9 @@ describe 'UseCases' do
         password = "password"
         slide_index = 1
         color = "#FFF5FF8A"
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
-        response = AsposeSlidesCloud::SpecUtils.api.set_background_color(file_name, slide_index, color, password, folder_name)
+        response = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_background_color(file_name, slide_index, color, password, folder_name)
         expect(response.fill_format).to be_kind_of(AsposeSlidesCloud::SolidFill)
         expect(response.fill_format.color).to eq(color)
     end
@@ -188,9 +188,9 @@ describe 'UseCases' do
         file_name = "test.pptx"
         password = "password"
         slide_index = 5
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
-        response = AsposeSlidesCloud::SpecUtils.api.delete_background(file_name, slide_index, password, folder_name)
+        response = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_background(file_name, slide_index, password, folder_name)
         expect(response.fill_format).to be_kind_of(AsposeSlidesCloud::NoFill)
     end
   end

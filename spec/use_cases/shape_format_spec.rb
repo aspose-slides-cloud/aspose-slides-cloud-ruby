@@ -30,7 +30,7 @@ describe 'UseCases' do
       password = "password"
       slideIndex = 1
       shapeIndex = 1
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
       dto = AsposeSlidesCloud::Shape.new
       line_format = AsposeSlidesCloud::LineFormat.new
@@ -38,9 +38,9 @@ describe 'UseCases' do
       line_format.width = 7
       line_format.dash_style = "Dash"
       dto.line_format = line_format
-      shape = AsposeSlidesCloud::SpecUtils.api.update_shape(file_name, slideIndex, shapeIndex, dto, password, folder_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_shape(file_name, slideIndex, shapeIndex, dto, password, folder_name)
       expect(shape).to be_kind_of(AsposeSlidesCloud::Shape)
-      shape = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slideIndex, shapeIndex, password, folder_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(file_name, slideIndex, shapeIndex, password, folder_name)
       expect(shape).to be_kind_of(AsposeSlidesCloud::Shape)
       expect(shape.line_format.width).to eq(dto.line_format.width)
     end
@@ -51,15 +51,15 @@ describe 'UseCases' do
       password = "password"
       slideIndex = 1
       shapeIndex = 1
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
       dto = AsposeSlidesCloud::Shape.new
       fill_format = AsposeSlidesCloud::SolidFill.new
       fill_format.color = "#FFFFFF00"
       dto.fill_format = fill_format
-      shape = AsposeSlidesCloud::SpecUtils.api.update_shape(file_name, slideIndex, shapeIndex, dto, password, folder_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_shape(file_name, slideIndex, shapeIndex, dto, password, folder_name)
       expect(shape).to be_kind_of(AsposeSlidesCloud::Shape)
-      shape = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slideIndex, shapeIndex, password, folder_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(file_name, slideIndex, shapeIndex, password, folder_name)
       expect(shape).to be_kind_of(AsposeSlidesCloud::Shape)
       expect(shape.fill_format).to be_kind_of(AsposeSlidesCloud::SolidFill)
       expect(shape.fill_format.color).to eq(dto.fill_format.color)
@@ -71,7 +71,7 @@ describe 'UseCases' do
       password = "password"
       slideIndex = 1
       shapeIndex = 1
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
       dto = AsposeSlidesCloud::Shape.new
       effect_format = AsposeSlidesCloud::EffectFormat.new
@@ -82,9 +82,9 @@ describe 'UseCases' do
       inner_shadow.shadow_color = "#FFFFFF00"
       effect_format.inner_shadow = inner_shadow
       dto.effect_format = effect_format
-      shape = AsposeSlidesCloud::SpecUtils.api.update_shape(file_name, slideIndex, shapeIndex, dto, password, folder_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_shape(file_name, slideIndex, shapeIndex, dto, password, folder_name)
       expect(shape).to be_kind_of(AsposeSlidesCloud::Shape)
-      shape = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slideIndex, shapeIndex, password, folder_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(file_name, slideIndex, shapeIndex, password, folder_name)
       expect(shape).to be_kind_of(AsposeSlidesCloud::Shape)
       expect(shape.effect_format.inner_shadow.direction).to eq(dto.effect_format.inner_shadow.direction)
     end
@@ -95,7 +95,7 @@ describe 'UseCases' do
       password = "password"
       slideIndex = 1
       shapeIndex = 1
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
       dto = AsposeSlidesCloud::Shape.new
       three_d_format = AsposeSlidesCloud::ThreeDFormat.new
@@ -116,9 +116,9 @@ describe 'UseCases' do
       light_rig.direction = "Top"
       three_d_format.light_rig = light_rig
       dto.three_d_format = three_d_format
-      shape = AsposeSlidesCloud::SpecUtils.api.update_shape(file_name, slideIndex, shapeIndex, dto, password, folder_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_shape(file_name, slideIndex, shapeIndex, dto, password, folder_name)
       expect(shape).to be_kind_of(AsposeSlidesCloud::Shape)
-      shape = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slideIndex, shapeIndex, password, folder_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(file_name, slideIndex, shapeIndex, password, folder_name)
       expect(shape).to be_kind_of(AsposeSlidesCloud::Shape)
       expect(shape.three_d_format.depth).to eq(dto.three_d_format.depth)
     end

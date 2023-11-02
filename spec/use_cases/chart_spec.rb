@@ -27,8 +27,8 @@ describe 'UseCases' do
     it 'get' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      chart = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, 3, 1, "password", folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      chart = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(file_name, 3, 1, "password", folder_name)
       expect(chart.series.length).to eq(3)
       expect(chart.categories.length).to eq(4)
     end
@@ -36,7 +36,7 @@ describe 'UseCases' do
     it 'create chart auto data source' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       chart = AsposeSlidesCloud::Chart.new
       chart.chart_type = 'ClusteredColumn'
       chart.width = 400
@@ -67,7 +67,7 @@ describe 'UseCases' do
       category3 = AsposeSlidesCloud::ChartCategory.new
       category3.value = "Category3"
       chart.categories = [category1, category2, category3]
-      result = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
       expect(result.series.length).to eq(2)
       expect(result.categories.length).to eq(3)
     end
@@ -75,7 +75,7 @@ describe 'UseCases' do
     it 'create chart workbook data source' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       chart = AsposeSlidesCloud::Chart.new
       chart.chart_type = 'ClusteredColumn'
       chart.width = 400
@@ -133,7 +133,7 @@ describe 'UseCases' do
       category3 = AsposeSlidesCloud::ChartCategory.new
       category3.value = "Category3"
       chart.categories = [category1, category2, category3]
-      result = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
       expect(result.series.length).to eq(2)
       expect(result.categories.length).to eq(3)
     end
@@ -141,7 +141,7 @@ describe 'UseCases' do
     it 'create chart literals' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       chart = AsposeSlidesCloud::Chart.new
       chart.chart_type = 'ClusteredColumn'
       chart.width = 400
@@ -179,7 +179,7 @@ describe 'UseCases' do
       category3 = AsposeSlidesCloud::ChartCategory.new
       category3.value = "Category3"
       chart.categories = [category1, category2, category3]
-      result = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
       expect(result.series.length).to eq(2)
       expect(result.categories.length).to eq(3)
     end
@@ -187,7 +187,7 @@ describe 'UseCases' do
     it 'update' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       chart = AsposeSlidesCloud::Chart.new
       chart.chart_type = 'ClusteredColumn'
       chart.width = 400
@@ -218,7 +218,7 @@ describe 'UseCases' do
       category3 = AsposeSlidesCloud::ChartCategory.new
       category3.value = "Category3"
       chart.categories = [category1, category2, category3]
-      result = AsposeSlidesCloud::SpecUtils.api.update_shape(file_name, 3, 1, chart, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_shape(file_name, 3, 1, chart, "password", folder_name)
       expect(result.series.length).to eq(2)
       expect(result.categories.length).to eq(3)
     end
@@ -226,7 +226,7 @@ describe 'UseCases' do
     it 'series create' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       series = AsposeSlidesCloud::OneValueSeries.new
       series.name = "New Series"
       point1 = AsposeSlidesCloud::OneValueChartDataPoint.new
@@ -238,7 +238,7 @@ describe 'UseCases' do
       point4 = AsposeSlidesCloud::OneValueChartDataPoint.new
       point4.value = 70
       series.data_points = [ point1, point2, point3, point4 ]
-      result = AsposeSlidesCloud::SpecUtils.api.create_chart_series(file_name, 3, 1, series, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_chart_series(file_name, 3, 1, series, "password", folder_name)
       expect(result.series.length).to eq(4)
       expect(result.categories.length).to eq(4)
     end
@@ -246,7 +246,7 @@ describe 'UseCases' do
     it 'series update' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       series = AsposeSlidesCloud::OneValueSeries.new
       series.name = "Series3"
       point1 = AsposeSlidesCloud::OneValueChartDataPoint.new
@@ -258,7 +258,7 @@ describe 'UseCases' do
       point4 = AsposeSlidesCloud::OneValueChartDataPoint.new
       point4.value = 70
       series.data_points = [ point1, point2, point3, point4 ]
-      result = AsposeSlidesCloud::SpecUtils.api.update_chart_series(file_name, 3, 1, 2, series, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_chart_series(file_name, 3, 1, 2, series, "password", folder_name)
       expect(result.series.length).to eq(3)
       expect(result.categories.length).to eq(4)
     end
@@ -266,8 +266,8 @@ describe 'UseCases' do
     it 'series delete' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      result = AsposeSlidesCloud::SpecUtils.api.delete_chart_series(file_name, 3, 1, 2, "password", folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_chart_series(file_name, 3, 1, 2, "password", folder_name)
       expect(result.series.length).to eq(2)
       expect(result.categories.length).to eq(4)
     end
@@ -275,7 +275,7 @@ describe 'UseCases' do
     it 'category create' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       category = AsposeSlidesCloud::ChartCategory.new
       category.value = "New Category"
       point1 = AsposeSlidesCloud::OneValueChartDataPoint.new
@@ -285,7 +285,7 @@ describe 'UseCases' do
       point3 = AsposeSlidesCloud::OneValueChartDataPoint.new
       point3.value = 14
       category.data_points = [ point1, point2, point3 ]
-      result = AsposeSlidesCloud::SpecUtils.api.create_chart_category(file_name, 3, 1, category, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_chart_category(file_name, 3, 1, category, "password", folder_name)
       expect(result.series.length).to eq(3)
       expect(result.categories.length).to eq(5)
       expect(result.series[0].data_points.length).to eq(5)
@@ -295,7 +295,7 @@ describe 'UseCases' do
     it 'category update' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       category = AsposeSlidesCloud::ChartCategory.new
       category.value = "New Category"
       point1 = AsposeSlidesCloud::OneValueChartDataPoint.new
@@ -305,7 +305,7 @@ describe 'UseCases' do
       point3 = AsposeSlidesCloud::OneValueChartDataPoint.new
       point3.value = 14
       category.data_points = [ point1, point2, point3 ]
-      result = AsposeSlidesCloud::SpecUtils.api.update_chart_category(file_name, 3, 1, 2, category, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_chart_category(file_name, 3, 1, 2, category, "password", folder_name)
       expect(result.series.length).to eq(3)
       expect(result.categories.length).to eq(4)
       expect(result.series[0].data_points.length).to eq(4)
@@ -315,8 +315,8 @@ describe 'UseCases' do
     it 'category delete' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      result = AsposeSlidesCloud::SpecUtils.api.delete_chart_category(file_name, 3, 1, 2, "password", folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_chart_category(file_name, 3, 1, 2, "password", folder_name)
       expect(result.series.length).to eq(3)
       expect(result.categories.length).to eq(3)
       expect(result.series[0].data_points.length).to eq(3)
@@ -325,11 +325,11 @@ describe 'UseCases' do
     it 'data point create' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       point = AsposeSlidesCloud::OneValueChartDataPoint.new
       point.value = 40
       begin
-        result = AsposeSlidesCloud::SpecUtils.api.create_chart_data_point(file_name, 3, 1, 2, point, "password", folder_name)
+        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_chart_data_point(file_name, 3, 1, 2, point, "password", folder_name)
         fail "Must have failed because adding data points only works with Scatter & Bubble charts"
       rescue AsposeSlidesCloud::ApiError => e
         expect(e.code).to eq(400)
@@ -339,10 +339,10 @@ describe 'UseCases' do
     it 'data point update' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       point = AsposeSlidesCloud::OneValueChartDataPoint.new
       point.value = 40
-      result = AsposeSlidesCloud::SpecUtils.api.update_chart_data_point(file_name, 3, 1, 2, 2, point, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_chart_data_point(file_name, 3, 1, 2, 2, point, "password", folder_name)
       expect(result.series.length).to eq(3)
       expect(result.categories.length).to eq(4)
       expect(result.series[1].data_points.length).to eq(4)
@@ -352,8 +352,8 @@ describe 'UseCases' do
     it 'data point delete' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      result = AsposeSlidesCloud::SpecUtils.api.delete_chart_data_point(file_name, 3, 1, 2, 2, "password", folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_chart_data_point(file_name, 3, 1, 2, 2, "password", folder_name)
       expect(result.series.length).to eq(3)
       expect(result.categories.length).to eq(4)
       expect(result.series[1].data_points[1]).not_to be_truthy
@@ -362,7 +362,7 @@ describe 'UseCases' do
     it 'sunburst' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       chart = AsposeSlidesCloud::Chart.new
       chart.chart_type = 'Sunburst'
       chart.width = 400
@@ -395,7 +395,7 @@ describe 'UseCases' do
       category4.value = "Stem2"
       category4.level = 1
       chart.categories = [ category1, category2, category3, category4 ]
-      result = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
       expect(result.series.length).to eq(1)
       expect(result.categories.length).to eq(4)
     end
@@ -403,7 +403,7 @@ describe 'UseCases' do
     it 'multi level category axis' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       
       chart = AsposeSlidesCloud::Chart.new
       chart.x = 100
@@ -455,7 +455,7 @@ describe 'UseCases' do
       category8.value = "Category 7"
       chart.categories = [category1, category2, category3, category4, category5, category6, category7, category8]
 
-      response = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
+      response = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
       expect(response.categories.length).to eq(8)
       expect(response.series.length).to eq(1)
       expect(response.categories[0].parent_categories.length).to eq(2)
@@ -466,11 +466,11 @@ describe 'UseCases' do
       file_name = "test.pptx"
       slide_index = 3
       shape_index = 1
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
-      chart = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slide_index, shape_index, "password", folder_name)
+      chart = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(file_name, slide_index, shape_index, "password", folder_name)
       chart.legend.has_legend = false
-      response = AsposeSlidesCloud::SpecUtils.api.update_shape(file_name, slide_index, shape_index, chart, "password", folder_name)
+      response = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_shape(file_name, slide_index, shape_index, chart, "password", folder_name)
       expect(response.legend.has_legend).to eq(false)
     end
 
@@ -479,9 +479,9 @@ describe 'UseCases' do
       file_name = "test.pptx"
       slide_index = 3
       shape_index = 1
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
-      chart = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slide_index, shape_index, "password", folder_name)
+      chart = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(file_name, slide_index, shape_index, "password", folder_name)
       chart.axes = AsposeSlidesCloud::Axes.new
       
       horizontal_axis = AsposeSlidesCloud::Axis.new
@@ -512,7 +512,7 @@ describe 'UseCases' do
       vertical_axis.minor_grid_lines_format.line_format = AsposeSlidesCloud::LineFormat.new
       vertical_axis.minor_grid_lines_format.line_format.fill_format = AsposeSlidesCloud::NoFill.new
 
-      response = AsposeSlidesCloud::SpecUtils.api.update_shape(file_name, slide_index, shape_index, chart, "password", folder_name)
+      response = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_shape(file_name, slide_index, shape_index, chart, "password", folder_name)
       expect(horizontal_axis.major_grid_lines_format.line_format.fill_format.type).to eq("NoFill")
       expect(horizontal_axis.minor_grid_lines_format.line_format.fill_format.type).to eq("Solid")
       expect(vertical_axis.major_grid_lines_format.line_format.fill_format.type).to eq("Gradient")
@@ -525,12 +525,12 @@ describe 'UseCases' do
       slide_index = 3
       shape_index = 1
       series_group_index = 1
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      chart = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slide_index, shape_index, "password", folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      chart = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(file_name, slide_index, shape_index, "password", folder_name)
       expect(chart.series_groups.length).to eq(1)
       series_group = chart.series_groups[0]
       series_group.overlap = 10
-      chart = AsposeSlidesCloud::SpecUtils.api.set_chart_series_group(file_name, slide_index, shape_index, series_group_index, 
+      chart = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_chart_series_group(file_name, slide_index, shape_index, series_group_index, 
         series_group, "password", folder_name)
         expect(chart.series_groups[0].overlap).to eq(10)
     end
@@ -540,12 +540,12 @@ describe 'UseCases' do
       file_name = "test.pptx"
       slide_index = 3
       shape_index = 1
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       legend_dto = AsposeSlidesCloud::Legend.new
       legend_dto.overlay = true
       legend_dto.fill_format = AsposeSlidesCloud::SolidFill.new
       legend_dto.fill_format.color = "#77CEF9"
-      response = AsposeSlidesCloud::SpecUtils.api.set_chart_legend(file_name, slide_index, shape_index, legend_dto, "password", folder_name)
+      response = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_chart_legend(file_name, slide_index, shape_index, legend_dto, "password", folder_name)
       expect(response.overlay).to eq(true)
       expect(response.fill_format.type).to eq("Solid")
     end
@@ -555,12 +555,12 @@ describe 'UseCases' do
       file_name = "test.pptx"
       slide_index = 3
       shape_index = 1
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       axis_dto = AsposeSlidesCloud::Axis.new
       axis_dto.has_title = true
       axis_dto.is_automatic_max_value = false
       axis_dto.max_value = 10
-      response = AsposeSlidesCloud::SpecUtils.api.set_chart_axis(file_name, slide_index, shape_index, "verticalAxis", axis_dto, "password", folder_name)
+      response = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_chart_axis(file_name, slide_index, shape_index, "verticalAxis", axis_dto, "password", folder_name)
       expect(response.has_title).to eq(true)
       expect(response.is_automatic_max_value).to eq(false)
       expect(response.max_value).to eq(axis_dto.max_value)
@@ -571,11 +571,11 @@ describe 'UseCases' do
       file_name = "test.pptx"
       slide_index = 8
       shape_index = 2
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       wall_dto = AsposeSlidesCloud::ChartWall.new
       wall_dto.fill_format = AsposeSlidesCloud::SolidFill.new
       wall_dto.fill_format.color = "#77CEF9"
-      response = AsposeSlidesCloud::SpecUtils.api.set_chart_wall(file_name, slide_index, shape_index, "BackWall", wall_dto, "password", folder_name)
+      response = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_chart_wall(file_name, slide_index, shape_index, "BackWall", wall_dto, "password", folder_name)
       expect(response.fill_format.type).to eq("Solid")
     end
 
@@ -587,7 +587,7 @@ describe 'UseCases' do
       series_index = 2
       data_point_index = 2
       color = "#77CEF9"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       
       dto = AsposeSlidesCloud::OneValueChartDataPoint.new
       dto.value = 40
@@ -601,7 +601,7 @@ describe 'UseCases' do
       dto.effect_format.blur.grow = true
       dto.effect_format.blur.radius = 5
 
-      response = AsposeSlidesCloud::SpecUtils.api.update_chart_data_point(file_name, slide_index, shape_index, series_index, 
+      response = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_chart_data_point(file_name, slide_index, shape_index, series_index, 
           data_point_index, dto, "password", folder_name)
       data_point = response.series[series_index - 1].data_points[data_point_index - 1]
       expect(data_point.fill_format.type).to eq("Solid")
@@ -612,7 +612,7 @@ describe 'UseCases' do
     it 'chart formulas' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       chart = AsposeSlidesCloud::Chart.new
       chart.chart_type = 'ClusteredColumn'
       chart.width = 400
@@ -651,7 +651,7 @@ describe 'UseCases' do
       category3 = AsposeSlidesCloud::ChartCategory.new
       category3.value = "Category3"
       chart.categories = [category1, category2, category3]
-      result = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
       expect(result.series[0].data_points[2].value).to eq(90)
     end
   end

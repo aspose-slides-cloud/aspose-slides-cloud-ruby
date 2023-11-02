@@ -26,7 +26,7 @@ describe 'UseCases' do
   describe 'Abstract Classes' do
     it 'base shape' do
       AsposeSlidesCloud::SpecUtils.initialize('GetSlideShape', nil, nil)
-      o = AsposeSlidesCloud::SpecUtils.api.get_shape("test.pptx", 1, 1, "password", "TempSlidesSDK")
+      o = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape("test.pptx", 1, 1, "password", "TempSlidesSDK")
       expect(o.text).to eq("1")
     end
 

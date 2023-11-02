@@ -27,7 +27,7 @@ describe 'UseCases' do
       it 'create VBA module' do
         folder_name = "TempSlidesSDK"
         file_name = "test.pptx"
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
         dto = AsposeSlidesCloud::VbaModule.new
         dto.name = "Module1"
@@ -41,53 +41,53 @@ describe 'UseCases' do
         reference1.lib_id = "*\\G{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}#2.0#0#C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE14\\MSO.DLL#Microsoft Office 14.0 Object Library"
         dto.references = [reference0, reference1]
 
-        response = AsposeSlidesCloud::SpecUtils.api.create_vba_module(file_name, dto, "password", folder_name)
+        response = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_vba_module(file_name, dto, "password", folder_name)
         puts "'#{response.name}' has been created \n #{response.self_uri.href}"
       end
 
       it 'delete VBA module' do
         folder_name = "TempSlidesSDK"
         file_name = "macros.pptm"
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
         module_index = 1
 
-        response = AsposeSlidesCloud::SpecUtils.api.delete_vba_module(file_name, module_index, nil, folder_name)
+        response = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_vba_module(file_name, module_index, nil, folder_name)
         puts "VBA project contains: #{response.modules.length} module(s), and #{response.references.length} references"
       end
 
       it 'get VBA module' do
         folder_name = "TempSlidesSDK"
         file_name = "macros.pptm"
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
         module_index = 1
 
-        response = AsposeSlidesCloud::SpecUtils.api.get_vba_module(file_name, module_index, nil, folder_name)
+        response = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_vba_module(file_name, module_index, nil, folder_name)
         puts "#{response.name} \n#{response.source_code}"
       end
 
       it 'delete VBA project info' do
         folder_name = "TempSlidesSDK"
         file_name = "macros.pptm"
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
         module_index = 1
 
-        response = AsposeSlidesCloud::SpecUtils.api.get_vba_project(file_name, nil, folder_name)
+        response = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_vba_project(file_name, nil, folder_name)
         puts "VBA project contains: #{response.modules.length} module(s), and #{response.references.length} references"
       end
 
       it 'update VBA module' do
         folder_name = "TempSlidesSDK"
         file_name = "macros.pptm"
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
         dto = AsposeSlidesCloud::VbaModule.new
         dto.source_code = "Sub Test() MsgBox ""Test"" End Sub"    
         module_index = 1
 
-        response = AsposeSlidesCloud::SpecUtils.api.update_vba_module(file_name, module_index, dto, "password", folder_name)
+        response = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_vba_module(file_name, module_index, dto, "password", folder_name)
         puts "'#{response.name}' has been update \n #{response.self_uri.href}"
       end
     end

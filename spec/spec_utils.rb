@@ -22,11 +22,20 @@ SOFTWARE.
 
 module AsposeSlidesCloud
   class SpecUtils
+    def self.ensureOperationId()
+      unless @@operation_id
+        source_file = File.binread("TestData/test.pptx")
+        @@operation_id = SpecUtils.testSlidesAsyncApi.start_convert(source_file, AsposeSlidesCloud::ExportFormat::PDF, "password")
+        sleep(10)
+      end
+    end
+
     def self.initialize(method, name, value)
+      SpecUtils.ensureOperationId()
       if !@@is_initialized
         version = ""
         begin
-          version = SpecUtils.api.download_file("TempTests/version.txt")
+          version = SpecUtils.testSlidesApi.download_file("TempTests/version.txt")
         rescue AsposeSlidesCloud::ApiError => e
           if e.code != 404
             fail "Could not read from storage"
@@ -36,10 +45,10 @@ module AsposeSlidesCloud
           Dir.entries(TEST_DATA_PATH).each { |f|
             if !File.directory? File.join(TEST_DATA_PATH, f)
               fd = File.binread(File.join(TEST_DATA_PATH, f))
-              SpecUtils.api.upload_file("TempTests/" + f, fd)
+              SpecUtils.testSlidesApi.upload_file("TempTests/" + f, fd)
             end
           }
-          SpecUtils.api.upload_file("TempTests/version.txt", EXPECTED_TEST_DATA_VERSION)
+          SpecUtils.testSlidesApi.upload_file("TempTests/version.txt", EXPECTED_TEST_DATA_VERSION)
         end
         @@is_initialized = true
       end
@@ -58,15 +67,16 @@ module AsposeSlidesCloud
       end
       files.each do |path, rule|
         if rule["Action"] == "Put"
-          SpecUtils.api.copy_file("TempTests/" + rule['ActualName'], path)
+          SpecUtils.testSlidesApi.copy_file("TempTests/" + rule['ActualName'], path)
         elsif rule["Action"] == "Delete"
-          SpecUtils.api.delete_file(path)
-          SpecUtils.api.delete_folder(path)
+          SpecUtils.testSlidesApi.delete_file(path)
+          SpecUtils.testSlidesApi.delete_folder(path)
         end
       end
     end
 
     def self.get_param_value(name, method, type)
+      SpecUtils.ensureOperationId()
       value = nil
       SpecUtils.test_rules["Values"].each do |rule|
         if SpecUtils.good_rule?(rule, name, method, type) and rule.key?("Value")
@@ -178,6 +188,10 @@ module AsposeSlidesCloud
             else
               result = File.binread(File.join(AsposeSlidesCloud::SpecUtils::TEST_DATA_PATH, file_name))
             end
+          elsif template == "#OperationId"
+            return @@operation_id
+          elsif template == "#NewId"
+            return "96b0a57c-d9ae-453f-b56f-3b154eb10cda"
           else
             result = SpecUtils.replace(result, "%n", name)
             result = SpecUtils.replace(result, "%v", value)
@@ -207,7 +221,7 @@ module AsposeSlidesCloud
 
     @@test_rules = nil
 
-    def self.api
+    def self.testSlidesApi
       unless @@api
         config = JSON.parse(File.read('testConfig.json'))
         configuration = AsposeSlidesCloud::Configuration.new
@@ -222,8 +236,25 @@ module AsposeSlidesCloud
       @@api
     end
 
+    def self.testSlidesAsyncApi
+      unless @@asyncApi
+        config = JSON.parse(File.read('testConfig.json'))
+        configuration = AsposeSlidesCloud::Configuration.new
+        configuration.base_url = config["AsyncBaseUrl"] ? config["AsyncBaseUrl"] : config["BaseUrl"]
+        configuration.auth_base_url = config["AuthBaseUrl"] ? config["AuthBaseUrl"] : config["BaseUrl"]
+        configuration.app_sid = config["ClientId"]
+        configuration.app_key = config["ClientSecret"]
+        configuration.debugging = config["Debug"]
+        configuration.verify_ssl = !config["AllowInsecureRequests"]
+        @@asyncApi = AsposeSlidesCloud::SlidesAsyncApi.new(configuration)
+      end
+      @@asyncApi
+    end
+
     @@api = nil
+    @@asyncApi = nil
     @@is_initialized = false
+    @@operation_id = nil
 
     TEST_DATA_PATH = "TestData"
     EXPECTED_TEST_DATA_VERSION = "1"

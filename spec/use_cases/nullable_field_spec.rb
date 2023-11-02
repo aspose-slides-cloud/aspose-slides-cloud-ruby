@@ -33,7 +33,7 @@ describe 'UseCases' do
       max1 = 104.3
       max2 = 87
       AsposeSlidesCloud::SpecUtils.initialize("no_method", "no_property", nil)
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + fileName, folderName + "/" + fileName)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + fileName, folderName + "/" + fileName)
 
       dto = AsposeSlidesCloud::Chart.new
       dto.chart_type = "Line"
@@ -65,9 +65,9 @@ describe 'UseCases' do
       dto.axes.horizontal_axis.min_value = min1
       dto.axes.horizontal_axis.is_automatic_max_value = false
       dto.axes.horizontal_axis.max_value = max1
-      AsposeSlidesCloud::SpecUtils.api.create_shape(fileName, 1, dto, nil, nil, password, folderName)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(fileName, 1, dto, nil, nil, password, folderName)
 
-      result = AsposeSlidesCloud::SpecUtils.api.get_shape(fileName, 1, 5, password, folderName)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(fileName, 1, 5, password, folderName)
       expect(result.axes.horizontal_axis.min_value).to eq(min1)
       expect(result.axes.horizontal_axis.max_value).to eq(max1)
 
@@ -75,17 +75,17 @@ describe 'UseCases' do
       dto.axes = AsposeSlidesCloud::Axes.new
       dto.axes.horizontal_axis = AsposeSlidesCloud::Axis.new
       dto.axes.horizontal_axis.min_value = min2
-      AsposeSlidesCloud::SpecUtils.api.update_shape(fileName, 1, 5, dto, password, folderName)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.update_shape(fileName, 1, 5, dto, password, folderName)
 
-      result = AsposeSlidesCloud::SpecUtils.api.get_shape(fileName, 1, 5, password, folderName)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(fileName, 1, 5, password, folderName)
       expect(result.axes.horizontal_axis.min_value).to eq(min2)
       expect(result.axes.horizontal_axis.max_value).to eq(max1)
 
       dto.axes.horizontal_axis = AsposeSlidesCloud::Axis.new
       dto.axes.horizontal_axis.max_value = max2
-      AsposeSlidesCloud::SpecUtils.api.update_shape(fileName, 1, 5, dto, password, folderName)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.update_shape(fileName, 1, 5, dto, password, folderName)
 
-      result = AsposeSlidesCloud::SpecUtils.api.get_shape(fileName, 1, 5, password, folderName)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(fileName, 1, 5, password, folderName)
       expect(result.axes.horizontal_axis.min_value).to eq(min2)
       expect(result.axes.horizontal_axis.max_value).to eq(max2)
     end

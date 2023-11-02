@@ -53,7 +53,7 @@ describe 'UseCases' do
       files.push(File.binread("TestData/TemplatingCVDataWithBase64.xml"))
       files.push(File.binread("TestData/TemplateCV.pptx"))
 
-      result = AsposeSlidesCloud::SpecUtils.api.pipeline(pipeline, files)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.pipeline(pipeline, files)
       expect(result).to be_kind_of(String)
       expect(result).to be_truthy
     end

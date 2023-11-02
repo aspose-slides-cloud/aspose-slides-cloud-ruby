@@ -27,7 +27,7 @@ describe 'UseCases' do
         it 'update table cell' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             slide_index = 9
             shape_index = 1
@@ -35,7 +35,7 @@ describe 'UseCases' do
             cell_index = 1
             dto = AsposeSlidesCloud::TableCell.new
             dto.text = "Test text"
-            result = AsposeSlidesCloud::SpecUtils.api.update_table_cell(file_name, slide_index, shape_index, 
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_table_cell(file_name, slide_index, shape_index, 
                 row_index, cell_index, dto, "password", folder_name)
             expect(result.text).to eq(dto.text)
         end
@@ -43,7 +43,7 @@ describe 'UseCases' do
         it 'create table row' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             slide_index = 9
             shape_index = 1
@@ -60,7 +60,7 @@ describe 'UseCases' do
             dto.minimal_height = 30
             dto.cells = [cell0, cell1, cell2, cell3]
 
-            result = AsposeSlidesCloud::SpecUtils.api.create_table_row(file_name, slide_index, shape_index, dto, 
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_table_row(file_name, slide_index, shape_index, dto, 
                 nil, "password", folder_name)
             expect(result.cells.length).to eq(dto.cells.length)
             expect(result.minimal_height).to eq(dto.minimal_height)
@@ -69,14 +69,14 @@ describe 'UseCases' do
         it 'delete table row' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             slide_index = 9
             shape_index = 1
             row_index = 2
             with_attached_rows = true
 
-            result = AsposeSlidesCloud::SpecUtils.api.delete_table_row(file_name, slide_index, shape_index, 
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_table_row(file_name, slide_index, shape_index, 
                 row_index, with_attached_rows, "password", folder_name)
             expect(result.rows.length).to eq(2)
         end
@@ -84,7 +84,7 @@ describe 'UseCases' do
         it 'update table row' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             slide_index = 9
             shape_index = 1
@@ -93,7 +93,7 @@ describe 'UseCases' do
             dto = AsposeSlidesCloud::TableRow.new
             dto.minimal_height = 30
 
-            result = AsposeSlidesCloud::SpecUtils.api.update_table_row(file_name, slide_index, shape_index, 
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_table_row(file_name, slide_index, shape_index, 
                 row_index, dto, "password", folder_name)
 
             expect(result.minimal_height).to eq(dto.minimal_height)
@@ -102,7 +102,7 @@ describe 'UseCases' do
         it 'merge table cell' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             slide_index = 9
             shape_index = 1
@@ -114,7 +114,7 @@ describe 'UseCases' do
             dto.last_cell_index = 2
             dto.allow_splitting = true
 
-            result = AsposeSlidesCloud::SpecUtils.api.merge_table_cells(file_name, slide_index, shape_index, dto, "password", folder_name)
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.merge_table_cells(file_name, slide_index, shape_index, dto, "password", folder_name)
 
             expect(result.rows[0].cells[0].col_span).to eq(2)
             expect(result.rows[0].cells[0].row_span).to eq(2)
@@ -123,7 +123,7 @@ describe 'UseCases' do
         it 'split table cell by width' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             slide_index = 9
             shape_index = 1
@@ -131,7 +131,7 @@ describe 'UseCases' do
             cell_index = 1
             cell_width = 10
 
-            result = AsposeSlidesCloud::SpecUtils.api.split_table_cell(file_name, slide_index, shape_index,
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.split_table_cell(file_name, slide_index, shape_index,
                 row_index, cell_index, "SplitByWidth", cell_width, "password", folder_name)
 
             expect(result.rows[0].cells.length).to eq(5)
@@ -140,7 +140,7 @@ describe 'UseCases' do
         it 'split table cell by height' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             slide_index = 9
             shape_index = 1
@@ -148,7 +148,7 @@ describe 'UseCases' do
             cell_index = 1
             cell_height = 10
 
-            result = AsposeSlidesCloud::SpecUtils.api.split_table_cell(file_name, slide_index, shape_index,
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.split_table_cell(file_name, slide_index, shape_index,
                 row_index, cell_index, "SplitByHeight", cell_height, "password", folder_name)
 
             expect(result.rows.length).to eq(5)
@@ -157,7 +157,7 @@ describe 'UseCases' do
         it 'split table cell by col span' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             slide_index = 9
             shape_index = 1
@@ -165,7 +165,7 @@ describe 'UseCases' do
             cell_index = 1
             col_span = 1
 
-            result = AsposeSlidesCloud::SpecUtils.api.split_table_cell(file_name, slide_index, shape_index,
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.split_table_cell(file_name, slide_index, shape_index,
                 row_index, cell_index, "SplitByColSpan", col_span, "password", folder_name)
 
             expect(result.rows[0].cells[0].col_span).to eq(nil)
@@ -174,7 +174,7 @@ describe 'UseCases' do
         it 'split table cell by row span' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             slide_index = 9
             shape_index = 1
@@ -182,7 +182,7 @@ describe 'UseCases' do
             cell_index = 3
             row_span = 1
 
-            result = AsposeSlidesCloud::SpecUtils.api.split_table_cell(file_name, slide_index, shape_index,
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.split_table_cell(file_name, slide_index, shape_index,
                 row_index, cell_index, "SplitByRowSpan", row_span, "password", folder_name)
 
             expect(result.rows[1].cells[2].row_span).to eq(nil)
@@ -191,14 +191,14 @@ describe 'UseCases' do
         it 'get table cell paragraphs' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             slide_index = 9
             shape_index = 1
             row_index = 1
             cell_index = 1
 
-            result = AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraphs(file_name, slide_index, shape_index,
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_table_cell_paragraphs(file_name, slide_index, shape_index,
                 row_index, cell_index, "password", folder_name)
 
             expect(result.paragraph_links.length).to eq(1)
@@ -207,7 +207,7 @@ describe 'UseCases' do
         it 'get table cell paragraph' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             slide_index = 9
             shape_index = 1
@@ -215,7 +215,7 @@ describe 'UseCases' do
             cell_index = 1
             paragraph_index = 1
 
-            result = AsposeSlidesCloud::SpecUtils.api.get_table_cell_paragraph(file_name, slide_index, shape_index,
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_table_cell_paragraph(file_name, slide_index, shape_index,
                 row_index, cell_index, paragraph_index, "password", folder_name)
 
             expect(result.portion_list.length).to eq(2)
@@ -224,7 +224,7 @@ describe 'UseCases' do
         it 'create table cell paragraph' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             slide_index = 9
             shape_index = 1
@@ -239,7 +239,7 @@ describe 'UseCases' do
             dto.portion_list = [portion0, portion1]
 
 
-            result = AsposeSlidesCloud::SpecUtils.api.create_table_cell_paragraph(file_name, slide_index, shape_index,
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_table_cell_paragraph(file_name, slide_index, shape_index,
                 row_index, cell_index, dto, "password", folder_name)
 
             expect(result.portion_list.length).to eq(2)
@@ -248,7 +248,7 @@ describe 'UseCases' do
         it 'update table cell paragraph' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             slide_index = 9
             shape_index = 1
@@ -264,7 +264,7 @@ describe 'UseCases' do
             dto.portion_list = [portion0, portion1]
 
 
-            result = AsposeSlidesCloud::SpecUtils.api.update_table_cell_paragraph(file_name, slide_index, shape_index,
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_table_cell_paragraph(file_name, slide_index, shape_index,
                 row_index, cell_index, paragraph_index, dto, "password", folder_name)
 
             expect(result.portion_list.length).to eq(2)
@@ -273,7 +273,7 @@ describe 'UseCases' do
         it 'delete table cell paragraph' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             slide_index = 9
             shape_index = 1
@@ -289,7 +289,7 @@ describe 'UseCases' do
             dto.portion_list = [portion0, portion1]
 
 
-            result = AsposeSlidesCloud::SpecUtils.api.delete_table_cell_paragraph(file_name, slide_index, shape_index,
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_table_cell_paragraph(file_name, slide_index, shape_index,
                 row_index, cell_index, paragraph_index, "password", folder_name)
 
             expect(result.paragraph_links.length).to eq(0)
@@ -298,7 +298,7 @@ describe 'UseCases' do
         it 'get table cell portions' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             slide_index = 9
             shape_index = 1
@@ -306,7 +306,7 @@ describe 'UseCases' do
             cell_index = 1
             paragraph_index = 1
             
-            result = AsposeSlidesCloud::SpecUtils.api.get_table_cell_portions(file_name, slide_index, shape_index,
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_table_cell_portions(file_name, slide_index, shape_index,
                 row_index, cell_index, paragraph_index, "password", folder_name)
 
             expect(result.items.length).to eq(2)
@@ -315,7 +315,7 @@ describe 'UseCases' do
         it 'get table cell portions' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             slide_index = 9
             shape_index = 1
@@ -324,7 +324,7 @@ describe 'UseCases' do
             paragraph_index = 1
             portion_index = 1 
             
-            result = AsposeSlidesCloud::SpecUtils.api.get_table_cell_portion(file_name, slide_index, shape_index,
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_table_cell_portion(file_name, slide_index, shape_index,
                 row_index, cell_index, paragraph_index, portion_index, "password", folder_name)
 
             expect(result.text).to eq("Header")
@@ -333,7 +333,7 @@ describe 'UseCases' do
         it 'create table cell portion' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             slide_index = 9
             shape_index = 1
@@ -343,7 +343,7 @@ describe 'UseCases' do
             dto = AsposeSlidesCloud::Portion.new
             dto.text = "Portion 1"
             
-            result = AsposeSlidesCloud::SpecUtils.api.create_table_cell_portion(file_name, slide_index, shape_index,
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_table_cell_portion(file_name, slide_index, shape_index,
                 row_index, cell_index, paragraph_index, dto, "password", folder_name)
 
             expect(result.text).to eq(dto.text)
@@ -352,7 +352,7 @@ describe 'UseCases' do
         it 'update table cell portion' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             slide_index = 9
             shape_index = 1
@@ -363,7 +363,7 @@ describe 'UseCases' do
             dto = AsposeSlidesCloud::Portion.new
             dto.text = "Portion 1"
             
-            result = AsposeSlidesCloud::SpecUtils.api.update_table_cell_portion(file_name, slide_index, shape_index,
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_table_cell_portion(file_name, slide_index, shape_index,
                 row_index, cell_index, paragraph_index, portion_index, dto, "password", folder_name)
 
             expect(result.text).to eq(dto.text)
@@ -372,7 +372,7 @@ describe 'UseCases' do
         it 'delete table cell portion' do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             slide_index = 9
             shape_index = 1
@@ -383,7 +383,7 @@ describe 'UseCases' do
             dto = AsposeSlidesCloud::Portion.new
             dto.text = "Portion 1"
             
-            result = AsposeSlidesCloud::SpecUtils.api.delete_table_cell_portion(file_name, slide_index, shape_index,
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_table_cell_portion(file_name, slide_index, shape_index,
                 row_index, cell_index, paragraph_index, portion_index, "password", folder_name)
 
             expect(result.items.length).to eq(1)

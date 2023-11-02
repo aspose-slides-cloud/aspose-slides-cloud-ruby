@@ -28,13 +28,13 @@ describe 'UseCases' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       password = "password"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::HeaderFooter.new
       dto.is_footer_visible = true
       dto.footer_text = "footer"
       dto.is_date_time_visible = false
-      AsposeSlidesCloud::SpecUtils.api.set_presentation_header_footer(file_name, dto, "password", folder_name)
-      result = AsposeSlidesCloud::SpecUtils.api.get_slide_header_footer(file_name, 1, "password", folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.set_presentation_header_footer(file_name, dto, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_header_footer(file_name, 1, "password", folder_name)
       expect(result.is_footer_visible).to be true
       expect(result.is_date_time_visible).to be false
     end
@@ -44,15 +44,15 @@ describe 'UseCases' do
       file_name = "test.pptx"
       password = "password"
       slide_index = 1
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::HeaderFooter.new
       dto.is_footer_visible = true
       dto.footer_text = "footer"
       dto.is_date_time_visible = false
-      result = AsposeSlidesCloud::SpecUtils.api.set_slide_header_footer(file_name, slide_index, dto, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_slide_header_footer(file_name, slide_index, dto, "password", folder_name)
       expect(result.is_footer_visible).to be true
       expect(result.is_date_time_visible).to be false
-      result = AsposeSlidesCloud::SpecUtils.api.get_slide_header_footer(file_name, slide_index, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_header_footer(file_name, slide_index, "password", folder_name)
       expect(result.is_footer_visible).to be true
       expect(result.is_date_time_visible).to be false
     end
@@ -62,15 +62,15 @@ describe 'UseCases' do
       file_name = "test.pptx"
       password = "password"
       slide_index = 1
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::NotesSlideHeaderFooter.new
       dto.is_header_visible = true
       dto.footer_text = "footer"
       dto.is_date_time_visible = false
-      result = AsposeSlidesCloud::SpecUtils.api.set_notes_slide_header_footer(file_name, slide_index, dto, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_notes_slide_header_footer(file_name, slide_index, dto, "password", folder_name)
       expect(result.is_header_visible).to be true
       expect(result.is_date_time_visible).to be false
-      result = AsposeSlidesCloud::SpecUtils.api.get_notes_slide_header_footer(file_name, slide_index, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_notes_slide_header_footer(file_name, slide_index, "password", folder_name)
       expect(result.is_header_visible).to be true
       expect(result.is_date_time_visible).to be false
     end

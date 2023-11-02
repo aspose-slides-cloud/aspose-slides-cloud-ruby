@@ -31,17 +31,17 @@ describe 'UseCases' do
       password = "password"
       slide_index = 1
       watermark_text = "watermarkText"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      get1_result = AsposeSlidesCloud::SpecUtils.api.get_shapes(file_name, slide_index, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      get1_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shapes(file_name, slide_index, password, folder_name)
       shape_count = get1_result.shapes_links.length + 1
-      AsposeSlidesCloud::SpecUtils.api.create_watermark(file_name, nil, nil, watermark_text, nil, nil, password, folder_name)
-      get2_result = AsposeSlidesCloud::SpecUtils.api.get_shapes(file_name, slide_index, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.create_watermark(file_name, nil, nil, watermark_text, nil, nil, password, folder_name)
+      get2_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shapes(file_name, slide_index, password, folder_name)
       expect(get2_result.shapes_links.length).to eq(shape_count)
-      shape = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slide_index, shape_count, password, folder_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(file_name, slide_index, shape_count, password, folder_name)
       expect(shape.name).to eq("watermark")
       expect(shape.text).to eq(watermark_text)
-      AsposeSlidesCloud::SpecUtils.api.delete_watermark(file_name, nil, password, folder_name)
-      get3_result = AsposeSlidesCloud::SpecUtils.api.get_shapes(file_name, slide_index, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_watermark(file_name, nil, password, folder_name)
+      get3_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shapes(file_name, slide_index, password, folder_name)
       expect(get3_result.shapes_links.length).to eq(shape_count - 1)
     end
 
@@ -51,19 +51,19 @@ describe 'UseCases' do
       password = "password"
       slide_index = 1
       watermark_text = "watermarkText"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      get1_result = AsposeSlidesCloud::SpecUtils.api.get_shapes(file_name, slide_index, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      get1_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shapes(file_name, slide_index, password, folder_name)
       shape_count = get1_result.shapes_links.length + 1
       watermark = AsposeSlidesCloud::Shape.new
       watermark.text = watermark_text
-      AsposeSlidesCloud::SpecUtils.api.create_watermark(file_name, watermark, nil, nil, nil, nil, password, folder_name)
-      get2_result = AsposeSlidesCloud::SpecUtils.api.get_shapes(file_name, slide_index, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.create_watermark(file_name, watermark, nil, nil, nil, nil, password, folder_name)
+      get2_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shapes(file_name, slide_index, password, folder_name)
       expect(get2_result.shapes_links.length).to eq(shape_count)
-      shape = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slide_index, shape_count, password, folder_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(file_name, slide_index, shape_count, password, folder_name)
       expect(shape.name).to eq("watermark")
       expect(shape.text).to eq(watermark_text)
-      AsposeSlidesCloud::SpecUtils.api.delete_watermark(file_name, nil, password, folder_name)
-      get3_result = AsposeSlidesCloud::SpecUtils.api.get_shapes(file_name, slide_index, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_watermark(file_name, nil, password, folder_name)
+      get3_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shapes(file_name, slide_index, password, folder_name)
       expect(get3_result.shapes_links.length).to eq(shape_count - 1)
     end
 
@@ -72,17 +72,17 @@ describe 'UseCases' do
       file_name = "test.pptx"
       password = "password"
       slide_index = 1
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      get1_result = AsposeSlidesCloud::SpecUtils.api.get_shapes(file_name, slide_index, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      get1_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shapes(file_name, slide_index, password, folder_name)
       shape_count = get1_result.shapes_links.length + 1
       source = File.binread("TestData/watermark.png")
-      AsposeSlidesCloud::SpecUtils.api.create_image_watermark(file_name, source, nil, password, folder_name)
-      get2_result = AsposeSlidesCloud::SpecUtils.api.get_shapes(file_name, slide_index, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.create_image_watermark(file_name, source, nil, password, folder_name)
+      get2_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shapes(file_name, slide_index, password, folder_name)
       expect(get2_result.shapes_links.length).to eq(shape_count)
-      shape = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slide_index, shape_count, password, folder_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(file_name, slide_index, shape_count, password, folder_name)
       expect(shape.name).to eq("watermark")
-      AsposeSlidesCloud::SpecUtils.api.delete_watermark(file_name, nil, password, folder_name)
-      get3_result = AsposeSlidesCloud::SpecUtils.api.get_shapes(file_name, slide_index, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_watermark(file_name, nil, password, folder_name)
+      get3_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shapes(file_name, slide_index, password, folder_name)
       expect(get3_result.shapes_links.length).to eq(shape_count - 1)
     end
 
@@ -92,8 +92,8 @@ describe 'UseCases' do
       password = "password"
       slide_index = 1
       watermark_name = "myWatermark"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      get1_result = AsposeSlidesCloud::SpecUtils.api.get_shapes(file_name, slide_index, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      get1_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shapes(file_name, slide_index, password, folder_name)
       shape_count = get1_result.shapes_links.length + 1
       source = File.binread("TestData/watermark.png")
       watermark = AsposeSlidesCloud::PictureFrame.new
@@ -101,22 +101,22 @@ describe 'UseCases' do
       fill_format.base64_data = Base64.encode64(source)
       watermark.fill_format = fill_format
       watermark.name = watermark_name
-      AsposeSlidesCloud::SpecUtils.api.create_image_watermark(file_name, nil, watermark, password, folder_name)
-      get2_result = AsposeSlidesCloud::SpecUtils.api.get_shapes(file_name, slide_index, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.create_image_watermark(file_name, nil, watermark, password, folder_name)
+      get2_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shapes(file_name, slide_index, password, folder_name)
       expect(get2_result.shapes_links.length).to eq(shape_count)
-      shape = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, slide_index, shape_count, password, folder_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(file_name, slide_index, shape_count, password, folder_name)
       expect(shape.name).to eq(watermark_name)
-      AsposeSlidesCloud::SpecUtils.api.delete_watermark(file_name, watermark_name, password, folder_name)
-      get3_result = AsposeSlidesCloud::SpecUtils.api.get_shapes(file_name, slide_index, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_watermark(file_name, watermark_name, password, folder_name)
+      get3_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shapes(file_name, slide_index, password, folder_name)
       expect(get3_result.shapes_links.length).to eq(shape_count - 1)
     end
 
     it 'text request' do
       password = "password"
       source = File.binread("TestData/test.pptx")
-      post_result = AsposeSlidesCloud::SpecUtils.api.create_watermark_online(source, nil, nil, "watermarkText", nil, nil, password)
+      post_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_watermark_online(source, nil, nil, "watermarkText", nil, nil, password)
       expect(post_result.size).not_to eq(source.size)
-      delete_result = AsposeSlidesCloud::SpecUtils.api.delete_watermark_online(source, nil, password)
+      delete_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_watermark_online(source, nil, password)
       expect(post_result.size).to be > delete_result.size
     end
 
@@ -125,9 +125,9 @@ describe 'UseCases' do
       source = File.binread("TestData/test.pptx")
       watermark = AsposeSlidesCloud::Shape.new
       watermark.text = "watermarkText"
-      post_result = AsposeSlidesCloud::SpecUtils.api.create_watermark_online(source, watermark, nil, nil, nil, nil, password)
+      post_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_watermark_online(source, watermark, nil, nil, nil, nil, password)
       expect(post_result.size).not_to eq(source.size)
-      delete_result = AsposeSlidesCloud::SpecUtils.api.delete_watermark_online(source, nil, password)
+      delete_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_watermark_online(source, nil, password)
       expect(post_result.size).to be > delete_result.size
     end
 
@@ -135,9 +135,9 @@ describe 'UseCases' do
       password = "password"
       source = File.binread("TestData/test.pptx")
       watermark = File.binread("TestData/watermark.png")
-      post_result = AsposeSlidesCloud::SpecUtils.api.create_image_watermark_online(source, watermark, nil, password)
+      post_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_image_watermark_online(source, watermark, nil, password)
       expect(post_result.size).not_to eq(source.size)
-      delete_result = AsposeSlidesCloud::SpecUtils.api.delete_watermark_online(source, nil, password)
+      delete_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_watermark_online(source, nil, password)
       expect(post_result.size).to be > delete_result.size
     end
 
@@ -149,9 +149,9 @@ describe 'UseCases' do
       fill_format = AsposeSlidesCloud::PictureFill.new
       fill_format.base64_data = Base64.encode64(watermark_source)
       watermark.fill_format = fill_format
-      post_result = AsposeSlidesCloud::SpecUtils.api.create_image_watermark_online(source, nil, watermark, password)
+      post_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_image_watermark_online(source, nil, watermark, password)
       expect(post_result.size).not_to eq(source.size)
-      delete_result = AsposeSlidesCloud::SpecUtils.api.delete_watermark_online(source, nil, password)
+      delete_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_watermark_online(source, nil, password)
       expect(post_result.size).to be > delete_result.size
     end
   end

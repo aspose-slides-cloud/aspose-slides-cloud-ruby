@@ -29,21 +29,21 @@ describe 'UseCases' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       password = "password"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      result1 = AsposeSlidesCloud::SpecUtils.api.split(file_name, nil, nil, nil, nil, nil, nil, nil, password, folder_name)
-      result2 = AsposeSlidesCloud::SpecUtils.api.split(file_name, nil, nil, nil, nil, 2, 3, nil, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      result1 = AsposeSlidesCloud::SpecUtils.testSlidesApi.split(file_name, nil, nil, nil, nil, nil, nil, nil, password, folder_name)
+      result2 = AsposeSlidesCloud::SpecUtils.testSlidesApi.split(file_name, nil, nil, nil, nil, 2, 3, nil, password, folder_name)
       expect(result2.slides.length).to eq(2)
       expect(result2.slides.length).to be < result1.slides.length
       url = result1.slides[0].href
       path = url[url.index("/storage/file/") + "/storage/file/".length, url.length - 1]
-      expect(AsposeSlidesCloud::SpecUtils.api.object_exists(path).exists).to be true
+      expect(AsposeSlidesCloud::SpecUtils.testSlidesApi.object_exists(path).exists).to be true
     end
 
     it 'request' do
       source = File.binread("TestData/test.pptx")
       password = "password"
-      result1 = AsposeSlidesCloud::SpecUtils.api.split_online(source, 'png', nil, nil, nil, nil, password)
-      result2 = AsposeSlidesCloud::SpecUtils.api.split_online(source, 'png', nil, nil, 2, 3, password)
+      result1 = AsposeSlidesCloud::SpecUtils.testSlidesApi.split_online(source, 'png', nil, nil, nil, nil, password)
+      result2 = AsposeSlidesCloud::SpecUtils.testSlidesApi.split_online(source, 'png', nil, nil, 2, 3, password)
       count1 = 0
       Zip::File.open_buffer(result1) do |zip|
         zip.each do |entry|
@@ -63,26 +63,26 @@ describe 'UseCases' do
     it 'request to storage' do
       source = File.binread("TestData/test.pptx")
       password = "password"
-      result1 = AsposeSlidesCloud::SpecUtils.api.split_and_save_online(source, 'png', nil, nil, nil, nil, nil, password)
-      result2 = AsposeSlidesCloud::SpecUtils.api.split_and_save_online(source, 'png', nil, nil, nil, 2, 3, password)
+      result1 = AsposeSlidesCloud::SpecUtils.testSlidesApi.split_and_save_online(source, 'png', nil, nil, nil, nil, nil, password)
+      result2 = AsposeSlidesCloud::SpecUtils.testSlidesApi.split_and_save_online(source, 'png', nil, nil, nil, 2, 3, password)
       expect(result2.slides.length).to eq(2)
       expect(result2.slides.length).to be < result1.slides.length
       url = result1.slides[0].href
       path = url[url.index("/storage/file/") + "/storage/file/".length, url.length - 1]
-      expect(AsposeSlidesCloud::SpecUtils.api.object_exists(path).exists).to be true
+      expect(AsposeSlidesCloud::SpecUtils.testSlidesApi.object_exists(path).exists).to be true
     end
 
     it 'with options' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       password = "password"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       options = AsposeSlidesCloud::PdfExportOptions.new
       options.jpeg_quality = 50
-      result = AsposeSlidesCloud::SpecUtils.api.split(file_name, options, nil, nil, nil, nil, nil, nil, password, folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.split(file_name, options, nil, nil, nil, nil, nil, nil, password, folder_name)
       url = result.slides[0].href
       path = url[url.index("/storage/file/") + "/storage/file/".length, url.length - 1]
-      expect(AsposeSlidesCloud::SpecUtils.api.object_exists(path).exists).to be true
+      expect(AsposeSlidesCloud::SpecUtils.testSlidesApi.object_exists(path).exists).to be true
     end
   end
 end

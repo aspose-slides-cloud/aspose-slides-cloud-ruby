@@ -31,8 +31,8 @@ describe 'UseCases' do
             slide_index = 6
             shape_index = 2
             paragraph_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-            response = AsposeSlidesCloud::SpecUtils.api.get_portions(file_name, slide_index, shape_index, paragraph_index, password, folder_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_portions(file_name, slide_index, shape_index, paragraph_index, password, folder_name)
             expect(response.items.length).to eq(2)
         end
 
@@ -44,8 +44,8 @@ describe 'UseCases' do
             shape_index = 3
             sub_shape = "1"
             paragraph_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-            response = AsposeSlidesCloud::SpecUtils.api.get_portions(file_name, slide_index, shape_index, paragraph_index, password, folder_name, "", sub_shape)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_portions(file_name, slide_index, shape_index, paragraph_index, password, folder_name, "", sub_shape)
             expect(response.items.length).to eq(2)
         end
 
@@ -57,8 +57,8 @@ describe 'UseCases' do
             shape_index = 2
             paragraph_index = 1
             portion_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-            response = AsposeSlidesCloud::SpecUtils.api.get_portion(file_name, slide_index, shape_index, paragraph_index, portion_index,
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_portion(file_name, slide_index, shape_index, paragraph_index, portion_index,
                  password, folder_name)
             expect(response.text.include? "portion 1").to eq(true)
         end
@@ -72,8 +72,8 @@ describe 'UseCases' do
             sub_shape = "1"
             paragraph_index = 1
             portion_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-            response = AsposeSlidesCloud::SpecUtils.api.get_portion(file_name, slide_index, shape_index, 
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_portion(file_name, slide_index, shape_index, 
                 paragraph_index, portion_index, password, folder_name, "", sub_shape)
             expect(response.text.include? "portion 1").to eq(true)
         end
@@ -85,7 +85,7 @@ describe 'UseCases' do
             slide_index = 6
             shape_index = 2
             paragraph_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             dto = AsposeSlidesCloud::Portion.new
             dto.text = "new portion text"
@@ -95,7 +95,7 @@ describe 'UseCases' do
             dto.fill_format = AsposeSlidesCloud::SolidFill.new
             dto.fill_format.color = "#FFF5FF8A"
 
-            response = AsposeSlidesCloud::SpecUtils.api.create_portion(file_name, slide_index, shape_index, paragraph_index, dto, nil,
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_portion(file_name, slide_index, shape_index, paragraph_index, dto, nil,
                  password, folder_name)
             expect(response.text).to eq(dto.text)
             expect(response.font_bold).to eq(dto.font_bold)
@@ -112,7 +112,7 @@ describe 'UseCases' do
             shape_index = 3
             sub_shape = "1"
             paragraph_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             dto = AsposeSlidesCloud::Portion.new
             dto.text = "new portion text"
@@ -122,7 +122,7 @@ describe 'UseCases' do
             dto.fill_format = AsposeSlidesCloud::SolidFill.new
             dto.fill_format.color = "#FFF5FF8A"
 
-            response = AsposeSlidesCloud::SpecUtils.api.create_portion(file_name, slide_index, shape_index, 
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_portion(file_name, slide_index, shape_index, 
                 paragraph_index, dto, nil, password, folder_name, "", sub_shape)
             expect(response.text).to eq(dto.text)
             expect(response.font_bold).to eq(dto.font_bold)
@@ -139,7 +139,7 @@ describe 'UseCases' do
             shape_index = 2
             paragraph_index = 1
             portion_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             dto = AsposeSlidesCloud::Portion.new
             dto.text = "new portion text"
@@ -149,7 +149,7 @@ describe 'UseCases' do
             dto.fill_format = AsposeSlidesCloud::SolidFill.new
             dto.fill_format.color = "#FFF5FF8A"
 
-            response = AsposeSlidesCloud::SpecUtils.api.update_portion(file_name, slide_index, shape_index, paragraph_index, 
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_portion(file_name, slide_index, shape_index, paragraph_index, 
                 portion_index, dto, password, folder_name)
             expect(response.text).to eq(dto.text)
             expect(response.font_bold).to eq(dto.font_bold)
@@ -167,7 +167,7 @@ describe 'UseCases' do
             sub_shape = "1"
             paragraph_index = 1
             portion_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
             dto = AsposeSlidesCloud::Portion.new
             dto.text = "new portion text"
@@ -177,7 +177,7 @@ describe 'UseCases' do
             dto.fill_format = AsposeSlidesCloud::SolidFill.new
             dto.fill_format.color = "#FFF5FF8A"
 
-            response = AsposeSlidesCloud::SpecUtils.api.update_portion(file_name, slide_index, shape_index, 
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_portion(file_name, slide_index, shape_index, 
                 paragraph_index, portion_index, dto, password, folder_name, "", sub_shape)
             expect(response.text).to eq(dto.text)
             expect(response.font_bold).to eq(dto.font_bold)
@@ -193,9 +193,9 @@ describe 'UseCases' do
             slide_index = 6
             shape_index = 2
             paragraph_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
-            response = AsposeSlidesCloud::SpecUtils.api.delete_portions(file_name, slide_index, shape_index, paragraph_index, 
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_portions(file_name, slide_index, shape_index, paragraph_index, 
                 nil, password, folder_name)
             expect(response.items.length).to eq(0)
         end
@@ -207,9 +207,9 @@ describe 'UseCases' do
             slide_index = 6
             shape_index = 2
             paragraph_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
-            response = AsposeSlidesCloud::SpecUtils.api.delete_portions(file_name, slide_index, shape_index, paragraph_index, 
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_portions(file_name, slide_index, shape_index, paragraph_index, 
                 [1], password, folder_name)
             expect(response.items.length).to eq(1)
         end
@@ -222,9 +222,9 @@ describe 'UseCases' do
             shape_index = 3
             sub_shape = "1"
             paragraph_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
-            response = AsposeSlidesCloud::SpecUtils.api.delete_portions(file_name, slide_index, shape_index,
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_portions(file_name, slide_index, shape_index,
                  paragraph_index, nil, password, folder_name, "", sub_shape)
             expect(response.items.length).to eq(0)
         end
@@ -237,9 +237,9 @@ describe 'UseCases' do
             shape_index = 3
             sub_shape = "1"
             paragraph_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
-            response = AsposeSlidesCloud::SpecUtils.api.delete_portions(file_name, slide_index, shape_index,
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_portions(file_name, slide_index, shape_index,
                  paragraph_index, [1], password, folder_name, "", sub_shape)
             expect(response.items.length).to eq(1)
         end
@@ -252,9 +252,9 @@ describe 'UseCases' do
             shape_index = 2
             paragraph_index = 1
             portion_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
-            response = AsposeSlidesCloud::SpecUtils.api.delete_portion(file_name, slide_index, shape_index, paragraph_index, 
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_portion(file_name, slide_index, shape_index, paragraph_index, 
                 portion_index, password, folder_name)
             expect(response.items.length).to eq(1)
         end
@@ -268,9 +268,9 @@ describe 'UseCases' do
             sub_shape = "1"
             paragraph_index = 1
             portion_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
-            response = AsposeSlidesCloud::SpecUtils.api.delete_portion(file_name, slide_index, shape_index, paragraph_index, 
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_portion(file_name, slide_index, shape_index, paragraph_index, 
                 portion_index, password, folder_name, "", sub_shape)
             expect(response.items.length).to eq(1)
         end
@@ -283,8 +283,8 @@ describe 'UseCases' do
             shape_index = 2
             paragraph_index = 1
             portion_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-            response = AsposeSlidesCloud::SpecUtils.api.get_portion_rectangle(file_name, slide_index, shape_index, paragraph_index, 
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_portion_rectangle(file_name, slide_index, shape_index, paragraph_index, 
                 portion_index, password, folder_name)
             expect(response.x).not_to eq(0)
             expect(response.y).not_to eq(0)
@@ -300,8 +300,8 @@ describe 'UseCases' do
             shape_index = 2
             paragraph_index = 1
             portion_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-            response = AsposeSlidesCloud::SpecUtils.api.get_portion_effective(file_name, slide_index, shape_index, paragraph_index, 
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_portion_effective(file_name, slide_index, shape_index, paragraph_index, 
                 portion_index, password, folder_name)
             expect(response.font_height).to eq(18)
         end
@@ -315,8 +315,8 @@ describe 'UseCases' do
             sub_shape = "1"
             paragraph_index = 1
             portion_index = 1
-            AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-            response = AsposeSlidesCloud::SpecUtils.api.get_portion_effective(file_name, slide_index, shape_index,
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_portion_effective(file_name, slide_index, shape_index,
                 paragraph_index, portion_index, password, folder_name, "", sub_shape)
             expect(response.font_height).to eq(18)
         end

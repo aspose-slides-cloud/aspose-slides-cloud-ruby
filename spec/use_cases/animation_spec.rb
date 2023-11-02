@@ -30,24 +30,24 @@ describe 'UseCases' do
       password = "password"
       slide_index = 1
       watermark_text = "watermarkText"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
-      animation = AsposeSlidesCloud::SpecUtils.api.get_animation(file_name, slide_index, nil, nil, password, folder_name)
+      animation = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_animation(file_name, slide_index, nil, nil, password, folder_name)
       expect(animation.main_sequence.length).to eq(1)
       expect(animation.interactive_sequences.length).to eq(1)
 
-      animation = AsposeSlidesCloud::SpecUtils.api.get_animation(file_name, slide_index, 3, nil, password, folder_name)
+      animation = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_animation(file_name, slide_index, 3, nil, password, folder_name)
       expect(animation.main_sequence.length).to eq(1)
       expect(animation.interactive_sequences.length).to eq(0)
 
-      animation = AsposeSlidesCloud::SpecUtils.api.get_animation(file_name, slide_index, 3, 1, password, folder_name)
+      animation = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_animation(file_name, slide_index, 3, 1, password, folder_name)
       expect(animation.main_sequence.length).to eq(0)
     end
 
     it 'set' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
       dto = AsposeSlidesCloud::SlideAnimation.new
 
@@ -63,7 +63,7 @@ describe 'UseCases' do
       effect2.shape_index = 4
       dto.main_sequence = [ effect1, effect2 ]
       dto.interactive_sequences = []
-      animation = AsposeSlidesCloud::SpecUtils.api.set_animation(file_name, 1, dto, "password", folder_name)
+      animation = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_animation(file_name, 1, dto, "password", folder_name)
       expect(animation.main_sequence.length).to eq(dto.main_sequence.length)
       expect(animation.interactive_sequences.length).to eq(0)
     end
@@ -71,12 +71,12 @@ describe 'UseCases' do
     it 'create effect' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
       dto = AsposeSlidesCloud::Effect.new
       dto.type = "Blast"
       dto.shape_index = 3
-      animation = AsposeSlidesCloud::SpecUtils.api.create_animation_effect(file_name, 1, dto, "password", folder_name)
+      animation = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_animation_effect(file_name, 1, dto, "password", folder_name)
       expect(animation.main_sequence.length).to eq(2)
       expect(animation.interactive_sequences.length).to eq(1)
     end
@@ -84,7 +84,7 @@ describe 'UseCases' do
     it 'create interactive sequence' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
       dto = AsposeSlidesCloud::InteractiveSequence.new
       dto.trigger_shape_index = 2
@@ -92,7 +92,7 @@ describe 'UseCases' do
       effect.type = "Blast"
       effect.shape_index = 3
       dto.effects = [ effect ]
-      animation = AsposeSlidesCloud::SpecUtils.api.create_animation_interactive_sequence(file_name, 1, dto, "password", folder_name)
+      animation = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_animation_interactive_sequence(file_name, 1, dto, "password", folder_name)
       expect(animation.main_sequence.length).to eq(1)
       expect(animation.interactive_sequences.length).to eq(2)
     end
@@ -100,12 +100,12 @@ describe 'UseCases' do
     it 'create interactive sequence effect' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
       dto = AsposeSlidesCloud::Effect.new
       dto.type = "Blast"
       dto.shape_index = 3
-      animation = AsposeSlidesCloud::SpecUtils.api.create_animation_interactive_sequence_effect(file_name, 1, 1, dto, "password", folder_name)
+      animation = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_animation_interactive_sequence_effect(file_name, 1, 1, dto, "password", folder_name)
       expect(animation.main_sequence.length).to eq(1)
       expect(animation.interactive_sequences.length).to eq(1)
     end
@@ -113,12 +113,12 @@ describe 'UseCases' do
     it 'update effect' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
       dto = AsposeSlidesCloud::Effect.new
       dto.type = "Blast"
       dto.shape_index = 3
-      animation = AsposeSlidesCloud::SpecUtils.api.update_animation_effect(file_name, 1, 1, dto, "password", folder_name)
+      animation = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_animation_effect(file_name, 1, 1, dto, "password", folder_name)
       expect(animation.main_sequence.length).to eq(1)
       expect(animation.interactive_sequences.length).to eq(1)
     end
@@ -126,12 +126,12 @@ describe 'UseCases' do
     it 'update interactive sequence effect' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
       dto = AsposeSlidesCloud::Effect.new
       dto.type = "Blast"
       dto.shape_index = 3
-      animation = AsposeSlidesCloud::SpecUtils.api.update_animation_interactive_sequence_effect(file_name, 1, 1, 1, dto, "password", folder_name)
+      animation = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_animation_interactive_sequence_effect(file_name, 1, 1, 1, dto, "password", folder_name)
       expect(animation.main_sequence.length).to eq(1)
       expect(animation.interactive_sequences.length).to eq(1)
     end
@@ -139,8 +139,8 @@ describe 'UseCases' do
     it 'delete' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      animation = AsposeSlidesCloud::SpecUtils.api.delete_animation(file_name, 1, "password", folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      animation = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_animation(file_name, 1, "password", folder_name)
       expect(animation.main_sequence.length).to eq(0)
       expect(animation.interactive_sequences.length).to eq(0)
     end
@@ -148,8 +148,8 @@ describe 'UseCases' do
     it 'delete main sequence' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      animation = AsposeSlidesCloud::SpecUtils.api.delete_animation_main_sequence(file_name, 1, "password", folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      animation = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_animation_main_sequence(file_name, 1, "password", folder_name)
       expect(animation.main_sequence.length).to eq(0)
       expect(animation.interactive_sequences.length).to eq(1)
     end
@@ -157,8 +157,8 @@ describe 'UseCases' do
     it 'delete main sequence effect' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      animation = AsposeSlidesCloud::SpecUtils.api.delete_animation_effect(file_name, 1, 1, "password", folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      animation = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_animation_effect(file_name, 1, 1, "password", folder_name)
       expect(animation.main_sequence.length).to eq(0)
       expect(animation.interactive_sequences.length).to eq(1)
     end
@@ -166,8 +166,8 @@ describe 'UseCases' do
     it 'delete interactive sequences' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      animation = AsposeSlidesCloud::SpecUtils.api.delete_animation_interactive_sequences(file_name, 1, "password", folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      animation = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_animation_interactive_sequences(file_name, 1, "password", folder_name)
       expect(animation.main_sequence.length).to eq(1)
       expect(animation.interactive_sequences.length).to eq(0)
     end
@@ -175,8 +175,8 @@ describe 'UseCases' do
     it 'delete interactive sequence' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      animation = AsposeSlidesCloud::SpecUtils.api.delete_animation_interactive_sequence(file_name, 1, 1, "password", folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      animation = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_animation_interactive_sequence(file_name, 1, 1, "password", folder_name)
       expect(animation.main_sequence.length).to eq(1)
       expect(animation.interactive_sequences.length).to eq(0)
     end
@@ -184,8 +184,8 @@ describe 'UseCases' do
     it 'delete interactive sequence effect' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      animation = AsposeSlidesCloud::SpecUtils.api.delete_animation_interactive_sequence_effect(file_name, 1, 1, 1, "password", folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      animation = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_animation_interactive_sequence_effect(file_name, 1, 1, 1, "password", folder_name)
       expect(animation.main_sequence.length).to eq(1)
       expect(animation.interactive_sequences.length).to eq(1)
     end

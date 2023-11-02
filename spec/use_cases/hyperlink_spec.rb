@@ -27,9 +27,9 @@ describe 'UseCases' do
     it 'get shape' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
-      shape = AsposeSlidesCloud::SpecUtils.api.get_shape(file_name, 2, 2, "password", folder_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(file_name, 2, 2, "password", folder_name)
       expect(shape.hyperlink_click).to be_truthy
       expect(shape.hyperlink_click.action_type).to eq("Hyperlink")
       expect(shape.hyperlink_mouse_over).not_to be_truthy
@@ -38,9 +38,9 @@ describe 'UseCases' do
     it 'get portion' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
-      portion = AsposeSlidesCloud::SpecUtils.api.get_portion(file_name, 2, 1, 1, 2, "password", folder_name)
+      portion = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_portion(file_name, 2, 1, 1, 2, "password", folder_name)
       expect(portion.hyperlink_click).not_to be_truthy
       expect(portion.hyperlink_mouse_over).to be_truthy
       expect(portion.hyperlink_mouse_over.action_type).to eq("JumpLastSlide")
@@ -49,14 +49,14 @@ describe 'UseCases' do
     it 'create shape' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
       shape = AsposeSlidesCloud::Shape.new
       hyperlink = AsposeSlidesCloud::Hyperlink.new
       hyperlink.action_type = "Hyperlink"
       hyperlink.external_url = "https://docs.aspose.cloud/slides"
       shape.hyperlink_click = hyperlink
-      updated_shape = AsposeSlidesCloud::SpecUtils.api.update_shape(file_name, 2, 2, shape, "password", folder_name)
+      updated_shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_shape(file_name, 2, 2, shape, "password", folder_name)
       expect(updated_shape.hyperlink_click).to be_truthy
       expect(updated_shape.hyperlink_click.external_url).to eq(shape.hyperlink_click.external_url)
     end
@@ -64,14 +64,14 @@ describe 'UseCases' do
     it 'create portion' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
       dto = AsposeSlidesCloud::Portion.new
       dto.text = "Link text"
       hyperlink = AsposeSlidesCloud::Hyperlink.new
       hyperlink.action_type = "JumpLastSlide"
       dto.hyperlink_mouse_over = hyperlink
-      updated_portion = AsposeSlidesCloud::SpecUtils.api.create_portion(file_name, 1, 1, 1, dto, nil, "password", folder_name)
+      updated_portion = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_portion(file_name, 1, 1, 1, dto, nil, "password", folder_name)
       expect(updated_portion.hyperlink_mouse_over).to be_truthy
       expect(updated_portion.hyperlink_mouse_over.action_type).to eq(dto.hyperlink_mouse_over.action_type)
     end
@@ -79,13 +79,13 @@ describe 'UseCases' do
     it 'delete' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
       shape = AsposeSlidesCloud::PictureFrame.new
       hyperlink = AsposeSlidesCloud::Hyperlink.new
       hyperlink.is_disabled = true
       shape.hyperlink_click = hyperlink
-      updated_shape = AsposeSlidesCloud::SpecUtils.api.update_shape(file_name, 2, 2, shape, "password", folder_name)
+      updated_shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_shape(file_name, 2, 2, shape, "password", folder_name)
       expect(updated_shape.hyperlink_click).not_to be_truthy
     end
   end

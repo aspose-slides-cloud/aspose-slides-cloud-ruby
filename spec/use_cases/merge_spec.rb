@@ -30,12 +30,12 @@ describe 'UseCases' do
       file_name2 = "test-unprotected.pptx"
       file_name_pdf = "test.pdf"
       password = "password"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name2, folder_name + "/" + file_name2)
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name_pdf, folder_name + "/" + file_name_pdf)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name2, folder_name + "/" + file_name2)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name_pdf, folder_name + "/" + file_name_pdf)
       request = AsposeSlidesCloud::PresentationsMergeRequest.new
       request.presentation_paths = [ folder_name + "/" + file_name2, folder_name + "/" + file_name_pdf ]
-      AsposeSlidesCloud::SpecUtils.api.merge(file_name, request, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.merge(file_name, request, password, folder_name)
     end
 
     it 'ordered storage' do
@@ -43,21 +43,21 @@ describe 'UseCases' do
       file_name = "test.pptx"
       file_name2 = "test-unprotected.pptx"
       password = "password"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name2, folder_name + "/" + file_name2)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name2, folder_name + "/" + file_name2)
       request = AsposeSlidesCloud::OrderedMergeRequest.new
       presentation = AsposeSlidesCloud::PresentationToMerge.new
       presentation.path = folder_name + "/" + file_name2
       presentation.slides = [ 2, 1 ]
       request.presentations = [ presentation ]
-      AsposeSlidesCloud::SpecUtils.api.ordered_merge(file_name, request, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.ordered_merge(file_name, request, password, folder_name)
     end
 
     it 'request' do
       source1 = File.binread("TestData/TemplateCV.pptx")
       source2 = File.binread("TestData/test-unprotected.pptx")
       files = [ source1, source2 ]
-      AsposeSlidesCloud::SpecUtils.api.merge_online(files)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.merge_online(files)
     end
 
     it 'request save' do
@@ -65,8 +65,8 @@ describe 'UseCases' do
       source1 = File.binread("TestData/TemplateCV.pptx")
       source2 = File.binread("TestData/test-unprotected.pptx")
       files = [ source1, source2 ]
-      AsposeSlidesCloud::SpecUtils.api.merge_and_save_online(out_path, files)
-      expect(AsposeSlidesCloud::SpecUtils.api.object_exists(out_path).exists).to be true
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.merge_and_save_online(out_path, files)
+      expect(AsposeSlidesCloud::SpecUtils.testSlidesApi.object_exists(out_path).exists).to be true
     end
 
     it 'ordered request' do
@@ -81,13 +81,13 @@ describe 'UseCases' do
       presentation2.path = "file2"
       presentation2.slides = [ 1, 2 ]
       request.presentations = [ presentation1, presentation2 ]
-      AsposeSlidesCloud::SpecUtils.api.merge_online(files, request)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.merge_online(files, request)
     end
 
     it 'ordered combined' do
       folder_name = "TempSlidesSDK"
       file_name2 = "test-unprotected.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name2, folder_name + "/" + file_name2)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name2, folder_name + "/" + file_name2)
       source = File.binread("TestData/test.pptx")
       files = [ source ]
       request = AsposeSlidesCloud::OrderedMergeRequest.new
@@ -99,14 +99,14 @@ describe 'UseCases' do
       presentation2.source = 'Storage'
       presentation2.path = folder_name + "/" + file_name2
       request.presentations = [ presentation1, presentation2 ]
-      AsposeSlidesCloud::SpecUtils.api.merge_online(files, request)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.merge_online(files, request)
     end
 
     it "ordered url" do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       password = "password"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
       request = AsposeSlidesCloud::OrderedMergeRequest.new
       presentation_to_merge1 = AsposeSlidesCloud::PresentationToMerge.new
@@ -119,7 +119,7 @@ describe 'UseCases' do
       presentation_to_merge2.source = "Url"
       presentation_to_merge2.path = "https://drive.google.com/uc?export=download&id=1ycMzd7e--Ro9H8eH2GL5fPP7-2HjX4My"
       request.presentations = [presentation_to_merge1, presentation_to_merge2]
-      response = AsposeSlidesCloud::SpecUtils.api.merge_online(nil, request)
+      response = AsposeSlidesCloud::SpecUtils.testSlidesApi.merge_online(nil, request)
       expect(response.size).not_to eq(0)
     end
   end

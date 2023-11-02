@@ -171,6 +171,7 @@ require 'aspose_slides_cloud/models/object_exist'
 require 'aspose_slides_cloud/models/ole_object_frame'
 require 'aspose_slides_cloud/models/one_value_chart_data_point'
 require 'aspose_slides_cloud/models/one_value_series'
+require 'aspose_slides_cloud/models/operation'
 require 'aspose_slides_cloud/models/ordered_merge_request'
 require 'aspose_slides_cloud/models/outer_shadow_effect'
 require 'aspose_slides_cloud/models/output_file'
@@ -280,6 +281,7 @@ require 'aspose_slides_cloud/models/zoom_frame'
 
 # APIs
 require 'aspose_slides_cloud/api/slides_api'
+require 'aspose_slides_cloud/api/slides_async_api'
 
 module AsposeSlidesCloud
   class << self

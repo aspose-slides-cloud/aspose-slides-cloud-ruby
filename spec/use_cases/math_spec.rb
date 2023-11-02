@@ -27,9 +27,9 @@ describe 'UseCases' do
     it 'get' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
-      portion = AsposeSlidesCloud::SpecUtils.api.get_portion(file_name, 2, 3, 1, 1, "password", folder_name)
+      portion = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_portion(file_name, 2, 3, 1, 1, "password", folder_name)
       expect(portion.math_paragraph).to be_truthy
       expect(portion.math_paragraph.math_block_list).to be_truthy
       expect(portion.math_paragraph.math_block_list.length).to eq(1)
@@ -41,16 +41,16 @@ describe 'UseCases' do
     it 'get null' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
-      portion = AsposeSlidesCloud::SpecUtils.api.get_portion(file_name, 2, 1, 1, 1, "password", folder_name)
+      portion = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_portion(file_name, 2, 1, 1, 1, "password", folder_name)
       expect(portion.math_paragraph).not_to be_truthy
     end
 
     it 'create' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
       dto = AsposeSlidesCloud::Portion.new
       math_paragraph = AsposeSlidesCloud::MathParagraph.new
@@ -80,7 +80,7 @@ describe 'UseCases' do
       math_block.math_element_list = [ function_element ]
       math_paragraph.math_block_list = [ math_block ]
       dto.math_paragraph = math_paragraph
-      portion = AsposeSlidesCloud::SpecUtils.api.create_portion(file_name, 1, 1, 1, dto, nil, "password", folder_name)
+      portion = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_portion(file_name, 1, 1, 1, dto, nil, "password", folder_name)
       expect(portion.math_paragraph).to be_truthy
       expect(portion.math_paragraph.math_block_list).to be_truthy
       expect(portion.math_paragraph.math_block_list.length).to eq(1)
@@ -92,7 +92,7 @@ describe 'UseCases' do
     it 'update' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
       dto = AsposeSlidesCloud::Portion.new
       math_paragraph = AsposeSlidesCloud::MathParagraph.new
@@ -122,7 +122,7 @@ describe 'UseCases' do
       math_block.math_element_list = [ function_element ]
       math_paragraph.math_block_list = [ math_block ]
       dto.math_paragraph = math_paragraph
-      portion = AsposeSlidesCloud::SpecUtils.api.update_portion(file_name, 2, 3, 1, 1, dto, "password", folder_name)
+      portion = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_portion(file_name, 2, 3, 1, 1, dto, "password", folder_name)
       expect(portion.math_paragraph).to be_truthy
       expect(portion.math_paragraph.math_block_list).to be_truthy
       expect(portion.math_paragraph.math_block_list.length).to eq(1)
@@ -134,17 +134,17 @@ describe 'UseCases' do
     it 'download' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      mathMl = AsposeSlidesCloud::SpecUtils.api.download_portion_as_math_ml(file_name, 2, 3, 1, 1, "password", folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      mathMl = AsposeSlidesCloud::SpecUtils.testSlidesApi.download_portion_as_math_ml(file_name, 2, 3, 1, 1, "password", folder_name)
       expect(mathMl).to be_truthy
     end
 
     it 'download null' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       begin
-        AsposeSlidesCloud::SpecUtils.api.download_portion_as_math_ml(file_name, 2, 1, 1, 1, "password", folder_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.download_portion_as_math_ml(file_name, 2, 1, 1, 1, "password", folder_name)
         fail "Must have failed because conversion to MathML works only for math portions"
       rescue AsposeSlidesCloud::ApiError => e
         expect(e.code).to eq(400)
@@ -155,9 +155,9 @@ describe 'UseCases' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       out_path = folder_name + "/mathml.xml"
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      mathMl = AsposeSlidesCloud::SpecUtils.api.save_portion_as_math_ml(file_name, 2, 3, 1, 1, out_path, "password", folder_name)
-      expect(AsposeSlidesCloud::SpecUtils.api.object_exists(out_path).exists).to be true
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      mathMl = AsposeSlidesCloud::SpecUtils.testSlidesApi.save_portion_as_math_ml(file_name, 2, 3, 1, 1, out_path, "password", folder_name)
+      expect(AsposeSlidesCloud::SpecUtils.testSlidesApi.object_exists(out_path).exists).to be true
     end
   end
 end

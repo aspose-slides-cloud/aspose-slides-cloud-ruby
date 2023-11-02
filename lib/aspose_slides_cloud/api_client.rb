@@ -221,7 +221,8 @@ module AsposeSlidesCloud
       return nil if body.nil? || body.empty?
 
       # return response body directly for String return type
-      return body if return_type == 'String' or return_type == 'File'
+      return body.delete_prefix('"').delete_suffix('"') if return_type == 'String'
+      return body if return_type == 'File'
 
       # ensuring a default content type
       content_type = response.headers['Content-Type'] || 'application/json'

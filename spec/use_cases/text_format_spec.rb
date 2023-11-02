@@ -29,7 +29,7 @@ describe 'UseCases' do
         file_name = "test.pptx"
         password = "password"
         slide_index = 1
-        AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
         dto = AsposeSlidesCloud::Shape.new
         dto.shape_type = "Rectangle"
@@ -67,7 +67,7 @@ describe 'UseCases' do
         #threeDFormat.camera_type = "PerspectiveContrastingRightFacing"
         dto.text_frame_format.three_d_format = threeDFormat;
 
-        result = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
+        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
         expect(result).to be_kind_of(AsposeSlidesCloud::Shape)
     end
 
@@ -76,7 +76,7 @@ describe 'UseCases' do
       file_name = "test.pptx"
       password = "password"
       slide_index = 1
-      AsposeSlidesCloud::SpecUtils.api.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
 
       dto = AsposeSlidesCloud::Shape.new
       dto.shape_type = "Rectangle"
@@ -97,7 +97,7 @@ describe 'UseCases' do
       solidFill.color = "#FF0000"
       dto.text_frame_format.default_paragraph_format.bullet_fill_format = solidFill
 
-      result = AsposeSlidesCloud::SpecUtils.api.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
       expect(result).to be_kind_of(AsposeSlidesCloud::Shape)
   end
   end
