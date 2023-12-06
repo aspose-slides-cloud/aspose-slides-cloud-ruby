@@ -14373,7 +14373,7 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def replace_image(name, image_index, image = nil, password = nil, folder = nil, storage = nil)
+    def replace_image(name, image_index, image, password = nil, folder = nil, storage = nil)
       replace_image_with_http_info(name, image_index, image, password, folder, storage)
       nil
     end
@@ -14385,7 +14385,7 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def replace_image_with_http_info(name, image_index, image = nil, password = nil, folder = nil, storage = nil)
+    def replace_image_with_http_info(name, image_index, image, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.replace_image ...'
       end
@@ -14397,6 +14397,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'image_index' is set
       if @api_client.config.client_side_validation && image_index.nil?
         fail ArgumentError, "Missing the required parameter 'image_index' when calling SlidesApi.replace_image"
+      end
+      # verify the required parameter 'image' is set
+      if @api_client.config.client_side_validation && image.nil?
+        fail ArgumentError, "Missing the required parameter 'image' when calling SlidesApi.replace_image"
       end
       # resource path
       local_var_path = '/slides/{name}/images/{imageIndex}/replace'
@@ -14439,7 +14443,7 @@ module AsposeSlidesCloud
     # @param image_index Image index.
     # @param image Image data.
     # @param password Password.
-    def replace_image_online(document, image_index, image = nil, password = nil)
+    def replace_image_online(document, image_index, image, password = nil)
       data, _status_code, _headers = replace_image_online_with_http_info(document, image_index, image, password)
       data
     end
@@ -14449,7 +14453,7 @@ module AsposeSlidesCloud
     # @param image_index Image index.
     # @param image Image data.
     # @param password Password.
-    def replace_image_online_with_http_info(document, image_index, image = nil, password = nil)
+    def replace_image_online_with_http_info(document, image_index, image, password = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.replace_image_online ...'
       end
@@ -14461,6 +14465,10 @@ module AsposeSlidesCloud
       # verify the required parameter 'image_index' is set
       if @api_client.config.client_side_validation && image_index.nil?
         fail ArgumentError, "Missing the required parameter 'image_index' when calling SlidesApi.replace_image_online"
+      end
+      # verify the required parameter 'image' is set
+      if @api_client.config.client_side_validation && image.nil?
+        fail ArgumentError, "Missing the required parameter 'image' when calling SlidesApi.replace_image_online"
       end
       # resource path
       local_var_path = '/slides/images/{imageIndex}/replace'

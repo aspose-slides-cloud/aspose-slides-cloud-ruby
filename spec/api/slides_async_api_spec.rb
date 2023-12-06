@@ -306,6 +306,250 @@ describe 'SlidesAsyncApi' do
     end
   end
 
+  # unit tests for start_convert_and_save
+  # @param document Document data.
+  # @param format 
+  # @param out_path 
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password 
+  # @option opts [String] :storage 
+  # @option opts [String] :fonts_folder 
+  # @option opts [Integer[]] :slides 
+  # @option opts [ExportOptions] :options 
+  # @return [String]
+  describe 'start_convert_and_save test' do
+    it 'should work' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartConvertAndSave', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartConvertAndSave', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartConvertAndSave', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartConvertAndSave', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartConvertAndSave', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartConvertAndSave', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'StartConvertAndSave', 'Integer[]')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartConvertAndSave', 'ExportOptions')
+      AsposeSlidesCloud::SpecUtils.initialize('StartConvertAndSave', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder, paramslides, paramoptions)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartConvertAndSave', nil, nil, nil)
+      expect(c).to eq(code)
+    end
+
+    it 'invalid document' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartConvertAndSave', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartConvertAndSave', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartConvertAndSave', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartConvertAndSave', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartConvertAndSave', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartConvertAndSave', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'StartConvertAndSave', 'Integer[]')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartConvertAndSave', 'ExportOptions')
+      paramdocument = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'StartConvertAndSave', paramdocument, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('StartConvertAndSave', 'document', paramdocument)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder, paramslides, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartConvertAndSave', 'document')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartConvertAndSave', 'document', paramdocument, 'File')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartConvertAndSave', 'document', paramdocument, 'File')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid format' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartConvertAndSave', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartConvertAndSave', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartConvertAndSave', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartConvertAndSave', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartConvertAndSave', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartConvertAndSave', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'StartConvertAndSave', 'Integer[]')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartConvertAndSave', 'ExportOptions')
+      paramformat = AsposeSlidesCloud::SpecUtils.invalidize_param_value('format', 'StartConvertAndSave', paramformat, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartConvertAndSave', 'format', paramformat)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder, paramslides, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartConvertAndSave', 'format')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartConvertAndSave', 'format', paramformat, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartConvertAndSave', 'format', paramformat, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid out_path' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartConvertAndSave', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartConvertAndSave', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartConvertAndSave', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartConvertAndSave', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartConvertAndSave', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartConvertAndSave', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'StartConvertAndSave', 'Integer[]')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartConvertAndSave', 'ExportOptions')
+      paramout_path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('outPath', 'StartConvertAndSave', paramout_path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartConvertAndSave', 'outPath', paramout_path)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder, paramslides, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartConvertAndSave', 'outPath')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartConvertAndSave', 'outPath', paramout_path, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartConvertAndSave', 'outPath', paramout_path, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartConvertAndSave', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartConvertAndSave', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartConvertAndSave', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartConvertAndSave', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartConvertAndSave', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartConvertAndSave', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'StartConvertAndSave', 'Integer[]')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartConvertAndSave', 'ExportOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'StartConvertAndSave', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartConvertAndSave', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder, paramslides, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartConvertAndSave', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartConvertAndSave', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartConvertAndSave', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartConvertAndSave', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartConvertAndSave', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartConvertAndSave', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartConvertAndSave', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartConvertAndSave', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartConvertAndSave', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'StartConvertAndSave', 'Integer[]')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartConvertAndSave', 'ExportOptions')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'StartConvertAndSave', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartConvertAndSave', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder, paramslides, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartConvertAndSave', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartConvertAndSave', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartConvertAndSave', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid fonts_folder' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartConvertAndSave', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartConvertAndSave', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartConvertAndSave', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartConvertAndSave', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartConvertAndSave', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartConvertAndSave', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'StartConvertAndSave', 'Integer[]')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartConvertAndSave', 'ExportOptions')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontsFolder', 'StartConvertAndSave', paramfonts_folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartConvertAndSave', 'fontsFolder', paramfonts_folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder, paramslides, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartConvertAndSave', 'fontsFolder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartConvertAndSave', 'fontsFolder', paramfonts_folder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartConvertAndSave', 'fontsFolder', paramfonts_folder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slides' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartConvertAndSave', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartConvertAndSave', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartConvertAndSave', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartConvertAndSave', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartConvertAndSave', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartConvertAndSave', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'StartConvertAndSave', 'Integer[]')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartConvertAndSave', 'ExportOptions')
+      paramslides = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slides', 'StartConvertAndSave', paramslides, 'Integer[]')
+      AsposeSlidesCloud::SpecUtils.initialize('StartConvertAndSave', 'slides', paramslides)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder, paramslides, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartConvertAndSave', 'slides')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartConvertAndSave', 'slides', paramslides, 'Integer[]')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartConvertAndSave', 'slides', paramslides, 'Integer[]')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid options' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartConvertAndSave', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartConvertAndSave', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartConvertAndSave', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartConvertAndSave', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartConvertAndSave', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartConvertAndSave', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'StartConvertAndSave', 'Integer[]')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartConvertAndSave', 'ExportOptions')
+      paramoptions = AsposeSlidesCloud::SpecUtils.invalidize_param_value('options', 'StartConvertAndSave', paramoptions, 'ExportOptions')
+      AsposeSlidesCloud::SpecUtils.initialize('StartConvertAndSave', 'options', paramoptions)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_convert_and_save_with_http_info(paramdocument, paramformat, paramout_path, parampassword, paramstorage, paramfonts_folder, paramslides, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartConvertAndSave', 'options')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartConvertAndSave', 'options', paramoptions, 'ExportOptions')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartConvertAndSave', 'options', paramoptions, 'ExportOptions')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for start_download_presentation
   # @param name 
   # @param format 
@@ -545,6 +789,485 @@ describe 'SlidesAsyncApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartDownloadPresentation', 'slides', paramslides, 'Integer[]')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for start_merge
+  # @param [Hash] opts the optional parameters
+  # @option opts [File[]] :files Files to merge
+  # @option opts [OrderedMergeRequest] :request 
+  # @option opts [String] :storage 
+  # @return [String]
+  describe 'start_merge test' do
+    it 'should work' do
+      paramfiles = AsposeSlidesCloud::SpecUtils.get_param_value('files', 'StartMerge', 'File[]')
+      paramrequest = AsposeSlidesCloud::SpecUtils.get_param_value('request', 'StartMerge', 'OrderedMergeRequest')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartMerge', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartMerge', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_merge_with_http_info(paramfiles, paramrequest, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartMerge', nil, nil, nil)
+      expect(c).to eq(code)
+    end
+
+    it 'invalid files' do
+      paramfiles = AsposeSlidesCloud::SpecUtils.get_param_value('files', 'StartMerge', 'File[]')
+      paramrequest = AsposeSlidesCloud::SpecUtils.get_param_value('request', 'StartMerge', 'OrderedMergeRequest')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartMerge', 'String')
+      paramfiles = AsposeSlidesCloud::SpecUtils.invalidize_param_value('files', 'StartMerge', paramfiles, 'File[]')
+      AsposeSlidesCloud::SpecUtils.initialize('StartMerge', 'files', paramfiles)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_merge_with_http_info(paramfiles, paramrequest, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartMerge', 'files')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartMerge', 'files', paramfiles, 'File[]')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartMerge', 'files', paramfiles, 'File[]')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid request' do
+      paramfiles = AsposeSlidesCloud::SpecUtils.get_param_value('files', 'StartMerge', 'File[]')
+      paramrequest = AsposeSlidesCloud::SpecUtils.get_param_value('request', 'StartMerge', 'OrderedMergeRequest')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartMerge', 'String')
+      paramrequest = AsposeSlidesCloud::SpecUtils.invalidize_param_value('request', 'StartMerge', paramrequest, 'OrderedMergeRequest')
+      AsposeSlidesCloud::SpecUtils.initialize('StartMerge', 'request', paramrequest)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_merge_with_http_info(paramfiles, paramrequest, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartMerge', 'request')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartMerge', 'request', paramrequest, 'OrderedMergeRequest')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartMerge', 'request', paramrequest, 'OrderedMergeRequest')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramfiles = AsposeSlidesCloud::SpecUtils.get_param_value('files', 'StartMerge', 'File[]')
+      paramrequest = AsposeSlidesCloud::SpecUtils.get_param_value('request', 'StartMerge', 'OrderedMergeRequest')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartMerge', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'StartMerge', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartMerge', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_merge_with_http_info(paramfiles, paramrequest, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartMerge', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartMerge', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartMerge', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for start_merge_and_save
+  # @param out_path 
+  # @param [Hash] opts the optional parameters
+  # @option opts [File[]] :files Files to merge
+  # @option opts [OrderedMergeRequest] :request 
+  # @option opts [String] :storage 
+  # @return [String]
+  describe 'start_merge_and_save test' do
+    it 'should work' do
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartMergeAndSave', 'String')
+      paramfiles = AsposeSlidesCloud::SpecUtils.get_param_value('files', 'StartMergeAndSave', 'File[]')
+      paramrequest = AsposeSlidesCloud::SpecUtils.get_param_value('request', 'StartMergeAndSave', 'OrderedMergeRequest')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartMergeAndSave', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartMergeAndSave', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_merge_and_save_with_http_info(paramout_path, paramfiles, paramrequest, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartMergeAndSave', nil, nil, nil)
+      expect(c).to eq(code)
+    end
+
+    it 'invalid out_path' do
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartMergeAndSave', 'String')
+      paramfiles = AsposeSlidesCloud::SpecUtils.get_param_value('files', 'StartMergeAndSave', 'File[]')
+      paramrequest = AsposeSlidesCloud::SpecUtils.get_param_value('request', 'StartMergeAndSave', 'OrderedMergeRequest')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartMergeAndSave', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('outPath', 'StartMergeAndSave', paramout_path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartMergeAndSave', 'outPath', paramout_path)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_merge_and_save_with_http_info(paramout_path, paramfiles, paramrequest, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartMergeAndSave', 'outPath')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartMergeAndSave', 'outPath', paramout_path, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartMergeAndSave', 'outPath', paramout_path, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid files' do
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartMergeAndSave', 'String')
+      paramfiles = AsposeSlidesCloud::SpecUtils.get_param_value('files', 'StartMergeAndSave', 'File[]')
+      paramrequest = AsposeSlidesCloud::SpecUtils.get_param_value('request', 'StartMergeAndSave', 'OrderedMergeRequest')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartMergeAndSave', 'String')
+      paramfiles = AsposeSlidesCloud::SpecUtils.invalidize_param_value('files', 'StartMergeAndSave', paramfiles, 'File[]')
+      AsposeSlidesCloud::SpecUtils.initialize('StartMergeAndSave', 'files', paramfiles)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_merge_and_save_with_http_info(paramout_path, paramfiles, paramrequest, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartMergeAndSave', 'files')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartMergeAndSave', 'files', paramfiles, 'File[]')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartMergeAndSave', 'files', paramfiles, 'File[]')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid request' do
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartMergeAndSave', 'String')
+      paramfiles = AsposeSlidesCloud::SpecUtils.get_param_value('files', 'StartMergeAndSave', 'File[]')
+      paramrequest = AsposeSlidesCloud::SpecUtils.get_param_value('request', 'StartMergeAndSave', 'OrderedMergeRequest')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartMergeAndSave', 'String')
+      paramrequest = AsposeSlidesCloud::SpecUtils.invalidize_param_value('request', 'StartMergeAndSave', paramrequest, 'OrderedMergeRequest')
+      AsposeSlidesCloud::SpecUtils.initialize('StartMergeAndSave', 'request', paramrequest)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_merge_and_save_with_http_info(paramout_path, paramfiles, paramrequest, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartMergeAndSave', 'request')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartMergeAndSave', 'request', paramrequest, 'OrderedMergeRequest')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartMergeAndSave', 'request', paramrequest, 'OrderedMergeRequest')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartMergeAndSave', 'String')
+      paramfiles = AsposeSlidesCloud::SpecUtils.get_param_value('files', 'StartMergeAndSave', 'File[]')
+      paramrequest = AsposeSlidesCloud::SpecUtils.get_param_value('request', 'StartMergeAndSave', 'OrderedMergeRequest')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartMergeAndSave', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'StartMergeAndSave', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartMergeAndSave', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_merge_and_save_with_http_info(paramout_path, paramfiles, paramrequest, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartMergeAndSave', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartMergeAndSave', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartMergeAndSave', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for start_save_presentation
+  # @param name 
+  # @param format 
+  # @param out_path 
+  # @param [Hash] opts the optional parameters
+  # @option opts [ExportOptions] :options 
+  # @option opts [String] :password 
+  # @option opts [String] :folder 
+  # @option opts [String] :storage 
+  # @option opts [String] :fonts_folder 
+  # @option opts [Integer[]] :slides 
+  # @return [String]
+  describe 'start_save_presentation test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSavePresentation', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSavePresentation', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartSavePresentation', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSavePresentation', 'ExportOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSavePresentation', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSavePresentation', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSavePresentation', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'StartSavePresentation', 'Integer[]')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSavePresentation', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSavePresentation', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSavePresentation', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSavePresentation', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartSavePresentation', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSavePresentation', 'ExportOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSavePresentation', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSavePresentation', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSavePresentation', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'StartSavePresentation', 'Integer[]')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'StartSavePresentation', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSavePresentation', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSavePresentation', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSavePresentation', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSavePresentation', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid format' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSavePresentation', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSavePresentation', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartSavePresentation', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSavePresentation', 'ExportOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSavePresentation', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSavePresentation', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSavePresentation', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'StartSavePresentation', 'Integer[]')
+      paramformat = AsposeSlidesCloud::SpecUtils.invalidize_param_value('format', 'StartSavePresentation', paramformat, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSavePresentation', 'format', paramformat)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSavePresentation', 'format')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSavePresentation', 'format', paramformat, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSavePresentation', 'format', paramformat, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid out_path' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSavePresentation', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSavePresentation', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartSavePresentation', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSavePresentation', 'ExportOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSavePresentation', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSavePresentation', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSavePresentation', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'StartSavePresentation', 'Integer[]')
+      paramout_path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('outPath', 'StartSavePresentation', paramout_path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSavePresentation', 'outPath', paramout_path)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSavePresentation', 'outPath')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSavePresentation', 'outPath', paramout_path, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSavePresentation', 'outPath', paramout_path, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid options' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSavePresentation', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSavePresentation', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartSavePresentation', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSavePresentation', 'ExportOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSavePresentation', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSavePresentation', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSavePresentation', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'StartSavePresentation', 'Integer[]')
+      paramoptions = AsposeSlidesCloud::SpecUtils.invalidize_param_value('options', 'StartSavePresentation', paramoptions, 'ExportOptions')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSavePresentation', 'options', paramoptions)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSavePresentation', 'options')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSavePresentation', 'options', paramoptions, 'ExportOptions')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSavePresentation', 'options', paramoptions, 'ExportOptions')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSavePresentation', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSavePresentation', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartSavePresentation', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSavePresentation', 'ExportOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSavePresentation', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSavePresentation', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSavePresentation', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'StartSavePresentation', 'Integer[]')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'StartSavePresentation', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSavePresentation', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSavePresentation', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSavePresentation', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSavePresentation', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSavePresentation', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSavePresentation', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartSavePresentation', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSavePresentation', 'ExportOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSavePresentation', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSavePresentation', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSavePresentation', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'StartSavePresentation', 'Integer[]')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'StartSavePresentation', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSavePresentation', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSavePresentation', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSavePresentation', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSavePresentation', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSavePresentation', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSavePresentation', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartSavePresentation', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSavePresentation', 'ExportOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSavePresentation', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSavePresentation', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSavePresentation', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'StartSavePresentation', 'Integer[]')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'StartSavePresentation', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSavePresentation', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSavePresentation', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSavePresentation', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSavePresentation', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid fonts_folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSavePresentation', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSavePresentation', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartSavePresentation', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSavePresentation', 'ExportOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSavePresentation', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSavePresentation', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSavePresentation', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'StartSavePresentation', 'Integer[]')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontsFolder', 'StartSavePresentation', paramfonts_folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSavePresentation', 'fontsFolder', paramfonts_folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSavePresentation', 'fontsFolder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSavePresentation', 'fontsFolder', paramfonts_folder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSavePresentation', 'fontsFolder', paramfonts_folder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slides' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSavePresentation', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSavePresentation', 'String')
+      paramout_path = AsposeSlidesCloud::SpecUtils.get_param_value('outPath', 'StartSavePresentation', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSavePresentation', 'ExportOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSavePresentation', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSavePresentation', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSavePresentation', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSavePresentation', 'String')
+      paramslides = AsposeSlidesCloud::SpecUtils.get_param_value('slides', 'StartSavePresentation', 'Integer[]')
+      paramslides = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slides', 'StartSavePresentation', paramslides, 'Integer[]')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSavePresentation', 'slides', paramslides)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_save_presentation_with_http_info(paramname, paramformat, paramout_path, paramoptions, parampassword, paramfolder, paramstorage, paramfonts_folder, paramslides)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSavePresentation', 'slides')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSavePresentation', 'slides', paramslides, 'Integer[]')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSavePresentation', 'slides', paramslides, 'Integer[]')
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end

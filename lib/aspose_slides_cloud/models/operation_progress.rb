@@ -23,41 +23,66 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Represents slide replace result DTO.
-  class SlideReplaceResult < Slide
-    # Gets or sets the number of matches 
-    attr_accessor :matches
+  # Operation progress.
+  class OperationProgress < BaseObject
+    # Description.
+    attr_accessor :description
+
+    # Current Step Index.
+    attr_accessor :step_index
+
+    # Current Step Index.
+    attr_accessor :step_count
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      super.merge({
-        :'matches' => :'Matches',
-      })
+      {
+        :'description' => :'Description',
+        :'step_index' => :'StepIndex',
+        :'step_count' => :'StepCount',
+      }
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      super.merge({
-        :'matches' => :'Integer',
-      })
+      {
+        :'description' => :'String',
+        :'step_index' => :'Integer',
+        :'step_count' => :'Integer',
+      }
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      super
+      return unless attributes.is_a?(Hash)
 
-      if attributes.has_key?(:'Matches')
-        self.matches = attributes[:'Matches']
+      # convert string to symbol for hash key
+      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'Description')
+        self.description = attributes[:'Description']
+      end
+
+      if attributes.has_key?(:'StepIndex')
+        self.step_index = attributes[:'StepIndex']
+      end
+
+      if attributes.has_key?(:'StepCount')
+        self.step_count = attributes[:'StepCount']
       end
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = super
-      if @matches.nil?
-        invalid_properties.push('invalid value for "matches", matches cannot be nil.')
+      invalid_properties = Array.new
+      if @step_index.nil?
+        invalid_properties.push('invalid value for "step_index", step_index cannot be nil.')
+      end
+
+      if @step_count.nil?
+        invalid_properties.push('invalid value for "step_count", step_count cannot be nil.')
       end
 
       invalid_properties
@@ -66,8 +91,8 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !super
-      return false if @matches.nil?
+      return false if @step_index.nil?
+      return false if @step_count.nil?
       true
     end
 
@@ -76,21 +101,9 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          self_uri == o.self_uri &&
-          alternate_links == o.alternate_links &&
-          width == o.width &&
-          height == o.height &&
-          show_master_shapes == o.show_master_shapes &&
-          slide_show_transition == o.slide_show_transition &&
-          layout_slide == o.layout_slide &&
-          shapes == o.shapes &&
-          theme == o.theme &&
-          placeholders == o.placeholders &&
-          images == o.images &&
-          comments == o.comments &&
-          background == o.background &&
-          notes_slide == o.notes_slide &&
-          matches == o.matches
+          description == o.description &&
+          step_index == o.step_index &&
+          step_count == o.step_count
     end
 
     # @see the `==` method
@@ -102,7 +115,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, width, height, show_master_shapes, slide_show_transition, layout_slide, shapes, theme, placeholders, images, comments, background, notes_slide, matches].hash
+      [description, step_index, step_count].hash
     end
   end
 end

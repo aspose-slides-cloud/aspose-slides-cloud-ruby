@@ -30,6 +30,8 @@ module AsposeSlidesCloud
 
     attr_accessor :status
 
+    attr_accessor :progress
+
     attr_accessor :created
 
     attr_accessor :enqueued
@@ -50,6 +52,7 @@ module AsposeSlidesCloud
         :'id' => :'Id',
         :'method' => :'Method',
         :'status' => :'Status',
+        :'progress' => :'Progress',
         :'created' => :'Created',
         :'enqueued' => :'Enqueued',
         :'started' => :'Started',
@@ -66,6 +69,7 @@ module AsposeSlidesCloud
         :'id' => :'String',
         :'method' => :'String',
         :'status' => :'String',
+        :'progress' => :'OperationProgress',
         :'created' => :'DateTime',
         :'enqueued' => :'DateTime',
         :'started' => :'DateTime',
@@ -94,6 +98,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'Status')
         self.status = attributes[:'Status']
+      end
+
+      if attributes.has_key?(:'Progress')
+        self.progress = attributes[:'Progress']
       end
 
       if attributes.has_key?(:'Created')
@@ -149,7 +157,7 @@ module AsposeSlidesCloud
     def valid?
       return false if @id.nil?
       return false if @method.nil?
-      method_validator = EnumAttributeValidator.new('String', ['Convert', 'DownloadPresentation'])
+      method_validator = EnumAttributeValidator.new('String', ['Convert', 'DownloadPresentation', 'ConvertAndSave', 'SavePresentation', 'Merge', 'MergeAndSave'])
       return false unless method_validator.valid?(@method)
       return false if @status.nil?
       status_validator = EnumAttributeValidator.new('String', ['Created', 'Enqueued', 'Started', 'Failed', 'Canceled', 'Finished'])
@@ -160,7 +168,7 @@ module AsposeSlidesCloud
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] method Object to be assigned
     def method=(method)
-      validator = EnumAttributeValidator.new('String', ['Convert', 'DownloadPresentation'])
+      validator = EnumAttributeValidator.new('String', ['Convert', 'DownloadPresentation', 'ConvertAndSave', 'SavePresentation', 'Merge', 'MergeAndSave'])
       unless validator.valid?(method)
         fail ArgumentError, 'invalid value for "method", must be one of #{validator.allowable_values}.'
       end
@@ -185,6 +193,7 @@ module AsposeSlidesCloud
           id == o.id &&
           method == o.method &&
           status == o.status &&
+          progress == o.progress &&
           created == o.created &&
           enqueued == o.enqueued &&
           started == o.started &&
@@ -203,7 +212,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, method, status, created, enqueued, started, failed, canceled, finished, error].hash
+      [id, method, status, progress, created, enqueued, started, failed, canceled, finished, error].hash
     end
   end
 end

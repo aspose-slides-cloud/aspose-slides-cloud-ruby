@@ -34,6 +34,9 @@ module AsposeSlidesCloud
     # Specifies if shapes of the master slide should be shown on the slide. True by default.
     attr_accessor :show_master_shapes
 
+    # Specifies if shapes of the master slide should be shown on the slide. True by default.
+    attr_accessor :slide_show_transition
+
     # Gets or sets the  link to the layout slide.
     attr_accessor :layout_slide
 
@@ -64,6 +67,7 @@ module AsposeSlidesCloud
         :'width' => :'Width',
         :'height' => :'Height',
         :'show_master_shapes' => :'ShowMasterShapes',
+        :'slide_show_transition' => :'SlideShowTransition',
         :'layout_slide' => :'LayoutSlide',
         :'shapes' => :'Shapes',
         :'theme' => :'Theme',
@@ -81,6 +85,7 @@ module AsposeSlidesCloud
         :'width' => :'Float',
         :'height' => :'Float',
         :'show_master_shapes' => :'BOOLEAN',
+        :'slide_show_transition' => :'SlideShowTransition',
         :'layout_slide' => :'ResourceUri',
         :'shapes' => :'ResourceUri',
         :'theme' => :'ResourceUri',
@@ -107,6 +112,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'ShowMasterShapes')
         self.show_master_shapes = attributes[:'ShowMasterShapes']
+      end
+
+      if attributes.has_key?(:'SlideShowTransition')
+        self.slide_show_transition = attributes[:'SlideShowTransition']
       end
 
       if attributes.has_key?(:'LayoutSlide')
@@ -181,6 +190,7 @@ module AsposeSlidesCloud
           width == o.width &&
           height == o.height &&
           show_master_shapes == o.show_master_shapes &&
+          slide_show_transition == o.slide_show_transition &&
           layout_slide == o.layout_slide &&
           shapes == o.shapes &&
           theme == o.theme &&
@@ -200,7 +210,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, width, height, show_master_shapes, layout_slide, shapes, theme, placeholders, images, comments, background, notes_slide].hash
+      [self_uri, alternate_links, width, height, show_master_shapes, slide_show_transition, layout_slide, shapes, theme, placeholders, images, comments, background, notes_slide].hash
     end
   end
 end

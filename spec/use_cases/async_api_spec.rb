@@ -64,6 +64,95 @@ describe 'UseCases' do
       expect(converted.size).to be > 0
     end
 
+    it 'async convert and save' do
+      sleep_timeout = 3
+      max_tries = 10
+      out_path = "TestData/converted.pptx"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_file(out_path)
+
+      source = File.binread("TestData/test.pptx")
+      operation_id = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_convert_and_save(source, AsposeSlidesCloud::ExportFormat::PDF, out_path, "password")
+      for i in 1 .. max_tries do
+        sleep(sleep_timeout)
+        operation = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.get_operation_status(operation_id)
+        if operation.status != 'Created' and operation.status != 'Enqueued' and operation.status != 'Started' 
+          break
+        end
+      end
+      expect(operation.status).to eq('Finished')
+      expect(operation.error).to be_nil
+
+      expect(AsposeSlidesCloud::SpecUtils.testSlidesApi.object_exists(out_path).exists).to be true
+    end
+
+    it 'async save presentation' do
+      sleep_timeout = 3
+      max_tries = 10
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      out_path = "TestData/converted.pptx"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_file(out_path)
+
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      operation_id = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_save_presentation(file_name, AsposeSlidesCloud::ExportFormat::PDF, out_path, nil, "password", folder_name)
+      for i in 1 .. max_tries do
+        sleep(sleep_timeout)
+        operation = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.get_operation_status(operation_id)
+        if operation.status != 'Created' and operation.status != 'Enqueued' and operation.status != 'Started' 
+          break
+        end
+      end
+      expect(operation.status).to eq('Finished')
+      expect(operation.error).to be_nil
+
+      expect(AsposeSlidesCloud::SpecUtils.testSlidesApi.object_exists(out_path).exists).to be true
+    end
+
+    it 'async merge' do
+      sleep_timeout = 3
+      max_tries = 10
+      source1 = File.binread("TestData/TemplateCV.pptx")
+      source2 = File.binread("TestData/test-unprotected.pptx")
+      files = [ source1, source2 ]
+      operation_id = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_merge(files)
+      for i in 1 .. max_tries do
+        sleep(sleep_timeout)
+        operation = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.get_operation_status(operation_id)
+        if operation.status != 'Created' and operation.status != 'Enqueued' and operation.status != 'Started' 
+          break
+        end
+      end
+      expect(operation.status).to eq('Finished')
+      expect(operation.error).to be_nil
+
+      merged = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.get_operation_result(operation_id)
+      expect(merged.size).to be > 0
+    end
+
+    it 'async merge and save' do
+      sleep_timeout = 3
+      max_tries = 10
+
+      out_path = "TestData/merged.pptx"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_file(out_path)
+
+      source1 = File.binread("TestData/TemplateCV.pptx")
+      source2 = File.binread("TestData/test-unprotected.pptx")
+      files = [ source1, source2 ]
+      operation_id = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_merge_and_save(out_path, files)
+      for i in 1 .. max_tries do
+        sleep(sleep_timeout)
+        operation = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.get_operation_status(operation_id)
+        if operation.status != 'Created' and operation.status != 'Enqueued' and operation.status != 'Started' 
+          break
+        end
+      end
+      expect(operation.status).to eq('Finished')
+      expect(operation.error).to be_nil
+
+      expect(AsposeSlidesCloud::SpecUtils.testSlidesApi.object_exists(out_path).exists).to be true
+    end
+
     it 'async bad operation' do
       sleep_timeout = 3
       max_tries = 10

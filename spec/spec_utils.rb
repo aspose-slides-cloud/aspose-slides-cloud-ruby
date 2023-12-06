@@ -22,16 +22,16 @@ SOFTWARE.
 
 module AsposeSlidesCloud
   class SpecUtils
-    def self.ensureOperationId()
+    def self.getOperationId()
       unless @@operation_id
         source_file = File.binread("TestData/test.pptx")
         @@operation_id = SpecUtils.testSlidesAsyncApi.start_convert(source_file, AsposeSlidesCloud::ExportFormat::PDF, "password")
         sleep(10)
       end
+      @@operation_id
     end
 
     def self.initialize(method, name, value)
-      SpecUtils.ensureOperationId()
       if !@@is_initialized
         version = ""
         begin
@@ -76,7 +76,6 @@ module AsposeSlidesCloud
     end
 
     def self.get_param_value(name, method, type)
-      SpecUtils.ensureOperationId()
       value = nil
       SpecUtils.test_rules["Values"].each do |rule|
         if SpecUtils.good_rule?(rule, name, method, type) and rule.key?("Value")
@@ -189,7 +188,7 @@ module AsposeSlidesCloud
               result = File.binread(File.join(AsposeSlidesCloud::SpecUtils::TEST_DATA_PATH, file_name))
             end
           elsif template == "#OperationId"
-            return @@operation_id
+            return SpecUtils.getOperationId()
           elsif template == "#NewId"
             return "96b0a57c-d9ae-453f-b56f-3b154eb10cda"
           else

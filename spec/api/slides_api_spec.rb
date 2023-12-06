@@ -37972,8 +37972,8 @@ describe 'SlidesApi' do
   # Replaces image by the specified index.
   # @param name Document name.
   # @param image_index Image index.
+  # @param image Image data.
   # @param [Hash] opts the optional parameters
-  # @option opts [File] :image Image data.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -38147,8 +38147,8 @@ describe 'SlidesApi' do
   # Replaces image by the specified index and returns updated document. 
   # @param document Document data.
   # @param image_index Image index.
+  # @param image Image data.
   # @param [Hash] opts the optional parameters
-  # @option opts [File] :image Image data.
   # @option opts [String] :password Password.
   # @return [File]
   describe 'replace_image_online test' do

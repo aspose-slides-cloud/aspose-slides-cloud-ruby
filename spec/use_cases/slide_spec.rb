@@ -117,6 +117,22 @@ describe 'UseCases' do
         expect(slide.layout_slide.href.include? layout_slide_href).to eq(true)
     end
 
+    it "set slide transition" do
+        folder_name = "TempSlidesSDK"
+        file_name = "test.pptx"
+        password = "password"
+        slide_index = 1
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+
+        dto = AsposeSlidesCloud::Slide.new
+        dto.slide_show_transition = AsposeSlidesCloud::SlideShowTransition.new
+        dto.slide_show_transition.type = 'Circle'
+        dto.slide_show_transition.speed = 'Medium'
+
+        slide = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_slide(file_name, slide_index, dto, password, folder_name)
+        expect(slide.slide_show_transition.type).to eq(dto.slide_show_transition.type)
+    end
+
     it "delete slides" do
         folder_name = "TempSlidesSDK"
         file_name = "test.pptx"
