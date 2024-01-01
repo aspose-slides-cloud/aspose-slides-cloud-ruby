@@ -24,6 +24,15 @@ require 'spec_helper'
 
 describe 'UseCases' do
   describe 'Shapes' do
+    it 'shape load save' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      dto = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(file_name, 3, 1, "password", folder_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_shape(file_name, 3, 1, dto, "password", folder_name)
+      expect(shape).to be_kind_of(AsposeSlidesCloud::Chart)
+    end
+
     it 'shape add' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"

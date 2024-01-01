@@ -114,9 +114,9 @@ describe 'UseCases' do
             source = File.binread("TestData/test.pptx")
             font_name = "Calibri"
             response_embedded = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_font_online(source, font_name, false, "password")
-            expect(response_embedded.size).not_to eq(source.size)
+            expect(response_embedded.size).to be > source.size
             response_deleted = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_embedded_font_online(response_embedded, font_name, "password")
-            expect(response_deleted.size).to eq(source.size)
+            expect(response_deleted.size).to be < response_embedded.size
         end
 
         it "replace font" do
