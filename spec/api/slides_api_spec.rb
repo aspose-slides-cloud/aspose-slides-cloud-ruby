@@ -24215,6 +24215,66 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for get_available_fonts
+  # Returns presentation fonts info.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :fonts_folder Storage folder for custom fonts.
+  # @option opts [String] :storage Storage for custom fonts.
+  # @return [FontsData]
+  describe 'get_available_fonts test' do
+    it 'should work' do
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'GetAvailableFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetAvailableFonts', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetAvailableFonts', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_available_fonts_with_http_info(paramfonts_folder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetAvailableFonts', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid fonts_folder' do
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'GetAvailableFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetAvailableFonts', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontsFolder', 'GetAvailableFonts', paramfonts_folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetAvailableFonts', 'fontsFolder', paramfonts_folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_available_fonts_with_http_info(paramfonts_folder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetAvailableFonts', 'fontsFolder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetAvailableFonts', 'fontsFolder', paramfonts_folder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetAvailableFonts', 'fontsFolder', paramfonts_folder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'GetAvailableFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetAvailableFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetAvailableFonts', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetAvailableFonts', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_available_fonts_with_http_info(paramfonts_folder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetAvailableFonts', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetAvailableFonts', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetAvailableFonts', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for get_background
   # Read slide background info.
   # @param name Document name.

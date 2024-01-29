@@ -8877,6 +8877,53 @@ module AsposeSlidesCloud
         :return_type => 'ApiInfo')
       return data, status_code, headers
     end
+    # Returns presentation fonts info.
+    # @param fonts_folder Storage folder for custom fonts.
+    # @param storage Storage for custom fonts.
+    def get_available_fonts(fonts_folder = nil, storage = nil)
+      data, _status_code, _headers = get_available_fonts_with_http_info(fonts_folder, storage)
+      data
+    end
+
+    # Returns presentation fonts info.
+    # @param fonts_folder Storage folder for custom fonts.
+    # @param storage Storage for custom fonts.
+    def get_available_fonts_with_http_info(fonts_folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_available_fonts ...'
+      end
+
+      # resource path
+      local_var_path = '/slides/fonts/available'
+
+      # query parameters
+      query_params = {}
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'FontsData')
+      return data, status_code, headers
+    end
     # Read slide background info.
     # @param name Document name.
     # @param slide_index Slide index.

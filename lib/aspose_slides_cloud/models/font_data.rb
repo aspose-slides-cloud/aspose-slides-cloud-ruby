@@ -31,11 +31,15 @@ module AsposeSlidesCloud
     # Returns true if font is embedded.
     attr_accessor :is_embedded
 
+    # Returns true for a custom font (contained in fontsFolder directory).
+    attr_accessor :is_custom
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'font_name' => :'FontName',
         :'is_embedded' => :'IsEmbedded',
+        :'is_custom' => :'IsCustom',
       }
     end
 
@@ -44,6 +48,7 @@ module AsposeSlidesCloud
       {
         :'font_name' => :'String',
         :'is_embedded' => :'BOOLEAN',
+        :'is_custom' => :'BOOLEAN',
       }
     end
 
@@ -61,6 +66,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'IsEmbedded')
         self.is_embedded = attributes[:'IsEmbedded']
+      end
+
+      if attributes.has_key?(:'IsCustom')
+        self.is_custom = attributes[:'IsCustom']
       end
     end
 
@@ -83,7 +92,8 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           font_name == o.font_name &&
-          is_embedded == o.is_embedded
+          is_embedded == o.is_embedded &&
+          is_custom == o.is_custom
     end
 
     # @see the `==` method
@@ -95,7 +105,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [font_name, is_embedded].hash
+      [font_name, is_embedded, is_custom].hash
     end
   end
 end

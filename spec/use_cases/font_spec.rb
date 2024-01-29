@@ -24,6 +24,12 @@ require 'spec_helper'
 
 describe 'UseCases' do
     describe 'Fonts' do
+        it "get available fonts" do
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_available_fonts()
+            expect(response.list.length).to be > 1
+            expect(response.list[0].is_custom).not_to be_truthy
+        end
+
         it "get fonts" do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
