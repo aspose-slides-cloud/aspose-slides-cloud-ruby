@@ -155,5 +155,13 @@ describe 'UseCases' do
             expect(response.list.length).to eq(1)
             expect(response.list[0].type).to eq("Modern")
         end
+
+        it "get comment authors" do
+            folder_name = "TempSlidesSDK"
+            file_name = "test.pptx"
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_comment_authors(file_name, "password", folder_name)
+            expect(response.list.length).to eq(1)
+        end
     end
 end
