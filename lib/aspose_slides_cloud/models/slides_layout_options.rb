@@ -23,48 +23,60 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Section zoom frame.             
-  class SectionZoomFrame < ZoomObject
-    # Index of the target section
-    attr_accessor :target_section_index
+  # Slides layouting options.
+  class SlidesLayoutOptions < BaseObject
+    attr_accessor :layout_type
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      super.merge({
-        :'target_section_index' => :'TargetSectionIndex',
-      })
+      {
+        :'layout_type' => :'LayoutType',
+      }
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      super.merge({
-        :'target_section_index' => :'Integer',
-      })
+      {
+        :'layout_type' => :'String',
+      }
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      super
+      return unless attributes.is_a?(Hash)
 
-      if attributes.has_key?(:'TargetSectionIndex')
-        self.target_section_index = attributes[:'TargetSectionIndex']
+      # convert string to symbol for hash key
+      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'LayoutType')
+        self.layout_type = attributes[:'LayoutType']
       end
-      self.type = 'SectionZoomFrame'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = super
+      invalid_properties = Array.new
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !super
+      layout_type_validator = EnumAttributeValidator.new('String', ['NotesComments', 'Handout'])
+      return false unless layout_type_validator.valid?(@layout_type)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] layout_type Object to be assigned
+    def layout_type=(layout_type)
+      validator = EnumAttributeValidator.new('String', ['NotesComments', 'Handout'])
+      unless validator.valid?(layout_type)
+        fail ArgumentError, 'invalid value for "layout_type", must be one of #{validator.allowable_values}.'
+      end
+      @layout_type = layout_type
     end
 
     # Checks equality by comparing each attribute.
@@ -72,31 +84,7 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          self_uri == o.self_uri &&
-          alternate_links == o.alternate_links &&
-          name == o.name &&
-          width == o.width &&
-          height == o.height &&
-          alternative_text == o.alternative_text &&
-          alternative_text_title == o.alternative_text_title &&
-          hidden == o.hidden &&
-          is_decorative == o.is_decorative &&
-          x == o.x &&
-          y == o.y &&
-          z_order_position == o.z_order_position &&
-          fill_format == o.fill_format &&
-          effect_format == o.effect_format &&
-          three_d_format == o.three_d_format &&
-          line_format == o.line_format &&
-          hyperlink_click == o.hyperlink_click &&
-          hyperlink_mouse_over == o.hyperlink_mouse_over &&
-          type == o.type &&
-          image_type == o.image_type &&
-          return_to_parent == o.return_to_parent &&
-          show_background == o.show_background &&
-          image == o.image &&
-          transition_duration == o.transition_duration &&
-          target_section_index == o.target_section_index
+          layout_type == o.layout_type
     end
 
     # @see the `==` method
@@ -108,7 +96,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, is_decorative, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, image_type, return_to_parent, show_background, image, transition_duration, target_section_index].hash
+      [layout_type].hash
     end
   end
 end

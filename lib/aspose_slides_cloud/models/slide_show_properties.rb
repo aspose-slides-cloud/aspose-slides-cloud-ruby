@@ -43,6 +43,9 @@ module AsposeSlidesCloud
     # Show narrration.
     attr_accessor :show_narration
 
+    # Show media controls.
+    attr_accessor :show_media_controls
+
     # Use timings.
     attr_accessor :use_timings
 
@@ -61,6 +64,7 @@ module AsposeSlidesCloud
         :'pen_color' => :'PenColor',
         :'show_animation' => :'ShowAnimation',
         :'show_narration' => :'ShowNarration',
+        :'show_media_controls' => :'ShowMediaControls',
         :'use_timings' => :'UseTimings',
         :'slide_show_type' => :'SlideShowType',
         :'show_scrollbar' => :'ShowScrollbar',
@@ -76,6 +80,7 @@ module AsposeSlidesCloud
         :'pen_color' => :'String',
         :'show_animation' => :'BOOLEAN',
         :'show_narration' => :'BOOLEAN',
+        :'show_media_controls' => :'BOOLEAN',
         :'use_timings' => :'BOOLEAN',
         :'slide_show_type' => :'String',
         :'show_scrollbar' => :'BOOLEAN',
@@ -109,6 +114,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'ShowNarration')
         self.show_narration = attributes[:'ShowNarration']
+      end
+
+      if attributes.has_key?(:'ShowMediaControls')
+        self.show_media_controls = attributes[:'ShowMediaControls']
       end
 
       if attributes.has_key?(:'UseTimings')
@@ -163,6 +172,7 @@ module AsposeSlidesCloud
           pen_color == o.pen_color &&
           show_animation == o.show_animation &&
           show_narration == o.show_narration &&
+          show_media_controls == o.show_media_controls &&
           use_timings == o.use_timings &&
           slide_show_type == o.slide_show_type &&
           show_scrollbar == o.show_scrollbar
@@ -177,7 +187,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, loop, start_slide, end_slide, pen_color, show_animation, show_narration, use_timings, slide_show_type, show_scrollbar].hash
+      [self_uri, alternate_links, loop, start_slide, end_slide, pen_color, show_animation, show_narration, show_media_controls, use_timings, slide_show_type, show_scrollbar].hash
     end
   end
 end

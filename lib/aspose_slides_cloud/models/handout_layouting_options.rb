@@ -23,27 +23,37 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Summary zoom frame.
-  class SummaryZoomFrame < ShapeBase
-    # Zoom layout type
-    attr_accessor :zoom_layout
+  # Handout layouting options
+  class HandoutLayoutingOptions < SlidesLayoutOptions
+    # Specified how many pages and in what sequence will be placed on the page.
+    attr_accessor :handout
 
-    # Zoom frame sections
-    attr_accessor :sections
+    # True to print the displayed slide numbers.
+    attr_accessor :print_slide_numbers
+
+    # True to display comments on slide.
+    attr_accessor :print_comments
+
+    # True to draw frames around the displayed slides.
+    attr_accessor :print_frame_slide
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
-        :'zoom_layout' => :'ZoomLayout',
-        :'sections' => :'Sections',
+        :'handout' => :'Handout',
+        :'print_slide_numbers' => :'PrintSlideNumbers',
+        :'print_comments' => :'PrintComments',
+        :'print_frame_slide' => :'PrintFrameSlide',
       })
     end
 
     # Attribute type mapping.
     def self.swagger_types
       super.merge({
-        :'zoom_layout' => :'String',
-        :'sections' => :'Array<SummaryZoomSection>',
+        :'handout' => :'String',
+        :'print_slide_numbers' => :'BOOLEAN',
+        :'print_comments' => :'BOOLEAN',
+        :'print_frame_slide' => :'BOOLEAN',
       })
     end
 
@@ -52,16 +62,22 @@ module AsposeSlidesCloud
     def initialize(attributes = {})
       super
 
-      if attributes.has_key?(:'ZoomLayout')
-        self.zoom_layout = attributes[:'ZoomLayout']
+      if attributes.has_key?(:'Handout')
+        self.handout = attributes[:'Handout']
       end
 
-      if attributes.has_key?(:'Sections')
-        if (value = attributes[:'Sections']).is_a?(Array)
-          self.sections = value
-        end
+      if attributes.has_key?(:'PrintSlideNumbers')
+        self.print_slide_numbers = attributes[:'PrintSlideNumbers']
       end
-      self.type = 'SummaryZoomFrame'
+
+      if attributes.has_key?(:'PrintComments')
+        self.print_comments = attributes[:'PrintComments']
+      end
+
+      if attributes.has_key?(:'PrintFrameSlide')
+        self.print_frame_slide = attributes[:'PrintFrameSlide']
+      end
+      self.layout_type = 'Handout'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
@@ -75,19 +91,19 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      zoom_layout_validator = EnumAttributeValidator.new('String', ['GridLayout', 'FixedLayout'])
-      return false unless zoom_layout_validator.valid?(@zoom_layout)
+      handout_validator = EnumAttributeValidator.new('String', ['Handouts1', 'Handouts2', 'Handouts3', 'Handouts4Horizontal', 'Handouts4Vertical', 'Handouts6Horizontal', 'Handouts6Vertical', 'Handouts9Horizontal', 'Handouts9Vertical'])
+      return false unless handout_validator.valid?(@handout)
       true
     end
 
     # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] zoom_layout Object to be assigned
-    def zoom_layout=(zoom_layout)
-      validator = EnumAttributeValidator.new('String', ['GridLayout', 'FixedLayout'])
-      unless validator.valid?(zoom_layout)
-        fail ArgumentError, 'invalid value for "zoom_layout", must be one of #{validator.allowable_values}.'
+    # @param [Object] handout Object to be assigned
+    def handout=(handout)
+      validator = EnumAttributeValidator.new('String', ['Handouts1', 'Handouts2', 'Handouts3', 'Handouts4Horizontal', 'Handouts4Vertical', 'Handouts6Horizontal', 'Handouts6Vertical', 'Handouts9Horizontal', 'Handouts9Vertical'])
+      unless validator.valid?(handout)
+        fail ArgumentError, 'invalid value for "handout", must be one of #{validator.allowable_values}.'
       end
-      @zoom_layout = zoom_layout
+      @handout = handout
     end
 
     # Checks equality by comparing each attribute.
@@ -95,27 +111,11 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          self_uri == o.self_uri &&
-          alternate_links == o.alternate_links &&
-          name == o.name &&
-          width == o.width &&
-          height == o.height &&
-          alternative_text == o.alternative_text &&
-          alternative_text_title == o.alternative_text_title &&
-          hidden == o.hidden &&
-          is_decorative == o.is_decorative &&
-          x == o.x &&
-          y == o.y &&
-          z_order_position == o.z_order_position &&
-          fill_format == o.fill_format &&
-          effect_format == o.effect_format &&
-          three_d_format == o.three_d_format &&
-          line_format == o.line_format &&
-          hyperlink_click == o.hyperlink_click &&
-          hyperlink_mouse_over == o.hyperlink_mouse_over &&
-          type == o.type &&
-          zoom_layout == o.zoom_layout &&
-          sections == o.sections
+          layout_type == o.layout_type &&
+          handout == o.handout &&
+          print_slide_numbers == o.print_slide_numbers &&
+          print_comments == o.print_comments &&
+          print_frame_slide == o.print_frame_slide
     end
 
     # @see the `==` method
@@ -127,7 +127,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, is_decorative, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, zoom_layout, sections].hash
+      [layout_type, handout, print_slide_numbers, print_comments, print_frame_slide].hash
     end
   end
 end

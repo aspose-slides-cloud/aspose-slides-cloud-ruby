@@ -58,20 +58,8 @@ module AsposeSlidesCloud
     # Returns or sets an array of user-defined names of font families which Aspose.Slides should consider common.
     attr_accessor :additional_common_font_families
 
-    # Gets or sets the position of the notes on the page.
-    attr_accessor :notes_position
-
-    # Gets or sets the position of the comments on the page.
-    attr_accessor :comments_position
-
-    # Gets or sets the width of the comment output area in pixels (Applies only if comments are displayed on the right).
-    attr_accessor :comments_area_width
-
-    # Gets or sets the color of comments area (Applies only if comments are displayed on the right).
-    attr_accessor :comments_area_color
-
-    # True if comments that have no author are displayed. (Applies only if comments are displayed).
-    attr_accessor :show_comments_by_no_author
+    # Slides layouting options
+    attr_accessor :slides_layout_options
 
     # Image transparent color.
     attr_accessor :image_transparent_color
@@ -96,11 +84,7 @@ module AsposeSlidesCloud
         :'password' => :'Password',
         :'embed_true_type_fonts_for_ascii' => :'EmbedTrueTypeFontsForASCII',
         :'additional_common_font_families' => :'AdditionalCommonFontFamilies',
-        :'notes_position' => :'NotesPosition',
-        :'comments_position' => :'CommentsPosition',
-        :'comments_area_width' => :'CommentsAreaWidth',
-        :'comments_area_color' => :'CommentsAreaColor',
-        :'show_comments_by_no_author' => :'ShowCommentsByNoAuthor',
+        :'slides_layout_options' => :'SlidesLayoutOptions',
         :'image_transparent_color' => :'ImageTransparentColor',
         :'apply_image_transparent' => :'ApplyImageTransparent',
         :'access_permissions' => :'AccessPermissions',
@@ -121,11 +105,7 @@ module AsposeSlidesCloud
         :'password' => :'String',
         :'embed_true_type_fonts_for_ascii' => :'BOOLEAN',
         :'additional_common_font_families' => :'Array<String>',
-        :'notes_position' => :'String',
-        :'comments_position' => :'String',
-        :'comments_area_width' => :'Integer',
-        :'comments_area_color' => :'String',
-        :'show_comments_by_no_author' => :'BOOLEAN',
+        :'slides_layout_options' => :'SlidesLayoutOptions',
         :'image_transparent_color' => :'String',
         :'apply_image_transparent' => :'BOOLEAN',
         :'access_permissions' => :'AccessPermissions',
@@ -183,24 +163,8 @@ module AsposeSlidesCloud
         end
       end
 
-      if attributes.has_key?(:'NotesPosition')
-        self.notes_position = attributes[:'NotesPosition']
-      end
-
-      if attributes.has_key?(:'CommentsPosition')
-        self.comments_position = attributes[:'CommentsPosition']
-      end
-
-      if attributes.has_key?(:'CommentsAreaWidth')
-        self.comments_area_width = attributes[:'CommentsAreaWidth']
-      end
-
-      if attributes.has_key?(:'CommentsAreaColor')
-        self.comments_area_color = attributes[:'CommentsAreaColor']
-      end
-
-      if attributes.has_key?(:'ShowCommentsByNoAuthor')
-        self.show_comments_by_no_author = attributes[:'ShowCommentsByNoAuthor']
+      if attributes.has_key?(:'SlidesLayoutOptions')
+        self.slides_layout_options = attributes[:'SlidesLayoutOptions']
       end
 
       if attributes.has_key?(:'ImageTransparentColor')
@@ -232,10 +196,6 @@ module AsposeSlidesCloud
       return false unless text_compression_validator.valid?(@text_compression)
       compliance_validator = EnumAttributeValidator.new('String', ['Pdf15', 'Pdf16', 'Pdf17', 'PdfA1b', 'PdfA1a', 'PdfA2b', 'PdfA2a', 'PdfA3b', 'PdfA3a', 'PdfUa', 'PdfA2u'])
       return false unless compliance_validator.valid?(@compliance)
-      notes_position_validator = EnumAttributeValidator.new('String', ['None', 'BottomFull', 'BottomTruncated'])
-      return false unless notes_position_validator.valid?(@notes_position)
-      comments_position_validator = EnumAttributeValidator.new('String', ['None', 'Bottom', 'Right'])
-      return false unless comments_position_validator.valid?(@comments_position)
       true
     end
 
@@ -259,26 +219,6 @@ module AsposeSlidesCloud
       @compliance = compliance
     end
 
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] notes_position Object to be assigned
-    def notes_position=(notes_position)
-      validator = EnumAttributeValidator.new('String', ['None', 'BottomFull', 'BottomTruncated'])
-      unless validator.valid?(notes_position)
-        fail ArgumentError, 'invalid value for "notes_position", must be one of #{validator.allowable_values}.'
-      end
-      @notes_position = notes_position
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] comments_position Object to be assigned
-    def comments_position=(comments_position)
-      validator = EnumAttributeValidator.new('String', ['None', 'Bottom', 'Right'])
-      unless validator.valid?(comments_position)
-        fail ArgumentError, 'invalid value for "comments_position", must be one of #{validator.allowable_values}.'
-      end
-      @comments_position = comments_position
-    end
-
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -299,11 +239,7 @@ module AsposeSlidesCloud
           password == o.password &&
           embed_true_type_fonts_for_ascii == o.embed_true_type_fonts_for_ascii &&
           additional_common_font_families == o.additional_common_font_families &&
-          notes_position == o.notes_position &&
-          comments_position == o.comments_position &&
-          comments_area_width == o.comments_area_width &&
-          comments_area_color == o.comments_area_color &&
-          show_comments_by_no_author == o.show_comments_by_no_author &&
+          slides_layout_options == o.slides_layout_options &&
           image_transparent_color == o.image_transparent_color &&
           apply_image_transparent == o.apply_image_transparent &&
           access_permissions == o.access_permissions
@@ -318,7 +254,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, font_fallback_rules, font_subst_rules, format, text_compression, embed_full_fonts, compliance, sufficient_resolution, jpeg_quality, draw_slides_frame, show_hidden_slides, save_metafiles_as_png, password, embed_true_type_fonts_for_ascii, additional_common_font_families, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author, image_transparent_color, apply_image_transparent, access_permissions].hash
+      [default_regular_font, font_fallback_rules, font_subst_rules, format, text_compression, embed_full_fonts, compliance, sufficient_resolution, jpeg_quality, draw_slides_frame, show_hidden_slides, save_metafiles_as_png, password, embed_true_type_fonts_for_ascii, additional_common_font_families, slides_layout_options, image_transparent_color, apply_image_transparent, access_permissions].hash
     end
   end
 end

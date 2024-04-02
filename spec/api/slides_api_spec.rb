@@ -13132,6 +13132,181 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for delete_picture_cropped_areas
+  # Deletes cropped areas of a pictire.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index (must refer to a picture frame).
+  # @param password Document password.
+  # @param folder Document folder.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :storage Presentation storage.
+  # @return [nil]
+  describe 'delete_picture_cropped_areas test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePictureCroppedAreas', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePictureCroppedAreas', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePictureCroppedAreas', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePictureCroppedAreas', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePictureCroppedAreas', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePictureCroppedAreas', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeletePictureCroppedAreas', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_picture_cropped_areas_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePictureCroppedAreas', nil, nil, nil)
+      expect(c).to eq(code)
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePictureCroppedAreas', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePictureCroppedAreas', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePictureCroppedAreas', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePictureCroppedAreas', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePictureCroppedAreas', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePictureCroppedAreas', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'DeletePictureCroppedAreas', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeletePictureCroppedAreas', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_picture_cropped_areas_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeletePictureCroppedAreas', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePictureCroppedAreas', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePictureCroppedAreas', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePictureCroppedAreas', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePictureCroppedAreas', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePictureCroppedAreas', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePictureCroppedAreas', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePictureCroppedAreas', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePictureCroppedAreas', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'DeletePictureCroppedAreas', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeletePictureCroppedAreas', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_picture_cropped_areas_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeletePictureCroppedAreas', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePictureCroppedAreas', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePictureCroppedAreas', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePictureCroppedAreas', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePictureCroppedAreas', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePictureCroppedAreas', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePictureCroppedAreas', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePictureCroppedAreas', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePictureCroppedAreas', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'DeletePictureCroppedAreas', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeletePictureCroppedAreas', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_picture_cropped_areas_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeletePictureCroppedAreas', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePictureCroppedAreas', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePictureCroppedAreas', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePictureCroppedAreas', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePictureCroppedAreas', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePictureCroppedAreas', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePictureCroppedAreas', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePictureCroppedAreas', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePictureCroppedAreas', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'DeletePictureCroppedAreas', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeletePictureCroppedAreas', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_picture_cropped_areas_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeletePictureCroppedAreas', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePictureCroppedAreas', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePictureCroppedAreas', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePictureCroppedAreas', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePictureCroppedAreas', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePictureCroppedAreas', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePictureCroppedAreas', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePictureCroppedAreas', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePictureCroppedAreas', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'DeletePictureCroppedAreas', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeletePictureCroppedAreas', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_picture_cropped_areas_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeletePictureCroppedAreas', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePictureCroppedAreas', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePictureCroppedAreas', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeletePictureCroppedAreas', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeletePictureCroppedAreas', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeletePictureCroppedAreas', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeletePictureCroppedAreas', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeletePictureCroppedAreas', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeletePictureCroppedAreas', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'DeletePictureCroppedAreas', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeletePictureCroppedAreas', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_picture_cropped_areas_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeletePictureCroppedAreas', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePictureCroppedAreas', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeletePictureCroppedAreas', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for delete_portion
   # Remove a portion.
   # @param name Document name.

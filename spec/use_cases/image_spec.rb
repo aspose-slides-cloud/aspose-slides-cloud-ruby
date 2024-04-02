@@ -119,5 +119,32 @@ describe 'UseCases' do
       response = AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_image_online(file, image_index, image, password)
       expect(response.size).not_to eq(0)
     end
+
+    it 'delete picture cropped areas' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 2
+      shape_index = 2
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_picture_cropped_areas(
+          file_name, slide_index, shape_index, password, folder_name)
+    end
+
+    it 'delete picture cropped areas wrong shape type' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 2
+      shape_index = 3
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      begin
+          AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_picture_cropped_areas(
+              file_name, slide_index, shape_index, password, folder_name)
+        fail "Should throw an exception if shape is not PictureFrame"
+      rescue AsposeSlidesCloud::ApiError => e
+        expect(e.code).to eq(400)
+      end
+    end
   end
 end

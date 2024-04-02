@@ -212,6 +212,7 @@ module AsposeSlidesCloud
           alternative_text == o.alternative_text &&
           alternative_text_title == o.alternative_text_title &&
           hidden == o.hidden &&
+          is_decorative == o.is_decorative &&
           x == o.x &&
           y == o.y &&
           z_order_position == o.z_order_position &&
@@ -247,7 +248,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, shape_type, audio_cd_end_track, audio_cd_end_track_time, audio_cd_start_track, audio_cd_start_track_time, embedded, hide_at_showing, play_loop_mode, play_mode, volume, base64_data, play_across_slides, rewind_audio, picture_fill_format].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, is_decorative, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, shape_type, audio_cd_end_track, audio_cd_end_track_time, audio_cd_start_track, audio_cd_start_track_time, embedded, hide_at_showing, play_loop_mode, play_mode, volume, base64_data, play_across_slides, rewind_audio, picture_fill_format].hash
     end
   end
 end

@@ -46,20 +46,8 @@ module AsposeSlidesCloud
     # A boolean flag indicates if the cropped parts remain as part of the document. If true the cropped  parts will removed, if false they will be serialized in the document (which can possible lead to a  larger file)
     attr_accessor :delete_pictures_cropped_areas
 
-    # Gets or sets the position of the notes on the page.
-    attr_accessor :notes_position
-
-    # Gets or sets the position of the comments on the page.
-    attr_accessor :comments_position
-
-    # Gets or sets the width of the comment output area in pixels (Applies only if comments are displayed on the right).
-    attr_accessor :comments_area_width
-
-    # Gets or sets the color of comments area (Applies only if comments are displayed on the right).
-    attr_accessor :comments_area_color
-
-    # True if comments that have no author are displayed. (Applies only if comments are displayed).
-    attr_accessor :show_comments_by_no_author
+    # Slides layouting options
+    attr_accessor :slides_layout_options
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -71,11 +59,7 @@ module AsposeSlidesCloud
         :'jpeg_quality' => :'JpegQuality',
         :'pictures_compression' => :'PicturesCompression',
         :'delete_pictures_cropped_areas' => :'DeletePicturesCroppedAreas',
-        :'notes_position' => :'NotesPosition',
-        :'comments_position' => :'CommentsPosition',
-        :'comments_area_width' => :'CommentsAreaWidth',
-        :'comments_area_color' => :'CommentsAreaColor',
-        :'show_comments_by_no_author' => :'ShowCommentsByNoAuthor',
+        :'slides_layout_options' => :'SlidesLayoutOptions',
       })
     end
 
@@ -89,11 +73,7 @@ module AsposeSlidesCloud
         :'jpeg_quality' => :'Integer',
         :'pictures_compression' => :'String',
         :'delete_pictures_cropped_areas' => :'BOOLEAN',
-        :'notes_position' => :'String',
-        :'comments_position' => :'String',
-        :'comments_area_width' => :'Integer',
-        :'comments_area_color' => :'String',
-        :'show_comments_by_no_author' => :'BOOLEAN',
+        :'slides_layout_options' => :'SlidesLayoutOptions',
       })
     end
 
@@ -130,24 +110,8 @@ module AsposeSlidesCloud
         self.delete_pictures_cropped_areas = attributes[:'DeletePicturesCroppedAreas']
       end
 
-      if attributes.has_key?(:'NotesPosition')
-        self.notes_position = attributes[:'NotesPosition']
-      end
-
-      if attributes.has_key?(:'CommentsPosition')
-        self.comments_position = attributes[:'CommentsPosition']
-      end
-
-      if attributes.has_key?(:'CommentsAreaWidth')
-        self.comments_area_width = attributes[:'CommentsAreaWidth']
-      end
-
-      if attributes.has_key?(:'CommentsAreaColor')
-        self.comments_area_color = attributes[:'CommentsAreaColor']
-      end
-
-      if attributes.has_key?(:'ShowCommentsByNoAuthor')
-        self.show_comments_by_no_author = attributes[:'ShowCommentsByNoAuthor']
+      if attributes.has_key?(:'SlidesLayoutOptions')
+        self.slides_layout_options = attributes[:'SlidesLayoutOptions']
       end
       self.format = 'html'
     end
@@ -165,10 +129,6 @@ module AsposeSlidesCloud
       return false if !super
       pictures_compression_validator = EnumAttributeValidator.new('String', ['Dpi330', 'Dpi220', 'Dpi150', 'Dpi96', 'Dpi72', 'DocumentResolution'])
       return false unless pictures_compression_validator.valid?(@pictures_compression)
-      notes_position_validator = EnumAttributeValidator.new('String', ['None', 'BottomFull', 'BottomTruncated'])
-      return false unless notes_position_validator.valid?(@notes_position)
-      comments_position_validator = EnumAttributeValidator.new('String', ['None', 'Bottom', 'Right'])
-      return false unless comments_position_validator.valid?(@comments_position)
       true
     end
 
@@ -180,26 +140,6 @@ module AsposeSlidesCloud
         fail ArgumentError, 'invalid value for "pictures_compression", must be one of #{validator.allowable_values}.'
       end
       @pictures_compression = pictures_compression
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] notes_position Object to be assigned
-    def notes_position=(notes_position)
-      validator = EnumAttributeValidator.new('String', ['None', 'BottomFull', 'BottomTruncated'])
-      unless validator.valid?(notes_position)
-        fail ArgumentError, 'invalid value for "notes_position", must be one of #{validator.allowable_values}.'
-      end
-      @notes_position = notes_position
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] comments_position Object to be assigned
-    def comments_position=(comments_position)
-      validator = EnumAttributeValidator.new('String', ['None', 'Bottom', 'Right'])
-      unless validator.valid?(comments_position)
-        fail ArgumentError, 'invalid value for "comments_position", must be one of #{validator.allowable_values}.'
-      end
-      @comments_position = comments_position
     end
 
     # Checks equality by comparing each attribute.
@@ -218,11 +158,7 @@ module AsposeSlidesCloud
           jpeg_quality == o.jpeg_quality &&
           pictures_compression == o.pictures_compression &&
           delete_pictures_cropped_areas == o.delete_pictures_cropped_areas &&
-          notes_position == o.notes_position &&
-          comments_position == o.comments_position &&
-          comments_area_width == o.comments_area_width &&
-          comments_area_color == o.comments_area_color &&
-          show_comments_by_no_author == o.show_comments_by_no_author
+          slides_layout_options == o.slides_layout_options
     end
 
     # @see the `==` method
@@ -234,7 +170,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, font_fallback_rules, font_subst_rules, format, save_as_zip, sub_directory_name, show_hidden_slides, svg_responsive_layout, jpeg_quality, pictures_compression, delete_pictures_cropped_areas, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author].hash
+      [default_regular_font, font_fallback_rules, font_subst_rules, format, save_as_zip, sub_directory_name, show_hidden_slides, svg_responsive_layout, jpeg_quality, pictures_compression, delete_pictures_cropped_areas, slides_layout_options].hash
     end
   end
 end

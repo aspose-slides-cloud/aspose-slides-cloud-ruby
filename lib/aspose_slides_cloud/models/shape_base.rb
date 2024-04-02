@@ -43,6 +43,9 @@ module AsposeSlidesCloud
     # Gets or sets a value indicating whether this ShapeBase is hidden.
     attr_accessor :hidden
 
+    # Gets or sets 'Mark as decorative' option.
+    attr_accessor :is_decorative
+
     # Gets or sets the X
     attr_accessor :x
 
@@ -81,6 +84,7 @@ module AsposeSlidesCloud
         :'alternative_text' => :'AlternativeText',
         :'alternative_text_title' => :'AlternativeTextTitle',
         :'hidden' => :'Hidden',
+        :'is_decorative' => :'IsDecorative',
         :'x' => :'X',
         :'y' => :'Y',
         :'z_order_position' => :'ZOrderPosition',
@@ -103,6 +107,7 @@ module AsposeSlidesCloud
         :'alternative_text' => :'String',
         :'alternative_text_title' => :'String',
         :'hidden' => :'BOOLEAN',
+        :'is_decorative' => :'BOOLEAN',
         :'x' => :'Float',
         :'y' => :'Float',
         :'z_order_position' => :'Integer',
@@ -143,6 +148,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'Hidden')
         self.hidden = attributes[:'Hidden']
+      end
+
+      if attributes.has_key?(:'IsDecorative')
+        self.is_decorative = attributes[:'IsDecorative']
       end
 
       if attributes.has_key?(:'X')
@@ -230,6 +239,7 @@ module AsposeSlidesCloud
           alternative_text == o.alternative_text &&
           alternative_text_title == o.alternative_text_title &&
           hidden == o.hidden &&
+          is_decorative == o.is_decorative &&
           x == o.x &&
           y == o.y &&
           z_order_position == o.z_order_position &&
@@ -251,7 +261,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, is_decorative, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type].hash
     end
   end
 end

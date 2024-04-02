@@ -31,11 +31,19 @@ module AsposeSlidesCloud
     # Gets or sets shapes animation option.
     attr_accessor :animate_shapes
 
+    # Gets or sets embed images option.
+    attr_accessor :embed_images
+
+    # Slides layouting options
+    attr_accessor :notes_comments_layouting
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
         :'animate_transitions' => :'AnimateTransitions',
         :'animate_shapes' => :'AnimateShapes',
+        :'embed_images' => :'EmbedImages',
+        :'notes_comments_layouting' => :'NotesCommentsLayouting',
       })
     end
 
@@ -44,6 +52,8 @@ module AsposeSlidesCloud
       super.merge({
         :'animate_transitions' => :'BOOLEAN',
         :'animate_shapes' => :'BOOLEAN',
+        :'embed_images' => :'BOOLEAN',
+        :'notes_comments_layouting' => :'NotesCommentsLayoutingOptions',
       })
     end
 
@@ -58,6 +68,14 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'AnimateShapes')
         self.animate_shapes = attributes[:'AnimateShapes']
+      end
+
+      if attributes.has_key?(:'EmbedImages')
+        self.embed_images = attributes[:'EmbedImages']
+      end
+
+      if attributes.has_key?(:'NotesCommentsLayouting')
+        self.notes_comments_layouting = attributes[:'NotesCommentsLayouting']
       end
       self.format = 'html5'
     end
@@ -86,7 +104,9 @@ module AsposeSlidesCloud
           font_subst_rules == o.font_subst_rules &&
           format == o.format &&
           animate_transitions == o.animate_transitions &&
-          animate_shapes == o.animate_shapes
+          animate_shapes == o.animate_shapes &&
+          embed_images == o.embed_images &&
+          notes_comments_layouting == o.notes_comments_layouting
     end
 
     # @see the `==` method
@@ -98,7 +118,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, font_fallback_rules, font_subst_rules, format, animate_transitions, animate_shapes].hash
+      [default_regular_font, font_fallback_rules, font_subst_rules, format, animate_transitions, animate_shapes, embed_images, notes_comments_layouting].hash
     end
   end
 end

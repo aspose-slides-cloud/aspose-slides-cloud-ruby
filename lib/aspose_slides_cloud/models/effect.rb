@@ -34,6 +34,9 @@ module AsposeSlidesCloud
     # Preset class type.
     attr_accessor :preset_class_type
 
+    # Preset class type.
+    attr_accessor :animate_text_type
+
     # Shape index.
     attr_accessor :shape_index
 
@@ -94,6 +97,7 @@ module AsposeSlidesCloud
         :'type' => :'Type',
         :'subtype' => :'Subtype',
         :'preset_class_type' => :'PresetClassType',
+        :'animate_text_type' => :'AnimateTextType',
         :'shape_index' => :'ShapeIndex',
         :'paragraph_index' => :'ParagraphIndex',
         :'trigger_type' => :'TriggerType',
@@ -121,6 +125,7 @@ module AsposeSlidesCloud
         :'type' => :'String',
         :'subtype' => :'String',
         :'preset_class_type' => :'String',
+        :'animate_text_type' => :'String',
         :'shape_index' => :'Integer',
         :'paragraph_index' => :'Integer',
         :'trigger_type' => :'String',
@@ -160,6 +165,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'PresetClassType')
         self.preset_class_type = attributes[:'PresetClassType']
+      end
+
+      if attributes.has_key?(:'AnimateTextType')
+        self.animate_text_type = attributes[:'AnimateTextType']
       end
 
       if attributes.has_key?(:'ShapeIndex')
@@ -255,6 +264,8 @@ module AsposeSlidesCloud
       return false unless subtype_validator.valid?(@subtype)
       preset_class_type_validator = EnumAttributeValidator.new('String', ['Entrance', 'Exit', 'Emphasis', 'Path', 'MediaCall', 'OLEActionVerbs'])
       return false unless preset_class_type_validator.valid?(@preset_class_type)
+      animate_text_type_validator = EnumAttributeValidator.new('String', ['AllAtOnce', 'ByWord', 'ByLetter'])
+      return false unless animate_text_type_validator.valid?(@animate_text_type)
       return false if @shape_index.nil?
       trigger_type_validator = EnumAttributeValidator.new('String', ['AfterPrevious', 'OnClick', 'WithPrevious'])
       return false unless trigger_type_validator.valid?(@trigger_type)
@@ -296,6 +307,16 @@ module AsposeSlidesCloud
     end
 
     # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] animate_text_type Object to be assigned
+    def animate_text_type=(animate_text_type)
+      validator = EnumAttributeValidator.new('String', ['AllAtOnce', 'ByWord', 'ByLetter'])
+      unless validator.valid?(animate_text_type)
+        fail ArgumentError, 'invalid value for "animate_text_type", must be one of #{validator.allowable_values}.'
+      end
+      @animate_text_type = animate_text_type
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
     # @param [Object] trigger_type Object to be assigned
     def trigger_type=(trigger_type)
       validator = EnumAttributeValidator.new('String', ['AfterPrevious', 'OnClick', 'WithPrevious'])
@@ -333,6 +354,7 @@ module AsposeSlidesCloud
           type == o.type &&
           subtype == o.subtype &&
           preset_class_type == o.preset_class_type &&
+          animate_text_type == o.animate_text_type &&
           shape_index == o.shape_index &&
           paragraph_index == o.paragraph_index &&
           trigger_type == o.trigger_type &&
@@ -362,7 +384,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, subtype, preset_class_type, shape_index, paragraph_index, trigger_type, accelerate, auto_reverse, decelerate, duration, repeat_count, repeat_duration, restart, speed, trigger_delay_time, repeat_until_end_slide, repeat_until_next_click, stop_previous_sound, rewind, after_animation_type, after_animation_color].hash
+      [type, subtype, preset_class_type, animate_text_type, shape_index, paragraph_index, trigger_type, accelerate, auto_reverse, decelerate, duration, repeat_count, repeat_duration, restart, speed, trigger_delay_time, repeat_until_end_slide, repeat_until_next_click, stop_previous_sound, rewind, after_animation_type, after_animation_color].hash
     end
   end
 end

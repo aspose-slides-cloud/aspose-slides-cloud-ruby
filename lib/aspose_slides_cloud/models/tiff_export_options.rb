@@ -40,20 +40,11 @@ module AsposeSlidesCloud
     # Specifies the pixel format for the generated images. Read/write ImagePixelFormat.
     attr_accessor :pixel_format
 
-    # Gets or sets the position of the notes on the page.
-    attr_accessor :notes_position
+    # Slides layouting options
+    attr_accessor :slides_layout_options
 
-    # Gets or sets the position of the comments on the page.
-    attr_accessor :comments_position
-
-    # Gets or sets the width of the comment output area in pixels (Applies only if comments are displayed on the right).
-    attr_accessor :comments_area_width
-
-    # Gets or sets the color of comments area (Applies only if comments are displayed on the right).
-    attr_accessor :comments_area_color
-
-    # True if comments that have no author are displayed. (Applies only if comments are displayed).
-    attr_accessor :show_comments_by_no_author
+    # Specifies the algorithm for converting a color image into a black and white image. This option will applied only if Aspose.Slides.Export.TiffOptions.CompressionType is set to Aspose.Slides.Export.TiffCompressionTypes.CCITT4 or Aspose.Slides.Export.TiffCompressionTypes.CCITT3.
+    attr_accessor :bw_conversion_mode
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -63,11 +54,8 @@ module AsposeSlidesCloud
         :'dpi_y' => :'DpiY',
         :'show_hidden_slides' => :'ShowHiddenSlides',
         :'pixel_format' => :'PixelFormat',
-        :'notes_position' => :'NotesPosition',
-        :'comments_position' => :'CommentsPosition',
-        :'comments_area_width' => :'CommentsAreaWidth',
-        :'comments_area_color' => :'CommentsAreaColor',
-        :'show_comments_by_no_author' => :'ShowCommentsByNoAuthor',
+        :'slides_layout_options' => :'SlidesLayoutOptions',
+        :'bw_conversion_mode' => :'BwConversionMode',
       })
     end
 
@@ -79,11 +67,8 @@ module AsposeSlidesCloud
         :'dpi_y' => :'Integer',
         :'show_hidden_slides' => :'BOOLEAN',
         :'pixel_format' => :'String',
-        :'notes_position' => :'String',
-        :'comments_position' => :'String',
-        :'comments_area_width' => :'Integer',
-        :'comments_area_color' => :'String',
-        :'show_comments_by_no_author' => :'BOOLEAN',
+        :'slides_layout_options' => :'SlidesLayoutOptions',
+        :'bw_conversion_mode' => :'String',
       })
     end
 
@@ -112,24 +97,12 @@ module AsposeSlidesCloud
         self.pixel_format = attributes[:'PixelFormat']
       end
 
-      if attributes.has_key?(:'NotesPosition')
-        self.notes_position = attributes[:'NotesPosition']
+      if attributes.has_key?(:'SlidesLayoutOptions')
+        self.slides_layout_options = attributes[:'SlidesLayoutOptions']
       end
 
-      if attributes.has_key?(:'CommentsPosition')
-        self.comments_position = attributes[:'CommentsPosition']
-      end
-
-      if attributes.has_key?(:'CommentsAreaWidth')
-        self.comments_area_width = attributes[:'CommentsAreaWidth']
-      end
-
-      if attributes.has_key?(:'CommentsAreaColor')
-        self.comments_area_color = attributes[:'CommentsAreaColor']
-      end
-
-      if attributes.has_key?(:'ShowCommentsByNoAuthor')
-        self.show_comments_by_no_author = attributes[:'ShowCommentsByNoAuthor']
+      if attributes.has_key?(:'BwConversionMode')
+        self.bw_conversion_mode = attributes[:'BwConversionMode']
       end
       self.format = 'tiff'
     end
@@ -149,10 +122,8 @@ module AsposeSlidesCloud
       return false unless compression_validator.valid?(@compression)
       pixel_format_validator = EnumAttributeValidator.new('String', ['Format1bppIndexed', 'Format4bppIndexed', 'Format8bppIndexed', 'Format24bppRgb', 'Format32bppArgb'])
       return false unless pixel_format_validator.valid?(@pixel_format)
-      notes_position_validator = EnumAttributeValidator.new('String', ['None', 'BottomFull', 'BottomTruncated'])
-      return false unless notes_position_validator.valid?(@notes_position)
-      comments_position_validator = EnumAttributeValidator.new('String', ['None', 'Bottom', 'Right'])
-      return false unless comments_position_validator.valid?(@comments_position)
+      bw_conversion_mode_validator = EnumAttributeValidator.new('String', ['Default', 'Dithering', 'DitheringFloydSteinberg', 'Auto', 'AutoOtsu', 'Threshold25', 'Threshold50', 'Threshold75'])
+      return false unless bw_conversion_mode_validator.valid?(@bw_conversion_mode)
       true
     end
 
@@ -177,23 +148,13 @@ module AsposeSlidesCloud
     end
 
     # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] notes_position Object to be assigned
-    def notes_position=(notes_position)
-      validator = EnumAttributeValidator.new('String', ['None', 'BottomFull', 'BottomTruncated'])
-      unless validator.valid?(notes_position)
-        fail ArgumentError, 'invalid value for "notes_position", must be one of #{validator.allowable_values}.'
+    # @param [Object] bw_conversion_mode Object to be assigned
+    def bw_conversion_mode=(bw_conversion_mode)
+      validator = EnumAttributeValidator.new('String', ['Default', 'Dithering', 'DitheringFloydSteinberg', 'Auto', 'AutoOtsu', 'Threshold25', 'Threshold50', 'Threshold75'])
+      unless validator.valid?(bw_conversion_mode)
+        fail ArgumentError, 'invalid value for "bw_conversion_mode", must be one of #{validator.allowable_values}.'
       end
-      @notes_position = notes_position
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] comments_position Object to be assigned
-    def comments_position=(comments_position)
-      validator = EnumAttributeValidator.new('String', ['None', 'Bottom', 'Right'])
-      unless validator.valid?(comments_position)
-        fail ArgumentError, 'invalid value for "comments_position", must be one of #{validator.allowable_values}.'
-      end
-      @comments_position = comments_position
+      @bw_conversion_mode = bw_conversion_mode
     end
 
     # Checks equality by comparing each attribute.
@@ -212,11 +173,8 @@ module AsposeSlidesCloud
           dpi_y == o.dpi_y &&
           show_hidden_slides == o.show_hidden_slides &&
           pixel_format == o.pixel_format &&
-          notes_position == o.notes_position &&
-          comments_position == o.comments_position &&
-          comments_area_width == o.comments_area_width &&
-          comments_area_color == o.comments_area_color &&
-          show_comments_by_no_author == o.show_comments_by_no_author
+          slides_layout_options == o.slides_layout_options &&
+          bw_conversion_mode == o.bw_conversion_mode
     end
 
     # @see the `==` method
@@ -228,7 +186,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, font_fallback_rules, font_subst_rules, format, height, width, compression, dpi_x, dpi_y, show_hidden_slides, pixel_format, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author].hash
+      [default_regular_font, font_fallback_rules, font_subst_rules, format, height, width, compression, dpi_x, dpi_y, show_hidden_slides, pixel_format, slides_layout_options, bw_conversion_mode].hash
     end
   end
 end
