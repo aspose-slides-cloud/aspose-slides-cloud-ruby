@@ -20,6 +20,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 =end
 
+require 'date'
+
 module AsposeSlidesCloud
-  VERSION = '24.4.0'
+  class MathFormat
+    
+    MATH_ML = 'MathML'.freeze
+    LA_TE_X = 'LaTeX'.freeze
+
+    # Builds the enum from string
+    # @param [String] The enum value in the form of the string
+    # @return [String] The enum value
+    def build_from_hash(value)
+      constantValues = MathFormat.constants.select { |c| MathFormat::const_get(c) == value }
+      raise "Invalid ENUM value #{value} for class #MathFormat" if constantValues.empty?
+      value
+    end
+  end
 end

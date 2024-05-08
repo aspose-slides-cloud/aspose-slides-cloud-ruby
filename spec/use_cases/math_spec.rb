@@ -135,7 +135,7 @@ describe 'UseCases' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      mathMl = AsposeSlidesCloud::SpecUtils.testSlidesApi.download_portion_as_math_ml(file_name, 2, 3, 1, 1, "password", folder_name)
+      mathMl = AsposeSlidesCloud::SpecUtils.testSlidesApi.download_math_portion(file_name, 2, 3, 1, 1, "MathML", "password", folder_name)
       expect(mathMl).to be_truthy
     end
 
@@ -144,7 +144,7 @@ describe 'UseCases' do
       file_name = "test.pptx"
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.download_portion_as_math_ml(file_name, 2, 1, 1, 1, "password", folder_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.download_math_portion(file_name, 2, 1, 1, 1, "MathML", "password", folder_name)
         fail "Must have failed because conversion to MathML works only for math portions"
       rescue AsposeSlidesCloud::ApiError => e
         expect(e.code).to eq(400)
@@ -156,7 +156,7 @@ describe 'UseCases' do
       file_name = "test.pptx"
       out_path = folder_name + "/mathml.xml"
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      mathMl = AsposeSlidesCloud::SpecUtils.testSlidesApi.save_portion_as_math_ml(file_name, 2, 3, 1, 1, out_path, "password", folder_name)
+      mathMl = AsposeSlidesCloud::SpecUtils.testSlidesApi.save_math_portion(file_name, 2, 3, 1, 1, "MathML", out_path, "password", folder_name)
       expect(AsposeSlidesCloud::SpecUtils.testSlidesApi.object_exists(out_path).exists).to be true
     end
   end

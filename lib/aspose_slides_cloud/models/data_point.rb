@@ -37,6 +37,9 @@ module AsposeSlidesCloud
     # Gets or sets the line format.
     attr_accessor :line_format
 
+    # Gets or sets the marker.
+    attr_accessor :marker
+
     attr_accessor :type
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -46,6 +49,7 @@ module AsposeSlidesCloud
         :'effect_format' => :'EffectFormat',
         :'three_d_format' => :'ThreeDFormat',
         :'line_format' => :'LineFormat',
+        :'marker' => :'Marker',
         :'type' => :'Type',
       }
     end
@@ -57,6 +61,7 @@ module AsposeSlidesCloud
         :'effect_format' => :'EffectFormat',
         :'three_d_format' => :'ThreeDFormat',
         :'line_format' => :'LineFormat',
+        :'marker' => :'SeriesMarker',
         :'type' => :'String',
       }
     end
@@ -83,6 +88,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'LineFormat')
         self.line_format = attributes[:'LineFormat']
+      end
+
+      if attributes.has_key?(:'Marker')
+        self.marker = attributes[:'Marker']
       end
 
       if attributes.has_key?(:'Type')
@@ -124,6 +133,7 @@ module AsposeSlidesCloud
           effect_format == o.effect_format &&
           three_d_format == o.three_d_format &&
           line_format == o.line_format &&
+          marker == o.marker &&
           type == o.type
     end
 
@@ -136,7 +146,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [fill_format, effect_format, three_d_format, line_format, type].hash
+      [fill_format, effect_format, three_d_format, line_format, marker, type].hash
     end
   end
 end

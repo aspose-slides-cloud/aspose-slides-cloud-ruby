@@ -85,6 +85,7 @@ module AsposeSlidesCloud
           effect_format == o.effect_format &&
           three_d_format == o.three_d_format &&
           line_format == o.line_format &&
+          marker == o.marker &&
           type == o.type &&
           x_value == o.x_value &&
           y_value == o.y_value &&
@@ -103,7 +104,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [fill_format, effect_format, three_d_format, line_format, type, x_value, y_value, x_value_formula, y_value_formula, bubble_size, bubble_size_formula].hash
+      [fill_format, effect_format, three_d_format, line_format, marker, type, x_value, y_value, x_value_formula, y_value_formula, bubble_size, bubble_size_formula].hash
     end
   end
 end

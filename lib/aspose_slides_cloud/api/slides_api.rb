@@ -4754,7 +4754,7 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Presentation storage.
-    def delete_picture_cropped_areas(name, slide_index, shape_index, password, folder, storage = nil)
+    def delete_picture_cropped_areas(name, slide_index, shape_index, password = nil, folder = nil, storage = nil)
       delete_picture_cropped_areas_with_http_info(name, slide_index, shape_index, password, folder, storage)
       nil
     end
@@ -4766,7 +4766,7 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Presentation storage.
-    def delete_picture_cropped_areas_with_http_info(name, slide_index, shape_index, password, folder, storage = nil)
+    def delete_picture_cropped_areas_with_http_info(name, slide_index, shape_index, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.delete_picture_cropped_areas ...'
       end
@@ -4782,14 +4782,6 @@ module AsposeSlidesCloud
       # verify the required parameter 'shape_index' is set
       if @api_client.config.client_side_validation && shape_index.nil?
         fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_picture_cropped_areas"
-      end
-      # verify the required parameter 'password' is set
-      if @api_client.config.client_side_validation && password.nil?
-        fail ArgumentError, "Missing the required parameter 'password' when calling SlidesApi.delete_picture_cropped_areas"
-      end
-      # verify the required parameter 'folder' is set
-      if @api_client.config.client_side_validation && folder.nil?
-        fail ArgumentError, "Missing the required parameter 'folder' when calling SlidesApi.delete_picture_cropped_areas"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/pictureCroppedAreas'
@@ -4808,7 +4800,7 @@ module AsposeSlidesCloud
       header_params['Accept'] = @api_client.select_header_accept(['application/json'])
       # HTTP header 'Content-Type'
       header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password
+      header_params[:'password'] = password unless password.nil?
 
       # http body (model)
       post_body = nil
@@ -7966,6 +7958,102 @@ module AsposeSlidesCloud
       if document
         post_files = post_files.push(document)
       end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      return data, status_code, headers
+    end
+    # Convert Mathematical Text to MathML Format
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param format Format.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def download_math_portion(name, slide_index, shape_index, paragraph_index, portion_index, format, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = download_math_portion_with_http_info(name, slide_index, shape_index, paragraph_index, portion_index, format, password, folder, storage)
+      data
+    end
+
+    # Convert Mathematical Text to MathML Format
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param format Format.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def download_math_portion_with_http_info(name, slide_index, shape_index, paragraph_index, portion_index, format, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.download_math_portion ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.download_math_portion"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.download_math_portion"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.download_math_portion"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.download_math_portion"
+      end
+      # verify the required parameter 'portion_index' is set
+      if @api_client.config.client_side_validation && portion_index.nil?
+        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.download_math_portion"
+      end
+      # verify the required parameter 'format' is set
+      if @api_client.config.client_side_validation && format.nil?
+        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.download_math_portion"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MathML', 'LaTeX'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of MathML, LaTeX"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}/{format}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'portionIndex', portion_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'format', format)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
 
       auth_names = ['JWT']
       data, status_code, headers = @api_client.call_api(:POST, local_var_path,
@@ -15137,6 +15225,108 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'File')
+      return data, status_code, headers
+    end
+    # Convert Mathematical Text to MathML Format and saves result to the storage
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param format Format.
+    # @param out_path Path to save result.
+    # @param password Document password.
+    # @param folder Presentation folder.
+    # @param storage Presentation storage.
+    def save_math_portion(name, slide_index, shape_index, paragraph_index, portion_index, format, out_path, password = nil, folder = nil, storage = nil)
+      save_math_portion_with_http_info(name, slide_index, shape_index, paragraph_index, portion_index, format, out_path, password, folder, storage)
+      nil
+    end
+
+    # Convert Mathematical Text to MathML Format and saves result to the storage
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param paragraph_index Paragraph index.
+    # @param portion_index Portion index.
+    # @param format Format.
+    # @param out_path Path to save result.
+    # @param password Document password.
+    # @param folder Presentation folder.
+    # @param storage Presentation storage.
+    def save_math_portion_with_http_info(name, slide_index, shape_index, paragraph_index, portion_index, format, out_path, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.save_math_portion ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.save_math_portion"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.save_math_portion"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.save_math_portion"
+      end
+      # verify the required parameter 'paragraph_index' is set
+      if @api_client.config.client_side_validation && paragraph_index.nil?
+        fail ArgumentError, "Missing the required parameter 'paragraph_index' when calling SlidesApi.save_math_portion"
+      end
+      # verify the required parameter 'portion_index' is set
+      if @api_client.config.client_side_validation && portion_index.nil?
+        fail ArgumentError, "Missing the required parameter 'portion_index' when calling SlidesApi.save_math_portion"
+      end
+      # verify the required parameter 'format' is set
+      if @api_client.config.client_side_validation && format.nil?
+        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.save_math_portion"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['MathML', 'LaTeX'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of MathML, LaTeX"
+      end
+      # verify the required parameter 'out_path' is set
+      if @api_client.config.client_side_validation && out_path.nil?
+        fail ArgumentError, "Missing the required parameter 'out_path' when calling SlidesApi.save_math_portion"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/paragraphs/{paragraphIndex}/portions/{portionIndex}/{format}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'paragraphIndex', paragraph_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'portionIndex', portion_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'format', format)
+
+      # query parameters
+      query_params = {}
+      query_params[:'outPath'] = @api_client.prepare_for_query(out_path) unless out_path.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names)
       return data, status_code, headers
     end
     # Convert Mathematical Text to MathML Format and saves result to the storage
