@@ -83,7 +83,7 @@ describe 'UseCases' do
       file_name = "test.pptx"
       AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_file(folder_name + "/" + file_name)
       source = File.binread("TestData/test.pdf")
-      AsposeSlidesCloud::SpecUtils.testSlidesApi.import_from_pdf(file_name, source, nil, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.import_from_pdf(file_name, source, nil, nil, folder_name)
     end
 
     it 'append from PDF' do
@@ -93,7 +93,9 @@ describe 'UseCases' do
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       slide_count = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slides(file_name, password, folder_name).slide_list.length
       source = File.binread("TestData/test.pdf")
-      AsposeSlidesCloud::SpecUtils.testSlidesApi.import_from_pdf(file_name, source, password, folder_name)
+      options = AsposeSlidesCloud::PdfImportOptions.new
+      options.detect_tables = false
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.import_from_pdf(file_name, source, options, password, folder_name)
       new_slide_count = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slides(file_name, password, folder_name).slide_list.length
       expect(new_slide_count).to eq(slide_count + 4)
     end

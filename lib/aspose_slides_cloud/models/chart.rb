@@ -40,6 +40,9 @@ module AsposeSlidesCloud
     # Data source type for categories.
     attr_accessor :data_source_for_categories
 
+    # True if the chart has a title.
+    attr_accessor :has_title
+
     # Gets or sets the title.
     attr_accessor :title
 
@@ -75,6 +78,7 @@ module AsposeSlidesCloud
         :'series' => :'Series',
         :'categories' => :'Categories',
         :'data_source_for_categories' => :'DataSourceForCategories',
+        :'has_title' => :'HasTitle',
         :'title' => :'Title',
         :'back_wall' => :'BackWall',
         :'side_wall' => :'SideWall',
@@ -95,6 +99,7 @@ module AsposeSlidesCloud
         :'series' => :'Array<Series>',
         :'categories' => :'Array<ChartCategory>',
         :'data_source_for_categories' => :'DataSource',
+        :'has_title' => :'BOOLEAN',
         :'title' => :'ChartTitle',
         :'back_wall' => :'ChartWall',
         :'side_wall' => :'ChartWall',
@@ -134,6 +139,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'DataSourceForCategories')
         self.data_source_for_categories = attributes[:'DataSourceForCategories']
+      end
+
+      if attributes.has_key?(:'HasTitle')
+        self.has_title = attributes[:'HasTitle']
       end
 
       if attributes.has_key?(:'Title')
@@ -236,6 +245,7 @@ module AsposeSlidesCloud
           series == o.series &&
           categories == o.categories &&
           data_source_for_categories == o.data_source_for_categories &&
+          has_title == o.has_title &&
           title == o.title &&
           back_wall == o.back_wall &&
           side_wall == o.side_wall &&
@@ -256,7 +266,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, is_decorative, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, chart_type, show_data_labels_over_maximum, series, categories, data_source_for_categories, title, back_wall, side_wall, floor, legend, axes, plot_area, has_rounded_corners, series_groups].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, is_decorative, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, chart_type, show_data_labels_over_maximum, series, categories, data_source_for_categories, has_title, title, back_wall, side_wall, floor, legend, axes, plot_area, has_rounded_corners, series_groups].hash
     end
   end
 end

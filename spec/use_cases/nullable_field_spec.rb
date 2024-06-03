@@ -39,8 +39,8 @@ describe 'UseCases' do
       dto.chart_type = "Line"
       dto.width = 400.0
       dto.height = 300.0
+      dto.has_title = true
       dto.title = AsposeSlidesCloud::ChartTitle.new
-      dto.title.has_title = true
       dto.title.text = "MyTitle"
 
       category1 = AsposeSlidesCloud::ChartCategory.new

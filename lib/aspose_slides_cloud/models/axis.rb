@@ -31,6 +31,9 @@ module AsposeSlidesCloud
     # True if the axis has a visible title
     attr_accessor :has_title
 
+    # Axis title
+    attr_accessor :title
+
     # Axis position
     attr_accessor :position
 
@@ -144,6 +147,7 @@ module AsposeSlidesCloud
       {
         :'is_visible' => :'IsVisible',
         :'has_title' => :'HasTitle',
+        :'title' => :'Title',
         :'position' => :'Position',
         :'display_unit' => :'DisplayUnit',
         :'base_unit_scale' => :'BaseUnitScale',
@@ -188,6 +192,7 @@ module AsposeSlidesCloud
       {
         :'is_visible' => :'BOOLEAN',
         :'has_title' => :'BOOLEAN',
+        :'title' => :'ChartTitle',
         :'position' => :'String',
         :'display_unit' => :'String',
         :'base_unit_scale' => :'String',
@@ -241,6 +246,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'HasTitle')
         self.has_title = attributes[:'HasTitle']
+      end
+
+      if attributes.has_key?(:'Title')
+        self.title = attributes[:'Title']
       end
 
       if attributes.has_key?(:'Position')
@@ -528,6 +537,7 @@ module AsposeSlidesCloud
       self.class == o.class &&
           is_visible == o.is_visible &&
           has_title == o.has_title &&
+          title == o.title &&
           position == o.position &&
           display_unit == o.display_unit &&
           base_unit_scale == o.base_unit_scale &&
@@ -575,7 +585,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [is_visible, has_title, position, display_unit, base_unit_scale, is_automatic_major_unit, major_unit, major_unit_scale, major_tick_mark, is_automatic_minor_unit, minor_unit, minor_unit_scale, minor_tick_mark, is_automatic_max_value, max_value, is_automatic_min_value, min_value, is_logarithmic, log_base, category_axis_type, axis_between_categories, label_offset, is_plot_order_reversed, is_number_format_linked_to_source, number_format, cross_type, cross_at, is_automatic_tick_marks_spacing, tick_marks_spacing, is_automatic_tick_label_spacing, tick_label_spacing, tick_label_position, tick_label_rotation_angle, fill_format, effect_format, line_format, major_grid_lines_format, minor_grid_lines_format].hash
+      [is_visible, has_title, title, position, display_unit, base_unit_scale, is_automatic_major_unit, major_unit, major_unit_scale, major_tick_mark, is_automatic_minor_unit, minor_unit, minor_unit_scale, minor_tick_mark, is_automatic_max_value, max_value, is_automatic_min_value, min_value, is_logarithmic, log_base, category_axis_type, axis_between_categories, label_offset, is_plot_order_reversed, is_number_format_linked_to_source, number_format, cross_type, cross_at, is_automatic_tick_marks_spacing, tick_marks_spacing, is_automatic_tick_label_spacing, tick_label_spacing, tick_label_position, tick_label_rotation_angle, fill_format, effect_format, line_format, major_grid_lines_format, minor_grid_lines_format].hash
     end
   end
 end

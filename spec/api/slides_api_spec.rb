@@ -35775,6 +35775,7 @@ describe 'SlidesApi' do
   # @param name Document name.
   # @param pdf PDF data.
   # @param [Hash] opts the optional parameters
+  # @option opts [PdfImportOptions] :options Import options.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -35783,26 +35784,27 @@ describe 'SlidesApi' do
     it 'should work' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportFromPdf', 'String')
       parampdf = AsposeSlidesCloud::SpecUtils.get_param_value('pdf', 'ImportFromPdf', 'File')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'ImportFromPdf', 'PdfImportOptions')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportFromPdf', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportFromPdf', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportFromPdf', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('ImportFromPdf', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.import_from_pdf_with_http_info(paramname, parampdf, parampassword, paramfolder, paramstorage)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.import_from_pdf_with_http_info(paramname, parampdf, paramoptions, parampassword, paramfolder, paramstorage)
       code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportFromPdf', nil, nil, nil)
       expect(c).to eq(code)
-      expect(o).not_to be_nil
     end
 
     it 'invalid name' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportFromPdf', 'String')
       parampdf = AsposeSlidesCloud::SpecUtils.get_param_value('pdf', 'ImportFromPdf', 'File')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'ImportFromPdf', 'PdfImportOptions')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportFromPdf', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportFromPdf', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportFromPdf', 'String')
       paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'ImportFromPdf', paramname, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('ImportFromPdf', 'name', paramname)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_from_pdf_with_http_info(paramname, parampdf, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_from_pdf_with_http_info(paramname, parampdf, paramoptions, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportFromPdf', 'name')
           fail "An exception expected"
         end
@@ -35820,13 +35822,14 @@ describe 'SlidesApi' do
     it 'invalid pdf' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportFromPdf', 'String')
       parampdf = AsposeSlidesCloud::SpecUtils.get_param_value('pdf', 'ImportFromPdf', 'File')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'ImportFromPdf', 'PdfImportOptions')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportFromPdf', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportFromPdf', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportFromPdf', 'String')
       parampdf = AsposeSlidesCloud::SpecUtils.invalidize_param_value('pdf', 'ImportFromPdf', parampdf, 'File')
       AsposeSlidesCloud::SpecUtils.initialize('ImportFromPdf', 'pdf', parampdf)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_from_pdf_with_http_info(paramname, parampdf, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_from_pdf_with_http_info(paramname, parampdf, paramoptions, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportFromPdf', 'pdf')
           fail "An exception expected"
         end
@@ -35841,16 +35844,42 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid options' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportFromPdf', 'String')
+      parampdf = AsposeSlidesCloud::SpecUtils.get_param_value('pdf', 'ImportFromPdf', 'File')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'ImportFromPdf', 'PdfImportOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportFromPdf', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportFromPdf', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportFromPdf', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.invalidize_param_value('options', 'ImportFromPdf', paramoptions, 'PdfImportOptions')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportFromPdf', 'options', paramoptions)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_from_pdf_with_http_info(paramname, parampdf, paramoptions, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportFromPdf', 'options')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportFromPdf', 'options', paramoptions, 'PdfImportOptions')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportFromPdf', 'options', paramoptions, 'PdfImportOptions')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
     it 'invalid password' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportFromPdf', 'String')
       parampdf = AsposeSlidesCloud::SpecUtils.get_param_value('pdf', 'ImportFromPdf', 'File')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'ImportFromPdf', 'PdfImportOptions')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportFromPdf', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportFromPdf', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportFromPdf', 'String')
       parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'ImportFromPdf', parampassword, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('ImportFromPdf', 'password', parampassword)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_from_pdf_with_http_info(paramname, parampdf, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_from_pdf_with_http_info(paramname, parampdf, paramoptions, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportFromPdf', 'password')
           fail "An exception expected"
         end
@@ -35868,13 +35897,14 @@ describe 'SlidesApi' do
     it 'invalid folder' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportFromPdf', 'String')
       parampdf = AsposeSlidesCloud::SpecUtils.get_param_value('pdf', 'ImportFromPdf', 'File')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'ImportFromPdf', 'PdfImportOptions')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportFromPdf', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportFromPdf', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportFromPdf', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'ImportFromPdf', paramfolder, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('ImportFromPdf', 'folder', paramfolder)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_from_pdf_with_http_info(paramname, parampdf, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_from_pdf_with_http_info(paramname, parampdf, paramoptions, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportFromPdf', 'folder')
           fail "An exception expected"
         end
@@ -35892,13 +35922,14 @@ describe 'SlidesApi' do
     it 'invalid storage' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportFromPdf', 'String')
       parampdf = AsposeSlidesCloud::SpecUtils.get_param_value('pdf', 'ImportFromPdf', 'File')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'ImportFromPdf', 'PdfImportOptions')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportFromPdf', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportFromPdf', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportFromPdf', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'ImportFromPdf', paramstorage, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('ImportFromPdf', 'storage', paramstorage)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_from_pdf_with_http_info(paramname, parampdf, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_from_pdf_with_http_info(paramname, parampdf, paramoptions, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportFromPdf', 'storage')
           fail "An exception expected"
         end

@@ -13467,21 +13467,23 @@ module AsposeSlidesCloud
     # Create presentation document from pdf or append pdf to an existing presentation.
     # @param name Document name.
     # @param pdf PDF data.
+    # @param options Import options.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def import_from_pdf(name, pdf, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = import_from_pdf_with_http_info(name, pdf, password, folder, storage)
+    def import_from_pdf(name, pdf, options = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = import_from_pdf_with_http_info(name, pdf, options, password, folder, storage)
       data
     end
 
     # Create presentation document from pdf or append pdf to an existing presentation.
     # @param name Document name.
     # @param pdf PDF data.
+    # @param options Import options.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def import_from_pdf_with_http_info(name, pdf, password = nil, folder = nil, storage = nil)
+    def import_from_pdf_with_http_info(name, pdf, options = nil, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.import_from_pdf ...'
       end
@@ -13512,7 +13514,7 @@ module AsposeSlidesCloud
       header_params[:'password'] = password unless password.nil?
 
       # http body (model)
-      post_body = nil
+      post_body = @api_client.object_to_http_body(options)
 
       # form parameters
       post_files = []
