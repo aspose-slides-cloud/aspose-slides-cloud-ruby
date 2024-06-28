@@ -70,6 +70,12 @@ module AsposeSlidesCloud
     # Access permissions that should be granted when the document is opened with user access.  Default is AccessPermissions.None.             
     attr_accessor :access_permissions
 
+    # True to hide Ink elements in exported document.
+    attr_accessor :hide_ink
+
+    # True to use ROP operation or Opacity for rendering brush.
+    attr_accessor :interpret_mask_op_as_opacity
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
@@ -88,6 +94,8 @@ module AsposeSlidesCloud
         :'image_transparent_color' => :'ImageTransparentColor',
         :'apply_image_transparent' => :'ApplyImageTransparent',
         :'access_permissions' => :'AccessPermissions',
+        :'hide_ink' => :'HideInk',
+        :'interpret_mask_op_as_opacity' => :'InterpretMaskOpAsOpacity',
       })
     end
 
@@ -109,6 +117,8 @@ module AsposeSlidesCloud
         :'image_transparent_color' => :'String',
         :'apply_image_transparent' => :'BOOLEAN',
         :'access_permissions' => :'AccessPermissions',
+        :'hide_ink' => :'BOOLEAN',
+        :'interpret_mask_op_as_opacity' => :'BOOLEAN',
       })
     end
 
@@ -178,6 +188,14 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'AccessPermissions')
         self.access_permissions = attributes[:'AccessPermissions']
       end
+
+      if attributes.has_key?(:'HideInk')
+        self.hide_ink = attributes[:'HideInk']
+      end
+
+      if attributes.has_key?(:'InterpretMaskOpAsOpacity')
+        self.interpret_mask_op_as_opacity = attributes[:'InterpretMaskOpAsOpacity']
+      end
       self.format = 'pdf'
     end
 
@@ -242,7 +260,9 @@ module AsposeSlidesCloud
           slides_layout_options == o.slides_layout_options &&
           image_transparent_color == o.image_transparent_color &&
           apply_image_transparent == o.apply_image_transparent &&
-          access_permissions == o.access_permissions
+          access_permissions == o.access_permissions &&
+          hide_ink == o.hide_ink &&
+          interpret_mask_op_as_opacity == o.interpret_mask_op_as_opacity
     end
 
     # @see the `==` method
@@ -254,7 +274,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, font_fallback_rules, font_subst_rules, format, text_compression, embed_full_fonts, compliance, sufficient_resolution, jpeg_quality, draw_slides_frame, show_hidden_slides, save_metafiles_as_png, password, embed_true_type_fonts_for_ascii, additional_common_font_families, slides_layout_options, image_transparent_color, apply_image_transparent, access_permissions].hash
+      [default_regular_font, font_fallback_rules, font_subst_rules, format, text_compression, embed_full_fonts, compliance, sufficient_resolution, jpeg_quality, draw_slides_frame, show_hidden_slides, save_metafiles_as_png, password, embed_true_type_fonts_for_ascii, additional_common_font_families, slides_layout_options, image_transparent_color, apply_image_transparent, access_permissions, hide_ink, interpret_mask_op_as_opacity].hash
     end
   end
 end

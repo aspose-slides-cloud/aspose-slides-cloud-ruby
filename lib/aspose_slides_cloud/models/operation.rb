@@ -34,8 +34,6 @@ module AsposeSlidesCloud
 
     attr_accessor :created
 
-    attr_accessor :enqueued
-
     attr_accessor :started
 
     attr_accessor :failed
@@ -54,7 +52,6 @@ module AsposeSlidesCloud
         :'status' => :'Status',
         :'progress' => :'Progress',
         :'created' => :'Created',
-        :'enqueued' => :'Enqueued',
         :'started' => :'Started',
         :'failed' => :'Failed',
         :'canceled' => :'Canceled',
@@ -71,7 +68,6 @@ module AsposeSlidesCloud
         :'status' => :'String',
         :'progress' => :'OperationProgress',
         :'created' => :'DateTime',
-        :'enqueued' => :'DateTime',
         :'started' => :'DateTime',
         :'failed' => :'DateTime',
         :'canceled' => :'DateTime',
@@ -106,10 +102,6 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'Created')
         self.created = attributes[:'Created']
-      end
-
-      if attributes.has_key?(:'Enqueued')
-        self.enqueued = attributes[:'Enqueued']
       end
 
       if attributes.has_key?(:'Started')
@@ -195,7 +187,6 @@ module AsposeSlidesCloud
           status == o.status &&
           progress == o.progress &&
           created == o.created &&
-          enqueued == o.enqueued &&
           started == o.started &&
           failed == o.failed &&
           canceled == o.canceled &&
@@ -212,7 +203,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [id, method, status, progress, created, enqueued, started, failed, canceled, finished, error].hash
+      [id, method, status, progress, created, started, failed, canceled, finished, error].hash
     end
   end
 end

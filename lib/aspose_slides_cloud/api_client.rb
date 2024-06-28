@@ -57,7 +57,10 @@ module AsposeSlidesCloud
     def call_api(http_method, path, opts = {})
       response = call_api_method(http_method, path, opts)
       if @config.debugging
-        @config.logger.debug "HTTP response\nHeaders: #{response.headers}\nStatus: #{response.status}\nBody: #{response.body}\n"
+        @config.logger.debug "HTTP response\nHeaders: #{response.headers}\nStatus: #{response.status}\n"
+        if response.headers.has_key?("Content-Type") && (response.headers["Content-Type"].include?("text") || response.headers["Content-Type"].include?("json"))
+          @config.logger.debug "Body: #{response.body}\n"
+        end
       end
 
       if (response.status == 401 || (response.status == 500 && response.body.length == 0)) and @config.access_token
@@ -75,7 +78,10 @@ module AsposeSlidesCloud
     def repeat_call_api(http_method, path, opts = {})
       response = call_api_method(http_method, path, opts)
       if @config.debugging
-        @config.logger.debug "HTTP response\nHeaders: #{response.headers}\nStatus: #{response.status}\nBody: #{response.body}\n"
+        @config.logger.debug "HTTP response\nHeaders: #{response.headers}\nStatus: #{response.status}\n"
+        if response.headers.has_key?("Content-Type") && (response.headers["Content-Type"].include?("text") || response.headers["Content-Type"].include?("json"))
+          @config.logger.debug "Body: #{response.body}\n"
+        end
       end
 
       return process_response(response, opts)
@@ -157,7 +163,10 @@ module AsposeSlidesCloud
       req.body = build_request_body(req.headers, opts[:body], opts[:files])
       set_headers(req.headers)
       if @config.debugging
-        @config.logger.debug "HTTP request\nMethod: #{req.method}\nPath: #{req.path}\nParams: #{req.params}\nHeaders: #{req.headers}\nBody: #{req.body}\n"
+        @config.logger.debug "HTTP request\nMethod: #{req.method}\nPath: #{req.path}\nParams: #{req.params}\nHeaders: #{req.headers}\n"
+        if (!req.headers.has_key?("Content-Type") || !req.headers["Content-Type"].include?("multipart")) && req.body
+          @config.logger.debug "Body: #{req.body}\n"
+        end
       end
     end
 

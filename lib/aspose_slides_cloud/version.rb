@@ -21,5 +21,5 @@ SOFTWARE.
 =end
 
 module AsposeSlidesCloud
-  VERSION = '24.5.0'
+  VERSION = '24.6.0'
 end
