@@ -27,8 +27,11 @@ require 'tempfile'
 require 'faraday'
 require 'faraday/httpclient'
 require 'uri'
+require 'warning'
 
 Faraday.default_adapter = :httpclient
+# Suppress warning on unknown cookie from httpclient.webagent-cookie
+Warning.ignore(/Unknown key: SameSite =/)
 
 module AsposeSlidesCloud
   class ApiClient

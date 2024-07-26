@@ -46,6 +46,9 @@ module AsposeSlidesCloud
     # The bottom margin of the cell.
     attr_accessor :margin_bottom
 
+    # Transparency.
+    attr_accessor :transparency
+
     # Text anchor type.
     attr_accessor :text_anchor_type
 
@@ -95,6 +98,7 @@ module AsposeSlidesCloud
         :'margin_right' => :'MarginRight',
         :'margin_left' => :'MarginLeft',
         :'margin_bottom' => :'MarginBottom',
+        :'transparency' => :'Transparency',
         :'text_anchor_type' => :'TextAnchorType',
         :'text_vertical_type' => :'TextVerticalType',
         :'fill_format' => :'FillFormat',
@@ -121,6 +125,7 @@ module AsposeSlidesCloud
         :'margin_right' => :'Float',
         :'margin_left' => :'Float',
         :'margin_bottom' => :'Float',
+        :'transparency' => :'Float',
         :'text_anchor_type' => :'String',
         :'text_vertical_type' => :'String',
         :'fill_format' => :'FillFormat',
@@ -171,6 +176,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'MarginBottom')
         self.margin_bottom = attributes[:'MarginBottom']
+      end
+
+      if attributes.has_key?(:'Transparency')
+        self.transparency = attributes[:'Transparency']
       end
 
       if attributes.has_key?(:'TextAnchorType')
@@ -275,6 +284,7 @@ module AsposeSlidesCloud
           margin_right == o.margin_right &&
           margin_left == o.margin_left &&
           margin_bottom == o.margin_bottom &&
+          transparency == o.transparency &&
           text_anchor_type == o.text_anchor_type &&
           text_vertical_type == o.text_vertical_type &&
           fill_format == o.fill_format &&
@@ -299,7 +309,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [text, row_span, col_span, margin_top, margin_right, margin_left, margin_bottom, text_anchor_type, text_vertical_type, fill_format, border_top, border_right, border_left, border_bottom, border_diagonal_up, border_diagonal_down, column_index, row_index, text_frame_format, paragraphs].hash
+      [text, row_span, col_span, margin_top, margin_right, margin_left, margin_bottom, transparency, text_anchor_type, text_vertical_type, fill_format, border_top, border_right, border_left, border_bottom, border_diagonal_up, border_diagonal_down, column_index, row_index, text_frame_format, paragraphs].hash
     end
   end
 end

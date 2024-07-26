@@ -47,14 +47,17 @@ describe 'UseCases' do
       old_value = "text"
       new_value = "new_text"
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_text(file_name, old_value, new_value, nil, password, folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_text(file_name, old_value, new_value, nil, nil, password, folder_name)
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      result_with_empty = AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_text(file_name, old_value, new_value, true, password, folder_name)
+      result_with_empty = AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_text(file_name, old_value, new_value, true, nil, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      result_whole_words = AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_text(file_name, old_value, new_value, true, true, password, folder_name)
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       slide_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_slide_text(file_name, slide_index, old_value, new_value, nil, password, folder_name)
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       slide_result_with_empty = AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_slide_text(file_name, slide_index, old_value, new_value, true, password, folder_name)
       expect(result_with_empty.matches).to be > result.matches
+      expect(result_with_empty.matches).to be > result_whole_words.matches
       expect(result.matches).to be > slide_result.matches
       expect(slide_result_with_empty.matches).to be > slide_result.matches
     end
@@ -65,8 +68,8 @@ describe 'UseCases' do
       old_value = "text"
       new_value = "new_text"
       source = File.binread("TestData/test.pptx")
-      AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_text_online(source, old_value, new_value, nil, password)
-      AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_text_online(source, old_value, new_value, true, password)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_text_online(source, old_value, new_value, nil, nil, password)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_text_online(source, old_value, new_value, true, nil, password)
       AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_slide_text_online(source, slide_index, old_value, new_value, nil, password)
       AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_slide_text_online(source, slide_index, old_value, new_value, true, password)
     end

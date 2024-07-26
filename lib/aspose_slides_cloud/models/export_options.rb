@@ -28,6 +28,9 @@ module AsposeSlidesCloud
     # Default regular font for rendering the presentation. 
     attr_accessor :default_regular_font
 
+    # Default regular font for rendering the presentation. 
+    attr_accessor :gradient_style
+
     # Gets of sets list of font fallback rules.
     attr_accessor :font_fallback_rules
 
@@ -40,6 +43,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       {
         :'default_regular_font' => :'DefaultRegularFont',
+        :'gradient_style' => :'GradientStyle',
         :'font_fallback_rules' => :'FontFallbackRules',
         :'font_subst_rules' => :'FontSubstRules',
         :'format' => :'Format',
@@ -50,6 +54,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'default_regular_font' => :'String',
+        :'gradient_style' => :'String',
         :'font_fallback_rules' => :'Array<FontFallbackRule>',
         :'font_subst_rules' => :'Array<FontSubstRule>',
         :'format' => :'String',
@@ -66,6 +71,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'DefaultRegularFont')
         self.default_regular_font = attributes[:'DefaultRegularFont']
+      end
+
+      if attributes.has_key?(:'GradientStyle')
+        self.gradient_style = attributes[:'GradientStyle']
       end
 
       if attributes.has_key?(:'FontFallbackRules')
@@ -95,7 +104,19 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
+      gradient_style_validator = EnumAttributeValidator.new('String', ['Default', 'PowerPointUI'])
+      return false unless gradient_style_validator.valid?(@gradient_style)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] gradient_style Object to be assigned
+    def gradient_style=(gradient_style)
+      validator = EnumAttributeValidator.new('String', ['Default', 'PowerPointUI'])
+      unless validator.valid?(gradient_style)
+        fail ArgumentError, 'invalid value for "gradient_style", must be one of #{validator.allowable_values}.'
+      end
+      @gradient_style = gradient_style
     end
 
     # Checks equality by comparing each attribute.
@@ -104,6 +125,7 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
+          gradient_style == o.gradient_style &&
           font_fallback_rules == o.font_fallback_rules &&
           font_subst_rules == o.font_subst_rules &&
           format == o.format
@@ -118,7 +140,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, font_fallback_rules, font_subst_rules, format].hash
+      [default_regular_font, gradient_style, font_fallback_rules, font_subst_rules, format].hash
     end
   end
 end

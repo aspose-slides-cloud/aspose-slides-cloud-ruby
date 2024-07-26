@@ -74,10 +74,6 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
-      if @built_in.nil?
-        invalid_properties.push('invalid value for "built_in", built_in cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -85,7 +81,6 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      return false if @built_in.nil?
       true
     end
 

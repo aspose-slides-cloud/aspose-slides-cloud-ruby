@@ -111,10 +111,6 @@ module AsposeSlidesCloud
         invalid_properties.push('invalid value for "last_cell_index", last_cell_index cannot be nil.')
       end
 
-      if @allow_splitting.nil?
-        invalid_properties.push('invalid value for "allow_splitting", allow_splitting cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -125,7 +121,6 @@ module AsposeSlidesCloud
       return false if @first_cell_index.nil?
       return false if @last_row_index.nil?
       return false if @last_cell_index.nil?
-      return false if @allow_splitting.nil?
       true
     end
 

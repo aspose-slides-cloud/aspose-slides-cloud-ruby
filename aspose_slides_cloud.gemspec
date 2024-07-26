@@ -41,6 +41,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'faraday-httpclient', '~> 1.0', '>= 1.0.0'
   s.add_dependency 'httpclient', '~> 2.2', '>= 2.2.0'
   s.add_dependency 'json', '~> 2.1', '>= 2.1.0'
+  s.add_dependency 'warning', '~> 1.4', '>= 1.4.0'
 
   s.add_development_dependency 'rspec', '~> 3.6', '>= 3.6.0'
   s.add_development_dependency 'rspec_junit_formatter', '~> 0.5', '>= 0.5.1'

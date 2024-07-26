@@ -163,10 +163,6 @@ module AsposeSlidesCloud
         invalid_properties.push('invalid value for "height", height cannot be nil.')
       end
 
-      if @show_master_shapes.nil?
-        invalid_properties.push('invalid value for "show_master_shapes", show_master_shapes cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -176,7 +172,6 @@ module AsposeSlidesCloud
       return false if !super
       return false if @width.nil?
       return false if @height.nil?
-      return false if @show_master_shapes.nil?
       true
     end
 

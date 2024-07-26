@@ -55,6 +55,9 @@ module AsposeSlidesCloud
     # Determines whether the even columns has to be drawn with a different formatting.
     attr_accessor :vertical_banding
 
+    # Transparency.
+    attr_accessor :transparency
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
@@ -68,6 +71,7 @@ module AsposeSlidesCloud
         :'last_row' => :'LastRow',
         :'right_to_left' => :'RightToLeft',
         :'vertical_banding' => :'VerticalBanding',
+        :'transparency' => :'Transparency',
       })
     end
 
@@ -84,6 +88,7 @@ module AsposeSlidesCloud
         :'last_row' => :'BOOLEAN',
         :'right_to_left' => :'BOOLEAN',
         :'vertical_banding' => :'BOOLEAN',
+        :'transparency' => :'Float',
       })
     end
 
@@ -134,6 +139,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'VerticalBanding')
         self.vertical_banding = attributes[:'VerticalBanding']
+      end
+
+      if attributes.has_key?(:'Transparency')
+        self.transparency = attributes[:'Transparency']
       end
       self.type = 'Table'
     end
@@ -197,7 +206,8 @@ module AsposeSlidesCloud
           last_col == o.last_col &&
           last_row == o.last_row &&
           right_to_left == o.right_to_left &&
-          vertical_banding == o.vertical_banding
+          vertical_banding == o.vertical_banding &&
+          transparency == o.transparency
     end
 
     # @see the `==` method
@@ -209,7 +219,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, is_decorative, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, style, rows, columns, first_col, first_row, horizontal_banding, last_col, last_row, right_to_left, vertical_banding].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, is_decorative, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, style, rows, columns, first_col, first_row, horizontal_banding, last_col, last_row, right_to_left, vertical_banding, transparency].hash
     end
   end
 end

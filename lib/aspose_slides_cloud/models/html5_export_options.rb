@@ -37,6 +37,9 @@ module AsposeSlidesCloud
     # Slides layouting options
     attr_accessor :notes_comments_layouting
 
+    # Path to custom templates
+    attr_accessor :templates_path
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
@@ -44,6 +47,7 @@ module AsposeSlidesCloud
         :'animate_shapes' => :'AnimateShapes',
         :'embed_images' => :'EmbedImages',
         :'notes_comments_layouting' => :'NotesCommentsLayouting',
+        :'templates_path' => :'TemplatesPath',
       })
     end
 
@@ -54,6 +58,7 @@ module AsposeSlidesCloud
         :'animate_shapes' => :'BOOLEAN',
         :'embed_images' => :'BOOLEAN',
         :'notes_comments_layouting' => :'NotesCommentsLayoutingOptions',
+        :'templates_path' => :'String',
       })
     end
 
@@ -76,6 +81,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'NotesCommentsLayouting')
         self.notes_comments_layouting = attributes[:'NotesCommentsLayouting']
+      end
+
+      if attributes.has_key?(:'TemplatesPath')
+        self.templates_path = attributes[:'TemplatesPath']
       end
       self.format = 'html5'
     end
@@ -100,13 +109,15 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
+          gradient_style == o.gradient_style &&
           font_fallback_rules == o.font_fallback_rules &&
           font_subst_rules == o.font_subst_rules &&
           format == o.format &&
           animate_transitions == o.animate_transitions &&
           animate_shapes == o.animate_shapes &&
           embed_images == o.embed_images &&
-          notes_comments_layouting == o.notes_comments_layouting
+          notes_comments_layouting == o.notes_comments_layouting &&
+          templates_path == o.templates_path
     end
 
     # @see the `==` method
@@ -118,7 +129,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, font_fallback_rules, font_subst_rules, format, animate_transitions, animate_shapes, embed_images, notes_comments_layouting].hash
+      [default_regular_font, gradient_style, font_fallback_rules, font_subst_rules, format, animate_transitions, animate_shapes, embed_images, notes_comments_layouting, templates_path].hash
     end
   end
 end

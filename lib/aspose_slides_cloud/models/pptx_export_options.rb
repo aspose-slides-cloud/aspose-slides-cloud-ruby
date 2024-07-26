@@ -25,13 +25,17 @@ require 'date'
 module AsposeSlidesCloud
   # Provides options that control how a presentation is saved in PPTX format.
   class PptxExportOptions < ExportOptions
-    # The conformance class to which the PresentationML document conforms. Read/write Conformance.
+    # The conformance class to which the PresentationML document conforms.
     attr_accessor :conformance
+
+    # Specifies whether the ZIP64 format is used for the Presentation document. The default value is Zip64Mode.IfNecessary.
+    attr_accessor :zip64_mode
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
         :'conformance' => :'Conformance',
+        :'zip64_mode' => :'Zip64Mode',
       })
     end
 
@@ -39,6 +43,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       super.merge({
         :'conformance' => :'String',
+        :'zip64_mode' => :'String',
       })
     end
 
@@ -49,6 +54,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'Conformance')
         self.conformance = attributes[:'Conformance']
+      end
+
+      if attributes.has_key?(:'Zip64Mode')
+        self.zip64_mode = attributes[:'Zip64Mode']
       end
       self.format = 'pptx'
     end
@@ -66,6 +75,8 @@ module AsposeSlidesCloud
       return false if !super
       conformance_validator = EnumAttributeValidator.new('String', ['Ecma376', 'Iso29500Transitional', 'Iso29500Strict'])
       return false unless conformance_validator.valid?(@conformance)
+      zip64_mode_validator = EnumAttributeValidator.new('String', ['Never', 'IfNecessary', 'Always'])
+      return false unless zip64_mode_validator.valid?(@zip64_mode)
       true
     end
 
@@ -79,16 +90,28 @@ module AsposeSlidesCloud
       @conformance = conformance
     end
 
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] zip64_mode Object to be assigned
+    def zip64_mode=(zip64_mode)
+      validator = EnumAttributeValidator.new('String', ['Never', 'IfNecessary', 'Always'])
+      unless validator.valid?(zip64_mode)
+        fail ArgumentError, 'invalid value for "zip64_mode", must be one of #{validator.allowable_values}.'
+      end
+      @zip64_mode = zip64_mode
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
+          gradient_style == o.gradient_style &&
           font_fallback_rules == o.font_fallback_rules &&
           font_subst_rules == o.font_subst_rules &&
           format == o.format &&
-          conformance == o.conformance
+          conformance == o.conformance &&
+          zip64_mode == o.zip64_mode
     end
 
     # @see the `==` method
@@ -100,7 +123,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, font_fallback_rules, font_subst_rules, format, conformance].hash
+      [default_regular_font, gradient_style, font_fallback_rules, font_subst_rules, format, conformance, zip64_mode].hash
     end
   end
 end

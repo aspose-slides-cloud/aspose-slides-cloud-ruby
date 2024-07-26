@@ -104,26 +104,6 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
-      if @direction.nil?
-        invalid_properties.push('invalid value for "direction", direction cannot be nil.')
-      end
-
-      if @shape.nil?
-        invalid_properties.push('invalid value for "shape", shape cannot be nil.')
-      end
-
-      if @linear_angle.nil?
-        invalid_properties.push('invalid value for "linear_angle", linear_angle cannot be nil.')
-      end
-
-      if @is_scaled.nil?
-        invalid_properties.push('invalid value for "is_scaled", is_scaled cannot be nil.')
-      end
-
-      if @tile_flip.nil?
-        invalid_properties.push('invalid value for "tile_flip", tile_flip cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -131,15 +111,10 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      return false if @direction.nil?
       direction_validator = EnumAttributeValidator.new('String', ['FromCorner1', 'FromCorner2', 'FromCorner3', 'FromCorner4', 'FromCenter', 'NotDefined'])
       return false unless direction_validator.valid?(@direction)
-      return false if @shape.nil?
       shape_validator = EnumAttributeValidator.new('String', ['Linear', 'Rectangle', 'Radial', 'Path', 'NotDefined'])
       return false unless shape_validator.valid?(@shape)
-      return false if @linear_angle.nil?
-      return false if @is_scaled.nil?
-      return false if @tile_flip.nil?
       tile_flip_validator = EnumAttributeValidator.new('String', ['NoFlip', 'FlipX', 'FlipY', 'FlipBoth', 'NotDefined'])
       return false unless tile_flip_validator.valid?(@tile_flip)
       true
