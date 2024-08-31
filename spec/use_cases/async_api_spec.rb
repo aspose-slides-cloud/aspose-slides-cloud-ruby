@@ -153,6 +153,48 @@ describe 'UseCases' do
       expect(AsposeSlidesCloud::SpecUtils.testSlidesApi.object_exists(out_path).exists).to be true
     end
 
+    it 'async split' do
+      sleep_timeout = 3
+      max_tries = 10
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      out_folder = "splitResult"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_folder(out_folder, nil, true)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      operation_id = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_split(file_name, AsposeSlidesCloud::ExportFormat::PDF, nil, nil, nil, nil, nil, out_folder, "password", folder_name)
+      for i in 1 .. max_tries do
+        sleep(sleep_timeout)
+        operation = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.get_operation_status(operation_id)
+        if operation.status != 'Created' and operation.status != 'Enqueued' and operation.status != 'Started' 
+          break
+        end
+      end
+      expect(operation.status).to eq('Finished')
+      expect(operation.error).to be_nil
+
+      expect(AsposeSlidesCloud::SpecUtils.testSlidesApi.object_exists(out_folder).exists).to be true
+    end
+
+    it 'async upload and split' do
+      sleep_timeout = 3
+      max_tries = 10
+      source = File.binread("TestData/test.pptx")
+      out_folder = "splitResult"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_folder(out_folder, nil, true)
+      operation_id = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_upload_and_split(source, AsposeSlidesCloud::ExportFormat::PDF, out_folder, nil, nil, nil, nil, "password")
+      for i in 1 .. max_tries do
+        sleep(sleep_timeout)
+        operation = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.get_operation_status(operation_id)
+        if operation.status != 'Created' and operation.status != 'Enqueued' and operation.status != 'Started' 
+          break
+        end
+      end
+      expect(operation.status).to eq('Finished')
+      expect(operation.error).to be_nil
+
+      expect(AsposeSlidesCloud::SpecUtils.testSlidesApi.object_exists(out_folder).exists).to be true
+    end
+
     it 'async bad operation' do
       sleep_timeout = 3
       max_tries = 10

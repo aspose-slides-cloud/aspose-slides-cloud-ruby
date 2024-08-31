@@ -384,6 +384,7 @@ module AsposeSlidesCloud
         :'OneValueChartDataPoint' => { :'Type' => 'OneValue', },
         :'OneValueSeries' => { :'DataPointType' => 'OneValue', },
         :'Operation' => {  },
+        :'OperationError' => {  },
         :'OperationProgress' => {  },
         :'OrderedMergeRequest' => {  },
         :'OuterShadowEffect' => {  },

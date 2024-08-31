@@ -106,10 +106,6 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @is_assistant.nil?
-        invalid_properties.push('invalid value for "is_assistant", is_assistant cannot be nil.')
-      end
-
       if @org_chart_layout.nil?
         invalid_properties.push('invalid value for "org_chart_layout", org_chart_layout cannot be nil.')
       end
@@ -120,7 +116,6 @@ module AsposeSlidesCloud
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @is_assistant.nil?
       return false if @org_chart_layout.nil?
       org_chart_layout_validator = EnumAttributeValidator.new('String', ['Initial', 'Standart', 'BothHanging', 'LeftHanging', 'RightHanging'])
       return false unless org_chart_layout_validator.valid?(@org_chart_layout)

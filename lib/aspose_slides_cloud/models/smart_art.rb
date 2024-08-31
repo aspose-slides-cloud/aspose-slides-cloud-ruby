@@ -107,10 +107,6 @@ module AsposeSlidesCloud
         invalid_properties.push('invalid value for "color_style", color_style cannot be nil.')
       end
 
-      if @is_reversed.nil?
-        invalid_properties.push('invalid value for "is_reversed", is_reversed cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -127,7 +123,6 @@ module AsposeSlidesCloud
       return false if @color_style.nil?
       color_style_validator = EnumAttributeValidator.new('String', ['Dark1Outline', 'Dark2Outline', 'DarkFill', 'ColorfulAccentColors', 'ColorfulAccentColors2to3', 'ColorfulAccentColors3to4', 'ColorfulAccentColors4to5', 'ColorfulAccentColors5to6', 'ColoredOutlineAccent1', 'ColoredFillAccent1', 'GradientRangeAccent1', 'GradientLoopAccent1', 'TransparentGradientRangeAccent1', 'ColoredOutlineAccent2', 'ColoredFillAccent2', 'GradientRangeAccent2', 'GradientLoopAccent2', 'TransparentGradientRangeAccent2', 'ColoredOutlineAccent3', 'ColoredFillAccent3', 'GradientRangeAccent3', 'GradientLoopAccent3', 'TransparentGradientRangeAccent3', 'ColoredOutlineAccent4', 'ColoredFillAccent4', 'GradientRangeAccent4', 'GradientLoopAccent4', 'TransparentGradientRangeAccent4', 'ColoredOutlineAccent5', 'ColoredFillAccent5', 'GradientRangeAccent5', 'GradientLoopAccent5', 'TransparentGradientRangeAccent5', 'ColoredOutlineAccent6', 'ColoredFillAccent6', 'GradientRangeAccent6', 'GradientLoopAccent6', 'TransparentGradientRangeAccent6'])
       return false unless color_style_validator.valid?(@color_style)
-      return false if @is_reversed.nil?
       true
     end
 

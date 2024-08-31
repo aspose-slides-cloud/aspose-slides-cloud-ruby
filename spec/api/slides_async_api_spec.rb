@@ -1274,4 +1274,777 @@ describe 'SlidesAsyncApi' do
     end
   end
 
+  # unit tests for start_split
+  # @param name 
+  # @param format 
+  # @param [Hash] opts the optional parameters
+  # @option opts [ExportOptions] :options 
+  # @option opts [Integer] :width 
+  # @option opts [Integer] :height 
+  # @option opts [Integer] :from 
+  # @option opts [Integer] :to 
+  # @option opts [String] :dest_folder 
+  # @option opts [String] :password 
+  # @option opts [String] :folder 
+  # @option opts [String] :storage 
+  # @option opts [String] :fonts_folder 
+  # @return [String]
+  describe 'start_split test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSplit', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSplit', 'ExportOptions')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartSplit', 'Integer')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartSplit', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSplit', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSplit', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSplit', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_split_with_http_info(paramname, paramformat, paramoptions, paramwidth, paramheight, paramfrom, paramto, paramdest_folder, parampassword, paramfolder, paramstorage, paramfonts_folder)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSplit', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSplit', 'ExportOptions')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartSplit', 'Integer')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartSplit', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSplit', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSplit', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'StartSplit', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSplit', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_split_with_http_info(paramname, paramformat, paramoptions, paramwidth, paramheight, paramfrom, paramto, paramdest_folder, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSplit', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid format' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSplit', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSplit', 'ExportOptions')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartSplit', 'Integer')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartSplit', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSplit', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSplit', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.invalidize_param_value('format', 'StartSplit', paramformat, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSplit', 'format', paramformat)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_split_with_http_info(paramname, paramformat, paramoptions, paramwidth, paramheight, paramfrom, paramto, paramdest_folder, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSplit', 'format')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'format', paramformat, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'format', paramformat, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid options' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSplit', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSplit', 'ExportOptions')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartSplit', 'Integer')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartSplit', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSplit', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.invalidize_param_value('options', 'StartSplit', paramoptions, 'ExportOptions')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSplit', 'options', paramoptions)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_split_with_http_info(paramname, paramformat, paramoptions, paramwidth, paramheight, paramfrom, paramto, paramdest_folder, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSplit', 'options')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'options', paramoptions, 'ExportOptions')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'options', paramoptions, 'ExportOptions')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid width' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSplit', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSplit', 'ExportOptions')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartSplit', 'Integer')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartSplit', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSplit', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSplit', 'String')
+      paramwidth = AsposeSlidesCloud::SpecUtils.invalidize_param_value('width', 'StartSplit', paramwidth, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSplit', 'width', paramwidth)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_split_with_http_info(paramname, paramformat, paramoptions, paramwidth, paramheight, paramfrom, paramto, paramdest_folder, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSplit', 'width')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'width', paramwidth, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'width', paramwidth, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid height' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSplit', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSplit', 'ExportOptions')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartSplit', 'Integer')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartSplit', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSplit', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSplit', 'String')
+      paramheight = AsposeSlidesCloud::SpecUtils.invalidize_param_value('height', 'StartSplit', paramheight, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSplit', 'height', paramheight)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_split_with_http_info(paramname, paramformat, paramoptions, paramwidth, paramheight, paramfrom, paramto, paramdest_folder, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSplit', 'height')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'height', paramheight, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'height', paramheight, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid from' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSplit', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSplit', 'ExportOptions')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartSplit', 'Integer')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartSplit', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSplit', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSplit', 'String')
+      paramfrom = AsposeSlidesCloud::SpecUtils.invalidize_param_value('from', 'StartSplit', paramfrom, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSplit', 'from', paramfrom)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_split_with_http_info(paramname, paramformat, paramoptions, paramwidth, paramheight, paramfrom, paramto, paramdest_folder, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSplit', 'from')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'from', paramfrom, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'from', paramfrom, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid to' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSplit', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSplit', 'ExportOptions')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartSplit', 'Integer')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartSplit', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSplit', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSplit', 'String')
+      paramto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('to', 'StartSplit', paramto, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSplit', 'to', paramto)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_split_with_http_info(paramname, paramformat, paramoptions, paramwidth, paramheight, paramfrom, paramto, paramdest_folder, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSplit', 'to')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'to', paramto, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'to', paramto, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid dest_folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSplit', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSplit', 'ExportOptions')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartSplit', 'Integer')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartSplit', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSplit', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSplit', 'String')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('destFolder', 'StartSplit', paramdest_folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSplit', 'destFolder', paramdest_folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_split_with_http_info(paramname, paramformat, paramoptions, paramwidth, paramheight, paramfrom, paramto, paramdest_folder, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSplit', 'destFolder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'destFolder', paramdest_folder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'destFolder', paramdest_folder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSplit', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSplit', 'ExportOptions')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartSplit', 'Integer')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartSplit', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSplit', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSplit', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'StartSplit', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSplit', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_split_with_http_info(paramname, paramformat, paramoptions, paramwidth, paramheight, paramfrom, paramto, paramdest_folder, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSplit', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSplit', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSplit', 'ExportOptions')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartSplit', 'Integer')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartSplit', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSplit', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSplit', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'StartSplit', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSplit', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_split_with_http_info(paramname, paramformat, paramoptions, paramwidth, paramheight, paramfrom, paramto, paramdest_folder, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSplit', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSplit', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSplit', 'ExportOptions')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartSplit', 'Integer')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartSplit', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSplit', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'StartSplit', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSplit', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_split_with_http_info(paramname, paramformat, paramoptions, paramwidth, paramheight, paramfrom, paramto, paramdest_folder, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSplit', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid fonts_folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'StartSplit', 'String')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartSplit', 'ExportOptions')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartSplit', 'Integer')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartSplit', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartSplit', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'StartSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontsFolder', 'StartSplit', paramfonts_folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartSplit', 'fontsFolder', paramfonts_folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_split_with_http_info(paramname, paramformat, paramoptions, paramwidth, paramheight, paramfrom, paramto, paramdest_folder, parampassword, paramfolder, paramstorage, paramfonts_folder)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartSplit', 'fontsFolder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'fontsFolder', paramfonts_folder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartSplit', 'fontsFolder', paramfonts_folder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for start_upload_and_split
+  # @param document Document data.
+  # @param format 
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :dest_folder 
+  # @option opts [Integer] :width 
+  # @option opts [Integer] :height 
+  # @option opts [Integer] :from 
+  # @option opts [Integer] :to 
+  # @option opts [String] :password 
+  # @option opts [String] :storage 
+  # @option opts [String] :fonts_folder 
+  # @option opts [ExportOptions] :options 
+  # @return [String]
+  describe 'start_upload_and_split test' do
+    it 'should work' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartUploadAndSplit', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartUploadAndSplit', 'String')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartUploadAndSplit', 'String')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartUploadAndSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartUploadAndSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartUploadAndSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartUploadAndSplit', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartUploadAndSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartUploadAndSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartUploadAndSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartUploadAndSplit', 'ExportOptions')
+      AsposeSlidesCloud::SpecUtils.initialize('StartUploadAndSplit', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_upload_and_split_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', nil, nil, nil)
+      expect(c).to eq(code)
+    end
+
+    it 'invalid document' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartUploadAndSplit', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartUploadAndSplit', 'String')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartUploadAndSplit', 'String')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartUploadAndSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartUploadAndSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartUploadAndSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartUploadAndSplit', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartUploadAndSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartUploadAndSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartUploadAndSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartUploadAndSplit', 'ExportOptions')
+      paramdocument = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'StartUploadAndSplit', paramdocument, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('StartUploadAndSplit', 'document', paramdocument)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_upload_and_split_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartUploadAndSplit', 'document')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'document', paramdocument, 'File')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'document', paramdocument, 'File')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid format' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartUploadAndSplit', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartUploadAndSplit', 'String')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartUploadAndSplit', 'String')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartUploadAndSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartUploadAndSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartUploadAndSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartUploadAndSplit', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartUploadAndSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartUploadAndSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartUploadAndSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartUploadAndSplit', 'ExportOptions')
+      paramformat = AsposeSlidesCloud::SpecUtils.invalidize_param_value('format', 'StartUploadAndSplit', paramformat, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartUploadAndSplit', 'format', paramformat)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_upload_and_split_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartUploadAndSplit', 'format')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'format', paramformat, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'format', paramformat, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid dest_folder' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartUploadAndSplit', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartUploadAndSplit', 'String')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartUploadAndSplit', 'String')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartUploadAndSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartUploadAndSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartUploadAndSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartUploadAndSplit', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartUploadAndSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartUploadAndSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartUploadAndSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartUploadAndSplit', 'ExportOptions')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('destFolder', 'StartUploadAndSplit', paramdest_folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartUploadAndSplit', 'destFolder', paramdest_folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_upload_and_split_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartUploadAndSplit', 'destFolder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'destFolder', paramdest_folder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'destFolder', paramdest_folder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid width' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartUploadAndSplit', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartUploadAndSplit', 'String')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartUploadAndSplit', 'String')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartUploadAndSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartUploadAndSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartUploadAndSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartUploadAndSplit', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartUploadAndSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartUploadAndSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartUploadAndSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartUploadAndSplit', 'ExportOptions')
+      paramwidth = AsposeSlidesCloud::SpecUtils.invalidize_param_value('width', 'StartUploadAndSplit', paramwidth, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('StartUploadAndSplit', 'width', paramwidth)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_upload_and_split_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartUploadAndSplit', 'width')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'width', paramwidth, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'width', paramwidth, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid height' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartUploadAndSplit', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartUploadAndSplit', 'String')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartUploadAndSplit', 'String')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartUploadAndSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartUploadAndSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartUploadAndSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartUploadAndSplit', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartUploadAndSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartUploadAndSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartUploadAndSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartUploadAndSplit', 'ExportOptions')
+      paramheight = AsposeSlidesCloud::SpecUtils.invalidize_param_value('height', 'StartUploadAndSplit', paramheight, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('StartUploadAndSplit', 'height', paramheight)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_upload_and_split_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartUploadAndSplit', 'height')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'height', paramheight, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'height', paramheight, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid from' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartUploadAndSplit', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartUploadAndSplit', 'String')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartUploadAndSplit', 'String')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartUploadAndSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartUploadAndSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartUploadAndSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartUploadAndSplit', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartUploadAndSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartUploadAndSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartUploadAndSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartUploadAndSplit', 'ExportOptions')
+      paramfrom = AsposeSlidesCloud::SpecUtils.invalidize_param_value('from', 'StartUploadAndSplit', paramfrom, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('StartUploadAndSplit', 'from', paramfrom)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_upload_and_split_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartUploadAndSplit', 'from')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'from', paramfrom, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'from', paramfrom, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid to' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartUploadAndSplit', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartUploadAndSplit', 'String')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartUploadAndSplit', 'String')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartUploadAndSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartUploadAndSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartUploadAndSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartUploadAndSplit', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartUploadAndSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartUploadAndSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartUploadAndSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartUploadAndSplit', 'ExportOptions')
+      paramto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('to', 'StartUploadAndSplit', paramto, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('StartUploadAndSplit', 'to', paramto)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_upload_and_split_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartUploadAndSplit', 'to')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'to', paramto, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'to', paramto, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartUploadAndSplit', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartUploadAndSplit', 'String')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartUploadAndSplit', 'String')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartUploadAndSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartUploadAndSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartUploadAndSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartUploadAndSplit', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartUploadAndSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartUploadAndSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartUploadAndSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartUploadAndSplit', 'ExportOptions')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'StartUploadAndSplit', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartUploadAndSplit', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_upload_and_split_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartUploadAndSplit', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartUploadAndSplit', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartUploadAndSplit', 'String')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartUploadAndSplit', 'String')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartUploadAndSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartUploadAndSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartUploadAndSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartUploadAndSplit', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartUploadAndSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartUploadAndSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartUploadAndSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartUploadAndSplit', 'ExportOptions')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'StartUploadAndSplit', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartUploadAndSplit', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_upload_and_split_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartUploadAndSplit', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid fonts_folder' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartUploadAndSplit', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartUploadAndSplit', 'String')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartUploadAndSplit', 'String')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartUploadAndSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartUploadAndSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartUploadAndSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartUploadAndSplit', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartUploadAndSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartUploadAndSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartUploadAndSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartUploadAndSplit', 'ExportOptions')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontsFolder', 'StartUploadAndSplit', paramfonts_folder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('StartUploadAndSplit', 'fontsFolder', paramfonts_folder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_upload_and_split_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartUploadAndSplit', 'fontsFolder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'fontsFolder', paramfonts_folder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'fontsFolder', paramfonts_folder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid options' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'StartUploadAndSplit', 'File')
+      paramformat = AsposeSlidesCloud::SpecUtils.get_param_value('format', 'StartUploadAndSplit', 'String')
+      paramdest_folder = AsposeSlidesCloud::SpecUtils.get_param_value('destFolder', 'StartUploadAndSplit', 'String')
+      paramwidth = AsposeSlidesCloud::SpecUtils.get_param_value('width', 'StartUploadAndSplit', 'Integer')
+      paramheight = AsposeSlidesCloud::SpecUtils.get_param_value('height', 'StartUploadAndSplit', 'Integer')
+      paramfrom = AsposeSlidesCloud::SpecUtils.get_param_value('from', 'StartUploadAndSplit', 'Integer')
+      paramto = AsposeSlidesCloud::SpecUtils.get_param_value('to', 'StartUploadAndSplit', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'StartUploadAndSplit', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'StartUploadAndSplit', 'String')
+      paramfonts_folder = AsposeSlidesCloud::SpecUtils.get_param_value('fontsFolder', 'StartUploadAndSplit', 'String')
+      paramoptions = AsposeSlidesCloud::SpecUtils.get_param_value('options', 'StartUploadAndSplit', 'ExportOptions')
+      paramoptions = AsposeSlidesCloud::SpecUtils.invalidize_param_value('options', 'StartUploadAndSplit', paramoptions, 'ExportOptions')
+      AsposeSlidesCloud::SpecUtils.initialize('StartUploadAndSplit', 'options', paramoptions)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.start_upload_and_split_with_http_info(paramdocument, paramformat, paramdest_folder, paramwidth, paramheight, paramfrom, paramto, parampassword, paramstorage, paramfonts_folder, paramoptions)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('StartUploadAndSplit', 'options')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'options', paramoptions, 'ExportOptions')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'options', paramoptions, 'ExportOptions')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
 end

@@ -535,5 +535,176 @@ module AsposeSlidesCloud
         :return_type => 'String')
       return data, status_code, headers
     end
+    # @param name 
+    # @param format 
+    # @param options 
+    # @param width 
+    # @param height 
+    # @param from 
+    # @param to 
+    # @param dest_folder 
+    # @param password 
+    # @param folder 
+    # @param storage 
+    # @param fonts_folder 
+    def start_split(name, format, options = nil, width = nil, height = nil, from = nil, to = nil, dest_folder = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
+      data, _status_code, _headers = start_split_with_http_info(name, format, options, width, height, from, to, dest_folder, password, folder, storage, fonts_folder)
+      data
+    end
+
+    # @param name 
+    # @param format 
+    # @param options 
+    # @param width 
+    # @param height 
+    # @param from 
+    # @param to 
+    # @param dest_folder 
+    # @param password 
+    # @param folder 
+    # @param storage 
+    # @param fonts_folder 
+    def start_split_with_http_info(name, format, options = nil, width = nil, height = nil, from = nil, to = nil, dest_folder = nil, password = nil, folder = nil, storage = nil, fonts_folder = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesAsyncApi.start_split ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesAsyncApi.start_split"
+      end
+      # verify the required parameter 'format' is set
+      if @api_client.config.client_side_validation && format.nil?
+        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesAsyncApi.start_split"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp', 'Xaml', 'Html5', 'Md', 'Xml'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp, Xaml, Html5, Md, Xml"
+      end
+      # resource path
+      local_var_path = '/slides/async/{name}/split/{format}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'format', format)
+
+      # query parameters
+      query_params = {}
+      query_params[:'width'] = @api_client.prepare_for_query(width) unless width.nil?
+      query_params[:'height'] = @api_client.prepare_for_query(height) unless height.nil?
+      query_params[:'from'] = @api_client.prepare_for_query(from) unless from.nil?
+      query_params[:'to'] = @api_client.prepare_for_query(to) unless to.nil?
+      query_params[:'destFolder'] = @api_client.prepare_for_query(dest_folder) unless dest_folder.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(options)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'String')
+      return data, status_code, headers
+    end
+    # @param document Document data.
+    # @param format 
+    # @param dest_folder 
+    # @param width 
+    # @param height 
+    # @param from 
+    # @param to 
+    # @param password 
+    # @param storage 
+    # @param fonts_folder 
+    # @param options 
+    def start_upload_and_split(document, format, dest_folder = nil, width = nil, height = nil, from = nil, to = nil, password = nil, storage = nil, fonts_folder = nil, options = nil)
+      data, _status_code, _headers = start_upload_and_split_with_http_info(document, format, dest_folder, width, height, from, to, password, storage, fonts_folder, options)
+      data
+    end
+
+    # @param document Document data.
+    # @param format 
+    # @param dest_folder 
+    # @param width 
+    # @param height 
+    # @param from 
+    # @param to 
+    # @param password 
+    # @param storage 
+    # @param fonts_folder 
+    # @param options 
+    def start_upload_and_split_with_http_info(document, format, dest_folder = nil, width = nil, height = nil, from = nil, to = nil, password = nil, storage = nil, fonts_folder = nil, options = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesAsyncApi.start_upload_and_split ...'
+      end
+
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && document.nil?
+        fail ArgumentError, "Missing the required parameter 'document' when calling SlidesAsyncApi.start_upload_and_split"
+      end
+      # verify the required parameter 'format' is set
+      if @api_client.config.client_side_validation && format.nil?
+        fail ArgumentError, "Missing the required parameter 'format' when calling SlidesAsyncApi.start_upload_and_split"
+      end
+      # verify enum value
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp', 'Xaml', 'Html5', 'Md', 'Xml'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp, Xaml, Html5, Md, Xml"
+      end
+      # resource path
+      local_var_path = '/slides/async/split/{format}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'format', format)
+
+      # query parameters
+      query_params = {}
+      query_params[:'destFolder'] = @api_client.prepare_for_query(dest_folder) unless dest_folder.nil?
+      query_params[:'width'] = @api_client.prepare_for_query(width) unless width.nil?
+      query_params[:'height'] = @api_client.prepare_for_query(height) unless height.nil?
+      query_params[:'from'] = @api_client.prepare_for_query(from) unless from.nil?
+      query_params[:'to'] = @api_client.prepare_for_query(to) unless to.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'fontsFolder'] = @api_client.prepare_for_query(fonts_folder) unless fonts_folder.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(options)
+
+      # form parameters
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'String')
+      return data, status_code, headers
+    end
   end
 end

@@ -13181,17 +13181,167 @@ module AsposeSlidesCloud
     end
     # Highlight all matches of sample in text frame text using specified color.
     # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index.
     # @param regex Regular expression.
+    # @param color Highlighting color.
+    # @param ignore_case True to search ignoring char case.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def highlight_presentation_regex(name, regex, color, ignore_case = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = highlight_presentation_regex_with_http_info(name, regex, color, ignore_case, password, folder, storage)
+      data
+    end
+
+    # Highlight all matches of sample in text frame text using specified color.
+    # @param name Document name.
+    # @param regex Regular expression.
+    # @param color Highlighting color.
+    # @param ignore_case True to search ignoring char case.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def highlight_presentation_regex_with_http_info(name, regex, color, ignore_case = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.highlight_presentation_regex ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.highlight_presentation_regex"
+      end
+      # verify the required parameter 'regex' is set
+      if @api_client.config.client_side_validation && regex.nil?
+        fail ArgumentError, "Missing the required parameter 'regex' when calling SlidesApi.highlight_presentation_regex"
+      end
+      # verify the required parameter 'color' is set
+      if @api_client.config.client_side_validation && color.nil?
+        fail ArgumentError, "Missing the required parameter 'color' when calling SlidesApi.highlight_presentation_regex"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/highlightRegex'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'regex'] = @api_client.prepare_for_query(regex) unless regex.nil?
+      query_params[:'color'] = @api_client.prepare_for_query(color) unless color.nil?
+      query_params[:'ignoreCase'] = @api_client.prepare_for_query(ignore_case) unless ignore_case.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'DocumentReplaceResult')
+      return data, status_code, headers
+    end
+    # Highlight all matches of sample using specified color.
+    # @param name Document name.
+    # @param text Text sample to highlight.
     # @param color Highlighting color.
     # @param whole_words_only Match only whole words.
     # @param ignore_case True to search ignoring char case.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def highlight_shape_regex(name, slide_index, shape_index, regex, color, whole_words_only = nil, ignore_case = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = highlight_shape_regex_with_http_info(name, slide_index, shape_index, regex, color, whole_words_only, ignore_case, password, folder, storage)
+    def highlight_presentation_text(name, text, color, whole_words_only = nil, ignore_case = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = highlight_presentation_text_with_http_info(name, text, color, whole_words_only, ignore_case, password, folder, storage)
+      data
+    end
+
+    # Highlight all matches of sample using specified color.
+    # @param name Document name.
+    # @param text Text sample to highlight.
+    # @param color Highlighting color.
+    # @param whole_words_only Match only whole words.
+    # @param ignore_case True to search ignoring char case.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def highlight_presentation_text_with_http_info(name, text, color, whole_words_only = nil, ignore_case = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.highlight_presentation_text ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.highlight_presentation_text"
+      end
+      # verify the required parameter 'text' is set
+      if @api_client.config.client_side_validation && text.nil?
+        fail ArgumentError, "Missing the required parameter 'text' when calling SlidesApi.highlight_presentation_text"
+      end
+      # verify the required parameter 'color' is set
+      if @api_client.config.client_side_validation && color.nil?
+        fail ArgumentError, "Missing the required parameter 'color' when calling SlidesApi.highlight_presentation_text"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/highlightText'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'text'] = @api_client.prepare_for_query(text) unless text.nil?
+      query_params[:'color'] = @api_client.prepare_for_query(color) unless color.nil?
+      query_params[:'wholeWordsOnly'] = @api_client.prepare_for_query(whole_words_only) unless whole_words_only.nil?
+      query_params[:'ignoreCase'] = @api_client.prepare_for_query(ignore_case) unless ignore_case.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'DocumentReplaceResult')
+      return data, status_code, headers
+    end
+    # Highlight all matches of sample in text frame text using specified color.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index.
+    # @param regex Regular expression.
+    # @param color Highlighting color.
+    # @param ignore_case True to search ignoring char case.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def highlight_shape_regex(name, slide_index, shape_index, regex, color, ignore_case = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = highlight_shape_regex_with_http_info(name, slide_index, shape_index, regex, color, ignore_case, password, folder, storage)
       data
     end
 
@@ -13201,12 +13351,11 @@ module AsposeSlidesCloud
     # @param shape_index Shape index.
     # @param regex Regular expression.
     # @param color Highlighting color.
-    # @param whole_words_only Match only whole words.
     # @param ignore_case True to search ignoring char case.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def highlight_shape_regex_with_http_info(name, slide_index, shape_index, regex, color, whole_words_only = nil, ignore_case = nil, password = nil, folder = nil, storage = nil)
+    def highlight_shape_regex_with_http_info(name, slide_index, shape_index, regex, color, ignore_case = nil, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.highlight_shape_regex ...'
       end
@@ -13241,7 +13390,6 @@ module AsposeSlidesCloud
       query_params = {}
       query_params[:'regex'] = @api_client.prepare_for_query(regex) unless regex.nil?
       query_params[:'color'] = @api_client.prepare_for_query(color) unless color.nil?
-      query_params[:'wholeWordsOnly'] = @api_client.prepare_for_query(whole_words_only) unless whole_words_only.nil?
       query_params[:'ignoreCase'] = @api_client.prepare_for_query(ignore_case) unless ignore_case.nil?
       query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
       query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
@@ -14723,6 +14871,150 @@ module AsposeSlidesCloud
       end
       if image
         post_files = post_files.push(image)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      return data, status_code, headers
+    end
+    # Replace text with a new value using a regex.
+    # @param name Document name.
+    # @param pattern Text value pattern to be replaced.
+    # @param new_value Text value to replace with.
+    # @param ignore_case True if character case must be ignored.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def replace_presentation_regex(name, pattern, new_value, ignore_case = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = replace_presentation_regex_with_http_info(name, pattern, new_value, ignore_case, password, folder, storage)
+      data
+    end
+
+    # Replace text with a new value using a regex.
+    # @param name Document name.
+    # @param pattern Text value pattern to be replaced.
+    # @param new_value Text value to replace with.
+    # @param ignore_case True if character case must be ignored.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def replace_presentation_regex_with_http_info(name, pattern, new_value, ignore_case = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.replace_presentation_regex ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.replace_presentation_regex"
+      end
+      # verify the required parameter 'pattern' is set
+      if @api_client.config.client_side_validation && pattern.nil?
+        fail ArgumentError, "Missing the required parameter 'pattern' when calling SlidesApi.replace_presentation_regex"
+      end
+      # verify the required parameter 'new_value' is set
+      if @api_client.config.client_side_validation && new_value.nil?
+        fail ArgumentError, "Missing the required parameter 'new_value' when calling SlidesApi.replace_presentation_regex"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/replaceRegex'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'pattern'] = @api_client.prepare_for_query(pattern) unless pattern.nil?
+      query_params[:'newValue'] = @api_client.prepare_for_query(new_value) unless new_value.nil?
+      query_params[:'ignoreCase'] = @api_client.prepare_for_query(ignore_case) unless ignore_case.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'DocumentReplaceResult')
+      return data, status_code, headers
+    end
+    # Replace text with a new value using a regex.
+    # @param document Document data.
+    # @param pattern Text regex pattern to be replaced.
+    # @param new_value Text value to replace with.
+    # @param ignore_case True if character case must be ignored.
+    # @param password Document password.
+    def replace_presentation_regex_online(document, pattern, new_value, ignore_case = nil, password = nil)
+      data, _status_code, _headers = replace_presentation_regex_online_with_http_info(document, pattern, new_value, ignore_case, password)
+      data
+    end
+
+    # Replace text with a new value using a regex.
+    # @param document Document data.
+    # @param pattern Text regex pattern to be replaced.
+    # @param new_value Text value to replace with.
+    # @param ignore_case True if character case must be ignored.
+    # @param password Document password.
+    def replace_presentation_regex_online_with_http_info(document, pattern, new_value, ignore_case = nil, password = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.replace_presentation_regex_online ...'
+      end
+
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && document.nil?
+        fail ArgumentError, "Missing the required parameter 'document' when calling SlidesApi.replace_presentation_regex_online"
+      end
+      # verify the required parameter 'pattern' is set
+      if @api_client.config.client_side_validation && pattern.nil?
+        fail ArgumentError, "Missing the required parameter 'pattern' when calling SlidesApi.replace_presentation_regex_online"
+      end
+      # verify the required parameter 'new_value' is set
+      if @api_client.config.client_side_validation && new_value.nil?
+        fail ArgumentError, "Missing the required parameter 'new_value' when calling SlidesApi.replace_presentation_regex_online"
+      end
+      # resource path
+      local_var_path = '/slides/replaceRegex'
+
+      # query parameters
+      query_params = {}
+      query_params[:'pattern'] = @api_client.prepare_for_query(pattern) unless pattern.nil?
+      query_params[:'newValue'] = @api_client.prepare_for_query(new_value) unless new_value.nil?
+      query_params[:'ignoreCase'] = @api_client.prepare_for_query(ignore_case) unless ignore_case.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+      if document
+        post_files = post_files.push(document)
       end
 
       auth_names = ['JWT']

@@ -34746,6 +34746,462 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for highlight_presentation_regex
+  # Highlight all matches of sample in text frame text using specified color.
+  # @param name Document name.
+  # @param regex Regular expression.
+  # @param color Highlighting color.
+  # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :ignore_case True to search ignoring char case.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [DocumentReplaceResult]
+  describe 'highlight_presentation_regex test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'HighlightPresentationRegex', 'String')
+      paramregex = AsposeSlidesCloud::SpecUtils.get_param_value('regex', 'HighlightPresentationRegex', 'String')
+      paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightPresentationRegex', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightPresentationRegex', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightPresentationRegex', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightPresentationRegex', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'HighlightPresentationRegex', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('HighlightPresentationRegex', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_regex_with_http_info(paramname, paramregex, paramcolor, paramignore_case, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationRegex', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'HighlightPresentationRegex', 'String')
+      paramregex = AsposeSlidesCloud::SpecUtils.get_param_value('regex', 'HighlightPresentationRegex', 'String')
+      paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightPresentationRegex', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightPresentationRegex', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightPresentationRegex', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightPresentationRegex', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'HighlightPresentationRegex', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'HighlightPresentationRegex', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('HighlightPresentationRegex', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_regex_with_http_info(paramname, paramregex, paramcolor, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightPresentationRegex', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationRegex', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationRegex', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid regex' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'HighlightPresentationRegex', 'String')
+      paramregex = AsposeSlidesCloud::SpecUtils.get_param_value('regex', 'HighlightPresentationRegex', 'String')
+      paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightPresentationRegex', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightPresentationRegex', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightPresentationRegex', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightPresentationRegex', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'HighlightPresentationRegex', 'String')
+      paramregex = AsposeSlidesCloud::SpecUtils.invalidize_param_value('regex', 'HighlightPresentationRegex', paramregex, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('HighlightPresentationRegex', 'regex', paramregex)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_regex_with_http_info(paramname, paramregex, paramcolor, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightPresentationRegex', 'regex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationRegex', 'regex', paramregex, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationRegex', 'regex', paramregex, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid color' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'HighlightPresentationRegex', 'String')
+      paramregex = AsposeSlidesCloud::SpecUtils.get_param_value('regex', 'HighlightPresentationRegex', 'String')
+      paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightPresentationRegex', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightPresentationRegex', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightPresentationRegex', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightPresentationRegex', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'HighlightPresentationRegex', 'String')
+      paramcolor = AsposeSlidesCloud::SpecUtils.invalidize_param_value('color', 'HighlightPresentationRegex', paramcolor, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('HighlightPresentationRegex', 'color', paramcolor)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_regex_with_http_info(paramname, paramregex, paramcolor, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightPresentationRegex', 'color')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationRegex', 'color', paramcolor, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationRegex', 'color', paramcolor, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid ignore_case' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'HighlightPresentationRegex', 'String')
+      paramregex = AsposeSlidesCloud::SpecUtils.get_param_value('regex', 'HighlightPresentationRegex', 'String')
+      paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightPresentationRegex', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightPresentationRegex', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightPresentationRegex', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightPresentationRegex', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'HighlightPresentationRegex', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.invalidize_param_value('ignoreCase', 'HighlightPresentationRegex', paramignore_case, 'BOOLEAN')
+      AsposeSlidesCloud::SpecUtils.initialize('HighlightPresentationRegex', 'ignoreCase', paramignore_case)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_regex_with_http_info(paramname, paramregex, paramcolor, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightPresentationRegex', 'ignoreCase')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationRegex', 'ignoreCase', paramignore_case, 'BOOLEAN')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationRegex', 'ignoreCase', paramignore_case, 'BOOLEAN')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'HighlightPresentationRegex', 'String')
+      paramregex = AsposeSlidesCloud::SpecUtils.get_param_value('regex', 'HighlightPresentationRegex', 'String')
+      paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightPresentationRegex', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightPresentationRegex', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightPresentationRegex', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightPresentationRegex', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'HighlightPresentationRegex', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'HighlightPresentationRegex', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('HighlightPresentationRegex', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_regex_with_http_info(paramname, paramregex, paramcolor, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightPresentationRegex', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationRegex', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationRegex', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'HighlightPresentationRegex', 'String')
+      paramregex = AsposeSlidesCloud::SpecUtils.get_param_value('regex', 'HighlightPresentationRegex', 'String')
+      paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightPresentationRegex', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightPresentationRegex', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightPresentationRegex', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightPresentationRegex', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'HighlightPresentationRegex', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'HighlightPresentationRegex', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('HighlightPresentationRegex', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_regex_with_http_info(paramname, paramregex, paramcolor, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightPresentationRegex', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationRegex', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationRegex', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'HighlightPresentationRegex', 'String')
+      paramregex = AsposeSlidesCloud::SpecUtils.get_param_value('regex', 'HighlightPresentationRegex', 'String')
+      paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightPresentationRegex', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightPresentationRegex', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightPresentationRegex', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightPresentationRegex', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'HighlightPresentationRegex', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'HighlightPresentationRegex', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('HighlightPresentationRegex', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_regex_with_http_info(paramname, paramregex, paramcolor, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightPresentationRegex', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationRegex', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationRegex', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for highlight_presentation_text
+  # Highlight all matches of sample using specified color.
+  # @param name Document name.
+  # @param text Text sample to highlight.
+  # @param color Highlighting color.
+  # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :whole_words_only Match only whole words.
+  # @option opts [BOOLEAN] :ignore_case True to search ignoring char case.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [DocumentReplaceResult]
+  describe 'highlight_presentation_text test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'HighlightPresentationText', 'String')
+      paramtext = AsposeSlidesCloud::SpecUtils.get_param_value('text', 'HighlightPresentationText', 'String')
+      paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightPresentationText', 'String')
+      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightPresentationText', 'BOOLEAN')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightPresentationText', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightPresentationText', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightPresentationText', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'HighlightPresentationText', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('HighlightPresentationText', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_text_with_http_info(paramname, paramtext, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationText', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'HighlightPresentationText', 'String')
+      paramtext = AsposeSlidesCloud::SpecUtils.get_param_value('text', 'HighlightPresentationText', 'String')
+      paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightPresentationText', 'String')
+      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightPresentationText', 'BOOLEAN')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightPresentationText', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightPresentationText', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightPresentationText', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'HighlightPresentationText', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'HighlightPresentationText', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('HighlightPresentationText', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_text_with_http_info(paramname, paramtext, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightPresentationText', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationText', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationText', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid text' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'HighlightPresentationText', 'String')
+      paramtext = AsposeSlidesCloud::SpecUtils.get_param_value('text', 'HighlightPresentationText', 'String')
+      paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightPresentationText', 'String')
+      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightPresentationText', 'BOOLEAN')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightPresentationText', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightPresentationText', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightPresentationText', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'HighlightPresentationText', 'String')
+      paramtext = AsposeSlidesCloud::SpecUtils.invalidize_param_value('text', 'HighlightPresentationText', paramtext, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('HighlightPresentationText', 'text', paramtext)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_text_with_http_info(paramname, paramtext, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightPresentationText', 'text')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationText', 'text', paramtext, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationText', 'text', paramtext, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid color' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'HighlightPresentationText', 'String')
+      paramtext = AsposeSlidesCloud::SpecUtils.get_param_value('text', 'HighlightPresentationText', 'String')
+      paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightPresentationText', 'String')
+      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightPresentationText', 'BOOLEAN')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightPresentationText', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightPresentationText', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightPresentationText', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'HighlightPresentationText', 'String')
+      paramcolor = AsposeSlidesCloud::SpecUtils.invalidize_param_value('color', 'HighlightPresentationText', paramcolor, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('HighlightPresentationText', 'color', paramcolor)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_text_with_http_info(paramname, paramtext, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightPresentationText', 'color')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationText', 'color', paramcolor, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationText', 'color', paramcolor, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid whole_words_only' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'HighlightPresentationText', 'String')
+      paramtext = AsposeSlidesCloud::SpecUtils.get_param_value('text', 'HighlightPresentationText', 'String')
+      paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightPresentationText', 'String')
+      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightPresentationText', 'BOOLEAN')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightPresentationText', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightPresentationText', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightPresentationText', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'HighlightPresentationText', 'String')
+      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.invalidize_param_value('wholeWordsOnly', 'HighlightPresentationText', paramwhole_words_only, 'BOOLEAN')
+      AsposeSlidesCloud::SpecUtils.initialize('HighlightPresentationText', 'wholeWordsOnly', paramwhole_words_only)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_text_with_http_info(paramname, paramtext, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightPresentationText', 'wholeWordsOnly')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationText', 'wholeWordsOnly', paramwhole_words_only, 'BOOLEAN')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationText', 'wholeWordsOnly', paramwhole_words_only, 'BOOLEAN')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid ignore_case' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'HighlightPresentationText', 'String')
+      paramtext = AsposeSlidesCloud::SpecUtils.get_param_value('text', 'HighlightPresentationText', 'String')
+      paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightPresentationText', 'String')
+      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightPresentationText', 'BOOLEAN')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightPresentationText', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightPresentationText', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightPresentationText', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'HighlightPresentationText', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.invalidize_param_value('ignoreCase', 'HighlightPresentationText', paramignore_case, 'BOOLEAN')
+      AsposeSlidesCloud::SpecUtils.initialize('HighlightPresentationText', 'ignoreCase', paramignore_case)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_text_with_http_info(paramname, paramtext, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightPresentationText', 'ignoreCase')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationText', 'ignoreCase', paramignore_case, 'BOOLEAN')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationText', 'ignoreCase', paramignore_case, 'BOOLEAN')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'HighlightPresentationText', 'String')
+      paramtext = AsposeSlidesCloud::SpecUtils.get_param_value('text', 'HighlightPresentationText', 'String')
+      paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightPresentationText', 'String')
+      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightPresentationText', 'BOOLEAN')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightPresentationText', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightPresentationText', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightPresentationText', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'HighlightPresentationText', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'HighlightPresentationText', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('HighlightPresentationText', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_text_with_http_info(paramname, paramtext, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightPresentationText', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationText', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationText', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'HighlightPresentationText', 'String')
+      paramtext = AsposeSlidesCloud::SpecUtils.get_param_value('text', 'HighlightPresentationText', 'String')
+      paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightPresentationText', 'String')
+      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightPresentationText', 'BOOLEAN')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightPresentationText', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightPresentationText', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightPresentationText', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'HighlightPresentationText', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'HighlightPresentationText', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('HighlightPresentationText', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_text_with_http_info(paramname, paramtext, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightPresentationText', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationText', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationText', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'HighlightPresentationText', 'String')
+      paramtext = AsposeSlidesCloud::SpecUtils.get_param_value('text', 'HighlightPresentationText', 'String')
+      paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightPresentationText', 'String')
+      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightPresentationText', 'BOOLEAN')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightPresentationText', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightPresentationText', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightPresentationText', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'HighlightPresentationText', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'HighlightPresentationText', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('HighlightPresentationText', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_text_with_http_info(paramname, paramtext, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightPresentationText', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationText', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightPresentationText', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for highlight_shape_regex
   # Highlight all matches of sample in text frame text using specified color.
   # @param name Document name.
@@ -34754,7 +35210,6 @@ describe 'SlidesApi' do
   # @param regex Regular expression.
   # @param color Highlighting color.
   # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :whole_words_only Match only whole words.
   # @option opts [BOOLEAN] :ignore_case True to search ignoring char case.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -34767,13 +35222,12 @@ describe 'SlidesApi' do
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'HighlightShapeRegex', 'Integer')
       paramregex = AsposeSlidesCloud::SpecUtils.get_param_value('regex', 'HighlightShapeRegex', 'String')
       paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightShapeRegex', 'String')
-      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightShapeRegex', 'BOOLEAN')
       paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightShapeRegex', 'BOOLEAN')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightShapeRegex', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightShapeRegex', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'HighlightShapeRegex', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('HighlightShapeRegex', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramignore_case, parampassword, paramfolder, paramstorage)
       code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightShapeRegex', nil, nil, nil)
       expect(c).to eq(code)
       expect(o).not_to be_nil
@@ -34785,7 +35239,6 @@ describe 'SlidesApi' do
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'HighlightShapeRegex', 'Integer')
       paramregex = AsposeSlidesCloud::SpecUtils.get_param_value('regex', 'HighlightShapeRegex', 'String')
       paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightShapeRegex', 'String')
-      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightShapeRegex', 'BOOLEAN')
       paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightShapeRegex', 'BOOLEAN')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightShapeRegex', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightShapeRegex', 'String')
@@ -34793,7 +35246,7 @@ describe 'SlidesApi' do
       paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'HighlightShapeRegex', paramname, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('HighlightShapeRegex', 'name', paramname)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramignore_case, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightShapeRegex', 'name')
           fail "An exception expected"
         end
@@ -34814,7 +35267,6 @@ describe 'SlidesApi' do
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'HighlightShapeRegex', 'Integer')
       paramregex = AsposeSlidesCloud::SpecUtils.get_param_value('regex', 'HighlightShapeRegex', 'String')
       paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightShapeRegex', 'String')
-      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightShapeRegex', 'BOOLEAN')
       paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightShapeRegex', 'BOOLEAN')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightShapeRegex', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightShapeRegex', 'String')
@@ -34822,7 +35274,7 @@ describe 'SlidesApi' do
       paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'HighlightShapeRegex', paramslide_index, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('HighlightShapeRegex', 'slideIndex', paramslide_index)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramignore_case, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightShapeRegex', 'slideIndex')
           fail "An exception expected"
         end
@@ -34843,7 +35295,6 @@ describe 'SlidesApi' do
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'HighlightShapeRegex', 'Integer')
       paramregex = AsposeSlidesCloud::SpecUtils.get_param_value('regex', 'HighlightShapeRegex', 'String')
       paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightShapeRegex', 'String')
-      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightShapeRegex', 'BOOLEAN')
       paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightShapeRegex', 'BOOLEAN')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightShapeRegex', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightShapeRegex', 'String')
@@ -34851,7 +35302,7 @@ describe 'SlidesApi' do
       paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'HighlightShapeRegex', paramshape_index, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('HighlightShapeRegex', 'shapeIndex', paramshape_index)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramignore_case, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightShapeRegex', 'shapeIndex')
           fail "An exception expected"
         end
@@ -34872,7 +35323,6 @@ describe 'SlidesApi' do
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'HighlightShapeRegex', 'Integer')
       paramregex = AsposeSlidesCloud::SpecUtils.get_param_value('regex', 'HighlightShapeRegex', 'String')
       paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightShapeRegex', 'String')
-      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightShapeRegex', 'BOOLEAN')
       paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightShapeRegex', 'BOOLEAN')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightShapeRegex', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightShapeRegex', 'String')
@@ -34880,7 +35330,7 @@ describe 'SlidesApi' do
       paramregex = AsposeSlidesCloud::SpecUtils.invalidize_param_value('regex', 'HighlightShapeRegex', paramregex, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('HighlightShapeRegex', 'regex', paramregex)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramignore_case, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightShapeRegex', 'regex')
           fail "An exception expected"
         end
@@ -34901,7 +35351,6 @@ describe 'SlidesApi' do
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'HighlightShapeRegex', 'Integer')
       paramregex = AsposeSlidesCloud::SpecUtils.get_param_value('regex', 'HighlightShapeRegex', 'String')
       paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightShapeRegex', 'String')
-      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightShapeRegex', 'BOOLEAN')
       paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightShapeRegex', 'BOOLEAN')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightShapeRegex', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightShapeRegex', 'String')
@@ -34909,7 +35358,7 @@ describe 'SlidesApi' do
       paramcolor = AsposeSlidesCloud::SpecUtils.invalidize_param_value('color', 'HighlightShapeRegex', paramcolor, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('HighlightShapeRegex', 'color', paramcolor)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramignore_case, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightShapeRegex', 'color')
           fail "An exception expected"
         end
@@ -34924,42 +35373,12 @@ describe 'SlidesApi' do
       end
     end
 
-    it 'invalid whole_words_only' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'HighlightShapeRegex', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'HighlightShapeRegex', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'HighlightShapeRegex', 'Integer')
-      paramregex = AsposeSlidesCloud::SpecUtils.get_param_value('regex', 'HighlightShapeRegex', 'String')
-      paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightShapeRegex', 'String')
-      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightShapeRegex', 'BOOLEAN')
-      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightShapeRegex', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightShapeRegex', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightShapeRegex', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'HighlightShapeRegex', 'String')
-      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.invalidize_param_value('wholeWordsOnly', 'HighlightShapeRegex', paramwhole_words_only, 'BOOLEAN')
-      AsposeSlidesCloud::SpecUtils.initialize('HighlightShapeRegex', 'wholeWordsOnly', paramwhole_words_only)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightShapeRegex', 'wholeWordsOnly')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightShapeRegex', 'wholeWordsOnly', paramwhole_words_only, 'BOOLEAN')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('HighlightShapeRegex', 'wholeWordsOnly', paramwhole_words_only, 'BOOLEAN')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
     it 'invalid ignore_case' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'HighlightShapeRegex', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'HighlightShapeRegex', 'Integer')
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'HighlightShapeRegex', 'Integer')
       paramregex = AsposeSlidesCloud::SpecUtils.get_param_value('regex', 'HighlightShapeRegex', 'String')
       paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightShapeRegex', 'String')
-      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightShapeRegex', 'BOOLEAN')
       paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightShapeRegex', 'BOOLEAN')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightShapeRegex', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightShapeRegex', 'String')
@@ -34967,7 +35386,7 @@ describe 'SlidesApi' do
       paramignore_case = AsposeSlidesCloud::SpecUtils.invalidize_param_value('ignoreCase', 'HighlightShapeRegex', paramignore_case, 'BOOLEAN')
       AsposeSlidesCloud::SpecUtils.initialize('HighlightShapeRegex', 'ignoreCase', paramignore_case)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramignore_case, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightShapeRegex', 'ignoreCase')
           fail "An exception expected"
         end
@@ -34988,7 +35407,6 @@ describe 'SlidesApi' do
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'HighlightShapeRegex', 'Integer')
       paramregex = AsposeSlidesCloud::SpecUtils.get_param_value('regex', 'HighlightShapeRegex', 'String')
       paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightShapeRegex', 'String')
-      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightShapeRegex', 'BOOLEAN')
       paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightShapeRegex', 'BOOLEAN')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightShapeRegex', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightShapeRegex', 'String')
@@ -34996,7 +35414,7 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'HighlightShapeRegex', parampassword, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('HighlightShapeRegex', 'password', parampassword)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramignore_case, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightShapeRegex', 'password')
           fail "An exception expected"
         end
@@ -35017,7 +35435,6 @@ describe 'SlidesApi' do
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'HighlightShapeRegex', 'Integer')
       paramregex = AsposeSlidesCloud::SpecUtils.get_param_value('regex', 'HighlightShapeRegex', 'String')
       paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightShapeRegex', 'String')
-      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightShapeRegex', 'BOOLEAN')
       paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightShapeRegex', 'BOOLEAN')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightShapeRegex', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightShapeRegex', 'String')
@@ -35025,7 +35442,7 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'HighlightShapeRegex', paramfolder, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('HighlightShapeRegex', 'folder', paramfolder)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramignore_case, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightShapeRegex', 'folder')
           fail "An exception expected"
         end
@@ -35046,7 +35463,6 @@ describe 'SlidesApi' do
       paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'HighlightShapeRegex', 'Integer')
       paramregex = AsposeSlidesCloud::SpecUtils.get_param_value('regex', 'HighlightShapeRegex', 'String')
       paramcolor = AsposeSlidesCloud::SpecUtils.get_param_value('color', 'HighlightShapeRegex', 'String')
-      paramwhole_words_only = AsposeSlidesCloud::SpecUtils.get_param_value('wholeWordsOnly', 'HighlightShapeRegex', 'BOOLEAN')
       paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'HighlightShapeRegex', 'BOOLEAN')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'HighlightShapeRegex', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'HighlightShapeRegex', 'String')
@@ -35054,7 +35470,7 @@ describe 'SlidesApi' do
       paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'HighlightShapeRegex', paramstorage, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('HighlightShapeRegex', 'storage', paramstorage)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramwhole_words_only, paramignore_case, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex_with_http_info(paramname, paramslide_index, paramshape_index, paramregex, paramcolor, paramignore_case, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('HighlightShapeRegex', 'storage')
           fail "An exception expected"
         end
@@ -38683,6 +39099,360 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplaceImageOnline', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for replace_presentation_regex
+  # Replace text with a new value using a regex.
+  # @param name Document name.
+  # @param pattern Text value pattern to be replaced.
+  # @param new_value Text value to replace with.
+  # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :ignore_case True if character case must be ignored.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [DocumentReplaceResult]
+  describe 'replace_presentation_regex test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplacePresentationRegex', 'String')
+      parampattern = AsposeSlidesCloud::SpecUtils.get_param_value('pattern', 'ReplacePresentationRegex', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplacePresentationRegex', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'ReplacePresentationRegex', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplacePresentationRegex', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplacePresentationRegex', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplacePresentationRegex', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplacePresentationRegex', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_regex_with_http_info(paramname, parampattern, paramnew_value, paramignore_case, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegex', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplacePresentationRegex', 'String')
+      parampattern = AsposeSlidesCloud::SpecUtils.get_param_value('pattern', 'ReplacePresentationRegex', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplacePresentationRegex', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'ReplacePresentationRegex', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplacePresentationRegex', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplacePresentationRegex', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplacePresentationRegex', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'ReplacePresentationRegex', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplacePresentationRegex', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_regex_with_http_info(paramname, parampattern, paramnew_value, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplacePresentationRegex', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegex', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegex', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid pattern' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplacePresentationRegex', 'String')
+      parampattern = AsposeSlidesCloud::SpecUtils.get_param_value('pattern', 'ReplacePresentationRegex', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplacePresentationRegex', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'ReplacePresentationRegex', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplacePresentationRegex', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplacePresentationRegex', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplacePresentationRegex', 'String')
+      parampattern = AsposeSlidesCloud::SpecUtils.invalidize_param_value('pattern', 'ReplacePresentationRegex', parampattern, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplacePresentationRegex', 'pattern', parampattern)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_regex_with_http_info(paramname, parampattern, paramnew_value, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplacePresentationRegex', 'pattern')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegex', 'pattern', parampattern, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegex', 'pattern', parampattern, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid new_value' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplacePresentationRegex', 'String')
+      parampattern = AsposeSlidesCloud::SpecUtils.get_param_value('pattern', 'ReplacePresentationRegex', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplacePresentationRegex', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'ReplacePresentationRegex', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplacePresentationRegex', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplacePresentationRegex', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplacePresentationRegex', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.invalidize_param_value('newValue', 'ReplacePresentationRegex', paramnew_value, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplacePresentationRegex', 'newValue', paramnew_value)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_regex_with_http_info(paramname, parampattern, paramnew_value, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplacePresentationRegex', 'newValue')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegex', 'newValue', paramnew_value, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegex', 'newValue', paramnew_value, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid ignore_case' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplacePresentationRegex', 'String')
+      parampattern = AsposeSlidesCloud::SpecUtils.get_param_value('pattern', 'ReplacePresentationRegex', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplacePresentationRegex', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'ReplacePresentationRegex', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplacePresentationRegex', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplacePresentationRegex', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplacePresentationRegex', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.invalidize_param_value('ignoreCase', 'ReplacePresentationRegex', paramignore_case, 'BOOLEAN')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplacePresentationRegex', 'ignoreCase', paramignore_case)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_regex_with_http_info(paramname, parampattern, paramnew_value, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplacePresentationRegex', 'ignoreCase')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegex', 'ignoreCase', paramignore_case, 'BOOLEAN')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegex', 'ignoreCase', paramignore_case, 'BOOLEAN')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplacePresentationRegex', 'String')
+      parampattern = AsposeSlidesCloud::SpecUtils.get_param_value('pattern', 'ReplacePresentationRegex', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplacePresentationRegex', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'ReplacePresentationRegex', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplacePresentationRegex', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplacePresentationRegex', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplacePresentationRegex', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'ReplacePresentationRegex', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplacePresentationRegex', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_regex_with_http_info(paramname, parampattern, paramnew_value, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplacePresentationRegex', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegex', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegex', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplacePresentationRegex', 'String')
+      parampattern = AsposeSlidesCloud::SpecUtils.get_param_value('pattern', 'ReplacePresentationRegex', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplacePresentationRegex', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'ReplacePresentationRegex', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplacePresentationRegex', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplacePresentationRegex', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplacePresentationRegex', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'ReplacePresentationRegex', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplacePresentationRegex', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_regex_with_http_info(paramname, parampattern, paramnew_value, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplacePresentationRegex', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegex', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegex', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ReplacePresentationRegex', 'String')
+      parampattern = AsposeSlidesCloud::SpecUtils.get_param_value('pattern', 'ReplacePresentationRegex', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplacePresentationRegex', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'ReplacePresentationRegex', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplacePresentationRegex', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ReplacePresentationRegex', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ReplacePresentationRegex', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'ReplacePresentationRegex', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplacePresentationRegex', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_regex_with_http_info(paramname, parampattern, paramnew_value, paramignore_case, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplacePresentationRegex', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegex', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegex', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for replace_presentation_regex_online
+  # Replace text with a new value using a regex.
+  # @param document Document data.
+  # @param pattern Text regex pattern to be replaced.
+  # @param new_value Text value to replace with.
+  # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :ignore_case True if character case must be ignored.
+  # @option opts [String] :password Document password.
+  # @return [File]
+  describe 'replace_presentation_regex_online test' do
+    it 'should work' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ReplacePresentationRegexOnline', 'File')
+      parampattern = AsposeSlidesCloud::SpecUtils.get_param_value('pattern', 'ReplacePresentationRegexOnline', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplacePresentationRegexOnline', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'ReplacePresentationRegexOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplacePresentationRegexOnline', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplacePresentationRegexOnline', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_regex_online_with_http_info(paramdocument, parampattern, paramnew_value, paramignore_case, parampassword)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegexOnline', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid document' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ReplacePresentationRegexOnline', 'File')
+      parampattern = AsposeSlidesCloud::SpecUtils.get_param_value('pattern', 'ReplacePresentationRegexOnline', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplacePresentationRegexOnline', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'ReplacePresentationRegexOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplacePresentationRegexOnline', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'ReplacePresentationRegexOnline', paramdocument, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplacePresentationRegexOnline', 'document', paramdocument)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_regex_online_with_http_info(paramdocument, parampattern, paramnew_value, paramignore_case, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplacePresentationRegexOnline', 'document')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegexOnline', 'document', paramdocument, 'File')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegexOnline', 'document', paramdocument, 'File')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid pattern' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ReplacePresentationRegexOnline', 'File')
+      parampattern = AsposeSlidesCloud::SpecUtils.get_param_value('pattern', 'ReplacePresentationRegexOnline', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplacePresentationRegexOnline', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'ReplacePresentationRegexOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplacePresentationRegexOnline', 'String')
+      parampattern = AsposeSlidesCloud::SpecUtils.invalidize_param_value('pattern', 'ReplacePresentationRegexOnline', parampattern, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplacePresentationRegexOnline', 'pattern', parampattern)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_regex_online_with_http_info(paramdocument, parampattern, paramnew_value, paramignore_case, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplacePresentationRegexOnline', 'pattern')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegexOnline', 'pattern', parampattern, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegexOnline', 'pattern', parampattern, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid new_value' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ReplacePresentationRegexOnline', 'File')
+      parampattern = AsposeSlidesCloud::SpecUtils.get_param_value('pattern', 'ReplacePresentationRegexOnline', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplacePresentationRegexOnline', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'ReplacePresentationRegexOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplacePresentationRegexOnline', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.invalidize_param_value('newValue', 'ReplacePresentationRegexOnline', paramnew_value, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplacePresentationRegexOnline', 'newValue', paramnew_value)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_regex_online_with_http_info(paramdocument, parampattern, paramnew_value, paramignore_case, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplacePresentationRegexOnline', 'newValue')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegexOnline', 'newValue', paramnew_value, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegexOnline', 'newValue', paramnew_value, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid ignore_case' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ReplacePresentationRegexOnline', 'File')
+      parampattern = AsposeSlidesCloud::SpecUtils.get_param_value('pattern', 'ReplacePresentationRegexOnline', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplacePresentationRegexOnline', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'ReplacePresentationRegexOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplacePresentationRegexOnline', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.invalidize_param_value('ignoreCase', 'ReplacePresentationRegexOnline', paramignore_case, 'BOOLEAN')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplacePresentationRegexOnline', 'ignoreCase', paramignore_case)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_regex_online_with_http_info(paramdocument, parampattern, paramnew_value, paramignore_case, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplacePresentationRegexOnline', 'ignoreCase')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegexOnline', 'ignoreCase', paramignore_case, 'BOOLEAN')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegexOnline', 'ignoreCase', paramignore_case, 'BOOLEAN')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ReplacePresentationRegexOnline', 'File')
+      parampattern = AsposeSlidesCloud::SpecUtils.get_param_value('pattern', 'ReplacePresentationRegexOnline', 'String')
+      paramnew_value = AsposeSlidesCloud::SpecUtils.get_param_value('newValue', 'ReplacePresentationRegexOnline', 'String')
+      paramignore_case = AsposeSlidesCloud::SpecUtils.get_param_value('ignoreCase', 'ReplacePresentationRegexOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ReplacePresentationRegexOnline', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'ReplacePresentationRegexOnline', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ReplacePresentationRegexOnline', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_regex_online_with_http_info(paramdocument, parampattern, paramnew_value, paramignore_case, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ReplacePresentationRegexOnline', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegexOnline', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ReplacePresentationRegexOnline', 'password', parampassword, 'String')
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end

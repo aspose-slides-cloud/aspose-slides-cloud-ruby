@@ -35,13 +35,13 @@ describe 'UseCases' do
             file_name = "test.pptx"
             AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
             response = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_fonts(file_name, "password", folder_name)
-            expect(response.list.length).to eq(3)
+            expect(response.list.length).to eq(4)
         end
 
         it "get fonts online" do
             source = File.binread("TestData/test.pptx")
             response = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_fonts_online(source, "password")
-            expect(response.list.length).to eq(3)
+            expect(response.list.length).to eq(4)
         end
 
         it "set embedded font" do
@@ -50,7 +50,7 @@ describe 'UseCases' do
             font_name = "Calibri"
             AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
             response = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_font(file_name, font_name, false, "password", folder_name)
-            expect(response.list.length).to eq(3)
+            expect(response.list.length).to eq(4)
             expect(response.list[2].is_embedded).to eq(true)
             expect(response.list[2].font_name).to eq(font_name)
         end
@@ -69,7 +69,7 @@ describe 'UseCases' do
             source = File.binread("TestData/calibri.ttf")
             AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
             response = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_font_from_request(source, file_name, false, "password", folder_name)
-            expect(response.list.length).to eq(3)
+            expect(response.list.length).to eq(4)
             expect(response.list[2].is_embedded).to eq(true)
             expect(response.list[2].font_name).to eq(font_name)
         end

@@ -129,10 +129,6 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
-      if @is_object_icon.nil?
-        invalid_properties.push('invalid value for "is_object_icon", is_object_icon cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -140,7 +136,6 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      return false if @is_object_icon.nil?
       true
     end
 

@@ -49,6 +49,8 @@ describe 'UseCases' do
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       result = AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_text(file_name, old_value, new_value, nil, nil, password, folder_name)
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      result_regex = AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_regex(file_name, old_value, new_value, nil, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       result_with_empty = AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_text(file_name, old_value, new_value, true, nil, password, folder_name)
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       result_whole_words = AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_text(file_name, old_value, new_value, true, true, password, folder_name)
@@ -56,6 +58,7 @@ describe 'UseCases' do
       slide_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_slide_text(file_name, slide_index, old_value, new_value, nil, password, folder_name)
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       slide_result_with_empty = AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_slide_text(file_name, slide_index, old_value, new_value, true, password, folder_name)
+      expect(result_regex.matches).to eq(result.matches)
       expect(result_with_empty.matches).to be > result.matches
       expect(result_with_empty.matches).to be > result_whole_words.matches
       expect(result.matches).to be > slide_result.matches
@@ -69,6 +72,7 @@ describe 'UseCases' do
       new_value = "new_text"
       source = File.binread("TestData/test.pptx")
       AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_text_online(source, old_value, new_value, nil, nil, password)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_regex_online(source, old_value, new_value, nil, password)
       AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_presentation_text_online(source, old_value, new_value, true, nil, password)
       AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_slide_text_online(source, slide_index, old_value, new_value, nil, password)
       AsposeSlidesCloud::SpecUtils.testSlidesApi.replace_slide_text_online(source, slide_index, old_value, new_value, true, password)
@@ -118,8 +122,7 @@ describe 'UseCases' do
         highlight_color = "#FFF5FF8A"
         text_to_highlight = "highlight"
         AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_text(file_name, slide_index, shape_index, text_to_highlight, highlight_color,
-          nil, false, password, folder_name)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_text(file_name, slide_index, shape_index, text_to_highlight, highlight_color, nil, false, password, folder_name)
         para = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_paragraph(file_name, slide_index, shape_index, paragraph_index, password, folder_name)
         expect(para.portion_list[0].text).not_to eq(text_to_highlight)
         expect(para.portion_list[0].highlight_color).not_to eq(highlight_color)
@@ -138,13 +141,55 @@ describe 'UseCases' do
       highlight_color = "#FFF5FF8A"
       regex =  "h.ghl[abci]ght"
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex(file_name, slide_index, shape_index, regex, highlight_color,
-        nil, false, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_shape_regex(file_name, slide_index, shape_index, regex, highlight_color, false, password, folder_name)
       para = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_paragraph(file_name, slide_index, shape_index, paragraph_index, password, folder_name)
       expect(para.portion_list[0].text).not_to eq(text_to_highlight)
       expect(para.portion_list[0].highlight_color).not_to eq(highlight_color)
       expect(para.portion_list[1].text).to eq(text_to_highlight)
       expect(para.portion_list[1].highlight_color).to eq(highlight_color)
-  end
+    end
+
+    it "highlight presentation text" do
+        folder_name = "TempSlidesSDK"
+        file_name = "test.pptx"
+        password = "password"
+        highlight_color = "#FFF5FF8A"
+        text_to_highlight = "highlight"
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_text(file_name, text_to_highlight, highlight_color, nil, false, password, folder_name)
+        result_ignore_case = AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_text(file_name, text_to_highlight, highlight_color, nil, true, password, folder_name)
+        expect(result_ignore_case.matches).to eq(result.matches)
+
+        slide_index = 6
+        shape_index = 1
+        paragraph_index = 1
+        para = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_paragraph(file_name, slide_index, shape_index, paragraph_index, password, folder_name)
+        expect(para.portion_list[0].text).not_to eq(text_to_highlight)
+        expect(para.portion_list[0].highlight_color).not_to eq(highlight_color)
+        expect(para.portion_list[1].text).to eq(text_to_highlight)
+        expect(para.portion_list[1].highlight_color).to eq(highlight_color)
+    end
+
+    it "highlight presentation regex" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      text_to_highlight = "highlight"
+      highlight_color = "#FFF5FF8A"
+      regex =  "h.ghl[abci]ght"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_regex(file_name, regex, highlight_color, false, password, folder_name)
+      result_ignore_case = AsposeSlidesCloud::SpecUtils.testSlidesApi.highlight_presentation_regex(file_name, regex, highlight_color, true, password, folder_name)
+        expect(result_ignore_case.matches).to eq(result.matches)
+
+      slide_index = 6
+      shape_index = 1
+      paragraph_index = 1
+      para = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_paragraph(file_name, slide_index, shape_index, paragraph_index, password, folder_name)
+      expect(para.portion_list[0].text).not_to eq(text_to_highlight)
+      expect(para.portion_list[0].highlight_color).not_to eq(highlight_color)
+      expect(para.portion_list[1].text).to eq(text_to_highlight)
+      expect(para.portion_list[1].highlight_color).to eq(highlight_color)
+    end
   end
 end

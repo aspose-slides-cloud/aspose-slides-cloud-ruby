@@ -72,7 +72,7 @@ module AsposeSlidesCloud
         :'failed' => :'DateTime',
         :'canceled' => :'DateTime',
         :'finished' => :'DateTime',
-        :'error' => :'String',
+        :'error' => :'OperationError',
       }
     end
 
@@ -149,7 +149,7 @@ module AsposeSlidesCloud
     def valid?
       return false if @id.nil?
       return false if @method.nil?
-      method_validator = EnumAttributeValidator.new('String', ['Convert', 'DownloadPresentation', 'ConvertAndSave', 'SavePresentation', 'Merge', 'MergeAndSave'])
+      method_validator = EnumAttributeValidator.new('String', ['Convert', 'DownloadPresentation', 'ConvertAndSave', 'SavePresentation', 'Merge', 'MergeAndSave', 'Split', 'UploadAndSplit'])
       return false unless method_validator.valid?(@method)
       return false if @status.nil?
       status_validator = EnumAttributeValidator.new('String', ['Created', 'Enqueued', 'Started', 'Failed', 'Canceled', 'Finished'])
@@ -160,7 +160,7 @@ module AsposeSlidesCloud
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] method Object to be assigned
     def method=(method)
-      validator = EnumAttributeValidator.new('String', ['Convert', 'DownloadPresentation', 'ConvertAndSave', 'SavePresentation', 'Merge', 'MergeAndSave'])
+      validator = EnumAttributeValidator.new('String', ['Convert', 'DownloadPresentation', 'ConvertAndSave', 'SavePresentation', 'Merge', 'MergeAndSave', 'Split', 'UploadAndSplit'])
       unless validator.valid?(method)
         fail ArgumentError, 'invalid value for "method", must be one of #{validator.allowable_values}.'
       end
