@@ -79,22 +79,12 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @minimal_height.nil?
-        invalid_properties.push('invalid value for "minimal_height", minimal_height cannot be nil.')
-      end
-
-      if @height.nil?
-        invalid_properties.push('invalid value for "height", height cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @minimal_height.nil?
-      return false if @height.nil?
       true
     end
 

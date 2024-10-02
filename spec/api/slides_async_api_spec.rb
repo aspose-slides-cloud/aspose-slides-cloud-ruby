@@ -28,6 +28,91 @@ require 'spec_helper'
 # Please update as you see appropriate
 describe 'SlidesAsyncApi' do
 
+  # unit tests for download
+  # @param path 
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :storage_name 
+  # @option opts [String] :version_id 
+  # @return [File]
+  describe 'download test' do
+    it 'should work' do
+      parampath = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'Download', 'String')
+      paramstorage_name = AsposeSlidesCloud::SpecUtils.get_param_value('storageName', 'Download', 'String')
+      paramversion_id = AsposeSlidesCloud::SpecUtils.get_param_value('versionId', 'Download', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('Download', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.download_with_http_info(parampath, paramstorage_name, paramversion_id)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('Download', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid path' do
+      parampath = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'Download', 'String')
+      paramstorage_name = AsposeSlidesCloud::SpecUtils.get_param_value('storageName', 'Download', 'String')
+      paramversion_id = AsposeSlidesCloud::SpecUtils.get_param_value('versionId', 'Download', 'String')
+      parampath = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'Download', parampath, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('Download', 'path', parampath)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.download_with_http_info(parampath, paramstorage_name, paramversion_id)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('Download', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('Download', 'path', parampath, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('Download', 'path', parampath, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage_name' do
+      parampath = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'Download', 'String')
+      paramstorage_name = AsposeSlidesCloud::SpecUtils.get_param_value('storageName', 'Download', 'String')
+      paramversion_id = AsposeSlidesCloud::SpecUtils.get_param_value('versionId', 'Download', 'String')
+      paramstorage_name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storageName', 'Download', paramstorage_name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('Download', 'storageName', paramstorage_name)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.download_with_http_info(parampath, paramstorage_name, paramversion_id)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('Download', 'storageName')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('Download', 'storageName', paramstorage_name, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('Download', 'storageName', paramstorage_name, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid version_id' do
+      parampath = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'Download', 'String')
+      paramstorage_name = AsposeSlidesCloud::SpecUtils.get_param_value('storageName', 'Download', 'String')
+      paramversion_id = AsposeSlidesCloud::SpecUtils.get_param_value('versionId', 'Download', 'String')
+      paramversion_id = AsposeSlidesCloud::SpecUtils.invalidize_param_value('versionId', 'Download', paramversion_id, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('Download', 'versionId', paramversion_id)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.download_with_http_info(parampath, paramstorage_name, paramversion_id)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('Download', 'versionId')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('Download', 'versionId', paramversion_id, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('Download', 'versionId', paramversion_id, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for get_operation_result
   # @param id 
   # @param [Hash] opts the optional parameters
@@ -2041,6 +2126,91 @@ describe 'SlidesAsyncApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('StartUploadAndSplit', 'options', paramoptions, 'ExportOptions')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for upload
+  # @param path 
+  # @param file File to upload
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :storage_name 
+  # @return [FilesUploadResult]
+  describe 'upload test' do
+    it 'should work' do
+      parampath = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'Upload', 'String')
+      paramfile = AsposeSlidesCloud::SpecUtils.get_param_value('file', 'Upload', 'File')
+      paramstorage_name = AsposeSlidesCloud::SpecUtils.get_param_value('storageName', 'Upload', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('Upload', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.upload_with_http_info(parampath, paramfile, paramstorage_name)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('Upload', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid path' do
+      parampath = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'Upload', 'String')
+      paramfile = AsposeSlidesCloud::SpecUtils.get_param_value('file', 'Upload', 'File')
+      paramstorage_name = AsposeSlidesCloud::SpecUtils.get_param_value('storageName', 'Upload', 'String')
+      parampath = AsposeSlidesCloud::SpecUtils.invalidize_param_value('path', 'Upload', parampath, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('Upload', 'path', parampath)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.upload_with_http_info(parampath, paramfile, paramstorage_name)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('Upload', 'path')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('Upload', 'path', parampath, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('Upload', 'path', parampath, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid file' do
+      parampath = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'Upload', 'String')
+      paramfile = AsposeSlidesCloud::SpecUtils.get_param_value('file', 'Upload', 'File')
+      paramstorage_name = AsposeSlidesCloud::SpecUtils.get_param_value('storageName', 'Upload', 'String')
+      paramfile = AsposeSlidesCloud::SpecUtils.invalidize_param_value('file', 'Upload', paramfile, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('Upload', 'file', paramfile)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.upload_with_http_info(parampath, paramfile, paramstorage_name)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('Upload', 'file')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('Upload', 'file', paramfile, 'File')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('Upload', 'file', paramfile, 'File')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage_name' do
+      parampath = AsposeSlidesCloud::SpecUtils.get_param_value('path', 'Upload', 'String')
+      paramfile = AsposeSlidesCloud::SpecUtils.get_param_value('file', 'Upload', 'File')
+      paramstorage_name = AsposeSlidesCloud::SpecUtils.get_param_value('storageName', 'Upload', 'String')
+      paramstorage_name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storageName', 'Upload', paramstorage_name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('Upload', 'storageName', paramstorage_name)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesAsyncApi.upload_with_http_info(parampath, paramfile, paramstorage_name)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('Upload', 'storageName')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('Upload', 'storageName', paramstorage_name, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('Upload', 'storageName', paramstorage_name, 'String')
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end

@@ -30,6 +30,58 @@ module AsposeSlidesCloud
       @api_client = AsposeSlidesCloud::ApiClient.new(configuration)
     end
 
+    # @param path 
+    # @param storage_name 
+    # @param version_id 
+    def download(path, storage_name = nil, version_id = nil)
+      data, _status_code, _headers = download_with_http_info(path, storage_name, version_id)
+      data
+    end
+
+    # @param path 
+    # @param storage_name 
+    # @param version_id 
+    def download_with_http_info(path, storage_name = nil, version_id = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesAsyncApi.download ...'
+      end
+
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesAsyncApi.download"
+      end
+      # resource path
+      local_var_path = '/slides/async/storage/file/{path}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+
+      # query parameters
+      query_params = {}
+      query_params[:'storageName'] = @api_client.prepare_for_query(storage_name) unless storage_name.nil?
+      query_params[:'versionId'] = @api_client.prepare_for_query(version_id) unless version_id.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      return data, status_code, headers
+    end
     # @param id 
     def get_operation_result(id)
       data, _status_code, _headers = get_operation_result_with_http_info(id)
@@ -704,6 +756,64 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'String')
+      return data, status_code, headers
+    end
+    # @param path 
+    # @param file File to upload
+    # @param storage_name 
+    def upload(path, file, storage_name = nil)
+      data, _status_code, _headers = upload_with_http_info(path, file, storage_name)
+      data
+    end
+
+    # @param path 
+    # @param file File to upload
+    # @param storage_name 
+    def upload_with_http_info(path, file, storage_name = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesAsyncApi.upload ...'
+      end
+
+      # verify the required parameter 'path' is set
+      if @api_client.config.client_side_validation && path.nil?
+        fail ArgumentError, "Missing the required parameter 'path' when calling SlidesAsyncApi.upload"
+      end
+      # verify the required parameter 'file' is set
+      if @api_client.config.client_side_validation && file.nil?
+        fail ArgumentError, "Missing the required parameter 'file' when calling SlidesAsyncApi.upload"
+      end
+      # resource path
+      local_var_path = '/slides/async/storage/file/{path}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'path', path)
+
+      # query parameters
+      query_params = {}
+      query_params[:'storageName'] = @api_client.prepare_for_query(storage_name) unless storage_name.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+      if file
+        post_files = post_files.push(file)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'FilesUploadResult')
       return data, status_code, headers
     end
   end

@@ -199,10 +199,6 @@ module AsposeSlidesCloud
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
-      if @z_order_position.nil?
-        invalid_properties.push('invalid value for "z_order_position", z_order_position cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -210,7 +206,6 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      return false if @z_order_position.nil?
       type_validator = EnumAttributeValidator.new('String', ['Shape', 'Chart', 'Table', 'PictureFrame', 'VideoFrame', 'AudioFrame', 'SmartArt', 'OleObjectFrame', 'GroupShape', 'GraphicalObject', 'Connector', 'SmartArtShape', 'ZoomFrame', 'SectionZoomFrame', 'SummaryZoomFrame', 'SummaryZoomSection'])
       return false unless type_validator.valid?(@type)
       true
