@@ -33,10 +33,12 @@
 		{ "Value": 4, "Parameter": "SlideIndex", "Method": "/ShapeGeometryPath/" },
 		{ "Value": 2, "Parameter": "SlideIndex", "Method": "/Math/" },
 		{ "Value": 2, "Parameter": "SlideIndex", "Method": "DeletePictureCroppedAreas" },
+		{ "Value": 2, "Parameter": "SlideIndex", "Method": "CompressImage" },
 		{ "Value": 2, "Parameter": "ShapeIndex", "Method": "/ChartDataPoint/" },
 		{ "Value": 2, "Parameter": "ShapeIndex", "Method": "/ChartWall/" },
 		{ "Value": 2, "Parameter": "ShapeIndex", "Method": "/ShapeGeometryPath/" },
 		{ "Value": 2, "Parameter": "ShapeIndex", "Method": "DeletePictureCroppedAreas" },
+		{ "Value": 2, "Parameter": "ShapeIndex", "Method": "CompressImage" },
 		{ "Value": 3, "Parameter": "ShapeIndex", "Method": "/Math/" },
 		{ "Value": 2, "Parameter": "SectionIndex" },
 		{ "Value": 20, "InvalidValue": 593, "Parameter": "FontHeight" },
@@ -185,7 +187,8 @@
 		{ "Parameter": "AxisType" },
 		{ "Parameter": "ChartWallType" },
 		{ "Parameter": "SplitType" },
-		{ "Parameter": "Bounds" }
+		{ "Parameter": "Bounds" },
+		{ "Parameter": "Resolution" }
 	],
 	"Results": [
 		{ "Code": 200 },

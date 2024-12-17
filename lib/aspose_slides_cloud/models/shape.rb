@@ -47,7 +47,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       super.merge({
         :'text' => :'String',
-        :'paragraphs' => :'ResourceUri',
+        :'paragraphs' => :'Array<Paragraph>',
         :'text_frame_format' => :'TextFrameFormat',
       })
     end
@@ -62,7 +62,9 @@ module AsposeSlidesCloud
       end
 
       if attributes.has_key?(:'Paragraphs')
-        self.paragraphs = attributes[:'Paragraphs']
+        if (value = attributes[:'Paragraphs']).is_a?(Array)
+          self.paragraphs = value
+        end
       end
 
       if attributes.has_key?(:'TextFrameFormat')

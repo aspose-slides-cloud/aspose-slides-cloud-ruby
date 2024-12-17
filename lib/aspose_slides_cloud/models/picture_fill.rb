@@ -40,6 +40,24 @@ module AsposeSlidesCloud
     # Picture resolution.
     attr_accessor :dpi
 
+    # The horizontal offset of the texture from the shape's origin in points. A positive value moves the texture to the right, while a negative value moves it to the left.
+    attr_accessor :tile_offset_x
+
+    # The vertical offset of the texture from the shape's origin in points. A positive value moves the texture down, while a negative value moves it up.
+    attr_accessor :tile_offset_y
+
+    # The horizontal scale for the texture fill as a percentage.
+    attr_accessor :tile_scale_x
+
+    # The vertical scale for the texture fill as a percentage.
+    attr_accessor :tile_scale_y
+
+    # The way texture is aligned within the shape. This setting controls the starting point of the texture pattern and how it repeats across the shape.
+    attr_accessor :tile_alignment
+
+    # Flips the texture tile around its horizontal, vertical or both axis.
+    attr_accessor :tile_flip
+
     # Internal image link.
     attr_accessor :image
 
@@ -63,6 +81,12 @@ module AsposeSlidesCloud
         :'crop_right' => :'CropRight',
         :'crop_top' => :'CropTop',
         :'dpi' => :'Dpi',
+        :'tile_offset_x' => :'TileOffsetX',
+        :'tile_offset_y' => :'TileOffsetY',
+        :'tile_scale_x' => :'TileScaleX',
+        :'tile_scale_y' => :'TileScaleY',
+        :'tile_alignment' => :'TileAlignment',
+        :'tile_flip' => :'TileFlip',
         :'image' => :'Image',
         :'base64_data' => :'Base64Data',
         :'svg_data' => :'SvgData',
@@ -79,6 +103,12 @@ module AsposeSlidesCloud
         :'crop_right' => :'Float',
         :'crop_top' => :'Float',
         :'dpi' => :'Integer',
+        :'tile_offset_x' => :'Float',
+        :'tile_offset_y' => :'Float',
+        :'tile_scale_x' => :'Float',
+        :'tile_scale_y' => :'Float',
+        :'tile_alignment' => :'String',
+        :'tile_flip' => :'String',
         :'image' => :'ResourceUri',
         :'base64_data' => :'String',
         :'svg_data' => :'String',
@@ -110,6 +140,30 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'Dpi')
         self.dpi = attributes[:'Dpi']
+      end
+
+      if attributes.has_key?(:'TileOffsetX')
+        self.tile_offset_x = attributes[:'TileOffsetX']
+      end
+
+      if attributes.has_key?(:'TileOffsetY')
+        self.tile_offset_y = attributes[:'TileOffsetY']
+      end
+
+      if attributes.has_key?(:'TileScaleX')
+        self.tile_scale_x = attributes[:'TileScaleX']
+      end
+
+      if attributes.has_key?(:'TileScaleY')
+        self.tile_scale_y = attributes[:'TileScaleY']
+      end
+
+      if attributes.has_key?(:'TileAlignment')
+        self.tile_alignment = attributes[:'TileAlignment']
+      end
+
+      if attributes.has_key?(:'TileFlip')
+        self.tile_flip = attributes[:'TileFlip']
       end
 
       if attributes.has_key?(:'Image')
@@ -176,10 +230,34 @@ module AsposeSlidesCloud
       return false if @crop_right.nil?
       return false if @crop_top.nil?
       return false if @dpi.nil?
+      tile_alignment_validator = EnumAttributeValidator.new('String', ['TopLeft', 'Top', 'TopRight', 'Left', 'Center', 'Right', 'BottomLeft', 'Bottom', 'BottomRight', 'NotDefined'])
+      return false unless tile_alignment_validator.valid?(@tile_alignment)
+      tile_flip_validator = EnumAttributeValidator.new('String', ['NoFlip', 'FlipX', 'FlipY', 'FlipBoth', 'NotDefined'])
+      return false unless tile_flip_validator.valid?(@tile_flip)
       return false if @picture_fill_mode.nil?
       picture_fill_mode_validator = EnumAttributeValidator.new('String', ['Tile', 'Stretch'])
       return false unless picture_fill_mode_validator.valid?(@picture_fill_mode)
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] tile_alignment Object to be assigned
+    def tile_alignment=(tile_alignment)
+      validator = EnumAttributeValidator.new('String', ['TopLeft', 'Top', 'TopRight', 'Left', 'Center', 'Right', 'BottomLeft', 'Bottom', 'BottomRight', 'NotDefined'])
+      unless validator.valid?(tile_alignment)
+        fail ArgumentError, 'invalid value for "tile_alignment", must be one of #{validator.allowable_values}.'
+      end
+      @tile_alignment = tile_alignment
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] tile_flip Object to be assigned
+    def tile_flip=(tile_flip)
+      validator = EnumAttributeValidator.new('String', ['NoFlip', 'FlipX', 'FlipY', 'FlipBoth', 'NotDefined'])
+      unless validator.valid?(tile_flip)
+        fail ArgumentError, 'invalid value for "tile_flip", must be one of #{validator.allowable_values}.'
+      end
+      @tile_flip = tile_flip
     end
 
     # Custom attribute writer method checking allowed values (enum).
@@ -203,6 +281,12 @@ module AsposeSlidesCloud
           crop_right == o.crop_right &&
           crop_top == o.crop_top &&
           dpi == o.dpi &&
+          tile_offset_x == o.tile_offset_x &&
+          tile_offset_y == o.tile_offset_y &&
+          tile_scale_x == o.tile_scale_x &&
+          tile_scale_y == o.tile_scale_y &&
+          tile_alignment == o.tile_alignment &&
+          tile_flip == o.tile_flip &&
           image == o.image &&
           base64_data == o.base64_data &&
           svg_data == o.svg_data &&
@@ -219,7 +303,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, crop_bottom, crop_left, crop_right, crop_top, dpi, image, base64_data, svg_data, picture_fill_mode, image_transform_list].hash
+      [type, crop_bottom, crop_left, crop_right, crop_top, dpi, tile_offset_x, tile_offset_y, tile_scale_x, tile_scale_y, tile_alignment, tile_flip, image, base64_data, svg_data, picture_fill_mode, image_transform_list].hash
     end
   end
 end

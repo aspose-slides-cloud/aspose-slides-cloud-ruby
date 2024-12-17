@@ -809,6 +809,251 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for compress_image
+  # Deletes cropped areas of a pictire.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index (must refer to a picture frame).
+  # @param [Hash] opts the optional parameters
+  # @option opts [Float] :resolution Target resolution in DPI.
+  # @option opts [BOOLEAN] :delete_picture_cropped_areas true to delete picture cropped areas.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Presentation storage.
+  # @return [nil]
+  describe 'compress_image test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CompressImage', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CompressImage', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CompressImage', 'Integer')
+      paramresolution = AsposeSlidesCloud::SpecUtils.get_param_value('resolution', 'CompressImage', 'Float')
+      paramdelete_picture_cropped_areas = AsposeSlidesCloud::SpecUtils.get_param_value('deletePictureCroppedAreas', 'CompressImage', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CompressImage', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CompressImage', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CompressImage', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CompressImage', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.compress_image_with_http_info(paramname, paramslide_index, paramshape_index, paramresolution, paramdelete_picture_cropped_areas, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressImage', nil, nil, nil)
+      expect(c).to eq(code)
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CompressImage', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CompressImage', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CompressImage', 'Integer')
+      paramresolution = AsposeSlidesCloud::SpecUtils.get_param_value('resolution', 'CompressImage', 'Float')
+      paramdelete_picture_cropped_areas = AsposeSlidesCloud::SpecUtils.get_param_value('deletePictureCroppedAreas', 'CompressImage', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CompressImage', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CompressImage', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CompressImage', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'CompressImage', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CompressImage', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.compress_image_with_http_info(paramname, paramslide_index, paramshape_index, paramresolution, paramdelete_picture_cropped_areas, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CompressImage', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressImage', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressImage', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CompressImage', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CompressImage', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CompressImage', 'Integer')
+      paramresolution = AsposeSlidesCloud::SpecUtils.get_param_value('resolution', 'CompressImage', 'Float')
+      paramdelete_picture_cropped_areas = AsposeSlidesCloud::SpecUtils.get_param_value('deletePictureCroppedAreas', 'CompressImage', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CompressImage', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CompressImage', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CompressImage', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'CompressImage', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CompressImage', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.compress_image_with_http_info(paramname, paramslide_index, paramshape_index, paramresolution, paramdelete_picture_cropped_areas, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CompressImage', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressImage', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressImage', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CompressImage', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CompressImage', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CompressImage', 'Integer')
+      paramresolution = AsposeSlidesCloud::SpecUtils.get_param_value('resolution', 'CompressImage', 'Float')
+      paramdelete_picture_cropped_areas = AsposeSlidesCloud::SpecUtils.get_param_value('deletePictureCroppedAreas', 'CompressImage', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CompressImage', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CompressImage', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CompressImage', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'CompressImage', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CompressImage', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.compress_image_with_http_info(paramname, paramslide_index, paramshape_index, paramresolution, paramdelete_picture_cropped_areas, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CompressImage', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressImage', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressImage', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid resolution' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CompressImage', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CompressImage', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CompressImage', 'Integer')
+      paramresolution = AsposeSlidesCloud::SpecUtils.get_param_value('resolution', 'CompressImage', 'Float')
+      paramdelete_picture_cropped_areas = AsposeSlidesCloud::SpecUtils.get_param_value('deletePictureCroppedAreas', 'CompressImage', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CompressImage', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CompressImage', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CompressImage', 'String')
+      paramresolution = AsposeSlidesCloud::SpecUtils.invalidize_param_value('resolution', 'CompressImage', paramresolution, 'Float')
+      AsposeSlidesCloud::SpecUtils.initialize('CompressImage', 'resolution', paramresolution)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.compress_image_with_http_info(paramname, paramslide_index, paramshape_index, paramresolution, paramdelete_picture_cropped_areas, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CompressImage', 'resolution')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressImage', 'resolution', paramresolution, 'Float')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressImage', 'resolution', paramresolution, 'Float')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid delete_picture_cropped_areas' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CompressImage', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CompressImage', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CompressImage', 'Integer')
+      paramresolution = AsposeSlidesCloud::SpecUtils.get_param_value('resolution', 'CompressImage', 'Float')
+      paramdelete_picture_cropped_areas = AsposeSlidesCloud::SpecUtils.get_param_value('deletePictureCroppedAreas', 'CompressImage', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CompressImage', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CompressImage', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CompressImage', 'String')
+      paramdelete_picture_cropped_areas = AsposeSlidesCloud::SpecUtils.invalidize_param_value('deletePictureCroppedAreas', 'CompressImage', paramdelete_picture_cropped_areas, 'BOOLEAN')
+      AsposeSlidesCloud::SpecUtils.initialize('CompressImage', 'deletePictureCroppedAreas', paramdelete_picture_cropped_areas)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.compress_image_with_http_info(paramname, paramslide_index, paramshape_index, paramresolution, paramdelete_picture_cropped_areas, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CompressImage', 'deletePictureCroppedAreas')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressImage', 'deletePictureCroppedAreas', paramdelete_picture_cropped_areas, 'BOOLEAN')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressImage', 'deletePictureCroppedAreas', paramdelete_picture_cropped_areas, 'BOOLEAN')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CompressImage', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CompressImage', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CompressImage', 'Integer')
+      paramresolution = AsposeSlidesCloud::SpecUtils.get_param_value('resolution', 'CompressImage', 'Float')
+      paramdelete_picture_cropped_areas = AsposeSlidesCloud::SpecUtils.get_param_value('deletePictureCroppedAreas', 'CompressImage', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CompressImage', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CompressImage', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CompressImage', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'CompressImage', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CompressImage', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.compress_image_with_http_info(paramname, paramslide_index, paramshape_index, paramresolution, paramdelete_picture_cropped_areas, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CompressImage', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressImage', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressImage', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CompressImage', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CompressImage', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CompressImage', 'Integer')
+      paramresolution = AsposeSlidesCloud::SpecUtils.get_param_value('resolution', 'CompressImage', 'Float')
+      paramdelete_picture_cropped_areas = AsposeSlidesCloud::SpecUtils.get_param_value('deletePictureCroppedAreas', 'CompressImage', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CompressImage', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CompressImage', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CompressImage', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'CompressImage', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CompressImage', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.compress_image_with_http_info(paramname, paramslide_index, paramshape_index, paramresolution, paramdelete_picture_cropped_areas, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CompressImage', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressImage', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressImage', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CompressImage', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CompressImage', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CompressImage', 'Integer')
+      paramresolution = AsposeSlidesCloud::SpecUtils.get_param_value('resolution', 'CompressImage', 'Float')
+      paramdelete_picture_cropped_areas = AsposeSlidesCloud::SpecUtils.get_param_value('deletePictureCroppedAreas', 'CompressImage', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CompressImage', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CompressImage', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CompressImage', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'CompressImage', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CompressImage', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.compress_image_with_http_info(paramname, paramslide_index, paramshape_index, paramresolution, paramdelete_picture_cropped_areas, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CompressImage', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressImage', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CompressImage', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for convert
   # Convert presentation from request content to format specified.
   # @param document Document data.
@@ -29957,7 +30202,7 @@ describe 'SlidesApi' do
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
   # @option opts [String] :shape_type Shape type.
-  # @option opts [String] :sub_shape Sub-shape path (e.g. \&quot;3\&quot;, \&quot;3/shapes/2).
+  # @option opts [String] :sub_shape Sub-shape path (e.g. \&quot;3\&quot;, \&quot;3/shapes/2\&quot;).
   # @return [Shapes]
   describe 'get_shapes test' do
     it 'should work' do

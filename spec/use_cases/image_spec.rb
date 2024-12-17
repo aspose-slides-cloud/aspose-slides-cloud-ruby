@@ -120,6 +120,17 @@ describe 'UseCases' do
       expect(response.size).not_to eq(0)
     end
 
+    it 'compress image' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      slide_index = 2
+      shape_index = 2
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.compress_image(
+          file_name, slide_index, shape_index, 150, nil, password, folder_name)
+    end
+
     it 'delete picture cropped areas' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"
@@ -127,8 +138,8 @@ describe 'UseCases' do
       shape_index = 2
       password = "password"
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-      AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_picture_cropped_areas(
-          file_name, slide_index, shape_index, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.compress_image(
+          file_name, slide_index, shape_index, nil, true, password, folder_name)
     end
 
     it 'delete picture cropped areas wrong shape type' do
@@ -139,8 +150,8 @@ describe 'UseCases' do
       password = "password"
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       begin
-          AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_picture_cropped_areas(
-              file_name, slide_index, shape_index, password, folder_name)
+          AsposeSlidesCloud::SpecUtils.testSlidesApi.compress_image(
+              file_name, slide_index, shape_index, nil, true, password, folder_name)
         fail "Should throw an exception if shape is not PictureFrame"
       rescue AsposeSlidesCloud::ApiError => e
         expect(e.code).to eq(400)

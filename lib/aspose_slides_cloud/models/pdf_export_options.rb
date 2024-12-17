@@ -79,6 +79,9 @@ module AsposeSlidesCloud
     # True if text should be rasterized as a bitmap and saved to PDF when the font does not support bold styling. This approach can enhance the quality of text in the resulting PDF for certain fonts.
     attr_accessor :rasterize_unsupported_font_styles
 
+    # True to convert all OLE data from the presentation to embedded files in the resulting PDF.
+    attr_accessor :include_ole_data
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
@@ -100,6 +103,7 @@ module AsposeSlidesCloud
         :'hide_ink' => :'HideInk',
         :'interpret_mask_op_as_opacity' => :'InterpretMaskOpAsOpacity',
         :'rasterize_unsupported_font_styles' => :'RasterizeUnsupportedFontStyles',
+        :'include_ole_data' => :'IncludeOleData',
       })
     end
 
@@ -124,6 +128,7 @@ module AsposeSlidesCloud
         :'hide_ink' => :'BOOLEAN',
         :'interpret_mask_op_as_opacity' => :'BOOLEAN',
         :'rasterize_unsupported_font_styles' => :'BOOLEAN',
+        :'include_ole_data' => :'BOOLEAN',
       })
     end
 
@@ -205,6 +210,10 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'RasterizeUnsupportedFontStyles')
         self.rasterize_unsupported_font_styles = attributes[:'RasterizeUnsupportedFontStyles']
       end
+
+      if attributes.has_key?(:'IncludeOleData')
+        self.include_ole_data = attributes[:'IncludeOleData']
+      end
       self.format = 'pdf'
     end
 
@@ -252,6 +261,7 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
+          delete_embedded_binary_objects == o.delete_embedded_binary_objects &&
           gradient_style == o.gradient_style &&
           font_fallback_rules == o.font_fallback_rules &&
           font_subst_rules == o.font_subst_rules &&
@@ -273,7 +283,8 @@ module AsposeSlidesCloud
           access_permissions == o.access_permissions &&
           hide_ink == o.hide_ink &&
           interpret_mask_op_as_opacity == o.interpret_mask_op_as_opacity &&
-          rasterize_unsupported_font_styles == o.rasterize_unsupported_font_styles
+          rasterize_unsupported_font_styles == o.rasterize_unsupported_font_styles &&
+          include_ole_data == o.include_ole_data
     end
 
     # @see the `==` method
@@ -285,7 +296,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, gradient_style, font_fallback_rules, font_subst_rules, format, text_compression, embed_full_fonts, compliance, sufficient_resolution, jpeg_quality, draw_slides_frame, show_hidden_slides, save_metafiles_as_png, password, embed_true_type_fonts_for_ascii, additional_common_font_families, slides_layout_options, image_transparent_color, apply_image_transparent, access_permissions, hide_ink, interpret_mask_op_as_opacity, rasterize_unsupported_font_styles].hash
+      [default_regular_font, delete_embedded_binary_objects, gradient_style, font_fallback_rules, font_subst_rules, format, text_compression, embed_full_fonts, compliance, sufficient_resolution, jpeg_quality, draw_slides_frame, show_hidden_slides, save_metafiles_as_png, password, embed_true_type_fonts_for_ascii, additional_common_font_families, slides_layout_options, image_transparent_color, apply_image_transparent, access_permissions, hide_ink, interpret_mask_op_as_opacity, rasterize_unsupported_font_styles, include_ole_data].hash
     end
   end
 end

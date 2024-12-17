@@ -23,57 +23,80 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Provides options that control how a presentation is saved in an image format.
-  class ImageExportOptions < ImageExportOptionsBase
-    # Show hidden slides. If true, hidden are exported.
-    attr_accessor :show_hidden_slides
+  # Drawing guide.
+  class DrawingGuide < BaseObject
+    # Last used view mode.
+    attr_accessor :orientation
 
-    # Slides layouting options
-    attr_accessor :slides_layout_options
+    # Horizontal bar state.
+    attr_accessor :position
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
-      super.merge({
-        :'show_hidden_slides' => :'ShowHiddenSlides',
-        :'slides_layout_options' => :'SlidesLayoutOptions',
-      })
+      {
+        :'orientation' => :'Orientation',
+        :'position' => :'Position',
+      }
     end
 
     # Attribute type mapping.
     def self.swagger_types
-      super.merge({
-        :'show_hidden_slides' => :'BOOLEAN',
-        :'slides_layout_options' => :'SlidesLayoutOptions',
-      })
+      {
+        :'orientation' => :'String',
+        :'position' => :'Float',
+      }
     end
 
     # Initializes the object
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
-      super
+      return unless attributes.is_a?(Hash)
 
-      if attributes.has_key?(:'ShowHiddenSlides')
-        self.show_hidden_slides = attributes[:'ShowHiddenSlides']
+      # convert string to symbol for hash key
+      attributes = attributes.each_with_object({}) { |(k, v), h| h[k.to_sym] = v }
+
+      if attributes.has_key?(:'Orientation')
+        self.orientation = attributes[:'Orientation']
       end
 
-      if attributes.has_key?(:'SlidesLayoutOptions')
-        self.slides_layout_options = attributes[:'SlidesLayoutOptions']
+      if attributes.has_key?(:'Position')
+        self.position = attributes[:'Position']
       end
-      self.format = 'image'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
-      invalid_properties = super
+      invalid_properties = Array.new
+      if @orientation.nil?
+        invalid_properties.push('invalid value for "orientation", orientation cannot be nil.')
+      end
+
+      if @position.nil?
+        invalid_properties.push('invalid value for "position", position cannot be nil.')
+      end
+
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if !super
+      return false if @orientation.nil?
+      orientation_validator = EnumAttributeValidator.new('String', ['Horizontal', 'Vertical'])
+      return false unless orientation_validator.valid?(@orientation)
+      return false if @position.nil?
       true
+    end
+
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] orientation Object to be assigned
+    def orientation=(orientation)
+      validator = EnumAttributeValidator.new('String', ['Horizontal', 'Vertical'])
+      unless validator.valid?(orientation)
+        fail ArgumentError, 'invalid value for "orientation", must be one of #{validator.allowable_values}.'
+      end
+      @orientation = orientation
     end
 
     # Checks equality by comparing each attribute.
@@ -81,16 +104,8 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          default_regular_font == o.default_regular_font &&
-          delete_embedded_binary_objects == o.delete_embedded_binary_objects &&
-          gradient_style == o.gradient_style &&
-          font_fallback_rules == o.font_fallback_rules &&
-          font_subst_rules == o.font_subst_rules &&
-          format == o.format &&
-          height == o.height &&
-          width == o.width &&
-          show_hidden_slides == o.show_hidden_slides &&
-          slides_layout_options == o.slides_layout_options
+          orientation == o.orientation &&
+          position == o.position
     end
 
     # @see the `==` method
@@ -102,7 +117,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, delete_embedded_binary_objects, gradient_style, font_fallback_rules, font_subst_rules, format, height, width, show_hidden_slides, slides_layout_options].hash
+      [orientation, position].hash
     end
   end
 end

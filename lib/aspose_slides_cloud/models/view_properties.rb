@@ -52,6 +52,9 @@ module AsposeSlidesCloud
     # True if the comments should be shown.
     attr_accessor :show_comments
 
+    # The grid spacing that should be used for the grid underlying the presentation document, in points.
+    attr_accessor :grid_spacing
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
@@ -64,6 +67,7 @@ module AsposeSlidesCloud
         :'slide_view_properties' => :'SlideViewProperties',
         :'notes_view_properties' => :'NotesViewProperties',
         :'show_comments' => :'ShowComments',
+        :'grid_spacing' => :'GridSpacing',
       })
     end
 
@@ -79,6 +83,7 @@ module AsposeSlidesCloud
         :'slide_view_properties' => :'CommonSlideViewProperties',
         :'notes_view_properties' => :'CommonSlideViewProperties',
         :'show_comments' => :'String',
+        :'grid_spacing' => :'Float',
       })
     end
 
@@ -121,6 +126,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'ShowComments')
         self.show_comments = attributes[:'ShowComments']
+      end
+
+      if attributes.has_key?(:'GridSpacing')
+        self.grid_spacing = attributes[:'GridSpacing']
       end
     end
 
@@ -201,7 +210,8 @@ module AsposeSlidesCloud
           restored_top == o.restored_top &&
           slide_view_properties == o.slide_view_properties &&
           notes_view_properties == o.notes_view_properties &&
-          show_comments == o.show_comments
+          show_comments == o.show_comments &&
+          grid_spacing == o.grid_spacing
     end
 
     # @see the `==` method
@@ -213,7 +223,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, last_view, horizontal_bar_state, vertical_bar_state, prefer_single_view, restored_left, restored_top, slide_view_properties, notes_view_properties, show_comments].hash
+      [self_uri, alternate_links, last_view, horizontal_bar_state, vertical_bar_state, prefer_single_view, restored_left, restored_top, slide_view_properties, notes_view_properties, show_comments, grid_spacing].hash
     end
   end
 end

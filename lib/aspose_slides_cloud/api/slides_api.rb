@@ -318,6 +318,82 @@ module AsposeSlidesCloud
         :return_type => 'File')
       return data, status_code, headers
     end
+    # Deletes cropped areas of a pictire.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must refer to a picture frame).
+    # @param resolution Target resolution in DPI.
+    # @param delete_picture_cropped_areas true to delete picture cropped areas.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Presentation storage.
+    def compress_image(name, slide_index, shape_index, resolution = nil, delete_picture_cropped_areas = nil, password = nil, folder = nil, storage = nil)
+      compress_image_with_http_info(name, slide_index, shape_index, resolution, delete_picture_cropped_areas, password, folder, storage)
+      nil
+    end
+
+    # Deletes cropped areas of a pictire.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must refer to a picture frame).
+    # @param resolution Target resolution in DPI.
+    # @param delete_picture_cropped_areas true to delete picture cropped areas.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Presentation storage.
+    def compress_image_with_http_info(name, slide_index, shape_index, resolution = nil, delete_picture_cropped_areas = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.compress_image ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.compress_image"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.compress_image"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.compress_image"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/compressImage'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'resolution'] = @api_client.prepare_for_query(resolution) unless resolution.nil?
+      query_params[:'deletePictureCroppedAreas'] = @api_client.prepare_for_query(delete_picture_cropped_areas) unless delete_picture_cropped_areas.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names)
+      return data, status_code, headers
+    end
     # Convert presentation from request content to format specified.
     # @param document Document data.
     # @param format Export format.
@@ -11397,7 +11473,7 @@ module AsposeSlidesCloud
     # @param folder Document folder.
     # @param storage Document storage.
     # @param shape_type Shape type.
-    # @param sub_shape Sub-shape path (e.g. \"3\", \"3/shapes/2).
+    # @param sub_shape Sub-shape path (e.g. \"3\", \"3/shapes/2\").
     def get_shapes(name, slide_index, password = nil, folder = nil, storage = nil, shape_type = nil, sub_shape = nil)
       data, _status_code, _headers = get_shapes_with_http_info(name, slide_index, password, folder, storage, shape_type, sub_shape)
       data
@@ -11410,7 +11486,7 @@ module AsposeSlidesCloud
     # @param folder Document folder.
     # @param storage Document storage.
     # @param shape_type Shape type.
-    # @param sub_shape Sub-shape path (e.g. \"3\", \"3/shapes/2).
+    # @param sub_shape Sub-shape path (e.g. \"3\", \"3/shapes/2\").
     def get_shapes_with_http_info(name, slide_index, password = nil, folder = nil, storage = nil, shape_type = nil, sub_shape = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.get_shapes ...'

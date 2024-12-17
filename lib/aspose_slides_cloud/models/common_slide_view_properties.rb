@@ -31,11 +31,15 @@ module AsposeSlidesCloud
     # True if the view content should automatically scale to best fit the current window size.
     attr_accessor :variable_scale
 
+    # Drawing guides
+    attr_accessor :drawing_guides
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
         :'scale' => :'Scale',
         :'variable_scale' => :'VariableScale',
+        :'drawing_guides' => :'DrawingGuides',
       }
     end
 
@@ -44,6 +48,7 @@ module AsposeSlidesCloud
       {
         :'scale' => :'Integer',
         :'variable_scale' => :'BOOLEAN',
+        :'drawing_guides' => :'Array<DrawingGuide>',
       }
     end
 
@@ -61,6 +66,12 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'VariableScale')
         self.variable_scale = attributes[:'VariableScale']
+      end
+
+      if attributes.has_key?(:'DrawingGuides')
+        if (value = attributes[:'DrawingGuides']).is_a?(Array)
+          self.drawing_guides = value
+        end
       end
     end
 
@@ -83,7 +94,8 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           scale == o.scale &&
-          variable_scale == o.variable_scale
+          variable_scale == o.variable_scale &&
+          drawing_guides == o.drawing_guides
     end
 
     # @see the `==` method
@@ -95,7 +107,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [scale, variable_scale].hash
+      [scale, variable_scale, drawing_guides].hash
     end
   end
 end

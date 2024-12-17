@@ -163,6 +163,7 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
+          delete_embedded_binary_objects == o.delete_embedded_binary_objects &&
           gradient_style == o.gradient_style &&
           font_fallback_rules == o.font_fallback_rules &&
           font_subst_rules == o.font_subst_rules &&
@@ -185,7 +186,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, gradient_style, font_fallback_rules, font_subst_rules, format, export_type, flavor, new_line_type, images_save_folder_name, show_slide_number, show_comments, show_hidden_slides].hash
+      [default_regular_font, delete_embedded_binary_objects, gradient_style, font_fallback_rules, font_subst_rules, format, export_type, flavor, new_line_type, images_save_folder_name, show_slide_number, show_comments, show_hidden_slides].hash
     end
   end
 end

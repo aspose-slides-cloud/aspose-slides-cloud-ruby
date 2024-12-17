@@ -302,6 +302,7 @@ module AsposeSlidesCloud
         :'DocumentProperties' => {  },
         :'DocumentProperty' => {  },
         :'DocumentReplaceResult' => {  },
+        :'DrawingGuide' => {  },
         :'DuotoneEffect' => { :'Type' => 'Duotone', },
         :'Effect' => {  },
         :'EffectFormat' => {  },

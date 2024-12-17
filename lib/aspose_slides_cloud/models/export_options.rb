@@ -28,6 +28,9 @@ module AsposeSlidesCloud
     # Default regular font for rendering the presentation. 
     attr_accessor :default_regular_font
 
+    # True to delete delete all embedded binary objects.
+    attr_accessor :delete_embedded_binary_objects
+
     # Default regular font for rendering the presentation. 
     attr_accessor :gradient_style
 
@@ -43,6 +46,7 @@ module AsposeSlidesCloud
     def self.attribute_map
       {
         :'default_regular_font' => :'DefaultRegularFont',
+        :'delete_embedded_binary_objects' => :'DeleteEmbeddedBinaryObjects',
         :'gradient_style' => :'GradientStyle',
         :'font_fallback_rules' => :'FontFallbackRules',
         :'font_subst_rules' => :'FontSubstRules',
@@ -54,6 +58,7 @@ module AsposeSlidesCloud
     def self.swagger_types
       {
         :'default_regular_font' => :'String',
+        :'delete_embedded_binary_objects' => :'BOOLEAN',
         :'gradient_style' => :'String',
         :'font_fallback_rules' => :'Array<FontFallbackRule>',
         :'font_subst_rules' => :'Array<FontSubstRule>',
@@ -71,6 +76,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'DefaultRegularFont')
         self.default_regular_font = attributes[:'DefaultRegularFont']
+      end
+
+      if attributes.has_key?(:'DeleteEmbeddedBinaryObjects')
+        self.delete_embedded_binary_objects = attributes[:'DeleteEmbeddedBinaryObjects']
       end
 
       if attributes.has_key?(:'GradientStyle')
@@ -125,6 +134,7 @@ module AsposeSlidesCloud
       return true if self.equal?(o)
       self.class == o.class &&
           default_regular_font == o.default_regular_font &&
+          delete_embedded_binary_objects == o.delete_embedded_binary_objects &&
           gradient_style == o.gradient_style &&
           font_fallback_rules == o.font_fallback_rules &&
           font_subst_rules == o.font_subst_rules &&
@@ -140,7 +150,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, gradient_style, font_fallback_rules, font_subst_rules, format].hash
+      [default_regular_font, delete_embedded_binary_objects, gradient_style, font_fallback_rules, font_subst_rules, format].hash
     end
   end
 end
