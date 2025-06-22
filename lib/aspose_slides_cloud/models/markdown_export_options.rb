@@ -46,6 +46,15 @@ module AsposeSlidesCloud
     # Specifies whether the generated document should include hidden slides. Default is false. 
     attr_accessor :show_hidden_slides
 
+    # true to remove empty or whitespace-only lines from the final Markdown output. Default is false. 
+    attr_accessor :remove_empty_lines
+
+    # Specifies how repeated space characters are preserved to maintain visual alignment. 
+    attr_accessor :handle_repeated_spaces
+
+    # The format of slide number headers. 
+    attr_accessor :slide_number_format
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
@@ -56,6 +65,9 @@ module AsposeSlidesCloud
         :'show_slide_number' => :'ShowSlideNumber',
         :'show_comments' => :'ShowComments',
         :'show_hidden_slides' => :'ShowHiddenSlides',
+        :'remove_empty_lines' => :'RemoveEmptyLines',
+        :'handle_repeated_spaces' => :'HandleRepeatedSpaces',
+        :'slide_number_format' => :'SlideNumberFormat',
       })
     end
 
@@ -69,6 +81,9 @@ module AsposeSlidesCloud
         :'show_slide_number' => :'BOOLEAN',
         :'show_comments' => :'BOOLEAN',
         :'show_hidden_slides' => :'BOOLEAN',
+        :'remove_empty_lines' => :'BOOLEAN',
+        :'handle_repeated_spaces' => :'String',
+        :'slide_number_format' => :'String',
       })
     end
 
@@ -104,6 +119,18 @@ module AsposeSlidesCloud
       if attributes.has_key?(:'ShowHiddenSlides')
         self.show_hidden_slides = attributes[:'ShowHiddenSlides']
       end
+
+      if attributes.has_key?(:'RemoveEmptyLines')
+        self.remove_empty_lines = attributes[:'RemoveEmptyLines']
+      end
+
+      if attributes.has_key?(:'HandleRepeatedSpaces')
+        self.handle_repeated_spaces = attributes[:'HandleRepeatedSpaces']
+      end
+
+      if attributes.has_key?(:'SlideNumberFormat')
+        self.slide_number_format = attributes[:'SlideNumberFormat']
+      end
       self.format = 'md'
     end
 
@@ -124,6 +151,8 @@ module AsposeSlidesCloud
       return false unless flavor_validator.valid?(@flavor)
       new_line_type_validator = EnumAttributeValidator.new('String', ['Windows', 'Unix', 'Mac'])
       return false unless new_line_type_validator.valid?(@new_line_type)
+      handle_repeated_spaces_validator = EnumAttributeValidator.new('String', ['None', 'AlternateSpacesToNbsp', 'MultipleSpacesToNbsp'])
+      return false unless handle_repeated_spaces_validator.valid?(@handle_repeated_spaces)
       true
     end
 
@@ -157,6 +186,16 @@ module AsposeSlidesCloud
       @new_line_type = new_line_type
     end
 
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] handle_repeated_spaces Object to be assigned
+    def handle_repeated_spaces=(handle_repeated_spaces)
+      validator = EnumAttributeValidator.new('String', ['None', 'AlternateSpacesToNbsp', 'MultipleSpacesToNbsp'])
+      unless validator.valid?(handle_repeated_spaces)
+        fail ArgumentError, 'invalid value for "handle_repeated_spaces", must be one of #{validator.allowable_values}.'
+      end
+      @handle_repeated_spaces = handle_repeated_spaces
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -167,6 +206,7 @@ module AsposeSlidesCloud
           gradient_style == o.gradient_style &&
           font_fallback_rules == o.font_fallback_rules &&
           font_subst_rules == o.font_subst_rules &&
+          skip_java_script_links == o.skip_java_script_links &&
           format == o.format &&
           export_type == o.export_type &&
           flavor == o.flavor &&
@@ -174,7 +214,10 @@ module AsposeSlidesCloud
           images_save_folder_name == o.images_save_folder_name &&
           show_slide_number == o.show_slide_number &&
           show_comments == o.show_comments &&
-          show_hidden_slides == o.show_hidden_slides
+          show_hidden_slides == o.show_hidden_slides &&
+          remove_empty_lines == o.remove_empty_lines &&
+          handle_repeated_spaces == o.handle_repeated_spaces &&
+          slide_number_format == o.slide_number_format
     end
 
     # @see the `==` method
@@ -186,7 +229,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, delete_embedded_binary_objects, gradient_style, font_fallback_rules, font_subst_rules, format, export_type, flavor, new_line_type, images_save_folder_name, show_slide_number, show_comments, show_hidden_slides].hash
+      [default_regular_font, delete_embedded_binary_objects, gradient_style, font_fallback_rules, font_subst_rules, skip_java_script_links, format, export_type, flavor, new_line_type, images_save_folder_name, show_slide_number, show_comments, show_hidden_slides, remove_empty_lines, handle_repeated_spaces, slide_number_format].hash
     end
   end
 end

@@ -96,7 +96,7 @@ module AsposeSlidesCloud
     def valid?
       return false if !super
       return false if @format.nil?
-      format_validator = EnumAttributeValidator.new('String', ['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'])
+      format_validator = EnumAttributeValidator.new('String', ['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg', 'Emf'])
       return false unless format_validator.valid?(@format)
       true
     end
@@ -104,7 +104,7 @@ module AsposeSlidesCloud
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] format Object to be assigned
     def format=(format)
-      validator = EnumAttributeValidator.new('String', ['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'])
+      validator = EnumAttributeValidator.new('String', ['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg', 'Emf'])
       unless validator.valid?(format)
         fail ArgumentError, 'invalid value for "format", must be one of #{validator.allowable_values}.'
       end

@@ -67,6 +67,12 @@ module AsposeSlidesCloud
     # SVG image data.
     attr_accessor :svg_data
 
+    # true to delete picture cropped areas on save.
+    attr_accessor :delete_picture_cropped_areas
+
+    # true to compress the picture image with the specified resolution (in dpi) on save.
+    attr_accessor :resolution
+
     # Fill mode.
     attr_accessor :picture_fill_mode
 
@@ -90,6 +96,8 @@ module AsposeSlidesCloud
         :'image' => :'Image',
         :'base64_data' => :'Base64Data',
         :'svg_data' => :'SvgData',
+        :'delete_picture_cropped_areas' => :'DeletePictureCroppedAreas',
+        :'resolution' => :'Resolution',
         :'picture_fill_mode' => :'PictureFillMode',
         :'image_transform_list' => :'ImageTransformList',
       })
@@ -112,6 +120,8 @@ module AsposeSlidesCloud
         :'image' => :'ResourceUri',
         :'base64_data' => :'String',
         :'svg_data' => :'String',
+        :'delete_picture_cropped_areas' => :'BOOLEAN',
+        :'resolution' => :'Float',
         :'picture_fill_mode' => :'String',
         :'image_transform_list' => :'Array<ImageTransformEffect>',
       })
@@ -176,6 +186,14 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'SvgData')
         self.svg_data = attributes[:'SvgData']
+      end
+
+      if attributes.has_key?(:'DeletePictureCroppedAreas')
+        self.delete_picture_cropped_areas = attributes[:'DeletePictureCroppedAreas']
+      end
+
+      if attributes.has_key?(:'Resolution')
+        self.resolution = attributes[:'Resolution']
       end
 
       if attributes.has_key?(:'PictureFillMode')
@@ -290,6 +308,8 @@ module AsposeSlidesCloud
           image == o.image &&
           base64_data == o.base64_data &&
           svg_data == o.svg_data &&
+          delete_picture_cropped_areas == o.delete_picture_cropped_areas &&
+          resolution == o.resolution &&
           picture_fill_mode == o.picture_fill_mode &&
           image_transform_list == o.image_transform_list
     end
@@ -303,7 +323,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, crop_bottom, crop_left, crop_right, crop_top, dpi, tile_offset_x, tile_offset_y, tile_scale_x, tile_scale_y, tile_alignment, tile_flip, image, base64_data, svg_data, picture_fill_mode, image_transform_list].hash
+      [type, crop_bottom, crop_left, crop_right, crop_top, dpi, tile_offset_x, tile_offset_y, tile_scale_x, tile_scale_y, tile_alignment, tile_flip, image, base64_data, svg_data, delete_picture_cropped_areas, resolution, picture_fill_mode, image_transform_list].hash
     end
   end
 end

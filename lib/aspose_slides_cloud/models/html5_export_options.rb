@@ -35,10 +35,13 @@ module AsposeSlidesCloud
     attr_accessor :embed_images
 
     # Slides layouting options
-    attr_accessor :notes_comments_layouting
+    attr_accessor :slides_layout_options
 
     # Path to custom templates
     attr_accessor :templates_path
+
+    # true to disable ligatures in the rendered output.
+    attr_accessor :disable_font_ligatures
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -46,8 +49,9 @@ module AsposeSlidesCloud
         :'animate_transitions' => :'AnimateTransitions',
         :'animate_shapes' => :'AnimateShapes',
         :'embed_images' => :'EmbedImages',
-        :'notes_comments_layouting' => :'NotesCommentsLayouting',
+        :'slides_layout_options' => :'SlidesLayoutOptions',
         :'templates_path' => :'TemplatesPath',
+        :'disable_font_ligatures' => :'DisableFontLigatures',
       })
     end
 
@@ -57,8 +61,9 @@ module AsposeSlidesCloud
         :'animate_transitions' => :'BOOLEAN',
         :'animate_shapes' => :'BOOLEAN',
         :'embed_images' => :'BOOLEAN',
-        :'notes_comments_layouting' => :'NotesCommentsLayoutingOptions',
+        :'slides_layout_options' => :'SlidesLayoutOptions',
         :'templates_path' => :'String',
+        :'disable_font_ligatures' => :'BOOLEAN',
       })
     end
 
@@ -79,12 +84,16 @@ module AsposeSlidesCloud
         self.embed_images = attributes[:'EmbedImages']
       end
 
-      if attributes.has_key?(:'NotesCommentsLayouting')
-        self.notes_comments_layouting = attributes[:'NotesCommentsLayouting']
+      if attributes.has_key?(:'SlidesLayoutOptions')
+        self.slides_layout_options = attributes[:'SlidesLayoutOptions']
       end
 
       if attributes.has_key?(:'TemplatesPath')
         self.templates_path = attributes[:'TemplatesPath']
+      end
+
+      if attributes.has_key?(:'DisableFontLigatures')
+        self.disable_font_ligatures = attributes[:'DisableFontLigatures']
       end
       self.format = 'html5'
     end
@@ -113,12 +122,14 @@ module AsposeSlidesCloud
           gradient_style == o.gradient_style &&
           font_fallback_rules == o.font_fallback_rules &&
           font_subst_rules == o.font_subst_rules &&
+          skip_java_script_links == o.skip_java_script_links &&
           format == o.format &&
           animate_transitions == o.animate_transitions &&
           animate_shapes == o.animate_shapes &&
           embed_images == o.embed_images &&
-          notes_comments_layouting == o.notes_comments_layouting &&
-          templates_path == o.templates_path
+          slides_layout_options == o.slides_layout_options &&
+          templates_path == o.templates_path &&
+          disable_font_ligatures == o.disable_font_ligatures
     end
 
     # @see the `==` method
@@ -130,7 +141,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, delete_embedded_binary_objects, gradient_style, font_fallback_rules, font_subst_rules, format, animate_transitions, animate_shapes, embed_images, notes_comments_layouting, templates_path].hash
+      [default_regular_font, delete_embedded_binary_objects, gradient_style, font_fallback_rules, font_subst_rules, skip_java_script_links, format, animate_transitions, animate_shapes, embed_images, slides_layout_options, templates_path, disable_font_ligatures].hash
     end
   end
 end

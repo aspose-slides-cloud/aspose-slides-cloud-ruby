@@ -23,32 +23,22 @@ SOFTWARE.
 require 'date'
 
 module AsposeSlidesCloud
-  # Save slide task.
-  class Save < Task
-    # Format.
-    attr_accessor :format
-
-    # Output file.
-    attr_accessor :output
-
-    # Save options.
-    attr_accessor :options
+  # Represents list of Links to Paragraphs resources
+  class CaptionTracks < ResourceBase
+    # List of caption tracks.
+    attr_accessor :items
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
-        :'format' => :'Format',
-        :'output' => :'Output',
-        :'options' => :'Options',
+        :'items' => :'Items',
       })
     end
 
     # Attribute type mapping.
     def self.swagger_types
       super.merge({
-        :'format' => :'String',
-        :'output' => :'OutputFile',
-        :'options' => :'ExportOptions',
+        :'items' => :'Array<CaptionTrack>',
       })
     end
 
@@ -57,28 +47,17 @@ module AsposeSlidesCloud
     def initialize(attributes = {})
       super
 
-      if attributes.has_key?(:'Format')
-        self.format = attributes[:'Format']
+      if attributes.has_key?(:'Items')
+        if (value = attributes[:'Items']).is_a?(Array)
+          self.items = value
+        end
       end
-
-      if attributes.has_key?(:'Output')
-        self.output = attributes[:'Output']
-      end
-
-      if attributes.has_key?(:'Options')
-        self.options = attributes[:'Options']
-      end
-      self.type = 'Save'
     end
 
     # Show invalid properties with the reasons. Usually used together with valid?
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = super
-      if @format.nil?
-        invalid_properties.push('invalid value for "format", format cannot be nil.')
-      end
-
       invalid_properties
     end
 
@@ -86,20 +65,7 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      return false if @format.nil?
-      format_validator = EnumAttributeValidator.new('String', ['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp', 'Xaml', 'Mpeg4', 'Md', 'Xml', 'Emf'])
-      return false unless format_validator.valid?(@format)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] format Object to be assigned
-    def format=(format)
-      validator = EnumAttributeValidator.new('String', ['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp', 'Xaml', 'Mpeg4', 'Md', 'Xml', 'Emf'])
-      unless validator.valid?(format)
-        fail ArgumentError, 'invalid value for "format", must be one of #{validator.allowable_values}.'
-      end
-      @format = format
     end
 
     # Checks equality by comparing each attribute.
@@ -107,10 +73,9 @@ module AsposeSlidesCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          type == o.type &&
-          format == o.format &&
-          output == o.output &&
-          options == o.options
+          self_uri == o.self_uri &&
+          alternate_links == o.alternate_links &&
+          items == o.items
     end
 
     # @see the `==` method
@@ -122,7 +87,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [type, format, output, options].hash
+      [self_uri, alternate_links, items].hash
     end
   end
 end

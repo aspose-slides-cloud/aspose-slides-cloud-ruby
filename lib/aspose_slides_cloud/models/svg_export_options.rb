@@ -58,6 +58,9 @@ module AsposeSlidesCloud
     # Determines whether to perform the specified rotation of the shape when rendering or not.
     attr_accessor :use_frame_rotation
 
+    # true to disable ligatures in the rendered output.
+    attr_accessor :disable_font_ligatures
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
@@ -72,6 +75,7 @@ module AsposeSlidesCloud
         :'external_fonts_handling' => :'ExternalFontsHandling',
         :'use_frame_size' => :'UseFrameSize',
         :'use_frame_rotation' => :'UseFrameRotation',
+        :'disable_font_ligatures' => :'DisableFontLigatures',
       })
     end
 
@@ -89,6 +93,7 @@ module AsposeSlidesCloud
         :'external_fonts_handling' => :'String',
         :'use_frame_size' => :'BOOLEAN',
         :'use_frame_rotation' => :'BOOLEAN',
+        :'disable_font_ligatures' => :'BOOLEAN',
       })
     end
 
@@ -139,6 +144,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'UseFrameRotation')
         self.use_frame_rotation = attributes[:'UseFrameRotation']
+      end
+
+      if attributes.has_key?(:'DisableFontLigatures')
+        self.disable_font_ligatures = attributes[:'DisableFontLigatures']
       end
       self.format = 'svg'
     end
@@ -191,6 +200,7 @@ module AsposeSlidesCloud
           gradient_style == o.gradient_style &&
           font_fallback_rules == o.font_fallback_rules &&
           font_subst_rules == o.font_subst_rules &&
+          skip_java_script_links == o.skip_java_script_links &&
           format == o.format &&
           vectorize_text == o.vectorize_text &&
           metafile_rasterization_dpi == o.metafile_rasterization_dpi &&
@@ -202,7 +212,8 @@ module AsposeSlidesCloud
           delete_pictures_cropped_areas == o.delete_pictures_cropped_areas &&
           external_fonts_handling == o.external_fonts_handling &&
           use_frame_size == o.use_frame_size &&
-          use_frame_rotation == o.use_frame_rotation
+          use_frame_rotation == o.use_frame_rotation &&
+          disable_font_ligatures == o.disable_font_ligatures
     end
 
     # @see the `==` method
@@ -214,7 +225,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, delete_embedded_binary_objects, gradient_style, font_fallback_rules, font_subst_rules, format, vectorize_text, metafile_rasterization_dpi, disable3_d_text, disable_gradient_split, disable_line_end_cropping, jpeg_quality, pictures_compression, delete_pictures_cropped_areas, external_fonts_handling, use_frame_size, use_frame_rotation].hash
+      [default_regular_font, delete_embedded_binary_objects, gradient_style, font_fallback_rules, font_subst_rules, skip_java_script_links, format, vectorize_text, metafile_rasterization_dpi, disable3_d_text, disable_gradient_split, disable_line_end_cropping, jpeg_quality, pictures_compression, delete_pictures_cropped_areas, external_fonts_handling, use_frame_size, use_frame_rotation, disable_font_ligatures].hash
     end
   end
 end

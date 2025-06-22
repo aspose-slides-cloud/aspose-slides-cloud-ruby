@@ -49,6 +49,9 @@ module AsposeSlidesCloud
     # Slides layouting options
     attr_accessor :slides_layout_options
 
+    # true to disable ligatures in the rendered output.
+    attr_accessor :disable_font_ligatures
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
@@ -60,6 +63,7 @@ module AsposeSlidesCloud
         :'pictures_compression' => :'PicturesCompression',
         :'delete_pictures_cropped_areas' => :'DeletePicturesCroppedAreas',
         :'slides_layout_options' => :'SlidesLayoutOptions',
+        :'disable_font_ligatures' => :'DisableFontLigatures',
       })
     end
 
@@ -74,6 +78,7 @@ module AsposeSlidesCloud
         :'pictures_compression' => :'String',
         :'delete_pictures_cropped_areas' => :'BOOLEAN',
         :'slides_layout_options' => :'SlidesLayoutOptions',
+        :'disable_font_ligatures' => :'BOOLEAN',
       })
     end
 
@@ -112,6 +117,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'SlidesLayoutOptions')
         self.slides_layout_options = attributes[:'SlidesLayoutOptions']
+      end
+
+      if attributes.has_key?(:'DisableFontLigatures')
+        self.disable_font_ligatures = attributes[:'DisableFontLigatures']
       end
       self.format = 'html'
     end
@@ -152,6 +161,7 @@ module AsposeSlidesCloud
           gradient_style == o.gradient_style &&
           font_fallback_rules == o.font_fallback_rules &&
           font_subst_rules == o.font_subst_rules &&
+          skip_java_script_links == o.skip_java_script_links &&
           format == o.format &&
           save_as_zip == o.save_as_zip &&
           sub_directory_name == o.sub_directory_name &&
@@ -160,7 +170,8 @@ module AsposeSlidesCloud
           jpeg_quality == o.jpeg_quality &&
           pictures_compression == o.pictures_compression &&
           delete_pictures_cropped_areas == o.delete_pictures_cropped_areas &&
-          slides_layout_options == o.slides_layout_options
+          slides_layout_options == o.slides_layout_options &&
+          disable_font_ligatures == o.disable_font_ligatures
     end
 
     # @see the `==` method
@@ -172,7 +183,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, delete_embedded_binary_objects, gradient_style, font_fallback_rules, font_subst_rules, format, save_as_zip, sub_directory_name, show_hidden_slides, svg_responsive_layout, jpeg_quality, pictures_compression, delete_pictures_cropped_areas, slides_layout_options].hash
+      [default_regular_font, delete_embedded_binary_objects, gradient_style, font_fallback_rules, font_subst_rules, skip_java_script_links, format, save_as_zip, sub_directory_name, show_hidden_slides, svg_responsive_layout, jpeg_quality, pictures_compression, delete_pictures_cropped_areas, slides_layout_options, disable_font_ligatures].hash
     end
   end
 end

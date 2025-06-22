@@ -52,6 +52,7 @@ module AsposeSlidesCloud
     MPEG4 = 'Mpeg4'.freeze
     MD = 'Md'.freeze
     XML = 'Xml'.freeze
+    EMF = 'Emf'.freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

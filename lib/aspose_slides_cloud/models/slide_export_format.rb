@@ -50,6 +50,7 @@ module AsposeSlidesCloud
     HTML5 = 'Html5'.freeze
     MD = 'Md'.freeze
     XML = 'Xml'.freeze
+    EMF = 'Emf'.freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

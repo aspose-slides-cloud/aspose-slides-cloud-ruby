@@ -429,8 +429,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.convert"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp', 'Xaml', 'Mpeg4', 'Md', 'Xml'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp, Xaml, Mpeg4, Md, Xml"
+      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp', 'Xaml', 'Mpeg4', 'Md', 'Xml', 'Emf'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp, Xaml, Mpeg4, Md, Xml, Emf"
       end
       # resource path
       local_var_path = '/slides/convert/{format}'
@@ -506,8 +506,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.convert_and_save"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp', 'Xaml', 'Mpeg4', 'Md', 'Xml'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp, Xaml, Mpeg4, Md, Xml"
+      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp', 'Xaml', 'Mpeg4', 'Md', 'Xml', 'Emf'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp, Xaml, Mpeg4, Md, Xml, Emf"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && out_path.nil?
@@ -3281,6 +3281,86 @@ module AsposeSlidesCloud
         :return_type => 'VbaModule')
       return data, status_code, headers
     end
+    # Create video captions track.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must refer to a picture frame).
+    # @param label Caption track label.
+    # @param data Caption track data.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Presentation storage.
+    def create_video_caption_track(name, slide_index, shape_index, label, data = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = create_video_caption_track_with_http_info(name, slide_index, shape_index, label, data, password, folder, storage)
+      data
+    end
+
+    # Create video captions track.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must refer to a picture frame).
+    # @param label Caption track label.
+    # @param data Caption track data.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Presentation storage.
+    def create_video_caption_track_with_http_info(name, slide_index, shape_index, label, data = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.create_video_caption_track ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.create_video_caption_track"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.create_video_caption_track"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.create_video_caption_track"
+      end
+      # verify the required parameter 'label' is set
+      if @api_client.config.client_side_validation && label.nil?
+        fail ArgumentError, "Missing the required parameter 'label' when calling SlidesApi.create_video_caption_track"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'label'] = @api_client.prepare_for_query(label) unless label.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(data)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'CaptionTrack')
+      return data, status_code, headers
+    end
     # Adds a text watermark to each slide of the presentation. Text watermark can be setup via method arguments or withing Shape DTO for detailed customization. Both options are applicable simultaneously. 
     # @param name Document name.
     # @param shape Shape DTO
@@ -4821,76 +4901,6 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'Paragraphs')
-      return data, status_code, headers
-    end
-    # Deletes cropped areas of a pictire.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index (must refer to a picture frame).
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Presentation storage.
-    def delete_picture_cropped_areas(name, slide_index, shape_index, password = nil, folder = nil, storage = nil)
-      delete_picture_cropped_areas_with_http_info(name, slide_index, shape_index, password, folder, storage)
-      nil
-    end
-
-    # Deletes cropped areas of a pictire.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index (must refer to a picture frame).
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Presentation storage.
-    def delete_picture_cropped_areas_with_http_info(name, slide_index, shape_index, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_picture_cropped_areas ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_picture_cropped_areas"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_picture_cropped_areas"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_picture_cropped_areas"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/pictureCroppedAreas'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
-      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = nil
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names)
       return data, status_code, headers
     end
     # Remove a portion.
@@ -7364,6 +7374,153 @@ module AsposeSlidesCloud
         :return_type => 'VbaProject')
       return data, status_code, headers
     end
+    # Delete video captions track.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must refer to a video frame).
+    # @param captions_index Captions track index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Presentation storage.
+    def delete_video_caption_track(name, slide_index, shape_index, captions_index, password = nil, folder = nil, storage = nil)
+      delete_video_caption_track_with_http_info(name, slide_index, shape_index, captions_index, password, folder, storage)
+      nil
+    end
+
+    # Delete video captions track.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must refer to a video frame).
+    # @param captions_index Captions track index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Presentation storage.
+    def delete_video_caption_track_with_http_info(name, slide_index, shape_index, captions_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_video_caption_track ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_video_caption_track"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_video_caption_track"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_video_caption_track"
+      end
+      # verify the required parameter 'captions_index' is set
+      if @api_client.config.client_side_validation && captions_index.nil?
+        fail ArgumentError, "Missing the required parameter 'captions_index' when calling SlidesApi.delete_video_caption_track"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks/{captionsIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'captionsIndex', captions_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names)
+      return data, status_code, headers
+    end
+    # Delete all video captions tracks.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must refer to a video frame).
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Presentation storage.
+    def delete_video_caption_tracks(name, slide_index, shape_index, password = nil, folder = nil, storage = nil)
+      delete_video_caption_tracks_with_http_info(name, slide_index, shape_index, password, folder, storage)
+      nil
+    end
+
+    # Delete all video captions tracks.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must refer to a video frame).
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Presentation storage.
+    def delete_video_caption_tracks_with_http_info(name, slide_index, shape_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_video_caption_tracks ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_video_caption_tracks"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_video_caption_tracks"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_video_caption_tracks"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names)
+      return data, status_code, headers
+    end
     # Removes shapes with name \"watermark\" from the presentation.
     # @param name Document name.
     # @param shape_name Name of the watermark shape. If null, default value \"watermark\"is used.
@@ -7540,8 +7697,9 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def download_image(name, index, format, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = download_image_with_http_info(name, index, format, password, folder, storage)
+    # @param quality Image quality (0 to 100; has effect only on Jpeg format).
+    def download_image(name, index, format, password = nil, folder = nil, storage = nil, quality = nil)
+      data, _status_code, _headers = download_image_with_http_info(name, index, format, password, folder, storage, quality)
       data
     end
 
@@ -7552,7 +7710,8 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def download_image_with_http_info(name, index, format, password = nil, folder = nil, storage = nil)
+    # @param quality Image quality (0 to 100; has effect only on Jpeg format).
+    def download_image_with_http_info(name, index, format, password = nil, folder = nil, storage = nil, quality = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.download_image ...'
       end
@@ -7583,6 +7742,7 @@ module AsposeSlidesCloud
       query_params = {}
       query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
       query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'quality'] = @api_client.prepare_for_query(quality) unless quality.nil?
 
       # header parameters
       header_params = {}
@@ -7737,8 +7897,9 @@ module AsposeSlidesCloud
     # @param index Image index.
     # @param format Export format (png, jpg, gif).
     # @param password Document password.
-    def download_image_online(document, index, format, password = nil)
-      data, _status_code, _headers = download_image_online_with_http_info(document, index, format, password)
+    # @param quality Image quality (0 to 100; has effect only on Jpeg format).
+    def download_image_online(document, index, format, password = nil, quality = nil)
+      data, _status_code, _headers = download_image_online_with_http_info(document, index, format, password, quality)
       data
     end
 
@@ -7747,7 +7908,8 @@ module AsposeSlidesCloud
     # @param index Image index.
     # @param format Export format (png, jpg, gif).
     # @param password Document password.
-    def download_image_online_with_http_info(document, index, format, password = nil)
+    # @param quality Image quality (0 to 100; has effect only on Jpeg format).
+    def download_image_online_with_http_info(document, index, format, password = nil, quality = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.download_image_online ...'
       end
@@ -7775,6 +7937,7 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
+      query_params[:'quality'] = @api_client.prepare_for_query(quality) unless quality.nil?
 
       # header parameters
       header_params = {}
@@ -7809,8 +7972,9 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def download_images(name, format, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = download_images_with_http_info(name, format, password, folder, storage)
+    # @param quality Image quality (0 to 100; has effect only on Jpeg format).
+    def download_images(name, format, password = nil, folder = nil, storage = nil, quality = nil)
+      data, _status_code, _headers = download_images_with_http_info(name, format, password, folder, storage, quality)
       data
     end
 
@@ -7820,7 +7984,8 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def download_images_with_http_info(name, format, password = nil, folder = nil, storage = nil)
+    # @param quality Image quality (0 to 100; has effect only on Jpeg format).
+    def download_images_with_http_info(name, format, password = nil, folder = nil, storage = nil, quality = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.download_images ...'
       end
@@ -7846,6 +8011,7 @@ module AsposeSlidesCloud
       query_params = {}
       query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
       query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'quality'] = @api_client.prepare_for_query(quality) unless quality.nil?
 
       # header parameters
       header_params = {}
@@ -7985,8 +8151,9 @@ module AsposeSlidesCloud
     # @param document Document data.
     # @param format Export format (png, jpg, gif).
     # @param password Document password.
-    def download_images_online(document, format, password = nil)
-      data, _status_code, _headers = download_images_online_with_http_info(document, format, password)
+    # @param quality Image quality (0 to 100; has effect only on Jpeg format).
+    def download_images_online(document, format, password = nil, quality = nil)
+      data, _status_code, _headers = download_images_online_with_http_info(document, format, password, quality)
       data
     end
 
@@ -7994,7 +8161,8 @@ module AsposeSlidesCloud
     # @param document Document data.
     # @param format Export format (png, jpg, gif).
     # @param password Document password.
-    def download_images_online_with_http_info(document, format, password = nil)
+    # @param quality Image quality (0 to 100; has effect only on Jpeg format).
+    def download_images_online_with_http_info(document, format, password = nil, quality = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.download_images_online ...'
       end
@@ -8017,6 +8185,7 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
+      query_params[:'quality'] = @api_client.prepare_for_query(quality) unless quality.nil?
 
       # header parameters
       header_params = {}
@@ -8342,8 +8511,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.download_presentation"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp', 'Xaml', 'Mpeg4', 'Md', 'Xml'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp, Xaml, Mpeg4, Md, Xml"
+      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp', 'Xaml', 'Mpeg4', 'Md', 'Xml', 'Emf'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp, Xaml, Mpeg4, Md, Xml, Emf"
       end
       # resource path
       local_var_path = '/slides/{name}/{format}'
@@ -8436,8 +8605,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.download_shape"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg', 'Emf'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg, Emf"
       end
       if @api_client.config.client_side_validation && bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(bounds)==0 }
         fail ArgumentError, "Invalid value for parameter bounds: " + bounds + ". Must be one of Slide, Shape, Appearance"
@@ -8504,8 +8673,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.download_shape_from_dto"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg', 'Emf'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg, Emf"
       end
       # verify the required parameter 'dto' is set
       if @api_client.config.client_side_validation && dto.nil?
@@ -8592,8 +8761,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.download_shape_online"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg', 'Emf'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg, Emf"
       end
       if @api_client.config.client_side_validation && bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(bounds)==0 }
         fail ArgumentError, "Invalid value for parameter bounds: " + bounds + ". Must be one of Slide, Shape, Appearance"
@@ -8684,8 +8853,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.download_slide"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp', 'Xaml', 'Html5', 'Md', 'Xml'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp, Xaml, Html5, Md, Xml"
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp', 'Xaml', 'Html5', 'Md', 'Xml', 'Emf'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp, Xaml, Html5, Md, Xml, Emf"
       end
       # resource path
       local_var_path = '/slides/{name}/slides/{slideIndex}/{format}'
@@ -8768,8 +8937,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.download_slide_online"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp', 'Xaml', 'Html5', 'Md', 'Xml'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp, Xaml, Html5, Md, Xml"
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp', 'Xaml', 'Html5', 'Md', 'Xml', 'Emf'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp, Xaml, Html5, Md, Xml, Emf"
       end
       # resource path
       local_var_path = '/slides/slides/{slideIndex}/{format}'
@@ -8875,8 +9044,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.download_special_slide_shape"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg', 'Emf'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg, Emf"
       end
       if @api_client.config.client_side_validation && bounds && !['Slide', 'Shape', 'Appearance'].any?{ |s| s.casecmp(bounds)==0 }
         fail ArgumentError, "Invalid value for parameter bounds: " + bounds + ". Must be one of Slide, Shape, Appearance"
@@ -13198,6 +13367,80 @@ module AsposeSlidesCloud
         :return_type => 'VbaProject')
       return data, status_code, headers
     end
+    # Gets video captions tracks.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must refer to a picture frame).
+    # @param include_data true to include caption data string values in the response.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Presentation storage.
+    def get_video_caption_tracks(name, slide_index, shape_index, include_data = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_video_caption_tracks_with_http_info(name, slide_index, shape_index, include_data, password, folder, storage)
+      data
+    end
+
+    # Gets video captions tracks.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must refer to a picture frame).
+    # @param include_data true to include caption data string values in the response.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Presentation storage.
+    def get_video_caption_tracks_with_http_info(name, slide_index, shape_index, include_data = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_video_caption_tracks ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_video_caption_tracks"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_video_caption_tracks"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_video_caption_tracks"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'includeData'] = @api_client.prepare_for_query(include_data) unless include_data.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'CaptionTracks')
+      return data, status_code, headers
+    end
     # Read presentation view properties.
     # @param name Document name.
     # @param password Document password.
@@ -13591,8 +13834,10 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def import_from_html(name, html = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = import_from_html_with_http_info(name, html, password, folder, storage)
+    # @param position Slide index before which the HTML should be added (add to the end by default).
+    # @param use_slide_with_index_as_start true to insert data starting from an empty space on the slide with the specified index; false to add data to the created slides.
+    def import_from_html(name, html = nil, password = nil, folder = nil, storage = nil, position = nil, use_slide_with_index_as_start = nil)
+      data, _status_code, _headers = import_from_html_with_http_info(name, html, password, folder, storage, position, use_slide_with_index_as_start)
       data
     end
 
@@ -13602,7 +13847,9 @@ module AsposeSlidesCloud
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def import_from_html_with_http_info(name, html = nil, password = nil, folder = nil, storage = nil)
+    # @param position Slide index before which the HTML should be added (add to the end by default).
+    # @param use_slide_with_index_as_start true to insert data starting from an empty space on the slide with the specified index; false to add data to the created slides.
+    def import_from_html_with_http_info(name, html = nil, password = nil, folder = nil, storage = nil, position = nil, use_slide_with_index_as_start = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.import_from_html ...'
       end
@@ -13619,6 +13866,8 @@ module AsposeSlidesCloud
       query_params = {}
       query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
       query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+      query_params[:'position'] = @api_client.prepare_for_query(position) unless position.nil?
+      query_params[:'useSlideWithIndexAsStart'] = @api_client.prepare_for_query(use_slide_with_index_as_start) unless use_slide_with_index_as_start.nil?
 
       # header parameters
       header_params = {}
@@ -15700,8 +15949,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.save_presentation"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp', 'Xaml', 'Mpeg4', 'Md', 'Xml'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp, Xaml, Mpeg4, Md, Xml"
+      if @api_client.config.client_side_validation && !['Pdf', 'Xps', 'Tiff', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Pot', 'Potx', 'Potm', 'Html', 'Html5', 'Swf', 'Svg', 'Jpeg', 'Png', 'Gif', 'Bmp', 'Fodp', 'Xaml', 'Mpeg4', 'Md', 'Xml', 'Emf'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Pdf, Xps, Tiff, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Pot, Potx, Potm, Html, Html5, Swf, Svg, Jpeg, Png, Gif, Bmp, Fodp, Xaml, Mpeg4, Md, Xml, Emf"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && out_path.nil?
@@ -15800,8 +16049,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.save_shape"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg', 'Emf'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg, Emf"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && out_path.nil?
@@ -15904,8 +16153,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.save_shape_online"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg', 'Emf'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg, Emf"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && out_path.nil?
@@ -16002,8 +16251,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.save_slide"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp', 'Xaml', 'Html5', 'Md', 'Xml'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp, Xaml, Html5, Md, Xml"
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp', 'Xaml', 'Html5', 'Md', 'Xml', 'Emf'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp, Xaml, Html5, Md, Xml, Emf"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && out_path.nil?
@@ -16092,8 +16341,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.save_slide_online"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp', 'Xaml', 'Html5', 'Md', 'Xml'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp, Xaml, Html5, Md, Xml"
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp', 'Xaml', 'Html5', 'Md', 'Xml', 'Emf'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp, Xaml, Html5, Md, Xml, Emf"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && out_path.nil?
@@ -16205,8 +16454,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.save_special_slide_shape"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg"
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Svg', 'Emf'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Svg, Emf"
       end
       # verify the required parameter 'out_path' is set
       if @api_client.config.client_side_validation && out_path.nil?
@@ -17983,8 +18232,8 @@ module AsposeSlidesCloud
       if @api_client.config.client_side_validation && name.nil?
         fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.split"
       end
-      if @api_client.config.client_side_validation && format && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp', 'Xaml', 'Html5', 'Md', 'Xml'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp, Xaml, Html5, Md, Xml"
+      if @api_client.config.client_side_validation && format && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp', 'Xaml', 'Html5', 'Md', 'Xml', 'Emf'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp, Xaml, Html5, Md, Xml, Emf"
       end
       # resource path
       local_var_path = '/slides/{name}/split'
@@ -18069,8 +18318,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.split_and_save_online"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp', 'Xaml', 'Html5', 'Md', 'Xml'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp, Xaml, Html5, Md, Xml"
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp', 'Xaml', 'Html5', 'Md', 'Xml', 'Emf'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp, Xaml, Html5, Md, Xml, Emf"
       end
       # resource path
       local_var_path = '/slides/split/{format}'
@@ -18154,8 +18403,8 @@ module AsposeSlidesCloud
         fail ArgumentError, "Missing the required parameter 'format' when calling SlidesApi.split_online"
       end
       # verify enum value
-      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp', 'Xaml', 'Html5', 'Md', 'Xml'].any?{ |s| s.casecmp(format)==0 }
-        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp, Xaml, Html5, Md, Xml"
+      if @api_client.config.client_side_validation && !['Jpeg', 'Png', 'Gif', 'Bmp', 'Tiff', 'Html', 'Pdf', 'Xps', 'Pptx', 'Odp', 'Otp', 'Ppt', 'Pps', 'Ppsx', 'Pptm', 'Ppsm', 'Potx', 'Pot', 'Potm', 'Svg', 'Fodp', 'Xaml', 'Html5', 'Md', 'Xml', 'Emf'].any?{ |s| s.casecmp(format)==0 }
+        fail ArgumentError, "Invalid value for parameter format: " + format + ". Must be one of Jpeg, Png, Gif, Bmp, Tiff, Html, Pdf, Xps, Pptx, Odp, Otp, Ppt, Pps, Ppsx, Pptm, Ppsm, Potx, Pot, Potm, Svg, Fodp, Xaml, Html5, Md, Xml, Emf"
       end
       # resource path
       local_var_path = '/slides/split/{format}'

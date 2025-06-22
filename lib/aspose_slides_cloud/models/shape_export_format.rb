@@ -31,6 +31,7 @@ module AsposeSlidesCloud
     BMP = 'Bmp'.freeze
     TIFF = 'Tiff'.freeze
     SVG = 'Svg'.freeze
+    EMF = 'Emf'.freeze
 
     # Builds the enum from string
     # @param [String] The enum value in the form of the string

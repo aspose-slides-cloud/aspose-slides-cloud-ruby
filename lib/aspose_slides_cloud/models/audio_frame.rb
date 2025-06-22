@@ -52,6 +52,9 @@ module AsposeSlidesCloud
     # Returns or sets the audio volume.
     attr_accessor :volume
 
+    # Audio volume percent.
+    attr_accessor :volume_value
+
     # Audio data encoded in base64.
     attr_accessor :base64_data
 
@@ -60,6 +63,18 @@ module AsposeSlidesCloud
 
     # Determines whether audio is automatically rewound to start after playing.
     attr_accessor :rewind_audio
+
+    # Time duration for the initial fade-in of the media in milliseconds.
+    attr_accessor :fade_in_duration
+
+    # Time duration for the ending fade-out of the media in milliseconds.
+    attr_accessor :fade_out_duration
+
+    # Time duration to be removed from the beginning of the media during playback in milliseconds.
+    attr_accessor :trim_from_start
+
+    # Time duration to be removed from the end of the media during playback in milliseconds.
+    attr_accessor :trim_from_end
 
     # Picture fill format.
     attr_accessor :picture_fill_format
@@ -76,9 +91,14 @@ module AsposeSlidesCloud
         :'play_loop_mode' => :'PlayLoopMode',
         :'play_mode' => :'PlayMode',
         :'volume' => :'Volume',
+        :'volume_value' => :'VolumeValue',
         :'base64_data' => :'Base64Data',
         :'play_across_slides' => :'PlayAcrossSlides',
         :'rewind_audio' => :'RewindAudio',
+        :'fade_in_duration' => :'FadeInDuration',
+        :'fade_out_duration' => :'FadeOutDuration',
+        :'trim_from_start' => :'TrimFromStart',
+        :'trim_from_end' => :'TrimFromEnd',
         :'picture_fill_format' => :'PictureFillFormat',
       })
     end
@@ -95,9 +115,14 @@ module AsposeSlidesCloud
         :'play_loop_mode' => :'BOOLEAN',
         :'play_mode' => :'String',
         :'volume' => :'String',
+        :'volume_value' => :'Float',
         :'base64_data' => :'String',
         :'play_across_slides' => :'BOOLEAN',
         :'rewind_audio' => :'BOOLEAN',
+        :'fade_in_duration' => :'Float',
+        :'fade_out_duration' => :'Float',
+        :'trim_from_start' => :'Float',
+        :'trim_from_end' => :'Float',
         :'picture_fill_format' => :'PictureFill',
       })
     end
@@ -143,6 +168,10 @@ module AsposeSlidesCloud
         self.volume = attributes[:'Volume']
       end
 
+      if attributes.has_key?(:'VolumeValue')
+        self.volume_value = attributes[:'VolumeValue']
+      end
+
       if attributes.has_key?(:'Base64Data')
         self.base64_data = attributes[:'Base64Data']
       end
@@ -153,6 +182,22 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'RewindAudio')
         self.rewind_audio = attributes[:'RewindAudio']
+      end
+
+      if attributes.has_key?(:'FadeInDuration')
+        self.fade_in_duration = attributes[:'FadeInDuration']
+      end
+
+      if attributes.has_key?(:'FadeOutDuration')
+        self.fade_out_duration = attributes[:'FadeOutDuration']
+      end
+
+      if attributes.has_key?(:'TrimFromStart')
+        self.trim_from_start = attributes[:'TrimFromStart']
+      end
+
+      if attributes.has_key?(:'TrimFromEnd')
+        self.trim_from_end = attributes[:'TrimFromEnd']
       end
 
       if attributes.has_key?(:'PictureFillFormat')
@@ -233,9 +278,14 @@ module AsposeSlidesCloud
           play_loop_mode == o.play_loop_mode &&
           play_mode == o.play_mode &&
           volume == o.volume &&
+          volume_value == o.volume_value &&
           base64_data == o.base64_data &&
           play_across_slides == o.play_across_slides &&
           rewind_audio == o.rewind_audio &&
+          fade_in_duration == o.fade_in_duration &&
+          fade_out_duration == o.fade_out_duration &&
+          trim_from_start == o.trim_from_start &&
+          trim_from_end == o.trim_from_end &&
           picture_fill_format == o.picture_fill_format
     end
 
@@ -248,7 +298,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, is_decorative, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, shape_type, audio_cd_end_track, audio_cd_end_track_time, audio_cd_start_track, audio_cd_start_track_time, embedded, hide_at_showing, play_loop_mode, play_mode, volume, base64_data, play_across_slides, rewind_audio, picture_fill_format].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, is_decorative, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, shape_type, audio_cd_end_track, audio_cd_end_track_time, audio_cd_start_track, audio_cd_start_track_time, embedded, hide_at_showing, play_loop_mode, play_mode, volume, volume_value, base64_data, play_across_slides, rewind_audio, fade_in_duration, fade_out_duration, trim_from_start, trim_from_end, picture_fill_format].hash
     end
   end
 end

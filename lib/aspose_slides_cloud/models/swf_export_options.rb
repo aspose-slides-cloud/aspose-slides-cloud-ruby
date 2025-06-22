@@ -70,20 +70,8 @@ module AsposeSlidesCloud
     # Specifies the quality of JPEG images. Default is 95.
     attr_accessor :jpeg_quality
 
-    # Gets or sets the position of the notes on the page.
-    attr_accessor :notes_position
-
-    # Gets or sets the position of the comments on the page.
-    attr_accessor :comments_position
-
-    # Gets or sets the width of the comment output area in pixels (Applies only if comments are displayed on the right).
-    attr_accessor :comments_area_width
-
-    # Gets or sets the color of comments area (Applies only if comments are displayed on the right).
-    attr_accessor :comments_area_color
-
-    # True if comments that have no author are displayed. (Applies only if comments are displayed).
-    attr_accessor :show_comments_by_no_author
+    # Slides layouting options
+    attr_accessor :slides_layout_options
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
@@ -103,11 +91,7 @@ module AsposeSlidesCloud
         :'logo_image' => :'LogoImage',
         :'logo_link' => :'LogoLink',
         :'jpeg_quality' => :'JpegQuality',
-        :'notes_position' => :'NotesPosition',
-        :'comments_position' => :'CommentsPosition',
-        :'comments_area_width' => :'CommentsAreaWidth',
-        :'comments_area_color' => :'CommentsAreaColor',
-        :'show_comments_by_no_author' => :'ShowCommentsByNoAuthor',
+        :'slides_layout_options' => :'SlidesLayoutOptions',
       })
     end
 
@@ -129,11 +113,7 @@ module AsposeSlidesCloud
         :'logo_image' => :'String',
         :'logo_link' => :'String',
         :'jpeg_quality' => :'Integer',
-        :'notes_position' => :'String',
-        :'comments_position' => :'String',
-        :'comments_area_width' => :'Integer',
-        :'comments_area_color' => :'String',
-        :'show_comments_by_no_author' => :'BOOLEAN',
+        :'slides_layout_options' => :'SlidesLayoutOptions',
       })
     end
 
@@ -202,24 +182,8 @@ module AsposeSlidesCloud
         self.jpeg_quality = attributes[:'JpegQuality']
       end
 
-      if attributes.has_key?(:'NotesPosition')
-        self.notes_position = attributes[:'NotesPosition']
-      end
-
-      if attributes.has_key?(:'CommentsPosition')
-        self.comments_position = attributes[:'CommentsPosition']
-      end
-
-      if attributes.has_key?(:'CommentsAreaWidth')
-        self.comments_area_width = attributes[:'CommentsAreaWidth']
-      end
-
-      if attributes.has_key?(:'CommentsAreaColor')
-        self.comments_area_color = attributes[:'CommentsAreaColor']
-      end
-
-      if attributes.has_key?(:'ShowCommentsByNoAuthor')
-        self.show_comments_by_no_author = attributes[:'ShowCommentsByNoAuthor']
+      if attributes.has_key?(:'SlidesLayoutOptions')
+        self.slides_layout_options = attributes[:'SlidesLayoutOptions']
       end
       self.format = 'swf'
     end
@@ -235,31 +199,7 @@ module AsposeSlidesCloud
     # @return true if the model is valid
     def valid?
       return false if !super
-      notes_position_validator = EnumAttributeValidator.new('String', ['None', 'BottomFull', 'BottomTruncated'])
-      return false unless notes_position_validator.valid?(@notes_position)
-      comments_position_validator = EnumAttributeValidator.new('String', ['None', 'Bottom', 'Right'])
-      return false unless comments_position_validator.valid?(@comments_position)
       true
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] notes_position Object to be assigned
-    def notes_position=(notes_position)
-      validator = EnumAttributeValidator.new('String', ['None', 'BottomFull', 'BottomTruncated'])
-      unless validator.valid?(notes_position)
-        fail ArgumentError, 'invalid value for "notes_position", must be one of #{validator.allowable_values}.'
-      end
-      @notes_position = notes_position
-    end
-
-    # Custom attribute writer method checking allowed values (enum).
-    # @param [Object] comments_position Object to be assigned
-    def comments_position=(comments_position)
-      validator = EnumAttributeValidator.new('String', ['None', 'Bottom', 'Right'])
-      unless validator.valid?(comments_position)
-        fail ArgumentError, 'invalid value for "comments_position", must be one of #{validator.allowable_values}.'
-      end
-      @comments_position = comments_position
     end
 
     # Checks equality by comparing each attribute.
@@ -272,6 +212,7 @@ module AsposeSlidesCloud
           gradient_style == o.gradient_style &&
           font_fallback_rules == o.font_fallback_rules &&
           font_subst_rules == o.font_subst_rules &&
+          skip_java_script_links == o.skip_java_script_links &&
           format == o.format &&
           show_hidden_slides == o.show_hidden_slides &&
           compressed == o.compressed &&
@@ -288,11 +229,7 @@ module AsposeSlidesCloud
           logo_image == o.logo_image &&
           logo_link == o.logo_link &&
           jpeg_quality == o.jpeg_quality &&
-          notes_position == o.notes_position &&
-          comments_position == o.comments_position &&
-          comments_area_width == o.comments_area_width &&
-          comments_area_color == o.comments_area_color &&
-          show_comments_by_no_author == o.show_comments_by_no_author
+          slides_layout_options == o.slides_layout_options
     end
 
     # @see the `==` method
@@ -304,7 +241,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, delete_embedded_binary_objects, gradient_style, font_fallback_rules, font_subst_rules, format, show_hidden_slides, compressed, viewer_included, show_page_border, show_full_screen, show_page_stepper, show_search, show_top_pane, show_bottom_pane, show_left_pane, start_open_left_pane, enable_context_menu, logo_image, logo_link, jpeg_quality, notes_position, comments_position, comments_area_width, comments_area_color, show_comments_by_no_author].hash
+      [default_regular_font, delete_embedded_binary_objects, gradient_style, font_fallback_rules, font_subst_rules, skip_java_script_links, format, show_hidden_slides, compressed, viewer_included, show_page_border, show_full_screen, show_page_stepper, show_search, show_top_pane, show_bottom_pane, show_left_pane, start_open_left_pane, enable_context_menu, logo_image, logo_link, jpeg_quality, slides_layout_options].hash
     end
   end
 end

@@ -5,6 +5,7 @@
 		{ "Action": "Put", "File": "test-unprotected.pptx", "Method": "CreateSlide" },
 		{ "Action": "Put", "File": "test-unprotected.pptx", "Method": "DeleteSlides" },
 		{ "Action": "Put", "File": "test-unprotected.pptx", "Method": "UpdateSlide" },
+		{ "Action": "Put", "File": "video.pptx", "Method": "/VideoCaption/" },
 		{ "Action": "Put", "File": "macros.pptm", "Method": "/Vba/" },
 		{ "Action": "Delete", "File": "test.pptx", "Method": "CreatePresentation" },
 		{ "Action": "Delete", "File": "test.pptx", "Method": "UploadFile" },
@@ -82,6 +83,7 @@
 		{ "Value": "@(test.pptx,test-unprotected.pptx)", "InvalidValue": null, "Type": "stream[]" },
 		{ "Value": "test.pptx", "InvalidValue": "invalid%v", "Parameter": "Name" },
 		{ "Value": "changedtest.pptx", "Parameter": "Name", "Method": "/CreatePresentationFrom/" },
+		{ "Value": "video.pptx", "Parameter": "Name", "Method": "/VideoCaption/" },
 		{ "Value": "macros.pptm", "Parameter": "Name", "Method": "/Vba/" },
 		{ "Value": "testProperty", "Parameter": "PropertyName" },
 		{ "Value": "TempSlidesSDK", "Parameter": "Folder" },
@@ -103,6 +105,7 @@
 			"Parameter": "Data",
                         "Method": "CreatePresentationFromTemplate"
 		},
+		{ "Value": "WEBVTT\n\n00:00:00.000-- > 00:00:10.000\nCaption 1 text.", "Parameter": "Data", "Method": "CreateVideoCaptionTrack" },
 		{ "Value": "Arial", "Parameter": "FontName" },
 		{ "Value": "Calibri", "Parameter": "FontName", "Method": "/SetEmbeddedFont/" },
 		{ "Value": "Calibri Light", "Parameter": "FontName", "Method": "/DeleteEmbeddedFont/" },
@@ -177,6 +180,8 @@
 		{ "Parameter": "ShapeName" },
 		{ "Parameter": "Files" },
 		{ "Parameter": "Data", "Method": "CreatePresentation" },
+		{ "Parameter": "Data", "Method": "CreateVideoCaptionTrack" },
+		{ "Parameter": "Label", "Method": "CreateVideoCaptionTrack" },
 		{ "Parameter": "Format", "Language": "NET" },
 		{ "Parameter": "Format", "Language": "Java" },
 		{ "Parameter": "Format", "Language": "Swift" },
@@ -188,7 +193,8 @@
 		{ "Parameter": "ChartWallType" },
 		{ "Parameter": "SplitType" },
 		{ "Parameter": "Bounds" },
-		{ "Parameter": "Resolution" }
+		{ "Parameter": "Resolution" },
+		{ "Parameter": "Quality" }
 	],
 	"Results": [
 		{ "Code": 200 },
