@@ -31,8 +31,12 @@ describe 'UseCases' do
       password = "password"
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       presentation_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_presentation_images(file_name, password, folder_name)
-      slide_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_images(file_name, 1, password, folder_name)
+      slide_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_images(file_name, 1, nil, nil, password, folder_name)
       expect(slide_result.list.length).to be < presentation_result.list.length
+      shape_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_images(file_name, 2, 2, nil, password, folder_name)
+      expect(shape_result.list.length).to eq(1)
+      alt_result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_images(file_name, 2, nil, "title", password, folder_name)
+      expect(alt_result.list.length).to eq(0)
     end
 
     it 'download all storage' do

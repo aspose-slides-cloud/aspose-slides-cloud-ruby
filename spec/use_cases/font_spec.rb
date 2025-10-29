@@ -62,16 +62,35 @@ describe 'UseCases' do
             expect(response.size).not_to eq(source.size)
         end
 
-        it "set embedded font from request" do
+        it "set embedded fonts" do
+            folder_name = "TempSlidesSDK"
+            file_name = "test.pptx"
+            font_name = "Calibri"
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_fonts(file_name, nil, [ font_name ], false, "password", folder_name)
+            expect(response.list.length).to eq(4)
+            expect(response.list[2].is_embedded).to eq(true)
+            expect(response.list[2].font_name).to eq(font_name)
+        end
+
+        it "set embedded fonts from request" do
             folder_name = "TempSlidesSDK"
             file_name = "test.pptx"
             font_name = "Calibri"
             source = File.binread("TestData/calibri.ttf")
             AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
-            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_font_from_request(source, file_name, false, "password", folder_name)
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_fonts(file_name, [ source ], nil, false, "password", folder_name)
             expect(response.list.length).to eq(4)
             expect(response.list[2].is_embedded).to eq(true)
             expect(response.list[2].font_name).to eq(font_name)
+        end
+
+        it "set embedded fonts online" do
+            folder_name = "TempSlidesSDK"
+            file_name = "test.pptx"
+            sourceDocument = File.binread("TestData/test.pptx")
+            font_name = "Calibri"
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_fonts_online(sourceDocument, nil, [ font_name ], false, "password")
+            expect(response.size).not_to eq(sourceDocument.size)
         end
 
         it "set embedded font from request online" do
@@ -79,8 +98,7 @@ describe 'UseCases' do
             file_name = "test.pptx"
             sourceDocument = File.binread("TestData/test.pptx")
             sourceFont = File.binread("TestData/calibri.ttf")
-            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_font_from_request_online(sourceDocument, sourceFont, 
-                false, "password")
+            response = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_font_from_request_online(sourceDocument, [ sourceFont ], nil, false, "password")
             expect(response.size).not_to eq(sourceDocument.size)
         end
 

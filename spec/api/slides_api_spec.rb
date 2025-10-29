@@ -3140,6 +3140,252 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for create_caption_track
+  # Create video/audio captions track.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index (must refer to a video or audio frame).
+  # @param label Caption track label.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :data Caption track data.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Presentation storage.
+  # @return [CaptionTrack]
+  describe 'create_caption_track test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateCaptionTrack', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateCaptionTrack', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateCaptionTrack', 'Integer')
+      paramlabel = AsposeSlidesCloud::SpecUtils.get_param_value('label', 'CreateCaptionTrack', 'String')
+      paramdata = AsposeSlidesCloud::SpecUtils.get_param_value('data', 'CreateCaptionTrack', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateCaptionTrack', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateCaptionTrack', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateCaptionTrack', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateCaptionTrack', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramlabel, paramdata, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCaptionTrack', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateCaptionTrack', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateCaptionTrack', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateCaptionTrack', 'Integer')
+      paramlabel = AsposeSlidesCloud::SpecUtils.get_param_value('label', 'CreateCaptionTrack', 'String')
+      paramdata = AsposeSlidesCloud::SpecUtils.get_param_value('data', 'CreateCaptionTrack', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateCaptionTrack', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateCaptionTrack', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateCaptionTrack', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'CreateCaptionTrack', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateCaptionTrack', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramlabel, paramdata, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateCaptionTrack', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCaptionTrack', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCaptionTrack', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateCaptionTrack', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateCaptionTrack', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateCaptionTrack', 'Integer')
+      paramlabel = AsposeSlidesCloud::SpecUtils.get_param_value('label', 'CreateCaptionTrack', 'String')
+      paramdata = AsposeSlidesCloud::SpecUtils.get_param_value('data', 'CreateCaptionTrack', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateCaptionTrack', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateCaptionTrack', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateCaptionTrack', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'CreateCaptionTrack', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateCaptionTrack', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramlabel, paramdata, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateCaptionTrack', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCaptionTrack', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCaptionTrack', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateCaptionTrack', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateCaptionTrack', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateCaptionTrack', 'Integer')
+      paramlabel = AsposeSlidesCloud::SpecUtils.get_param_value('label', 'CreateCaptionTrack', 'String')
+      paramdata = AsposeSlidesCloud::SpecUtils.get_param_value('data', 'CreateCaptionTrack', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateCaptionTrack', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateCaptionTrack', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateCaptionTrack', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'CreateCaptionTrack', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateCaptionTrack', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramlabel, paramdata, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateCaptionTrack', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCaptionTrack', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCaptionTrack', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid label' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateCaptionTrack', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateCaptionTrack', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateCaptionTrack', 'Integer')
+      paramlabel = AsposeSlidesCloud::SpecUtils.get_param_value('label', 'CreateCaptionTrack', 'String')
+      paramdata = AsposeSlidesCloud::SpecUtils.get_param_value('data', 'CreateCaptionTrack', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateCaptionTrack', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateCaptionTrack', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateCaptionTrack', 'String')
+      paramlabel = AsposeSlidesCloud::SpecUtils.invalidize_param_value('label', 'CreateCaptionTrack', paramlabel, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateCaptionTrack', 'label', paramlabel)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramlabel, paramdata, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateCaptionTrack', 'label')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCaptionTrack', 'label', paramlabel, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCaptionTrack', 'label', paramlabel, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid data' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateCaptionTrack', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateCaptionTrack', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateCaptionTrack', 'Integer')
+      paramlabel = AsposeSlidesCloud::SpecUtils.get_param_value('label', 'CreateCaptionTrack', 'String')
+      paramdata = AsposeSlidesCloud::SpecUtils.get_param_value('data', 'CreateCaptionTrack', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateCaptionTrack', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateCaptionTrack', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateCaptionTrack', 'String')
+      paramdata = AsposeSlidesCloud::SpecUtils.invalidize_param_value('data', 'CreateCaptionTrack', paramdata, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateCaptionTrack', 'data', paramdata)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramlabel, paramdata, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateCaptionTrack', 'data')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCaptionTrack', 'data', paramdata, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCaptionTrack', 'data', paramdata, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateCaptionTrack', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateCaptionTrack', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateCaptionTrack', 'Integer')
+      paramlabel = AsposeSlidesCloud::SpecUtils.get_param_value('label', 'CreateCaptionTrack', 'String')
+      paramdata = AsposeSlidesCloud::SpecUtils.get_param_value('data', 'CreateCaptionTrack', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateCaptionTrack', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateCaptionTrack', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateCaptionTrack', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'CreateCaptionTrack', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateCaptionTrack', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramlabel, paramdata, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateCaptionTrack', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCaptionTrack', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCaptionTrack', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateCaptionTrack', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateCaptionTrack', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateCaptionTrack', 'Integer')
+      paramlabel = AsposeSlidesCloud::SpecUtils.get_param_value('label', 'CreateCaptionTrack', 'String')
+      paramdata = AsposeSlidesCloud::SpecUtils.get_param_value('data', 'CreateCaptionTrack', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateCaptionTrack', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateCaptionTrack', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateCaptionTrack', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'CreateCaptionTrack', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateCaptionTrack', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramlabel, paramdata, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateCaptionTrack', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCaptionTrack', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCaptionTrack', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateCaptionTrack', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateCaptionTrack', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateCaptionTrack', 'Integer')
+      paramlabel = AsposeSlidesCloud::SpecUtils.get_param_value('label', 'CreateCaptionTrack', 'String')
+      paramdata = AsposeSlidesCloud::SpecUtils.get_param_value('data', 'CreateCaptionTrack', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateCaptionTrack', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateCaptionTrack', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateCaptionTrack', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'CreateCaptionTrack', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateCaptionTrack', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramlabel, paramdata, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateCaptionTrack', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCaptionTrack', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateCaptionTrack', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for create_chart_category
   # Add a new category to a chart.
   # @param name Document name.
@@ -9558,252 +9804,6 @@ describe 'SlidesApi' do
     end
   end
 
-  # unit tests for create_video_caption_track
-  # Create video captions track.
-  # @param name Document name.
-  # @param slide_index Slide index.
-  # @param shape_index Shape index (must refer to a picture frame).
-  # @param label Caption track label.
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :data Caption track data.
-  # @option opts [String] :password Document password.
-  # @option opts [String] :folder Document folder.
-  # @option opts [String] :storage Presentation storage.
-  # @return [CaptionTrack]
-  describe 'create_video_caption_track test' do
-    it 'should work' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateVideoCaptionTrack', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateVideoCaptionTrack', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateVideoCaptionTrack', 'Integer')
-      paramlabel = AsposeSlidesCloud::SpecUtils.get_param_value('label', 'CreateVideoCaptionTrack', 'String')
-      paramdata = AsposeSlidesCloud::SpecUtils.get_param_value('data', 'CreateVideoCaptionTrack', 'String')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateVideoCaptionTrack', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateVideoCaptionTrack', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateVideoCaptionTrack', 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('CreateVideoCaptionTrack', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_video_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramlabel, paramdata, parampassword, paramfolder, paramstorage)
-      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVideoCaptionTrack', nil, nil, nil)
-      expect(c).to eq(code)
-      expect(o).not_to be_nil
-    end
-
-    it 'invalid name' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateVideoCaptionTrack', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateVideoCaptionTrack', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateVideoCaptionTrack', 'Integer')
-      paramlabel = AsposeSlidesCloud::SpecUtils.get_param_value('label', 'CreateVideoCaptionTrack', 'String')
-      paramdata = AsposeSlidesCloud::SpecUtils.get_param_value('data', 'CreateVideoCaptionTrack', 'String')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateVideoCaptionTrack', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateVideoCaptionTrack', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateVideoCaptionTrack', 'String')
-      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'CreateVideoCaptionTrack', paramname, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('CreateVideoCaptionTrack', 'name', paramname)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_video_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramlabel, paramdata, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateVideoCaptionTrack', 'name')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVideoCaptionTrack', 'name', paramname, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVideoCaptionTrack', 'name', paramname, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid slide_index' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateVideoCaptionTrack', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateVideoCaptionTrack', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateVideoCaptionTrack', 'Integer')
-      paramlabel = AsposeSlidesCloud::SpecUtils.get_param_value('label', 'CreateVideoCaptionTrack', 'String')
-      paramdata = AsposeSlidesCloud::SpecUtils.get_param_value('data', 'CreateVideoCaptionTrack', 'String')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateVideoCaptionTrack', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateVideoCaptionTrack', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateVideoCaptionTrack', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'CreateVideoCaptionTrack', paramslide_index, 'Integer')
-      AsposeSlidesCloud::SpecUtils.initialize('CreateVideoCaptionTrack', 'slideIndex', paramslide_index)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_video_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramlabel, paramdata, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateVideoCaptionTrack', 'slideIndex')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVideoCaptionTrack', 'slideIndex', paramslide_index, 'Integer')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVideoCaptionTrack', 'slideIndex', paramslide_index, 'Integer')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid shape_index' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateVideoCaptionTrack', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateVideoCaptionTrack', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateVideoCaptionTrack', 'Integer')
-      paramlabel = AsposeSlidesCloud::SpecUtils.get_param_value('label', 'CreateVideoCaptionTrack', 'String')
-      paramdata = AsposeSlidesCloud::SpecUtils.get_param_value('data', 'CreateVideoCaptionTrack', 'String')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateVideoCaptionTrack', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateVideoCaptionTrack', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateVideoCaptionTrack', 'String')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'CreateVideoCaptionTrack', paramshape_index, 'Integer')
-      AsposeSlidesCloud::SpecUtils.initialize('CreateVideoCaptionTrack', 'shapeIndex', paramshape_index)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_video_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramlabel, paramdata, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateVideoCaptionTrack', 'shapeIndex')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVideoCaptionTrack', 'shapeIndex', paramshape_index, 'Integer')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVideoCaptionTrack', 'shapeIndex', paramshape_index, 'Integer')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid label' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateVideoCaptionTrack', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateVideoCaptionTrack', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateVideoCaptionTrack', 'Integer')
-      paramlabel = AsposeSlidesCloud::SpecUtils.get_param_value('label', 'CreateVideoCaptionTrack', 'String')
-      paramdata = AsposeSlidesCloud::SpecUtils.get_param_value('data', 'CreateVideoCaptionTrack', 'String')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateVideoCaptionTrack', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateVideoCaptionTrack', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateVideoCaptionTrack', 'String')
-      paramlabel = AsposeSlidesCloud::SpecUtils.invalidize_param_value('label', 'CreateVideoCaptionTrack', paramlabel, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('CreateVideoCaptionTrack', 'label', paramlabel)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_video_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramlabel, paramdata, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateVideoCaptionTrack', 'label')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVideoCaptionTrack', 'label', paramlabel, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVideoCaptionTrack', 'label', paramlabel, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid data' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateVideoCaptionTrack', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateVideoCaptionTrack', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateVideoCaptionTrack', 'Integer')
-      paramlabel = AsposeSlidesCloud::SpecUtils.get_param_value('label', 'CreateVideoCaptionTrack', 'String')
-      paramdata = AsposeSlidesCloud::SpecUtils.get_param_value('data', 'CreateVideoCaptionTrack', 'String')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateVideoCaptionTrack', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateVideoCaptionTrack', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateVideoCaptionTrack', 'String')
-      paramdata = AsposeSlidesCloud::SpecUtils.invalidize_param_value('data', 'CreateVideoCaptionTrack', paramdata, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('CreateVideoCaptionTrack', 'data', paramdata)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_video_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramlabel, paramdata, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateVideoCaptionTrack', 'data')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVideoCaptionTrack', 'data', paramdata, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVideoCaptionTrack', 'data', paramdata, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid password' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateVideoCaptionTrack', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateVideoCaptionTrack', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateVideoCaptionTrack', 'Integer')
-      paramlabel = AsposeSlidesCloud::SpecUtils.get_param_value('label', 'CreateVideoCaptionTrack', 'String')
-      paramdata = AsposeSlidesCloud::SpecUtils.get_param_value('data', 'CreateVideoCaptionTrack', 'String')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateVideoCaptionTrack', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateVideoCaptionTrack', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateVideoCaptionTrack', 'String')
-      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'CreateVideoCaptionTrack', parampassword, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('CreateVideoCaptionTrack', 'password', parampassword)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_video_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramlabel, paramdata, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateVideoCaptionTrack', 'password')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVideoCaptionTrack', 'password', parampassword, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVideoCaptionTrack', 'password', parampassword, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid folder' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateVideoCaptionTrack', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateVideoCaptionTrack', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateVideoCaptionTrack', 'Integer')
-      paramlabel = AsposeSlidesCloud::SpecUtils.get_param_value('label', 'CreateVideoCaptionTrack', 'String')
-      paramdata = AsposeSlidesCloud::SpecUtils.get_param_value('data', 'CreateVideoCaptionTrack', 'String')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateVideoCaptionTrack', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateVideoCaptionTrack', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateVideoCaptionTrack', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'CreateVideoCaptionTrack', paramfolder, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('CreateVideoCaptionTrack', 'folder', paramfolder)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_video_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramlabel, paramdata, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateVideoCaptionTrack', 'folder')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVideoCaptionTrack', 'folder', paramfolder, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVideoCaptionTrack', 'folder', paramfolder, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid storage' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateVideoCaptionTrack', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateVideoCaptionTrack', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'CreateVideoCaptionTrack', 'Integer')
-      paramlabel = AsposeSlidesCloud::SpecUtils.get_param_value('label', 'CreateVideoCaptionTrack', 'String')
-      paramdata = AsposeSlidesCloud::SpecUtils.get_param_value('data', 'CreateVideoCaptionTrack', 'String')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateVideoCaptionTrack', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateVideoCaptionTrack', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateVideoCaptionTrack', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'CreateVideoCaptionTrack', paramstorage, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('CreateVideoCaptionTrack', 'storage', paramstorage)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_video_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramlabel, paramdata, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateVideoCaptionTrack', 'storage')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVideoCaptionTrack', 'storage', paramstorage, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateVideoCaptionTrack', 'storage', paramstorage, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-  end
-
   # unit tests for create_watermark
   # Adds a text watermark to each slide of the presentation. Text watermark can be setup via method arguments or withing Shape DTO for detailed customization. Both options are applicable simultaneously. 
   # @param name Document name.
@@ -11428,6 +11428,390 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteBackground', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for delete_caption_track
+  # Delete video/audio captions track.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index (must refer to a video or audio frame).
+  # @param captions_index Captions track index.
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Presentation storage.
+  # @return [nil]
+  describe 'delete_caption_track test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteCaptionTrack', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteCaptionTrack', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteCaptionTrack', 'Integer')
+      paramcaptions_index = AsposeSlidesCloud::SpecUtils.get_param_value('captionsIndex', 'DeleteCaptionTrack', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteCaptionTrack', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteCaptionTrack', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteCaptionTrack', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteCaptionTrack', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramcaptions_index, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTrack', nil, nil, nil)
+      expect(c).to eq(code)
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteCaptionTrack', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteCaptionTrack', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteCaptionTrack', 'Integer')
+      paramcaptions_index = AsposeSlidesCloud::SpecUtils.get_param_value('captionsIndex', 'DeleteCaptionTrack', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteCaptionTrack', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteCaptionTrack', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteCaptionTrack', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'DeleteCaptionTrack', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteCaptionTrack', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramcaptions_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteCaptionTrack', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTrack', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTrack', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteCaptionTrack', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteCaptionTrack', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteCaptionTrack', 'Integer')
+      paramcaptions_index = AsposeSlidesCloud::SpecUtils.get_param_value('captionsIndex', 'DeleteCaptionTrack', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteCaptionTrack', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteCaptionTrack', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteCaptionTrack', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'DeleteCaptionTrack', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteCaptionTrack', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramcaptions_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteCaptionTrack', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTrack', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTrack', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteCaptionTrack', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteCaptionTrack', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteCaptionTrack', 'Integer')
+      paramcaptions_index = AsposeSlidesCloud::SpecUtils.get_param_value('captionsIndex', 'DeleteCaptionTrack', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteCaptionTrack', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteCaptionTrack', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteCaptionTrack', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'DeleteCaptionTrack', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteCaptionTrack', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramcaptions_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteCaptionTrack', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTrack', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTrack', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid captions_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteCaptionTrack', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteCaptionTrack', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteCaptionTrack', 'Integer')
+      paramcaptions_index = AsposeSlidesCloud::SpecUtils.get_param_value('captionsIndex', 'DeleteCaptionTrack', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteCaptionTrack', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteCaptionTrack', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteCaptionTrack', 'String')
+      paramcaptions_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('captionsIndex', 'DeleteCaptionTrack', paramcaptions_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteCaptionTrack', 'captionsIndex', paramcaptions_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramcaptions_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteCaptionTrack', 'captionsIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTrack', 'captionsIndex', paramcaptions_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTrack', 'captionsIndex', paramcaptions_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteCaptionTrack', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteCaptionTrack', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteCaptionTrack', 'Integer')
+      paramcaptions_index = AsposeSlidesCloud::SpecUtils.get_param_value('captionsIndex', 'DeleteCaptionTrack', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteCaptionTrack', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteCaptionTrack', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteCaptionTrack', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'DeleteCaptionTrack', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteCaptionTrack', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramcaptions_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteCaptionTrack', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTrack', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTrack', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteCaptionTrack', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteCaptionTrack', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteCaptionTrack', 'Integer')
+      paramcaptions_index = AsposeSlidesCloud::SpecUtils.get_param_value('captionsIndex', 'DeleteCaptionTrack', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteCaptionTrack', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteCaptionTrack', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteCaptionTrack', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'DeleteCaptionTrack', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteCaptionTrack', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramcaptions_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteCaptionTrack', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTrack', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTrack', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteCaptionTrack', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteCaptionTrack', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteCaptionTrack', 'Integer')
+      paramcaptions_index = AsposeSlidesCloud::SpecUtils.get_param_value('captionsIndex', 'DeleteCaptionTrack', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteCaptionTrack', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteCaptionTrack', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteCaptionTrack', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'DeleteCaptionTrack', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteCaptionTrack', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramcaptions_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteCaptionTrack', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTrack', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTrack', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for delete_caption_tracks
+  # Delete all video/audio captions tracks.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index (must refer to a video frame).
+  # @param [Hash] opts the optional parameters
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Presentation storage.
+  # @return [nil]
+  describe 'delete_caption_tracks test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteCaptionTracks', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteCaptionTracks', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteCaptionTracks', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteCaptionTracks', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteCaptionTracks', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteCaptionTracks', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteCaptionTracks', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTracks', nil, nil, nil)
+      expect(c).to eq(code)
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteCaptionTracks', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteCaptionTracks', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteCaptionTracks', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteCaptionTracks', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteCaptionTracks', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteCaptionTracks', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'DeleteCaptionTracks', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteCaptionTracks', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteCaptionTracks', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTracks', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTracks', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteCaptionTracks', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteCaptionTracks', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteCaptionTracks', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteCaptionTracks', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteCaptionTracks', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteCaptionTracks', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'DeleteCaptionTracks', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteCaptionTracks', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteCaptionTracks', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTracks', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTracks', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteCaptionTracks', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteCaptionTracks', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteCaptionTracks', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteCaptionTracks', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteCaptionTracks', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteCaptionTracks', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'DeleteCaptionTracks', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteCaptionTracks', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteCaptionTracks', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTracks', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTracks', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteCaptionTracks', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteCaptionTracks', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteCaptionTracks', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteCaptionTracks', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteCaptionTracks', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteCaptionTracks', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'DeleteCaptionTracks', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteCaptionTracks', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteCaptionTracks', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTracks', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTracks', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteCaptionTracks', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteCaptionTracks', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteCaptionTracks', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteCaptionTracks', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteCaptionTracks', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteCaptionTracks', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'DeleteCaptionTracks', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteCaptionTracks', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteCaptionTracks', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTracks', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTracks', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteCaptionTracks', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteCaptionTracks', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteCaptionTracks', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteCaptionTracks', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteCaptionTracks', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteCaptionTracks', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'DeleteCaptionTracks', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('DeleteCaptionTracks', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteCaptionTracks', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTracks', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteCaptionTracks', 'storage', paramstorage, 'String')
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
@@ -20265,390 +20649,6 @@ describe 'SlidesApi' do
     end
   end
 
-  # unit tests for delete_video_caption_track
-  # Delete video captions track.
-  # @param name Document name.
-  # @param slide_index Slide index.
-  # @param shape_index Shape index (must refer to a video frame).
-  # @param captions_index Captions track index.
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :password Document password.
-  # @option opts [String] :folder Document folder.
-  # @option opts [String] :storage Presentation storage.
-  # @return [nil]
-  describe 'delete_video_caption_track test' do
-    it 'should work' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVideoCaptionTrack', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      paramcaptions_index = AsposeSlidesCloud::SpecUtils.get_param_value('captionsIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVideoCaptionTrack', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVideoCaptionTrack', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVideoCaptionTrack', 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteVideoCaptionTrack', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_video_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramcaptions_index, parampassword, paramfolder, paramstorage)
-      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTrack', nil, nil, nil)
-      expect(c).to eq(code)
-    end
-
-    it 'invalid name' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVideoCaptionTrack', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      paramcaptions_index = AsposeSlidesCloud::SpecUtils.get_param_value('captionsIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVideoCaptionTrack', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVideoCaptionTrack', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVideoCaptionTrack', 'String')
-      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'DeleteVideoCaptionTrack', paramname, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteVideoCaptionTrack', 'name', paramname)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_video_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramcaptions_index, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteVideoCaptionTrack', 'name')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTrack', 'name', paramname, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTrack', 'name', paramname, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid slide_index' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVideoCaptionTrack', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      paramcaptions_index = AsposeSlidesCloud::SpecUtils.get_param_value('captionsIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVideoCaptionTrack', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVideoCaptionTrack', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVideoCaptionTrack', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'DeleteVideoCaptionTrack', paramslide_index, 'Integer')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteVideoCaptionTrack', 'slideIndex', paramslide_index)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_video_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramcaptions_index, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteVideoCaptionTrack', 'slideIndex')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTrack', 'slideIndex', paramslide_index, 'Integer')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTrack', 'slideIndex', paramslide_index, 'Integer')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid shape_index' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVideoCaptionTrack', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      paramcaptions_index = AsposeSlidesCloud::SpecUtils.get_param_value('captionsIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVideoCaptionTrack', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVideoCaptionTrack', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVideoCaptionTrack', 'String')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'DeleteVideoCaptionTrack', paramshape_index, 'Integer')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteVideoCaptionTrack', 'shapeIndex', paramshape_index)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_video_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramcaptions_index, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteVideoCaptionTrack', 'shapeIndex')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTrack', 'shapeIndex', paramshape_index, 'Integer')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTrack', 'shapeIndex', paramshape_index, 'Integer')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid captions_index' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVideoCaptionTrack', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      paramcaptions_index = AsposeSlidesCloud::SpecUtils.get_param_value('captionsIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVideoCaptionTrack', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVideoCaptionTrack', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVideoCaptionTrack', 'String')
-      paramcaptions_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('captionsIndex', 'DeleteVideoCaptionTrack', paramcaptions_index, 'Integer')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteVideoCaptionTrack', 'captionsIndex', paramcaptions_index)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_video_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramcaptions_index, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteVideoCaptionTrack', 'captionsIndex')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTrack', 'captionsIndex', paramcaptions_index, 'Integer')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTrack', 'captionsIndex', paramcaptions_index, 'Integer')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid password' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVideoCaptionTrack', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      paramcaptions_index = AsposeSlidesCloud::SpecUtils.get_param_value('captionsIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVideoCaptionTrack', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVideoCaptionTrack', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVideoCaptionTrack', 'String')
-      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'DeleteVideoCaptionTrack', parampassword, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteVideoCaptionTrack', 'password', parampassword)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_video_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramcaptions_index, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteVideoCaptionTrack', 'password')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTrack', 'password', parampassword, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTrack', 'password', parampassword, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid folder' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVideoCaptionTrack', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      paramcaptions_index = AsposeSlidesCloud::SpecUtils.get_param_value('captionsIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVideoCaptionTrack', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVideoCaptionTrack', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVideoCaptionTrack', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'DeleteVideoCaptionTrack', paramfolder, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteVideoCaptionTrack', 'folder', paramfolder)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_video_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramcaptions_index, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteVideoCaptionTrack', 'folder')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTrack', 'folder', paramfolder, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTrack', 'folder', paramfolder, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid storage' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVideoCaptionTrack', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      paramcaptions_index = AsposeSlidesCloud::SpecUtils.get_param_value('captionsIndex', 'DeleteVideoCaptionTrack', 'Integer')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVideoCaptionTrack', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVideoCaptionTrack', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVideoCaptionTrack', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'DeleteVideoCaptionTrack', paramstorage, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteVideoCaptionTrack', 'storage', paramstorage)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_video_caption_track_with_http_info(paramname, paramslide_index, paramshape_index, paramcaptions_index, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteVideoCaptionTrack', 'storage')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTrack', 'storage', paramstorage, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTrack', 'storage', paramstorage, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-  end
-
-  # unit tests for delete_video_caption_tracks
-  # Delete all video captions tracks.
-  # @param name Document name.
-  # @param slide_index Slide index.
-  # @param shape_index Shape index (must refer to a video frame).
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :password Document password.
-  # @option opts [String] :folder Document folder.
-  # @option opts [String] :storage Presentation storage.
-  # @return [nil]
-  describe 'delete_video_caption_tracks test' do
-    it 'should work' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVideoCaptionTracks', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteVideoCaptionTracks', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteVideoCaptionTracks', 'Integer')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVideoCaptionTracks', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVideoCaptionTracks', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVideoCaptionTracks', 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteVideoCaptionTracks', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_video_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
-      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTracks', nil, nil, nil)
-      expect(c).to eq(code)
-    end
-
-    it 'invalid name' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVideoCaptionTracks', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteVideoCaptionTracks', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteVideoCaptionTracks', 'Integer')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVideoCaptionTracks', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVideoCaptionTracks', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVideoCaptionTracks', 'String')
-      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'DeleteVideoCaptionTracks', paramname, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteVideoCaptionTracks', 'name', paramname)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_video_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteVideoCaptionTracks', 'name')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTracks', 'name', paramname, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTracks', 'name', paramname, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid slide_index' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVideoCaptionTracks', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteVideoCaptionTracks', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteVideoCaptionTracks', 'Integer')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVideoCaptionTracks', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVideoCaptionTracks', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVideoCaptionTracks', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'DeleteVideoCaptionTracks', paramslide_index, 'Integer')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteVideoCaptionTracks', 'slideIndex', paramslide_index)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_video_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteVideoCaptionTracks', 'slideIndex')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTracks', 'slideIndex', paramslide_index, 'Integer')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTracks', 'slideIndex', paramslide_index, 'Integer')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid shape_index' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVideoCaptionTracks', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteVideoCaptionTracks', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteVideoCaptionTracks', 'Integer')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVideoCaptionTracks', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVideoCaptionTracks', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVideoCaptionTracks', 'String')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'DeleteVideoCaptionTracks', paramshape_index, 'Integer')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteVideoCaptionTracks', 'shapeIndex', paramshape_index)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_video_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteVideoCaptionTracks', 'shapeIndex')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTracks', 'shapeIndex', paramshape_index, 'Integer')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTracks', 'shapeIndex', paramshape_index, 'Integer')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid password' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVideoCaptionTracks', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteVideoCaptionTracks', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteVideoCaptionTracks', 'Integer')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVideoCaptionTracks', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVideoCaptionTracks', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVideoCaptionTracks', 'String')
-      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'DeleteVideoCaptionTracks', parampassword, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteVideoCaptionTracks', 'password', parampassword)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_video_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteVideoCaptionTracks', 'password')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTracks', 'password', parampassword, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTracks', 'password', parampassword, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid folder' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVideoCaptionTracks', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteVideoCaptionTracks', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteVideoCaptionTracks', 'Integer')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVideoCaptionTracks', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVideoCaptionTracks', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVideoCaptionTracks', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'DeleteVideoCaptionTracks', paramfolder, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteVideoCaptionTracks', 'folder', paramfolder)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_video_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteVideoCaptionTracks', 'folder')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTracks', 'folder', paramfolder, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTracks', 'folder', paramfolder, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid storage' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'DeleteVideoCaptionTracks', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'DeleteVideoCaptionTracks', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'DeleteVideoCaptionTracks', 'Integer')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'DeleteVideoCaptionTracks', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'DeleteVideoCaptionTracks', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'DeleteVideoCaptionTracks', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'DeleteVideoCaptionTracks', paramstorage, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('DeleteVideoCaptionTracks', 'storage', paramstorage)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_video_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('DeleteVideoCaptionTracks', 'storage')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTracks', 'storage', paramstorage, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('DeleteVideoCaptionTracks', 'storage', paramstorage, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-  end
-
   # unit tests for delete_watermark
   # Removes shapes with name \&quot;watermark\&quot; from the presentation.
   # @param name Document name.
@@ -25450,6 +25450,216 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetBackground', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for get_caption_tracks
+  # Gets video/audio captions tracks.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param shape_index Shape index (must refer to a video or audio frame).
+  # @param [Hash] opts the optional parameters
+  # @option opts [BOOLEAN] :include_data true to include caption data string values in the response.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Presentation storage.
+  # @return [CaptionTracks]
+  describe 'get_caption_tracks test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetCaptionTracks', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetCaptionTracks', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetCaptionTracks', 'Integer')
+      paraminclude_data = AsposeSlidesCloud::SpecUtils.get_param_value('includeData', 'GetCaptionTracks', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetCaptionTracks', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetCaptionTracks', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetCaptionTracks', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetCaptionTracks', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, paraminclude_data, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetCaptionTracks', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetCaptionTracks', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetCaptionTracks', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetCaptionTracks', 'Integer')
+      paraminclude_data = AsposeSlidesCloud::SpecUtils.get_param_value('includeData', 'GetCaptionTracks', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetCaptionTracks', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetCaptionTracks', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetCaptionTracks', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetCaptionTracks', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetCaptionTracks', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, paraminclude_data, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetCaptionTracks', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetCaptionTracks', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetCaptionTracks', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetCaptionTracks', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetCaptionTracks', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetCaptionTracks', 'Integer')
+      paraminclude_data = AsposeSlidesCloud::SpecUtils.get_param_value('includeData', 'GetCaptionTracks', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetCaptionTracks', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetCaptionTracks', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetCaptionTracks', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'GetCaptionTracks', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetCaptionTracks', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, paraminclude_data, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetCaptionTracks', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetCaptionTracks', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetCaptionTracks', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetCaptionTracks', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetCaptionTracks', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetCaptionTracks', 'Integer')
+      paraminclude_data = AsposeSlidesCloud::SpecUtils.get_param_value('includeData', 'GetCaptionTracks', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetCaptionTracks', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetCaptionTracks', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetCaptionTracks', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'GetCaptionTracks', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetCaptionTracks', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, paraminclude_data, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetCaptionTracks', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetCaptionTracks', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetCaptionTracks', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid include_data' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetCaptionTracks', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetCaptionTracks', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetCaptionTracks', 'Integer')
+      paraminclude_data = AsposeSlidesCloud::SpecUtils.get_param_value('includeData', 'GetCaptionTracks', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetCaptionTracks', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetCaptionTracks', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetCaptionTracks', 'String')
+      paraminclude_data = AsposeSlidesCloud::SpecUtils.invalidize_param_value('includeData', 'GetCaptionTracks', paraminclude_data, 'BOOLEAN')
+      AsposeSlidesCloud::SpecUtils.initialize('GetCaptionTracks', 'includeData', paraminclude_data)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, paraminclude_data, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetCaptionTracks', 'includeData')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetCaptionTracks', 'includeData', paraminclude_data, 'BOOLEAN')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetCaptionTracks', 'includeData', paraminclude_data, 'BOOLEAN')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetCaptionTracks', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetCaptionTracks', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetCaptionTracks', 'Integer')
+      paraminclude_data = AsposeSlidesCloud::SpecUtils.get_param_value('includeData', 'GetCaptionTracks', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetCaptionTracks', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetCaptionTracks', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetCaptionTracks', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetCaptionTracks', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetCaptionTracks', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, paraminclude_data, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetCaptionTracks', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetCaptionTracks', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetCaptionTracks', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetCaptionTracks', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetCaptionTracks', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetCaptionTracks', 'Integer')
+      paraminclude_data = AsposeSlidesCloud::SpecUtils.get_param_value('includeData', 'GetCaptionTracks', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetCaptionTracks', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetCaptionTracks', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetCaptionTracks', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetCaptionTracks', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetCaptionTracks', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, paraminclude_data, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetCaptionTracks', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetCaptionTracks', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetCaptionTracks', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetCaptionTracks', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetCaptionTracks', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetCaptionTracks', 'Integer')
+      paraminclude_data = AsposeSlidesCloud::SpecUtils.get_param_value('includeData', 'GetCaptionTracks', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetCaptionTracks', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetCaptionTracks', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetCaptionTracks', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetCaptionTracks', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetCaptionTracks', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, paraminclude_data, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetCaptionTracks', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetCaptionTracks', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetCaptionTracks', 'storage', paramstorage, 'String')
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
@@ -31419,6 +31629,8 @@ describe 'SlidesApi' do
   # @param name Document name.
   # @param slide_index Slide index.
   # @param [Hash] opts the optional parameters
+  # @option opts [Integer] :shape_index Shape index (null to search all shapes).
+  # @option opts [String] :shape_alt_text Shape alt name (null to search all shapes).
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
   # @option opts [String] :storage Document storage.
@@ -31427,11 +31639,13 @@ describe 'SlidesApi' do
     it 'should work' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideImages', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideImages', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideImages', 'Integer')
+      paramshape_alt_text = AsposeSlidesCloud::SpecUtils.get_param_value('shapeAltText', 'GetSlideImages', 'String')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideImages', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideImages', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideImages', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetSlideImages', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_images_with_http_info(paramname, paramslide_index, parampassword, paramfolder, paramstorage)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_images_with_http_info(paramname, paramslide_index, paramshape_index, paramshape_alt_text, parampassword, paramfolder, paramstorage)
       code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideImages', nil, nil, nil)
       expect(c).to eq(code)
       expect(o).not_to be_nil
@@ -31440,13 +31654,15 @@ describe 'SlidesApi' do
     it 'invalid name' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideImages', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideImages', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideImages', 'Integer')
+      paramshape_alt_text = AsposeSlidesCloud::SpecUtils.get_param_value('shapeAltText', 'GetSlideImages', 'String')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideImages', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideImages', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideImages', 'String')
       paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetSlideImages', paramname, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetSlideImages', 'name', paramname)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_images_with_http_info(paramname, paramslide_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_images_with_http_info(paramname, paramslide_index, paramshape_index, paramshape_alt_text, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlideImages', 'name')
           fail "An exception expected"
         end
@@ -31464,13 +31680,15 @@ describe 'SlidesApi' do
     it 'invalid slide_index' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideImages', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideImages', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideImages', 'Integer')
+      paramshape_alt_text = AsposeSlidesCloud::SpecUtils.get_param_value('shapeAltText', 'GetSlideImages', 'String')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideImages', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideImages', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideImages', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'GetSlideImages', paramslide_index, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('GetSlideImages', 'slideIndex', paramslide_index)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_images_with_http_info(paramname, paramslide_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_images_with_http_info(paramname, paramslide_index, paramshape_index, paramshape_alt_text, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlideImages', 'slideIndex')
           fail "An exception expected"
         end
@@ -31485,16 +31703,70 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid shape_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideImages', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideImages', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideImages', 'Integer')
+      paramshape_alt_text = AsposeSlidesCloud::SpecUtils.get_param_value('shapeAltText', 'GetSlideImages', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideImages', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideImages', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideImages', 'String')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'GetSlideImages', paramshape_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlideImages', 'shapeIndex', paramshape_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_images_with_http_info(paramname, paramslide_index, paramshape_index, paramshape_alt_text, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlideImages', 'shapeIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideImages', 'shapeIndex', paramshape_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideImages', 'shapeIndex', paramshape_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid shape_alt_text' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideImages', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideImages', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideImages', 'Integer')
+      paramshape_alt_text = AsposeSlidesCloud::SpecUtils.get_param_value('shapeAltText', 'GetSlideImages', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideImages', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideImages', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideImages', 'String')
+      paramshape_alt_text = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeAltText', 'GetSlideImages', paramshape_alt_text, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('GetSlideImages', 'shapeAltText', paramshape_alt_text)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_images_with_http_info(paramname, paramslide_index, paramshape_index, paramshape_alt_text, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlideImages', 'shapeAltText')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideImages', 'shapeAltText', paramshape_alt_text, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetSlideImages', 'shapeAltText', paramshape_alt_text, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
     it 'invalid password' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideImages', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideImages', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideImages', 'Integer')
+      paramshape_alt_text = AsposeSlidesCloud::SpecUtils.get_param_value('shapeAltText', 'GetSlideImages', 'String')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideImages', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideImages', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideImages', 'String')
       parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetSlideImages', parampassword, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetSlideImages', 'password', parampassword)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_images_with_http_info(paramname, paramslide_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_images_with_http_info(paramname, paramslide_index, paramshape_index, paramshape_alt_text, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlideImages', 'password')
           fail "An exception expected"
         end
@@ -31512,13 +31784,15 @@ describe 'SlidesApi' do
     it 'invalid folder' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideImages', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideImages', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideImages', 'Integer')
+      paramshape_alt_text = AsposeSlidesCloud::SpecUtils.get_param_value('shapeAltText', 'GetSlideImages', 'String')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideImages', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideImages', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideImages', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetSlideImages', paramfolder, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetSlideImages', 'folder', paramfolder)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_images_with_http_info(paramname, paramslide_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_images_with_http_info(paramname, paramslide_index, paramshape_index, paramshape_alt_text, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlideImages', 'folder')
           fail "An exception expected"
         end
@@ -31536,13 +31810,15 @@ describe 'SlidesApi' do
     it 'invalid storage' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetSlideImages', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetSlideImages', 'Integer')
+      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetSlideImages', 'Integer')
+      paramshape_alt_text = AsposeSlidesCloud::SpecUtils.get_param_value('shapeAltText', 'GetSlideImages', 'String')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetSlideImages', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetSlideImages', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetSlideImages', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetSlideImages', paramstorage, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('GetSlideImages', 'storage', paramstorage)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_images_with_http_info(paramname, paramslide_index, parampassword, paramfolder, paramstorage)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_slide_images_with_http_info(paramname, paramslide_index, paramshape_index, paramshape_alt_text, parampassword, paramfolder, paramstorage)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('GetSlideImages', 'storage')
           fail "An exception expected"
         end
@@ -35450,216 +35726,6 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVbaProject', 'storage', paramstorage, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-  end
-
-  # unit tests for get_video_caption_tracks
-  # Gets video captions tracks.
-  # @param name Document name.
-  # @param slide_index Slide index.
-  # @param shape_index Shape index (must refer to a picture frame).
-  # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :include_data true to include caption data string values in the response.
-  # @option opts [String] :password Document password.
-  # @option opts [String] :folder Document folder.
-  # @option opts [String] :storage Presentation storage.
-  # @return [CaptionTracks]
-  describe 'get_video_caption_tracks test' do
-    it 'should work' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetVideoCaptionTracks', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetVideoCaptionTracks', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetVideoCaptionTracks', 'Integer')
-      paraminclude_data = AsposeSlidesCloud::SpecUtils.get_param_value('includeData', 'GetVideoCaptionTracks', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetVideoCaptionTracks', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetVideoCaptionTracks', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetVideoCaptionTracks', 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('GetVideoCaptionTracks', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_video_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, paraminclude_data, parampassword, paramfolder, paramstorage)
-      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVideoCaptionTracks', nil, nil, nil)
-      expect(c).to eq(code)
-      expect(o).not_to be_nil
-    end
-
-    it 'invalid name' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetVideoCaptionTracks', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetVideoCaptionTracks', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetVideoCaptionTracks', 'Integer')
-      paraminclude_data = AsposeSlidesCloud::SpecUtils.get_param_value('includeData', 'GetVideoCaptionTracks', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetVideoCaptionTracks', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetVideoCaptionTracks', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetVideoCaptionTracks', 'String')
-      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'GetVideoCaptionTracks', paramname, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('GetVideoCaptionTracks', 'name', paramname)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_video_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, paraminclude_data, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetVideoCaptionTracks', 'name')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVideoCaptionTracks', 'name', paramname, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVideoCaptionTracks', 'name', paramname, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid slide_index' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetVideoCaptionTracks', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetVideoCaptionTracks', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetVideoCaptionTracks', 'Integer')
-      paraminclude_data = AsposeSlidesCloud::SpecUtils.get_param_value('includeData', 'GetVideoCaptionTracks', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetVideoCaptionTracks', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetVideoCaptionTracks', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetVideoCaptionTracks', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'GetVideoCaptionTracks', paramslide_index, 'Integer')
-      AsposeSlidesCloud::SpecUtils.initialize('GetVideoCaptionTracks', 'slideIndex', paramslide_index)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_video_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, paraminclude_data, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetVideoCaptionTracks', 'slideIndex')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVideoCaptionTracks', 'slideIndex', paramslide_index, 'Integer')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVideoCaptionTracks', 'slideIndex', paramslide_index, 'Integer')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid shape_index' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetVideoCaptionTracks', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetVideoCaptionTracks', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetVideoCaptionTracks', 'Integer')
-      paraminclude_data = AsposeSlidesCloud::SpecUtils.get_param_value('includeData', 'GetVideoCaptionTracks', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetVideoCaptionTracks', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetVideoCaptionTracks', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetVideoCaptionTracks', 'String')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeIndex', 'GetVideoCaptionTracks', paramshape_index, 'Integer')
-      AsposeSlidesCloud::SpecUtils.initialize('GetVideoCaptionTracks', 'shapeIndex', paramshape_index)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_video_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, paraminclude_data, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetVideoCaptionTracks', 'shapeIndex')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVideoCaptionTracks', 'shapeIndex', paramshape_index, 'Integer')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVideoCaptionTracks', 'shapeIndex', paramshape_index, 'Integer')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid include_data' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetVideoCaptionTracks', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetVideoCaptionTracks', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetVideoCaptionTracks', 'Integer')
-      paraminclude_data = AsposeSlidesCloud::SpecUtils.get_param_value('includeData', 'GetVideoCaptionTracks', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetVideoCaptionTracks', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetVideoCaptionTracks', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetVideoCaptionTracks', 'String')
-      paraminclude_data = AsposeSlidesCloud::SpecUtils.invalidize_param_value('includeData', 'GetVideoCaptionTracks', paraminclude_data, 'BOOLEAN')
-      AsposeSlidesCloud::SpecUtils.initialize('GetVideoCaptionTracks', 'includeData', paraminclude_data)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_video_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, paraminclude_data, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetVideoCaptionTracks', 'includeData')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVideoCaptionTracks', 'includeData', paraminclude_data, 'BOOLEAN')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVideoCaptionTracks', 'includeData', paraminclude_data, 'BOOLEAN')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid password' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetVideoCaptionTracks', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetVideoCaptionTracks', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetVideoCaptionTracks', 'Integer')
-      paraminclude_data = AsposeSlidesCloud::SpecUtils.get_param_value('includeData', 'GetVideoCaptionTracks', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetVideoCaptionTracks', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetVideoCaptionTracks', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetVideoCaptionTracks', 'String')
-      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'GetVideoCaptionTracks', parampassword, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('GetVideoCaptionTracks', 'password', parampassword)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_video_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, paraminclude_data, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetVideoCaptionTracks', 'password')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVideoCaptionTracks', 'password', parampassword, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVideoCaptionTracks', 'password', parampassword, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid folder' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetVideoCaptionTracks', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetVideoCaptionTracks', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetVideoCaptionTracks', 'Integer')
-      paraminclude_data = AsposeSlidesCloud::SpecUtils.get_param_value('includeData', 'GetVideoCaptionTracks', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetVideoCaptionTracks', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetVideoCaptionTracks', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetVideoCaptionTracks', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'GetVideoCaptionTracks', paramfolder, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('GetVideoCaptionTracks', 'folder', paramfolder)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_video_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, paraminclude_data, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetVideoCaptionTracks', 'folder')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVideoCaptionTracks', 'folder', paramfolder, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVideoCaptionTracks', 'folder', paramfolder, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid storage' do
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'GetVideoCaptionTracks', 'String')
-      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'GetVideoCaptionTracks', 'Integer')
-      paramshape_index = AsposeSlidesCloud::SpecUtils.get_param_value('shapeIndex', 'GetVideoCaptionTracks', 'Integer')
-      paraminclude_data = AsposeSlidesCloud::SpecUtils.get_param_value('includeData', 'GetVideoCaptionTracks', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'GetVideoCaptionTracks', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'GetVideoCaptionTracks', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'GetVideoCaptionTracks', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'GetVideoCaptionTracks', paramstorage, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('GetVideoCaptionTracks', 'storage', paramstorage)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.get_video_caption_tracks_with_http_info(paramname, paramslide_index, paramshape_index, paraminclude_data, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('GetVideoCaptionTracks', 'storage')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVideoCaptionTracks', 'storage', paramstorage, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('GetVideoCaptionTracks', 'storage', paramstorage, 'String')
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end
@@ -46589,296 +46655,6 @@ describe 'SlidesApi' do
     end
   end
 
-  # unit tests for set_embedded_font_from_request
-  # Embeds font from request and returns presentation fonts info.
-  # @param font Font data.
-  # @param name Document name.
-  # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :only_used Only used characters will be embedded.
-  # @option opts [String] :password Document password.
-  # @option opts [String] :folder Document folder.
-  # @option opts [String] :storage Document storage.
-  # @return [FontsData]
-  describe 'set_embedded_font_from_request test' do
-    it 'should work' do
-      paramfont = AsposeSlidesCloud::SpecUtils.get_param_value('font', 'SetEmbeddedFontFromRequest', 'File')
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFontFromRequest', 'String')
-      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontFromRequest', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontFromRequest', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFontFromRequest', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFontFromRequest', 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontFromRequest', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_font_from_request_with_http_info(paramfont, paramname, paramonly_used, parampassword, paramfolder, paramstorage)
-      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequest', nil, nil, nil)
-      expect(c).to eq(code)
-      expect(o).not_to be_nil
-    end
-
-    it 'invalid font' do
-      paramfont = AsposeSlidesCloud::SpecUtils.get_param_value('font', 'SetEmbeddedFontFromRequest', 'File')
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFontFromRequest', 'String')
-      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontFromRequest', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontFromRequest', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFontFromRequest', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFontFromRequest', 'String')
-      paramfont = AsposeSlidesCloud::SpecUtils.invalidize_param_value('font', 'SetEmbeddedFontFromRequest', paramfont, 'File')
-      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontFromRequest', 'font', paramfont)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_font_from_request_with_http_info(paramfont, paramname, paramonly_used, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFontFromRequest', 'font')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequest', 'font', paramfont, 'File')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequest', 'font', paramfont, 'File')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid name' do
-      paramfont = AsposeSlidesCloud::SpecUtils.get_param_value('font', 'SetEmbeddedFontFromRequest', 'File')
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFontFromRequest', 'String')
-      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontFromRequest', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontFromRequest', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFontFromRequest', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFontFromRequest', 'String')
-      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'SetEmbeddedFontFromRequest', paramname, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontFromRequest', 'name', paramname)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_font_from_request_with_http_info(paramfont, paramname, paramonly_used, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFontFromRequest', 'name')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequest', 'name', paramname, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequest', 'name', paramname, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid only_used' do
-      paramfont = AsposeSlidesCloud::SpecUtils.get_param_value('font', 'SetEmbeddedFontFromRequest', 'File')
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFontFromRequest', 'String')
-      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontFromRequest', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontFromRequest', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFontFromRequest', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFontFromRequest', 'String')
-      paramonly_used = AsposeSlidesCloud::SpecUtils.invalidize_param_value('onlyUsed', 'SetEmbeddedFontFromRequest', paramonly_used, 'BOOLEAN')
-      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontFromRequest', 'onlyUsed', paramonly_used)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_font_from_request_with_http_info(paramfont, paramname, paramonly_used, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFontFromRequest', 'onlyUsed')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequest', 'onlyUsed', paramonly_used, 'BOOLEAN')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequest', 'onlyUsed', paramonly_used, 'BOOLEAN')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid password' do
-      paramfont = AsposeSlidesCloud::SpecUtils.get_param_value('font', 'SetEmbeddedFontFromRequest', 'File')
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFontFromRequest', 'String')
-      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontFromRequest', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontFromRequest', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFontFromRequest', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFontFromRequest', 'String')
-      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'SetEmbeddedFontFromRequest', parampassword, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontFromRequest', 'password', parampassword)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_font_from_request_with_http_info(paramfont, paramname, paramonly_used, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFontFromRequest', 'password')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequest', 'password', parampassword, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequest', 'password', parampassword, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid folder' do
-      paramfont = AsposeSlidesCloud::SpecUtils.get_param_value('font', 'SetEmbeddedFontFromRequest', 'File')
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFontFromRequest', 'String')
-      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontFromRequest', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontFromRequest', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFontFromRequest', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFontFromRequest', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'SetEmbeddedFontFromRequest', paramfolder, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontFromRequest', 'folder', paramfolder)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_font_from_request_with_http_info(paramfont, paramname, paramonly_used, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFontFromRequest', 'folder')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequest', 'folder', paramfolder, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequest', 'folder', paramfolder, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid storage' do
-      paramfont = AsposeSlidesCloud::SpecUtils.get_param_value('font', 'SetEmbeddedFontFromRequest', 'File')
-      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFontFromRequest', 'String')
-      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontFromRequest', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontFromRequest', 'String')
-      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFontFromRequest', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFontFromRequest', 'String')
-      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'SetEmbeddedFontFromRequest', paramstorage, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontFromRequest', 'storage', paramstorage)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_font_from_request_with_http_info(paramfont, paramname, paramonly_used, parampassword, paramfolder, paramstorage)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFontFromRequest', 'storage')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequest', 'storage', paramstorage, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequest', 'storage', paramstorage, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-  end
-
-  # unit tests for set_embedded_font_from_request_online
-  # Embeds font from request and returns presentation.
-  # @param document Document data.
-  # @param font Font data.
-  # @param [Hash] opts the optional parameters
-  # @option opts [BOOLEAN] :only_used Only used characters will be embedded.
-  # @option opts [String] :password Document password.
-  # @return [File]
-  describe 'set_embedded_font_from_request_online test' do
-    it 'should work' do
-      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'SetEmbeddedFontFromRequestOnline', 'File')
-      paramfont = AsposeSlidesCloud::SpecUtils.get_param_value('font', 'SetEmbeddedFontFromRequestOnline', 'File')
-      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontFromRequestOnline', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontFromRequestOnline', 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontFromRequestOnline', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_font_from_request_online_with_http_info(paramdocument, paramfont, paramonly_used, parampassword)
-      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequestOnline', nil, nil, nil)
-      expect(c).to eq(code)
-      expect(o).not_to be_nil
-    end
-
-    it 'invalid document' do
-      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'SetEmbeddedFontFromRequestOnline', 'File')
-      paramfont = AsposeSlidesCloud::SpecUtils.get_param_value('font', 'SetEmbeddedFontFromRequestOnline', 'File')
-      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontFromRequestOnline', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontFromRequestOnline', 'String')
-      paramdocument = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'SetEmbeddedFontFromRequestOnline', paramdocument, 'File')
-      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontFromRequestOnline', 'document', paramdocument)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_font_from_request_online_with_http_info(paramdocument, paramfont, paramonly_used, parampassword)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFontFromRequestOnline', 'document')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequestOnline', 'document', paramdocument, 'File')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequestOnline', 'document', paramdocument, 'File')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid font' do
-      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'SetEmbeddedFontFromRequestOnline', 'File')
-      paramfont = AsposeSlidesCloud::SpecUtils.get_param_value('font', 'SetEmbeddedFontFromRequestOnline', 'File')
-      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontFromRequestOnline', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontFromRequestOnline', 'String')
-      paramfont = AsposeSlidesCloud::SpecUtils.invalidize_param_value('font', 'SetEmbeddedFontFromRequestOnline', paramfont, 'File')
-      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontFromRequestOnline', 'font', paramfont)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_font_from_request_online_with_http_info(paramdocument, paramfont, paramonly_used, parampassword)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFontFromRequestOnline', 'font')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequestOnline', 'font', paramfont, 'File')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequestOnline', 'font', paramfont, 'File')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid only_used' do
-      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'SetEmbeddedFontFromRequestOnline', 'File')
-      paramfont = AsposeSlidesCloud::SpecUtils.get_param_value('font', 'SetEmbeddedFontFromRequestOnline', 'File')
-      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontFromRequestOnline', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontFromRequestOnline', 'String')
-      paramonly_used = AsposeSlidesCloud::SpecUtils.invalidize_param_value('onlyUsed', 'SetEmbeddedFontFromRequestOnline', paramonly_used, 'BOOLEAN')
-      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontFromRequestOnline', 'onlyUsed', paramonly_used)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_font_from_request_online_with_http_info(paramdocument, paramfont, paramonly_used, parampassword)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFontFromRequestOnline', 'onlyUsed')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequestOnline', 'onlyUsed', paramonly_used, 'BOOLEAN')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequestOnline', 'onlyUsed', paramonly_used, 'BOOLEAN')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-
-    it 'invalid password' do
-      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'SetEmbeddedFontFromRequestOnline', 'File')
-      paramfont = AsposeSlidesCloud::SpecUtils.get_param_value('font', 'SetEmbeddedFontFromRequestOnline', 'File')
-      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontFromRequestOnline', 'BOOLEAN')
-      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontFromRequestOnline', 'String')
-      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'SetEmbeddedFontFromRequestOnline', parampassword, 'String')
-      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontFromRequestOnline', 'password', parampassword)
-      begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_font_from_request_online_with_http_info(paramdocument, paramfont, paramonly_used, parampassword)
-        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFontFromRequestOnline', 'password')
-          fail "An exception expected"
-        end
-      rescue AsposeSlidesCloud::ApiError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequestOnline', 'password', parampassword, 'String')
-        expect(e.code).to eq(code)
-        expect(e.response_body).to include(message)
-      rescue ArgumentError => e
-        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontFromRequestOnline', 'password', parampassword, 'String')
-        expect(400).to eq(code)
-        expect(e.message).to include(message)
-      end
-    end
-  end
-
   # unit tests for set_embedded_font_online
   # Embeds specified font and returns presentation.
   # @param document Document data.
@@ -47017,6 +46793,360 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontOnline', 'fontsFolder', paramfonts_folder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for set_embedded_fonts
+  # Embeds fonts with specified names and/or fonts from request and returns presentation fonts info.
+  # @param name Document name.
+  # @param [Hash] opts the optional parameters
+  # @option opts [File[]] :fonts Font data.
+  # @option opts [Integer[]] :font_names Font names.
+  # @option opts [BOOLEAN] :only_used Only used characters will be embedded.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Document folder.
+  # @option opts [String] :storage Document storage.
+  # @return [FontsData]
+  describe 'set_embedded_fonts test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFonts', 'String')
+      paramfonts = AsposeSlidesCloud::SpecUtils.get_param_value('fonts', 'SetEmbeddedFonts', 'File[]')
+      paramfont_names = AsposeSlidesCloud::SpecUtils.get_param_value('fontNames', 'SetEmbeddedFonts', 'Integer[]')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFonts', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFonts', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFonts', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_fonts_with_http_info(paramname, paramfonts, paramfont_names, paramonly_used, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFonts', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFonts', 'String')
+      paramfonts = AsposeSlidesCloud::SpecUtils.get_param_value('fonts', 'SetEmbeddedFonts', 'File[]')
+      paramfont_names = AsposeSlidesCloud::SpecUtils.get_param_value('fontNames', 'SetEmbeddedFonts', 'Integer[]')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFonts', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFonts', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'SetEmbeddedFonts', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFonts', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_fonts_with_http_info(paramname, paramfonts, paramfont_names, paramonly_used, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFonts', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFonts', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFonts', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid fonts' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFonts', 'String')
+      paramfonts = AsposeSlidesCloud::SpecUtils.get_param_value('fonts', 'SetEmbeddedFonts', 'File[]')
+      paramfont_names = AsposeSlidesCloud::SpecUtils.get_param_value('fontNames', 'SetEmbeddedFonts', 'Integer[]')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFonts', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFonts', 'String')
+      paramfonts = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fonts', 'SetEmbeddedFonts', paramfonts, 'File[]')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFonts', 'fonts', paramfonts)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_fonts_with_http_info(paramname, paramfonts, paramfont_names, paramonly_used, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFonts', 'fonts')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFonts', 'fonts', paramfonts, 'File[]')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFonts', 'fonts', paramfonts, 'File[]')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid font_names' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFonts', 'String')
+      paramfonts = AsposeSlidesCloud::SpecUtils.get_param_value('fonts', 'SetEmbeddedFonts', 'File[]')
+      paramfont_names = AsposeSlidesCloud::SpecUtils.get_param_value('fontNames', 'SetEmbeddedFonts', 'Integer[]')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFonts', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFonts', 'String')
+      paramfont_names = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontNames', 'SetEmbeddedFonts', paramfont_names, 'Integer[]')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFonts', 'fontNames', paramfont_names)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_fonts_with_http_info(paramname, paramfonts, paramfont_names, paramonly_used, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFonts', 'fontNames')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFonts', 'fontNames', paramfont_names, 'Integer[]')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFonts', 'fontNames', paramfont_names, 'Integer[]')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid only_used' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFonts', 'String')
+      paramfonts = AsposeSlidesCloud::SpecUtils.get_param_value('fonts', 'SetEmbeddedFonts', 'File[]')
+      paramfont_names = AsposeSlidesCloud::SpecUtils.get_param_value('fontNames', 'SetEmbeddedFonts', 'Integer[]')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFonts', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFonts', 'String')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.invalidize_param_value('onlyUsed', 'SetEmbeddedFonts', paramonly_used, 'BOOLEAN')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFonts', 'onlyUsed', paramonly_used)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_fonts_with_http_info(paramname, paramfonts, paramfont_names, paramonly_used, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFonts', 'onlyUsed')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFonts', 'onlyUsed', paramonly_used, 'BOOLEAN')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFonts', 'onlyUsed', paramonly_used, 'BOOLEAN')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFonts', 'String')
+      paramfonts = AsposeSlidesCloud::SpecUtils.get_param_value('fonts', 'SetEmbeddedFonts', 'File[]')
+      paramfont_names = AsposeSlidesCloud::SpecUtils.get_param_value('fontNames', 'SetEmbeddedFonts', 'Integer[]')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFonts', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFonts', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'SetEmbeddedFonts', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFonts', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_fonts_with_http_info(paramname, paramfonts, paramfont_names, paramonly_used, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFonts', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFonts', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFonts', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFonts', 'String')
+      paramfonts = AsposeSlidesCloud::SpecUtils.get_param_value('fonts', 'SetEmbeddedFonts', 'File[]')
+      paramfont_names = AsposeSlidesCloud::SpecUtils.get_param_value('fontNames', 'SetEmbeddedFonts', 'Integer[]')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFonts', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'SetEmbeddedFonts', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFonts', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_fonts_with_http_info(paramname, paramfonts, paramfont_names, paramonly_used, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFonts', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFonts', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFonts', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'SetEmbeddedFonts', 'String')
+      paramfonts = AsposeSlidesCloud::SpecUtils.get_param_value('fonts', 'SetEmbeddedFonts', 'File[]')
+      paramfont_names = AsposeSlidesCloud::SpecUtils.get_param_value('fontNames', 'SetEmbeddedFonts', 'Integer[]')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFonts', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFonts', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'SetEmbeddedFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'SetEmbeddedFonts', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'SetEmbeddedFonts', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFonts', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_fonts_with_http_info(paramname, paramfonts, paramfont_names, paramonly_used, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFonts', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFonts', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFonts', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for set_embedded_fonts_online
+  # Embeds font from request and returns presentation.
+  # @param document Document data.
+  # @param [Hash] opts the optional parameters
+  # @option opts [File[]] :fonts Font data.
+  # @option opts [Integer[]] :font_names Font names.
+  # @option opts [BOOLEAN] :only_used Only used characters will be embedded.
+  # @option opts [String] :password Document password.
+  # @return [File]
+  describe 'set_embedded_fonts_online test' do
+    it 'should work' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'SetEmbeddedFontsOnline', 'File')
+      paramfonts = AsposeSlidesCloud::SpecUtils.get_param_value('fonts', 'SetEmbeddedFontsOnline', 'File[]')
+      paramfont_names = AsposeSlidesCloud::SpecUtils.get_param_value('fontNames', 'SetEmbeddedFontsOnline', 'Integer[]')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontsOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontsOnline', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontsOnline', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_fonts_online_with_http_info(paramdocument, paramfonts, paramfont_names, paramonly_used, parampassword)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontsOnline', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid document' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'SetEmbeddedFontsOnline', 'File')
+      paramfonts = AsposeSlidesCloud::SpecUtils.get_param_value('fonts', 'SetEmbeddedFontsOnline', 'File[]')
+      paramfont_names = AsposeSlidesCloud::SpecUtils.get_param_value('fontNames', 'SetEmbeddedFontsOnline', 'Integer[]')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontsOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontsOnline', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'SetEmbeddedFontsOnline', paramdocument, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontsOnline', 'document', paramdocument)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_fonts_online_with_http_info(paramdocument, paramfonts, paramfont_names, paramonly_used, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFontsOnline', 'document')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontsOnline', 'document', paramdocument, 'File')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontsOnline', 'document', paramdocument, 'File')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid fonts' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'SetEmbeddedFontsOnline', 'File')
+      paramfonts = AsposeSlidesCloud::SpecUtils.get_param_value('fonts', 'SetEmbeddedFontsOnline', 'File[]')
+      paramfont_names = AsposeSlidesCloud::SpecUtils.get_param_value('fontNames', 'SetEmbeddedFontsOnline', 'Integer[]')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontsOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontsOnline', 'String')
+      paramfonts = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fonts', 'SetEmbeddedFontsOnline', paramfonts, 'File[]')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontsOnline', 'fonts', paramfonts)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_fonts_online_with_http_info(paramdocument, paramfonts, paramfont_names, paramonly_used, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFontsOnline', 'fonts')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontsOnline', 'fonts', paramfonts, 'File[]')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontsOnline', 'fonts', paramfonts, 'File[]')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid font_names' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'SetEmbeddedFontsOnline', 'File')
+      paramfonts = AsposeSlidesCloud::SpecUtils.get_param_value('fonts', 'SetEmbeddedFontsOnline', 'File[]')
+      paramfont_names = AsposeSlidesCloud::SpecUtils.get_param_value('fontNames', 'SetEmbeddedFontsOnline', 'Integer[]')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontsOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontsOnline', 'String')
+      paramfont_names = AsposeSlidesCloud::SpecUtils.invalidize_param_value('fontNames', 'SetEmbeddedFontsOnline', paramfont_names, 'Integer[]')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontsOnline', 'fontNames', paramfont_names)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_fonts_online_with_http_info(paramdocument, paramfonts, paramfont_names, paramonly_used, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFontsOnline', 'fontNames')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontsOnline', 'fontNames', paramfont_names, 'Integer[]')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontsOnline', 'fontNames', paramfont_names, 'Integer[]')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid only_used' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'SetEmbeddedFontsOnline', 'File')
+      paramfonts = AsposeSlidesCloud::SpecUtils.get_param_value('fonts', 'SetEmbeddedFontsOnline', 'File[]')
+      paramfont_names = AsposeSlidesCloud::SpecUtils.get_param_value('fontNames', 'SetEmbeddedFontsOnline', 'Integer[]')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontsOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontsOnline', 'String')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.invalidize_param_value('onlyUsed', 'SetEmbeddedFontsOnline', paramonly_used, 'BOOLEAN')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontsOnline', 'onlyUsed', paramonly_used)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_fonts_online_with_http_info(paramdocument, paramfonts, paramfont_names, paramonly_used, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFontsOnline', 'onlyUsed')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontsOnline', 'onlyUsed', paramonly_used, 'BOOLEAN')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontsOnline', 'onlyUsed', paramonly_used, 'BOOLEAN')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'SetEmbeddedFontsOnline', 'File')
+      paramfonts = AsposeSlidesCloud::SpecUtils.get_param_value('fonts', 'SetEmbeddedFontsOnline', 'File[]')
+      paramfont_names = AsposeSlidesCloud::SpecUtils.get_param_value('fontNames', 'SetEmbeddedFontsOnline', 'Integer[]')
+      paramonly_used = AsposeSlidesCloud::SpecUtils.get_param_value('onlyUsed', 'SetEmbeddedFontsOnline', 'BOOLEAN')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'SetEmbeddedFontsOnline', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'SetEmbeddedFontsOnline', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('SetEmbeddedFontsOnline', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.set_embedded_fonts_online_with_http_info(paramdocument, paramfonts, paramfont_names, paramonly_used, parampassword)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('SetEmbeddedFontsOnline', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontsOnline', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('SetEmbeddedFontsOnline', 'password', parampassword, 'String')
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end

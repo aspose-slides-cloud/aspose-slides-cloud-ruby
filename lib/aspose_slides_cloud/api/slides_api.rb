@@ -1123,6 +1123,86 @@ module AsposeSlidesCloud
         :return_type => 'SlideAnimation')
       return data, status_code, headers
     end
+    # Create video/audio captions track.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must refer to a video or audio frame).
+    # @param label Caption track label.
+    # @param data Caption track data.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Presentation storage.
+    def create_caption_track(name, slide_index, shape_index, label, data = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = create_caption_track_with_http_info(name, slide_index, shape_index, label, data, password, folder, storage)
+      data
+    end
+
+    # Create video/audio captions track.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must refer to a video or audio frame).
+    # @param label Caption track label.
+    # @param data Caption track data.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Presentation storage.
+    def create_caption_track_with_http_info(name, slide_index, shape_index, label, data = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.create_caption_track ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.create_caption_track"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.create_caption_track"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.create_caption_track"
+      end
+      # verify the required parameter 'label' is set
+      if @api_client.config.client_side_validation && label.nil?
+        fail ArgumentError, "Missing the required parameter 'label' when calling SlidesApi.create_caption_track"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'label'] = @api_client.prepare_for_query(label) unless label.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(data)
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'CaptionTrack')
+      return data, status_code, headers
+    end
     # Add a new category to a chart.
     # @param name Document name.
     # @param slide_index Slide index.
@@ -3281,86 +3361,6 @@ module AsposeSlidesCloud
         :return_type => 'VbaModule')
       return data, status_code, headers
     end
-    # Create video captions track.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index (must refer to a picture frame).
-    # @param label Caption track label.
-    # @param data Caption track data.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Presentation storage.
-    def create_video_caption_track(name, slide_index, shape_index, label, data = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = create_video_caption_track_with_http_info(name, slide_index, shape_index, label, data, password, folder, storage)
-      data
-    end
-
-    # Create video captions track.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index (must refer to a picture frame).
-    # @param label Caption track label.
-    # @param data Caption track data.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Presentation storage.
-    def create_video_caption_track_with_http_info(name, slide_index, shape_index, label, data = nil, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.create_video_caption_track ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.create_video_caption_track"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.create_video_caption_track"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.create_video_caption_track"
-      end
-      # verify the required parameter 'label' is set
-      if @api_client.config.client_side_validation && label.nil?
-        fail ArgumentError, "Missing the required parameter 'label' when calling SlidesApi.create_video_caption_track"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'label'] = @api_client.prepare_for_query(label) unless label.nil?
-      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
-      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(data)
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'CaptionTrack')
-      return data, status_code, headers
-    end
     # Adds a text watermark to each slide of the presentation. Text watermark can be setup via method arguments or withing Shape DTO for detailed customization. Both options are applicable simultaneously. 
     # @param name Document name.
     # @param shape Shape DTO
@@ -3972,6 +3972,153 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'SlideBackground')
+      return data, status_code, headers
+    end
+    # Delete video/audio captions track.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must refer to a video or audio frame).
+    # @param captions_index Captions track index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Presentation storage.
+    def delete_caption_track(name, slide_index, shape_index, captions_index, password = nil, folder = nil, storage = nil)
+      delete_caption_track_with_http_info(name, slide_index, shape_index, captions_index, password, folder, storage)
+      nil
+    end
+
+    # Delete video/audio captions track.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must refer to a video or audio frame).
+    # @param captions_index Captions track index.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Presentation storage.
+    def delete_caption_track_with_http_info(name, slide_index, shape_index, captions_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_caption_track ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_caption_track"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_caption_track"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_caption_track"
+      end
+      # verify the required parameter 'captions_index' is set
+      if @api_client.config.client_side_validation && captions_index.nil?
+        fail ArgumentError, "Missing the required parameter 'captions_index' when calling SlidesApi.delete_caption_track"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks/{captionsIndex}'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'captionsIndex', captions_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names)
+      return data, status_code, headers
+    end
+    # Delete all video/audio captions tracks.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must refer to a video frame).
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Presentation storage.
+    def delete_caption_tracks(name, slide_index, shape_index, password = nil, folder = nil, storage = nil)
+      delete_caption_tracks_with_http_info(name, slide_index, shape_index, password, folder, storage)
+      nil
+    end
+
+    # Delete all video/audio captions tracks.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must refer to a video frame).
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Presentation storage.
+    def delete_caption_tracks_with_http_info(name, slide_index, shape_index, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_caption_tracks ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_caption_tracks"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_caption_tracks"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_caption_tracks"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names)
       return data, status_code, headers
     end
     # Delete a category from a chart.
@@ -7374,153 +7521,6 @@ module AsposeSlidesCloud
         :return_type => 'VbaProject')
       return data, status_code, headers
     end
-    # Delete video captions track.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index (must refer to a video frame).
-    # @param captions_index Captions track index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Presentation storage.
-    def delete_video_caption_track(name, slide_index, shape_index, captions_index, password = nil, folder = nil, storage = nil)
-      delete_video_caption_track_with_http_info(name, slide_index, shape_index, captions_index, password, folder, storage)
-      nil
-    end
-
-    # Delete video captions track.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index (must refer to a video frame).
-    # @param captions_index Captions track index.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Presentation storage.
-    def delete_video_caption_track_with_http_info(name, slide_index, shape_index, captions_index, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_video_caption_track ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_video_caption_track"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_video_caption_track"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_video_caption_track"
-      end
-      # verify the required parameter 'captions_index' is set
-      if @api_client.config.client_side_validation && captions_index.nil?
-        fail ArgumentError, "Missing the required parameter 'captions_index' when calling SlidesApi.delete_video_caption_track"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks/{captionsIndex}'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'captionsIndex', captions_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
-      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = nil
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names)
-      return data, status_code, headers
-    end
-    # Delete all video captions tracks.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index (must refer to a video frame).
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Presentation storage.
-    def delete_video_caption_tracks(name, slide_index, shape_index, password = nil, folder = nil, storage = nil)
-      delete_video_caption_tracks_with_http_info(name, slide_index, shape_index, password, folder, storage)
-      nil
-    end
-
-    # Delete all video captions tracks.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index (must refer to a video frame).
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Presentation storage.
-    def delete_video_caption_tracks_with_http_info(name, slide_index, shape_index, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.delete_video_caption_tracks ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.delete_video_caption_tracks"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.delete_video_caption_tracks"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.delete_video_caption_tracks"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
-      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = nil
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names)
-      return data, status_code, headers
-    end
     # Removes shapes with name \"watermark\" from the presentation.
     # @param name Document name.
     # @param shape_name Name of the watermark shape. If null, default value \"watermark\"is used.
@@ -9312,6 +9312,80 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'SlideBackground')
+      return data, status_code, headers
+    end
+    # Gets video/audio captions tracks.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must refer to a video or audio frame).
+    # @param include_data true to include caption data string values in the response.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Presentation storage.
+    def get_caption_tracks(name, slide_index, shape_index, include_data = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_caption_tracks_with_http_info(name, slide_index, shape_index, include_data, password, folder, storage)
+      data
+    end
+
+    # Gets video/audio captions tracks.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param shape_index Shape index (must refer to a video or audio frame).
+    # @param include_data true to include caption data string values in the response.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Presentation storage.
+    def get_caption_tracks_with_http_info(name, slide_index, shape_index, include_data = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.get_caption_tracks ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_caption_tracks"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_caption_tracks"
+      end
+      # verify the required parameter 'shape_index' is set
+      if @api_client.config.client_side_validation && shape_index.nil?
+        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_caption_tracks"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'includeData'] = @api_client.prepare_for_query(include_data) unless include_data.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'CaptionTracks')
       return data, status_code, headers
     end
     # Read slide theme color scheme info.
@@ -11903,21 +11977,25 @@ module AsposeSlidesCloud
     # Read slide images info.
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param shape_index Shape index (null to search all shapes).
+    # @param shape_alt_text Shape alt name (null to search all shapes).
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def get_slide_images(name, slide_index, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = get_slide_images_with_http_info(name, slide_index, password, folder, storage)
+    def get_slide_images(name, slide_index, shape_index = nil, shape_alt_text = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = get_slide_images_with_http_info(name, slide_index, shape_index, shape_alt_text, password, folder, storage)
       data
     end
 
     # Read slide images info.
     # @param name Document name.
     # @param slide_index Slide index.
+    # @param shape_index Shape index (null to search all shapes).
+    # @param shape_alt_text Shape alt name (null to search all shapes).
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
-    def get_slide_images_with_http_info(name, slide_index, password = nil, folder = nil, storage = nil)
+    def get_slide_images_with_http_info(name, slide_index, shape_index = nil, shape_alt_text = nil, password = nil, folder = nil, storage = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.get_slide_images ...'
       end
@@ -11937,6 +12015,8 @@ module AsposeSlidesCloud
 
       # query parameters
       query_params = {}
+      query_params[:'shapeIndex'] = @api_client.prepare_for_query(shape_index) unless shape_index.nil?
+      query_params[:'shapeAltText'] = @api_client.prepare_for_query(shape_alt_text) unless shape_alt_text.nil?
       query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
       query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
 
@@ -13365,80 +13445,6 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'VbaProject')
-      return data, status_code, headers
-    end
-    # Gets video captions tracks.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index (must refer to a picture frame).
-    # @param include_data true to include caption data string values in the response.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Presentation storage.
-    def get_video_caption_tracks(name, slide_index, shape_index, include_data = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = get_video_caption_tracks_with_http_info(name, slide_index, shape_index, include_data, password, folder, storage)
-      data
-    end
-
-    # Gets video captions tracks.
-    # @param name Document name.
-    # @param slide_index Slide index.
-    # @param shape_index Shape index (must refer to a picture frame).
-    # @param include_data true to include caption data string values in the response.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Presentation storage.
-    def get_video_caption_tracks_with_http_info(name, slide_index, shape_index, include_data = nil, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.get_video_caption_tracks ...'
-      end
-
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.get_video_caption_tracks"
-      end
-      # verify the required parameter 'slide_index' is set
-      if @api_client.config.client_side_validation && slide_index.nil?
-        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.get_video_caption_tracks"
-      end
-      # verify the required parameter 'shape_index' is set
-      if @api_client.config.client_side_validation && shape_index.nil?
-        fail ArgumentError, "Missing the required parameter 'shape_index' when calling SlidesApi.get_video_caption_tracks"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/{shapeIndex}/captionTracks'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'shapeIndex', shape_index)
-
-      # query parameters
-      query_params = {}
-      query_params[:'includeData'] = @api_client.prepare_for_query(include_data) unless include_data.nil?
-      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
-      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = nil
-
-      # form parameters
-      post_files = []
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'CaptionTracks')
       return data, status_code, headers
     end
     # Read presentation view properties.
@@ -17257,140 +17263,6 @@ module AsposeSlidesCloud
         :return_type => 'FontsData')
       return data, status_code, headers
     end
-    # Embeds font from request and returns presentation fonts info.
-    # @param font Font data.
-    # @param name Document name.
-    # @param only_used Only used characters will be embedded.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def set_embedded_font_from_request(font, name, only_used = nil, password = nil, folder = nil, storage = nil)
-      data, _status_code, _headers = set_embedded_font_from_request_with_http_info(font, name, only_used, password, folder, storage)
-      data
-    end
-
-    # Embeds font from request and returns presentation fonts info.
-    # @param font Font data.
-    # @param name Document name.
-    # @param only_used Only used characters will be embedded.
-    # @param password Document password.
-    # @param folder Document folder.
-    # @param storage Document storage.
-    def set_embedded_font_from_request_with_http_info(font, name, only_used = nil, password = nil, folder = nil, storage = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.set_embedded_font_from_request ...'
-      end
-
-      # verify the required parameter 'font' is set
-      if @api_client.config.client_side_validation && font.nil?
-        fail ArgumentError, "Missing the required parameter 'font' when calling SlidesApi.set_embedded_font_from_request"
-      end
-      # verify the required parameter 'name' is set
-      if @api_client.config.client_side_validation && name.nil?
-        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.set_embedded_font_from_request"
-      end
-      # resource path
-      local_var_path = '/slides/{name}/fonts/embedded'
-      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
-
-      # query parameters
-      query_params = {}
-      query_params[:'onlyUsed'] = @api_client.prepare_for_query(only_used) unless only_used.nil?
-      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
-      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = nil
-
-      # form parameters
-      post_files = []
-      if font
-        post_files = post_files.push(font)
-      end
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'FontsData')
-      return data, status_code, headers
-    end
-    # Embeds font from request and returns presentation.
-    # @param document Document data.
-    # @param font Font data.
-    # @param only_used Only used characters will be embedded.
-    # @param password Document password.
-    def set_embedded_font_from_request_online(document, font, only_used = nil, password = nil)
-      data, _status_code, _headers = set_embedded_font_from_request_online_with_http_info(document, font, only_used, password)
-      data
-    end
-
-    # Embeds font from request and returns presentation.
-    # @param document Document data.
-    # @param font Font data.
-    # @param only_used Only used characters will be embedded.
-    # @param password Document password.
-    def set_embedded_font_from_request_online_with_http_info(document, font, only_used = nil, password = nil)
-      if @api_client.config.debugging
-        @api_client.config.logger.debug 'Calling API: SlidesApi.set_embedded_font_from_request_online ...'
-      end
-
-      # verify the required parameter 'document' is set
-      if @api_client.config.client_side_validation && document.nil?
-        fail ArgumentError, "Missing the required parameter 'document' when calling SlidesApi.set_embedded_font_from_request_online"
-      end
-      # verify the required parameter 'font' is set
-      if @api_client.config.client_side_validation && font.nil?
-        fail ArgumentError, "Missing the required parameter 'font' when calling SlidesApi.set_embedded_font_from_request_online"
-      end
-      # resource path
-      local_var_path = '/slides/fonts/embedded'
-
-      # query parameters
-      query_params = {}
-      query_params[:'onlyUsed'] = @api_client.prepare_for_query(only_used) unless only_used.nil?
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
-      header_params[:'password'] = password unless password.nil?
-
-      # http body (model)
-      post_body = nil
-
-      # form parameters
-      post_files = []
-      if document
-        post_files = post_files.push(document)
-      end
-      if font
-        post_files = post_files.push(font)
-      end
-
-      auth_names = ['JWT']
-      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :body => post_body,
-        :files => post_files,
-        :auth_names => auth_names,
-        :return_type => 'File')
-      return data, status_code, headers
-    end
     # Embeds specified font and returns presentation.
     # @param document Document data.
     # @param font_name Font name.
@@ -17445,6 +17317,138 @@ module AsposeSlidesCloud
       post_files = []
       if document
         post_files = post_files.push(document)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'File')
+      return data, status_code, headers
+    end
+    # Embeds fonts with specified names and/or fonts from request and returns presentation fonts info.
+    # @param name Document name.
+    # @param fonts Font data.
+    # @param font_names Font names.
+    # @param only_used Only used characters will be embedded.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def set_embedded_fonts(name, fonts = nil, font_names = nil, only_used = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = set_embedded_fonts_with_http_info(name, fonts, font_names, only_used, password, folder, storage)
+      data
+    end
+
+    # Embeds fonts with specified names and/or fonts from request and returns presentation fonts info.
+    # @param name Document name.
+    # @param fonts Font data.
+    # @param font_names Font names.
+    # @param only_used Only used characters will be embedded.
+    # @param password Document password.
+    # @param folder Document folder.
+    # @param storage Document storage.
+    def set_embedded_fonts_with_http_info(name, fonts = nil, font_names = nil, only_used = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.set_embedded_fonts ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.set_embedded_fonts"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/fonts/embedded'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+
+      # query parameters
+      query_params = {}
+      query_params[:'fontNames'] = @api_client.prepare_for_query(font_names) unless font_names.nil?
+      query_params[:'onlyUsed'] = @api_client.prepare_for_query(only_used) unless only_used.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+      if fonts
+        post_files = post_files.concat(fonts)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'FontsData')
+      return data, status_code, headers
+    end
+    # Embeds font from request and returns presentation.
+    # @param document Document data.
+    # @param fonts Font data.
+    # @param font_names Font names.
+    # @param only_used Only used characters will be embedded.
+    # @param password Document password.
+    def set_embedded_fonts_online(document, fonts = nil, font_names = nil, only_used = nil, password = nil)
+      data, _status_code, _headers = set_embedded_fonts_online_with_http_info(document, fonts, font_names, only_used, password)
+      data
+    end
+
+    # Embeds font from request and returns presentation.
+    # @param document Document data.
+    # @param fonts Font data.
+    # @param font_names Font names.
+    # @param only_used Only used characters will be embedded.
+    # @param password Document password.
+    def set_embedded_fonts_online_with_http_info(document, fonts = nil, font_names = nil, only_used = nil, password = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.set_embedded_fonts_online ...'
+      end
+
+      # verify the required parameter 'document' is set
+      if @api_client.config.client_side_validation && document.nil?
+        fail ArgumentError, "Missing the required parameter 'document' when calling SlidesApi.set_embedded_fonts_online"
+      end
+      # resource path
+      local_var_path = '/slides/fonts/embedded'
+
+      # query parameters
+      query_params = {}
+      query_params[:'fontNames'] = @api_client.prepare_for_query(font_names) unless font_names.nil?
+      query_params[:'onlyUsed'] = @api_client.prepare_for_query(only_used) unless only_used.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['multipart/form-data'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
+      if fonts
+        post_files = post_files.concat(fonts)
       end
 
       auth_names = ['JWT']
