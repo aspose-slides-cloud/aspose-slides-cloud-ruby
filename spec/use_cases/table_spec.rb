@@ -388,5 +388,26 @@ describe 'UseCases' do
 
             expect(result.items.length).to eq(1)
         end
+
+        it "import table from workbook" do
+            folder_name = "TempSlidesSDK"
+            file_name = "test.pptx"
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            source = File.binread("TestData/oleObject.xlsx")
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.import_table_from_workbook(
+                file_name, 9, "Sheet1", "A1:B5", source, nil, nil, nil, nil, "password", folder_name)
+            expect(result.type).to eq("Table")
+        end
+
+        it "import table from workbook by path" do
+            folder_name = "TempSlidesSDK"
+            file_name = "test.pptx"
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+            source = File.binread("TestData/oleObject.xlsx")
+            AsposeSlidesCloud::SpecUtils.testSlidesApi.upload_file(folder_name + "/oleObject.xlsx", source)
+            result = AsposeSlidesCloud::SpecUtils.testSlidesApi.import_table_from_workbook(
+                file_name, 9, "Sheet1", "A1:B5", nil, nil, nil, folder_name + "/oleObject.xlsx", nil, "password", folder_name)
+            expect(result.type).to eq("Table")
+        end
     end
 end

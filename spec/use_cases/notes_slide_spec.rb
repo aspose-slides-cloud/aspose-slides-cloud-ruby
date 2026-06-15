@@ -82,7 +82,7 @@ describe 'UseCases' do
       dto.height = 200
       dto.shape_type = "Rectangle"
       dto.text = "New shape"
-      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape(file_name, slide_index, AsposeSlidesCloud::SpecialSlideType::NOTES_SLIDE, dto, nil, nil, password, folder_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape(file_name, slide_index, AsposeSlidesCloud::SpecialSlideType::NOTES_SLIDE, dto, nil, nil, nil, password, folder_name)
       expect(shape.text).to eq(dto.text)
       shapes = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_special_slide_shapes(file_name, slide_index, AsposeSlidesCloud::SpecialSlideType::NOTES_SLIDE, password, folder_name)
       expect(shapes.shapes_links.length).to eq(shape_count + 1)

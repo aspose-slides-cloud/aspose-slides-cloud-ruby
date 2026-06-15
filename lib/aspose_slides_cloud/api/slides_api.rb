@@ -2281,13 +2281,14 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     # @param dto Shape DTO.
     # @param shape_to_clone Optional index for clone shape instead of adding a new one.
+    # @param clone_from_slide Optional index of the slide to clone the shape from. When set, shapeToClone refers to a shape on that slide.
     # @param position Position of the new shape in the list. Default is at the end of the list.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
     # @param sub_shape Sub-shape path (e.g. \"3\", \"3/shapes/2).
-    def create_shape(name, slide_index, dto = nil, shape_to_clone = nil, position = nil, password = nil, folder = nil, storage = nil, sub_shape = nil)
-      data, _status_code, _headers = create_shape_with_http_info(name, slide_index, dto, shape_to_clone, position, password, folder, storage, sub_shape)
+    def create_shape(name, slide_index, dto = nil, shape_to_clone = nil, clone_from_slide = nil, position = nil, password = nil, folder = nil, storage = nil, sub_shape = nil)
+      data, _status_code, _headers = create_shape_with_http_info(name, slide_index, dto, shape_to_clone, clone_from_slide, position, password, folder, storage, sub_shape)
       data
     end
 
@@ -2296,12 +2297,13 @@ module AsposeSlidesCloud
     # @param slide_index Slide index.
     # @param dto Shape DTO.
     # @param shape_to_clone Optional index for clone shape instead of adding a new one.
+    # @param clone_from_slide Optional index of the slide to clone the shape from. When set, shapeToClone refers to a shape on that slide.
     # @param position Position of the new shape in the list. Default is at the end of the list.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
     # @param sub_shape Sub-shape path (e.g. \"3\", \"3/shapes/2).
-    def create_shape_with_http_info(name, slide_index, dto = nil, shape_to_clone = nil, position = nil, password = nil, folder = nil, storage = nil, sub_shape = nil)
+    def create_shape_with_http_info(name, slide_index, dto = nil, shape_to_clone = nil, clone_from_slide = nil, position = nil, password = nil, folder = nil, storage = nil, sub_shape = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.create_shape ...'
       end
@@ -2322,6 +2324,7 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'shapeToClone'] = @api_client.prepare_for_query(shape_to_clone) unless shape_to_clone.nil?
+      query_params[:'cloneFromSlide'] = @api_client.prepare_for_query(clone_from_slide) unless clone_from_slide.nil?
       query_params[:'position'] = @api_client.prepare_for_query(position) unless position.nil?
       query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
       query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
@@ -2945,13 +2948,14 @@ module AsposeSlidesCloud
     # @param slide_type Slide type (master, layout or notes).
     # @param dto Shape DTO.
     # @param shape_to_clone Optional index for clone shape instead of adding a new one.
+    # @param clone_from_slide Optional index of the slide to clone the shape from. When set, shapeToClone refers to a shape on that slide.
     # @param position Position of the new shape in the list. Default is at the end of the list.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
     # @param sub_shape Sub-shape path (e.g. \"3\", \"3/shapes/2).
-    def create_special_slide_shape(name, slide_index, slide_type, dto, shape_to_clone = nil, position = nil, password = nil, folder = nil, storage = nil, sub_shape = nil)
-      data, _status_code, _headers = create_special_slide_shape_with_http_info(name, slide_index, slide_type, dto, shape_to_clone, position, password, folder, storage, sub_shape)
+    def create_special_slide_shape(name, slide_index, slide_type, dto, shape_to_clone = nil, clone_from_slide = nil, position = nil, password = nil, folder = nil, storage = nil, sub_shape = nil)
+      data, _status_code, _headers = create_special_slide_shape_with_http_info(name, slide_index, slide_type, dto, shape_to_clone, clone_from_slide, position, password, folder, storage, sub_shape)
       data
     end
 
@@ -2961,12 +2965,13 @@ module AsposeSlidesCloud
     # @param slide_type Slide type (master, layout or notes).
     # @param dto Shape DTO.
     # @param shape_to_clone Optional index for clone shape instead of adding a new one.
+    # @param clone_from_slide Optional index of the slide to clone the shape from. When set, shapeToClone refers to a shape on that slide.
     # @param position Position of the new shape in the list. Default is at the end of the list.
     # @param password Document password.
     # @param folder Document folder.
     # @param storage Document storage.
     # @param sub_shape Sub-shape path (e.g. \"3\", \"3/shapes/2).
-    def create_special_slide_shape_with_http_info(name, slide_index, slide_type, dto, shape_to_clone = nil, position = nil, password = nil, folder = nil, storage = nil, sub_shape = nil)
+    def create_special_slide_shape_with_http_info(name, slide_index, slide_type, dto, shape_to_clone = nil, clone_from_slide = nil, position = nil, password = nil, folder = nil, storage = nil, sub_shape = nil)
       if @api_client.config.debugging
         @api_client.config.logger.debug 'Calling API: SlidesApi.create_special_slide_shape ...'
       end
@@ -3000,6 +3005,7 @@ module AsposeSlidesCloud
       # query parameters
       query_params = {}
       query_params[:'shapeToClone'] = @api_client.prepare_for_query(shape_to_clone) unless shape_to_clone.nil?
+      query_params[:'cloneFromSlide'] = @api_client.prepare_for_query(clone_from_slide) unless clone_from_slide.nil?
       query_params[:'position'] = @api_client.prepare_for_query(position) unless position.nil?
       query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
       query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
@@ -13834,6 +13840,103 @@ module AsposeSlidesCloud
         :return_type => 'Shape')
       return data, status_code, headers
     end
+    # Imports a chart from an Excel workbook and adds it to the slide.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param worksheet_name The name of the worksheet that contains the chart.
+    # @param document Excel workbook data.
+    # @param chart_name The name of the chart. Required if chartIndex is not specified.
+    # @param chart_index The zero-based index of the chart in the worksheet. Takes precedence over chartName.
+    # @param x X coordinate of the chart (EMU).
+    # @param y Y coordinate of the chart (EMU).
+    # @param embed_all_workbook If true, the entire workbook is embedded; if false, only chart data.
+    # @param workbook_path Storage path to the workbook. If omitted, the workbook must be uploaded as multipart form data.
+    # @param workbook_storage Storage name for workbookPath.
+    # @param password Document password.
+    # @param folder Presentation folder.
+    # @param storage Presentation storage.
+    def import_chart_from_workbook(name, slide_index, worksheet_name, document = nil, chart_name = nil, chart_index = nil, x = nil, y = nil, embed_all_workbook = nil, workbook_path = nil, workbook_storage = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = import_chart_from_workbook_with_http_info(name, slide_index, worksheet_name, document, chart_name, chart_index, x, y, embed_all_workbook, workbook_path, workbook_storage, password, folder, storage)
+      data
+    end
+
+    # Imports a chart from an Excel workbook and adds it to the slide.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param worksheet_name The name of the worksheet that contains the chart.
+    # @param document Excel workbook data.
+    # @param chart_name The name of the chart. Required if chartIndex is not specified.
+    # @param chart_index The zero-based index of the chart in the worksheet. Takes precedence over chartName.
+    # @param x X coordinate of the chart (EMU).
+    # @param y Y coordinate of the chart (EMU).
+    # @param embed_all_workbook If true, the entire workbook is embedded; if false, only chart data.
+    # @param workbook_path Storage path to the workbook. If omitted, the workbook must be uploaded as multipart form data.
+    # @param workbook_storage Storage name for workbookPath.
+    # @param password Document password.
+    # @param folder Presentation folder.
+    # @param storage Presentation storage.
+    def import_chart_from_workbook_with_http_info(name, slide_index, worksheet_name, document = nil, chart_name = nil, chart_index = nil, x = nil, y = nil, embed_all_workbook = nil, workbook_path = nil, workbook_storage = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.import_chart_from_workbook ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.import_chart_from_workbook"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.import_chart_from_workbook"
+      end
+      # verify the required parameter 'worksheet_name' is set
+      if @api_client.config.client_side_validation && worksheet_name.nil?
+        fail ArgumentError, "Missing the required parameter 'worksheet_name' when calling SlidesApi.import_chart_from_workbook"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/fromExcelChart'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'worksheetName'] = @api_client.prepare_for_query(worksheet_name) unless worksheet_name.nil?
+      query_params[:'chartName'] = @api_client.prepare_for_query(chart_name) unless chart_name.nil?
+      query_params[:'chartIndex'] = @api_client.prepare_for_query(chart_index) unless chart_index.nil?
+      query_params[:'x'] = @api_client.prepare_for_query(x) unless x.nil?
+      query_params[:'y'] = @api_client.prepare_for_query(y) unless y.nil?
+      query_params[:'embedAllWorkbook'] = @api_client.prepare_for_query(embed_all_workbook) unless embed_all_workbook.nil?
+      query_params[:'workbookPath'] = @api_client.prepare_for_query(workbook_path) unless workbook_path.nil?
+      query_params[:'workbookStorage'] = @api_client.prepare_for_query(workbook_storage) unless workbook_storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'ShapeBase')
+      return data, status_code, headers
+    end
     # Create presentation document from html.
     # @param name Document name.
     # @param html HTML data.
@@ -14052,6 +14155,101 @@ module AsposeSlidesCloud
         :files => post_files,
         :auth_names => auth_names,
         :return_type => 'Shapes')
+      return data, status_code, headers
+    end
+    # Imports a table from an Excel workbook and adds it to the slide.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param worksheet_name The name of the worksheet that contains the table.
+    # @param cell_range The cell range that defines the table (e.g. \"A1:D10\").
+    # @param document Excel workbook data.
+    # @param x X coordinate of the table (EMU).
+    # @param y Y coordinate of the table (EMU).
+    # @param workbook_path Storage path to the workbook. If omitted, the workbook must be uploaded as multipart form data.
+    # @param workbook_storage Storage name for workbookPath.
+    # @param password Document password.
+    # @param folder Presentation folder.
+    # @param storage Presentation storage.
+    def import_table_from_workbook(name, slide_index, worksheet_name, cell_range, document = nil, x = nil, y = nil, workbook_path = nil, workbook_storage = nil, password = nil, folder = nil, storage = nil)
+      data, _status_code, _headers = import_table_from_workbook_with_http_info(name, slide_index, worksheet_name, cell_range, document, x, y, workbook_path, workbook_storage, password, folder, storage)
+      data
+    end
+
+    # Imports a table from an Excel workbook and adds it to the slide.
+    # @param name Document name.
+    # @param slide_index Slide index.
+    # @param worksheet_name The name of the worksheet that contains the table.
+    # @param cell_range The cell range that defines the table (e.g. \"A1:D10\").
+    # @param document Excel workbook data.
+    # @param x X coordinate of the table (EMU).
+    # @param y Y coordinate of the table (EMU).
+    # @param workbook_path Storage path to the workbook. If omitted, the workbook must be uploaded as multipart form data.
+    # @param workbook_storage Storage name for workbookPath.
+    # @param password Document password.
+    # @param folder Presentation folder.
+    # @param storage Presentation storage.
+    def import_table_from_workbook_with_http_info(name, slide_index, worksheet_name, cell_range, document = nil, x = nil, y = nil, workbook_path = nil, workbook_storage = nil, password = nil, folder = nil, storage = nil)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug 'Calling API: SlidesApi.import_table_from_workbook ...'
+      end
+
+      # verify the required parameter 'name' is set
+      if @api_client.config.client_side_validation && name.nil?
+        fail ArgumentError, "Missing the required parameter 'name' when calling SlidesApi.import_table_from_workbook"
+      end
+      # verify the required parameter 'slide_index' is set
+      if @api_client.config.client_side_validation && slide_index.nil?
+        fail ArgumentError, "Missing the required parameter 'slide_index' when calling SlidesApi.import_table_from_workbook"
+      end
+      # verify the required parameter 'worksheet_name' is set
+      if @api_client.config.client_side_validation && worksheet_name.nil?
+        fail ArgumentError, "Missing the required parameter 'worksheet_name' when calling SlidesApi.import_table_from_workbook"
+      end
+      # verify the required parameter 'cell_range' is set
+      if @api_client.config.client_side_validation && cell_range.nil?
+        fail ArgumentError, "Missing the required parameter 'cell_range' when calling SlidesApi.import_table_from_workbook"
+      end
+      # resource path
+      local_var_path = '/slides/{name}/slides/{slideIndex}/shapes/fromExcelTable'
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'name', name)
+      local_var_path = @api_client.replace_path_parameter(local_var_path, 'slideIndex', slide_index)
+
+      # query parameters
+      query_params = {}
+      query_params[:'worksheetName'] = @api_client.prepare_for_query(worksheet_name) unless worksheet_name.nil?
+      query_params[:'cellRange'] = @api_client.prepare_for_query(cell_range) unless cell_range.nil?
+      query_params[:'x'] = @api_client.prepare_for_query(x) unless x.nil?
+      query_params[:'y'] = @api_client.prepare_for_query(y) unless y.nil?
+      query_params[:'workbookPath'] = @api_client.prepare_for_query(workbook_path) unless workbook_path.nil?
+      query_params[:'workbookStorage'] = @api_client.prepare_for_query(workbook_storage) unless workbook_storage.nil?
+      query_params[:'folder'] = @api_client.prepare_for_query(folder) unless folder.nil?
+      query_params[:'storage'] = @api_client.prepare_for_query(storage) unless storage.nil?
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['multipart/form-data'])
+      header_params[:'password'] = password unless password.nil?
+
+      # http body (model)
+      post_body = nil
+
+      # form parameters
+      post_files = []
+      if document
+        post_files = post_files.push(document)
+      end
+
+      auth_names = ['JWT']
+      data, status_code, headers = @api_client.call_api(:POST, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :body => post_body,
+        :files => post_files,
+        :auth_names => auth_names,
+        :return_type => 'ShapeBase')
       return data, status_code, headers
     end
     # Merge the presentation with other presentations specified in the request parameter.

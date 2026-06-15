@@ -39,7 +39,7 @@ describe 'UseCases' do
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::Shape.new
       dto.shape_type = 'Callout1'
-      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, nil, "password", folder_name)
       expect(result).to be_kind_of(AsposeSlidesCloud::Shape)
     end
 
@@ -49,7 +49,7 @@ describe 'UseCases' do
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::Shape.new
       begin
-        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
+        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, nil, "password", folder_name)
         fail "Shape with undefined type should not have been created"
       rescue AsposeSlidesCloud::ApiError => e
         expect(e.code).to eq(400)
@@ -62,7 +62,7 @@ describe 'UseCases' do
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::GraphicalObject.new
       begin
-        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
+        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, nil, "password", folder_name)
         fail "GraphicalObject should not have been created"
       rescue AsposeSlidesCloud::ApiError => e
         expect(e.code).to eq(400)
@@ -77,7 +77,7 @@ describe 'UseCases' do
       fill = AsposeSlidesCloud::PictureFill.new
       fill.base64_data = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXY5g+ffp/AAZTAsWGL27gAAAAAElFTkSuQmCC"
       dto.picture_fill_format = fill
-      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, nil, "password", folder_name)
       expect(result).to be_kind_of(AsposeSlidesCloud::PictureFrame)
     end
 
@@ -87,7 +87,7 @@ describe 'UseCases' do
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::PictureFrame.new
       begin
-        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
+        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, nil, "password", folder_name)
         fail "PictureFrame with undefinined data should not have been created"
       rescue AsposeSlidesCloud::ApiError => e
         expect(e.code).to eq(400)
@@ -100,7 +100,7 @@ describe 'UseCases' do
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::AudioFrame.new
       dto.base64_data = "bXAzc2FtcGxl"
-      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, nil, "password", folder_name)
       expect(result).to be_kind_of(AsposeSlidesCloud::AudioFrame)
     end
 
@@ -110,7 +110,7 @@ describe 'UseCases' do
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::AudioFrame.new
       begin
-        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
+        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, nil, "password", folder_name)
         fail "AudioFrame with undefinined data should not have been created"
       rescue AsposeSlidesCloud::ApiError => e
         expect(e.code).to eq(400)
@@ -123,7 +123,7 @@ describe 'UseCases' do
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::VideoFrame.new
       dto.base64_data = "bXAzc2FtcGxl"
-      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, nil, "password", folder_name)
       expect(result).to be_kind_of(AsposeSlidesCloud::VideoFrame)
     end
 
@@ -133,7 +133,7 @@ describe 'UseCases' do
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::VideoFrame.new
       begin
-        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
+        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, nil, "password", folder_name)
         fail "VideoFrame with undefinined data should not have been created"
       rescue AsposeSlidesCloud::ApiError => e
         expect(e.code).to eq(400)
@@ -146,7 +146,7 @@ describe 'UseCases' do
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::OleObjectFrame.new
       begin
-        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
+        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, nil, "password", folder_name)
         fail "OleObjectFrame should not have been created"
       rescue AsposeSlidesCloud::ApiError => e
         expect(e.code).to eq(400)
@@ -176,7 +176,7 @@ describe 'UseCases' do
       node2.text = "Second"
       node2.org_chart_layout = 'Initial'
       dto.nodes = [ node1, node2 ]
-      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, nil, "password", folder_name)
       expect(result).to be_kind_of(AsposeSlidesCloud::SmartArt)
     end
 
@@ -185,7 +185,7 @@ describe 'UseCases' do
       file_name = "test.pptx"
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::SmartArt.new
-      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, nil, "password", folder_name)
       expect(result).to be_kind_of(AsposeSlidesCloud::SmartArt)
     end
 
@@ -195,7 +195,7 @@ describe 'UseCases' do
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::Chart.new
       begin
-        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
+        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, nil, "password", folder_name)
         fail "Chart with undefinined series should not have been created"
       rescue AsposeSlidesCloud::ApiError => e
         expect(e.code).to eq(500)
@@ -268,7 +268,7 @@ describe 'UseCases' do
       dto.columns = [ column1, column2, column3, column4 ]
       dto.first_row = true
       dto.horizontal_banding = true
-      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, nil, "password", folder_name)
       expect(result).to be_kind_of(AsposeSlidesCloud::Table)
     end
 
@@ -278,7 +278,7 @@ describe 'UseCases' do
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::Table.new
       begin
-        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
+        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, nil, "password", folder_name)
         fail "Table with undefinined cell data should not have been created"
       rescue AsposeSlidesCloud::ApiError => e
         expect(e.code).to eq(400)
@@ -290,7 +290,7 @@ describe 'UseCases' do
       file_name = "test.pptx"
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::GroupShape.new
-      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, nil, "password", folder_name)
       expect(result).to be_kind_of(AsposeSlidesCloud::GroupShape)
     end
 
@@ -306,7 +306,7 @@ describe 'UseCases' do
       end_shape = AsposeSlidesCloud::ResourceUri.new
       end_shape.href = "https://api.aspose.cloud/v3.0/slides/myPresentation.pptx/slides/1/shapes/2"
       dto.end_shape_connected_to = end_shape
-      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, nil, "password", folder_name)
       expect(result).to be_kind_of(AsposeSlidesCloud::Connector)
     end
 
@@ -315,7 +315,7 @@ describe 'UseCases' do
       file_name = "test.pptx"
       AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
       dto = AsposeSlidesCloud::Connector.new
-      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, nil, "password", folder_name)
       expect(result).to be_kind_of(AsposeSlidesCloud::Connector)
     end
 
@@ -419,7 +419,7 @@ describe 'UseCases' do
       dto.width = 200
       dto.height = 100
       dto.target_slide_index = 2
-      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, dto, nil, nil, nil, password, folder_name)
       expect(shape).to be_kind_of(AsposeSlidesCloud::ZoomFrame)
       expect(shape.target_slide_index).to eq(2)
     end
@@ -436,7 +436,7 @@ describe 'UseCases' do
       dto.width = 200
       dto.height = 100
       dto.target_section_index = 2
-      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, dto, nil, nil, nil, password, folder_name)
       expect(shape).to be_kind_of(AsposeSlidesCloud::SectionZoomFrame)
       expect(shape.target_section_index).to eq(2)
     end
@@ -454,7 +454,7 @@ describe 'UseCases' do
       dto.height = 200
       dto.link_path = "oleObject.xlsx"
       dto.object_prog_id = "Excel.Sheet.8"
-      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, dto, nil, nil, nil, password, folder_name)
       expect(shape).to be_kind_of(AsposeSlidesCloud::OleObjectFrame)
       expect(shape.link_path).to eq(dto.link_path)
     end
@@ -475,7 +475,7 @@ describe 'UseCases' do
       dto.embedded_file_extension = "xlsx"
       dto.embedded_file_base64_data = Base64.encode64(source)
 
-      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, dto, nil, nil, nil, password, folder_name)
       expect(shape).to be_kind_of(AsposeSlidesCloud::OleObjectFrame)
       expect(shape.embedded_file_base64_data).not_to eq(nil)
     end
@@ -490,7 +490,7 @@ describe 'UseCases' do
       expect(shapes.shapes_links.length).to eq(0)
 
       group_shape = AsposeSlidesCloud::GroupShape.new
-      AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, group_shape, nil, nil, password, folder_name)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, group_shape, nil, nil, nil, password, folder_name)
 
       shape1 = AsposeSlidesCloud::Shape.new
       shape1.shape_type = "Rectangle"
@@ -511,9 +511,9 @@ describe 'UseCases' do
       shape3.width = 50
       shape3.height = 50
 
-      AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, shape1, nil, nil, password, folder_name, "", "1")
-      AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, shape2, nil, nil, password, folder_name, "", "1")
-      AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, shape3, nil, nil, password, folder_name, "", "1")
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, shape1, nil, nil, nil, password, folder_name, "", "1")
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, shape2, nil, nil, nil, password, folder_name, "", "1")
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, shape3, nil, nil, nil, password, folder_name, "", "1")
 
       shapes = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shapes(file_name, slide_index, password, folder_name)
       expect(shapes.shapes_links.length).to eq(1)
@@ -608,6 +608,221 @@ describe 'UseCases' do
       shape.text = "Shape text"
 
       response = AsposeSlidesCloud::SpecUtils.testSlidesApi.download_shape_from_dto(AsposeSlidesCloud::ShapeExportFormat::PNG, shape)
+    end
+
+    it 'get shapes' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      slide_index = 3
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      shapes = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shapes(file_name, slide_index, password, folder_name)
+      expect(shapes.shapes_links.length).to eq(2)
+    end
+
+    it 'get shapes by type' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      slide_index = 3
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      shapes = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shapes(file_name, slide_index, password, folder_name, nil, 'Chart')
+      expect(shapes.shapes_links.length).to eq(2)
+    end
+
+    it 'get sub shapes' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      shapes = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shapes(file_name, 1, password, folder_name, nil, nil, "4")
+      expect(shapes.shapes_links.length).to eq(2)
+    end
+
+    it 'get shape' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      slide_index = 3
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(file_name, slide_index, 1, password, folder_name)
+      expect(shape.type).to eq('Chart')
+    end
+
+    it 'get sub shape' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      shape = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(file_name, 1, 4, password, folder_name, nil, "1")
+      expect(shape.type).to eq('Shape')
+    end
+
+    it 'smart art text formatting' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      slide_index = 7
+      target_node_path = "1/nodes/2"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      portion = AsposeSlidesCloud::Portion.new
+      portion.text = "New text"
+      portion.font_height = 24
+      portion.font_bold = 'True'
+      portion.spacing = 3
+      fill = AsposeSlidesCloud::SolidFill.new
+      fill.color = "#FFFFFF00"
+      portion.fill_format = fill
+      response = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_portion(file_name, slide_index, 1, 1, 1, portion, password, folder_name, nil, target_node_path)
+      expect(response).not_to be_nil
+      expect(response.text).to eq(portion.text)
+      expect(response.font_height).to eq(portion.font_height)
+      expect(response.font_bold).to eq(portion.font_bold)
+      expect(response.spacing).to eq(portion.spacing)
+      expect(response.fill_format.color).to eq(fill.color)
+    end
+
+    it 'create sub shape' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      dto = AsposeSlidesCloud::Shape.new
+      dto.shape_type = "Rectangle"
+      dto.x = 200
+      dto.y = 200
+      dto.width = 50
+      dto.height = 50
+      response = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 1, dto, nil, nil, nil, password, folder_name, nil, "4")
+      expect(response).to be_kind_of(AsposeSlidesCloud::Shape)
+    end
+
+    it 'update shape' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      color = "#FFF5FF8A"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      dto = AsposeSlidesCloud::Shape.new
+      dto.width = 200
+      dto.height = 200
+      fill = AsposeSlidesCloud::SolidFill.new
+      fill.color = color
+      dto.fill_format = fill
+      response = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_shape(file_name, 1, 3, dto, password, folder_name)
+      expect(response).to be_kind_of(AsposeSlidesCloud::Shape)
+      expect(response.width).to eq(dto.width)
+      expect(response.height).to eq(dto.height)
+      expect(response.fill_format).to be_kind_of(AsposeSlidesCloud::SolidFill)
+    end
+
+    it 'update sub shape' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      color = "#FFF5FF8A"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      dto = AsposeSlidesCloud::Shape.new
+      dto.width = 200
+      dto.height = 200
+      fill = AsposeSlidesCloud::GradientFill.new
+      fill.shape = 'Linear'
+      fill.direction = 'FromCorner1'
+      stop1 = AsposeSlidesCloud::GradientFillStop.new
+      stop1.color = color
+      stop1.position = 0
+      stop2 = AsposeSlidesCloud::GradientFillStop.new
+      stop2.color = color
+      stop2.position = 1
+      fill.stops = [stop1, stop2]
+      dto.fill_format = fill
+      response = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_shape(file_name, 1, 4, dto, password, folder_name, nil, "1")
+      expect(response).to be_kind_of(AsposeSlidesCloud::Shape)
+      expect(response.width).to eq(dto.width)
+      expect(response.height).to eq(dto.height)
+      expect(response.fill_format).to be_kind_of(AsposeSlidesCloud::GradientFill)
+    end
+
+    it 'delete shapes' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      slide_index = 3
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      shapes = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_shapes(file_name, slide_index, nil, password, folder_name)
+      expect(shapes.shapes_links.length).to eq(0)
+    end
+
+    it 'delete shapes by indexes' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      slide_index = 3
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      shapes = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_shapes(file_name, slide_index, [2], password, folder_name)
+      expect(shapes.shapes_links.length).to eq(1)
+    end
+
+    it 'delete sub shapes' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      shapes = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_shapes(file_name, 1, nil, password, folder_name, nil, "4")
+      expect(shapes.shapes_links.length).to eq(0)
+    end
+
+    it 'delete sub shapes by indexes' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      shapes = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_shapes(file_name, 1, [2], password, folder_name, nil, "4")
+      expect(shapes.shapes_links.length).to eq(1)
+    end
+
+    it 'delete shape' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      shapes = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_shape(file_name, 1, 4, password, folder_name)
+      expect(shapes.shapes_links.length).to eq(3)
+    end
+
+    it 'delete sub shape' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      shapes = AsposeSlidesCloud::SpecUtils.testSlidesApi.delete_shape(file_name, 1, 4, password, folder_name, nil, "1")
+      expect(shapes.shapes_links.length).to eq(1)
+    end
+
+    it "smart art node default paragraph format" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      existing = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(file_name, 7, 1, password, folder_name)
+      paragraph_format = AsposeSlidesCloud::ParagraphFormat.new
+      bullet_fill = AsposeSlidesCloud::SolidFill.new
+      bullet_fill.color = "#FFFF0000"
+      paragraph_format.bullet_fill_format = bullet_fill
+      existing.nodes[0].default_paragraph_format = paragraph_format
+      updated = AsposeSlidesCloud::SpecUtils.testSlidesApi.update_shape(file_name, 7, 1, existing, password, folder_name)
+      expect(updated.nodes[0].default_paragraph_format).not_to be_nil
+      expect(updated.nodes[0].default_paragraph_format.bullet_fill_format.type).to eq("Solid")
+      expect(updated.nodes[0].default_paragraph_format.bullet_fill_format.color).to eq("#FFFF0000")
+    end
+
+    it "shape clone from slide" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 3, nil, 1, 1, nil, nil, password, folder_name)
+      expect(result).not_to be_nil
     end
   end
 end

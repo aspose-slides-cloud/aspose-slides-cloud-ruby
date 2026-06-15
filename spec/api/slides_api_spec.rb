@@ -6389,6 +6389,7 @@ describe 'SlidesApi' do
   # @param [Hash] opts the optional parameters
   # @option opts [ShapeBase] :dto Shape DTO.
   # @option opts [Integer] :shape_to_clone Optional index for clone shape instead of adding a new one.
+  # @option opts [Integer] :clone_from_slide Optional index of the slide to clone the shape from. When set, shapeToClone refers to a shape on that slide.
   # @option opts [Integer] :position Position of the new shape in the list. Default is at the end of the list.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -6401,13 +6402,14 @@ describe 'SlidesApi' do
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateShape', 'Integer')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateShape', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateShape', 'String')
       paramsub_shape = AsposeSlidesCloud::SpecUtils.get_param_value('subShape', 'CreateShape', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateShape', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
       code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateShape', nil, nil, nil)
       expect(c).to eq(code)
       expect(o).not_to be_nil
@@ -6418,6 +6420,7 @@ describe 'SlidesApi' do
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateShape', 'Integer')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateShape', 'String')
@@ -6426,7 +6429,7 @@ describe 'SlidesApi' do
       paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'CreateShape', paramname, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateShape', 'name', paramname)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateShape', 'name')
           fail "An exception expected"
         end
@@ -6446,6 +6449,7 @@ describe 'SlidesApi' do
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateShape', 'Integer')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateShape', 'String')
@@ -6454,7 +6458,7 @@ describe 'SlidesApi' do
       paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'CreateShape', paramslide_index, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('CreateShape', 'slideIndex', paramslide_index)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateShape', 'slideIndex')
           fail "An exception expected"
         end
@@ -6474,6 +6478,7 @@ describe 'SlidesApi' do
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateShape', 'Integer')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateShape', 'String')
@@ -6482,7 +6487,7 @@ describe 'SlidesApi' do
       paramdto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'CreateShape', paramdto, 'ShapeBase')
       AsposeSlidesCloud::SpecUtils.initialize('CreateShape', 'dto', paramdto)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateShape', 'dto')
           fail "An exception expected"
         end
@@ -6502,6 +6507,7 @@ describe 'SlidesApi' do
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateShape', 'Integer')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateShape', 'String')
@@ -6510,7 +6516,7 @@ describe 'SlidesApi' do
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeToClone', 'CreateShape', paramshape_to_clone, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('CreateShape', 'shapeToClone', paramshape_to_clone)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateShape', 'shapeToClone')
           fail "An exception expected"
         end
@@ -6525,11 +6531,41 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid clone_from_slide' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateShape', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateShape', 'Integer')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateShape', 'ShapeBase')
+      paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateShape', 'Integer')
+      paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateShape', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateShape', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateShape', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateShape', 'String')
+      paramsub_shape = AsposeSlidesCloud::SpecUtils.get_param_value('subShape', 'CreateShape', 'String')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.invalidize_param_value('cloneFromSlide', 'CreateShape', paramclone_from_slide, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateShape', 'cloneFromSlide', paramclone_from_slide)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateShape', 'cloneFromSlide')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateShape', 'cloneFromSlide', paramclone_from_slide, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateShape', 'cloneFromSlide', paramclone_from_slide, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
     it 'invalid position' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateShape', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateShape', 'Integer')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateShape', 'String')
@@ -6538,7 +6574,7 @@ describe 'SlidesApi' do
       paramposition = AsposeSlidesCloud::SpecUtils.invalidize_param_value('position', 'CreateShape', paramposition, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('CreateShape', 'position', paramposition)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateShape', 'position')
           fail "An exception expected"
         end
@@ -6558,6 +6594,7 @@ describe 'SlidesApi' do
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateShape', 'Integer')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateShape', 'String')
@@ -6566,7 +6603,7 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'CreateShape', parampassword, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateShape', 'password', parampassword)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateShape', 'password')
           fail "An exception expected"
         end
@@ -6586,6 +6623,7 @@ describe 'SlidesApi' do
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateShape', 'Integer')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateShape', 'String')
@@ -6594,7 +6632,7 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'CreateShape', paramfolder, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateShape', 'folder', paramfolder)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateShape', 'folder')
           fail "An exception expected"
         end
@@ -6614,6 +6652,7 @@ describe 'SlidesApi' do
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateShape', 'Integer')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateShape', 'String')
@@ -6622,7 +6661,7 @@ describe 'SlidesApi' do
       paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'CreateShape', paramstorage, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateShape', 'storage', paramstorage)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateShape', 'storage')
           fail "An exception expected"
         end
@@ -6642,6 +6681,7 @@ describe 'SlidesApi' do
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateShape', 'Integer')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateShape', 'String')
@@ -6650,7 +6690,7 @@ describe 'SlidesApi' do
       paramsub_shape = AsposeSlidesCloud::SpecUtils.invalidize_param_value('subShape', 'CreateShape', paramsub_shape, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateShape', 'subShape', paramsub_shape)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape_with_http_info(paramname, paramslide_index, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateShape', 'subShape')
           fail "An exception expected"
         end
@@ -8490,6 +8530,7 @@ describe 'SlidesApi' do
   # @param dto Shape DTO.
   # @param [Hash] opts the optional parameters
   # @option opts [Integer] :shape_to_clone Optional index for clone shape instead of adding a new one.
+  # @option opts [Integer] :clone_from_slide Optional index of the slide to clone the shape from. When set, shapeToClone refers to a shape on that slide.
   # @option opts [Integer] :position Position of the new shape in the list. Default is at the end of the list.
   # @option opts [String] :password Document password.
   # @option opts [String] :folder Document folder.
@@ -8503,13 +8544,14 @@ describe 'SlidesApi' do
       paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'CreateSpecialSlideShape', 'String')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateSpecialSlideShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateSpecialSlideShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateSpecialSlideShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateSpecialSlideShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateSpecialSlideShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateSpecialSlideShape', 'String')
       paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateSpecialSlideShape', 'String')
       paramsub_shape = AsposeSlidesCloud::SpecUtils.get_param_value('subShape', 'CreateSpecialSlideShape', 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateSpecialSlideShape', nil, nil)
-      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
       code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateSpecialSlideShape', nil, nil, nil)
       expect(c).to eq(code)
       expect(o).not_to be_nil
@@ -8521,6 +8563,7 @@ describe 'SlidesApi' do
       paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'CreateSpecialSlideShape', 'String')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateSpecialSlideShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateSpecialSlideShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateSpecialSlideShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateSpecialSlideShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateSpecialSlideShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateSpecialSlideShape', 'String')
@@ -8529,7 +8572,7 @@ describe 'SlidesApi' do
       paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'CreateSpecialSlideShape', paramname, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateSpecialSlideShape', 'name', paramname)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateSpecialSlideShape', 'name')
           fail "An exception expected"
         end
@@ -8550,6 +8593,7 @@ describe 'SlidesApi' do
       paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'CreateSpecialSlideShape', 'String')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateSpecialSlideShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateSpecialSlideShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateSpecialSlideShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateSpecialSlideShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateSpecialSlideShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateSpecialSlideShape', 'String')
@@ -8558,7 +8602,7 @@ describe 'SlidesApi' do
       paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'CreateSpecialSlideShape', paramslide_index, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('CreateSpecialSlideShape', 'slideIndex', paramslide_index)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateSpecialSlideShape', 'slideIndex')
           fail "An exception expected"
         end
@@ -8579,6 +8623,7 @@ describe 'SlidesApi' do
       paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'CreateSpecialSlideShape', 'String')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateSpecialSlideShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateSpecialSlideShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateSpecialSlideShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateSpecialSlideShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateSpecialSlideShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateSpecialSlideShape', 'String')
@@ -8587,7 +8632,7 @@ describe 'SlidesApi' do
       paramslide_type = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideType', 'CreateSpecialSlideShape', paramslide_type, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateSpecialSlideShape', 'slideType', paramslide_type)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateSpecialSlideShape', 'slideType')
           fail "An exception expected"
         end
@@ -8608,6 +8653,7 @@ describe 'SlidesApi' do
       paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'CreateSpecialSlideShape', 'String')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateSpecialSlideShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateSpecialSlideShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateSpecialSlideShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateSpecialSlideShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateSpecialSlideShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateSpecialSlideShape', 'String')
@@ -8616,7 +8662,7 @@ describe 'SlidesApi' do
       paramdto = AsposeSlidesCloud::SpecUtils.invalidize_param_value('dto', 'CreateSpecialSlideShape', paramdto, 'ShapeBase')
       AsposeSlidesCloud::SpecUtils.initialize('CreateSpecialSlideShape', 'dto', paramdto)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateSpecialSlideShape', 'dto')
           fail "An exception expected"
         end
@@ -8637,6 +8683,7 @@ describe 'SlidesApi' do
       paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'CreateSpecialSlideShape', 'String')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateSpecialSlideShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateSpecialSlideShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateSpecialSlideShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateSpecialSlideShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateSpecialSlideShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateSpecialSlideShape', 'String')
@@ -8645,7 +8692,7 @@ describe 'SlidesApi' do
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.invalidize_param_value('shapeToClone', 'CreateSpecialSlideShape', paramshape_to_clone, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('CreateSpecialSlideShape', 'shapeToClone', paramshape_to_clone)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateSpecialSlideShape', 'shapeToClone')
           fail "An exception expected"
         end
@@ -8660,12 +8707,43 @@ describe 'SlidesApi' do
       end
     end
 
+    it 'invalid clone_from_slide' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateSpecialSlideShape', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateSpecialSlideShape', 'Integer')
+      paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'CreateSpecialSlideShape', 'String')
+      paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateSpecialSlideShape', 'ShapeBase')
+      paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateSpecialSlideShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateSpecialSlideShape', 'Integer')
+      paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateSpecialSlideShape', 'Integer')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateSpecialSlideShape', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateSpecialSlideShape', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'CreateSpecialSlideShape', 'String')
+      paramsub_shape = AsposeSlidesCloud::SpecUtils.get_param_value('subShape', 'CreateSpecialSlideShape', 'String')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.invalidize_param_value('cloneFromSlide', 'CreateSpecialSlideShape', paramclone_from_slide, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('CreateSpecialSlideShape', 'cloneFromSlide', paramclone_from_slide)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateSpecialSlideShape', 'cloneFromSlide')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateSpecialSlideShape', 'cloneFromSlide', paramclone_from_slide, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('CreateSpecialSlideShape', 'cloneFromSlide', paramclone_from_slide, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
     it 'invalid position' do
       paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'CreateSpecialSlideShape', 'String')
       paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'CreateSpecialSlideShape', 'Integer')
       paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'CreateSpecialSlideShape', 'String')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateSpecialSlideShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateSpecialSlideShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateSpecialSlideShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateSpecialSlideShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateSpecialSlideShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateSpecialSlideShape', 'String')
@@ -8674,7 +8752,7 @@ describe 'SlidesApi' do
       paramposition = AsposeSlidesCloud::SpecUtils.invalidize_param_value('position', 'CreateSpecialSlideShape', paramposition, 'Integer')
       AsposeSlidesCloud::SpecUtils.initialize('CreateSpecialSlideShape', 'position', paramposition)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateSpecialSlideShape', 'position')
           fail "An exception expected"
         end
@@ -8695,6 +8773,7 @@ describe 'SlidesApi' do
       paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'CreateSpecialSlideShape', 'String')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateSpecialSlideShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateSpecialSlideShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateSpecialSlideShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateSpecialSlideShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateSpecialSlideShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateSpecialSlideShape', 'String')
@@ -8703,7 +8782,7 @@ describe 'SlidesApi' do
       parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'CreateSpecialSlideShape', parampassword, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateSpecialSlideShape', 'password', parampassword)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateSpecialSlideShape', 'password')
           fail "An exception expected"
         end
@@ -8724,6 +8803,7 @@ describe 'SlidesApi' do
       paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'CreateSpecialSlideShape', 'String')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateSpecialSlideShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateSpecialSlideShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateSpecialSlideShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateSpecialSlideShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateSpecialSlideShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateSpecialSlideShape', 'String')
@@ -8732,7 +8812,7 @@ describe 'SlidesApi' do
       paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'CreateSpecialSlideShape', paramfolder, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateSpecialSlideShape', 'folder', paramfolder)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateSpecialSlideShape', 'folder')
           fail "An exception expected"
         end
@@ -8753,6 +8833,7 @@ describe 'SlidesApi' do
       paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'CreateSpecialSlideShape', 'String')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateSpecialSlideShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateSpecialSlideShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateSpecialSlideShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateSpecialSlideShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateSpecialSlideShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateSpecialSlideShape', 'String')
@@ -8761,7 +8842,7 @@ describe 'SlidesApi' do
       paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'CreateSpecialSlideShape', paramstorage, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateSpecialSlideShape', 'storage', paramstorage)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateSpecialSlideShape', 'storage')
           fail "An exception expected"
         end
@@ -8782,6 +8863,7 @@ describe 'SlidesApi' do
       paramslide_type = AsposeSlidesCloud::SpecUtils.get_param_value('slideType', 'CreateSpecialSlideShape', 'String')
       paramdto = AsposeSlidesCloud::SpecUtils.get_param_value('dto', 'CreateSpecialSlideShape', 'ShapeBase')
       paramshape_to_clone = AsposeSlidesCloud::SpecUtils.get_param_value('shapeToClone', 'CreateSpecialSlideShape', 'Integer')
+      paramclone_from_slide = AsposeSlidesCloud::SpecUtils.get_param_value('cloneFromSlide', 'CreateSpecialSlideShape', 'Integer')
       paramposition = AsposeSlidesCloud::SpecUtils.get_param_value('position', 'CreateSpecialSlideShape', 'Integer')
       parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'CreateSpecialSlideShape', 'String')
       paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'CreateSpecialSlideShape', 'String')
@@ -8790,7 +8872,7 @@ describe 'SlidesApi' do
       paramsub_shape = AsposeSlidesCloud::SpecUtils.invalidize_param_value('subShape', 'CreateSpecialSlideShape', paramsub_shape, 'String')
       AsposeSlidesCloud::SpecUtils.initialize('CreateSpecialSlideShape', 'subShape', paramsub_shape)
       begin
-        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.create_special_slide_shape_with_http_info(paramname, paramslide_index, paramslide_type, paramdto, paramshape_to_clone, paramclone_from_slide, paramposition, parampassword, paramfolder, paramstorage, paramsub_shape)
         unless AsposeSlidesCloud::SpecUtils.no_exception?('CreateSpecialSlideShape', 'subShape')
           fail "An exception expected"
         end
@@ -36910,6 +36992,510 @@ describe 'SlidesApi' do
     end
   end
 
+  # unit tests for import_chart_from_workbook
+  # Imports a chart from an Excel workbook and adds it to the slide.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param worksheet_name The name of the worksheet that contains the chart.
+  # @param [Hash] opts the optional parameters
+  # @option opts [File] :document Excel workbook data.
+  # @option opts [String] :chart_name The name of the chart. Required if chartIndex is not specified.
+  # @option opts [Integer] :chart_index The zero-based index of the chart in the worksheet. Takes precedence over chartName.
+  # @option opts [Float] :x X coordinate of the chart (EMU).
+  # @option opts [Float] :y Y coordinate of the chart (EMU).
+  # @option opts [BOOLEAN] :embed_all_workbook If true, the entire workbook is embedded; if false, only chart data.
+  # @option opts [String] :workbook_path Storage path to the workbook. If omitted, the workbook must be uploaded as multipart form data.
+  # @option opts [String] :workbook_storage Storage name for workbookPath.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Presentation folder.
+  # @option opts [String] :storage Presentation storage.
+  # @return [ShapeBase]
+  describe 'import_chart_from_workbook test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportChartFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportChartFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportChartFromWorkbook', 'File')
+      paramchart_name = AsposeSlidesCloud::SpecUtils.get_param_value('chartName', 'ImportChartFromWorkbook', 'String')
+      paramchart_index = AsposeSlidesCloud::SpecUtils.get_param_value('chartIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportChartFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportChartFromWorkbook', 'Float')
+      paramembed_all_workbook = AsposeSlidesCloud::SpecUtils.get_param_value('embedAllWorkbook', 'ImportChartFromWorkbook', 'BOOLEAN')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportChartFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportChartFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportChartFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportChartFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportChartFromWorkbook', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportChartFromWorkbook', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.import_chart_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramdocument, paramchart_name, paramchart_index, paramx, paramy, paramembed_all_workbook, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportChartFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportChartFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportChartFromWorkbook', 'File')
+      paramchart_name = AsposeSlidesCloud::SpecUtils.get_param_value('chartName', 'ImportChartFromWorkbook', 'String')
+      paramchart_index = AsposeSlidesCloud::SpecUtils.get_param_value('chartIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportChartFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportChartFromWorkbook', 'Float')
+      paramembed_all_workbook = AsposeSlidesCloud::SpecUtils.get_param_value('embedAllWorkbook', 'ImportChartFromWorkbook', 'BOOLEAN')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportChartFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportChartFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportChartFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportChartFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportChartFromWorkbook', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'ImportChartFromWorkbook', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportChartFromWorkbook', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_chart_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramdocument, paramchart_name, paramchart_index, paramx, paramy, paramembed_all_workbook, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportChartFromWorkbook', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportChartFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportChartFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportChartFromWorkbook', 'File')
+      paramchart_name = AsposeSlidesCloud::SpecUtils.get_param_value('chartName', 'ImportChartFromWorkbook', 'String')
+      paramchart_index = AsposeSlidesCloud::SpecUtils.get_param_value('chartIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportChartFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportChartFromWorkbook', 'Float')
+      paramembed_all_workbook = AsposeSlidesCloud::SpecUtils.get_param_value('embedAllWorkbook', 'ImportChartFromWorkbook', 'BOOLEAN')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportChartFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportChartFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportChartFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportChartFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportChartFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'ImportChartFromWorkbook', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportChartFromWorkbook', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_chart_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramdocument, paramchart_name, paramchart_index, paramx, paramy, paramembed_all_workbook, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportChartFromWorkbook', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid worksheet_name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportChartFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportChartFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportChartFromWorkbook', 'File')
+      paramchart_name = AsposeSlidesCloud::SpecUtils.get_param_value('chartName', 'ImportChartFromWorkbook', 'String')
+      paramchart_index = AsposeSlidesCloud::SpecUtils.get_param_value('chartIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportChartFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportChartFromWorkbook', 'Float')
+      paramembed_all_workbook = AsposeSlidesCloud::SpecUtils.get_param_value('embedAllWorkbook', 'ImportChartFromWorkbook', 'BOOLEAN')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportChartFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportChartFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportChartFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportChartFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportChartFromWorkbook', 'String')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('worksheetName', 'ImportChartFromWorkbook', paramworksheet_name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportChartFromWorkbook', 'worksheetName', paramworksheet_name)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_chart_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramdocument, paramchart_name, paramchart_index, paramx, paramy, paramembed_all_workbook, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportChartFromWorkbook', 'worksheetName')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'worksheetName', paramworksheet_name, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'worksheetName', paramworksheet_name, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid document' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportChartFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportChartFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportChartFromWorkbook', 'File')
+      paramchart_name = AsposeSlidesCloud::SpecUtils.get_param_value('chartName', 'ImportChartFromWorkbook', 'String')
+      paramchart_index = AsposeSlidesCloud::SpecUtils.get_param_value('chartIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportChartFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportChartFromWorkbook', 'Float')
+      paramembed_all_workbook = AsposeSlidesCloud::SpecUtils.get_param_value('embedAllWorkbook', 'ImportChartFromWorkbook', 'BOOLEAN')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportChartFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportChartFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportChartFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportChartFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportChartFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'ImportChartFromWorkbook', paramdocument, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportChartFromWorkbook', 'document', paramdocument)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_chart_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramdocument, paramchart_name, paramchart_index, paramx, paramy, paramembed_all_workbook, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportChartFromWorkbook', 'document')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'document', paramdocument, 'File')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'document', paramdocument, 'File')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid chart_name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportChartFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportChartFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportChartFromWorkbook', 'File')
+      paramchart_name = AsposeSlidesCloud::SpecUtils.get_param_value('chartName', 'ImportChartFromWorkbook', 'String')
+      paramchart_index = AsposeSlidesCloud::SpecUtils.get_param_value('chartIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportChartFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportChartFromWorkbook', 'Float')
+      paramembed_all_workbook = AsposeSlidesCloud::SpecUtils.get_param_value('embedAllWorkbook', 'ImportChartFromWorkbook', 'BOOLEAN')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportChartFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportChartFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportChartFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportChartFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportChartFromWorkbook', 'String')
+      paramchart_name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('chartName', 'ImportChartFromWorkbook', paramchart_name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportChartFromWorkbook', 'chartName', paramchart_name)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_chart_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramdocument, paramchart_name, paramchart_index, paramx, paramy, paramembed_all_workbook, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportChartFromWorkbook', 'chartName')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'chartName', paramchart_name, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'chartName', paramchart_name, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid chart_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportChartFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportChartFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportChartFromWorkbook', 'File')
+      paramchart_name = AsposeSlidesCloud::SpecUtils.get_param_value('chartName', 'ImportChartFromWorkbook', 'String')
+      paramchart_index = AsposeSlidesCloud::SpecUtils.get_param_value('chartIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportChartFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportChartFromWorkbook', 'Float')
+      paramembed_all_workbook = AsposeSlidesCloud::SpecUtils.get_param_value('embedAllWorkbook', 'ImportChartFromWorkbook', 'BOOLEAN')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportChartFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportChartFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportChartFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportChartFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportChartFromWorkbook', 'String')
+      paramchart_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('chartIndex', 'ImportChartFromWorkbook', paramchart_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportChartFromWorkbook', 'chartIndex', paramchart_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_chart_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramdocument, paramchart_name, paramchart_index, paramx, paramy, paramembed_all_workbook, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportChartFromWorkbook', 'chartIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'chartIndex', paramchart_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'chartIndex', paramchart_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid x' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportChartFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportChartFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportChartFromWorkbook', 'File')
+      paramchart_name = AsposeSlidesCloud::SpecUtils.get_param_value('chartName', 'ImportChartFromWorkbook', 'String')
+      paramchart_index = AsposeSlidesCloud::SpecUtils.get_param_value('chartIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportChartFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportChartFromWorkbook', 'Float')
+      paramembed_all_workbook = AsposeSlidesCloud::SpecUtils.get_param_value('embedAllWorkbook', 'ImportChartFromWorkbook', 'BOOLEAN')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportChartFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportChartFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportChartFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportChartFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportChartFromWorkbook', 'String')
+      paramx = AsposeSlidesCloud::SpecUtils.invalidize_param_value('x', 'ImportChartFromWorkbook', paramx, 'Float')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportChartFromWorkbook', 'x', paramx)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_chart_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramdocument, paramchart_name, paramchart_index, paramx, paramy, paramembed_all_workbook, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportChartFromWorkbook', 'x')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'x', paramx, 'Float')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'x', paramx, 'Float')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid y' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportChartFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportChartFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportChartFromWorkbook', 'File')
+      paramchart_name = AsposeSlidesCloud::SpecUtils.get_param_value('chartName', 'ImportChartFromWorkbook', 'String')
+      paramchart_index = AsposeSlidesCloud::SpecUtils.get_param_value('chartIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportChartFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportChartFromWorkbook', 'Float')
+      paramembed_all_workbook = AsposeSlidesCloud::SpecUtils.get_param_value('embedAllWorkbook', 'ImportChartFromWorkbook', 'BOOLEAN')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportChartFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportChartFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportChartFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportChartFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportChartFromWorkbook', 'String')
+      paramy = AsposeSlidesCloud::SpecUtils.invalidize_param_value('y', 'ImportChartFromWorkbook', paramy, 'Float')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportChartFromWorkbook', 'y', paramy)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_chart_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramdocument, paramchart_name, paramchart_index, paramx, paramy, paramembed_all_workbook, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportChartFromWorkbook', 'y')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'y', paramy, 'Float')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'y', paramy, 'Float')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid embed_all_workbook' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportChartFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportChartFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportChartFromWorkbook', 'File')
+      paramchart_name = AsposeSlidesCloud::SpecUtils.get_param_value('chartName', 'ImportChartFromWorkbook', 'String')
+      paramchart_index = AsposeSlidesCloud::SpecUtils.get_param_value('chartIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportChartFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportChartFromWorkbook', 'Float')
+      paramembed_all_workbook = AsposeSlidesCloud::SpecUtils.get_param_value('embedAllWorkbook', 'ImportChartFromWorkbook', 'BOOLEAN')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportChartFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportChartFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportChartFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportChartFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportChartFromWorkbook', 'String')
+      paramembed_all_workbook = AsposeSlidesCloud::SpecUtils.invalidize_param_value('embedAllWorkbook', 'ImportChartFromWorkbook', paramembed_all_workbook, 'BOOLEAN')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportChartFromWorkbook', 'embedAllWorkbook', paramembed_all_workbook)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_chart_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramdocument, paramchart_name, paramchart_index, paramx, paramy, paramembed_all_workbook, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportChartFromWorkbook', 'embedAllWorkbook')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'embedAllWorkbook', paramembed_all_workbook, 'BOOLEAN')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'embedAllWorkbook', paramembed_all_workbook, 'BOOLEAN')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid workbook_path' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportChartFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportChartFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportChartFromWorkbook', 'File')
+      paramchart_name = AsposeSlidesCloud::SpecUtils.get_param_value('chartName', 'ImportChartFromWorkbook', 'String')
+      paramchart_index = AsposeSlidesCloud::SpecUtils.get_param_value('chartIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportChartFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportChartFromWorkbook', 'Float')
+      paramembed_all_workbook = AsposeSlidesCloud::SpecUtils.get_param_value('embedAllWorkbook', 'ImportChartFromWorkbook', 'BOOLEAN')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportChartFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportChartFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportChartFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportChartFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportChartFromWorkbook', 'String')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('workbookPath', 'ImportChartFromWorkbook', paramworkbook_path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportChartFromWorkbook', 'workbookPath', paramworkbook_path)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_chart_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramdocument, paramchart_name, paramchart_index, paramx, paramy, paramembed_all_workbook, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportChartFromWorkbook', 'workbookPath')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'workbookPath', paramworkbook_path, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'workbookPath', paramworkbook_path, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid workbook_storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportChartFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportChartFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportChartFromWorkbook', 'File')
+      paramchart_name = AsposeSlidesCloud::SpecUtils.get_param_value('chartName', 'ImportChartFromWorkbook', 'String')
+      paramchart_index = AsposeSlidesCloud::SpecUtils.get_param_value('chartIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportChartFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportChartFromWorkbook', 'Float')
+      paramembed_all_workbook = AsposeSlidesCloud::SpecUtils.get_param_value('embedAllWorkbook', 'ImportChartFromWorkbook', 'BOOLEAN')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportChartFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportChartFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportChartFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportChartFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportChartFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('workbookStorage', 'ImportChartFromWorkbook', paramworkbook_storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportChartFromWorkbook', 'workbookStorage', paramworkbook_storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_chart_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramdocument, paramchart_name, paramchart_index, paramx, paramy, paramembed_all_workbook, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportChartFromWorkbook', 'workbookStorage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'workbookStorage', paramworkbook_storage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'workbookStorage', paramworkbook_storage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportChartFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportChartFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportChartFromWorkbook', 'File')
+      paramchart_name = AsposeSlidesCloud::SpecUtils.get_param_value('chartName', 'ImportChartFromWorkbook', 'String')
+      paramchart_index = AsposeSlidesCloud::SpecUtils.get_param_value('chartIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportChartFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportChartFromWorkbook', 'Float')
+      paramembed_all_workbook = AsposeSlidesCloud::SpecUtils.get_param_value('embedAllWorkbook', 'ImportChartFromWorkbook', 'BOOLEAN')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportChartFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportChartFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportChartFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportChartFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportChartFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'ImportChartFromWorkbook', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportChartFromWorkbook', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_chart_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramdocument, paramchart_name, paramchart_index, paramx, paramy, paramembed_all_workbook, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportChartFromWorkbook', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportChartFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportChartFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportChartFromWorkbook', 'File')
+      paramchart_name = AsposeSlidesCloud::SpecUtils.get_param_value('chartName', 'ImportChartFromWorkbook', 'String')
+      paramchart_index = AsposeSlidesCloud::SpecUtils.get_param_value('chartIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportChartFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportChartFromWorkbook', 'Float')
+      paramembed_all_workbook = AsposeSlidesCloud::SpecUtils.get_param_value('embedAllWorkbook', 'ImportChartFromWorkbook', 'BOOLEAN')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportChartFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportChartFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportChartFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportChartFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportChartFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'ImportChartFromWorkbook', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportChartFromWorkbook', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_chart_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramdocument, paramchart_name, paramchart_index, paramx, paramy, paramembed_all_workbook, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportChartFromWorkbook', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportChartFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportChartFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportChartFromWorkbook', 'File')
+      paramchart_name = AsposeSlidesCloud::SpecUtils.get_param_value('chartName', 'ImportChartFromWorkbook', 'String')
+      paramchart_index = AsposeSlidesCloud::SpecUtils.get_param_value('chartIndex', 'ImportChartFromWorkbook', 'Integer')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportChartFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportChartFromWorkbook', 'Float')
+      paramembed_all_workbook = AsposeSlidesCloud::SpecUtils.get_param_value('embedAllWorkbook', 'ImportChartFromWorkbook', 'BOOLEAN')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportChartFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportChartFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportChartFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportChartFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportChartFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'ImportChartFromWorkbook', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportChartFromWorkbook', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_chart_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramdocument, paramchart_name, paramchart_index, paramx, paramy, paramembed_all_workbook, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportChartFromWorkbook', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportChartFromWorkbook', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
   # unit tests for import_from_html
   # Create presentation document from html.
   # @param name Document name.
@@ -37699,6 +38285,416 @@ describe 'SlidesApi' do
         expect(e.response_body).to include(message)
       rescue ArgumentError => e
         code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportShapesFromSvg', 'storage', paramstorage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+  end
+
+  # unit tests for import_table_from_workbook
+  # Imports a table from an Excel workbook and adds it to the slide.
+  # @param name Document name.
+  # @param slide_index Slide index.
+  # @param worksheet_name The name of the worksheet that contains the table.
+  # @param cell_range The cell range that defines the table (e.g. \&quot;A1:D10\&quot;).
+  # @param [Hash] opts the optional parameters
+  # @option opts [File] :document Excel workbook data.
+  # @option opts [Float] :x X coordinate of the table (EMU).
+  # @option opts [Float] :y Y coordinate of the table (EMU).
+  # @option opts [String] :workbook_path Storage path to the workbook. If omitted, the workbook must be uploaded as multipart form data.
+  # @option opts [String] :workbook_storage Storage name for workbookPath.
+  # @option opts [String] :password Document password.
+  # @option opts [String] :folder Presentation folder.
+  # @option opts [String] :storage Presentation storage.
+  # @return [ShapeBase]
+  describe 'import_table_from_workbook test' do
+    it 'should work' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportTableFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportTableFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportTableFromWorkbook', 'String')
+      paramcell_range = AsposeSlidesCloud::SpecUtils.get_param_value('cellRange', 'ImportTableFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportTableFromWorkbook', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportTableFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportTableFromWorkbook', 'Float')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportTableFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportTableFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportTableFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportTableFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportTableFromWorkbook', 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportTableFromWorkbook', nil, nil)
+      o, c, _h = AsposeSlidesCloud::SpecUtils.testSlidesApi.import_table_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramcell_range, paramdocument, paramx, paramy, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+      code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', nil, nil, nil)
+      expect(c).to eq(code)
+      expect(o).not_to be_nil
+    end
+
+    it 'invalid name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportTableFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportTableFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportTableFromWorkbook', 'String')
+      paramcell_range = AsposeSlidesCloud::SpecUtils.get_param_value('cellRange', 'ImportTableFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportTableFromWorkbook', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportTableFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportTableFromWorkbook', 'Float')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportTableFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportTableFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportTableFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportTableFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportTableFromWorkbook', 'String')
+      paramname = AsposeSlidesCloud::SpecUtils.invalidize_param_value('name', 'ImportTableFromWorkbook', paramname, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportTableFromWorkbook', 'name', paramname)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_table_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramcell_range, paramdocument, paramx, paramy, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportTableFromWorkbook', 'name')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'name', paramname, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'name', paramname, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid slide_index' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportTableFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportTableFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportTableFromWorkbook', 'String')
+      paramcell_range = AsposeSlidesCloud::SpecUtils.get_param_value('cellRange', 'ImportTableFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportTableFromWorkbook', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportTableFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportTableFromWorkbook', 'Float')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportTableFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportTableFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportTableFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportTableFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportTableFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.invalidize_param_value('slideIndex', 'ImportTableFromWorkbook', paramslide_index, 'Integer')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportTableFromWorkbook', 'slideIndex', paramslide_index)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_table_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramcell_range, paramdocument, paramx, paramy, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportTableFromWorkbook', 'slideIndex')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'slideIndex', paramslide_index, 'Integer')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'slideIndex', paramslide_index, 'Integer')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid worksheet_name' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportTableFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportTableFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportTableFromWorkbook', 'String')
+      paramcell_range = AsposeSlidesCloud::SpecUtils.get_param_value('cellRange', 'ImportTableFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportTableFromWorkbook', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportTableFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportTableFromWorkbook', 'Float')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportTableFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportTableFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportTableFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportTableFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportTableFromWorkbook', 'String')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.invalidize_param_value('worksheetName', 'ImportTableFromWorkbook', paramworksheet_name, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportTableFromWorkbook', 'worksheetName', paramworksheet_name)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_table_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramcell_range, paramdocument, paramx, paramy, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportTableFromWorkbook', 'worksheetName')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'worksheetName', paramworksheet_name, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'worksheetName', paramworksheet_name, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid cell_range' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportTableFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportTableFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportTableFromWorkbook', 'String')
+      paramcell_range = AsposeSlidesCloud::SpecUtils.get_param_value('cellRange', 'ImportTableFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportTableFromWorkbook', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportTableFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportTableFromWorkbook', 'Float')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportTableFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportTableFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportTableFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportTableFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportTableFromWorkbook', 'String')
+      paramcell_range = AsposeSlidesCloud::SpecUtils.invalidize_param_value('cellRange', 'ImportTableFromWorkbook', paramcell_range, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportTableFromWorkbook', 'cellRange', paramcell_range)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_table_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramcell_range, paramdocument, paramx, paramy, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportTableFromWorkbook', 'cellRange')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'cellRange', paramcell_range, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'cellRange', paramcell_range, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid document' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportTableFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportTableFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportTableFromWorkbook', 'String')
+      paramcell_range = AsposeSlidesCloud::SpecUtils.get_param_value('cellRange', 'ImportTableFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportTableFromWorkbook', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportTableFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportTableFromWorkbook', 'Float')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportTableFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportTableFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportTableFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportTableFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportTableFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.invalidize_param_value('document', 'ImportTableFromWorkbook', paramdocument, 'File')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportTableFromWorkbook', 'document', paramdocument)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_table_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramcell_range, paramdocument, paramx, paramy, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportTableFromWorkbook', 'document')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'document', paramdocument, 'File')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'document', paramdocument, 'File')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid x' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportTableFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportTableFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportTableFromWorkbook', 'String')
+      paramcell_range = AsposeSlidesCloud::SpecUtils.get_param_value('cellRange', 'ImportTableFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportTableFromWorkbook', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportTableFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportTableFromWorkbook', 'Float')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportTableFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportTableFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportTableFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportTableFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportTableFromWorkbook', 'String')
+      paramx = AsposeSlidesCloud::SpecUtils.invalidize_param_value('x', 'ImportTableFromWorkbook', paramx, 'Float')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportTableFromWorkbook', 'x', paramx)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_table_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramcell_range, paramdocument, paramx, paramy, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportTableFromWorkbook', 'x')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'x', paramx, 'Float')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'x', paramx, 'Float')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid y' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportTableFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportTableFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportTableFromWorkbook', 'String')
+      paramcell_range = AsposeSlidesCloud::SpecUtils.get_param_value('cellRange', 'ImportTableFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportTableFromWorkbook', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportTableFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportTableFromWorkbook', 'Float')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportTableFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportTableFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportTableFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportTableFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportTableFromWorkbook', 'String')
+      paramy = AsposeSlidesCloud::SpecUtils.invalidize_param_value('y', 'ImportTableFromWorkbook', paramy, 'Float')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportTableFromWorkbook', 'y', paramy)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_table_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramcell_range, paramdocument, paramx, paramy, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportTableFromWorkbook', 'y')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'y', paramy, 'Float')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'y', paramy, 'Float')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid workbook_path' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportTableFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportTableFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportTableFromWorkbook', 'String')
+      paramcell_range = AsposeSlidesCloud::SpecUtils.get_param_value('cellRange', 'ImportTableFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportTableFromWorkbook', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportTableFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportTableFromWorkbook', 'Float')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportTableFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportTableFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportTableFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportTableFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportTableFromWorkbook', 'String')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.invalidize_param_value('workbookPath', 'ImportTableFromWorkbook', paramworkbook_path, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportTableFromWorkbook', 'workbookPath', paramworkbook_path)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_table_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramcell_range, paramdocument, paramx, paramy, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportTableFromWorkbook', 'workbookPath')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'workbookPath', paramworkbook_path, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'workbookPath', paramworkbook_path, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid workbook_storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportTableFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportTableFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportTableFromWorkbook', 'String')
+      paramcell_range = AsposeSlidesCloud::SpecUtils.get_param_value('cellRange', 'ImportTableFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportTableFromWorkbook', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportTableFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportTableFromWorkbook', 'Float')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportTableFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportTableFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportTableFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportTableFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportTableFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('workbookStorage', 'ImportTableFromWorkbook', paramworkbook_storage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportTableFromWorkbook', 'workbookStorage', paramworkbook_storage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_table_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramcell_range, paramdocument, paramx, paramy, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportTableFromWorkbook', 'workbookStorage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'workbookStorage', paramworkbook_storage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'workbookStorage', paramworkbook_storage, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid password' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportTableFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportTableFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportTableFromWorkbook', 'String')
+      paramcell_range = AsposeSlidesCloud::SpecUtils.get_param_value('cellRange', 'ImportTableFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportTableFromWorkbook', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportTableFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportTableFromWorkbook', 'Float')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportTableFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportTableFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportTableFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportTableFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportTableFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.invalidize_param_value('password', 'ImportTableFromWorkbook', parampassword, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportTableFromWorkbook', 'password', parampassword)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_table_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramcell_range, paramdocument, paramx, paramy, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportTableFromWorkbook', 'password')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'password', parampassword, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'password', parampassword, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid folder' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportTableFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportTableFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportTableFromWorkbook', 'String')
+      paramcell_range = AsposeSlidesCloud::SpecUtils.get_param_value('cellRange', 'ImportTableFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportTableFromWorkbook', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportTableFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportTableFromWorkbook', 'Float')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportTableFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportTableFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportTableFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportTableFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportTableFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.invalidize_param_value('folder', 'ImportTableFromWorkbook', paramfolder, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportTableFromWorkbook', 'folder', paramfolder)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_table_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramcell_range, paramdocument, paramx, paramy, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportTableFromWorkbook', 'folder')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'folder', paramfolder, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'folder', paramfolder, 'String')
+        expect(400).to eq(code)
+        expect(e.message).to include(message)
+      end
+    end
+
+    it 'invalid storage' do
+      paramname = AsposeSlidesCloud::SpecUtils.get_param_value('name', 'ImportTableFromWorkbook', 'String')
+      paramslide_index = AsposeSlidesCloud::SpecUtils.get_param_value('slideIndex', 'ImportTableFromWorkbook', 'Integer')
+      paramworksheet_name = AsposeSlidesCloud::SpecUtils.get_param_value('worksheetName', 'ImportTableFromWorkbook', 'String')
+      paramcell_range = AsposeSlidesCloud::SpecUtils.get_param_value('cellRange', 'ImportTableFromWorkbook', 'String')
+      paramdocument = AsposeSlidesCloud::SpecUtils.get_param_value('document', 'ImportTableFromWorkbook', 'File')
+      paramx = AsposeSlidesCloud::SpecUtils.get_param_value('x', 'ImportTableFromWorkbook', 'Float')
+      paramy = AsposeSlidesCloud::SpecUtils.get_param_value('y', 'ImportTableFromWorkbook', 'Float')
+      paramworkbook_path = AsposeSlidesCloud::SpecUtils.get_param_value('workbookPath', 'ImportTableFromWorkbook', 'String')
+      paramworkbook_storage = AsposeSlidesCloud::SpecUtils.get_param_value('workbookStorage', 'ImportTableFromWorkbook', 'String')
+      parampassword = AsposeSlidesCloud::SpecUtils.get_param_value('password', 'ImportTableFromWorkbook', 'String')
+      paramfolder = AsposeSlidesCloud::SpecUtils.get_param_value('folder', 'ImportTableFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.get_param_value('storage', 'ImportTableFromWorkbook', 'String')
+      paramstorage = AsposeSlidesCloud::SpecUtils.invalidize_param_value('storage', 'ImportTableFromWorkbook', paramstorage, 'String')
+      AsposeSlidesCloud::SpecUtils.initialize('ImportTableFromWorkbook', 'storage', paramstorage)
+      begin
+        AsposeSlidesCloud::SpecUtils.testSlidesApi.import_table_from_workbook_with_http_info(paramname, paramslide_index, paramworksheet_name, paramcell_range, paramdocument, paramx, paramy, paramworkbook_path, paramworkbook_storage, parampassword, paramfolder, paramstorage)
+        unless AsposeSlidesCloud::SpecUtils.no_exception?('ImportTableFromWorkbook', 'storage')
+          fail "An exception expected"
+        end
+      rescue AsposeSlidesCloud::ApiError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'storage', paramstorage, 'String')
+        expect(e.code).to eq(code)
+        expect(e.response_body).to include(message)
+      rescue ArgumentError => e
+        code, message = AsposeSlidesCloud::SpecUtils.get_expected_error('ImportTableFromWorkbook', 'storage', paramstorage, 'String')
         expect(400).to eq(code)
         expect(e.message).to include(message)
       end

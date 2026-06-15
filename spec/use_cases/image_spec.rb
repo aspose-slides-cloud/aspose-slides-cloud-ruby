@@ -103,6 +103,26 @@ describe 'UseCases' do
       expect(png_result.size).not_to eq(default_result.size)
     end
 
+    it 'image download quality' do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      image_index = 1
+      password = "password"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      image_good = AsposeSlidesCloud::SpecUtils.testSlidesApi.download_image(file_name, image_index, 'jpeg', password, folder_name, nil, 100)
+      image_bad = AsposeSlidesCloud::SpecUtils.testSlidesApi.download_image(file_name, image_index, 'jpeg', password, folder_name, nil, 50)
+      expect(image_good.size).to be > image_bad.size
+    end
+
+    it 'image download quality useless' do
+      image_index = 1
+      password = "password"
+      source = File.binread("TestData/test.pptx")
+      image_good = AsposeSlidesCloud::SpecUtils.testSlidesApi.download_image_online(source, image_index, 'png', password, 100)
+      image_bad = AsposeSlidesCloud::SpecUtils.testSlidesApi.download_image_online(source, image_index, 'png', password, 50)
+      expect(image_good.size).to eq(image_bad.size)
+    end
+
     it 'replace image' do
       folder_name = "TempSlidesSDK"
       file_name = "test.pptx"

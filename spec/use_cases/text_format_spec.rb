@@ -67,7 +67,7 @@ describe 'UseCases' do
         #threeDFormat.camera_type = "PerspectiveContrastingRightFacing"
         dto.text_frame_format.three_d_format = threeDFormat;
 
-        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
+        result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, dto, nil, nil, nil, password, folder_name)
         expect(result).to be_kind_of(AsposeSlidesCloud::Shape)
     end
 
@@ -97,7 +97,7 @@ describe 'UseCases' do
       solidFill.color = "#FF0000"
       dto.text_frame_format.default_paragraph_format.bullet_fill_format = solidFill
 
-      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, dto, nil, nil, password, folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, slide_index, dto, nil, nil, nil, password, folder_name)
       expect(result).to be_kind_of(AsposeSlidesCloud::Shape)
   end
   end

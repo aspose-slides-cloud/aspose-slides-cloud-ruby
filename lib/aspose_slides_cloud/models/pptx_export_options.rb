@@ -31,6 +31,9 @@ module AsposeSlidesCloud
     # Specifies whether the ZIP64 format is used for the Presentation document. The default value is Zip64Mode.IfNecessary.
     attr_accessor :zip64_mode
 
+    # The compression level used when saving the presentation document. Higher compression levels produce smaller files but require more processing time. The actual compression ratio depends on the content of the presentation. The default value is CompressionLevel.Level6.
+    attr_accessor :compression_level
+
     # True to refresh the presentation thumbnail on save
     attr_accessor :refresh_thumbnail
 
@@ -39,6 +42,7 @@ module AsposeSlidesCloud
       super.merge({
         :'conformance' => :'Conformance',
         :'zip64_mode' => :'Zip64Mode',
+        :'compression_level' => :'CompressionLevel',
         :'refresh_thumbnail' => :'RefreshThumbnail',
       })
     end
@@ -48,6 +52,7 @@ module AsposeSlidesCloud
       super.merge({
         :'conformance' => :'String',
         :'zip64_mode' => :'String',
+        :'compression_level' => :'String',
         :'refresh_thumbnail' => :'BOOLEAN',
       })
     end
@@ -63,6 +68,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'Zip64Mode')
         self.zip64_mode = attributes[:'Zip64Mode']
+      end
+
+      if attributes.has_key?(:'CompressionLevel')
+        self.compression_level = attributes[:'CompressionLevel']
       end
 
       if attributes.has_key?(:'RefreshThumbnail')
@@ -86,6 +95,8 @@ module AsposeSlidesCloud
       return false unless conformance_validator.valid?(@conformance)
       zip64_mode_validator = EnumAttributeValidator.new('String', ['Never', 'IfNecessary', 'Always'])
       return false unless zip64_mode_validator.valid?(@zip64_mode)
+      compression_level_validator = EnumAttributeValidator.new('String', ['None', 'Level1', 'Level2', 'Level3', 'Level4', 'Level5', 'Level6', 'Level7', 'Level8', 'Level9'])
+      return false unless compression_level_validator.valid?(@compression_level)
       true
     end
 
@@ -109,6 +120,16 @@ module AsposeSlidesCloud
       @zip64_mode = zip64_mode
     end
 
+    # Custom attribute writer method checking allowed values (enum).
+    # @param [Object] compression_level Object to be assigned
+    def compression_level=(compression_level)
+      validator = EnumAttributeValidator.new('String', ['None', 'Level1', 'Level2', 'Level3', 'Level4', 'Level5', 'Level6', 'Level7', 'Level8', 'Level9'])
+      unless validator.valid?(compression_level)
+        fail ArgumentError, 'invalid value for "compression_level", must be one of #{validator.allowable_values}.'
+      end
+      @compression_level = compression_level
+    end
+
     # Checks equality by comparing each attribute.
     # @param [Object] Object to be compared
     def ==(o)
@@ -123,6 +144,7 @@ module AsposeSlidesCloud
           format == o.format &&
           conformance == o.conformance &&
           zip64_mode == o.zip64_mode &&
+          compression_level == o.compression_level &&
           refresh_thumbnail == o.refresh_thumbnail
     end
 
@@ -135,7 +157,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [default_regular_font, delete_embedded_binary_objects, gradient_style, font_fallback_rules, font_subst_rules, skip_java_script_links, format, conformance, zip64_mode, refresh_thumbnail].hash
+      [default_regular_font, delete_embedded_binary_objects, gradient_style, font_fallback_rules, font_subst_rules, skip_java_script_links, format, conformance, zip64_mode, compression_level, refresh_thumbnail].hash
     end
   end
 end

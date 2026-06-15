@@ -27,9 +27,6 @@ module AsposeSlidesCloud
     # Defines base url
     attr_accessor :base_url
 
-    # Defines base url for authentication
-    attr_accessor :auth_base_url
-
     # Defines platform version
     attr_accessor :version
 
@@ -131,7 +128,6 @@ module AsposeSlidesCloud
 
     def initialize
       @base_url = 'https://api.aspose.cloud'
-      @auth_base_url = 'https://api.aspose.cloud'
       @version = 'v3.0'
       @http_request_timeout = 300
       @timeout = 0
@@ -161,6 +157,18 @@ module AsposeSlidesCloud
 
     def base_url=(base_url)
       @base_url = getUrlHostPart(base_url)
+    end
+
+    def async_base_url
+      @async_base_url || @base_url
+    end
+
+    def async_base_url=(async_base_url)
+      @async_base_url = getUrlHostPart(async_base_url)
+    end
+
+    def auth_base_url
+      @auth_base_url || @base_url
     end
 
     def auth_base_url=(auth_base_url)

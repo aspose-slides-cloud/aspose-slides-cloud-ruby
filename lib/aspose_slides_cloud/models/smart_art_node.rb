@@ -43,6 +43,9 @@ module AsposeSlidesCloud
     # Get or sets list to paragraphs list
     attr_accessor :paragraphs
 
+    # Default paragraph format for the node's text frame.
+    attr_accessor :default_paragraph_format
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
@@ -52,6 +55,7 @@ module AsposeSlidesCloud
         :'text' => :'Text',
         :'org_chart_layout' => :'OrgChartLayout',
         :'paragraphs' => :'Paragraphs',
+        :'default_paragraph_format' => :'DefaultParagraphFormat',
       }
     end
 
@@ -64,6 +68,7 @@ module AsposeSlidesCloud
         :'text' => :'String',
         :'org_chart_layout' => :'String',
         :'paragraphs' => :'ResourceUri',
+        :'default_paragraph_format' => :'ParagraphFormat',
       }
     end
 
@@ -99,6 +104,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'Paragraphs')
         self.paragraphs = attributes[:'Paragraphs']
+      end
+
+      if attributes.has_key?(:'DefaultParagraphFormat')
+        self.default_paragraph_format = attributes[:'DefaultParagraphFormat']
       end
     end
 
@@ -142,7 +151,8 @@ module AsposeSlidesCloud
           is_assistant == o.is_assistant &&
           text == o.text &&
           org_chart_layout == o.org_chart_layout &&
-          paragraphs == o.paragraphs
+          paragraphs == o.paragraphs &&
+          default_paragraph_format == o.default_paragraph_format
     end
 
     # @see the `==` method
@@ -154,7 +164,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [nodes, shapes, is_assistant, text, org_chart_layout, paragraphs].hash
+      [nodes, shapes, is_assistant, text, org_chart_layout, paragraphs, default_paragraph_format].hash
     end
   end
 end

@@ -67,7 +67,7 @@ describe 'UseCases' do
       category3 = AsposeSlidesCloud::ChartCategory.new
       category3.value = "Category3"
       chart.categories = [category1, category2, category3]
-      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 3, chart, nil, nil, nil, "password", folder_name)
       expect(result.series.length).to eq(2)
       expect(result.categories.length).to eq(3)
     end
@@ -133,7 +133,7 @@ describe 'UseCases' do
       category3 = AsposeSlidesCloud::ChartCategory.new
       category3.value = "Category3"
       chart.categories = [category1, category2, category3]
-      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 3, chart, nil, nil, nil, "password", folder_name)
       expect(result.series.length).to eq(2)
       expect(result.categories.length).to eq(3)
     end
@@ -179,7 +179,7 @@ describe 'UseCases' do
       category3 = AsposeSlidesCloud::ChartCategory.new
       category3.value = "Category3"
       chart.categories = [category1, category2, category3]
-      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 3, chart, nil, nil, nil, "password", folder_name)
       expect(result.series.length).to eq(2)
       expect(result.categories.length).to eq(3)
     end
@@ -395,7 +395,7 @@ describe 'UseCases' do
       category4.value = "Stem2"
       category4.level = 1
       chart.categories = [ category1, category2, category3, category4 ]
-      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 3, chart, nil, nil, nil, "password", folder_name)
       expect(result.series.length).to eq(1)
       expect(result.categories.length).to eq(4)
     end
@@ -455,7 +455,7 @@ describe 'UseCases' do
       category8.value = "Category 7"
       chart.categories = [category1, category2, category3, category4, category5, category6, category7, category8]
 
-      response = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
+      response = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 3, chart, nil, nil, nil, "password", folder_name)
       expect(response.categories.length).to eq(8)
       expect(response.series.length).to eq(1)
       expect(response.categories[0].parent_categories.length).to eq(2)
@@ -651,8 +651,29 @@ describe 'UseCases' do
       category3 = AsposeSlidesCloud::ChartCategory.new
       category3.value = "Category3"
       chart.categories = [category1, category2, category3]
-      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 3, chart, nil, nil, "password", folder_name)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(file_name, 3, chart, nil, nil, nil, "password", folder_name)
       expect(result.series[0].data_points[2].value).to eq(90)
+    end
+
+    it "import chart from workbook" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      source = File.binread("TestData/oleObject.xlsx")
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.import_chart_from_workbook(
+        file_name, 3, "Sheet1", source, nil, 1, nil, nil, nil, nil, nil, "password", folder_name)
+      expect(result.type).to eq("Chart")
+    end
+
+    it "import chart from workbook by path" do
+      folder_name = "TempSlidesSDK"
+      file_name = "test.pptx"
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.copy_file("TempTests/" + file_name, folder_name + "/" + file_name)
+      source = File.binread("TestData/oleObject.xlsx")
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.upload_file(folder_name + "/oleObject.xlsx", source)
+      result = AsposeSlidesCloud::SpecUtils.testSlidesApi.import_chart_from_workbook(
+        file_name, 3, "Sheet1", nil, nil, 1, nil, nil, nil, folder_name + "/oleObject.xlsx", nil, "password", folder_name)
+      expect(result.type).to eq("Chart")
     end
   end
 end

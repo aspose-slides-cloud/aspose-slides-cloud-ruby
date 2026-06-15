@@ -40,6 +40,9 @@ module AsposeSlidesCloud
     # The state of the SmartArt diagram with regard to (left-to-right) LTR or (right-to-left) RTL, if the diagram supports reversal.
     attr_accessor :is_reversed
 
+    # Default paragraph format applied to all nodes. Write-only: not populated on read since there is no corresponding property at the SmartArt shape level in Aspose.Slides.
+    attr_accessor :default_paragraph_format
+
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       super.merge({
@@ -48,6 +51,7 @@ module AsposeSlidesCloud
         :'color_style' => :'ColorStyle',
         :'nodes' => :'Nodes',
         :'is_reversed' => :'IsReversed',
+        :'default_paragraph_format' => :'DefaultParagraphFormat',
       })
     end
 
@@ -59,6 +63,7 @@ module AsposeSlidesCloud
         :'color_style' => :'String',
         :'nodes' => :'Array<SmartArtNode>',
         :'is_reversed' => :'BOOLEAN',
+        :'default_paragraph_format' => :'ParagraphFormat',
       })
     end
 
@@ -87,6 +92,10 @@ module AsposeSlidesCloud
 
       if attributes.has_key?(:'IsReversed')
         self.is_reversed = attributes[:'IsReversed']
+      end
+
+      if attributes.has_key?(:'DefaultParagraphFormat')
+        self.default_paragraph_format = attributes[:'DefaultParagraphFormat']
       end
       self.type = 'SmartArt'
     end
@@ -184,7 +193,8 @@ module AsposeSlidesCloud
           quick_style == o.quick_style &&
           color_style == o.color_style &&
           nodes == o.nodes &&
-          is_reversed == o.is_reversed
+          is_reversed == o.is_reversed &&
+          default_paragraph_format == o.default_paragraph_format
     end
 
     # @see the `==` method
@@ -196,7 +206,7 @@ module AsposeSlidesCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, is_decorative, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, layout, quick_style, color_style, nodes, is_reversed].hash
+      [self_uri, alternate_links, name, width, height, alternative_text, alternative_text_title, hidden, is_decorative, x, y, z_order_position, fill_format, effect_format, three_d_format, line_format, hyperlink_click, hyperlink_mouse_over, type, layout, quick_style, color_style, nodes, is_reversed, default_paragraph_format].hash
     end
   end
 end

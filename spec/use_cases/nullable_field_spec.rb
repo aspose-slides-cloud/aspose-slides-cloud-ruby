@@ -65,7 +65,7 @@ describe 'UseCases' do
       dto.axes.horizontal_axis.min_value = min1
       dto.axes.horizontal_axis.is_automatic_max_value = false
       dto.axes.horizontal_axis.max_value = max1
-      AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(fileName, 1, dto, nil, nil, password, folderName)
+      AsposeSlidesCloud::SpecUtils.testSlidesApi.create_shape(fileName, 1, dto, nil, nil, nil, password, folderName)
 
       result = AsposeSlidesCloud::SpecUtils.testSlidesApi.get_shape(fileName, 1, 5, password, folderName)
       expect(result.axes.horizontal_axis.min_value).to eq(min1)
