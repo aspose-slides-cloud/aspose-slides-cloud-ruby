@@ -37,8 +37,8 @@ Gem::Specification.new do |s|
   s.license     = "MIT"
   s.required_ruby_version = ">= 1.9"
 
-  s.add_dependency 'faraday', '~> 1.0', '>= 1.0.0'
-  s.add_dependency 'faraday-httpclient', '~> 1.0', '>= 1.0.0'
+  s.add_dependency 'faraday', '~> 2.0', '>= 2.0.0'
+  s.add_dependency 'faraday-httpclient', '~> 2.0', '>= 2.0.0'
   s.add_dependency 'httpclient', '~> 2.2', '>= 2.2.0'
   s.add_dependency 'json', '~> 2.1', '>= 2.1.0'
   s.add_dependency 'warning', '~> 1.4', '>= 1.4.0'
